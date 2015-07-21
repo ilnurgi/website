@@ -1,0 +1,305 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Сервисы &mdash; angular 14.10.12 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '14.10.12',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="angular 14.10.12 documentation" href="index.html" />
+    <link rel="next" title="http" href="http.html" />
+    <link rel="prev" title="Вспомогательные функции" href="helpers.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="http.html" title="http"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="helpers.html" title="Вспомогательные функции"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">angular 14.10.12 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="id1">
+<h1>Сервисы<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>Базовые сервисы<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<dl class="attribute">
+<dt id="_S_window">
+<tt class="descname">$window</tt><a class="headerlink" href="#_S_window" title="Permalink to this definition">¶</a></dt>
+<dd><p>ссылка на глобальный объект window</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="_S_document">
+<tt class="descname">$document</tt><a class="headerlink" href="#_S_document" title="Permalink to this definition">¶</a></dt>
+<dd><p>jQuery обертка элемента window.document</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="_S_location">
+<tt class="descname">$location</tt><a class="headerlink" href="#_S_location" title="Permalink to this definition">¶</a></dt>
+<dd><p>синхронизация URL с адресной строкой браузера</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="_S_timeout">
+<tt class="descname">$timeout</tt><a class="headerlink" href="#_S_timeout" title="Permalink to this definition">¶</a></dt>
+<dd><p>обертка для метода window.setTimeout</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="_S_sniffer, _S_browser">
+<tt class="descname">$sniffer, $browser</tt><a class="headerlink" href="#_S_sniffer, _S_browser" title="Permalink to this definition">¶</a></dt>
+<dd><p>&#8220;приватные&#8221; сервисы для внутреннего использования</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="_S_q">
+<tt class="descname">$q</tt><a class="headerlink" href="#_S_q" title="Permalink to this definition">¶</a></dt>
+<dd><p>сервис работы с асинхронными операциями (promise/deferred)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="_S_rootScope">
+<tt class="descname">$rootScope</tt><a class="headerlink" href="#_S_rootScope" title="Permalink to this definition">¶</a></dt>
+<dd><p>сервис получения доступа к root scope</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="_S_http">
+<tt class="descname">$http</tt><a class="headerlink" href="#_S_http" title="Permalink to this definition">¶</a></dt>
+<dd><p>сервис взаимодействия по протоколу HTTP (XMLHttpRequest/JSONP)</p>
+<dl class="function">
+<dt id="get">
+<tt class="descname">get</tt><big>(</big><em>url</em><big>)</big><a class="headerlink" href="#get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Запрос на сервер</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="success">
+<tt class="descname">success</tt><big>(</big><em>callback</em><big>)</big><a class="headerlink" href="#success" title="Permalink to this definition">¶</a></dt>
+<dd><p>Обработчик успешного запроса</p>
+</dd></dl>
+
+<div class="highlight-python"><div class="highlight"><pre>app.controller(
+    &#39;PhoneListCtrl&#39;,
+    function ($scope, $http) {
+        $http.get(&#39;phones/phones.json&#39;)
+            .success(function(data) {
+                $scope.phones = data;
+        });
+});
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="_S_httpBackend">
+<tt class="descname">$httpBackend</tt><a class="headerlink" href="#_S_httpBackend" title="Permalink to this definition">¶</a></dt>
+<dd><p>низкоуровневый аналог $http (может быть использован в тестах)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="_S_route">
+<tt class="descname">$route</tt><a class="headerlink" href="#_S_route" title="Permalink to this definition">¶</a></dt>
+<dd><p>сервис роутинга-связывания URL и контроллеров приложения</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="_S_routeParams">
+<tt class="descname">$routeParams</tt><a class="headerlink" href="#_S_routeParams" title="Permalink to this definition">¶</a></dt>
+<dd><p>сервис доступа к параметрам из URL</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="_S_routeProvider">
+<tt class="descname">$routeProvider</tt><a class="headerlink" href="#_S_routeProvider" title="Permalink to this definition">¶</a></dt>
+<dd><p>сервис настройки роутинга</p>
+<dl class="function">
+<dt id="when">
+<tt class="descname">when</tt><big>(</big><em>url</em>, <em>{args}</em><big>)</big><a class="headerlink" href="#when" title="Permalink to this definition">¶</a></dt>
+<dd><p>роутниг по урлу</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>url</strong> &#8211; адрес роутинга</li>
+<li><strong>templateUrl</strong> &#8211; адрес</li>
+<li><strong>controller</strong> &#8211; адрес</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="otherwise">
+<tt class="descname">otherwise</tt><big>(</big><em>{args}</em><big>)</big><a class="headerlink" href="#otherwise" title="Permalink to this definition">¶</a></dt>
+<dd><p>дефолтный редирект</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>redirectTo</strong> &#8211; адрес редиректа</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="_S_cacheFactory">
+<tt class="descname">$cacheFactory</tt><a class="headerlink" href="#_S_cacheFactory" title="Permalink to this definition">¶</a></dt>
+<dd><p>создания создания и получения доступа к кэш-хранилищам</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="_S_templateCache">
+<tt class="descname">$templateCache</tt><a class="headerlink" href="#_S_templateCache" title="Permalink to this definition">¶</a></dt>
+<dd><p>сервис кеширования шаблонов</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="_S_controller">
+<tt class="descname">$controller</tt><a class="headerlink" href="#_S_controller" title="Permalink to this definition">¶</a></dt>
+<dd><p>вызов контроллера</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="_S_anchorScroll">
+<tt class="descname">$anchorScroll</tt><a class="headerlink" href="#_S_anchorScroll" title="Permalink to this definition">¶</a></dt>
+<dd><p>автоматический скрол к конкретному элементу(до сих пор думаю зачем это было вынесено в сервис)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="_S_filter">
+<tt class="descname">$filter</tt><a class="headerlink" href="#_S_filter" title="Permalink to this definition">¶</a></dt>
+<dd><p>создание фильтров используемых во вью</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="_S_parse">
+<tt class="descname">$parse</tt><a class="headerlink" href="#_S_parse" title="Permalink to this definition">¶</a></dt>
+<dd><p>конвертирует Ангулар-выражение(expression) в функцию</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="_S_compile">
+<tt class="descname">$compile</tt><a class="headerlink" href="#_S_compile" title="Permalink to this definition">¶</a></dt>
+<dd><p>копилирует шаблон, обрабатывает директивы, связывает события. Использует $interpolate</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="_S_exceptionHandler">
+<tt class="descname">$exceptionHandler</tt><a class="headerlink" href="#_S_exceptionHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>сервис эксепшенов</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="_S_log">
+<tt class="descname">$log</tt><a class="headerlink" href="#_S_log" title="Permalink to this definition">¶</a></dt>
+<dd><p>логирование</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Сервисы</a><ul>
+<li><a class="reference internal" href="#id2">Базовые сервисы</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="helpers.html"
+                        title="previous chapter">Вспомогательные функции</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="http.html"
+                        title="next chapter">http</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/services.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="http.html" title="http"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="helpers.html" title="Вспомогательные функции"
+             >previous</a> |</li>
+        <li><a href="index.html">angular 14.10.12 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright ilnurgi, последняя сборка 2014-10-12.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

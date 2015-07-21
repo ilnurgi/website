@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>String - строки &mdash; js doc 2015.06.19 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2015.06.19',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="js doc 2015.06.19 documentation" href="../index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.19 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="string">
+<h1>String - строки<a class="headerlink" href="#string" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="String">
+<em class="property">class </em><code class="descname">String</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#String" title="Permalink to this definition">¶</a></dt>
+<dd><p>Строки</p>
+<div class="highlight-js"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">String</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">string</span> <span class="o">=</span> <span class="s1">&#39;ilnurgi&#39;</span><span class="p">;</span>
+
+<span class="c1">// в переменную а мы можем добавить свои атрибуты и методы</span>
+
+<span class="s1">&#39;\u1552&#39;</span><span class="p">.</span><span class="nx">length</span>
+<span class="c1">//1</span>
+
+<span class="s1">&#39;il\&#39;s&#39;</span><span class="p">.</span><span class="nx">length</span>
+<span class="c1">//3</span>
+
+<span class="s1">&#39;ilnurgi&#39;</span> <span class="o">+</span> <span class="mi">123</span><span class="p">;</span>
+<span class="c1">// &#39;ilnurgi123&#39;</span>
+
+<span class="s1">&#39;12&#39;</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+<span class="c1">// 7</span>
+
+<span class="s1">&#39;day&#39;</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
+<span class="c1">// NaN</span>
+
+<span class="s1">&#39;a&#39;</span> <span class="o">&lt;</span> <span class="s1">&#39;b&#39;</span><span class="p">;</span>
+<span class="c1">// true</span>
+
+<span class="s1">&#39;c&#39;</span> <span class="o">&lt;</span> <span class="s1">&#39;b&#39;</span><span class="p">;</span>
+<span class="c1">// false</span>
+</pre></div>
+</div>
+<dl class="function">
+<dt id="length">
+<code class="descname">length</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#length" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-js"><div class="highlight"><pre><span class="s1">&#39;ilnurgi&#39;</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+<span class="c1">// 7</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="charAt">
+<code class="descname">charAt</code><span class="sig-paren">(</span><em>index</em><span class="sig-paren">)</span><a class="headerlink" href="#charAt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Символ из строки</p>
+<div class="highlight-js"><div class="highlight"><pre><span class="s1">&#39;ilnurgi&#39;</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="c1">// &#39;n&#39;</span>
+
+<span class="s1">&#39;ilnurgi&#39;</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
+<span class="c1">// &#39;&#39;</span>
+
+<span class="s1">&#39;ilnurgi&#39;</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+<span class="c1">// &#39;&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="charCodeAt">
+<code class="descname">charCodeAt</code><span class="sig-paren">(</span><em>index</em><span class="sig-paren">)</span><a class="headerlink" href="#charCodeAt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Код символа из строки</p>
+<div class="highlight-js"><div class="highlight"><pre><span class="s1">&#39;!&#39;</span><span class="p">.</span><span class="nx">charCodeAt</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="c1">// 33</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="fromCharCode">
+<code class="descname">fromCharCode</code><span class="sig-paren">(</span><em>code</em><span class="sig-paren">)</span><a class="headerlink" href="#fromCharCode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Символ по коду</p>
+<div class="highlight-js"><div class="highlight"><pre><span class="nb">String</span><span class="p">.</span><span class="nx">fromCharCode</span><span class="p">(</span><span class="mi">33</span><span class="p">);</span>
+<span class="c1">// &#39;!&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="indexOf">
+<code class="descname">indexOf</code><span class="sig-paren">(</span><em>substr</em><span class="optional">[</span>, <em>start_pos</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#indexOf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает индекс вхождения подстроки в строку.</p>
+<div class="highlight-js"><div class="highlight"><pre><span class="s1">&#39;строка&#39;</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;ока&quot;</span><span class="p">);</span>
+<span class="c1">// 3</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="lastIndexOf">
+<code class="descname">lastIndexOf</code><span class="sig-paren">(</span><em>substr</em><span class="optional">[</span>, <em>start_pos</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#lastIndexOf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает индекс вхождения подстроки в строку с конца.</p>
+<div class="highlight-js"><div class="highlight"><pre><span class="s1">&#39;строка&#39;</span><span class="p">.</span><span class="nx">lastIndexOf</span><span class="p">(</span><span class="s2">&quot;ока&quot;</span><span class="p">);</span>
+<span class="c1">// 3</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="match">
+<code class="descname">match</code><span class="sig-paren">(</span><em>str</em><span class="sig-paren">)</span><a class="headerlink" href="#match" title="Permalink to this definition">¶</a></dt>
+<dd><p>Поиск совпадений в строке, возвращает массив</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>str</strong> &#8211; строка поиска, или регулярка</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="replace">
+<code class="descname">replace</code><span class="sig-paren">(</span><em>str1</em>, <em>str2</em><span class="sig-paren">)</span><a class="headerlink" href="#replace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Поиск и замена</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>str1</strong> &#8211; строка поиска, или регулярка</li>
+<li><strong>str2</strong> &#8211; строка для замены, или функция, в которую передается найденная строка</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="search">
+<code class="descname">search</code><span class="sig-paren">(</span><em>str</em><span class="sig-paren">)</span><a class="headerlink" href="#search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Поиск совпадений в строке, возвращает индекс</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>str</strong> &#8211; строка поиска, или регулярка</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="slice">
+<code class="descname">slice</code><span class="sig-paren">(</span><em>start</em><span class="optional">[</span>, <em>end</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#slice" title="Permalink to this definition">¶</a></dt>
+<dd><p>Поиск совпадений в строке, возвращает индекс</p>
+<dl class="function">
+<dt>
+<code class="descname">length</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="split">
+<code class="descname">split</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#split" title="Permalink to this definition">¶</a></dt>
+<dd><p>Разбиение строки на массив</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="substr">
+<code class="descname">substr</code><span class="sig-paren">(</span><em>start</em><span class="optional">[</span>, <em>length</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#substr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Срез строки</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="toLowerCase">
+<code class="descname">toLowerCase</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toLowerCase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Преобразует строку в нижний регистр</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="toUpperCase">
+<code class="descname">toUpperCase</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toUpperCase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Преобразует строку в верхний регистр</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/base/string.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.19 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

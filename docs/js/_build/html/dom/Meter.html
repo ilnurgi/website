@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Meter - графический индикатор, шкала &mdash; js doc 2015.06.26 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2015.06.26',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="js doc 2015.06.26 documentation" href="../index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.26 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="meter">
+<h1>Meter - графический индикатор, шкала<a class="headerlink" href="#meter" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="Meter">
+<em class="property">class </em><code class="descname">Meter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Meter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Наследник <a class="reference internal" href="Element.html#Element" title="Element"><code class="xref js js-class docutils literal"><span class="pre">Element()</span></code></a></p>
+<dl class="attribute">
+<dt id="form">
+<code class="descname">form</code><a class="headerlink" href="#form" title="Permalink to this definition">¶</a></dt>
+<dd><p>Эле­мент <a class="reference internal" href="Form.html#Form" title="Form"><code class="xref js js-class docutils literal"><span class="pre">Form()</span></code></a>, ес­ли име­ет­ся, яв­ляю­щий­ся пред­ком для дан­но­го эле­мен­та или оп­ре­де­ляе­мый HTML-ат­ри­бу­том form.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="high">
+<code class="descname">high</code><a class="headerlink" href="#high" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ес­ли оп­ре­де­ле­но, зна­че­ния в диа­па­зо­не ме­ж­ду high и max бу­дут гра­фи­че­ски от­не­се­ны к «вы­со­ким».</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="labels">
+<code class="descname">labels</code><a class="headerlink" href="#labels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Объ­ект <a class="reference internal" href="NodeList.html#NodeList" title="NodeList"><code class="xref js js-class docutils literal"><span class="pre">NodeList()</span></code></a>, по­доб­ный мас­си­ву, со­дер­жа­щий эле­мен­ты Label, свя­зан­ные с этим эле­мен­том.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="low">
+<code class="descname">low</code><a class="headerlink" href="#low" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ес­ли оп­ре­де­ле­но, зна­че­ния в диа­па­зо­не ме­ж­ду low и max бу­дут гра­фи­че­ски от­не­се­ны к «низ­ким».</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="max">
+<code class="descname">max</code><a class="headerlink" href="#max" title="Permalink to this definition">¶</a></dt>
+<dd><p>Мак­си­маль­ное зна­че­ние, ко­то­рое мо­жет ото­бра­жать эле­мент &lt;meter&gt;. По умол­ча­нию име­ет зна­че­ние 1.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="min">
+<code class="descname">min</code><a class="headerlink" href="#min" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ми­ни­маль­ное зна­че­ние, ко­то­рое мо­жет ото­бра­жать эле­мент &lt;meter&gt;. По умол­ча­нию име­ет зна­че­ние 0.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="optimum">
+<code class="descname">optimum</code><a class="headerlink" href="#optimum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Оп­ре­де­ля­ет зна­че­ние, ко­то­рое сле­ду­ет счи­тать оп­ти­маль­ным.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="value">
+<code class="descname">value</code><a class="headerlink" href="#value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Зна­че­ние, ко­то­рое пред­став­ля­ет дан­ный эле­мент &lt;meter&gt;.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/dom/Meter.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.26 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

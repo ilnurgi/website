@@ -1,0 +1,371 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>file - файлы &mdash; Документация python документация 2015.05.20</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2015.05.20',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Документация python документация 2015.05.20" href="../index.html" />
+    <link rel="up" title="Основные объекты" href="index.html" />
+    <link rel="next" title="float - вещественное число" href="float.html" />
+    <link rel="prev" title="exception - исключения" href="errors.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Алфавитный указатель"
+             accesskey="I">указатель</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="float.html" title="float - вещественное число"
+             accesskey="N">вперёд</a> |</li>
+        <li class="right" >
+          <a href="errors.html" title="exception - исключения"
+             accesskey="P">назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Документация python документация 2015.05.20</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Основные объекты</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="file">
+<h1>file - файлы<a class="headerlink" href="#file" title="Ссылка на этот заголовок">¶</a></h1>
+<div class="section" id="id1">
+<h2>Функции для работы с файлами<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="method">
+<dt id="open">
+<code class="descname">open</code><span class="sig-paren">(</span><em>path [, mode='r' [, buffering=-1 [, encoding=None [, errors=None [, newline=None [, closefd=True]]]]]])</em><span class="sig-paren">)</span><a class="headerlink" href="#open" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>path</strong> (<em>str</em>) &#8211; путь к открываемому файлу</li>
+<li><strong>mode</strong> (<em>str</em>) &#8211; режим работы, r,w,a, (t, b)</li>
+<li><strong>buffering</strong> (<em>int</em>) &#8211; определяет размер буферизации</li>
+<li><strong>encoding</strong> (<em>str</em>) &#8211; кодировка файла</li>
+<li><strong>errors</strong> (<em>str</em>) &#8211; политику обработки ошибок кодирования символов и может иметь одно из следующих значений: &#8216;strict&#8217;, &#8216;ignore&#8217;, &#8216;replace&#8217;, &#8216;backslashreplace&#8217; или &#8216;xmlcharrefreplace&#8217;.</li>
+<li><strong>newline</strong> (<em>str</em>) &#8211; определяет поведение режима поддержки универсального символа перевода строки и может иметь значение None, &#8216;&#8217;, &#8216;n&#8217;, &#8216;r&#8217; или &#8216;rn&#8217;.</li>
+<li><strong>closefd</strong> (<em>bool</em>) &#8211; <p>логический флаг, который определяет, должен ли фактически закрываться дескриптор файла при вызове метода close().</p>
+<ul>
+<li>w - запись, содержимое исчезает</li>
+<li>r - чтение</li>
+<li>a - добавление/запись файла, содержимое не изменяется</li>
+<li>r+ - чтение/запись, содержимое не меняется</li>
+<li>w+ - запись, содержимое исчезает</li>
+<li>r+b - чтение/запись двоичного содержимого, содержимое сохраняется</li>
+<li>w+b - чтение/запись двоичного содержимого, содержимое удаляется</li>
+<li>rb - чтение двоичного файла</li>
+<li>wr - запись двоичного файла, содержимое исчезает</li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Возвращает файловый объект.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;ilnurgi.txt&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="go">type &#39;file&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="id2">
+<h2>Методы файловых объектов<a class="headerlink" href="#id2" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="method">
+<dt id="file.close">
+<code class="descclassname">file.</code><code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#file.close" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Закрывает файловый объект</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="file.fileno">
+<code class="descclassname">file.</code><code class="descname">fileno</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#file.fileno" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает целочисленный дескриптор файла</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="file.flush">
+<code class="descclassname">file.</code><code class="descname">flush</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#file.flush" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Выталкивает буферы вывода</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="file.isatty">
+<code class="descclassname">file.</code><code class="descname">isatty</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#file.isatty" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Интерактивный терминал</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="file.read">
+<code class="descclassname">file.</code><code class="descname">read</code><span class="sig-paren">(</span><span class="optional">[</span><em>n</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#file.read" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><strong>n</strong> (<em>int</em>) &#8211; количество читаемых байтов</td>
+</tr>
+</tbody>
+</table>
+<p>Возвращает строку, прочитанные данные из файла.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="go">&#39;123&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="file.readline">
+<code class="descclassname">file.</code><code class="descname">readline</code><span class="sig-paren">(</span><span class="optional">[</span><em>n</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#file.readline" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><strong>n</strong> (<em>int</em>) &#8211; количество читаемых байтов</td>
+</tr>
+</tbody>
+</table>
+<p>Возвращает строку, прочитанную из файла построчно.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="file.readlines">
+<code class="descclassname">file.</code><code class="descname">readlines</code><span class="sig-paren">(</span><span class="optional">[</span><em>n</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#file.readlines" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает список, строки из файла</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><strong>n</strong> (<em>int</em>) &#8211; количество читаемых байтов</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+<span class="go">[&#39;1&#39;, &#39;2&#39;]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="file.seek">
+<code class="descclassname">file.</code><code class="descname">seek</code><span class="sig-paren">(</span><em>offset</em><span class="optional">[</span>, <em>whence</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#file.seek" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>offset</strong> (<em>int</em>) &#8211; позиция чтения</li>
+<li><strong>whence</strong> (<em>int</em>) &#8211; <p>относительно чего отсчитывается начальная позиция</p>
+<ul>
+<li>io.SEEK_SET или 0 - новое положение отсчитывается от начала файла;</li>
+<li>io.SEEK_CUR или 1 - от конца файла;</li>
+<li>io.SEEK_END или 2 - от текущего положения в файле;</li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Перемещает курсор в файле на определенную позицию</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="file.tell">
+<code class="descclassname">file.</code><code class="descname">tell</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#file.tell" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает текущее положение в файле в байтах от начала файла.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="file.truncate">
+<code class="descclassname">file.</code><code class="descname">truncate</code><span class="sig-paren">(</span><em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#file.truncate" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><strong>size</strong> (<em>int</em>) &#8211; усекаемый размер</td>
+</tr>
+</tbody>
+</table>
+<p>Усекает файл до заданного размера</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="file.write">
+<code class="descclassname">file.</code><code class="descname">write</code><span class="sig-paren">(</span><em>str</em><span class="sig-paren">)</span><a class="headerlink" href="#file.write" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Записывает в файл строку</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&#39;string&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="file.writelines">
+<code class="descclassname">file.</code><code class="descname">writelines</code><span class="sig-paren">(</span><em>iter</em><span class="sig-paren">)</span><a class="headerlink" href="#file.writelines" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Записывает в файл список строк</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="s">&#39;qwert&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="file.closed">
+<code class="descclassname">file.</code><code class="descname">closed</code><a class="headerlink" href="#file.closed" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Состояние файла, закрыт, открыт</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="file.mode">
+<code class="descclassname">file.</code><code class="descname">mode</code><a class="headerlink" href="#file.mode" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Режим ввода-вывода</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="file.softspace">
+<code class="descclassname">file.</code><code class="descname">softspace</code><a class="headerlink" href="#file.softspace" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Логическое значение, сообщающее, должна ли инструкция print выводить пробел перед очередным значением.
+Классы, имитирующие файлы, должны предоставлять атрибут с этим именем, доступный для записи,
+инициализируемый нулем (только в Python 2).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="file.newlines">
+<code class="descclassname">file.</code><code class="descname">newlines</code><a class="headerlink" href="#file.newlines" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Когда файл открывается в режиме поддержки универсального символа перевода строки, этот атрибут будет содержать
+представление символа окончания строки, фактически используемого в файле.
+Значением атрибута может быть None, которое говорит о том, что никаких символов завершения строки не было
+встречено; строка, содержащая ‘n’, ‘r’ или ‘rn’, или кортеж со всеми встреченными символами завершения строки.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="file.encoding">
+<code class="descclassname">file.</code><code class="descname">encoding</code><a class="headerlink" href="#file.encoding" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Строка с названием кодировки файла, если определена (например, &#8216;latin-1&#8217; или &#8216;utf-8&#8217;).
+Если кодировка не используется, этот атрибут имеет значение None.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="file.name">
+<code class="descclassname">file.</code><code class="descname">name</code><a class="headerlink" href="#file.name" title="Ссылка на это определение">¶</a></dt>
+<dd><p>название файла</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="file.buffer">
+<code class="descclassname">file.</code><code class="descname">buffer</code><a class="headerlink" href="#file.buffer" title="Ссылка на это определение">¶</a></dt>
+<dd><p>буфер файлового объекта</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">r&quot;file.txt&quot;</span><span class="p">,</span> <span class="s">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s">&quot;cp1251&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">buffer</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">bytes</span><span class="p">(</span><span class="s">&quot;Cтpoкa&quot;</span><span class="p">,</span> <span class="s">&quot;ср1251&quot;</span><span class="p">))</span>
+<span class="go">6</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Оглавление</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">file - файлы</a><ul>
+<li><a class="reference internal" href="#id1">Функции для работы с файлами</a></li>
+<li><a class="reference internal" href="#id2">Методы файловых объектов</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Предыдущий раздел</h4>
+  <p class="topless"><a href="errors.html"
+                        title="предыдущая глава">exception - исключения</a></p>
+  <h4>Следующий раздел</h4>
+  <p class="topless"><a href="float.html"
+                        title="следующая глава">float - вещественное число</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Эта страница</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/base/files.txt"
+            rel="nofollow">Исходный текст</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Быстрый поиск</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Искать" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Введите слова для поиска или имя модуля, класса или функции.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Алфавитный указатель"
+             >указатель</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="float.html" title="float - вещественное число"
+             >вперёд</a> |</li>
+        <li class="right" >
+          <a href="errors.html" title="exception - исключения"
+             >назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Документация python документация 2015.05.20</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Основные объекты</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright ilnurgi.
+      Создано с помощью <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

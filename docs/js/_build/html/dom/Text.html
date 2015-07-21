@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Text - текстовая последовательность в документе &mdash; js doc 2015.06.26 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2015.06.26',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="js doc 2015.06.26 documentation" href="../index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.26 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="text">
+<h1>Text - текстовая последовательность в документе<a class="headerlink" href="#text" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="Text">
+<em class="property">class </em><code class="descname">Text</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Наследник <a class="reference internal" href="Node.html#Node" title="Node"><code class="xref js js-class docutils literal"><span class="pre">Node()</span></code></a></p>
+<dl class="attribute">
+<dt id="data">
+<code class="descname">data</code><a class="headerlink" href="#data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Текст, со­дер­жа­щий­ся в дан­ном уз­ле.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="length">
+<code class="descname">length</code><a class="headerlink" href="#length" title="Permalink to this definition">¶</a></dt>
+<dd><p>Дли­на тек­ста в сим­во­лах.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="wholeText">
+<code class="descname">wholeText</code><a class="headerlink" href="#wholeText" title="Permalink to this definition">¶</a></dt>
+<dd><p>Тек­сто­вое со­дер­жи­мое дан­но­го уз­ла и лю­бых смеж­ных с ним тек­сто­вых уз­лов, пред­ше­ст­вую­щих ему и сле­дую­щих за ним. По­сле вы­зо­ва ме­то­да normalize() ро­ди­тель­ско­го эле­мен­та Node это свой­ст­во бу­дет иметь то же зна­че­ние, что и свой­ст­во data.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="appendData">
+<code class="descname">appendData</code><span class="sig-paren">(</span><em>string text</em><span class="sig-paren">)</span><a class="headerlink" href="#appendData" title="Permalink to this definition">¶</a></dt>
+<dd><p>До­бав­ля­ет текст text в ко­нец дан­но­го тек­сто­во­го уз­ла.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="deleteData">
+<code class="descname">deleteData</code><span class="sig-paren">(</span><em>unsigned long offset</em>, <em>unsigned long count</em><span class="sig-paren">)</span><a class="headerlink" href="#deleteData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Уда­ля­ет count сим­во­лов из дан­но­го тек­сто­во­го уз­ла, на­чи­ная с сим­во­ла в по­зи­ции offset. Ес­ли сум­ма зна­че­ний offset и count пре­вы­сит ко­ли­че­ст­во сим­во­лов в тек­сто­вом уз­ле, бу­дут уда­ле­ны все сим­во­лы до кон­ца стро­ки, на­чи­ная с сим­во­ла в по­зи­ции offset.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="insertData">
+<code class="descname">insertData</code><span class="sig-paren">(</span><em>unsigned long offset</em>, <em>string text</em><span class="sig-paren">)</span><a class="headerlink" href="#insertData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Встав­ля­ет текст text в тек­сто­вый узел в по­зи­цию offset.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="replaceData">
+<code class="descname">replaceData</code><span class="sig-paren">(</span><em>unsigned long offset</em>, <em>unsigned long count</em>, <em>string text</em><span class="sig-paren">)</span><a class="headerlink" href="#replaceData" title="Permalink to this definition">¶</a></dt>
+<dd><p>За­ме­ща­ет count сим­во­лов, на­чи­ная с по­зи­ции offset, со­дер­жи­мым стро­ки text. Ес­ли сум­ма зна­че­ний offset и count пре­вы­сит зна­че­ние свой­ст­ва length тек­сто­во­го уз­ла, бу­дут за­ме­ще­ны все сим­во­лы, на­чи­ная с по­зи­ции offset.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="replaceWholeText">
+<code class="descname">replaceWholeText</code><span class="sig-paren">(</span><em>string text</em><span class="sig-paren">)</span><a class="headerlink" href="#replaceWholeText" title="Permalink to this definition">¶</a></dt>
+<dd><p>Соз­да­ет но­вый узел Text, со­дер­жа­щий текст text, а за­тем за­ме­ща­ет дан­ный и смеж­ные с ним тек­сто­вые уз­лы но­вым уз­лом и воз­вра­ща­ет но­вый узел. См. так­же опи­са­ние свой­ст­ва wholeText вы­ше и ме­то­да normalize() ин­тер­фей­са Node.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="splitText">
+<code class="descname">splitText</code><span class="sig-paren">(</span><em>unsigned long offset</em><span class="sig-paren">)</span><a class="headerlink" href="#splitText" title="Permalink to this definition">¶</a></dt>
+<dd><p>Раз­би­ва­ет узел Text на два по сме­ще­нию offset. Ис­ход­ный узел Text мо­ди­фи­ци­ру­ет­ся так, что­бы он со­дер­жал весь текст до сим­во­ла в по­зи­ции offset, но не вклю­чая его. Соз­да­ет­ся но­вый узел, ко­то­рый со­дер­жит все сим­во­лы от по­зи­ции offset (вклю­чая ее) до кон­ца стро­ки. Этот но­вый узел Text яв­ля­ет­ся воз­вра­щае­мым зна­че­ни­ем ме­то­да. Кро­ме то­го, ес­ли ис­ход­ный узел Text име­ет ро­ди­тель­ский узел, то но­вый узел встав­ля­ет­ся в ро­ди­тель­ский узел не­по­сред­ст­вен­но по­сле ис­ход­но­го уз­ла.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="substringData">
+<code class="descname">substringData</code><span class="sig-paren">(</span><em>unsigned long offset</em>, <em>unsigned long count</em><span class="sig-paren">)</span><a class="headerlink" href="#substringData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Из­вле­ка­ет и воз­вра­ща­ет под­стро­ку дли­ной count сим­во­лов, на­чи­наю­щую­ся с сим­во­ла в по­зи­ции offset в тек­сте уз­ла Text. Ес­ли узел Text со­дер­жит слиш­ком боль­шой объ­ем тек­ста, этот ме­тод мо­жет ока­зать­ся бо­лее эф­фек­тив­ным, чем ме­тод String.substring().</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/dom/Text.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.26 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

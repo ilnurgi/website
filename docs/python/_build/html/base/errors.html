@@ -1,0 +1,257 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>exception - исключения &mdash; Документация python документация 2015.05.20</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2015.05.20',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Документация python документация 2015.05.20" href="../index.html" />
+    <link rel="up" title="Основные объекты" href="index.html" />
+    <link rel="next" title="file - файлы" href="files.html" />
+    <link rel="prev" title="ellipsis" href="elipsis.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Алфавитный указатель"
+             accesskey="I">указатель</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="files.html" title="file - файлы"
+             accesskey="N">вперёд</a> |</li>
+        <li class="right" >
+          <a href="elipsis.html" title="ellipsis"
+             accesskey="P">назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Документация python документация 2015.05.20</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Основные объекты</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="exception">
+<h1>exception - исключения<a class="headerlink" href="#exception" title="Ссылка на этот заголовок">¶</a></h1>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">try</span><span class="p">:</span>
+<span class="go">        5/0</span>
+<span class="go">    except ZeroDivisionError as err:</span>
+<span class="go">        print err</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s">u&#39;Ошибка какая то&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">MyException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span> <span class="k">pass</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">asset</span> <span class="bp">False</span><span class="p">,</span> <span class="s">u&#39;Данная строка возбудит исключение AssertionError&#39;</span>
+</pre></div>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="83%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">исключение</th>
+<th class="head">описание</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>BaseException</td>
+<td>Базовый класс всех исключений</td>
+</tr>
+<tr class="row-odd"><td>_ GeneratorExit</td>
+<td>Возбуждается методом .close() генераторов</td>
+</tr>
+<tr class="row-even"><td>_ KeyboardInterrupt</td>
+<td>Возбуждается нажатием клавишей прерывания (обычно Ctrl-C)</td>
+</tr>
+<tr class="row-odd"><td>_ SystemExit</td>
+<td>Завершение программы</td>
+</tr>
+<tr class="row-even"><td>_ Exception</td>
+<td>Базовый класс для всех исключений, не связанных с завершением программы</td>
+</tr>
+<tr class="row-odd"><td>__ StopIteration</td>
+<td>Возбуждается для прекращения итераций</td>
+</tr>
+<tr class="row-even"><td>__ StandardError</td>
+<td>Базовый класс для всех встроенных исключений (только в Python 2). В Python 3 – базовый класс всех исключений, наследующих класс Exception</td>
+</tr>
+<tr class="row-odd"><td>___ ArithmeticError</td>
+<td>Базовый класс исключений, возбуждаемых арифметическими операциями</td>
+</tr>
+<tr class="row-even"><td>____ FloatingPointError</td>
+<td>Ошибка операции с плавающей точкой</td>
+</tr>
+<tr class="row-odd"><td>____ ZeroDivisionError</td>
+<td>Деление или деления по модулю на ноль</td>
+</tr>
+<tr class="row-even"><td>___ AssertionError</td>
+<td>Возбуждается инструкциями assert</td>
+</tr>
+<tr class="row-odd"><td>___ AttributeError</td>
+<td>Возбуждается при обращении к несуществующему атрибуту</td>
+</tr>
+<tr class="row-even"><td>___ EnvironmentError</td>
+<td>Ошибка, обусловленная внешними причинами</td>
+</tr>
+<tr class="row-odd"><td>____ IOError</td>
+<td>Ошибка ввода-вывода при работе с файлами</td>
+</tr>
+<tr class="row-even"><td>____ OSError</td>
+<td>Ошибка операционной системы</td>
+</tr>
+<tr class="row-odd"><td>___ EOFError</td>
+<td>Возбуждается по достижении конца файла</td>
+</tr>
+<tr class="row-even"><td>__ ImportError</td>
+<td>Ошибка в инструкции import</td>
+</tr>
+<tr class="row-odd"><td>__ LookupError</td>
+<td>Ошибка обращения по индексу или ключу</td>
+</tr>
+<tr class="row-even"><td>___ IndexError</td>
+<td>Ошибка обращения по индексу за пределами последовательности</td>
+</tr>
+<tr class="row-odd"><td>___ KeyError</td>
+<td>Ошибка обращения к несуществующему ключу словаря</td>
+</tr>
+<tr class="row-even"><td>__ MemoryError</td>
+<td>Нехватка памяти</td>
+</tr>
+<tr class="row-odd"><td>__ NameError</td>
+<td>Не удалось отыскать локальное или глобальное имя</td>
+</tr>
+<tr class="row-even"><td>__ UnboundLocalError</td>
+<td>Ошибка обращения к локальной переменной, которой еще не было присвоено значение</td>
+</tr>
+<tr class="row-odd"><td>__ ReferenceError</td>
+<td>Ошибка обращения к объекту, который уже был уничтожен</td>
+</tr>
+<tr class="row-even"><td>__ RuntimeError</td>
+<td>Универсальное исключение</td>
+</tr>
+<tr class="row-odd"><td>__ NotImplementedError</td>
+<td>Обращение к нереализованному методу или функции</td>
+</tr>
+<tr class="row-even"><td>__ SyntaxError</td>
+<td>Синтаксическая ошибка</td>
+</tr>
+<tr class="row-odd"><td>___ IndentationError</td>
+<td>Ошибка оформления отступов</td>
+</tr>
+<tr class="row-even"><td>____ TabError</td>
+<td>Непоследовательное использование символа табуляции (генерируется при запуске интерпретатора с ключом –tt)</td>
+</tr>
+<tr class="row-odd"><td>__ SystemError</td>
+<td>Нефатальная системная ошибка в интерпретаторе</td>
+</tr>
+<tr class="row-even"><td>__ TypeError</td>
+<td>Попытка выполнить операцию над аргументом недопустимого типа</td>
+</tr>
+<tr class="row-odd"><td>__ ValueError</td>
+<td>Недопустимый тип</td>
+</tr>
+<tr class="row-even"><td>___ UnicodeError</td>
+<td>Ошибка при работе с символами Юникода</td>
+</tr>
+<tr class="row-odd"><td>___ UnicodeDecodeError</td>
+<td>Ошибка декодирования символов Юникода</td>
+</tr>
+<tr class="row-even"><td>___ UnicodeEncodeError</td>
+<td>Ошибка кодирования символов Юникода</td>
+</tr>
+<tr class="row-odd"><td>___ UnicodeTranslateError</td>
+<td>Ошибка трансляции символов Юникода</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Предыдущий раздел</h4>
+  <p class="topless"><a href="elipsis.html"
+                        title="предыдущая глава">ellipsis</a></p>
+  <h4>Следующий раздел</h4>
+  <p class="topless"><a href="files.html"
+                        title="следующая глава">file - файлы</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Эта страница</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/base/errors.txt"
+            rel="nofollow">Исходный текст</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Быстрый поиск</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Искать" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Введите слова для поиска или имя модуля, класса или функции.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Алфавитный указатель"
+             >указатель</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="files.html" title="file - файлы"
+             >вперёд</a> |</li>
+        <li class="right" >
+          <a href="elipsis.html" title="ellipsis"
+             >назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Документация python документация 2015.05.20</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Основные объекты</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright ilnurgi.
+      Создано с помощью <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

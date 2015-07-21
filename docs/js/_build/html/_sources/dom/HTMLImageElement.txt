@@ -1,0 +1,22 @@
+HTMLImageElement (Image)
+========================
+
+.. js:class:: Image()
+
+    .. code-block::
+
+        var img = new Image();
+
+    .. js:attribute:: alt
+    .. js:attribute:: border
+    .. js:attribute:: form
+    .. js:attribute:: text
+    .. js:attribute:: defaultSelected
+    .. js:attribute:: index
+    .. js:attribute:: value
+    .. js:attribute:: selected
+    .. js:attribute:: disabled
+    .. js:attribute:: label
+    .. js:attribute:: height
+    .. js:attribute:: src
+    .. js:attribute:: width

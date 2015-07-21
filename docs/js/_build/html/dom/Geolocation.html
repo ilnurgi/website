@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Geolocation - позволяет получить широту и долготу местоположения пользователя &mdash; js doc 2015.06.26 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2015.06.26',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="js doc 2015.06.26 documentation" href="../index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.26 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="geolocation">
+<h1>Geolocation - позволяет получить широту и долготу местоположения пользователя<a class="headerlink" href="#geolocation" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="Geolocation">
+<em class="property">class </em><code class="descname">Geolocation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Geolocation" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="function">
+<dt id="clearWatch">
+<code class="descname">clearWatch</code><span class="sig-paren">(</span><em>long watchId</em><span class="sig-paren">)</span><a class="headerlink" href="#clearWatch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ос­та­нав­ли­ва­ет сле­же­ние за ме­сто­на­хо­ж­де­ни­ем поль­зо­ва­те­ля. В ар­гу­мен­те watchId долж­но пе­ре­да­вать­ся зна­че­ние, по­лу­чен­ное со­от­вет­ст­вую­щим вы­зо­вом ме­то­да watchPosition().</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="getCurrentPosition">
+<code class="descname">getCurrentPosition</code><span class="sig-paren">(</span><em>function success</em><span class="optional">[</span>, <em>function error</em><span class="optional">]</span><span class="optional">[</span>, <em>object options</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#getCurrentPosition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Асин­хрон­но оп­ре­де­ля­ет ме­сто­на­хо­ж­де­ние поль­зо­ва­те­ля с  уче­том па­ра­мет­ров options (пе­ре­чень свойств объ­ек­та option при­во­дит­ся ни­же). Этот ме­тод не­мед­лен­но воз­вра­ща­ет управ­ле­ние, а ко­гда ме­сто­на­хо­ж­де­ние поль­зо­ва­те­ля бу­дет оп­ре­де­ле­но,ука­зан­ной функ­ции об­рат­но­го вы­зо­ва success бу­дет пе­ре­дан объ­ект Geoposition.</p>
+<p>Или в слу­чае ошиб­ки (воз­мож­но из-за то­го, что поль­зо­ва­тель не дал раз­ре­ше­ние наоп­ре­де­ле­ние его ко­ор­ди­нат) функ­ции об­рат­но­го вы­зо­ва error бу­дет пе­ре­дан объ­ект GeolocationError.</p>
+<ul>
+<li><p class="first"><cite>options</cite> - обычный объект с атрибутами</p>
+<blockquote>
+<div><ul class="simple">
+<li><cite>enableHighAccuracy</cite>. Этот па­ра­метр го­во­рит о же­ла­тель­но­сти оп­ре­де­ле­ния ко­ор­ди­нат с вы­со­кой точ­но­стью, да­же ес­ли это по­вле­чет уве­ли­че­ние рас­хо­да энер­гии в  ак­ку­му­ля­то­рах. По умол­ча­нию име­ет зна­че­ние false. В уст­рой­ст­вах, спо­соб­ных оп­ре­де­лять ме­сто­на­хо­ж­де­ние по­сред­ст­вом из­ме­ре­ния мощ­но­сти сиг­на­лов WiFi или с по­мо­щью GPS, ус­та­нов­ка это­го па­ра­мет­ра в зна­че­ние true обыч­но оз­на­ча­ет «ис­поль­зо­вать GPS».</li>
+<li><cite>maximumAge</cite>. Этот па­ра­метр оп­ре­де­ля­ет мак­си­маль­ное вре­мя (в мил­ли­се­кун­дах), про­шед­шее с то­го мо­мен­та, как объ­ект Geoposition был пе­ре­дан функ­ции об­рат­но­го вы­зо­ва success. По умол­ча­нию име­ет зна­че­ние 0, т. е. ка­ж­дый вы­зов ме­то­да getCurrent­Position() или watchPosition() бу­дет за­но­во оп­ре­де­лять ме­сто­на­хо­ж­де­ние. Ес­ли ус­та­но­вить этот па­ра­метр в зна­че­ние 60000, на­при­мер, то реа­ли­за­ции бу­дет по­зво­ле­но воз­вра­щать лю­бой объ­ект Geoposition, по­лу­чен­ный в те­че­ние по­след­ней ми­ну­ты.</li>
+<li><cite>timeout</cite>. Этот па­ра­метр оп­ре­де­ля­ет про­дол­жи­тель­ность ожи­да­ния вы­пол­не­ния за­про­сав мил­ли­се­кун­дах. По умол­ча­нию име­ет зна­че­ние Infinity. По ис­те­че­нии ука­зан­но­го ин­тер­ва­ла вре­ме­ни бу­дет вы­зва­на функ­ция об­рат­но­го вы­зо­ва error. Об­ра­ти­тевни­ма­ние, что вре­мя ожи­да­ния раз­ре­ше­ния поль­зо­ва­те­ля на по­лу­че­ние его ме­сто­на­хо­ж­де­ния не вхо­дит в это зна­че­ние па­ра­мет­ра timeout.</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</dd></dl>
+
+<dl class="function">
+<dt id="watchPosition">
+<code class="descname">watchPosition</code><span class="sig-paren">(</span><em>function success</em><span class="optional">[</span>, <em>function error</em><span class="optional">]</span><span class="optional">[</span>, <em>object options</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#watchPosition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Этот ме­тод по­хож на ме­тод getCurrentPosition(), но по­сле оп­ре­де­ле­ния те­ку­ще­го ме­сто­на­хо­ж­де­ния поль­зо­ва­те­ля он про­дол­жа­ет сле­дить за его ко­ор­ди­на­та­ми и вы­зы­ва­ет функ­цию success ка­ж­дый раз, ко­гда об­на­ру­жит су­ще­ст­вен­ное их из­ме­не­ние.</p>
+<p>Воз­вра­ща­ет чис­ло, ко­то­рое мож­но пе­ре­дать ме­то­ду clearWatch(), что­бы ос­та­но­витьсле­же­ние за ме­сто­на­хо­ж­де­ни­ем поль­зо­ва­те­ля.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/dom/Geolocation.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.26 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,392 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>e32 &mdash; pys60 14.10.12 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.10.12',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="pys60 14.10.12 documentation" href="../index.html" />
+    <link rel="up" title="Стандартные модули" href="index.html" />
+    <link rel="next" title="e32db" href="e32db.html" />
+    <link rel="prev" title="contacts" href="contacts.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="e32db.html" title="e32db"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="contacts.html" title="contacts"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">pys60 14.10.12 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Стандартные модули</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <span class="target" id="module-e32"></span><div class="section" id="e32">
+<h1>e32<a class="headerlink" href="#e32" title="Permalink to this headline">¶</a></h1>
+<p>Модуль для работы с системными функциями</p>
+<dl class="attribute">
+<dt id="e32.pys60_version">
+<tt class="descclassname">e32.</tt><tt class="descname">pys60_version</tt><a class="headerlink" href="#e32.pys60_version" title="Permalink to this definition">¶</a></dt>
+<dd><p>Информация о версии питона</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">e32</span><span class="o">.</span><span class="n">pys60_version</span>
+<span class="go">&#39;2.0.0&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="e32.pys60_version_info">
+<tt class="descclassname">e32.</tt><tt class="descname">pys60_version_info</tt><a class="headerlink" href="#e32.pys60_version_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Более подробная информация о версии питона</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">e32</span><span class="o">.</span><span class="n">pys60_version_info</span>
+<span class="go">(2, 0, 0, &#39;final&#39;, 0)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="e32.s60_version_info">
+<tt class="descclassname">e32.</tt><tt class="descname">s60_version_info</tt><a class="headerlink" href="#e32.s60_version_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Информация о версии SDK</p>
+<blockquote>
+<div><ul class="simple">
+<li>(1,2) - Series 60 1st Edition</li>
+<li>(2,0) - Series 60 2nd Edition</li>
+<li>(2,6) - Series 60 2nd Edition Feature Pack 2</li>
+<li>(2,8) - Series 60 2nd Edition Feature Pack 3</li>
+<li>(3,0) - Symbian 9.1</li>
+<li>(3,1) - Symbian 9.2</li>
+<li>(3,2) - Symbian 9.3</li>
+<li>(5,0) - Symbian 9.4</li>
+<li>(5,3) - Symbian Belle</li>
+</ul>
+</div></blockquote>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">e32</span><span class="o">.</span><span class="n">s60_version_info</span>
+<span class="go">(2,8)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="e32.ao_callgate">
+<tt class="descclassname">e32.</tt><tt class="descname">ao_callgate</tt><big>(</big><em>wrapped_callable</em><big>)</big><a class="headerlink" href="#e32.ao_callgate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает объект-функцию (на основе функции wrapped_callable), которую можно вызвать из любого потока программы. Функция создает копию функции, которая не задерживает поток на момент его исполнения.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">my_note</span> <span class="o">=</span> <span class="n">e32</span><span class="o">.</span><span class="n">ao_callgate</span><span class="p">(</span><span class="n">appuifw</span><span class="o">.</span><span class="n">note</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">my_note</span><span class="p">(</span><span class="s">u&#39;bla&#39;</span><span class="p">,</span> <span class="s">&#39;info&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="e32.ao_sleep">
+<tt class="descclassname">e32.</tt><tt class="descname">ao_sleep</tt><big>(</big><em>time</em><span class="optional">[</span>, <em>callback</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#e32.ao_sleep" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>time</strong> &#8211; время спячки, сек</li>
+<li><strong>callback</strong> &#8211; обработчик</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Программа засыпает на время</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">e32</span><span class="o">.</span><span class="n">ao_sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="e32.ao_yield">
+<tt class="descclassname">e32.</tt><tt class="descname">ao_yield</tt><big>(</big><big>)</big><a class="headerlink" href="#e32.ao_yield" title="Permalink to this definition">¶</a></dt>
+<dd><p>Функция указывает планировщику обработать системные события. Не позволяет зависнуть программе, интенсивно работающей с данными, поэтому часто используется при осуществлении математических вычислений, в играх и работе с файлами.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="e32.drive_list">
+<tt class="descclassname">e32.</tt><tt class="descname">drive_list</tt><big>(</big><big>)</big><a class="headerlink" href="#e32.drive_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает список дисков</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">e32</span><span class="o">.</span><span class="n">drive_list</span><span class="p">()</span>
+<span class="go">[u&#39;C:&#39;, u&#39;D:&#39;, u&#39;E:&#39;, u&#39;Z:&#39;]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="e32.file_copy">
+<tt class="descclassname">e32.</tt><tt class="descname">file_copy</tt><big>(</big><em>src</em>, <em>dst</em><big>)</big><a class="headerlink" href="#e32.file_copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Копирует файл dst в папку src</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">e32</span><span class="o">.</span><span class="n">file_copy</span><span class="p">(</span><span class="s">&#39;e:</span><span class="se">\\</span><span class="s">&#39;</span><span class="p">,</span><span class="s">&#39;c:</span><span class="se">\1</span><span class="s">.txt</span><span class="se">\&#39;</span><span class="s">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="e32.get_capabilities">
+<tt class="descclassname">e32.</tt><tt class="descname">get_capabilities</tt><big>(</big><big>)</big><a class="headerlink" href="#e32.get_capabilities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает кортеж, капсы приложения</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">e32</span><span class="o">.</span><span class="n">get_capabilities</span><span class="p">()</span>
+<span class="go">(&#39;ReadUserData&#39;,&#39;WriteUserData&#39;)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="e32.has_capabilities">
+<tt class="descclassname">e32.</tt><tt class="descname">has_capabilities</tt><big>(</big><em>caps</em><big>)</big><a class="headerlink" href="#e32.has_capabilities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Проверяет приложение, на наличие капсов caps</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">e32</span><span class="o">.</span><span class="n">has_capabilities</span><span class="p">(</span><span class="s">&#39;WriteUserData&#39;</span><span class="p">,</span> <span class="s">&#39;ReadUserData&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="e32.in_emulator">
+<tt class="descclassname">e32.</tt><tt class="descname">in_emulator</tt><big>(</big><big>)</big><a class="headerlink" href="#e32.in_emulator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Функция возвращает 1, если программа запущена на эмуляторе, и 0 - если на смартфоне.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">e32</span><span class="o">.</span><span class="n">in_emulator</span><span class="p">()</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="e32.inactivity">
+<tt class="descclassname">e32.</tt><tt class="descname">inactivity</tt><big>(</big><big>)</big><a class="headerlink" href="#e32.inactivity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает время простоя смартфона в секундах</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">e32</span><span class="o">.</span><span class="n">inactivity</span><span class="p">()</span>
+<span class="go">234</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="e32.is_ui_thread">
+<tt class="descclassname">e32.</tt><tt class="descname">is_ui_thread</tt><big>(</big><big>)</big><a class="headerlink" href="#e32.is_ui_thread" title="Permalink to this definition">¶</a></dt>
+<dd><p>Функция возвращает 1, если код, который вызвал эту функцию, работает в контексте текущего пользовательского интерфейса, иначе функция возвращает 0.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="e32.reset_inactivity">
+<tt class="descclassname">e32.</tt><tt class="descname">reset_inactivity</tt><big>(</big><big>)</big><a class="headerlink" href="#e32.reset_inactivity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Обнуляет время простоя смартфона в секундах</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">e32</span><span class="o">.</span><span class="n">reset_inactivity</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="e32.set_home_time">
+<tt class="descclassname">e32.</tt><tt class="descname">set_home_time</tt><big>(</big><em>time</em><big>)</big><a class="headerlink" href="#e32.set_home_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Функция устанавливает новое системное время time (в секундах)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="e32.start_exe">
+<tt class="descclassname">e32.</tt><tt class="descname">start_exe</tt><big>(</big><em>filename</em>, <em>command</em><span class="optional">[</span>, <em>wait</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#e32.start_exe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Функция запускает программу по пути filename и передает ему параметр command, wait - имя функции, выполняемая при завершении работы запущенной программы и вернет одно из двух значений: 0 или 2, нормальный или ненормальный выход.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">e32</span><span class="o">.</span><span class="n">start_exe</span><span class="p">(</span><span class="s">&#39;z:</span><span class="se">\\</span><span class="s">system</span><span class="se">\\</span><span class="s">programs</span><span class="se">\\</span><span class="s">apprun.exe&#39;</span><span class="p">,</span> <span class="s">&#39;c:</span><span class="se">\\</span><span class="s">system</span><span class="se">\\</span><span class="s">apps</span><span class="se">\\</span><span class="s">python</span><span class="se">\\</span><span class="s">python.app&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">wait_flag</span><span class="o">=</span><span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">url</span> <span class="o">=</span> <span class="s">&quot;4 http://licensing.symbian.org/&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">exit_type</span> <span class="o">=</span> <span class="n">e32</span><span class="o">.</span><span class="n">start_exe</span><span class="p">(</span><span class="n">application_exe</span><span class="p">,</span><span class="s">&#39; &quot;</span><span class="si">%s</span><span class="s">&quot;&#39;</span> <span class="o">%</span><span class="n">url</span> <span class="p">,</span> <span class="n">wait_flag</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># Открыть html страницу с диска</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">path</span> <span class="o">=</span> <span class="s">&quot;E:/data/saved pages/page.htm&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">url</span> <span class="o">=</span> <span class="s">&quot;file://&quot;</span> <span class="o">+</span> <span class="n">path</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">e32</span><span class="o">.</span><span class="n">start_exe</span><span class="p">(</span><span class="s">&quot;BrowserNG.exe&quot;</span><span class="p">,</span> <span class="s">&quot; </span><span class="se">\&quot;</span><span class="si">%s</span><span class="se">\&quot;</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">url</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Префикс &#8216;4 &#8216;в URL указывает на то что браузер должен запустить указанный URL. Другие стандартные префиксы:</p>
+<blockquote>
+<div><ul class="simple">
+<li>None &lt;Любой текст&gt; - Начать или продолжить работу браузера без указания содержания</li>
+<li>1&lt;Пробел&gt;+&lt;Uid закладки&gt; - Начать или продолжить работу браузера с указанной закладки</li>
+<li>2&lt;Пробел&gt;+&lt;Uid сохраненной страницы&gt; - Начать или продолжить браузера с сохраненной страницы</li>
+<li>3&lt;Пробел&gt;+&lt;URL&gt; - Начать или продолжить работу браузера с указанной URL</li>
+<li>4&lt;Пробел&gt;+&lt;URL&gt;+&lt;Пробел&gt;+&lt;UID AP&gt; - Начать или продолжить работу браузера с указанной закладки и точки доступа</li>
+<li>5&lt;Любой текст&gt; - Начать или продолжить работу браузера со стартовой страницы</li>
+<li>6&lt;Пробел&gt;+&lt;UID закладки папки&gt; - Начать или продолжить работу браузера с указанной папки закладок</li>
+</ul>
+<p>Также можно использовать суффиксы в URL:</p>
+<ul class="simple">
+<li>B - это открытие программы в фоне</li>
+<li>O - open (открытие файла)</li>
+<li>R - read (чтение)</li>
+<li>V - что-то вроде временного файла.</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="e32.start_server">
+<tt class="descclassname">e32.</tt><tt class="descname">start_server</tt><big>(</big><em>filename</em><big>)</big><a class="headerlink" href="#e32.start_server" title="Permalink to this definition">¶</a></dt>
+<dd><p>Функция запускает программу filename (полный путь к файлу в виде строки) как отдельный процесс (т.е. не видно через «Диспетчер задач»). Программе, запущенной таким образом, запрещено использовать модуль appuifw. Обычно используется для создания сервисных процессов (не мозолящих глаза пользователю и выполняющих полезные функции в фоновом режиме) и сопровождаются программой-клиентом для его управления.</p>
+</dd></dl>
+
+<div class="section" id="ao-lock">
+<h2>Ao_lock()<a class="headerlink" href="#ao-lock" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="e32.Ao_lock">
+<em class="property">class </em><tt class="descclassname">e32.</tt><tt class="descname">Ao_lock</tt><a class="headerlink" href="#e32.Ao_lock" title="Permalink to this definition">¶</a></dt>
+<dd><p>Объект-«замок», способный прервать текущий процесс. Не блокируется обработка события текущего пользовательского интерфейса (т.е. программа по-прежнему будет реагировать на нажатия клавиш и т.д.)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="e32.Ao_lock.wait">
+<tt class="descclassname">Ao_lock.</tt><tt class="descname">wait</tt><big>(</big><big>)</big><a class="headerlink" href="#e32.Ao_lock.wait" title="Permalink to this definition">¶</a></dt>
+<dd><p>метод прерывает выполнение текущего потока до того момента, пока не будет вызван метод <a class="reference internal" href="#e32.Ao_lock.signal" title="e32.Ao_lock.signal"><tt class="xref py py-meth docutils literal"><span class="pre">signal()</span></tt></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="e32.Ao_lock.signal">
+<tt class="descclassname">Ao_lock.</tt><tt class="descname">signal</tt><big>(</big><big>)</big><a class="headerlink" href="#e32.Ao_lock.signal" title="Permalink to this definition">¶</a></dt>
+<dd><p>метод сигнализирует о том, что нужно продолжить работу.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="ao-timer">
+<h2>Ao_timer()<a class="headerlink" href="#ao-timer" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="e32.Ao_timer">
+<em class="property">class </em><tt class="descclassname">e32.</tt><tt class="descname">Ao_timer</tt><a class="headerlink" href="#e32.Ao_timer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Объект-таймер, задача которого заменить функцию <a class="reference internal" href="#e32.ao_sleep" title="e32.ao_sleep"><tt class="xref py py-meth docutils literal"><span class="pre">ao_sleep()</span></tt></a> там, где её использование нежелательно. Использование этого объекта также, как и <a class="reference internal" href="#e32.Ao_lock" title="e32.Ao_lock"><tt class="xref py py-class docutils literal"><span class="pre">Ao_lock</span></tt></a>, обходится без блокировки обработки события текущего пользовательского интерфейса.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="e32.Ao_timer.after">
+<tt class="descclassname">Ao_timer.</tt><tt class="descname">after</tt><big>(</big><em>interval</em><span class="optional">[</span>, <em>callback</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#e32.Ao_timer.after" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>interval</strong> &#8211; время таймера (не более 2147 секунд)</li>
+<li><strong>callback</strong> &#8211; обработчик завершения таймера</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>метод прерывает выполнение текущего потока</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="e32.Ao_timer.cancel">
+<tt class="descclassname">Ao_timer.</tt><tt class="descname">cancel</tt><big>(</big><big>)</big><a class="headerlink" href="#e32.Ao_timer.cancel" title="Permalink to this definition">¶</a></dt>
+<dd><p>метод указывает досрочно выйти из «спячки» и продолжить работу</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">timer</span> <span class="o">=</span> <span class="n">e32</span><span class="o">.</span><span class="n">Ao_timer</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">timer</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">1800</span><span class="p">,</span> <span class="n">callback</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">timer</span><span class="o">.</span><span class="n">cancel</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">e32</a><ul>
+<li><a class="reference internal" href="#ao-lock">Ao_lock()</a></li>
+<li><a class="reference internal" href="#ao-timer">Ao_timer()</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="contacts.html"
+                        title="previous chapter">contacts</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="e32db.html"
+                        title="next chapter">e32db</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/moduls_def/e32.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="e32db.html" title="e32db"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="contacts.html" title="contacts"
+             >previous</a> |</li>
+        <li><a href="../index.html">pys60 14.10.12 documentation</a> &raquo;</li>
+          <li><a href="index.html" >Стандартные модули</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

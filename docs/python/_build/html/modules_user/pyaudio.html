@@ -1,0 +1,1076 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>pyaudio - инструмент для работы со звуком &mdash; Документация python документация 2015.05.20</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2015.05.20',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Документация python документация 2015.05.20" href="../index.html" />
+    <link rel="up" title="Сторонние модули" href="index.html" />
+    <link rel="next" title="serial" href="serial.html" />
+    <link rel="prev" title="docx - инструмент для работы с docx форматом" href="docx.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Алфавитный указатель"
+             accesskey="I">указатель</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="serial.html" title="serial"
+             accesskey="N">вперёд</a> |</li>
+        <li class="right" >
+          <a href="docx.html" title="docx - инструмент для работы с docx форматом"
+             accesskey="P">назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Документация python документация 2015.05.20</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Сторонние модули</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <span class="target" id="module-pyaudio"></span><div class="section" id="pyaudio">
+<h1>pyaudio - инструмент для работы со звуком<a class="headerlink" href="#pyaudio" title="Ссылка на этот заголовок">¶</a></h1>
+<p>Модуль позволяет работать с кросплатформенной библиотекой PortAudio, проигрывать и записывать звуки.</p>
+<div class="section" id="id1">
+<h2>Атрибуты модуля<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h2>
+</div>
+<div class="section" id="id2">
+<h2>Методы модуля<a class="headerlink" href="#id2" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="method">
+<dt id="pyaudio.get_format_from_width">
+<code class="descclassname">pyaudio.</code><code class="descname">get_format_from_width</code><span class="sig-paren">(</span><em>width</em>, <em>unsigned-True</em><span class="sig-paren">)</span><a class="headerlink" href="#pyaudio.get_format_from_width" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает <a class="reference internal" href="#sample-formats"><span>Типы образцов</span></a> формата PortAudio для указанной ширины</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first simple">
+<li><strong>width</strong> (<em>int</em>) &#8211; ширина образца в байтах</li>
+<li><strong>unsigned</strong> (<em>bool</em>) &#8211; для ширины 1 байт, знаковый или беззнаковый</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Исключение ValueError:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first last">если ширина не корректна</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyaudio.get_portaudio_version">
+<code class="descclassname">pyaudio.</code><code class="descname">get_portaudio_version</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyaudio.get_portaudio_version" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает версию PortAudio</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">pyaudio</span><span class="o">.</span><span class="n">get_portaudio_version</span><span class="p">()</span>
+<span class="go">1899L</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyaudio.get_portaudio_version_text">
+<code class="descclassname">pyaudio.</code><code class="descname">get_portaudio_version_text</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyaudio.get_portaudio_version_text" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возврашает полную информацию о версии модуля</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">pyaudio</span><span class="o">.</span><span class="n">get_portaudio_version_text</span><span class="p">()</span>
+<span class="go">u&#39;PortAudio V19-devel (built Feb 25 2014 21:09:53)&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyaudio.get_sample_size">
+<code class="descclassname">pyaudio.</code><code class="descname">get_sample_size</code><span class="sig-paren">(</span><em>format</em><span class="sig-paren">)</span><a class="headerlink" href="#pyaudio.get_sample_size" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает размер (в байтах) для заданного формата образца</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><strong>format</strong> &#8211; <a class="reference internal" href="#sample-formats"><span>Типы образцов</span></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Исключение ValueError:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">при неверном типе формата</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id3">
+<h2>Объекты модуля<a class="headerlink" href="#id3" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="pyaudio.PyAudio">
+<em class="property">class </em><code class="descclassname">pyaudio.</code><code class="descname">PyAudio</code><a class="headerlink" href="#pyaudio.PyAudio" title="Ссылка на это определение">¶</a></dt>
+<dd><p>основной объект модуля, который предоставляет возможность работы со звуком.</p>
+<dl class="method">
+<dt id="pyaudio.PyAudio.close">
+<code class="descname">close</code><span class="sig-paren">(</span><em>stream</em><span class="sig-paren">)</span><a class="headerlink" href="#pyaudio.PyAudio.close" title="Ссылка на это определение">¶</a></dt>
+<dd><p>закрывает поток</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><strong>stream</strong> (<a class="reference internal" href="#pyaudio.Stream" title="pyaudio.Stream"><em>pyaudio.Stream</em></a>) &#8211; поток</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Исключение ValueError:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">если потока не существует</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyaudio.PyAudio.get_default_host_api_info">
+<code class="descname">get_default_host_api_info</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyaudio.PyAudio.get_default_host_api_info" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает словарь, содержащий устройства для работы со звуком в системе</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Исключение IOError:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">если нет устройств в системе</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">get_default_host_api_info</span><span class="p">()</span>
+<span class="go">{&#39;defaultInputDevice&#39;: 5L,</span>
+<span class="go"> &#39;defaultOutputDevice&#39;: 5L,</span>
+<span class="go"> &#39;deviceCount&#39;: 6L,</span>
+<span class="go"> &#39;index&#39;: 0L,</span>
+<span class="go"> &#39;name&#39;: u&#39;ALSA&#39;,</span>
+<span class="go"> &#39;structVersion&#39;: 1L,</span>
+<span class="go"> &#39;type&#39;: 8L}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyaudio.PyAudio.get_default_input_device_info">
+<code class="descname">get_default_input_device_info</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyaudio.PyAudio.get_default_input_device_info" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает словарь, содержащий устройства ввода в системе</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">get_default_input_device_info</span><span class="p">()</span>
+<span class="go">{&#39;defaultHighInputLatency&#39;: 0.034829931972789115,</span>
+<span class="go"> &#39;defaultHighOutputLatency&#39;: 0.034829931972789115,</span>
+<span class="go"> &#39;defaultLowInputLatency&#39;: 0.008707482993197279,</span>
+<span class="go"> &#39;defaultLowOutputLatency&#39;: 0.008707482993197279,</span>
+<span class="go"> &#39;defaultSampleRate&#39;: 44100.0,</span>
+<span class="go"> &#39;hostApi&#39;: 0L,</span>
+<span class="go"> &#39;index&#39;: 5L,</span>
+<span class="go"> &#39;maxInputChannels&#39;: 32L,</span>
+<span class="go"> &#39;maxOutputChannels&#39;: 32L,</span>
+<span class="go"> &#39;name&#39;: u&#39;default&#39;,</span>
+<span class="go"> &#39;structVersion&#39;: 2L}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyaudio.PyAudio.get_default_output_device_info">
+<code class="descname">get_default_output_device_info</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyaudio.PyAudio.get_default_output_device_info" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает словарь, содержащий устройства вывода в системе</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">get_default_output_device_info</span><span class="p">()</span>
+<span class="go">{&#39;defaultHighInputLatency&#39;: 0.034829931972789115,</span>
+<span class="go"> &#39;defaultHighOutputLatency&#39;: 0.034829931972789115,</span>
+<span class="go"> &#39;defaultLowInputLatency&#39;: 0.008707482993197279,</span>
+<span class="go"> &#39;defaultLowOutputLatency&#39;: 0.008707482993197279,</span>
+<span class="go"> &#39;defaultSampleRate&#39;: 44100.0,</span>
+<span class="go"> &#39;hostApi&#39;: 0L,</span>
+<span class="go"> &#39;index&#39;: 7L,</span>
+<span class="go"> &#39;maxInputChannels&#39;: 32L,</span>
+<span class="go"> &#39;maxOutputChannels&#39;: 32L,</span>
+<span class="go"> &#39;name&#39;: u&#39;default&#39;,</span>
+<span class="go"> &#39;structVersion&#39;: 2L}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyaudio.PyAudio.get_device_count">
+<code class="descname">get_device_count</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyaudio.PyAudio.get_device_count" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает количесвто устройств</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">get_device_count</span><span class="p">()</span>
+<span class="go">8L</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyaudio.PyAudio.get_device_info_by_host_api_device_index">
+<code class="descname">get_device_info_by_host_api_device_index</code><span class="sig-paren">(</span><em>host_api_index</em>, <em>host_api_device_index</em><span class="sig-paren">)</span><a class="headerlink" href="#pyaudio.PyAudio.get_device_info_by_host_api_device_index" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает словарь, содержащий параметры для указанного устройства.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Raiseы IOError:</th><td class="field-body">для неподдерживаемых устройств</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyaudio.PyAudio.get_device_info_by_index">
+<code class="descname">get_device_info_by_index</code><span class="sig-paren">(</span><em>device_index</em><span class="sig-paren">)</span><a class="headerlink" href="#pyaudio.PyAudio.get_device_info_by_index" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает словарь, информацию об устройстве</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Исключение IOError:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">для неподдерживаемых устройств</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyaudio.PyAudio.get_format_from_width">
+<code class="descname">get_format_from_width</code><span class="sig-paren">(</span><em>width</em>, <em>unsigned-True</em><span class="sig-paren">)</span><a class="headerlink" href="#pyaudio.PyAudio.get_format_from_width" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает <a class="reference internal" href="#sample-formats"><span>Типы образцов</span></a> для указанной ширины. аналог <a class="reference internal" href="#pyaudio.get_format_from_width" title="pyaudio.get_format_from_width"><code class="xref py py-meth docutils literal"><span class="pre">get_format_from_width()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first simple">
+<li><strong>width</strong> (<em>int</em>) &#8211; ширина образца в байтах (от 1 до 4)</li>
+<li><strong>unsigned</strong> (<em>bool</em>) &#8211; для ширины 1 байт, знаковый или беззнаковый</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Raiseы ValueError:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first last">если ширина не корректна</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyaudio.PyAudio.get_host_api_count">
+<code class="descname">get_host_api_count</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyaudio.PyAudio.get_host_api_count" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает количество доступных интерфейсов PortAudio.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">get_host_api_count</span><span class="p">()</span>
+<span class="go">2L</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyaudio.PyAudio.get_host_api_info_by_index">
+<code class="descname">get_host_api_info_by_index</code><span class="sig-paren">(</span><em>host_api_index</em><span class="sig-paren">)</span><a class="headerlink" href="#pyaudio.PyAudio.get_host_api_info_by_index" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает словарь, информацию об устройстве</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Исключение IOError:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">для неподдерживаемых устройств</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyaudio.PyAudio.get_host_api_info_by_type">
+<code class="descname">get_host_api_info_by_type</code><span class="sig-paren">(</span><em>host_api_type</em><span class="sig-paren">)</span><a class="headerlink" href="#pyaudio.PyAudio.get_host_api_info_by_type" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает словарь, информацию об устройстве</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Исключение IOError:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">для неподдерживаемых устройств</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyaudio.PyAudio.get_sample_size">
+<code class="descname">get_sample_size</code><span class="sig-paren">(</span><em>format</em><span class="sig-paren">)</span><a class="headerlink" href="#pyaudio.PyAudio.get_sample_size" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает размер (в байтах) для заданного формата образца, аналог <a class="reference internal" href="#pyaudio.get_sample_size" title="pyaudio.get_sample_size"><code class="xref py py-meth docutils literal"><span class="pre">get_sample_size()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><strong>format</strong> &#8211; <a class="reference internal" href="#sample-formats"><span>Типы образцов</span></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Исключение ValueError:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">при неверном типе формата</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyaudio.PyAudio.is_format_supported">
+<code class="descname">is_format_supported</code><span class="sig-paren">(</span><em>rate</em>, <em>input_device=None</em>, <em>input_channels=None</em>, <em>input_format=None</em>, <em>output_device=None</em>, <em>output_channels=None</em>, <em>output_format=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyaudio.PyAudio.is_format_supported" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает True, если указанная конфигурация поддерживается устройством, иначе возбуждает исключение</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first simple">
+<li><strong>rate</strong> &#8211; скорость потока (в Hz)</li>
+<li><strong>input_device</strong> &#8211; индекс входного устройств. None для полудуплексных выходных потоков</li>
+<li><strong>input_channels</strong> &#8211; количество входных каналов. Игнорируется если input_device не задан</li>
+<li><strong>input_format</strong> &#8211; входной формат PortAudio</li>
+<li><strong>output_device</strong> &#8211; индекс выходного устройства. None для полудуплексных входных потоков</li>
+<li><strong>output_channels</strong> &#8211; количество выходных каналов. Игнорируется если output_device не задан</li>
+<li><strong>output_format</strong> &#8211; выходной формат PortAudio</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Исключение ValueError:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first last">если конфигурация не поддерживается. Исключение в виде кортежа (error string, PortAudio Error Code).</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyaudio.PyAudio.open">
+<code class="descname">open</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pyaudio.PyAudio.open" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает объект <a class="reference internal" href="#pyaudio.Stream" title="pyaudio.Stream"><code class="xref py py-class docutils literal"><span class="pre">Stream</span></code></a>, открывает поток на воспроизведение или чтение звука. принимает те же параметр что и конструктор <a class="reference internal" href="#pyaudio.Stream" title="pyaudio.Stream"><code class="xref py py-class docutils literal"><span class="pre">Stream</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyaudio.PyAudio.terminate">
+<code class="descname">terminate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyaudio.PyAudio.terminate" title="Ссылка на это определение">¶</a></dt>
+<dd><p>закрывает объект</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pyaudio.Stream">
+<em class="property">class </em><code class="descclassname">pyaudio.</code><code class="descname">Stream</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pyaudio.Stream" title="Ссылка на это определение">¶</a></dt>
+<dd><p>звуковой поток. используйте <a class="reference internal" href="#pyaudio.PyAudio.open" title="pyaudio.PyAudio.open"><code class="xref py py-meth docutils literal"><span class="pre">PyAudio.open()</span></code></a> для получения данного объекта</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>PA_manger</strong> &#8211; ссылка на экземпляр PyAudio</li>
+<li><strong>rate</strong> &#8211; скорость потока</li>
+<li><strong>channels</strong> &#8211; количество каналов</li>
+<li><strong>format</strong> &#8211; <a class="reference internal" href="#sample-formats"><span>Типы образцов</span></a></li>
+<li><strong>input</strong> &#8211; указывает, что это входной поток, по умолчанию <cite>False</cite></li>
+<li><strong>output</strong> &#8211; указывает, что это выходной поток, по умолчанию <cite>False</cite></li>
+<li><strong>input_device_index</strong> &#8211; индекс входного устройства, игнорируется, если <cite>input</cite> = <cite>False</cite>. По умолчанию <cite>None</cite>, дефолтное устройство</li>
+<li><strong>output_device_index</strong> &#8211; индекс выходного устройства, игнорируется, если <cite>output</cite> = <cite>False</cite>. По умолчанию <cite>None</cite>, дефолтное устройство</li>
+<li><strong>frames_per_buffer</strong> &#8211; количество фреймов в буфере</li>
+<li><strong>start</strong> &#8211; стартует поток после инициализации сразу, по умолчанию <cite>True</cite></li>
+<li><strong>input_host_api_specific_stream_info</strong> &#8211; указывает на специфичное хост входное устройтсво (<a class="reference internal" href="#pyaudio.PaMacCoreStreamInfo" title="pyaudio.PaMacCoreStreamInfo"><code class="xref py py-class docutils literal"><span class="pre">pyaudio.PaMacCoreStreamInfo</span></code></a>)</li>
+<li><strong>output_host_api_specific_stream_info</strong> &#8211; указывает на специфичное хост выходное устройтсво (<a class="reference internal" href="#pyaudio.PaMacCoreStreamInfo" title="pyaudio.PaMacCoreStreamInfo"><code class="xref py py-class docutils literal"><span class="pre">pyaudio.PaMacCoreStreamInfo</span></code></a>)</li>
+<li><strong>stream_callback</strong> &#8211; обработчик потока, вызывается каждый раз, когда в поток попадают данные. сигнатура обработчика <cite>callback(input_data, frame_count, time_info, status_flag)</cite>, должен возвраващть кортеж (frame_count, flag)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="pyaudio.Stream.close">
+<code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyaudio.Stream.close" title="Ссылка на это определение">¶</a></dt>
+<dd><p>закрывает поток</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyaudio.Stream.get_cpu_load">
+<code class="descname">get_cpu_load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyaudio.Stream.get_cpu_load" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает вещественное число, загрузку процессора</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyaudio.Stream.get_input_latency">
+<code class="descname">get_input_latency</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyaudio.Stream.get_input_latency" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает задержку ввода</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyaudio.Stream.get_output_latency">
+<code class="descname">get_output_latency</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyaudio.Stream.get_output_latency" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает задержку вывода</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyaudio.Stream.get_time">
+<code class="descname">get_time</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyaudio.Stream.get_time" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает количество фреймов, которые могут быть записаны без ожидания</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyaudio.Stream.get_write_available">
+<code class="descname">get_write_available</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyaudio.Stream.get_write_available" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает время потока</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyaudio.Stream.is_active">
+<code class="descname">is_active</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyaudio.Stream.is_active" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает статус состояния потока</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyaudio.Stream.is_stopped">
+<code class="descname">is_stopped</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyaudio.Stream.is_stopped" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает статус состояния потока</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyaudio.Stream.read">
+<code class="descname">read</code><span class="sig-paren">(</span><em>num_frames</em><span class="sig-paren">)</span><a class="headerlink" href="#pyaudio.Stream.read" title="Ссылка на это определение">¶</a></dt>
+<dd><p>читает данные из потока, при записи звука</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyaudio.Stream.start_stream">
+<code class="descname">start_stream</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyaudio.Stream.start_stream" title="Ссылка на это определение">¶</a></dt>
+<dd><p>запускает поток</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyaudio.Stream.stop_stream">
+<code class="descname">stop_stream</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyaudio.Stream.stop_stream" title="Ссылка на это определение">¶</a></dt>
+<dd><p>завершает поток</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyaudio.Stream.write">
+<code class="descname">write</code><span class="sig-paren">(</span><em>frames</em>, <em>num_frames=None</em>, <em>exception_on_underflow=False</em><span class="sig-paren">)</span><a class="headerlink" href="#pyaudio.Stream.write" title="Ссылка на это определение">¶</a></dt>
+<dd><p>записывает в поток данные, например при воспроизведении звука</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>frames</strong> &#8211; данные</li>
+<li><strong>num_frames</strong> &#8211; количество данных для записи в поток</li>
+<li><strong>exception_on_underflow</strong> &#8211; обработка ошибки переполнения потока</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pyaudio.PaMacCoreStreamInfo">
+<em class="property">class </em><code class="descclassname">pyaudio.</code><code class="descname">PaMacCoreStreamInfo</code><span class="sig-paren">(</span><em>flags=None</em>, <em>channel_map=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyaudio.PaMacCoreStreamInfo" title="Ссылка на это определение">¶</a></dt>
+<dd><p>утсройство доступное только на MacOS</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>flags</strong> &#8211; <a class="reference internal" href="#macos-flags"><span>Специфичные типы для MacOS</span></a></li>
+<li><strong>channel_map</strong> &#8211; массив, описывающий отображанеие канала</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="pyaudio.PaMacCoreStreamInfo.get_channel_map">
+<code class="descname">get_channel_map</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyaudio.PaMacCoreStreamInfo.get_channel_map" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает карту канала</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyaudio.PaMacCoreStreamInfo.get_flags">
+<code class="descname">get_flags</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyaudio.PaMacCoreStreamInfo.get_flags" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает флаги</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="sample-formats">
+<span id="id4"></span><h2>Типы образцов<a class="headerlink" href="#sample-formats" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="attribute">
+<dt>
+<code class="descname">paFloat32 - 1</code></dt>
+<dd><p>32-х битный long</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">paInt32 - 2</code></dt>
+<dd><p>32-х битный int</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">paInt24 - 4</code></dt>
+<dd><p>24-х битный int</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">paInt16 - 8</code></dt>
+<dd><p>16 битный int</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">paInt8 - 16</code></dt>
+<dd><p>8 битный int</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">paUint8 - 32</code></dt>
+<dd><p>8 битный беззнаковый int</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">paCustomFormat - 65536</code></dt>
+<dd><p>специальный формат</p>
+</dd></dl>
+
+</div>
+<div class="section" id="id5">
+<h2>Типы рузльтатов обработчика записи<a class="headerlink" href="#id5" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="attribute">
+<dt>
+<code class="descname">paContinue - 0</code></dt>
+<dd><p>следующитй блок потока</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">paComplete - 1</code></dt>
+<dd><p>последний блок потока</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">paAbort - 2</code></dt>
+<dd><p>обнаружена ошибка, остановить проигрывание или запись</p>
+</dd></dl>
+
+</div>
+<div class="section" id="id6">
+<h2>Типы флагов обработчика<a class="headerlink" href="#id6" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="attribute">
+<dt>
+<code class="descname">paInputUnderflow - 1</code></dt>
+<dd><p>входной буфер не заполнен</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">paInputOverflow - 2</code></dt>
+<dd><p>входной буфер переполнен</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">paOutputUnderflow - 4</code></dt>
+<dd><p>выходной поток не заполнен</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">paOutputOverflow - 8</code></dt>
+<dd><p>выходной поток переполнен</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">paPrimingOutput - 16</code></dt>
+<dd><p>подготовка, но ещё не воспроизведение</p>
+</dd></dl>
+
+</div>
+<div class="section" id="id7">
+<h2>Типы устройств<a class="headerlink" href="#id7" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="attribute">
+<dt>
+<code class="descname">paInDevelopment - 0</code></dt>
+<dd><p>Still in development</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">paDirectSound - 1</code></dt>
+<dd><p>DirectSound (Windows only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">paMME - 2</code></dt>
+<dd><p>Multimedia Extension (Windows only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">paASIO - 3</code></dt>
+<dd><p>Steinberg Audio Stream Input/Output</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">paSoundManager - 4</code></dt>
+<dd><p>SoundManager (OSX only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">paCoreAudio - 5</code></dt>
+<dd><p>CoreAudio (OSX only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">paOSS - 7</code></dt>
+<dd><p>Open Sound System (Linux only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">paALSA - 8</code></dt>
+<dd><p>Advanced Linux Sound Architecture (Linux only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">paAL - 9</code></dt>
+<dd><p>Open Audio Library</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">paBeOS - 10</code></dt>
+<dd><p>BeOS Sound System</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">paWDMKS - 11</code></dt>
+<dd><p>Windows Driver Model (Windows only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">paJACK - 12</code></dt>
+<dd><p>JACK Audio Connection Kit</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">paWASAPI - 13</code></dt>
+<dd><p>Windows Vista Audio stack architecture</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">paNoDevice - -1</code></dt>
+<dd><p>нет актуалного устройства</p>
+</dd></dl>
+
+</div>
+<div class="section" id="id8">
+<h2>Типы ошибок<a class="headerlink" href="#id8" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="pyaudio.paNoError">
+<em class="property">class </em><code class="descclassname">pyaudio.</code><code class="descname">paNoError</code><a class="headerlink" href="#pyaudio.paNoError" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="pyaudio.paNotInitialized">
+<em class="property">class </em><code class="descclassname">pyaudio.</code><code class="descname">paNotInitialized</code><a class="headerlink" href="#pyaudio.paNotInitialized" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="pyaudio.paUnanticipatedHostError">
+<em class="property">class </em><code class="descclassname">pyaudio.</code><code class="descname">paUnanticipatedHostError</code><a class="headerlink" href="#pyaudio.paUnanticipatedHostError" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="pyaudio.paInvalidChannelCount">
+<em class="property">class </em><code class="descclassname">pyaudio.</code><code class="descname">paInvalidChannelCount</code><a class="headerlink" href="#pyaudio.paInvalidChannelCount" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="pyaudio.paInvalidSampleRate">
+<em class="property">class </em><code class="descclassname">pyaudio.</code><code class="descname">paInvalidSampleRate</code><a class="headerlink" href="#pyaudio.paInvalidSampleRate" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="pyaudio.paInvalidDevice">
+<em class="property">class </em><code class="descclassname">pyaudio.</code><code class="descname">paInvalidDevice</code><a class="headerlink" href="#pyaudio.paInvalidDevice" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="pyaudio.paInvalidFlag">
+<em class="property">class </em><code class="descclassname">pyaudio.</code><code class="descname">paInvalidFlag</code><a class="headerlink" href="#pyaudio.paInvalidFlag" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="pyaudio.paSampleFormatNotSupported">
+<em class="property">class </em><code class="descclassname">pyaudio.</code><code class="descname">paSampleFormatNotSupported</code><a class="headerlink" href="#pyaudio.paSampleFormatNotSupported" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="pyaudio.paBadIODeviceCombination">
+<em class="property">class </em><code class="descclassname">pyaudio.</code><code class="descname">paBadIODeviceCombination</code><a class="headerlink" href="#pyaudio.paBadIODeviceCombination" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="pyaudio.paInsufficientMemory">
+<em class="property">class </em><code class="descclassname">pyaudio.</code><code class="descname">paInsufficientMemory</code><a class="headerlink" href="#pyaudio.paInsufficientMemory" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="pyaudio.paBufferTooBig">
+<em class="property">class </em><code class="descclassname">pyaudio.</code><code class="descname">paBufferTooBig</code><a class="headerlink" href="#pyaudio.paBufferTooBig" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="pyaudio.paBufferTooSmall">
+<em class="property">class </em><code class="descclassname">pyaudio.</code><code class="descname">paBufferTooSmall</code><a class="headerlink" href="#pyaudio.paBufferTooSmall" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="pyaudio.paNullCallback">
+<em class="property">class </em><code class="descclassname">pyaudio.</code><code class="descname">paNullCallback</code><a class="headerlink" href="#pyaudio.paNullCallback" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="pyaudio.paBadStreamPtr">
+<em class="property">class </em><code class="descclassname">pyaudio.</code><code class="descname">paBadStreamPtr</code><a class="headerlink" href="#pyaudio.paBadStreamPtr" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="pyaudio.paTimedOut">
+<em class="property">class </em><code class="descclassname">pyaudio.</code><code class="descname">paTimedOut</code><a class="headerlink" href="#pyaudio.paTimedOut" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="pyaudio.paInternalError">
+<em class="property">class </em><code class="descclassname">pyaudio.</code><code class="descname">paInternalError</code><a class="headerlink" href="#pyaudio.paInternalError" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="pyaudio.paDeviceUnavailable">
+<em class="property">class </em><code class="descclassname">pyaudio.</code><code class="descname">paDeviceUnavailable</code><a class="headerlink" href="#pyaudio.paDeviceUnavailable" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="pyaudio.paIncompatibleHostApiSpecificStreamInfo">
+<em class="property">class </em><code class="descclassname">pyaudio.</code><code class="descname">paIncompatibleHostApiSpecificStreamInfo</code><a class="headerlink" href="#pyaudio.paIncompatibleHostApiSpecificStreamInfo" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="pyaudio.paStreamIsStopped">
+<em class="property">class </em><code class="descclassname">pyaudio.</code><code class="descname">paStreamIsStopped</code><a class="headerlink" href="#pyaudio.paStreamIsStopped" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="pyaudio.paStreamIsNotStopped">
+<em class="property">class </em><code class="descclassname">pyaudio.</code><code class="descname">paStreamIsNotStopped</code><a class="headerlink" href="#pyaudio.paStreamIsNotStopped" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="pyaudio.paInputOverflow">
+<em class="property">class </em><code class="descclassname">pyaudio.</code><code class="descname">paInputOverflow</code><a class="headerlink" href="#pyaudio.paInputOverflow" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="pyaudio.paOutputUnderflowed">
+<em class="property">class </em><code class="descclassname">pyaudio.</code><code class="descname">paOutputUnderflowed</code><a class="headerlink" href="#pyaudio.paOutputUnderflowed" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="pyaudio.paHostApiNotFound">
+<em class="property">class </em><code class="descclassname">pyaudio.</code><code class="descname">paHostApiNotFound</code><a class="headerlink" href="#pyaudio.paHostApiNotFound" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="pyaudio.paInvalidHostApi">
+<em class="property">class </em><code class="descclassname">pyaudio.</code><code class="descname">paInvalidHostApi</code><a class="headerlink" href="#pyaudio.paInvalidHostApi" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="pyaudio.paCanNotReadFromACallbackStream">
+<em class="property">class </em><code class="descclassname">pyaudio.</code><code class="descname">paCanNotReadFromACallbackStream</code><a class="headerlink" href="#pyaudio.paCanNotReadFromACallbackStream" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="pyaudio.paCanNotWriteToACallbackStream">
+<em class="property">class </em><code class="descclassname">pyaudio.</code><code class="descname">paCanNotWriteToACallbackStream</code><a class="headerlink" href="#pyaudio.paCanNotWriteToACallbackStream" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="pyaudio.paCanNotReadFromAnOutputOnlyStream">
+<em class="property">class </em><code class="descclassname">pyaudio.</code><code class="descname">paCanNotReadFromAnOutputOnlyStream</code><a class="headerlink" href="#pyaudio.paCanNotReadFromAnOutputOnlyStream" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="pyaudio.paCanNotWriteToAnInputOnlyStream">
+<em class="property">class </em><code class="descclassname">pyaudio.</code><code class="descname">paCanNotWriteToAnInputOnlyStream</code><a class="headerlink" href="#pyaudio.paCanNotWriteToAnInputOnlyStream" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="pyaudio.paIncompatibleStreamHostApi">
+<em class="property">class </em><code class="descclassname">pyaudio.</code><code class="descname">paIncompatibleStreamHostApi</code><a class="headerlink" href="#pyaudio.paIncompatibleStreamHostApi" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="macos">
+<span id="macos-flags"></span><h2>Специфичные типы для MacOS<a class="headerlink" href="#macos" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="attribute">
+<dt id="pyaudio.paMacCoreChangeDeviceParameters">
+<code class="descclassname">pyaudio.</code><code class="descname">paMacCoreChangeDeviceParameters</code><a class="headerlink" href="#pyaudio.paMacCoreChangeDeviceParameters" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="pyaudio.paMacCoreFailIfConversionRequired">
+<code class="descclassname">pyaudio.</code><code class="descname">paMacCoreFailIfConversionRequired</code><a class="headerlink" href="#pyaudio.paMacCoreFailIfConversionRequired" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="pyaudio.paMacCoreConversionQualityMin">
+<code class="descclassname">pyaudio.</code><code class="descname">paMacCoreConversionQualityMin</code><a class="headerlink" href="#pyaudio.paMacCoreConversionQualityMin" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="pyaudio.paMacCoreConversionQualityMedium">
+<code class="descclassname">pyaudio.</code><code class="descname">paMacCoreConversionQualityMedium</code><a class="headerlink" href="#pyaudio.paMacCoreConversionQualityMedium" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="pyaudio.paMacCoreConversionQualityLow">
+<code class="descclassname">pyaudio.</code><code class="descname">paMacCoreConversionQualityLow</code><a class="headerlink" href="#pyaudio.paMacCoreConversionQualityLow" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="pyaudio.paMacCoreConversionQualityHigh">
+<code class="descclassname">pyaudio.</code><code class="descname">paMacCoreConversionQualityHigh</code><a class="headerlink" href="#pyaudio.paMacCoreConversionQualityHigh" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="pyaudio.paMacCoreConversionQualityMax">
+<code class="descclassname">pyaudio.</code><code class="descname">paMacCoreConversionQualityMax</code><a class="headerlink" href="#pyaudio.paMacCoreConversionQualityMax" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="pyaudio.paMacCorePlayNice">
+<code class="descclassname">pyaudio.</code><code class="descname">paMacCorePlayNice</code><a class="headerlink" href="#pyaudio.paMacCorePlayNice" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="pyaudio.paMacCorePro">
+<code class="descclassname">pyaudio.</code><code class="descname">paMacCorePro</code><a class="headerlink" href="#pyaudio.paMacCorePro" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="pyaudio.paMacCoreMinimizeCPUButPlayNice">
+<code class="descclassname">pyaudio.</code><code class="descname">paMacCoreMinimizeCPUButPlayNice</code><a class="headerlink" href="#pyaudio.paMacCoreMinimizeCPUButPlayNice" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="pyaudio.paMacCoreMinimizeCPU">
+<code class="descclassname">pyaudio.</code><code class="descname">paMacCoreMinimizeCPU</code><a class="headerlink" href="#pyaudio.paMacCoreMinimizeCPU" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="id9">
+<h2>Примеры<a class="headerlink" href="#id9" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre>&quot;&quot;&quot;проигрывание wav файла, блокирующий поток выполнения&quot;&quot;&quot;
+
+import pyaudio
+import wave
+import sys
+
+CHUNK - 1024
+
+if len(sys.argv) &lt; 2:
+    print(&quot;Plays a wave file.\n\nUsage: %s filename.wav&quot; % sys.argv[0])
+    sys.exit(-1)
+
+wf - wave.open(sys.argv[1], &#39;rb&#39;)
+
+# instantiate PyAudio (1)
+p - pyaudio.PyAudio()
+
+# open stream (2)
+stream - p.open(format-p.get_format_from_width(wf.getsampwidth()),
+                channels-wf.getnchannels(),
+                rate-wf.getframerate(),
+                output-True)
+
+# read data
+data - wf.readframes(CHUNK)
+
+# play stream (3)
+while data !- &#39;&#39;:
+    stream.write(data)
+    data - wf.readframes(CHUNK)
+
+# stop stream (4)
+stream.stop_stream()
+stream.close()
+
+# close PyAudio (5)
+p.terminate()
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="sd">&quot;&quot;&quot;проигрывание wav файла, не блокирующий поток&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">pyaudio</span>
+<span class="kn">import</span> <span class="nn">wave</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;Plays a wave file.</span><span class="se">\n\n</span><span class="s">Usage: </span><span class="si">%s</span><span class="s"> filename.wav&quot;</span> <span class="o">%</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">wf</span> <span class="o">-</span> <span class="n">wave</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s">&#39;rb&#39;</span><span class="p">)</span>
+
+<span class="c"># instantiate PyAudio (1)</span>
+<span class="n">p</span> <span class="o">-</span> <span class="n">pyaudio</span><span class="o">.</span><span class="n">PyAudio</span><span class="p">()</span>
+
+<span class="c"># define callback (2)</span>
+<span class="k">def</span> <span class="nf">callback</span><span class="p">(</span><span class="n">in_data</span><span class="p">,</span> <span class="n">frame_count</span><span class="p">,</span> <span class="n">time_info</span><span class="p">,</span> <span class="n">status</span><span class="p">):</span>
+    <span class="n">data</span> <span class="o">-</span> <span class="n">wf</span><span class="o">.</span><span class="n">readframes</span><span class="p">(</span><span class="n">frame_count</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">pyaudio</span><span class="o">.</span><span class="n">paContinue</span><span class="p">)</span>
+
+<span class="c"># open stream using callback (3)</span>
+<span class="n">stream</span> <span class="o">-</span> <span class="n">p</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">format</span><span class="o">-</span><span class="n">p</span><span class="o">.</span><span class="n">get_format_from_width</span><span class="p">(</span><span class="n">wf</span><span class="o">.</span><span class="n">getsampwidth</span><span class="p">()),</span>
+                <span class="n">channels</span><span class="o">-</span><span class="n">wf</span><span class="o">.</span><span class="n">getnchannels</span><span class="p">(),</span>
+                <span class="n">rate</span><span class="o">-</span><span class="n">wf</span><span class="o">.</span><span class="n">getframerate</span><span class="p">(),</span>
+                <span class="n">output</span><span class="o">-</span><span class="bp">True</span><span class="p">,</span>
+                <span class="n">stream_callback</span><span class="o">-</span><span class="n">callback</span><span class="p">)</span>
+
+<span class="c"># start the stream (4)</span>
+<span class="n">stream</span><span class="o">.</span><span class="n">start_stream</span><span class="p">()</span>
+
+<span class="c"># wait for stream to finish (5)</span>
+<span class="k">while</span> <span class="n">stream</span><span class="o">.</span><span class="n">is_active</span><span class="p">():</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+
+<span class="c"># stop stream (6)</span>
+<span class="n">stream</span><span class="o">.</span><span class="n">stop_stream</span><span class="p">()</span>
+<span class="n">stream</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">wf</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="c"># close PyAudio (7)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">terminate</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Оглавление</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">pyaudio - инструмент для работы со звуком</a><ul>
+<li><a class="reference internal" href="#id1">Атрибуты модуля</a></li>
+<li><a class="reference internal" href="#id2">Методы модуля</a></li>
+<li><a class="reference internal" href="#id3">Объекты модуля</a></li>
+<li><a class="reference internal" href="#sample-formats">Типы образцов</a></li>
+<li><a class="reference internal" href="#id5">Типы рузльтатов обработчика записи</a></li>
+<li><a class="reference internal" href="#id6">Типы флагов обработчика</a></li>
+<li><a class="reference internal" href="#id7">Типы устройств</a></li>
+<li><a class="reference internal" href="#id8">Типы ошибок</a></li>
+<li><a class="reference internal" href="#macos">Специфичные типы для MacOS</a></li>
+<li><a class="reference internal" href="#id9">Примеры</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Предыдущий раздел</h4>
+  <p class="topless"><a href="docx.html"
+                        title="предыдущая глава">docx - инструмент для работы с docx форматом</a></p>
+  <h4>Следующий раздел</h4>
+  <p class="topless"><a href="serial.html"
+                        title="следующая глава">serial</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Эта страница</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/modules_user/pyaudio.txt"
+            rel="nofollow">Исходный текст</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Быстрый поиск</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Искать" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Введите слова для поиска или имя модуля, класса или функции.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Алфавитный указатель"
+             >указатель</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="serial.html" title="serial"
+             >вперёд</a> |</li>
+        <li class="right" >
+          <a href="docx.html" title="docx - инструмент для работы с docx форматом"
+             >назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Документация python документация 2015.05.20</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Сторонние модули</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright ilnurgi.
+      Создано с помощью <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

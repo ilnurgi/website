@@ -1,0 +1,353 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>The “py2sis” command &mdash; pys60 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="pys60 0.1 documentation" href="../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../index.html">pys60 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="the-py2sis-command">
+<h1>The &#8220;py2sis&#8221; command<a class="headerlink" href="#the-py2sis-command" title="Permalink to this headline">¶</a></h1>
+<p>SYNOPSIS</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>$ ensymble.py py2sis</dt>
+<dd>[&#8211;uid=0x01234567] [&#8211;appname=AppName] [&#8211;version=1.0.0]
+[&#8211;lang=EN,...] [&#8211;icon=icon.svg] [&#8211;shortcaption=&#8221;App. Name&#8221;,...]
+[&#8211;caption=&#8221;Application Name&#8221;,...] [&#8211;drive=C]
+[&#8211;textfile=mytext_%C.txt] [&#8211;cert=mycert.cer] [&#8211;privkey=mykey.key]
+[&#8211;passphrase=12345] [&#8211;caps=Cap1+Cap2+...]
+[&#8211;vendor=&#8221;Vendor Name&#8221;,...] [&#8211;autostart]
+[&#8211;encoding=terminal,filesystem] [&#8211;verbose]
+&lt;src&gt; [sisfile]</dd>
+</dl>
+</div></blockquote>
+<p>DESCRIPTION</p>
+<p>The &#8220;py2sis&#8221; command is used to pack a Python for S60 application script
+and its auxiliary files (if any) into a Symbian installation package
+(SIS).</p>
+<p>PARAMETERS</p>
+<blockquote>
+<div>src</div></blockquote>
+<p>The source script or directory name. When a directory name is given, the
+directory structure is preserved under an application specific private
+directory (&#8220;private&lt;uid&gt;&#8221;) on the phone. A file called &#8220;default.py&#8221;
+is required to exist on the root of the directory given. This will be
+the main file that starts the application. (See option &#8220;&#8211;extrasdir&#8221;
+below for more options for file placement.)</p>
+<p>When a regular file name is given, it will be located under the
+application specific private directory, with the name &#8220;default.py&#8221;.</p>
+<blockquote>
+<div>sisfile</div></blockquote>
+<p>Path of the SIS file to create. If a directory name is given, output
+file name is derived from input file name and application version (see
+option &#8220;&#8211;version&#8221; below). This is also the case when no SIS file name
+is given.</p>
+<blockquote>
+<div>&#8211;appname=AppName
+-n AppName</div></blockquote>
+<p>Name of the application. If no application name is given, it will be
+derived from the input file name.</p>
+<p>This name is used as the base for all generated file names (EXE, icon,
+resources) on the phone. It will also be used as the default caption if
+none are given, and a temporary UID (see option &#8220;&#8211;uid&#8221; below) will be
+generated from application name if not given explicitly.</p>
+<blockquote>
+<div>&#8211;uid=0x01234567
+-u 0x01234567</div></blockquote>
+<p>Symbian UID for the application. If the UID option is not given, the
+main Python file (&#8220;default.py&#8221;, see parameter &#8220;src&#8221; above) will be
+scanned for a special string. If no UID can be found, a temporary UID is
+generated from the application name (see option &#8220;&#8211;appname&#8221; and command
+&#8220;genuid&#8221; above).</p>
+<p>The special UID string can appear anywhere in the main Python file,
+including comments and as part of string literals. It is of the form</p>
+<blockquote>
+<div>SYMBIAN_UID = UID</div></blockquote>
+<p>, where whitespace around the equals sign is optional. UID is in the
+same format as with the command line parameter (see option &#8220;&#8211;uid&#8221;
+above).</p>
+<p>Note: Use a real UID for all applications to be distributed. The
+auto-generated test-range UID is only meant for development and testing,
+not for real applications. UIDs can be ordered from Symbian Signed [12].
+If you have already ordered UIDs for 1st or 2nd Edition phones, to use
+these UIDs in 3rd Edition phones the first hex digit (a &#8220;1&#8221;) needs to be
+changed to an &#8220;f&#8221;.</p>
+<p>Also note: When changing the application name (or source file /
+directory name in case no application name is explicitly given), the
+temporary UID changes and the SIS package will be considered a new
+application on the phone, unless an UID is explicitly specified.</p>
+<blockquote>
+<div>&#8211;version=1.0.0
+-r 1.0.0</div></blockquote>
+<p>Application version: X.Y.Z or X,Y,Z (major, minor, build). There may be
+a &#8220;v&#8221; or &#8220;V&#8221; in front of the major number. Minor and build numbers are
+optional.</p>
+<p>If the version option is not given, the main Python file (&#8220;default.py&#8221;,
+see parameter &#8220;src&#8221; above) will be scanned for a special string. If no
+version can be found, it defaults to 1.0.0.</p>
+<p>The special version string can appear anywhere in the main Python file,
+including comments and as part of string literals. It is of the form</p>
+<blockquote>
+<div>SIS_VERSION = &#8220;1.0.0&#8221;</div></blockquote>
+<p>, where whitespace around the equals sign is optional. Version is in the
+same format as with the command line parameter (see option &#8220;&#8211;version&#8221;
+above), except that it may optionally be enclosed in single or double
+quotes.</p>
+<blockquote>
+<div>&#8211;lang=EN,...
+-l EN,...</div></blockquote>
+<p>Comma separated list of two-character language codes. These are the
+languages that the SIS file claims to support, English by default.
+Application must then somehow determine which language was selected
+during install. Symbian installation tools reference [13] lists the
+available language codes.</p>
+<blockquote>
+<div>&#8211;icon=icon.svg
+-i icon.svg</div></blockquote>
+<p>Icon file in SVG-Tiny format. If no icon is given, the Python logo is
+used as the icon. The Python logo is a trademark of the Python Software
+Foundation.</p>
+<p>Ensymble does not support the old style MBM bitmap icons.</p>
+<blockquote>
+<div><p>&#8211;shortcaption=&#8221;App. Name&#8221;,...
+-s &#8220;App. Name&#8221;,...</p>
+<p class="attribution">&mdash;caption=&#8221;Application Name&#8221;,...
+-c &#8220;Application Name&#8221;,...</p>
+</div></blockquote>
+<p>Comma separated list of short and long captions in all selected
+languages, i.e. there must be as many comma separated captions as there
+are languages listed with the &#8220;&#8211;lang&#8221; option. If no captions are given,
+application name is used (see option &#8220;&#8211;appname&#8221; above). If only the
+short captions are given, long captions will use those instead.</p>
+<p>Captions are visible names used in various places on the phone display.
+Short caption is displayed under the application icon when using the
+grid layout. Long caption is used on top of the screen when the
+application is launched and beside the icon in list layout. Long caption
+is also used as the package name, which is displayed during application
+installation.</p>
+<blockquote>
+<div>&#8211;drive=C
+-f C</div></blockquote>
+<p>Installation drive &#8220;C&#8221; or &#8220;E&#8221; or &#8220;any&#8221;, to select where the SIS is to be
+installed. Default is &#8220;any&#8221;, which causes the phone to ask the user
+where to install the package.</p>
+<blockquote>
+<div>&#8211;extrasdir=root
+-x root</div></blockquote>
+<p>Name of &#8220;extras&#8221; directory under the application source directory. The
+extras directory contains a directory tree which is placed under the
+root of the installation drive, instead of in the application private
+directory. If no extras directory name is given, this feature is
+disabled.</p>
+<p>Option &#8220;&#8211;extrasdir&#8221; is similar to the &#8220;simplesis&#8221; command (see below).
+It allows placing files under &#8220;sysbin&#8221; and &#8220;resource&#8221;, for example.</p>
+<blockquote>
+<div>&#8211;textfile=mytext_%C.txt
+-t mytext_%C.txt</div></blockquote>
+<p>Text file (or pattern, see below) to display during install. If none is
+given, no extra text will be displayed during install.</p>
+<p>Files to display are in UTF-8 encoding, without Byte-Order Marker (BOM).
+The file name may contain formatting characters that are substituted for
+each selected language (see option &#8220;&#8211;lang&#8221; above). If no formatting
+characters are present, the same text will be used for all languages.</p>
+<blockquote>
+<div>%%           - literal %
+%n           - language number (01 - 99)
+%c           - two-character language code in lowercase letters
+%C           - two-character language code in capital letters
+%l           - language name in English, using only lowercase letters
+%l           - language name in English, using mixed case letters</div></blockquote>
+<p>For example, if there are files named &#8220;mytext_EN.txt&#8221;, &#8220;mytext_GE.txt&#8221;
+and &#8220;mytext_SP.txt&#8221;, a pattern of &#8220;mytext_%C.txt&#8221; will be able to use
+them.</p>
+<blockquote>
+<div>&#8211;cert=mycert.cer
+-a mycert.cer</div></blockquote>
+<p>Certificate to use for signing in PEM (text) format.</p>
+<p>SIS files for Symbian OS v9 and later are required to be digitally
+signed. Unsigned packages will not install on the phone. A
+self-generated (&#8220;self-signed&#8221; in crypto parlance) certificate will do,
+but only a restricted subset of features (&#8220;capabilities&#8221;, see option
+&#8220;&#8211;caps&#8221; below) are available for self-signed applications.</p>
+<p>If no certificate and its private key are given, Ensymble uses a default
+self-signed certificate. Software authors are encouraged to create their
+own unique certificates for SIS packages that are to be distributed.</p>
+<blockquote>
+<div>&#8211;privkey=mykey.key
+-k mykey.key</div></blockquote>
+<p>Private key of the certificate in PEM (text) format. If option &#8220;&#8211;cert&#8221;
+(above) is given, this option is required as well.</p>
+<blockquote>
+<div>&#8211;passphrase=12345
+-p 12345</div></blockquote>
+<p>Pass phrase of the private key.</p>
+<p>Note: Using command line options to give the pass phrase is insecure.
+Any user of the computer will be able to see command lines of started
+programs and thus will see the pass phrase in plain view. Instead,
+standard input should be used (see examples below).</p>
+<p>If no pass phrase is given on the command line or standard input, it
+will be asked interactively.</p>
+<blockquote>
+<div>&#8211;caps=Cap1+Cap2+...
+-b Cap1+Cap2+...</div></blockquote>
+<p>or</p>
+<blockquote>
+<div>&#8211;caps=0x12345
+-b 0x12345</div></blockquote>
+<p>Capability names separated by &#8220;+&#8221; or a numeric capability bitmask. If no
+capability option is given, the application will not have any special
+capabilities. Symbian Signed [12] has an FAQ which explains all the
+available capabilities.</p>
+<blockquote>
+<div>&#8211;vendor=Name,...
+-d Name,...</div></blockquote>
+<p>Comma separated list of vendor names in all selected languages, i.e.
+there must be as many comma separated vendor names as there are
+languages listed with the &#8220;&#8211;lang&#8221; option. Alternatively, if only one
+vendor name is given, it will be used for all languages. If no vendor
+names are given then &#8220;Ensymble&#8221; will be used.</p>
+<p>Vendor name is visible during installation and on the Application
+manager, except when using self-signed certificates (see option &#8220;&#8211;cert&#8221;
+above).</p>
+<blockquote>
+<div>&#8211;autostart
+-g</div></blockquote>
+<p>Flag to control automatic startup of the application. On S60 3rd Edition
+phones, an application can register itself to be automatically started
+when the phone is turned on.</p>
+<p>Note: Self-signed applications and applications with UID in the
+unprotected range cannot register to be automatically started (see
+options &#8220;&#8211;uid&#8221; and &#8220;&#8211;cert&#8221; above).</p>
+<blockquote>
+<div>&#8211;runinstall
+-R</div></blockquote>
+<p>Run the application after installation. After copying all files to the
+phone, the application is automatically started.</p>
+<p>Note: Phones will ignore this flag in SIS files using self-signed
+certificates (see option &#8220;&#8211;cert&#8221; above).</p>
+<blockquote>
+<div>&#8211;heapsize=min,max
+-H min,max</div></blockquote>
+<p>Heap size limits for the application. Defaults of 4 kilobytes and one
+megabyte are used if no heap size option is given. If only one value is
+given, it is used as both the heap minimum and heap maximum value.</p>
+<p>Values may have suffix &#8220;k&#8221; or &#8220;M&#8221; (case insensitive) to denote kilobytes
+(1024 bytes) and megabytes (1048576 bytes), respectively.</p>
+<p>The heap minimum value determines if a program is allowed to start. If
+less than the set amount of memory is available, program start-up fails.
+The heap maximum value limits the memory a program can allocate. Memory
+allocations beyond the set limit will fail. The default of one megabyte
+is usually enough, but processing large datasets such as images from an
+integrated camera might require setting the heap maximum value higher.</p>
+<p>EXAMPLES</p>
+<p>Note: The command lines below may be wrapped over multiple lines due to
+layout constraints. In reality, each of them should be contained in one
+physical command line.</p>
+<blockquote>
+<div>$ ensymble.py py2sis myprog.py</div></blockquote>
+<p>This generates a SIS file called &#8220;myprog_v1_0_0.sis&#8221; in current working
+directory. This SIS file is ready to be uploaded to a S60 3rd Edition
+phone. Package version defaults to 1.0.0, a test-range UID is
+auto-generated for the package and a default self-signed certificate is
+used to digitally sign the SIS file. A default icon (the Python logo) is
+used for application icon.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>$ echo &#8220;12345&#8221; | ensymble.py py2sis</dt>
+<dd>&#8211;cert mycert.cer &#8211;privkey mykey.key
+myprog.py</dd>
+</dl>
+</div></blockquote>
+<p>Pass phrase can be given in Ensymble standard input, so that it will not
+be visible to all users of the computer (see option &#8220;&#8211;passphrase&#8221;
+above).</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/ensymble/py2sis.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../index.html">pys60 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, ilnurgi.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

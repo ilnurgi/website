@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>bisect &mdash; Документация python документация 2015.05.20</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2015.05.20',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Документация python документация 2015.05.20" href="../index.html" />
+    <link rel="up" title="Основные модули" href="index.html" />
+    <link rel="next" title="calendar" href="calendar.html" />
+    <link rel="prev" title="atexit" href="atexit.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Алфавитный указатель"
+             accesskey="I">указатель</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="calendar.html" title="calendar"
+             accesskey="N">вперёд</a> |</li>
+        <li class="right" >
+          <a href="atexit.html" title="atexit"
+             accesskey="P">назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Документация python документация 2015.05.20</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Основные модули</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <span class="target" id="module-bisect"></span><div class="section" id="bisect">
+<h1>bisect<a class="headerlink" href="#bisect" title="Ссылка на этот заголовок">¶</a></h1>
+<p>Модуль bisect обеспечивает возможность поддержания списков в отсортированном состоянии. В своей работе он опирается в основном на использование алгоритма двоичного поиска.</p>
+<dl class="method">
+<dt id="bisect.bisect">
+<code class="descclassname">bisect.</code><code class="descname">bisect</code><span class="sig-paren">(</span><em>list</em>, <em>item</em><span class="optional">[</span>, <em>low</em><span class="optional">[</span>, <em>high</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#bisect.bisect" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>low</strong> &#8211; индекс начала области поиска списка</li>
+<li><strong>hight</strong> &#8211; индекс конца области поиска списка</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Возвращает индекс в списке, куда следует вставить значение, чтобы сохранить этот список в отсортированном порядке. Если значение уже присутствует в списке, возвращаемый индекс всегда будет правее существующего элемента списка.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="bisect.bisect_left">
+<code class="descclassname">bisect.</code><code class="descname">bisect_left</code><span class="sig-paren">(</span><em>list</em>, <em>item</em><span class="optional">[</span>, <em>low</em><span class="optional">[</span>, <em>high</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#bisect.bisect_left" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>low</strong> &#8211; индекс начала области поиска списка</li>
+<li><strong>hight</strong> &#8211; индекс конца области поиска списка</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Возвращает индекс в списке, куда следует вставить значение, чтобы сохранить этот список в отсортированном порядке. Если значение items уже присутствует в списке, возвращаемый индекс всегда будет левее существующего элемента списка.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="bisect.bisect_right">
+<code class="descclassname">bisect.</code><code class="descname">bisect_right</code><span class="sig-paren">(</span><em>list</em>, <em>item</em><span class="optional">[</span>, <em>low</em><span class="optional">[</span>, <em>high</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#bisect.bisect_right" title="Ссылка на это определение">¶</a></dt>
+<dd><p>То же, что и функция <a class="reference internal" href="#module-bisect" title="bisect"><code class="xref py py-meth docutils literal"><span class="pre">bisect()</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="bisect.insort">
+<code class="descclassname">bisect.</code><code class="descname">insort</code><span class="sig-paren">(</span><em>list</em>, <em>item</em><span class="optional">[</span>, <em>low</em><span class="optional">[</span>, <em>high</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#bisect.insort" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>low</strong> &#8211; индекс начала области поиска списка</li>
+<li><strong>hight</strong> &#8211; индекс конца области поиска списка</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Вставляет элемент в список с учетом порядка сортировки. Если значение item уже присутствует в списке, новый элемент вставляется правее его.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="bisect.insort_left">
+<code class="descclassname">bisect.</code><code class="descname">insort_left</code><span class="sig-paren">(</span><em>list</em>, <em>item</em><span class="optional">[</span>, <em>low</em><span class="optional">[</span>, <em>high</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#bisect.insort_left" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>low</strong> &#8211; индекс начала области поиска списка</li>
+<li><strong>hight</strong> &#8211; индекс конца области поиска списка</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Вставляет элемент в список с учетом порядка сортировки. Если значение item уже присутствует в списке, новый элемент вставляется левее его.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="bisect.insort_right">
+<code class="descclassname">bisect.</code><code class="descname">insort_right</code><span class="sig-paren">(</span><em>list</em>, <em>item</em><span class="optional">[</span>, <em>low</em><span class="optional">[</span>, <em>high</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#bisect.insort_right" title="Ссылка на это определение">¶</a></dt>
+<dd><p>То же, что и <a class="reference internal" href="#bisect.insort" title="bisect.insort"><code class="xref py py-meth docutils literal"><span class="pre">insort()</span></code></a>.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Предыдущий раздел</h4>
+  <p class="topless"><a href="atexit.html"
+                        title="предыдущая глава">atexit</a></p>
+  <h4>Следующий раздел</h4>
+  <p class="topless"><a href="calendar.html"
+                        title="следующая глава">calendar</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Эта страница</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/modules/bisect.txt"
+            rel="nofollow">Исходный текст</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Быстрый поиск</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Искать" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Введите слова для поиска или имя модуля, класса или функции.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Алфавитный указатель"
+             >указатель</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="calendar.html" title="calendar"
+             >вперёд</a> |</li>
+        <li class="right" >
+          <a href="atexit.html" title="atexit"
+             >назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Документация python документация 2015.05.20</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Основные модули</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright ilnurgi.
+      Создано с помощью <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

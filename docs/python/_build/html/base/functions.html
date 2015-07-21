@@ -1,0 +1,952 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function - функция &mdash; Документация python документация 2015.05.20</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2015.05.20',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Документация python документация 2015.05.20" href="../index.html" />
+    <link rel="up" title="Основные объекты" href="index.html" />
+    <link rel="next" title="int - числа" href="int.html" />
+    <link rel="prev" title="frozenset - неизменяемые множества" href="frozenset.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Алфавитный указатель"
+             accesskey="I">указатель</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="int.html" title="int - числа"
+             accesskey="N">вперёд</a> |</li>
+        <li class="right" >
+          <a href="frozenset.html" title="frozenset - неизменяемые множества"
+             accesskey="P">назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Документация python документация 2015.05.20</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Основные объекты</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="function">
+<h1>function - функция<a class="headerlink" href="#function" title="Ссылка на этот заголовок">¶</a></h1>
+<div class="section" id="id1">
+<h2>Стандартные функции<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="method">
+<dt id="any">
+<code class="descname">any</code><span class="sig-paren">(</span><em>iter</em><span class="sig-paren">)</span><a class="headerlink" href="#any" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает True если хотя бы один из объектов интерируемого объекта True.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="all">
+<code class="descname">all</code><span class="sig-paren">(</span><em>iter</em><span class="sig-paren">)</span><a class="headerlink" href="#all" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает True если все элементы интерируемого объекта True.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="compile">
+<code class="descname">compile</code><span class="sig-paren">(</span><em>string</em>, <em>filename</em>, <em>kind</em><span class="optional">[</span>, <em>flags=0</em><span class="optional">[</span>, <em>dont_inherit</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#compile" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Компилирует строку в байт-код.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first simple">
+<li><strong>string</strong> &#8211; строка</li>
+<li><strong>filename</strong> &#8211; файл, в котором эта строка определена</li>
+<li><strong>kind</strong> &#8211; тип компилируемого кода</li>
+<li><strong>flags</strong> &#8211; определяет, какие дополнительные особенности (включенные в модуль __future__) должны быть активированы. Эти особенности перечисляются в виде флагов, объявленных в модуле __future__, с помощью побитовой операции ИЛИ.</li>
+<li><strong>dont_inherit</strong> &#8211; если установлен, активируются только особенности, перечисленные в аргументе flags, – особенности, действующие в текущей версии, игнорируются.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Переменные:</th><td class="field-body"><ul class="first last simple">
+<li><strong>kind</strong> &#8211; &#8216;single&#8217; – для единственной инструкции, &#8216;exec&#8217; – для множества инструкций и &#8216;eval&#8217; – для выражений.</li>
+<li><a class="reference internal" href="../modules/sys.html#sys.flags" title="sys.flags"><strong>flags</strong></a> &#8211; __future__.division.compiler_flag.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="delattr">
+<code class="descname">delattr</code><span class="sig-paren">(</span><em>obj</em>, <em>attr</em><span class="sig-paren">)</span><a class="headerlink" href="#delattr" title="Ссылка на это определение">¶</a></dt>
+<dd><p>удаляет атрибут из объекта</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dir">
+<code class="descname">dir</code><span class="sig-paren">(</span><span class="optional">[</span><em>obj</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#dir" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает список, содержащий глобальные свойства и методы, иначе возвращает свойства и методы аргумента.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">dir</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="s">&#39;__builtins__&#39;</span><span class="p">,</span> <span class="s">&#39;__doc__&#39;</span><span class="p">,</span> <span class="s">&#39;__name__&#39;</span><span class="p">,</span> <span class="s">&#39;__package__&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">os</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">dir</span><span class="p">(</span><span class="n">os</span><span class="p">)</span>
+<span class="go">[...&#39;read&#39;, &#39;remove&#39;, &#39;removedirs&#39;, ...]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="enumerate">
+<code class="descname">enumerate</code><span class="sig-paren">(</span><em>iter[, initial_value</em><span class="sig-paren">)</span><a class="headerlink" href="#enumerate" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает объект итератор, который воспроизводит последовательность кортежей, содержащих порядковый номер итерации и значение, полученное от объекта iter.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="nb">enumerate</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">next</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="go">(0, 1)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">next</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="go">(1, 2)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">next</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="go">Traceback (most receпt са11 1ast):</span>
+<span class="go">    File &quot;&lt;pyshe11#10&gt;&quot;, 1iпе 1, iп &lt;modu1e&gt;</span>
+<span class="go">        next(obj)</span>
+<span class="go">Stopiteratioп</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="go">        print i</span>
+<span class="go">(0, 1)</span>
+<span class="go">(1, 2)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="eval">
+<code class="descname">eval</code><span class="sig-paren">(</span><em>x</em><span class="optional">[</span>, <em>globals</em>, <em>locals</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#eval" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Преобразует строковый объект, в объект питона, а также выполняет выражение аргумента</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">eval</span><span class="p">(</span><span class="s">&#39;[1, 2, 3, 4]&#39;</span><span class="p">)</span>
+<span class="go">[1, 2, 3, 4]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="exec">
+<code class="descname">exec</code><span class="sig-paren">(</span><em>x</em><span class="optional">[</span>, <em>globals</em>, <em>locals</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#exec" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Выполняет выражение аргумента</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="filter">
+<code class="descname">filter</code><span class="sig-paren">(</span><em>func</em>, <em>iter</em><span class="sig-paren">)</span><a class="headerlink" href="#filter" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>func</strong> &#8211; функция, обработчик</li>
+<li><strong>iter</strong> (<a class="reference internal" href="#iter" title="iter"><em>iter</em></a>) &#8211; обрабатываемый объект</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Возвращает список, состоящий из тех элементов объекта, для которых обработчик является истинной</p>
+<div class="versionchanged">
+<p><span class="versionmodified">Изменено в версии 3.x: </span>возвращает объект генератор</p>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="go">        for y in xrange(2, x):</span>
+<span class="go">            if x%y == 0:</span>
+<span class="go">                return 0</span>
+<span class="go">            else:</span>
+<span class="go">                return 1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">filter</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">40</span><span class="p">))</span>
+<span class="go">[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">filter</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">[],</span> <span class="bp">None</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="go">[1, 2]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="getattr">
+<code class="descname">getattr</code><span class="sig-paren">(</span><em>obj</em>, <em>attr</em><span class="optional">[</span>, <em>default</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#getattr" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает значение атрибута объекта</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="globals">
+<code class="descname">globals</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#globals" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает словарь текущего модуля, который представляет глобальное пространство имен. При вызове из функции или метода возвращает глобальное пространство имен для модуля, в котором была определена эта функция или метод.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="hasattr">
+<code class="descname">hasattr</code><span class="sig-paren">(</span><em>object</em>, <em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#hasattr" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает True, аргумент name является именем атрибута объекта object. В противном случае возвращается значение False. Аргумент name должен быть строкой.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="hash">
+<code class="descname">hash</code><span class="sig-paren">(</span><em>object</em><span class="sig-paren">)</span><a class="headerlink" href="#hash" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает целочисленное значение хеша для объекта object (если это возможно). Значения хешей в первую очередь используются в реализациях словарей, множеств и других объектов отображений. Два объекта, которые признаются равными, имеют одинаковые значения хешей. Изменяемые объекты не поддерживают возможность вычисления хеша, однако пользовательские объекты могут определять метод __hash__(), чтобы обеспечить поддержку этой операции.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="help">
+<code class="descname">help</code><span class="sig-paren">(</span><span class="optional">[</span><em>object</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#help" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Обращается к справочной системе во время интерактивных сеансов. Аргумент object может быть строкой с именем модуля, класса, функции, метода, с ключевым словом или названием раздела в документации. Если передается объект какого-либо другого типа, будет воспроизведена справочная информация для этого объекта. При вызове без аргумента будет запущен инструмент предоставления интерактивной справки с дополнительной информацией.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="id">
+<code class="descname">id</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#id" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возврващает число, уникальный идентификатор объекта</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="input">
+<code class="descname">input</code><span class="sig-paren">(</span><span class="optional">[</span><em>message</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#input" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><strong>message</strong> (<em>str</em>) &#8211; строка, которая выведется в stdout</td>
+</tr>
+</tbody>
+</table>
+<p>Возврващает число, полученное со stdin.</p>
+<div class="versionchanged">
+<p><span class="versionmodified">Изменено в версии 3.x: </span>с 3 версии возвращает строку</p>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>&gt;&gt;&gt; x = input(u&#39;Введите число\n&#39;)
+Введите число
+1
+&gt;&gt;&gt; х
+1
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="isinstance">
+<code class="descname">isinstance</code><span class="sig-paren">(</span><em>obj</em>, <em>type</em><span class="sig-paren">)</span><a class="headerlink" href="#isinstance" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает True | False, если типом объекта является сравниваемый тип.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="go">0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="issubclass">
+<code class="descname">issubclass</code><span class="sig-paren">(</span><em>obj</em>, <em>type</em><span class="sig-paren">)</span><a class="headerlink" href="#issubclass" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает True | False, если объект является подклассом типа.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="iter">
+<code class="descname">iter</code><span class="sig-paren">(</span><em>object</em><span class="optional">[</span>, <em>sentinel</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#iter" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает итератор, воспроизводящий элементы объекта object. Если аргумент sentinel опущен, объект object должен реализовать либо метод __iter__(), который создает итератор, либо метод __getitem__(), который принимает целочисленные аргументы со значениями, начиная с 0. При наличии аргумента sentinel аргумент object интерпретируется иначе. В этом случае объект object должен быть вызываемым объектом, не принимающим аргументов. Возвращаемый им итератор будет вызываться этой функцией в цикле до тех пор, пока он не вернет значение, равное значению аргумента sentinel, после чего итерации будут остановлены. Если объект object не поддерживает итерации, будет возбуждено исключение TypeError.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="len">
+<code class="descname">len</code><span class="sig-paren">(</span><em>object</em><span class="sig-paren">)</span><a class="headerlink" href="#len" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает число, длину оъекта</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="s">&#39;ilnurgi&#39;</span><span class="p">)</span>
+<span class="go">7</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="locals">
+<code class="descname">locals</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#locals" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает словарь, представляющий текущую локальную таблицу символов</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">locals</span><span class="p">()</span>
+<span class="go">{&#39;__builtins__&#39;: , &#39;__package__&#39;: None, &#39;i&#39;: &#39;ilnur&#39;, &#39;__name__&#39;: &#39;__main__&#39;, &#39;__doc__&#39;: None}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="map">
+<code class="descname">map</code><span class="sig-paren">(</span><em>func</em>, <em>iter1</em><span class="optional">[</span>, <em>iter2</em>, <em>...</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#map" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>func</strong> &#8211; функция, обработчик</li>
+<li><strong>iter</strong> &#8211; итерируемый объект</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>применяет функцию к каждому элементу последовательности и возвращает список результатов. можно передать несколько последовательностей, то в функцию будет передаваться сразу несколько элементов, рсположенных в последовательностях на одинаковом смещении. Если количество элементов в nоследовательностях будет разным, то в качестве ограничения выбирается nоследовательность с минимальным количеством элементов.</p>
+<div class="versionchanged">
+<p><span class="versionmodified">Изменено в версии 3.Х: </span>возвращает объект генератор</p>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="p">(</span><span class="nb">unicode</span><span class="p">,</span> <span class="s">&#39;qw&#39;</span><span class="p">)</span>
+<span class="go">[u&#39;q&#39;, u&#39;w&#39;]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="max">
+<code class="descname">max</code><span class="sig-paren">(</span><em>iter</em><span class="sig-paren">)</span><a class="headerlink" href="#max" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает максимальный элемент итерирумого объекта</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">max</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="go">6</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="min">
+<code class="descname">min</code><span class="sig-paren">(</span><em>iter</em><span class="sig-paren">)</span><a class="headerlink" href="#min" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает минимальный элемент итерируемого бъекта</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">min</span><span class="p">(</span><span class="s">&#39;ilnurgi&#39;</span><span class="p">)</span>
+<span class="go">&#39;i&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="next">
+<code class="descname">next</code><span class="sig-paren">(</span><em>s</em><span class="optional">[</span>, <em>default</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#next" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает следующий элемент итератора s. После того как все элементы итератора будут исчерпаны, возбуждает исключение StopIteration, если не указано значение по умолчанию в аргументе default. В противном случае возвращается значение по умолчанию.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="print">
+<code class="descname">print</code><span class="sig-paren">(</span><em>args</em><span class="optional">[</span>, <em>sep=' '</em>, <em>end='n'</em>, <em>file=sys.stdout</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#print" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>args</strong> &#8211; объекты для вывода</li>
+<li><strong>sep</strong> (<em>str</em>) &#8211; разделитель объектов</li>
+<li><strong>end</strong> (<em>str</em>) &#8211; окончание строки вывода</li>
+<li><strong>file</strong> (<em>file</em>) &#8211; объект, куда выводятся данные</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Вывод последовательности значений в файловый объект</p>
+<div class="versionchanged">
+<p><span class="versionmodified">Изменено в версии 3.Х: </span>начиная с 3 версии питона, print стала функцией</p>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="p">(</span><span class="s">&#39;1&#39;</span><span class="p">,</span> <span class="s">&#39;2&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="property">
+<code class="descname">property</code><span class="sig-paren">(</span><span class="optional">[</span><em>fget</em><span class="optional">[</span>, <em>fset</em><span class="optional">[</span>, <em>fdel</em><span class="optional">[</span>, <em>doc</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#property" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>fget</strong> (<a class="reference internal" href="../modules_user/xlrd.html#xlrd.Name.func" title="xlrd.Name.func"><em>func</em></a>) &#8211; функция, возвращающая значение атрибута</li>
+<li><strong>fset</strong> (<a class="reference internal" href="../modules_user/xlrd.html#xlrd.Name.func" title="xlrd.Name.func"><em>func</em></a>) &#8211; устанавливает новое значение атрибута</li>
+<li><strong>fdel</strong> (<a class="reference internal" href="../modules_user/xlrd.html#xlrd.Name.func" title="xlrd.Name.func"><em>func</em></a>) &#8211; удаляет атрибут</li>
+<li><strong>doc</strong> (<em>str</em>) &#8211; документация</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Создает атрибут-свойство класса</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">MyClass</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="nf">init</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">var</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">v</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">var</span>
+
+    <span class="nd">@v.setter</span>
+    <span class="k">def</span> <span class="nf">v</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">var</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="nd">@v.deleter</span>
+    <span class="k">def</span> <span class="nf">v</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">var</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="range">
+<code class="descname">range</code><span class="sig-paren">(</span><em>[A=0, ] B[,C=1]]</em><span class="sig-paren">)</span><a class="headerlink" href="#range" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>А</strong> &#8211; начало</li>
+<li><strong>В</strong> &#8211; конечная позиция</li>
+<li><strong>С</strong> &#8211; шаг</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Возвращает сгенерированный список.</p>
+<div class="versionchanged">
+<p><span class="versionmodified">Изменено в версии 3.x: </span>с 3 версии возвращает генератор</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>
+<span class="go">range(0, 3)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="go">0, 1, 2</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+<span class="go">range(0, 2)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="mi">1</span> <span class="ow">in</span> <span class="n">a</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c"># возвращает индекс искомого объекта, возбуждает исключение ValueError</span>
+<span class="go">0</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c"># возвращает количесвто элементов</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="go">[0, 1, 2]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="go">[1, 3]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="raw_input">
+<code class="descname">raw_input</code><span class="sig-paren">(</span><span class="optional">[</span><em>comment</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#raw_input" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возврващает строку, полученную со stdin.</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt;&gt;&gt; x = raw_input(&#39;Введите текст\n&#39;)
+Введите текст
+ilnurgi.ru
+&gt;&gt;&gt; х
+&#39;ilnurgi.ru&#39;
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="reduce">
+<code class="descname">reduce</code><span class="sig-paren">(</span><em>function</em>, <em>items</em><span class="optional">[</span>, <em>initial</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#reduce" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>function</strong> &#8211; функция обработчик, принимает два параметра: накопленное и текущее значение</li>
+<li><strong>items</strong> &#8211; итерируемый объект</li>
+<li><strong>initial</strong> &#8211; начальное значение</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Применяет функцию к парам элементов в итерируемом объекте и возвращает единственное накопленное значение. Функция должна принимать два аргумента, накопленное и текущее значение.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="repr">
+<code class="descname">repr</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#repr" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает строковый объект аргумента.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">repr</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="go">&#39;[1, 2, 3, 4]&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="reversed">
+<code class="descname">reversed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#reversed" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Создает итератор для обхода последовательности s в обратном порядке.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="setattr">
+<code class="descname">setattr</code><span class="sig-paren">(</span><em>object</em>, <em>name</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#setattr" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Создает в объекте object атрибут name и записывает в него значение value. Аргумент name должен быть строкой. Выполняет ту же операцию, что и инструкция object.name = value.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sorted">
+<code class="descname">sorted</code><span class="sig-paren">(</span><em>list</em><span class="optional">[</span>, <em>key</em>, <em>reverse</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#sorted" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>list</strong> &#8211; итерируемый объект</li>
+<li><strong>key</strong> &#8211; параметр для сортировки</li>
+<li><strong>reverse</strong> &#8211; True | False обратный порядок</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Возвращает список, отсортированный</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">([</span><span class="s">&#39;567&#39;</span><span class="p">,</span> <span class="s">&#39;34566&#39;</span><span class="p">,</span><span class="s">&#39;1&#39;</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="nb">len</span><span class="p">)</span>
+<span class="go">[&#39;1&#39;, &#39;567&#39;, &#39;34566&#39;]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="staticmethod">
+<code class="descname">staticmethod</code><span class="sig-paren">(</span><em>func</em><span class="sig-paren">)</span><a class="headerlink" href="#staticmethod" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Создает статический метод класса. Эта функция неявно вызывается декоратором &#64;staticmethod.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sum">
+<code class="descname">sum</code><span class="sig-paren">(</span><em>iter</em><span class="optional">[</span>, <em>initial=0</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#sum" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parma iter:</th><td class="field-body">последовательность</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Параметры:</th><td class="field-body"><strong>initial</strong> &#8211; начальное значение</td>
+</tr>
+</tbody>
+</table>
+<p>Возвращает число, сумму элементов последовательности</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">sum</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">)),</span> <span class="nb">sum</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+<span class="go">100, 102</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="super">
+<code class="descname">super</code><span class="sig-paren">(</span><em>type</em><span class="optional">[</span>, <em>object</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#super" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает объект, представляющий суперклассы типа type. Чаще всего возвращаемый объект используется для вызова методов базового класса.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">B</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">foo</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="type">
+<code class="descname">type</code><span class="sig-paren">(</span><em>a</em><span class="sig-paren">)</span><a class="headerlink" href="#type" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает строку, тип аргумента</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="go">&#39;int&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">type</code><span class="sig-paren">(</span><em>name</em>, <em>bases</em>, <em>dict</em><span class="sig-paren">)</span></dt>
+<dd><p>Создает новый объект type (как как при объявлении нового класса). В аргументе name передается имя типа, в аргументе bases – кортеж базовых классов, а в аргументе dict – словарь, содержащий определения, соответствующие телу класса. Чаще всего эта функция используется при работе с метаклассами.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="xrange">
+<code class="descname">xrange</code><span class="sig-paren">(</span><em>A</em><span class="optional">[</span>, <em>B</em><span class="optional">[</span>, <em>C</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#xrange" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>А</strong> &#8211; количество элементов или начальная позиция</li>
+<li><strong>В</strong> &#8211; конечная позиция</li>
+<li><strong>С</strong> &#8211; шаг</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Возвращает объект генератор.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
+<span class="go">        print i</span>
+<span class="go"># 0</span>
+<span class="go"># 1</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="unicode">
+<code class="descname">unicode</code><span class="sig-paren">(</span><em>object</em><span class="sig-paren">)</span><a class="headerlink" href="#unicode" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает юникод строку, преобразованный из аргумента</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="vars">
+<code class="descname">vars</code><span class="sig-paren">(</span><span class="optional">[</span><em>obj</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#vars" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает идентификаторы</p>
+<ul class="simple">
+<li>если вызывается без параметра внутри функции, то возвращается словарь с локальными идентификаторами</li>
+<li>если вызывается без параметра вне функции, то возвращается словарь сс глобальными идентификаторами</li>
+<li>при указании объекта, возвращается инденификаторы объекта (obj.__dict__)</li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="zip">
+<code class="descname">zip</code><span class="sig-paren">(</span><em>&lt;Последовательность1&gt;</em>, <em>&lt;Последовательность2&gt;</em>, <em>...</em><span class="sig-paren">)</span><a class="headerlink" href="#zip" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает список кортежей, содержащий элемент последовательностей, которые расположены на одинаковом смещении. Если количество элементов в nоследовательностях будет разным, то в результат nоnадут только элементы, которые существуют во всех nоследовательностях на одинаковом смеше­нии.</p>
+<div class="versionchanged">
+<p><span class="versionmodified">Изменено в версии 3.x: </span>возвращает объект генератор</p>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">zip</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">))</span>
+<span class="go">[(1,4,7), (2,5,8), (3,6,9)]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<p>Атрибуты встроенных функции</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="11%" />
+<col width="89%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">атрибут</th>
+<th class="head">описание</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>b.__doc__</td>
+<td>Строка документирования</td>
+</tr>
+<tr class="row-odd"><td>b.__name__</td>
+<td>Имя функции/метода</td>
+</tr>
+<tr class="row-even"><td>b.__self__</td>
+<td>Ссылка на экземпляр, ассоциированный с данным методом (для связанных методов)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="lambda">
+<h2>lambda функции<a class="headerlink" href="#lambda" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">*</span><span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
+<span class="go">        print f(i)</span>
+<span class="go">2</span>
+<span class="go">4</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>Пользовательски функции<a class="headerlink" href="#id2" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
+<span class="go">        print X</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">func</span><span class="p">(</span><span class="s">&#39;http://ilnurgi.ru&#39;</span><span class="p">)</span>
+<span class="go">http://ilnurgi.ru</span>
+</pre></div>
+</div>
+<p>Атрибуты функции</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="83%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">атрибут</th>
+<th class="head">описание</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>f.__closure__</td>
+<td>Кортеж, содержащий данные, связанные с вложенными областями видимости</td>
+</tr>
+<tr class="row-odd"><td>f.__code__</td>
+<td>Скомпилированный байт-код функции</td>
+</tr>
+<tr class="row-even"><td>f.__defaults__</td>
+<td>Кортеж с аргументами по умолчанию</td>
+</tr>
+<tr class="row-odd"><td>f.__dict__</td>
+<td>Словарь, содержащий атрибуты функции</td>
+</tr>
+<tr class="row-even"><td>f.__doc__</td>
+<td>Строка документирования</td>
+</tr>
+<tr class="row-odd"><td>f.__globals__</td>
+<td>Словарь, определяющий глобальное пространство имен</td>
+</tr>
+<tr class="row-even"><td>f.__name__</td>
+<td>Имя функции</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id3">
+<h2>Декораторы<a class="headerlink" href="#id3" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Это функция, в качестве аргумента принимает функцию или класс</p>
+<div class="highlight-py"><div class="highlight"><pre>def prepare(func):
+    def wrapp():
+        print 1
+        func()
+        print 3
+    return wrapp
+@prepare
+def func():
+    print 2
+func()
+# 1
+# 2
+# 3
+
+def deco(С):
+    print(&quot;Bнyтpи декоратора&quot;)
+    return С
+
+@deco
+class MyClass:
+    def init (self, value):
+        self.v = value
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>Генераторы<a class="headerlink" href="#id4" title="Ссылка на этот заголовок">¶</a></h2>
+<p>С помощью инструкции yield, функция может генерировать целые последовательности результатов,
+тогда такие функции называют генераторами</p>
+<div class="highlight-py"><div class="highlight"><pre><span class="k">def</span> <span class="nf">countdown</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">print</span> <span class="s">u&#39;Обратный отсчет!&#39;</span>
+    <span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">yield</span> <span class="n">n</span>
+        <span class="n">n</span> <span class="o">-=</span> <span class="mi">1</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">countdown</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">c</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
+<span class="c"># Обратный отсчет</span>
+<span class="c"># 3</span>
+<span class="n">c</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
+<span class="c"># 2</span>
+<span class="n">c</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
+<span class="c"># 1</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="gen.gi_code">
+<code class="descclassname">gen.</code><code class="descname">gi_code</code><a class="headerlink" href="#gen.gi_code" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Объект с программным кодом функции-генератора</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="gen.gi_frame">
+<code class="descclassname">gen.</code><code class="descname">gi_frame</code><a class="headerlink" href="#gen.gi_frame" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Кадр стека функции-генератора</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="gen.gi_running">
+<code class="descclassname">gen.</code><code class="descname">gi_running</code><a class="headerlink" href="#gen.gi_running" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Целое число, указывающее – выполняется ли функция-генератор в настоящий момент</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="gen.next">
+<code class="descclassname">gen.</code><code class="descname">next</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gen.next" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Выполняет функцию-генератор, пока не будет встречена следующая инструкция yield, и возвращает полученное значение
+(в Python 3 этот метод вызывает метод __next__())</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="gen.send">
+<code class="descclassname">gen.</code><code class="descname">send</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#gen.send" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Передает значение value генератору. Это значение возвращается выражением yield в функции-генераторе.
+После этого функция-генератор продолжит выполнение, пока не будет встречена следующая инструкция yield.
+Метод send() возвращает значение, полученное от этой инструкции yield</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="gen.close">
+<code class="descclassname">gen.</code><code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gen.close" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Закрывает генератор, возбуждая исключение GeneratorExit в функции-генераторе.
+Этот метод вызывается автоматически, когда объект генератора уничтожается сборщиком мусора</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="gen.throw">
+<code class="descclassname">gen.</code><code class="descname">throw</code><span class="sig-paren">(</span><em>exc</em><span class="optional">[</span>, <em>exc_value</em><span class="optional">[</span>, <em>exc_tb</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#gen.throw" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возбуждает исключение в функции-генераторе в точке вызова инструкции yield.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>exc</strong> &#8211; тип исключения</li>
+<li><strong>exc_value</strong> &#8211; значение исключения</li>
+<li><strong>exc_tb</strong> &#8211; необязательный объект с трассировочной информацией. Если исключение перехвачено и обработано, вернет значение, переданное следующей инструкции yield</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id5">
+<h2>Сопрограммы<a class="headerlink" href="#id5" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Функция обрабатывающая последовательность входных параметров.</p>
+<div class="highlight-py"><div class="highlight"><pre>def print_matches(matchtext):
+    print &#39;Поиск подстроки&#39;, matchtext
+    while True:
+        # Получение текстовой строки
+        line = (yield)
+        if matchtext in line:
+            print line
+
+matcher = print_matches(&#39;python&#39;)
+
+# Перемещение до первой инструкции (yield)
+matcher.next()
+# Поиск подстроки python
+
+matcher.send(“Hello World”)
+matcher.send(“python is cool”)
+# python is cool
+matcher.send(“yow!”)
+
+# Завершение работы с объектом matcher
+matcher.close()
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>Аннтоации в функциях:<a class="headerlink" href="#id6" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="versionadded">
+<p><span class="versionmodified">Добавлено в версии 3.x.</span></p>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="s">&#39;Параметр&#39;</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="mi">10</span> <span class="o">+</span> <span class="mi">5</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+<span class="go">       pass</span>
+</pre></div>
+</div>
+<p>Функция возвращает <cite>None</cite>, для параметров <cite>a</cite> и <cite>b</cite> заданы описания и для <cite>b</cite> задано значение по умолчанию. После создания функции все выражения будут выполнены и результаты сохранятся в виде словаря в атрибуте <cite>__annotations__</cite> объекта функции.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Оглавление</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">function - функция</a><ul>
+<li><a class="reference internal" href="#id1">Стандартные функции</a></li>
+<li><a class="reference internal" href="#lambda">lambda функции</a></li>
+<li><a class="reference internal" href="#id2">Пользовательски функции</a></li>
+<li><a class="reference internal" href="#id3">Декораторы</a></li>
+<li><a class="reference internal" href="#id4">Генераторы</a></li>
+<li><a class="reference internal" href="#id5">Сопрограммы</a></li>
+<li><a class="reference internal" href="#id6">Аннтоации в функциях:</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Предыдущий раздел</h4>
+  <p class="topless"><a href="frozenset.html"
+                        title="предыдущая глава">frozenset - неизменяемые множества</a></p>
+  <h4>Следующий раздел</h4>
+  <p class="topless"><a href="int.html"
+                        title="следующая глава">int - числа</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Эта страница</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/base/functions.txt"
+            rel="nofollow">Исходный текст</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Быстрый поиск</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Искать" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Введите слова для поиска или имя модуля, класса или функции.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Алфавитный указатель"
+             >указатель</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="int.html" title="int - числа"
+             >вперёд</a> |</li>
+        <li class="right" >
+          <a href="frozenset.html" title="frozenset - неизменяемые множества"
+             >назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Документация python документация 2015.05.20</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Основные объекты</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright ilnurgi.
+      Создано с помощью <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

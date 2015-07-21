@@ -1,0 +1,326 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Android &mdash; p4a doc 14.10.12 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.10.12',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="p4a doc 14.10.12 documentation" href="../index.html" />
+    <link rel="next" title="Application" href="Application.html" />
+    <link rel="prev" title="FullScreenWrapper2 Framework" href="../fullscreenwrapper2.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="Application.html" title="Application"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../fullscreenwrapper2.html" title="FullScreenWrapper2 Framework"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">p4a doc 14.10.12 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="android">
+<h1>Android<a class="headerlink" href="#android" title="Permalink to this headline">¶</a></h1>
+<p>Результат работы всех методов <a class="reference internal" href="Event.html#Result" title="Result"><tt class="xref py py-class docutils literal"><span class="pre">Result</span></tt></a></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span> <span class="o">=</span> <span class="n">android</span><span class="o">.</span><span class="n">Android</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="environment">
+<tt class="descname">environment</tt><big>(</big><big>)</big><a class="headerlink" href="#environment" title="Permalink to this definition">¶</a></dt>
+<dd><p>текущие переменные окружения</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">environment</span><span class="p">()</span><span class="o">.</span><span class="n">result</span>
+<span class="go">{</span>
+<span class="go">    u&#39;download&#39;: u&#39;/mnt/sdcard/Download&#39;,</span>
+<span class="go">    u&#39;sdcard&#39;: {</span>
+<span class="go">        u&#39;availblocks&#39;: 509407,</span>
+<span class="go">        u&#39;blocksize&#39;: 2048,</span>
+<span class="go">        u&#39;blockcount&#39;: 522236</span>
+<span class="go">    },</span>
+<span class="go">    u&#39;TZ&#39;: {</span>
+<span class="go">        u&#39;display&#39;: u&#39;GMT+00:00&#39;,</span>
+<span class="go">        u&#39;id&#39;: u&#39;GMT&#39;,</span>
+<span class="go">        u&#39;offset&#39;: 0</span>
+<span class="go">    },</span>
+<span class="go">    u&#39;appcache&#39;: u&#39;/data/data/com.dummy.fooforandroid/cache&#39;,</span>
+<span class="go">    u&#39;SDK&#39;: u&#39;14&#39;</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="getClipboard">
+<tt class="descname">getClipboard</tt><big>(</big><big>)</big><a class="headerlink" href="#getClipboard" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает текст из буфера обмена</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">getClipboard</span><span class="p">()</span><span class="o">.</span><span class="n">result</span>
+<span class="go">u&#39;Привет МИР&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="getConstants">
+<tt class="descname">getConstants</tt><big>(</big><em>str classname</em><big>)</big><a class="headerlink" href="#getConstants" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает константы (static final fields) класса в ввиде словаря</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">getConstants</span><span class="p">(</span><span class="s">&#39;com.dummy.fooforandroid.DialogActivity&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">result</span>
+<span class="go">{</span>
+<span class="go">    u&#39;SIP_SERVICE&#39;: u&#39;sip&#39;,</span>
+<span class="go">    u&#39;MODE_APPEND&#39;: 32768,</span>
+<span class="go">    ...</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="getIntent">
+<tt class="descname">getIntent</tt><big>(</big><big>)</big><a class="headerlink" href="#getIntent" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает текущий Intent/действие</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="getPackageVersion">
+<tt class="descname">getPackageVersion</tt><big>(</big><em>str packageName</em><big>)</big><a class="headerlink" href="#getPackageVersion" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает версию пакета</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">getPackageVersion</span><span class="p">(</span><span class="s">&#39;com.dummy.fooforandroid&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">result</span>
+<span class="go">1.0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="getPackageVersionCode">
+<tt class="descname">getPackageVersionCode</tt><big>(</big><em>str packageName</em><big>)</big><a class="headerlink" href="#getPackageVersionCode" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает версию пакета</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">getPackageVersionCode</span><span class="p">(</span><span class="s">&#39;com.dummy.fooforandroid&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">result</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="log">
+<tt class="descname">log</tt><big>(</big><em>str message</em><big>)</big><a class="headerlink" href="#log" title="Permalink to this definition">¶</a></dt>
+<dd><p>записывает сообщение в лог (logcat)</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s">u&#39;Привет МИР&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="makeIntent">
+<tt class="descname">makeIntent</tt><big>(</big><em>**kwargs</em><big>)</big><a class="headerlink" href="#makeIntent" title="Permalink to this definition">¶</a></dt>
+<dd><p>создает и возвращает Intent/действие</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>action</strong> (<em>str</em>) &#8211; </li>
+<li><strong>uri</strong> (<em>str</em>) &#8211; не обязательный</li>
+<li><strong>type</strong> (<em>str</em>) &#8211; не обязательный, MIME type/subtype of the URI</li>
+<li><strong>extras</strong> (<em>dict</em>) &#8211; не обязательный, дополнительные параметры действия</li>
+<li><strong>categories</strong> (<em>list</em>) &#8211; не обязательный, список категории, добавляемых в действие</li>
+<li><strong>packagename</strong> (<em>str</em>) &#8211; не обязательный, название пакета</li>
+<li><strong>classname</strong> (<em>str</em>) &#8211; не обязательный, название класса</li>
+<li><strong>flags</strong> (<em>int</em>) &#8211; не обязательный, флаги действия</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="requiredVersion">
+<tt class="descname">requiredVersion</tt><big>(</big><em>int requiredVersion</em><big>)</big><a class="headerlink" href="#requiredVersion" title="Permalink to this definition">¶</a></dt>
+<dd><p>проверяет версию sl4a</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sendBroadcast">
+<tt class="descname">sendBroadcast</tt><big>(</big><em>**kwargs</em><big>)</big><a class="headerlink" href="#sendBroadcast" title="Permalink to this definition">¶</a></dt>
+<dd><p>запускает службу</p>
+<p>:param str action,
+:param str uri: не обязательный
+:param str type: не обязательный, MIME type/subtype of the URI,
+:param dict extras: не обязательный, дополнительные параметры действия
+:param str packagename: не обязательный, название пакета
+:param str classname: не обязательный, название класса</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">sendBroadcast</tt><big>(</big><em>Intent intent</em><big>)</big></dt>
+<dd><p>запускает службу по действию, который вернул <a class="reference internal" href="#makeIntent" title="makeIntent"><tt class="xref py py-meth docutils literal"><span class="pre">makeIntent()</span></tt></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sendEmail">
+<tt class="descname">sendEmail</tt><big>(</big><em>**kwargs</em><big>)</big><a class="headerlink" href="#sendEmail" title="Permalink to this definition">¶</a></dt>
+<dd><p>запускает активити ждя отправки электронной почты</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>to</strong> (<em>str</em>) &#8211; емайлы для отправки, разделенные через запятые</li>
+<li><strong>subject</strong> (<em>str</em>) &#8211; от кого</li>
+<li><strong>body</strong> (<em>str</em>) &#8211; текст сообщения</li>
+<li><strong>attachmentUri</strong> (<em>str</em>) &#8211; не обязательный, вложения</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="setClipboard">
+<tt class="descname">setClipboard</tt><big>(</big><em>str text</em><big>)</big><a class="headerlink" href="#setClipboard" title="Permalink to this definition">¶</a></dt>
+<dd><p>записывает текст в буфер обмена</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">setClipboard</span><span class="p">(</span><span class="s">u&#39;Привет МИР&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="startActivity">
+<tt class="descname">startActivity</tt><big>(</big><em>**kwargs</em><big>)</big><a class="headerlink" href="#startActivity" title="Permalink to this definition">¶</a></dt>
+<dd><p>запускает активити</p>
+<p>:param str action:,
+:param str uri: не обязательный,
+:param str type: не обязательный, MIME type/subtype of the URI,
+:param dict extras: не обязательный, дополнительные сведения для активити
+:param bool wait: не обязательный, блокировать, пока пользователь выходит из начатого активити
+:param str packagename: не обязательный, название пакета
+:param str classname: не обязательный, название класса</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="startActivityForResult">
+<tt class="descname">startActivityForResult</tt><big>(</big><em>**kwargs</em><big>)</big><a class="headerlink" href="#startActivityForResult" title="Permalink to this definition">¶</a></dt>
+<dd><p>запускает активити, возвращает словарь (Intent) статуса результата работы</p>
+<p>:param str action:,
+:param str uri: не обязательный,
+:param str type: не обязательный, MIME type/subtype of the URI,
+:param dict extras: не обязательный, дополнительные сведения для активити
+:param str packagename: не обязательный, название пакета
+:param str classname: не обязательный, название класса</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="startActivityForResultIntent">
+<tt class="descname">startActivityForResultIntent</tt><big>(</big><em>Intent intent</em><big>)</big><a class="headerlink" href="#startActivityForResultIntent" title="Permalink to this definition">¶</a></dt>
+<dd><p>запускает активити, возвращает словарь (Intent) статуса результата работы</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="startActivityIntent">
+<tt class="descname">startActivityIntent</tt><big>(</big><em>Intent intent</em><span class="optional">[</span>, <em>bool wait</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#startActivityIntent" title="Permalink to this definition">¶</a></dt>
+<dd><p>запускает активити, через Intent</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="vibrate">
+<tt class="descname">vibrate</tt><big>(</big><span class="optional">[</span><em>int duration=300</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#vibrate" title="Permalink to this definition">¶</a></dt>
+<dd><p>запускает вибрацию на указанное время в миллисекундах</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">vibrate</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../fullscreenwrapper2.html"
+                        title="previous chapter">FullScreenWrapper2 Framework</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="Application.html"
+                        title="next chapter">Application</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/Android.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="Application.html" title="Application"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../fullscreenwrapper2.html" title="FullScreenWrapper2 Framework"
+             >previous</a> |</li>
+        <li><a href="../index.html">p4a doc 14.10.12 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

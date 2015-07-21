@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>AJAX &mdash; js doc 2015.06.19 documentation</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2015.06.19',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="js doc 2015.06.19 documentation" href="index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">js doc 2015.06.19 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="ajax">
+<h1>AJAX<a class="headerlink" href="#ajax" title="Permalink to this headline">¶</a></h1>
+<p>AJAX (Asynchronous Javascript and XML - «асинхронный JavaScript и XML») - подход к построению интерактивных пользовательских интерфейсов веб-приложений, заключающийся в «фоновом» обмене данными браузера с веб-сервером.</p>
+<p>Запрос к серверу посылает JavaScript, за счет чего достигается обращение к серверу без перезагрузки страницы.</p>
+<div class="highlight-js"><div class="highlight"><pre>function ajaxTest(input) {
+    var request = new XMLHttpRequest();
+    request.open(&#39;GET‘, &#39;ajax.php?input=&#39; + input);
+    request.send();
+    request.onreadystatechange = function() {
+        if (request.readyState == 4 &amp;&amp; request.status == 200)
+        processResult(request.responseText);
+    }
+}
+</pre></div>
+</div>
+<div class="section" id="request">
+<h2>Свойства request объекта<a class="headerlink" href="#request" title="Permalink to this headline">¶</a></h2>
+<p>..js:attribute:: request.onreadystatechange</p>
+<blockquote>
+<div>Обработчик изменения стсояния</div></blockquote>
+<p>..js:attribute:: request.readyState</p>
+<blockquote>
+<div>Состояние запроса</div></blockquote>
+<ol class="arabic simple" start="0">
+<li>запрос не инициализирован (перед вызовом open())</li>
+<li>запрос инициализирован, но не был передан (перед вызовом send()).</li>
+<li>запрос был передан и обрабатывается</li>
+<li>запрос обрабатывается (доступны частичные данные)</li>
+<li>ответ завершен; вы можете получить ответ сервера и использовать его.</li>
+</ol>
+<p>..js:attribute:: request.status</p>
+<blockquote>
+<div>Код статуса запроса</div></blockquote>
+<p>..js:attribute:: request.responseTexe</p>
+<blockquote>
+<div>Текст ответа</div></blockquote>
+</div>
+<div class="section" id="id1">
+<h2>Методы request объекта<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>..js:function:: request.open(method, url)</p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">param method:</th><td class="field-body">метод отправки</td>
+</tr>
+<tr class="field-even field"><th class="field-name">param url:</th><td class="field-body">урл запроса</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>..js:function:: request.send()</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">AJAX</a><ul>
+<li><a class="reference internal" href="#request">Свойства request объекта</a></li>
+<li><a class="reference internal" href="#id1">Методы request объекта</a></li>
+</ul>
+</li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/ajax.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">js doc 2015.06.19 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

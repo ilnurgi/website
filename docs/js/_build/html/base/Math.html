@@ -1,0 +1,310 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Math - математические операции &mdash; js doc 2015.06.26 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2015.06.26',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="js doc 2015.06.26 documentation" href="../index.html" />
+    <link rel="up" title="Основные объекты" href="index.html" />
+    <link rel="next" title="NaN - нечисло" href="NaN.html" />
+    <link rel="prev" title="Infinity - бесконечность" href="Infinity.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="NaN.html" title="NaN - нечисло"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="Infinity.html" title="Infinity - бесконечность"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.26 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Основные объекты</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="math">
+<h1>Math - математические операции<a class="headerlink" href="#math" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="Math">
+<em class="property">class </em><code class="descname">Math</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Math" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="E">
+<code class="descname">E</code><a class="headerlink" href="#E" title="Permalink to this definition">¶</a></dt>
+<dd><p>Основание натуральных логарифмов</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="LN10">
+<code class="descname">LN10</code><a class="headerlink" href="#LN10" title="Permalink to this definition">¶</a></dt>
+<dd><p>Натуральный логарифм числа 10</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="LN2">
+<code class="descname">LN2</code><a class="headerlink" href="#LN2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Натуральный логарифм числа 2</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="LOG10E">
+<code class="descname">LOG10E</code><a class="headerlink" href="#LOG10E" title="Permalink to this definition">¶</a></dt>
+<dd><p>Десятичный логарифм числа Е</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="LOG2E">
+<code class="descname">LOG2E</code><a class="headerlink" href="#LOG2E" title="Permalink to this definition">¶</a></dt>
+<dd><p>Логарифм числа Е по основанию 2</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="PI">
+<code class="descname">PI</code><a class="headerlink" href="#PI" title="Permalink to this definition">¶</a></dt>
+<dd><p>Число пи</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="SQRT1_2">
+<code class="descname">SQRT1_2</code><a class="headerlink" href="#SQRT1_2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Единица, деленная на корень квадратный из 2</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="SQRT2">
+<code class="descname">SQRT2</code><a class="headerlink" href="#SQRT2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Квадратный корень из 2</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="abs">
+<code class="descname">abs</code><span class="sig-paren">(</span><em>var</em><span class="sig-paren">)</span><a class="headerlink" href="#abs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает абсолютное значение</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ceil">
+<code class="descname">ceil</code><span class="sig-paren">(</span><em>var</em><span class="sig-paren">)</span><a class="headerlink" href="#ceil" title="Permalink to this definition">¶</a></dt>
+<dd><p>Округление в большую сторону</p>
+<div class="highlight-js"><div class="highlight"><pre><span class="nx">a</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">(</span><span class="mf">1.99</span><span class="p">);</span>  <span class="c1">// 2.0</span>
+<span class="nx">b</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">(</span><span class="mf">1.01</span><span class="p">);</span>  <span class="c1">// 2.0</span>
+<span class="nx">c</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);</span>   <span class="c1">// 1.0</span>
+<span class="nx">d</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">(</span><span class="o">-</span><span class="mf">1.99</span><span class="p">);</span> <span class="c1">// -1.0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="exp">
+<code class="descname">exp</code><span class="sig-paren">(</span><em>var</em><span class="sig-paren">)</span><a class="headerlink" href="#exp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Вычисляет степень числа Е</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="floor">
+<code class="descname">floor</code><span class="sig-paren">(</span><em>var</em><span class="sig-paren">)</span><a class="headerlink" href="#floor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Округление в меньшую сторону</p>
+<div class="highlight-js"><div class="highlight"><pre><span class="nx">a</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">(</span><span class="mf">1.99</span><span class="p">);</span>  <span class="c1">// 1.0</span>
+<span class="nx">b</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">(</span><span class="mf">1.01</span><span class="p">);</span>  <span class="c1">// 1.0</span>
+<span class="nx">c</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);</span>   <span class="c1">// 1.0</span>
+<span class="nx">d</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">(</span><span class="o">-</span><span class="mf">1.99</span><span class="p">);</span> <span class="c1">// -2.0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="log">
+<code class="descname">log</code><span class="sig-paren">(</span><em>var</em><span class="sig-paren">)</span><a class="headerlink" href="#log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Вычисляет натуральный логарифм</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="max">
+<code class="descname">max</code><span class="sig-paren">(</span><em>var1</em>, <em>var2</em>, <em>....</em><span class="sig-paren">)</span><a class="headerlink" href="#max" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает максимум из переданных аргументов</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="min">
+<code class="descname">min</code><span class="sig-paren">(</span><em>var1</em>, <em>var2</em>, <em>....</em><span class="sig-paren">)</span><a class="headerlink" href="#min" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает минимум из переданных аргументов</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pow">
+<code class="descname">pow</code><span class="sig-paren">(</span><em>var</em>, <em>pow</em><span class="sig-paren">)</span><a class="headerlink" href="#pow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возведение в степень</p>
+<div class="highlight-js"><div class="highlight"><pre><span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+<span class="c1">//25</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="random">
+<code class="descname">random</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#random" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает случайное число из промежутка от 0 до 1</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="round">
+<code class="descname">round</code><span class="sig-paren">(</span><em>var</em><span class="sig-paren">)</span><a class="headerlink" href="#round" title="Permalink to this definition">¶</a></dt>
+<dd><p>Нормальное округление</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="sqrt">
+<code class="descname">sqrt</code><span class="sig-paren">(</span><em>int</em><span class="sig-paren">)</span><a class="headerlink" href="#sqrt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает квадратный корень числа</p>
+<div class="highlight-js"><div class="highlight"><pre><span class="nb">Math</span><span class="p">.</span><span class="nx">sqrt</span><span class="p">(</span><span class="mi">81</span><span class="p">);</span>
+<span class="c1">// 9</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="id1">
+<h2>Тригонометрические функции<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl class="function">
+<dt id="acos">
+<code class="descname">acos</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#acos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Вычисляет арккосинус</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="asin">
+<code class="descname">asin</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#asin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Вычисляет арксинус</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="atan">
+<code class="descname">atan</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#atan" title="Permalink to this definition">¶</a></dt>
+<dd><p>Вычисляет арктангенс</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="atan2">
+<code class="descname">atan2</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#atan2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Вычисляет угол между осью Х и точкой</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="cos">
+<code class="descname">cos</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Вычисляет косинус</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="sin">
+<code class="descname">sin</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Вычисляет синус</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="tan">
+<code class="descname">tan</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tan" title="Permalink to this definition">¶</a></dt>
+<dd><p>Вычисляет тангенс</p>
+</dd></dl>
+
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Math - математические операции</a><ul>
+<li><a class="reference internal" href="#id1">Тригонометрические функции</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="Infinity.html"
+                        title="previous chapter">Infinity - бесконечность</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="NaN.html"
+                        title="next chapter">NaN - нечисло</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/base/Math.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="NaN.html" title="NaN - нечисло"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="Infinity.html" title="Infinity - бесконечность"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.26 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Основные объекты</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

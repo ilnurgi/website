@@ -1,0 +1,267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>datepicker - виджет Datepicker &mdash; jquery 2015.07.09 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2015.07.09',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="jquery 2015.07.09 documentation" href="../index.html" />
+    <link rel="up" title="jQueryUI" href="index.html" />
+    <link rel="next" title="dialog - виджет Dialog" href="dialog.html" />
+    <link rel="prev" title="buttonset - создает группу кнопок" href="buttonset.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="dialog.html" title="dialog - виджет Dialog"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="buttonset.html" title="buttonset - создает группу кнопок"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">jquery 2015.07.09 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">jQueryUI</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="datepicker-datepicker">
+<h1>datepicker - виджет Datepicker<a class="headerlink" href="#datepicker-datepicker" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="datepicker">
+<code class="descname">datepicker</code><span class="sig-paren">(</span><span class="optional">[</span><em>methodName</em>, <em>option</em>, <em>value</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#datepicker" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descname">datepicker</code><span class="sig-paren">(</span><span class="optional">[</span><em>methodName</em>, <em>param_obj</em><span class="optional">]</span><span class="sig-paren">)</span></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descname">datepicker</code><span class="sig-paren">(</span><span class="optional">[</span><em>param_obj</em><span class="optional">]</span><span class="sig-paren">)</span></dt>
+<dd><div class="highlight-js"><div class="highlight"><pre><span class="c1">// локализация</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#inline&#39;</span><span class="p">).</span><span class="nx">datepicker</span><span class="p">(</span><span class="nx">$</span><span class="p">.</span><span class="nx">datepicker</span><span class="p">.</span><span class="nx">regional</span><span class="p">[</span><span class="s2">&quot;uk&quot;</span><span class="p">]);</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#datep&#39;</span><span class="p">).</span><span class="nx">datepicker</span><span class="p">({</span>
+    <span class="nx">buttonImage</span><span class="o">:</span> <span class="s2">&quot;right.png&quot;</span><span class="p">,</span>
+    <span class="nx">buttonImageOnly</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">changeMonth</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">changeYear</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">constrainInput</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">maxDate</span><span class="o">:</span> <span class="s2">&quot;+1&quot;</span><span class="p">,</span>
+    <span class="nx">minDate</span><span class="o">:</span> <span class="s2">&quot;-3&quot;</span><span class="p">,</span>
+    <span class="nx">numberOfMonths</span><span class="o">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+    <span class="nx">showCurrentAtPos</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nx">showOn</span><span class="o">:</span> <span class="s1">&#39;both&#39;</span><span class="p">,</span>
+    <span class="nx">showOtherMonths</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">showWeek</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">yearRange</span><span class="o">:</span> <span class="s2">&quot;-1:+2&quot;</span><span class="p">,</span>
+    <span class="nx">weekHeader</span><span class="o">:</span> <span class="s2">&quot;Неделя&quot;</span><span class="p">,</span>
+
+    <span class="nx">onClose</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">date</span><span class="p">,</span> <span class="nx">datepicker</span><span class="p">){</span>
+        <span class="p">...</span>
+    <span class="p">},</span>
+    <span class="nx">onSelect</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">date</span><span class="p">,</span> <span class="nx">datepicker</span><span class="p">){</span>
+        <span class="p">...</span>
+    <span class="p">},</span>
+    <span class="nx">onChangeMonthYeаr</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">year</span><span class="p">,</span> <span class="nx">month</span><span class="p">,</span> <span class="nx">datepicker</span><span class="p">){</span>
+        <span class="p">...</span>
+    <span class="p">}</span>
+
+<span class="p">});</span>
+</pre></div>
+</div>
+<ul>
+<li><p class="first"><cite>methodName</cite></p>
+<blockquote>
+<div><ul class="simple">
+<li><cite>destroy</cite> - Полностью удаляет функциональность виджета Datepicker из базового элемента</li>
+<li><cite>disable</cite> - Приостанавливает работу виджета Datepicker для базовогоэлемента</li>
+<li><cite>enable</cite> - Возобновляет работу ранее приостановленного виджета Datepicker для базового элемента</li>
+<li><cite>option</cite> - Позволяет получить или установить значения одной или не­скольких опций виджета Datepicker</li>
+<li><cite>isDisabled</cite> - Возвращает true, если виджет Datepicker отключен</li>
+<li><cite>hide</cite> - Скрывает всплывающий календарь, если он видимый</li>
+<li><cite>show</cite> - Отображает всплывающий календарь, если он невидимый</li>
+<li><cite>refresh</cite> - Обновляет календарь для отражения выполненных в базовом элементе изменений</li>
+<li><cite>getDate</cite> - Получает дату, выбранную в календаре</li>
+<li><cite>setDate</cite> - Устанавливает указанное значение в качестве выбранной даты календаря</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><cite>param_obj</cite></p>
+<blockquote>
+<div><ul>
+<li><p class="first"><cite>altField</cite> - Позволяет задать дополнительное поле, которое будет обновляться при выборе да­ты в календаре</p>
+</li>
+<li><p class="first"><cite>appendText</cite> - Задает текст подсказки, содержащий дополнительную информацию, например пояснения относительно форматирования даты, который будет вставлен в до­кумент после элемента input</p>
+</li>
+<li><p class="first"><cite>buttonImageOnly</cite> - Указывает, что вместо вспомогательной кнопки, позволяющей открыть календарь, должно использоваться изображение, заданное опцией buttonimage</p>
+</li>
+<li><p class="first"><cite>buttonImage</cite> - Определяет URL-адрес изображения, используемого для вспомогательной кнопки открытия всплывающего календаря. По умолчанию не используется</p>
+</li>
+<li><p class="first"><cite>buttonText</cite> - Определяет текст, который будет отображаться на кнопке открытия всплывающего календаря. Текстом по умолчанию является многоточие ( . . . )</p>
+</li>
+<li><p class="first"><cite>changeMonth</cite> - Если эта опция равна true, то в календаре отображается раскрывающийся список, обеспечивающий возможность непосредственной навигации по меся­цам. Значение по умолчанию — false</p>
+</li>
+<li><p class="first"><cite>changeYear</cite> - Если эта опция равна true, то в календаре отображается раскрывающийся список, обеспечивающий возможность непосредственной навигации по годам. Значение по умолчанию — false</p>
+</li>
+<li><p class="first"><cite>closeText</cite> - Задает текст для кнопки закрытия календаря, отображающейся на панели вспомогательных кнопок, если она включена. Значение по умолчанию — За­крыть</p>
+</li>
+<li><p class="first"><cite>constrainInput</cite> - Если эта опция равна true, то виджет Datepicker проверяет соответствие содержимого поля ввода заданному формату даты. Значение по умолчанию — true</p>
+</li>
+<li><p class="first"><cite>create</cite> - Происходит при создании экземпляра Datepicker</p>
+</li>
+<li><p class="first"><cite>currentText</cite> - Задает текст для кнопки возврата к текущему месяцу, отображающейся на па­нели вспомогательных кнопок, если она включена. Значение по умолчанию — Сегодня</p>
+</li>
+<li><p class="first"><cite>defaultDate</cite> - Позволяет установить дату, которая будет подсвечена при открытии календаря</p>
+<blockquote>
+<div><ul class="simple">
+<li><cite>null</cite> - текущая дата</li>
+<li><cite>Date</cite> - явная дата</li>
+<li><cite>+/-дни</cite> - смещение дат относительно текущей</li>
+<li><cite>+1d +7w -1m +1y</cite></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><cite>disabled</cite> - Указывает, должен ли виджет быть первоначально отключен. Значение по умолча­нию — false</p>
+</li>
+<li><p class="first"><cite>duration</cite> - Задает скорость или длительность выполнения анимации, заданной опцией showAnim. Значение по умолчанию — normal.</p>
+</li>
+<li><p class="first"><cite>gotoCurrent</cite> - Если эта опция равна true, то кнопка сегодня, находящаяся на панели вспомогательных кнопок, если она включена, будет осуществлять возврат к вы­бранной, а не к текущей дате. Значение по умолчанию — false</p>
+</li>
+<li><p class="first"><cite>hideIfNoPrevNext</cite> - Если эта опция равна true, то значки, позволяющие перемещаться по кален­дарю вперед и назад относительно отображаемой даты, полностью скрываются, а не просто отключаются. Значение по умолчанию — false</p>
+</li>
+<li><p class="first"><cite>maxDate</cite> - Определяет максимальную дату, доступную для выбора. По умолчанию это ограничение отсутствует</p>
+</li>
+<li><p class="first"><cite>minDate</cite> - Определяет минимальную дату, доступную для выбора. По умолчанию это ограничение отсутствует</p>
+</li>
+<li><p class="first"><cite>numberOfMonths</cite> - Определяет количество месяцев, одновременно отображаемых в календаре. Значение по умолчанию — 1</p>
+</li>
+<li><p class="first"><cite>onChangeMonthYeаr</cite> - Происходит при создании экземпляра Datepicker</p>
+</li>
+<li><p class="first"><cite>onClose</cite> - Происходит при закрытии всплывающего календаря</p>
+</li>
+<li><p class="first"><cite>onSelect</cite> - Происходит, когда пользователь выбирает дату</p>
+</li>
+<li><p class="first"><cite>selectOtherMonths</cite> - Если эта опция равна true, то становятся доступными для выбора даты, отображаемые в результате установки равным true значения опции showOtherMonths</p>
+</li>
+<li><p class="first"><cite>showAnim</cite> - Определяет тип анимации, используемой для отображения и сокрытия всплы­вающих календарей. Значение по умолчанию — false</p>
+</li>
+<li><p class="first"><cite>showButtonPanel</cite> - Если эта опция равна true, то в календаре будет отображаться вспомога­тельная панель с кнопками, с помощью которых пользователь сможет перехо­дить к текущей дате и (если используется всплывающий виджет) закрывать ка­лендарь. Значение по умолчанию — false</p>
+</li>
+<li><p class="first"><cite>showCurrentAtPos</cite> - Если для календаря задано одновременное отображение нескольких месяцев, то данная опция определяет номер позиции, в которой должен отображаться текущий или заданный по умолчанию месяц. Значение по умолчанию — 0</p>
+</li>
+<li><p class="first"><cite>showOn</cite> - Определяет действие, инициирующее открытие всплывающего календаря</p>
+<blockquote>
+<div><ul class="simple">
+<li><cite>focus</cite> - Всплывающий календарь открывается при получении фокуса ввода элементом input. Это значение используется по умолчанию.</li>
+<li><cite>button</cite> - Всплывающий календарь открывается щелчком на кнопке.</li>
+<li><cite>both</cite> - Всплывающий календарь отображается как после щелчка на кнопке, так и после получения фокуса элементом input.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><cite>showOptions</cite> - Задает опции анимации, указанной опцией showAnim.</p>
+</li>
+<li><p class="first"><cite>showOtherMonths</cite> - Если эта опция равна true, то пустые поля в календарной сетке будут запол­няться датами из предыдущих и последующих месяцев. Значение по умолча­нию — false</p>
+</li>
+<li><p class="first"><cite>showWeek</cite> - Если значение этой опции равно true, то в календаре будет отображаться столбец с номерами недель. Значение по умолчанию — false</p>
+</li>
+<li><p class="first"><cite>stepMonths</cite> - Определяет, на сколько месяцев вперед или назад должна сдвигаться отобра­жаемая в календаре дата при щелчке на кнопке перехода вперед или назад во времени</p>
+</li>
+<li><p class="first"><cite>yearRange</cite> - Определяет диапазон лет, доступных для выбора в раскрывающемся списке, добавляемом с помощью опции changeYear. По умолчанию этот список включает десять предыдущих и десять последующих лет, а также текущий год</p>
+</li>
+<li><p class="first"><cite>weekHeader</cite> - Задает заголовок столбца календаря с номерами недель, включенной с помощью опции showWeek. Значение по умолчанию — Нед</p>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="buttonset.html"
+                        title="previous chapter">buttonset - создает группу кнопок</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="dialog.html"
+                        title="next chapter">dialog - виджет Dialog</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/jqueryui/datepicker.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="dialog.html" title="dialog - виджет Dialog"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="buttonset.html" title="buttonset - создает группу кнопок"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">jquery 2015.07.09 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >jQueryUI</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

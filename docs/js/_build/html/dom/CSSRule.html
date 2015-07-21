@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>CSSRule - правило в таблице стилей CSS &mdash; js doc 2015.06.26 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2015.06.26',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="js doc 2015.06.26 documentation" href="../index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.26 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="cssrule-css">
+<h1>CSSRule - правило в таблице стилей CSS<a class="headerlink" href="#cssrule-css" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="CSSRule">
+<em class="property">class </em><code class="descname">CSSRule</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CSSRule" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="cssText">
+<code class="descname">cssText</code><a class="headerlink" href="#cssText" title="Permalink to this definition">¶</a></dt>
+<dd><p>Пол­ный текст дан­но­го CSS-пра­ви­ла.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="parentRule">
+<code class="descname">parentRule</code><a class="headerlink" href="#parentRule" title="Permalink to this definition">¶</a></dt>
+<dd><p>Пра­ви­ло, ес­ли та­ко­вое име­ет­ся, в ко­то­ром со­дер­жит­ся дан­ное пра­ви­ло.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="parentStyleSheet">
+<code class="descname">parentStyleSheet</code><a class="headerlink" href="#parentStyleSheet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Таб­ли­ца сти­лей, внут­ри ко­то­рой со­дер­жит­ся дан­ное пра­ви­ло.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="selectorText">
+<code class="descname">selectorText</code><a class="headerlink" href="#selectorText" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ко­гда свой­ст­во type име­ет зна­че­ние STYLE_RULE, это свой­ст­во хра­нит текст се­лек­то­ра, оп­ре­де­ляю­ще­го эле­мен­ты до­ку­мен­та, к ко­то­рым при­ме­ня­ет­ся это пра­ви­ло.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="style">
+<code class="descname">style</code><a class="headerlink" href="#style" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ко­гда свой­ст­во type име­ет зна­че­ние STYLE_RULE, это свой­ст­во оп­ре­де­ля­ет сти­ли, ко­то­рые долж­ны при­ме­нять­ся к  эле­мен­там, оп­ре­де­ляе­мым свой­ст­вом selectorText. Об­ра­ти­те вни­ма­ние: не­смот­ря на то что свой­ст­во style дос­туп­но толь­ко для чте­ния, свой­ст­ва объ­ек­та CSSStyleDeclaration, на ко­то­рое оно ссы­ла­ет­ся, дос­туп­ны длячте­ния и за­пи­си.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="type">
+<code class="descname">type</code><a class="headerlink" href="#type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Тип дан­но­го пра­ви­ла</p>
+<ul class="simple">
+<li><cite>CSSRule.STYLE_RULE</cite> = 1</li>
+<li><cite>CSSRule.IMPORT_RULE</cite> = 3</li>
+<li><cite>CSSRule.MEDIA_RULE</cite> = 4</li>
+<li><cite>CSSRule.FONT_FACE_RULE</cite> = 5</li>
+<li><cite>CSSRule.PAGE_RULE</cite> = 6</li>
+<li><cite>CSSRule.NAMESPACE_RULE</cite> = 10</li>
+</ul>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/dom/CSSRule.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.26 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

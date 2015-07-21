@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>WHERE &mdash; sql doc 14.10.12 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '14.10.12',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="sql doc 14.10.12 documentation" href="index.html" />
+    <link rel="next" title="Вспомогательные функции" href="functions.html" />
+    <link rel="prev" title="SELECT" href="select.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="functions.html" title="Вспомогательные функции"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="select.html" title="SELECT"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">sql doc 14.10.12 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="where">
+<h1>WHERE<a class="headerlink" href="#where" title="Permalink to this headline">¶</a></h1>
+<p>Опертор условия, который позволяет фильтровать выборки</p>
+<ul>
+<li><p class="first"><cite>=, ==</cite> - проверка на равенство</p>
+</li>
+<li><p class="first"><cite>!=, &lt;&gt;</cite> - не равно</p>
+</li>
+<li><p class="first"><cite>&gt;</cite> - больше</p>
+</li>
+<li><p class="first"><cite>&lt;</cite> - меньше</p>
+</li>
+<li><p class="first"><cite>&gt;=</cite> - больше или равно</p>
+</li>
+<li><p class="first"><cite>&lt;=</cite> - меньше или равно</p>
+</li>
+<li><p class="first"><cite>IS NOT NULL, NOT NULL, NOTNULL</cite> - проверка на NULL</p>
+</li>
+<li><p class="first"><cite>IS NULL, ISNULL</cite> - проверка на отсуствие значения</p>
+</li>
+<li><p class="first"><cite>BETWEEN &lt;начало&gt; AND &lt;конец&gt;</cite> - проверка на вхождение в диапазон</p>
+</li>
+<li><p class="first"><cite>IN (&lt;список значений&gt;)</cite> - проверка значения в определенном наборе</p>
+</li>
+<li><dl class="first docutils">
+<dt><cite>LIKE &lt;шаблон&gt; [ESCAPE &lt;символ&gt;]</cite> - проверка на соответствие шаблону. В шаблоне используются следующие спец символы</dt>
+<dd><ul class="first last simple">
+<li><cite>%</cite> - любое количесвто символов</li>
+<li><cite>_</cite> - любой одиночный символ</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="select.html"
+                        title="previous chapter">SELECT</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="functions.html"
+                        title="next chapter">Вспомогательные функции</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/where.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="functions.html" title="Вспомогательные функции"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="select.html" title="SELECT"
+             >previous</a> |</li>
+        <li><a href="index.html">sql doc 14.10.12 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

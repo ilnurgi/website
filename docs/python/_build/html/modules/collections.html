@@ -1,0 +1,384 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>collections &mdash; Документация python документация 2015.05.20</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2015.05.20',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Документация python документация 2015.05.20" href="../index.html" />
+    <link rel="up" title="Основные модули" href="index.html" />
+    <link rel="next" title="contextlib" href="contextlib.html" />
+    <link rel="prev" title="cmath" href="cmath.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Алфавитный указатель"
+             accesskey="I">указатель</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="contextlib.html" title="contextlib"
+             accesskey="N">вперёд</a> |</li>
+        <li class="right" >
+          <a href="cmath.html" title="cmath"
+             accesskey="P">назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Документация python документация 2015.05.20</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Основные модули</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <span class="target" id="module-collections"></span><div class="section" id="collections">
+<h1>collections<a class="headerlink" href="#collections" title="Ссылка на этот заголовок">¶</a></h1>
+<p>Модуль <cite>collections</cite> содержит оптимизированные реализации нескольких контейнерных типов, абстрактные базовые классы для различных типов контейнеров и вспомогательные функции для создания именованных кортежей.</p>
+<p>Также определено несколько абстрактных базовых классов. Назначение их состоит в том, чтобы описать программный интерфейс некоторых типов контейнеров, таких как списки, множества и словари. Можно выделить два основных случая использования этих классов. Во-первых,они могут использоваться, как базовые классы для пользовательских объектов, имитирующих функциональность встроенных контейнерных типов. Во-вторых, они могут использоваться для проверки типов. Например, если требуется убедиться, что объект s способен действовать как последовательность, можно вызвать функцию isinstance(s, collections.Sequence).</p>
+<p>Соответствующие встроенные типы языка Python уже зарегистрированы в этих базовых классах. Кроме того, используя эти базовые классы, можно писать программы, которые выполняют более точную проверку типов. Например:</p>
+<div class="highlight-python"><div class="highlight"><pre># Получить последний элемент последовательности
+if isinstance(x, collections.Sequence):
+    last = x[-1]
+
+# Выполнить итерации по объекту, только если известен его размер
+if isinstance(x, collections.Iterable) and isinstance(x, collections.Sized):
+    for item in x:
+        инструкции
+
+# Добавить новый элемент в множество
+if isinstance(x, collections.MutableSet):
+    x.add(item)
+</pre></div>
+</div>
+<dl class="function">
+<dt id="collections.deque">
+<code class="descclassname">collections.</code><code class="descname">deque</code><span class="sig-paren">(</span><span class="optional">[</span><em>iterable</em><span class="optional">[</span>, <em>maxlenght</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#collections.deque" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>iterable</strong> (<a class="reference internal" href="../base/functions.html#iter" title="iter"><em>iter</em></a>) &#8211; начальное заполнение очереди</li>
+<li><strong>maxlenght</strong> (<em>int</em>) &#8211; если передается, то возвращаемый объект deque превращается в кольцевой буфер указанного размера. То есть при добавлении нового элемента в очередь, в которой уже не осталось свободного места, производится удаление элемента с противоположного конца, чтобы освободить место.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Тип данных, представляющий двустороннюю очередь (название типа deque произносится «дек»). Двусторонняя очередь позволяет добавлять и удалять элементы из любого конца очереди. Реализация очередей оптимизирована так, что эти операции имеют примерно одинаковую производительность (O(1)). Этим очереди выгодно отличаются от списков, где выполнение операций в начале списка может потребовать выполнить сдвиг всех элементов, расположенных правее элемента, над которым выполняется операция.</p>
+<p>Двусторонние очереди часто незаслуженно забываются многими программистами. Однако этот тип данных предлагает множество преимуществ.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>очереди этого типа отличаются весьма эффективной реализацией, даже на уровне использования внутренних структур данных, обеспечивающих оптимальное использование кэша процессора.</li>
+<li>Добавление новых элементов в конец выполняется немногим медленнее, чем во встроенных списках, зато добавление в начало выполняется существенно быстрее.</li>
+<li>операции добавления новых элементов в двусторонние очереди реализованы с учетом возможности их использования в многопоточных приложениях, что делает этот тип данных привлекательным для реализации очередей. Двусторонние очереди поддерживают также возможность сериализации средствами модуля pickle.</li>
+</ol>
+</div></blockquote>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">timeit</span> <span class="kn">import</span> <span class="n">timeit</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">timeit</span><span class="p">(</span><span class="s">&#39;s.appendleft(37)&#39;</span><span class="p">,</span> <span class="s">&#39;import collections; s = collections.deque()&#39;</span><span class="p">,</span> <span class="n">number</span><span class="o">=</span><span class="mi">1000000</span><span class="p">)</span>
+<span class="go">0.24434304237365723</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">timeit</span><span class="p">(</span><span class="s">&#39;s.insert(0, 37)&#39;</span><span class="p">,</span> <span class="s">&#39;s = []&#39;</span><span class="p">,</span> <span class="n">number</span><span class="o">=</span><span class="mi">1000000</span><span class="p">)</span>
+<span class="go">612.95199513435364</span>
+</pre></div>
+</div>
+<p>Экземпляры имеют следующие методы</p>
+<dl class="method">
+<dt id="collections.append">
+<code class="descclassname">collections.</code><code class="descname">append</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#collections.append" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Добавляет объект x с правой стороны очереди.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="collections.appendleft">
+<code class="descclassname">collections.</code><code class="descname">appendleft</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#collections.appendleft" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Добавляет объект x с левой стороны очереди</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="collections.clear">
+<code class="descclassname">collections.</code><code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#collections.clear" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Удаляет все элементы из очереди</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="collections.extend">
+<code class="descclassname">collections.</code><code class="descname">extend</code><span class="sig-paren">(</span><em>iterable</em><span class="sig-paren">)</span><a class="headerlink" href="#collections.extend" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Расширяет очередь, добавляя с правой стороны все элементы из итерируемого объекта iterable.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="collections.extendleft">
+<code class="descclassname">collections.</code><code class="descname">extendleft</code><span class="sig-paren">(</span><em>iterable</em><span class="sig-paren">)</span><a class="headerlink" href="#collections.extendleft" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Расширяет очередь, добавляя с левой стороны все элементы из итерируемого объекта iterable. Из-за того, что добавление производится последовательно, по одному элементу, элементы итерируемого объекта iterable будут добавлены в очередь d в обратном порядке.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="collections.pop">
+<code class="descclassname">collections.</code><code class="descname">pop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#collections.pop" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Удаляет и возвращает элемент с правой стороны очереди. Если очередь пуста, возбуждает исключение IndexError.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="collections.popleft">
+<code class="descclassname">collections.</code><code class="descname">popleft</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#collections.popleft" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Удаляет и возвращает элемент с левой стороны очереди  Если очередь пуста, возбуждает исключение IndexError.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="collections.remove">
+<code class="descclassname">collections.</code><code class="descname">remove</code><span class="sig-paren">(</span><em>item</em><span class="sig-paren">)</span><a class="headerlink" href="#collections.remove" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Удаляет первое вхождение элемента item. Возбуждает исключение ValueError, если указанное значение не будет найдено.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="collections.rotate">
+<code class="descclassname">collections.</code><code class="descname">rotate</code><span class="sig-paren">(</span><em>n</em><span class="sig-paren">)</span><a class="headerlink" href="#collections.rotate" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Прокручивает все элементы на n позиций вправо. Если в аргументе n передается отрицательное значение, прокручивание выполняется влево.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="collections.defaultdict">
+<code class="descclassname">collections.</code><code class="descname">defaultdict</code><span class="sig-paren">(</span><span class="optional">[</span><em>default_factory</em>, <span class="optional">]</span><em>...</em><span class="sig-paren">)</span><a class="headerlink" href="#collections.defaultdict" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Тип данных, который практически в точности повторяет функциональные возможности словарей, за исключением способа обработки обращений к несуществующим ключам. Когда происходит обращение к несуществующему ключу, вызывается функция, которая передается в аргументе default_factory. Эта функция должна вернуть значение по умолчанию, которое затем сохраняется как значение указанного ключа. Остальные аргументы функции defaultdict() в точности те же самые, что передаются встроенной функции dict(). Экземпляры типа defaultdict обладают теми же возможностями, что и встроенные словари. Атрибут default_factory содержит функцию, которая передается функции в первом аргументе, и может изменяться в случае необходимости.
+Объекты типа defaultdict удобно использовать в качестве словаря для слежения за данными. Например, предположим, что необходимо отслеживать позицию каждого слова в строке s. Ниже показано, насколько просто это можно реализовать с помощью объекта defaultdict:</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt;&gt;&gt; from collections import defaultdict
+&gt;&gt;&gt; s = “yeah but no but yeah but no but yeah”
+&gt;&gt;&gt; words = s.split()
+&gt;&gt;&gt; wordlocations = defaultdict(list)
+&gt;&gt;&gt; for n, w in enumerate(words):
+    ...
+    wordlocations[w].append(n)
+    ...
+&gt;&gt;&gt; wordlocations
+defaultdict(&lt;type ‘list’&gt;, {‘yeah’:[0, 4, 8],’but’: [1, 3, 5, 7],’no’: [2, 6]})
+&gt;&gt;&gt;
+</pre></div>
+</div>
+<p>В этом примере операция обращения к элементу словаря wordlocations[w] будет «терпеть неудачу», когда слово встречается впервые. Однако вместо исключения KeyError будет вызвана функция list, переданная в аргументе default_factory, которая создаст новое значение. Встроенные словари имеют метод setdefault(), который позволяет добиться того же эффекта, но его использование делает программный код менее наглядным, и к тому же он работает медленнее. Например, инструкцию, добавляющую новый элемент в предыдущем примере, можно было бы заменить инструкцией wordlocations.setdefault(w,[]).append(n). Но она не так очевидна и выполняется почти в два раза медленнее, чем пример с использованием объекта defaultdict.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="collections.namedtuple">
+<code class="descclassname">collections.</code><code class="descname">namedtuple</code><span class="sig-paren">(</span><em>typename</em>, <em>fieldnames</em><span class="optional">[</span>, <em>verbose</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#collections.namedtuple" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>typename</strong> &#8211; имя класса, возвращаемого объекта</li>
+<li><strong>fieldnames</strong> (<em>list</em>) &#8211; список имен атрибутов в виде строк. Имена в этом списке должны быть допустимыми идентификаторами Python. Они не должны начинаться с символа подчеркивания, а порядок их следования определяет порядок следования элементов кортежа, например [‘hostname’,’port’]. Кроме того, допускается передавать строку, такую как ‘hostname port’ или ‘hostname, port’.</li>
+<li><strong>verbose</strong> (<em>bool</em>) &#8211; True, функция выводит определение класса в поток стандартного вывода.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Создает подкласс типа tuple с именем typename.</p>
+<p>Кортежи часто используются для представления простых структур данных. Например, кортежи можно использовать для представления сетевых адресов: addr = (hostname, port). Типичный недостаток кортежей состоит в том, что к отдельным элементам приходится обращаться с помощью числовых индексов, например: addr[0] или addr[1]. Это усложняет чтение программного кода и его сопровождение, потому что приходится запоминать значение всех индексов (в случае больших кортежей эта ситуация ухудшается еще больше).</p>
+<p>Именованные кортежи эффективнее расходуют память и поддерживают различные операции над кортежами, такие как распаковывание элементов (например, если имеется список именованных кортежей, эти кортежи можно будет распаковывать в цикле for, например: for name, shares, price in stockList).
+Недостатком именованных кортежей является более низкая скорость операции получения значений атрибутов в сравнении с классами.</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt;&gt;&gt; from collections import namedtuple
+&gt;&gt;&gt; NetworkAddress = namedtuple(‘NetworkAddress’,[‘hostname’,’port’])
+&gt;&gt;&gt; a = NetworkAddress(‘www.python.org’,80)
+&gt;&gt;&gt; a.hostname
+‘www.python.org’
+&gt;&gt;&gt; a.port
+80
+&gt;&gt;&gt; host, port = a
+&gt;&gt;&gt; len(a)
+2
+&gt;&gt;&gt; type(a)
+&lt;class ‘__main__.NetworkAddress’&gt;
+&gt;&gt;&gt; isinstance(a, tuple)
+True
+&gt;&gt;&gt;
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="collections.Container">
+<em class="property">class </em><code class="descclassname">collections.</code><code class="descname">Container</code><a class="headerlink" href="#collections.Container" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Базовый класс всех контейнеров. Определяет единственный абстрактный метод __contains__(), реализующий оператор in.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="collections.Hashable">
+<em class="property">class </em><code class="descclassname">collections.</code><code class="descname">Hashable</code><a class="headerlink" href="#collections.Hashable" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Базовый класс всех объектов, которые могут использоваться в качестве ключей хеш-таблиц. Определяет единственный абстрактный метод __hash__().</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="collections.Iterable">
+<em class="property">class </em><code class="descclassname">collections.</code><code class="descname">Iterable</code><a class="headerlink" href="#collections.Iterable" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Базовый класс объектов, поддерживающих протокол итераций. Определяет единственный абстрактный метод __iter__().</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="collections.Iterator">
+<em class="property">class </em><code class="descclassname">collections.</code><code class="descname">Iterator</code><a class="headerlink" href="#collections.Iterator" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Базовый класс итерируемых объектов. Определяет абстрактный метод next(), а также наследует класс Iterable и предоставляет реализацию по умолчанию метода __iter__(), который просто ничего не делает.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="collections.Sized">
+<em class="property">class </em><code class="descclassname">collections.</code><code class="descname">Sized</code><a class="headerlink" href="#collections.Sized" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Базовый класс контейнеров, которые позволяют определить размер. Определяет абстрактный метод __len__().</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="collections.Callable">
+<em class="property">class </em><code class="descclassname">collections.</code><code class="descname">Callable</code><a class="headerlink" href="#collections.Callable" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Базовый класс объектов, поддерживающих возможность вызова, как функции. Определяет абстрактный метод __call__().</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="collections.Sequence">
+<em class="property">class </em><code class="descclassname">collections.</code><code class="descname">Sequence</code><a class="headerlink" href="#collections.Sequence" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Базовый класс объектов, которые выглядят как последовательности. Наследует классы Container, Iterable и Sized, а также определяет абстрактные методы __getitem__() и __len__(). Кроме того, предоставляет реализацию по умолчанию методов __contains__(), __iter__(), __reversed__(), index() и count(), которые реализованы исключительно посредством методов __getitem__() и __len__().</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="collections.MutableSequence">
+<em class="property">class </em><code class="descclassname">collections.</code><code class="descname">MutableSequence</code><a class="headerlink" href="#collections.MutableSequence" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Базовый класс изменяемых последовательностей. Наследует класс Sequence и добавляет абстрактные методы __setitem__() и __delitem__(). Кроме того, предоставляет реализацию по умолчанию методов append(), reverse(), extend(), pop(), remove() и __iadd__().</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="collections.Set">
+<em class="property">class </em><code class="descclassname">collections.</code><code class="descname">Set</code><a class="headerlink" href="#collections.Set" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Базовый класс объектов, которые действуют как множества. Наследует классы Container, Iterable и Sized и определяет абстрактные методы __len__(), __iter__() и __contains__(). Кроме того, предоставляет реализацию по умолчанию операций над множествами __le__(), __lt__(), __eq__(), __ne__(), __gt__(), __ge__(), __and__(), __or__(), __xor__(), __sub__() и isdisjoint().</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="collections.MutableSet">
+<em class="property">class </em><code class="descclassname">collections.</code><code class="descname">MutableSet</code><a class="headerlink" href="#collections.MutableSet" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Базовый класс изменяемых множеств. Наследует класс Set и добавляет абстрактные методы add() и discard(). Кроме того, предоставляет реализацию по умолчанию методов clear(), pop(), remove(), __ior__(), __iand__(), __ixor__ () и __isub__().</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="collections.Mapping">
+<em class="property">class </em><code class="descclassname">collections.</code><code class="descname">Mapping</code><a class="headerlink" href="#collections.Mapping" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Базовый класс объектов, поддерживающих возможность отображения (словари). Наследует классы Sized, Iterable и Container и определяет абстрактные методы __getitem__(), __len__() и __iter__(). Предоставляет реализацию по умолчанию методов __contains__(), keys(), items(), values(), get(), __eq__() и __ne__().</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="collections.MutableMapping">
+<em class="property">class </em><code class="descclassname">collections.</code><code class="descname">MutableMapping</code><a class="headerlink" href="#collections.MutableMapping" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Базовый класс изменяемых объектов отображений. Наследует класс Mapping и добавляет абстрактные методы __setitem__() и __delitem__(). Кроме того, предоставляет реализацию по умолчанию методов pop(), popitem(), clear(), update() и setdefault().</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="collections.MappingView">
+<em class="property">class </em><code class="descclassname">collections.</code><code class="descname">MappingView</code><a class="headerlink" href="#collections.MappingView" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Базовый класс представлений отображений. . Представление отображения – это объект, который позволяет обращаться к элементам объекта отображения как к множествам. Например, представлением ключей является объект, напоминающий множество, который содержит ключи, имеющиеся в отображении.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="collections.KeysView">
+<em class="property">class </em><code class="descclassname">collections.</code><code class="descname">KeysView</code><a class="headerlink" href="#collections.KeysView" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Базовый класс представления ключей отображения. Наследует классы MappingView и Set.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="collections.ItemsView">
+<em class="property">class </em><code class="descclassname">collections.</code><code class="descname">ItemsView</code><a class="headerlink" href="#collections.ItemsView" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Базовый класс представления элементов отображения. Наследует классы MappingView и Set.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="collections.ValuesView">
+<em class="property">class </em><code class="descclassname">collections.</code><code class="descname">ValuesView</code><a class="headerlink" href="#collections.ValuesView" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Базовый класс представления пар (key, item) отображения. Наследует классы MappingView и Set.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Предыдущий раздел</h4>
+  <p class="topless"><a href="cmath.html"
+                        title="предыдущая глава">cmath</a></p>
+  <h4>Следующий раздел</h4>
+  <p class="topless"><a href="contextlib.html"
+                        title="следующая глава">contextlib</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Эта страница</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/modules/collections.txt"
+            rel="nofollow">Исходный текст</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Быстрый поиск</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Искать" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Введите слова для поиска или имя модуля, класса или функции.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Алфавитный указатель"
+             >указатель</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="contextlib.html" title="contextlib"
+             >вперёд</a> |</li>
+        <li class="right" >
+          <a href="cmath.html" title="cmath"
+             >назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Документация python документация 2015.05.20</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Основные модули</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright ilnurgi.
+      Создано с помощью <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

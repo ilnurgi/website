@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>android.widget.TextView &mdash; android 14.10.12 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '14.10.12',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="android 14.10.12 documentation" href="../../index.html" />
+    <link rel="next" title="android.widget.Toast" href="Toast.html" />
+    <link rel="prev" title="android.widget.TableLayout" href="TableLayout.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="Toast.html" title="android.widget.Toast"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="TableLayout.html" title="android.widget.TableLayout"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">android 14.10.12 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="android-widget-textview">
+<span id="id1"></span><h1>android.widget.TextView<a class="headerlink" href="#android-widget-textview" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="android.widget.TextView">
+<em class="property">class </em><tt class="descclassname">android.widget.</tt><tt class="descname">TextView</tt><big>(</big><span class="optional">[</span><em>context</em><span class="optional">[</span>, <em>attrs</em><span class="optional">[</span>, <em>defStyle</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#android.widget.TextView" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>context</strong> &#8211; <em class="xref std std-ref">androif_content_Context</em></li>
+<li><strong>attrs</strong> &#8211; <em class="xref std std-ref">androif_util_AtributeSet</em></li>
+<li><strong>defStyle</strong> &#8211; int</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Наследник <em class="xref std std-ref">android.view.View</em>. Стандартная метка, предназначенная для вывода текста. Она поддерживает многострочное отображение, форматирование и автоматический перенос слов и символов.</p>
+<dl class="method">
+<dt id="android.widget.TextView.getText">
+<tt class="descname">getText</tt><big>(</big><big>)</big><a class="headerlink" href="#android.widget.TextView.getText" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает текст виджета</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="android.widget.TextView.setText">
+<tt class="descname">setText</tt><big>(</big><em>str</em><big>)</big><a class="headerlink" href="#android.widget.TextView.setText" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">setText</tt><big>(</big><em>R.string.name</em><big>)</big></dt>
+<dd><p>устанавливает текст для объекта</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="android.widget.TextView.setTextSize">
+<tt class="descname">setTextSize</tt><big>(</big><em>size</em><big>)</big><a class="headerlink" href="#android.widget.TextView.setTextSize" title="Permalink to this definition">¶</a></dt>
+<dd><p>устанавливает размер текст для объекта</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="android.widget.TextView.setTextColor">
+<tt class="descname">setTextColor</tt><big>(</big><em>color</em><big>)</big><a class="headerlink" href="#android.widget.TextView.setTextColor" title="Permalink to this definition">¶</a></dt>
+<dd><p>устанавливает цвет текст для объекта</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="android.widget.TextView.onDraw">
+<tt class="descname">onDraw</tt><big>(</big><em>canvas</em><big>)</big><a class="headerlink" href="#android.widget.TextView.onDraw" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>canvas</strong> &#8211; <a class="reference internal" href="../graphics/Graphics.html#android-graphics-graphics"><em>android.graphics.Graphics</em></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">void</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="android.widget.TextView.onKeyDown">
+<tt class="descname">onKeyDown</tt><big>(</big><em>keyCode</em>, <em>keyEvent</em><big>)</big><a class="headerlink" href="#android.widget.TextView.onKeyDown" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>keyCode</strong> &#8211; int</li>
+<li><strong>keyEvent</strong> &#8211; <em class="xref std std-ref">KeyEvent</em></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">boolean</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="android.widget.TextView.requestFocus">
+<tt class="descname">requestFocus</tt><big>(</big><big>)</big><a class="headerlink" href="#android.widget.TextView.requestFocus" title="Permalink to this definition">¶</a></dt>
+<dd><p>устанавливает фокус на виджет</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="TableLayout.html"
+                        title="previous chapter">android.widget.TableLayout</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="Toast.html"
+                        title="next chapter">android.widget.Toast</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/android/widget/TextView.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="Toast.html" title="android.widget.Toast"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="TableLayout.html" title="android.widget.TableLayout"
+             >previous</a> |</li>
+        <li><a href="../../index.html">android 14.10.12 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

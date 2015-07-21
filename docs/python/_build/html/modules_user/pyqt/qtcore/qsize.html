@@ -1,0 +1,262 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>QSize - объект, задает размер &mdash; Документация python документация 2015.05.20</title>
+    
+    <link rel="stylesheet" href="../../../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2015.05.20',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Документация python документация 2015.05.20" href="../../../index.html" />
+    <link rel="up" title="QtCore - модуль содержит классы, не связанные с реализацией графического интерфейса." href="index.html" />
+    <link rel="next" title="QSizeF - объект, задает размер (для работы с вещественными числами)" href="qsizef.html" />
+    <link rel="prev" title="QRectF - объект, область ()" href="qrectf.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="Алфавитный указатель"
+             accesskey="I">указатель</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="qsizef.html" title="QSizeF - объект, задает размер (для работы с вещественными числами)"
+             accesskey="N">вперёд</a> |</li>
+        <li class="right" >
+          <a href="qrectf.html" title="QRectF - объект, область ()"
+             accesskey="P">назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Документация python документация 2015.05.20</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Сторонние модули</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >pyqt - кросплатформенный фреймворк</a> &raquo;</li>
+          <li class="nav-item nav-item-3"><a href="index.html" accesskey="U">QtCore - модуль содержит классы, не связанные с реализацией графического интерфейса.</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <span class="target" id="module-QtCore"></span><div class="section" id="qsize">
+<h1>QSize - объект, задает размер<a class="headerlink" href="#qsize" title="Ссылка на этот заголовок">¶</a></h1>
+<dl class="class">
+<dt id="QtCore.QSize">
+<em class="property">class </em><code class="descclassname">QtCore.</code><code class="descname">QSize</code><span class="sig-paren">(</span><em>h=-1</em>, <em>w=-1</em><span class="sig-paren">)</span><a class="headerlink" href="#QtCore.QSize" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt>
+<em class="property">class </em><code class="descclassname">QtCore.</code><code class="descname">QSize</code><span class="sig-paren">(</span><em>qsize</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>h</strong> (<em>int</em>) &#8211; высота</li>
+<li><strong>w</strong> (<em>int</em>) &#8211; ширина</li>
+<li><strong>qsize</strong> (<a class="reference internal" href="#QtCore.QSize" title="QtCore.QSize"><em>QtCore.QSize</em></a>) &#8211; объект, размер</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Описывает координаты какого-то размера</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">s1</span> <span class="o">=</span> <span class="n">QtCore</span><span class="o">.</span><span class="n">QSize</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s2</span> <span class="o">=</span> <span class="n">QtCore</span><span class="o">.</span><span class="n">QSize</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s1</span> <span class="o">+</span> <span class="n">s2</span>
+<span class="go">PyQt4.QtCore.QSize(60, 25)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s1</span> <span class="o">-</span> <span class="n">s2</span>
+<span class="go">PyQt4.QtCore.QSize(40, 15)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s1</span> <span class="o">*</span> <span class="mf">2.5</span>
+<span class="go">PyQt4.QtCore.QSize(125, 50)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s1</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="go">PyQt4.QtCore.QSize(25, 10)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s1</span> <span class="o">==</span> <span class="n">s2</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s1</span> <span class="o">!=</span> <span class="n">s2</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="QtCore.QSize.boundedTo">
+<code class="descname">boundedTo</code><span class="sig-paren">(</span><em>qsize</em><span class="sig-paren">)</span><a class="headerlink" href="#QtCore.QSize.boundedTo" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><strong>qsize</strong> (<a class="reference internal" href="#QtCore.QSize" title="QtCore.QSize"><em>QtCore.QSize</em></a>) &#8211; объект, размер</td>
+</tr>
+</tbody>
+</table>
+<p>Возвращает <a class="reference internal" href="#QtCore.QSize" title="QtCore.QSize"><code class="xref py py-class docutils literal"><span class="pre">QtCore.QSize</span></code></a>, который содержит максимальную ширину и высоту из размеров.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="QtCore.QSize.height">
+<code class="descname">height</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#QtCore.QSize.height" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает число, высоту</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="QtCore.QSize.isEmpty">
+<code class="descname">isEmpty</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#QtCore.QSize.isEmpty" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает истину/ложь, если высота или ширина меньше или равен нулю</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="QtCore.QSize.isNull">
+<code class="descname">isNull</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#QtCore.QSize.isNull" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает истину/ложь, высота и ширина равны нулю</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="QtCore.QSize.isValid">
+<code class="descname">isValid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#QtCore.QSize.isValid" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает истину/ложь, высота больше или равно нулю</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="QtCore.QSize.scale">
+<code class="descname">scale</code><span class="sig-paren">(</span><em>qsize</em>, <em>scale_type</em><span class="sig-paren">)</span><a class="headerlink" href="#QtCore.QSize.scale" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">scale</code><span class="sig-paren">(</span><em>w</em>, <em>h</em>, <em>scale_type</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>h</strong> (<em>int</em>) &#8211; высота</li>
+<li><strong>w</strong> (<em>int</em>) &#8211; ширина</li>
+<li><strong>qsize</strong> (<a class="reference internal" href="#QtCore.QSize" title="QtCore.QSize"><em>QtCore.QSize</em></a>) &#8211; объект, размер</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Производит изменение размеров области</p>
+<p>В параметре <cite>scale_type</cite> могут быть указаны следующие атрибуты из класса <a class="reference internal" href="qt.html#QtCore.Qt" title="QtCore.Qt"><code class="xref py py-class docutils literal"><span class="pre">QtCore.Qt</span></code></a>:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>IgnoreAspectRatio - 0 - непосредственно изменяет размеры без сохранения про­порций сторон;</li>
+<li>KeepAspectRatio - 1 - производится поnытка масштабирования старой области внутри новой области без нарушения проnорций;</li>
+<li>KeepAspectRatioByExpanding - 2- производится попытка полностью заполнить новую область без нарушения пропорций старой области.</li>
+</ol>
+</div></blockquote>
+<p>Если новая ширина или высота имеет значение 0, то размеры изменяются непосредст­венно без сохранения пропорций, вне зависимости от значения параметра <cite>scale_type</cite>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="QtCore.QSize.setHeight">
+<code class="descname">setHeight</code><span class="sig-paren">(</span><em>h</em><span class="sig-paren">)</span><a class="headerlink" href="#QtCore.QSize.setHeight" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Задает ширину</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="QtCore.QSize.setWidth">
+<code class="descname">setWidth</code><span class="sig-paren">(</span><em>w</em><span class="sig-paren">)</span><a class="headerlink" href="#QtCore.QSize.setWidth" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Задает высоту</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="QtCore.QSize.transpose">
+<code class="descname">transpose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#QtCore.QSize.transpose" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Меняет местами значения</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="QtCore.QSize.width">
+<code class="descname">width</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#QtCore.QSize.width" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает число, ширину</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Предыдущий раздел</h4>
+  <p class="topless"><a href="qrectf.html"
+                        title="предыдущая глава">QRectF - объект, область ()</a></p>
+  <h4>Следующий раздел</h4>
+  <p class="topless"><a href="qsizef.html"
+                        title="следующая глава">QSizeF - объект, задает размер (для работы с вещественными числами)</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Эта страница</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/modules_user/pyqt/qtcore/qsize.txt"
+            rel="nofollow">Исходный текст</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Быстрый поиск</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Искать" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Введите слова для поиска или имя модуля, класса или функции.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="Алфавитный указатель"
+             >указатель</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="qsizef.html" title="QSizeF - объект, задает размер (для работы с вещественными числами)"
+             >вперёд</a> |</li>
+        <li class="right" >
+          <a href="qrectf.html" title="QRectF - объект, область ()"
+             >назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Документация python документация 2015.05.20</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Сторонние модули</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >pyqt - кросплатформенный фреймворк</a> &raquo;</li>
+          <li class="nav-item nav-item-3"><a href="index.html" >QtCore - модуль содержит классы, не связанные с реализацией графического интерфейса.</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright ilnurgi.
+      Создано с помощью <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

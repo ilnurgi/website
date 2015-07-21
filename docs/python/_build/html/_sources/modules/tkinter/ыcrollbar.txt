@@ -1,0 +1,4 @@
+Scrollbar
+=========
+
+.. py:class:: Scrollbar(widget, **kwargs)

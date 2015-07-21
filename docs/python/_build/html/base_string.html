@@ -1,0 +1,660 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Строки &mdash; python doc 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="python doc 0.1 documentation" href="index.html" />
+    <link rel="prev" title="Документация по python" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="index.html" title="Документация по python"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">python doc 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="id1">
+<h1>Строки<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Строки это итерируемые объекты.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;ilnurgi&#39;</span> <span class="o">+</span> <span class="s">&#39;.ru&#39;</span>
+<span class="go">&#39;ilnurgi.ru&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;ilnurgi&#39;</span> <span class="o">*</span> <span class="mi">3</span>
+<span class="go">&#39;ilnurgiilnurgiilnurgi&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;il&#39;</span> <span class="ow">in</span> <span class="s">&#39;ilnurgi&#39;</span>
+<span class="go">True</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;il&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="s">&#39;ilnurgi&#39;</span>
+<span class="go">False</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;ilnurgi&#39;</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="go">&#39;i&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;ilnurgi&#39;</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="go">&#39;n&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;ilnurgi&#39;</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
+<span class="go">&#39;il&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;ilnurgi&#39;</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span>
+<span class="go">&#39;gi&#39;</span>
+</pre></div>
+</div>
+<div class="section" id="id2">
+<h2>Методы<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="str.capitalize">
+<tt class="descclassname">str.</tt><tt class="descname">capitalize</tt><big>(</big><big>)</big><a class="headerlink" href="#str.capitalize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает строку, у которой первая буква заменена на прописную</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;ilnur&#39;</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
+<span class="go">&#39;Ilnur&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.center">
+<tt class="descclassname">str.</tt><tt class="descname">center</tt><big>(</big><em>width</em><big>)</big><a class="headerlink" href="#str.center" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>width</strong> (<em>int</em>) &#8211; длина возвращаемой строки</td>
+</tr>
+</tbody>
+</table>
+<p>Возвращает строку, заданной длины, выравненная по центру.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;ilnur&#39;</span><span class="o">.</span><span class="n">center</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="go">&#39; ilnur &#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.count">
+<tt class="descclassname">str.</tt><tt class="descname">count</tt><big>(</big><em>sub</em><span class="optional">[</span>, <em>start</em><span class="optional">[</span>, <em>end</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#str.count" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>sub</strong> (<em>str</em>) &#8211; искомая строка</li>
+<li><strong>start</strong> (<em>int</em>) &#8211; начальная позиция</li>
+<li><strong>end</strong> (<em>int</em>) &#8211; конечноая позиция</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Возвращает число, количество вхождений искомой строки в исходной строке.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;Help me! Help!&#39;</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s">&#39;Help&#39;</span><span class="p">)</span>
+<span class="go">2</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.decode">
+<tt class="descclassname">str.</tt><tt class="descname">decode</tt><big>(</big><em>coding</em><big>)</big><a class="headerlink" href="#str.decode" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>coding</strong> (<em>str</em>) &#8211; кодировка</td>
+</tr>
+</tbody>
+</table>
+<p>Возвращает строку, раскодированная из указанной кодировки в юникод.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;</span><span class="se">\xd0\xb8\xd0\xbb\xd1\x8c\xd0\xbd\xd1\x83\xd1\x80</span><span class="s">&#39;</span>
+<span class="go">&#39;\xd0\xb8\xd0\xbb\xd1\x8c\xd0\xbd\xd1\x83\xd1\x80&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;</span><span class="se">\xd0\xb8\xd0\xbb\xd1\x8c\xd0\xbd\xd1\x83\xd1\x80</span><span class="s">&#39;</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">&#39;utf-8&#39;</span><span class="p">)</span>
+<span class="go">u&#39;\u0438\u043b\u044c\u043d\u0443\u0440&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.encode">
+<tt class="descclassname">str.</tt><tt class="descname">encode</tt><big>(</big><em>coding</em><big>)</big><a class="headerlink" href="#str.encode" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>coding</strong> (<em>str</em>) &#8211; кодировка</td>
+</tr>
+</tbody>
+</table>
+<p>Возвращает строку, закодированную из юникода в указанную кодировку.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">u&#39;Ильнур&#39;</span>
+<span class="go">u&#39;\u0418\u043b\u044c\u043d\u0443\u0440&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">u&#39;Ильнур&#39;</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">&#39;cp1251&#39;</span><span class="p">)</span>
+<span class="go">&#39;\xc8\xeb\xfc\xed\xf3\xf0&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.endswith">
+<tt class="descclassname">str.</tt><tt class="descname">endswith</tt><big>(</big><em>sub</em><span class="optional">[</span>, <em>start</em><span class="optional">[</span>, <em>end</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#str.endswith" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>sub</strong> (<em>str</em>) &#8211; искомая строка</li>
+<li><strong>strat</strong> &#8211; начальная позиция</li>
+<li><strong>end</strong> (<em>int</em>) &#8211; конечная позиция</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Возвращает True | False, если строка заканчивается c искомой строки
+&gt;&gt;&gt; &#8216;ilnur&#8217;.endswith(&#8216;il&#8217;)
+False
+&gt;&gt;&gt; &#8216;ilnur&#8217;.endswith(&#8216;nur&#8217;)
+True</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.expandtabs">
+<tt class="descclassname">str.</tt><tt class="descname">expandtabs</tt><big>(</big><span class="optional">[</span><em>tabsize = 8</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#str.expandtabs" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tabsize</strong> (<em>int</em>) &#8211; количество пробелов за место табуляции</td>
+</tr>
+</tbody>
+</table>
+<p>Возвращает строку, символы табуляции заменены указанным количеством пробелов.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">u&#39;</span><span class="se">\t</span><span class="s">Ильнур&#39;</span><span class="o">.</span><span class="n">expandtabs</span><span class="p">()</span>
+<span class="go">u&#39;        \u0418\u043b\u044c\u043d\u0443\u0440&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.find">
+<tt class="descclassname">str.</tt><tt class="descname">find</tt><big>(</big><em>sub</em><span class="optional">[</span>, <em>start</em><span class="optional">[</span>, <em>end</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#str.find" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>sub</strong> (<em>str</em>) &#8211; искомая строка</li>
+<li><strong>start</strong> (<em>int</em>) &#8211; начальная позиция</li>
+<li><strong>end</strong> (<em>int</em>) &#8211; конченая позиция</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Возвращает число, позиция в котором встречается искомая строка, если ничего не найдено возвращает -1, поиск ведется слева.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;ilnur&#39;</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;nur&#39;</span><span class="p">)</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;ilnur&#39;</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;run&#39;</span><span class="p">)</span>
+<span class="go">-1</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.format">
+<tt class="descclassname">str.</tt><tt class="descname">format</tt><big>(</big><em>args</em><big>)</big><a class="headerlink" href="#str.format" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает строку, форматированную в соответствии с параметрами args</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;{0} и {1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&#39;фарш&#39;</span><span class="p">,</span> <span class="s">&#39;яйца&#39;</span><span class="p">)</span>
+<span class="go">&#39;фарш и яйца&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;Этот {food} — {adjective}.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">food</span><span class="o">=</span><span class="s">&#39;фарш&#39;</span><span class="p">,</span> <span class="n">adjective</span><span class="o">=</span><span class="s">&#39;непередаваемо ужасен&#39;</span><span class="p">)</span>
+<span class="go">Этот фарш — непередаваемо ужасен.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;История о {0}е, {1}е, и {other}е.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&#39;Билл&#39;</span><span class="p">,</span> <span class="s">&#39;Манфред&#39;</span><span class="p">,</span> <span class="n">other</span><span class="o">=</span><span class="s">&#39;Георг&#39;</span><span class="p">)</span>
+<span class="go">История о Билле, Манфреде, и Георге.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;Значение ПИ — примерно {0:.3f}.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">3.14</span><span class="p">))</span>
+<span class="go">Значение ПИ — примерно 3.14159.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;{0:10} ==&gt; {1:10d}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&#39;Sjoerd&#39;</span><span class="p">,</span> <span class="mi">4127</span><span class="p">)</span>
+<span class="go">Sjoerd     ==&gt;       4127</span>
+<span class="go">table = {&#39;Sjoerd&#39;: 4127, &#39;Jack&#39;: 4098, &#39;Dcab&#39;: 8637678}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;Jack: {0[Jack]:d}; Sjoerd: {0[Sjoerd]:d}; Dcab: {0[Dcab]:d}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">table</span><span class="p">))</span>
+<span class="go">Jack: 4098; Sjoerd: 4127; Dcab: 8637678</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.join">
+<tt class="descclassname">str.</tt><tt class="descname">join</tt><big>(</big><em>iter</em><big>)</big><a class="headerlink" href="#str.join" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>iter</strong> (<em>iter</em>) &#8211; итерируемый объект</td>
+</tr>
+</tbody>
+</table>
+<p>Возвращает строку, содержащий сконкатенированные значения исходной строки с итерируемым объектом.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;ilnur&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s">&#39;---&#39;</span><span class="p">)</span>
+<span class="go">&#39;-ilnur-ilnur-&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.index">
+<tt class="descclassname">str.</tt><tt class="descname">index</tt><big>(</big><em>sub</em><span class="optional">[</span>, <em>start</em><span class="optional">[</span>, <em>end</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#str.index" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>text</strong> &#8211; искомая строка</li>
+<li><strong>start</strong> (<em>int</em>) &#8211; начальная позиция</li>
+<li><strong>end</strong> (<em>int</em>) &#8211; конченая позиция</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Возвращает число, позиция в котором встречается искомая строка, если ничего не найдено вызовет исключение, поиск ведется слева.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;ilnur&#39;</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s">&#39;nur&#39;</span><span class="p">)</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;ilnur&#39;</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s">&#39;run&#39;</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+    <span class="n">File</span> <span class="s">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="gr">ValueError</span>: <span class="n">substring not found</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.isalpha">
+<tt class="descclassname">str.</tt><tt class="descname">isalpha</tt><big>(</big><big>)</big><a class="headerlink" href="#str.isalpha" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает True | False, если строка содержит только буквы</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;123&#39;</span><span class="o">.</span><span class="n">isalpha</span><span class="p">()</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;ilnur&#39;</span><span class="o">.</span><span class="n">isalpha</span><span class="p">()</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.isdigit">
+<tt class="descclassname">str.</tt><tt class="descname">isdigit</tt><big>(</big><big>)</big><a class="headerlink" href="#str.isdigit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает True | False, если строка содержит только цифры</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;123&#39;</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;ilnur&#39;</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.islower">
+<tt class="descclassname">str.</tt><tt class="descname">islower</tt><big>(</big><big>)</big><a class="headerlink" href="#str.islower" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает True | False, если строка содержит только строчные буквы</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.isspace">
+<tt class="descclassname">str.</tt><tt class="descname">isspace</tt><big>(</big><big>)</big><a class="headerlink" href="#str.isspace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает True | False, если строка содержит только пробельные символы</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;123&#39;</span><span class="o">.</span><span class="n">isalpha</span><span class="p">()</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.istitle">
+<tt class="descclassname">str.</tt><tt class="descname">istitle</tt><big>(</big><big>)</big><a class="headerlink" href="#str.istitle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает True | False, если строка содержит только заглавные буквы</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.lower">
+<tt class="descclassname">str.</tt><tt class="descname">lower</tt><big>(</big><big>)</big><a class="headerlink" href="#str.lower" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает строку, в нижнем регистре</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;iLnur&#39;</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="go">&#39;ilnur&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.ljust">
+<tt class="descclassname">str.</tt><tt class="descname">ljust</tt><big>(</big><em>width</em><big>)</big><a class="headerlink" href="#str.ljust" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>width</strong> (<em>int</em>) &#8211; длина возвращаемой строки</td>
+</tr>
+</tbody>
+</table>
+<p>Возвращает строку, заданной длины, выравненная слева.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;ilnur&#39;</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="go">&#39;ilnur  &#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="lstrip">
+<tt class="descname">lstrip</tt><big>(</big><big>)</big><a class="headerlink" href="#lstrip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает строку, с удаленными пробелами слева</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39; ilnur privet &#39;</span><span class="o">.</span><span class="n">lstrip</span><span class="p">()</span>
+<span class="go">&#39;ilnur privet  &#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.replace">
+<tt class="descclassname">str.</tt><tt class="descname">replace</tt><big>(</big><em>old</em>, <em>new</em><big>)</big><a class="headerlink" href="#str.replace" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>old</strong> (<em>str</em>) &#8211; старая</li>
+<li><strong>new</strong> &#8211; новая</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Возвращает строку, с замененой строкой на новую строку.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;ilnur&#39;</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;nur&#39;</span><span class="p">,</span><span class="s">&#39;nurgi&#39;</span><span class="p">)</span>
+<span class="go">&#39;ilnurgi&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.rfind">
+<tt class="descclassname">str.</tt><tt class="descname">rfind</tt><big>(</big><em>sub</em><span class="optional">[</span>, <em>start</em><span class="optional">[</span>, <em>end</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#str.rfind" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>sub</strong> (<em>str</em>) &#8211; искомая строка</li>
+<li><strong>start</strong> (<em>int</em>) &#8211; начальная позиция</li>
+<li><strong>end</strong> (<em>int</em>) &#8211; конченая позиция</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Аналог <a class="reference internal" href="#str.find" title="str.find"><tt class="xref py py-meth docutils literal"><span class="pre">str.find()</span></tt></a>.
+Возвращает число, с которого начинается искомая строка, если ничего не найдено возвращает -1, поиск ведется справа.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.rindex">
+<tt class="descclassname">str.</tt><tt class="descname">rindex</tt><big>(</big><em>sub</em><span class="optional">[</span>, <em>start</em><span class="optional">[</span>, <em>end</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#str.rindex" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>sub</strong> (<em>str</em>) &#8211; искомая строка</li>
+<li><strong>start</strong> (<em>int</em>) &#8211; начальная позиция</li>
+<li><strong>end</strong> (<em>int</em>) &#8211; конченая позиция</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Аналог <a class="reference internal" href="#str.index" title="str.index"><tt class="xref py py-meth docutils literal"><span class="pre">str.index()</span></tt></a>.
+Возвращает число, с которого начинается искомая строка, если ничего не найдено вызовет исключение, поиск ведется справа.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.rjust">
+<tt class="descclassname">str.</tt><tt class="descname">rjust</tt><big>(</big><em>width</em><big>)</big><a class="headerlink" href="#str.rjust" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>width</strong> (<em>int</em>) &#8211; длина возвращаемой строки</td>
+</tr>
+</tbody>
+</table>
+<p>Возвращает строку, заданной длины, выравненная по центру.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;ilnur&#39;</span><span class="o">.</span><span class="n">rjust</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="go">&#39;  ilnur&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="rstrip">
+<tt class="descname">rstrip</tt><big>(</big><big>)</big><a class="headerlink" href="#rstrip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает строку, с удаленными пробелами слева/справа или с обоих концов соответственно.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39; ilnur privet &#39;</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span>
+<span class="go">&#39; ilnur privet&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.split">
+<tt class="descclassname">str.</tt><tt class="descname">split</tt><big>(</big><em>razd</em><span class="optional">[</span>, <em>maxcount</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#str.split" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>razd</strong> (<em>str</em>) &#8211; разделитель</li>
+<li><strong>maxcount</strong> (<em>int</em>) &#8211; количество элементов в списке</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Возвращает список, полученный из строки, путем разделения разделителем.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;i l n u r&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39; &#39;</span><span class="p">)</span>
+<span class="go">[&#39;i&#39;, &#39;l&#39;, &#39;n&#39;, &#39;u&#39;, &#39;r&#39;]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.splitlines">
+<tt class="descclassname">str.</tt><tt class="descname">splitlines</tt><big>(</big><span class="optional">[</span><em>keepends</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#str.splitlines" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>keepends</strong> &#8211; включать ли символ перевода каретки</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Variables:</th><td class="field-body"><strong>keepends</strong> &#8211; True/False</td>
+</tr>
+</tbody>
+</table>
+<p>Возвращает список, аналогично .. py:method: &#8216;str.split&#8217;, но использующий в качестве разделителя переход на новую строку. Символы перехода на новую строку включаются в результат, только если необязательный аргумент keepends равен 1.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="sd">&quot;&quot;&quot;Hello World!\nHello!&quot;&quot;&quot;</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
+<span class="go">[&#39;Hello World!&#39;, &#39;Hello!&#39;]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.startswith">
+<tt class="descclassname">str.</tt><tt class="descname">startswith</tt><big>(</big><em>sub</em><span class="optional">[</span>, <em>start</em><span class="optional">[</span>, <em>end</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#str.startswith" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>sub</strong> (<em>str</em>) &#8211; искомая строка</li>
+<li><strong>strat</strong> &#8211; начальная позиция</li>
+<li><strong>end</strong> (<em>int</em>) &#8211; конечная позиция</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Возвращает True | False, если строка начинается c искомой строки
+&gt;&gt;&gt; &#8216;ilnur&#8217;.startswith(&#8216;il&#8217;)
+True
+&gt;&gt;&gt; &#8216;ilnur&#8217;.startswith(&#8216;nur&#8217;)
+False</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.strip">
+<tt class="descclassname">str.</tt><tt class="descname">strip</tt><big>(</big><big>)</big><a class="headerlink" href="#str.strip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает строку, с удаленными пробелами c обоих концов соответственно.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39; ilnur &#39;</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="go">&#39;ilnur&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.swapcase">
+<tt class="descclassname">str.</tt><tt class="descname">swapcase</tt><big>(</big><big>)</big><a class="headerlink" href="#str.swapcase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает строку, в которой регистр букв изменен с верхнего на нижний и наоборот.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;Ilnur&#39;</span><span class="o">.</span><span class="n">swapcase</span><span class="p">()</span>
+<span class="go">&#39;iLNUR&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.title">
+<tt class="descclassname">str.</tt><tt class="descname">title</tt><big>(</big><big>)</big><a class="headerlink" href="#str.title" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает строку, в которой регистр букв соответствует заголовку.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;ilnur&#39;</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+<span class="go">&#39;ILNUR&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.upper">
+<tt class="descclassname">str.</tt><tt class="descname">upper</tt><big>(</big><big>)</big><a class="headerlink" href="#str.upper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает строку, в верхнем регистре</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;iLnur&#39;</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<span class="go">&#39;ILNUR&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.zfill">
+<tt class="descclassname">str.</tt><tt class="descname">zfill</tt><big>(</big><em>width</em><big>)</big><a class="headerlink" href="#str.zfill" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>width</strong> (<em>int</em>) &#8211; длина возвращаемой строки</td>
+</tr>
+</tbody>
+</table>
+<p>Возвращает строку, заданной длины, пустое пространство слева заполнится нулями</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;12&#39;</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="go">&#39;00012&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Строки</a><ul>
+<li><a class="reference internal" href="#id2">Методы</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Документация по python</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/base_string.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="index.html" title="Документация по python"
+             >previous</a> |</li>
+        <li><a href="index.html">python doc 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, ilnurgi.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

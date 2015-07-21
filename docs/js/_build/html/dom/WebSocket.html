@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>WebSocket - двунаправленное сетевое соединение, подобное сокету &mdash; js doc 2015.06.26 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2015.06.26',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="js doc 2015.06.26 documentation" href="../index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.26 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="websocket">
+<h1>WebSocket - двунаправленное сетевое соединение, подобное сокету<a class="headerlink" href="#websocket" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="WebSocket">
+<em class="property">class </em><code class="descname">WebSocket</code><span class="sig-paren">(</span><em>url</em><span class="optional">[</span>, <em>protokols</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#WebSocket" title="Permalink to this definition">¶</a></dt>
+<dd><p>Наследник <a class="reference internal" href="EventTarget.html#EventTarget" title="EventTarget"><code class="xref js js-class docutils literal"><span class="pre">EventTarget()</span></code></a></p>
+<dl class="attribute">
+<dt id="bufferedAmount">
+<code class="descname">bufferedAmount</code><a class="headerlink" href="#bufferedAmount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ко­ли­че­ст­во сим­во­лов со­об­ще­ния, пе­ре­дан­но­го ме­то­ду send(), ко­то­рые еще не бы­ли от­прав­ле­ны фак­ти­че­ски. Это свой­ст­во мож­но ис­поль­зо­вать при пе­ре­да­че боль­ших объ­е­мов дан­ных, что­бы га­ран­ти­ро­вать, что про­грам­ма не бу­дет от­прав­лять со­об­ще­ния бы­ст­рее, чем они мо­гут быть пе­ре­да­ны по се­ти.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="onclose">
+<code class="descname">onclose</code><a class="headerlink" href="#onclose" title="Permalink to this definition">¶</a></dt>
+<dd><p>Со­бы­тие «close» ге­не­ри­ру­ет­ся по­сле за­кры­тия со­еди­не­ния (и  свой­ст­во readyState по­лу­чит зна­че­ние CLOSED). Об­ра­бот­чи­ку со­бы­тия пе­ре­да­ет­ся объ­ект CloseEvent, ко­то­рый оп­ре­де­ля­ет, бы­ло со­еди­не­ние за­кры­то без оши­бок или нет.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="onerror">
+<code class="descname">onerror</code><a class="headerlink" href="#onerror" title="Permalink to this definition">¶</a></dt>
+<dd><p>Со­бы­тие «error» ге­не­ри­ру­ет­ся, ко­гда воз­ни­ка­ет се­те­вая ошиб­ка или ошиб­ка про­то­ко­ла веб-со­ке­тов. Об­ра­бот­чи­ку со­бы­тия пе­ре­да­ет­ся обыч­ный объ­ект Event.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="onmessage">
+<code class="descname">onmessage</code><a class="headerlink" href="#onmessage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ко­гда сер­вер от­прав­ля­ет дан­ные че­рез веб-со­кет, объ­ект WebSocket воз­бу­ж­да­ет со­бы­тие «message» и пе­ре­да­ет об­ра­бот­чи­ку объ­ект MessageEvent, свой­ст­во data ко­то­ро­го ссы­ла­ет­ся на при­ня­тое со­об­ще­ние.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="onopen">
+<code class="descname">onopen</code><a class="headerlink" href="#onopen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Кон­ст­рук­тор WebSocket() воз­вра­ща­ет управ­ле­ние еще до то­го, как бу­дет ус­та­нов­ле­но со­еди­не­ние с ад­ре­сом url. Ко­гда про­це­ду­ра ус­та­нов­ле­ния со­еди­не­ния за­вер­шит­ся и объ­ект WebSocket бу­дет го­тов к от­прав­ке и прие­му дан­ных, бу­дет воз­бу­ж­де­носо­бы­тие «open». Об­ра­бот­чи­ку со­бы­тия пе­ре­да­ет­ся обыч­ный объ­ект Event.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="protocol">
+<code class="descname">protocol</code><a class="headerlink" href="#protocol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ес­ли кон­ст­рук­то­ру WebSocket() был пе­ре­дан мас­сив под­про­то­ко­лов, это свой­ст­во бу­дет хра­нить один из них, вы­бран­ный сер­ве­ром. Об­ра­ти­те вни­ма­ние, что в пер­вый мо­мент по­сле соз­да­ния объ­ек­та WebSocket со­еди­не­ние еще не ус­та­нов­ле­но и вы­бор сер­ве­ра не­из­вес­тен, по­это­му пер­во­на­чаль­но это свой­ст­во со­дер­жит пус­тую стро­ку. Ес­ли кон­ст­рук­то­ру был пе­ре­дан спи­сок про­то­ко­лов, зна­че­ние это­го свой­ст­ва из­ме­нит­ся в со­от­вет­ст­вии с вы­бо­ром сер­ве­ра, ко­гда бу­дет сге­не­ри­ро­ва­но со­бы­тие «open».</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="readyState">
+<code class="descname">readyState</code><a class="headerlink" href="#readyState" title="Permalink to this definition">¶</a></dt>
+<dd><p>Те­ку­щее со­стоя­ние со­еди­не­ния.</p>
+<ul class="simple">
+<li><cite>CONNECTING</cite> = 0, Про­дол­жа­ет­ся вы­пол­не­ние про­це­ду­ры ус­та­нов­ле­ния со­еди­не­ния.</li>
+<li><cite>OPEN</cite> = 1, Объ­ект WebSocket со­еди­нен с сер­ве­ром; мож­но от­прав­лять и при­ни­мать со­об­ще­ния.</li>
+<li><cite>CLOSING</cite> = 2, Со­еди­не­ние за­кры­ва­ет­ся.</li>
+<li><cite>CLOSED</cite> = 3, Со­еди­не­ние за­кры­то.</li>
+</ul>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="url">
+<code class="descname">url</code><a class="headerlink" href="#url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Это свой­ст­во хра­нит URL-ад­рес, ко­то­рый был пе­ре­дан кон­ст­рук­то­ру WebSocket().</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="close">
+<code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ес­ли со­еди­не­ние еще не за­кры­то или для не­го еще не бы­ла за­пу­ще­на про­це­ду­ра за­кры­тия, этот ме­тод ини­ции­ру­ет про­цесс его за­кры­тия и при­сваи­ва­ет свой­ст­ву readyState зна­че­ние CLOSING. Со­бы­тия «message» мо­гут про­дол­жать воз­бу­ж­дать­ся да­же по­сле вы­зо­ва ме­то­да close(), по­ка свой­ст­во readyState не по­лу­чит зна­че­ние CLOSED и не бу­дет воз­бу­ж­де­но со­бы­тие «close».</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="send">
+<code class="descname">send</code><span class="sig-paren">(</span><em>string data</em><span class="sig-paren">)</span><a class="headerlink" href="#send" title="Permalink to this definition">¶</a></dt>
+<dd><p>От­прав­ля­ет дан­ные data на сер­вер, под­клю­чен­ный к дру­го­му кон­цу со­еди­не­ния. Этот ме­тод воз­бу­ж­да­ет ис­клю­че­ние, ко­гда вы­зы­ва­ет­ся до то­го, как бу­дет сге­не­ри­ро­ва­но со­бы­тие «open», т. е. по­ка свой­ст­во readyState име­ет зна­че­ние CONNECTING. Про­то­кол веб-со­ке­тов под­дер­жи­ва­ет об­мен дво­ич­ны­ми дан­ны­ми, но на мо­мент на­ пи­са­ния этих строк те­ку­щая вер­сия при­клад­но­го ин­тер­фей­са веб-со­ке­тов под­дер­жи­ва­ла толь­ко тек­сто­вые со­об­ще­ния.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/dom/WebSocket.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.26 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

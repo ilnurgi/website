@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Синтаксис шаблонов &mdash; angular 14.10.12 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '14.10.12',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="angular 14.10.12 documentation" href="index.html" />
+    <link rel="next" title="Директивы" href="directive.html" />
+    <link rel="prev" title="Стандартные методы модуля" href="methods.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="directive.html" title="Директивы"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="methods.html" title="Стандартные методы модуля"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">angular 14.10.12 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="id1">
+<h1>Синтаксис шаблонов<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>В шаблонах могут использоваться и выражения</p>
+<div class="highlight-js"><div class="highlight"><pre>&lt;div&gt;
+    1 + 2 = {{ 1 + 2 }}
+&lt;/div&gt;
+</pre></div>
+</div>
+<div class="highlight-js"><div class="highlight"><pre>&lt;pre&gt;form = {{user}}&lt;/pre&gt;
+
+&lt;div ng-controller=&quot;ngAppDemoController&quot;&gt;
+    I can add: {{a}} + {{b}} =  {{ a+b }}
+&lt;/div&gt;
+
+&lt;body ng-app=&quot;&quot;&gt;
+    &lt;script type=&quot;text/ng-template&quot; id=&quot;/tpl.html&quot;&gt;
+        Content of the template.
+    &lt;/script&gt;
+    &lt;a ng-click=&quot;currentTpl=&#39;/tpl.html&#39;&quot; id=&quot;tpl-link&quot;&gt;Load inlined template&lt;/a&gt;
+    &lt;div id=&quot;tpl-content&quot; ng-include src=&quot;currentTpl&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="methods.html"
+                        title="previous chapter">Стандартные методы модуля</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="directive.html"
+                        title="next chapter">Директивы</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/template.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="directive.html" title="Директивы"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="methods.html" title="Стандартные методы модуля"
+             >previous</a> |</li>
+        <li><a href="index.html">angular 14.10.12 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright ilnurgi, последняя сборка 2014-10-12.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

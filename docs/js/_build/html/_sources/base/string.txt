@@ -1,0 +1,147 @@
+String - строки
+===============
+
+.. js:class:: String()
+    
+    Строки
+
+    .. code-block:: js
+
+        var a = new String('test');        
+        var string = 'ilnurgi';
+
+        // в переменную а мы можем добавить свои атрибуты и методы
+
+        '\u1552'.length
+        //1
+
+        'il\'s'.length
+        //3
+
+        'ilnurgi' + 123;
+        // 'ilnurgi123'
+
+        '12'/2 + 1;
+        // 7
+
+        'day' * 2;
+        // NaN
+
+        'a' < 'b';
+        // true
+
+        'c' < 'b';
+        // false    
+
+
+    .. js:function:: length
+
+        .. code-block:: js
+
+            'ilnurgi'.length;
+            // 7        
+
+
+    .. js:function:: charAt(index)
+
+        Символ из строки
+
+        .. code-block:: js
+
+            'ilnurgi'.charAt(2);
+            // 'n'
+
+            'ilnurgi'.charAt(200);
+            // ''
+
+            'ilnurgi'.charAt(-1);
+            // ''
+
+
+    .. js:function:: charCodeAt(index)
+
+        Код символа из строки
+
+        .. code-block:: js
+
+            '!'.charCodeAt(0);
+            // 33
+
+
+    .. js:function:: fromCharCode(code)
+
+        Символ по коду
+
+        .. code-block:: js
+
+            String.fromCharCode(33);
+            // '!'
+
+
+    .. js:function:: indexOf(substr, [start_pos])
+
+        Возвращает индекс вхождения подстроки в строку.
+
+        .. code-block:: js
+
+            'строка'.indexOf("ока");
+            // 3
+
+
+    .. js:function:: lastIndexOf(substr, [start_pos])
+
+        Возвращает индекс вхождения подстроки в строку с конца.
+
+        .. code-block:: js
+
+            'строка'.lastIndexOf("ока");
+            // 3
+
+
+    .. js:function:: match(str)
+
+        Поиск совпадений в строке, возвращает массив
+
+        :param str: строка поиска, или регулярка
+
+
+    .. js:function:: replace(str1, str2)
+
+        Поиск и замена
+
+        :param str1: строка поиска, или регулярка
+        :param str2: строка для замены, или функция, в которую передается найденная строка
+
+
+    .. js:function:: search(str)
+
+        Поиск совпадений в строке, возвращает индекс
+
+        :param str: строка поиска, или регулярка
+
+
+    .. js:function:: slice(start, [end])
+
+        Поиск совпадений в строке, возвращает индекс
+
+        .. js:function:: length
+
+
+    .. js:function:: split()
+
+        Разбиение строки на массив
+
+
+    .. js:function:: substr(start, [length])
+
+        Срез строки
+
+
+    .. js:function:: toLowerCase()
+
+        Преобразует строку в нижний регистр
+
+
+    .. js:function:: toUpperCase()
+
+        Преобразует строку в верхний регистр

@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>applist &mdash; pys60 14.10.12 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.10.12',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="pys60 14.10.12 documentation" href="../index.html" />
+    <link rel="up" title="Пользовательские модули" href="index.html" />
+    <link rel="next" title="appswitch" href="appswitch.html" />
+    <link rel="prev" title="appicon" href="appicon.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="appswitch.html" title="appswitch"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="appicon.html" title="appicon"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">pys60 14.10.12 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Пользовательские модули</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <span class="target" id="module-applist"></span><div class="section" id="applist">
+<h1>applist<a class="headerlink" href="#applist" title="Permalink to this headline">¶</a></h1>
+<p>Модуль для работы с приложениями</p>
+<dl class="method">
+<dt id="applist.applaunch">
+<tt class="descclassname">applist.</tt><tt class="descname">applaunch</tt><big>(</big><em>uid</em><big>)</big><a class="headerlink" href="#applist.applaunch" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>uid</strong> (<em>int</em>) &#8211; uid запускаемого приложения</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 2.0.</span></p>
+</div>
+<p>Запускает приложение</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">applist</span><span class="o">.</span><span class="n">applaunch</span><span class="p">(</span><span class="mh">0x10008d39</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="applist.applist">
+<tt class="descclassname">applist.</tt><tt class="descname">applist</tt><big>(</big><big>)</big><a class="headerlink" href="#applist.applist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает список кортежей установленных приложений.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">applist</span><span class="o">.</span><span class="n">applist</span><span class="p">()</span>
+<span class="go">[..., (536871485, u&#39;Zip manager&#39;, u&#39;Z:\\sys\\bin\\ZipManager.exe&#39;), ...]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="applist.fetchicon">
+<tt class="descclassname">applist.</tt><tt class="descname">fetchicon</tt><big>(</big><em>uid</em>, <em>size</em>, <em>1|2</em><big>)</big><a class="headerlink" href="#applist.fetchicon" title="Permalink to this definition">¶</a></dt>
+<dd><div class="versionadded">
+<p><span class="versionmodified">New in version 2.0.</span></p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>uid</strong> (<em>int</em>) &#8211; uid запускаемого приложения</li>
+<li><strong>size</strong> (<em>tuple</em>) &#8211; размер</li>
+<li><strong>1|2</strong> &#8211; иконка или маска</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Возвращает bitmap иконку приложения</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">bitmap_icon</span> <span class="o">=</span> <span class="n">applist</span><span class="o">.</span><span class="n">fetchicon</span><span class="p">(</span><span class="mh">0x10008d39</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">img</span> <span class="o">=</span> <span class="n">graphics</span><span class="o">.</span><span class="n">Image</span><span class="o">.</span><span class="n">from_cfbsbitmap</span><span class="p">(</span><span class="n">bitmap_icon</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="applist.launchinbox">
+<tt class="descclassname">applist.</tt><tt class="descname">launchinbox</tt><big>(</big><span class="optional">[</span><em>arg</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#applist.launchinbox" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>args</strong> (<em>int</em>) &#8211; 0x1002 - входящие, 0x1003 - исходящие, 0x1004 - черновики, 0x1005 - переданные</td>
+</tr>
+</tbody>
+</table>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 2.0.</span></p>
+</div>
+<p>Открывает приложение &#8220;Сообщения&#8221;</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descclassname">applist.</tt><tt class="descname">launchinbox</tt><big>(</big><big>)</big></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="applist.launchsms">
+<tt class="descclassname">applist.</tt><tt class="descname">launchsms</tt><big>(</big><em>recipient</em>, <em>alias</em><big>)</big><a class="headerlink" href="#applist.launchsms" title="Permalink to this definition">¶</a></dt>
+<dd><div class="versionadded">
+<p><span class="versionmodified">New in version 2.0.</span></p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>recipient</strong> (<em>str</em>) &#8211; номер адрессата</li>
+<li><strong>alias</strong> (<em>unicode</em>) &#8211; имя адрессата</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Запускает стандартное окно ввода сообщения.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">applist</span><span class="o">.</span><span class="n">launchsms</span><span class="p">(</span><span class="s">u&#39;89271234&#39;</span><span class="p">,</span> <span class="s">u&#39;Name&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="appicon.html"
+                        title="previous chapter">appicon</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="appswitch.html"
+                        title="next chapter">appswitch</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/moduls_user/applist.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="appswitch.html" title="appswitch"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="appicon.html" title="appicon"
+             >previous</a> |</li>
+        <li><a href="../index.html">pys60 14.10.12 documentation</a> &raquo;</li>
+          <li><a href="index.html" >Пользовательские модули</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

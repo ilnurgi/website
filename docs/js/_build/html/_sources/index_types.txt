@@ -1,0 +1,19 @@
+Основные объекты
+================
+
+Содержание:
+
+.. toctree::
+   :maxdepth: 2
+
+   base/floats
+   base/string
+   base/array
+   base/date
+   base/bools
+   base/bits
+   base/function
+   base/oper
+   base/object
+   base/re
+   base/math

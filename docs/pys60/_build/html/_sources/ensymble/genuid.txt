@@ -1,0 +1,21 @@
+genuid
+======
+
+>>> $ ensymble.py genuid
+    [--encoding=terminal,filesystem] [--verbose]
+    <name>...
+
+
+Генератор uid для приложений
+
+Опции
+-----
+
+    * name - название приложения
+
+Примеры
+-------
+
+    >>> $ ensymble.py genuid myapplication myextension
+    myapplication: 0xe0942bea
+    myextension: 0xe325ed58

@@ -1,0 +1,44 @@
+Object - объект
+===============
+
+
+.. js:class:: Object()
+
+    Объект, является прототипом для всех объектов языка
+
+    .. code-block:: js
+
+        var obj = {};
+        var obj2 = new Object();
+
+        var person = {
+            'name': 'Alex',
+            'age': 25
+        };
+
+        person.name;
+        // 'Alex'
+
+        person['name'];
+        // 'Alex'
+
+        delete person.age;
+
+        // создание дочерних объектов
+        var Megaperson = Object.create(person);
+
+
+    .. js:function:: hasOwnProperty(var)
+
+        Определяет, обладает ли объект свойством. 
+
+
+
+    .. js:function:: toString()
+
+        Возвращает строковое представление объекта
+
+
+    .. js:function:: valueOf()
+
+        Возвращает значение объекта

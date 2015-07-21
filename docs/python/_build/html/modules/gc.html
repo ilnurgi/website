@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>gc - интерфейс управления сборщиком мусора &mdash; Документация python документация 2015.05.20</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2015.05.20',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Документация python документация 2015.05.20" href="../index.html" />
+    <link rel="up" title="Основные модули" href="index.html" />
+    <link rel="next" title="getpass" href="getpass.html" />
+    <link rel="prev" title="functools" href="functools.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Алфавитный указатель"
+             accesskey="I">указатель</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="getpass.html" title="getpass"
+             accesskey="N">вперёд</a> |</li>
+        <li class="right" >
+          <a href="functools.html" title="functools"
+             accesskey="P">назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Документация python документация 2015.05.20</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Основные модули</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <span class="target" id="module-gc"></span><div class="section" id="gc">
+<h1>gc - интерфейс управления сборщиком мусора<a class="headerlink" href="#gc" title="Ссылка на этот заголовок">¶</a></h1>
+<dl class="attribute">
+<dt id="gc.garbage">
+<code class="descclassname">gc.</code><code class="descname">garbage</code><a class="headerlink" href="#gc.garbage" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Переменная, содержащая доступный только для чтения список экземпляров пользовательских классов, которые больше не используются, но которые не могут быть удалены, потому что они связаны циклическими ссылками и имеют метод __del__(). Такие объекты не могут быть удалены сборщиком мусора, так как, чтобы разорвать циклическую связь, интерпретатор должен сначала произвольно удалить один из объектов. При этом не существует надежного способа определить, должен ли метод __del__() остающегося объекта, вовлеченного в циклическую ссылку, выполнить какие-то важные операции над объектом, который только что был удален.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="gc.collect">
+<code class="descclassname">gc.</code><code class="descname">collect</code><span class="sig-paren">(</span><span class="optional">[</span><em>generation</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#gc.collect" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><strong>generation</strong> &#8211; 0-2, номер поколения</td>
+</tr>
+</tbody>
+</table>
+<p>Запускает полную сборку мусора</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="gc.disable">
+<code class="descclassname">gc.</code><code class="descname">disable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gc.disable" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Отключает механизм сборки мусора.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="gc.enable">
+<code class="descclassname">gc.</code><code class="descname">enable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gc.enable" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Включает механизм сборки мусора.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="gc.get_count">
+<code class="descclassname">gc.</code><code class="descname">get_count</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gc.get_count" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает кортеж (count0, count1, count2) с текущим количеством объектов в каждом поколении</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="gc.get_debug">
+<code class="descclassname">gc.</code><code class="descname">get_debug</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gc.get_debug" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает текущие состояния флагов отладки.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="gc.get_objects">
+<code class="descclassname">gc.</code><code class="descname">get_objects</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gc.get_objects" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает список всех объектов, находящихся под контролем сборщика мусора. За исключением возвращаемого списка.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="gc.get_referrers">
+<code class="descclassname">gc.</code><code class="descname">get_referrers</code><span class="sig-paren">(</span><em>obj1</em>, <em>obj2</em>, <em>...</em><span class="sig-paren">)</span><a class="headerlink" href="#gc.get_referrers" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает список всех объектов, которые непосредственно ссылаются на объекты obj1, obj2 и так далее. Возвращаемый список может содержать объекты, которые еще не были утилизированы сборщиком мусора, а также объекты, находящиеся в стадии создания.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="gc.get_referents">
+<code class="descclassname">gc.</code><code class="descname">get_referents</code><span class="sig-paren">(</span><em>obj1</em>, <em>obj2</em>, <em>...</em><span class="sig-paren">)</span><a class="headerlink" href="#gc.get_referents" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает список объектов, на которые ссылаются объекты obj1, obj2 и так далее. Например, если obj1 является контейнером, для него будет возвращен список объектов, содержащихся в нем.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="gc.get_threshold">
+<code class="descclassname">gc.</code><code class="descname">get_threshold</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gc.get_threshold" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает кортеж с текущими пороговыми значениями запуска сборщика мусора.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="gc.isenabled">
+<code class="descclassname">gc.</code><code class="descname">isenabled</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gc.isenabled" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает True, если механизм сборки мусора включен.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="gc.set_debug">
+<code class="descclassname">gc.</code><code class="descname">set_debug</code><span class="sig-paren">(</span><em>flags</em><span class="sig-paren">)</span><a class="headerlink" href="#gc.set_debug" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Устанавливает отладочные флаги сборщика мусора, которые могут использоваться для отладки поведения сборщика мусора. В аргументе flags передается целое число, составленное с помощью битовой операции ИЛИ из констант DEBUG_STATS, DEBUG_COLLECTABLE, DEBUG_UNCOLLECTABLE, DEBUG_INSTANCES, DEBUG_OBJECTS, DEBUG_SAVEALL и DEBUG_LEAK. Флаг DEBUG_LEAK является, пожалуй, наиболее полезным, потому что он вынуждает механизм сборщика мусора выводить информацию, которая может пригодиться при отладке программ с утечками памяти.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="gc.set_threshold">
+<code class="descclassname">gc.</code><code class="descname">set_threshold</code><span class="sig-paren">(</span><em>threshold0</em><span class="optional">[</span>, <em>threshold1</em><span class="optional">[</span>, <em>threshold2</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#gc.set_threshold" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Устанавливает частоту запуска сборщика мусора. Объекты распределяются по трем поколениям, где поколение 0 содержит самые молодые объекты, а поколение 2 – самые старые. Объекты, пережившие этап сборки мусора, перемещаются в следующее, более старшее поколение. Достигнув поколения 2, объект остается в нем. В аргументе threshold0 передается число, разность между количеством операций создания новых объектов и количеством операций удаления объектов, по достижении которого запускается сборка мусора среди объектов поколения 0. В аргументе threshold1 передается число, определяющее количество запусков процедуры сборки мусора среди объектов поколения 0, по достижении которого запускается сборка мусора среди объектов поколения 1. В аргументе threshold2 передается число, определяющее количество запусков процедуры сборки мусора среди объектов поколения 1, по достижении которого запускается сборка мусора среди объектов поколения 2. По умолчанию используются пороговые значения (700,10,10). Если в аргументе threshold0 передать значение 0, сборка мусора будет отключена.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Предыдущий раздел</h4>
+  <p class="topless"><a href="functools.html"
+                        title="предыдущая глава">functools</a></p>
+  <h4>Следующий раздел</h4>
+  <p class="topless"><a href="getpass.html"
+                        title="следующая глава">getpass</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Эта страница</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/modules/gc.txt"
+            rel="nofollow">Исходный текст</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Быстрый поиск</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Искать" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Введите слова для поиска или имя модуля, класса или функции.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Алфавитный указатель"
+             >указатель</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="getpass.html" title="getpass"
+             >вперёд</a> |</li>
+        <li class="right" >
+          <a href="functools.html" title="functools"
+             >назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Документация python документация 2015.05.20</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Основные модули</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright ilnurgi.
+      Создано с помощью <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

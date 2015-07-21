@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>FileReaderSync - синхронный интерфейс чтения объекта File или Blob &mdash; js doc 2015.06.26 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2015.06.26',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="js doc 2015.06.26 documentation" href="../index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.26 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="filereadersync-file-blob">
+<h1>FileReaderSync - синхронный интерфейс чтения объекта File или Blob<a class="headerlink" href="#filereadersync-file-blob" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="FileReader">
+<em class="property">class </em><code class="descname">FileReader</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#FileReader" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="function">
+<dt id="readAsArrayBuffer">
+<code class="descname">readAsArrayBuffer</code><span class="sig-paren">(</span><em>Blob blob</em><span class="sig-paren">)</span><a class="headerlink" href="#readAsArrayBuffer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Чи­та­ет бай­ты из объ­ек­та blob и воз­вра­ща­ет их в ви­де объ­ек­та ArrayBuffer.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="readAsBinaryString">
+<code class="descname">readAsBinaryString</code><span class="sig-paren">(</span><em>Blob blob</em><span class="sig-paren">)</span><a class="headerlink" href="#readAsBinaryString" title="Permalink to this definition">¶</a></dt>
+<dd><p>Чи­та­ет бай­ты из объ­ек­та blob, пре­об­ра­зу­ет их в дво­ич­ную стро­ку (String.fromChar­Code()) и воз­вра­ща­ет ее.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="readAsDataURL">
+<code class="descname">readAsDataURL</code><span class="sig-paren">(</span><em>Blob blob</em><span class="sig-paren">)</span><a class="headerlink" href="#readAsDataURL" title="Permalink to this definition">¶</a></dt>
+<dd><p>Чи­та­ет бай­ты из объ­ек­та blob, пре­об­ра­зу­ет их с уче­том свой­ст­ва type объ­ек­та blob в URL-ад­рес <a class="reference external" href="data://">data://</a> и воз­вра­ща­ет его.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="readAsText">
+<code class="descname">readAsText</code><span class="sig-paren">(</span><em>Blob blob</em><span class="optional">[</span>, <em>string encoding</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#readAsText" title="Permalink to this definition">¶</a></dt>
+<dd><p>Чи­та­ет бай­ты дан­ных из объ­ек­та blob, де­ко­ди­ру­ет их с ис­поль­зо­ва­ни­ем ко­ди­ров­ки enco­ding (или с ис­поль­зо­ва­ни­ем ко­ди­ров­ки UTF-8 или UTF-16, ес­ли ар­гу­мент enco­ding не ука­зан) и воз­вра­ща­ет по­лу­чен­ную стро­ку.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/dom/FileReaderSync.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.26 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

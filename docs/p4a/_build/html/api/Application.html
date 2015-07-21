@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Application &mdash; p4a doc 14.10.12 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.10.12',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="p4a doc 14.10.12 documentation" href="../index.html" />
+    <link rel="next" title="ActivityResultFacade" href="ActivityResult.html" />
+    <link rel="prev" title="Android" href="Android.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="ActivityResult.html" title="ActivityResultFacade"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="Android.html" title="Android"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">p4a doc 14.10.12 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="application">
+<h1>Application<a class="headerlink" href="#application" title="Permalink to this headline">¶</a></h1>
+<p>Результат работы всех методов <a class="reference internal" href="Event.html#Result" title="Result"><tt class="xref py py-class docutils literal"><span class="pre">Result</span></tt></a></p>
+<dl class="method">
+<dt id="forceStopPackage">
+<tt class="descname">forceStopPackage</tt><big>(</big><em>str packageName</em><big>)</big><a class="headerlink" href="#forceStopPackage" title="Permalink to this definition">¶</a></dt>
+<dd><p>останавливает указанное приложение</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="getLaunchableApplications">
+<tt class="descname">getLaunchableApplications</tt><big>(</big><big>)</big><a class="headerlink" href="#getLaunchableApplications" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает данные о приложениях, которые можно запустить, в виде словаря</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">getLaunchableApplications</span><span class="p">()</span><span class="o">.</span><span class="n">result</span>
+<span class="go">{</span>
+<span class="go">    u&#39;SL4A&#39;: u&#39;com.googlecode.android_scripting.activity.ScriptManager&#39;,</span>
+<span class="go">    u&#39;Clock&#39;: u&#39;com.android.deskclock.DeskClock&#39;,</span>
+<span class="go">    ...</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="getRunningPackages">
+<tt class="descname">getRunningPackages</tt><big>(</big><big>)</big><a class="headerlink" href="#getRunningPackages" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает список строк, запущенных пакетов</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">getRunningPackages</span><span class="p">()</span><span class="o">.</span><span class="n">result</span>
+<span class="go">[u&#39;com.android.calendar&#39;, u&#39;com.android.browser&#39;, ...]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="launch">
+<tt class="descname">launch</tt><big>(</big><em>str className</em><big>)</big><a class="headerlink" href="#launch" title="Permalink to this definition">¶</a></dt>
+<dd><p>запускает приложение</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="Android.html"
+                        title="previous chapter">Android</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="ActivityResult.html"
+                        title="next chapter">ActivityResultFacade</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/Application.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="ActivityResult.html" title="ActivityResultFacade"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="Android.html" title="Android"
+             >previous</a> |</li>
+        <li><a href="../index.html">p4a doc 14.10.12 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

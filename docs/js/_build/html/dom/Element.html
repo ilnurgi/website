@@ -1,0 +1,660 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Element(HTMLElement) - узел дом дерева документа &mdash; js doc 2015.06.26 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2015.06.26',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="js doc 2015.06.26 documentation" href="../index.html" />
+    <link rel="up" title="DOM - дерево html документа" href="index.html" />
+    <link rel="prev" title="Button - html элемент button" href="Button.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="Button.html" title="Button - html элемент button"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.26 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">DOM - дерево html документа</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="element-htmlelement">
+<h1>Element(HTMLElement) - узел дом дерева документа<a class="headerlink" href="#element-htmlelement" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="Element">
+<em class="property">class </em><code class="descname">Element</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Element" title="Permalink to this definition">¶</a></dt>
+<dd><p>Наследник <a class="reference internal" href="Node.html#Node" title="Node"><code class="xref js js-class docutils literal"><span class="pre">Node()</span></code></a>, <a class="reference internal" href="EventTarget.html#EventTarget" title="EventTarget"><code class="xref js js-class docutils literal"><span class="pre">EventTarget()</span></code></a></p>
+<dl class="attribute">
+<dt id="Attributes">
+<code class="descname">Attributes</code><a class="headerlink" href="#Attributes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает <a class="reference internal" href="NamedNodeMap.html#NamedNodeMap" title="NamedNodeMap"><code class="xref js js-class docutils literal"><span class="pre">NamedNodeMap()</span></code></a> список атрибутов элемента</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="attributes">
+<code class="descname">attributes</code><a class="headerlink" href="#attributes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает массив атрибутов <a class="reference internal" href="Attr.html#Attr" title="Attr"><code class="xref js js-class docutils literal"><span class="pre">Attr()</span></code></a> элемента</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="childElementCount">
+<code class="descname">childElementCount</code><a class="headerlink" href="#childElementCount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ко­ли­че­ст­во до­чер­них эле­мен­тов (не до­чер­них уз­лов), ко­то­рые име­ет дан­ный эле­мент.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="children">
+<code class="descname">children</code><a class="headerlink" href="#children" title="Permalink to this definition">¶</a></dt>
+<dd><p>Объ­ект, по­доб­ный мас­си­ву, со­дер­жа­щий до­чер­ние эле­мен­ты (ис­клю­чая до­чер­ние уз­лы, не яв­ляю­щие­ся эле­мен­та­ми Element, та­кие как Text и Comment).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="classList">
+<code class="descname">classList</code><a class="headerlink" href="#classList" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ссылка на <a class="reference internal" href="DOMTokenList.html#DOMTokenList" title="DOMTokenList"><code class="xref js js-class docutils literal"><span class="pre">DOMTokenList()</span></code></a>, множество лексем в виде строки</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="className">
+<code class="descname">className</code><a class="headerlink" href="#className" title="Permalink to this definition">¶</a></dt>
+<dd><p>Это свой­ст­во пред­став­ля­ет ат­ри­бут class эле­мен­та.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="clientHeight">
+<code class="descname">clientHeight</code><a class="headerlink" href="#clientHeight" title="Permalink to this definition">¶</a></dt>
+<dd><p>Внутренняя высота элемента</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="clientLeft">
+<code class="descname">clientLeft</code><a class="headerlink" href="#clientLeft" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ширина левой границы элемента</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="clientTop">
+<code class="descname">clientTop</code><a class="headerlink" href="#clientTop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ширина верхней границы элемента</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="clientWidth">
+<code class="descname">clientWidth</code><a class="headerlink" href="#clientWidth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Внутреннняя ширина элемента</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="currentStyle">
+<code class="descname">currentStyle</code><a class="headerlink" href="#currentStyle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Это свой­ст­во <a class="reference internal" href="CSSStyleDeclaration.html#CSSStyleDeclaration" title="CSSStyleDeclaration"><code class="xref js js-class docutils literal"><span class="pre">CSSStyleDeclaration()</span></code></a>, реа­ли­зо­ван­ное толь­ко в IE, яв­ля­ет­ся пред­став­ле­ни­ем кас­кад­но­го на­бо­ра всех CSS-свойств, при­ме­няе­мых к эле­мен­ту. В IE вер­сии 8 и ни­же его мож­но ис­поль­зо­вать как за­ме­ну стан­дарт­но­му ме­то­ду Window.getComputedStyle().</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="dataset">
+<code class="descname">dataset</code><a class="headerlink" href="#dataset" title="Permalink to this definition">¶</a></dt>
+<dd><p>С лю­бым HTML-эле­мен­том мож­но свя­зать лю­бые зна­че­ния, при­сваи­вая их ат­ри­бу­там, име­на ко­то­рых на­чи­на­ют­ся с  пре­фик­са «data-». Дан­ное свой­ст­во dataset пред­став­ля­ет мно­же­ст­во ат­ри­бу­тов с дан­ны­ми и уп­ро­ща­ет ра­бо­ту с ни­ми.</p>
+<p>Зна­че­ние это­го свой­ст­ва ве­дет се­бя как обыч­ный объ­ект. Ка­ж­дое свой­ст­во объ­ек­та со­от­вет­ст­ву­ет од­но­му ат­ри­бу­ту с дан­ны­ми. Ес­ли эле­мент име­ет ат­ри­бут с име­нем data-x, объ­ект dataset по­лу­чит свой­ст­во с име­нем x, и dataset.x бу­дет воз­вра­щать то же зна­че­ние, что и вы­зов getAttribute(&#8220;data-x&#8221;).</p>
+<p>Опе­ра­ции чте­ния и при­сваи­ва­ния зна­че­ний свой­ст­вам объ­ек­та dataset бу­дут чи­тать и  при­сваи­вать зна­че­ния со­от­вет­ст­вую­щим ат­ри­бу­там с  дан­ны­ми это­го эле­мен­та. Опе­ра­тор delete мож­но ис­поль­зо­вать для уда­ле­ния ат­ри­бу­тов с дан­ны­ми, а цикл for/in – для их пе­ре­чис­ле­ния.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="firstElementChild">
+<code class="descname">firstElementChild</code><a class="headerlink" href="#firstElementChild" title="Permalink to this definition">¶</a></dt>
+<dd><p>Это свой­ст­во по­доб­но свой­ст­ву <code class="xref js js-attr docutils literal"><span class="pre">Node.firstChild</span></code>, но оно иг­но­ри­ру­ет уз­лы Text и Comment и воз­вра­ща­ет толь­ко эле­мен­ты ти­па <a class="reference internal" href="#Element" title="Element"><code class="xref js js-class docutils literal"><span class="pre">Element()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="id">
+<code class="descname">id</code><a class="headerlink" href="#id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Идентификатор элемента</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="innerHTML">
+<code class="descname">innerHTML</code><a class="headerlink" href="#innerHTML" title="Permalink to this definition">¶</a></dt>
+<dd><p>Содержимое элемента</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="isContentEditable">
+<code class="descname">isContentEditable</code><a class="headerlink" href="#isContentEditable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Это свой­ст­во име­ет зна­че­ние true, ес­ли эле­мент дос­ту­пен для ре­дак­ти­ро­ва­ния, и false – в про­тив­ном слу­чае. Эле­мент мо­жет быть дос­ту­пен для ре­дак­ти­ро­ва­ния вслед­ст­вие ус­та­нов­ки свой­ст­ва contenteditable в нем или в его ро­ди­те­ле, или вслед­ст­вие ус­та­нов­ки свой­ст­ва designMode вме­щаю­ще­го объ­ек­та Document.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="lang">
+<code class="descname">lang</code><a class="headerlink" href="#lang" title="Permalink to this definition">¶</a></dt>
+<dd><p>Зна­че­ние ат­ри­бу­та lang, оп­ре­де­ляю­щее код язы­ка для со­дер­жи­мо­го эле­мен­та.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="lastElementChild">
+<code class="descname">lastElementChild</code><a class="headerlink" href="#lastElementChild" title="Permalink to this definition">¶</a></dt>
+<dd><p>Это свой­ст­во по­доб­но свой­ст­ву <code class="xref js js-attr docutils literal"><span class="pre">Node.lastChild</span></code>, но оно иг­но­ри­ру­ет уз­лы Text и Comment и воз­вра­ща­ет толь­ко эле­мен­ты ти­па <a class="reference internal" href="#Element" title="Element"><code class="xref js js-class docutils literal"><span class="pre">Element()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="localName">
+<code class="descname">localName</code><a class="headerlink" href="#localName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ло­каль­ное имя дан­но­го эле­мен­та без пре­фик­са. Зна­че­ние это­го свой­ст­ва от­ли­ча­ет­ ся от зна­че­ния ат­ри­бу­та tagName, ко­то­рое мо­жет вклю­чать пре­фикс про­стран­ст­ва имен, ес­ли та­ко­вой име­ет­ся (и все сим­во­лы ко­то­ро­го для HTML-эле­мен­тов пре­об­ра­зу­ют­ся в верх­ний ре­гистр).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="name">
+<code class="descname">name</code><a class="headerlink" href="#name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Значение атрибута <cite>name</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="readonly string namespaceURI">
+<code class="descname">readonly string namespaceURI</code><a class="headerlink" href="#readonly string namespaceURI" title="Permalink to this definition">¶</a></dt>
+<dd><p>URL-ад­рес, фор­маль­но оп­ре­де­ляю­щий про­стран­ст­во имен дан­но­го эле­мен­та. Мо­жет иметь зна­че­ние null или со­дер­жать стро­ку, та­кую как «<a class="reference external" href="http://www.w3.org/1999/xhtml">http://www.w3.org/1999/xhtml</a>».</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="nextElementSibling">
+<code class="descname">nextElementSibling</code><a class="headerlink" href="#nextElementSibling" title="Permalink to this definition">¶</a></dt>
+<dd><p>Это свой­ст­во по­доб­но свой­ст­ву <code class="xref js js-attr docutils literal"><span class="pre">Node.nextSibling</span></code>, но оно иг­но­ри­ру­ет уз­лы Text и Comment и воз­вра­ща­ет толь­ко эле­мен­ты ти­па <a class="reference internal" href="#Element" title="Element"><code class="xref js js-class docutils literal"><span class="pre">Element()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="offsetHeight">
+<code class="descname">offsetHeight</code><a class="headerlink" href="#offsetHeight" title="Permalink to this definition">¶</a></dt>
+<dd><p>Высота элемента в скомпонованной странице</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="offsetLeft">
+<code class="descname">offsetLeft</code><a class="headerlink" href="#offsetLeft" title="Permalink to this definition">¶</a></dt>
+<dd><p>Расстояние от левой границы элемента до левой границы элемента offsetParent</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="offsetParent">
+<code class="descname">offsetParent</code><a class="headerlink" href="#offsetParent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Элемент , от которого ведутся расчеты сдвига текущего элемента</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="offsetTop">
+<code class="descname">offsetTop</code><a class="headerlink" href="#offsetTop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Расстояние от верхней границы элемента до верхней границы элемента offsetParent</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="offsetWidth">
+<code class="descname">offsetWidth</code><a class="headerlink" href="#offsetWidth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ширина элемента в скомпонованной странице</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="outerHTML">
+<code class="descname">outerHTML</code><a class="headerlink" href="#outerHTML" title="Permalink to this definition">¶</a></dt>
+<dd><p>Раз­мет­ка HTML или XML, оп­ре­де­ляю­щая дан­ный эле­мент и его со­дер­жи­мое. Ес­ли при­сво­ить это­му свой­ст­ву стро­ку, она за­ме­нит дан­ный эле­мент (и все его со­дер­жи­мое) ре­зуль­та­том син­так­си­че­ско­го раз­бо­ра но­во­го зна­че­ния как фраг­мен­та HTML- или XML-до­ку­мен­та.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="prefix">
+<code class="descname">prefix</code><a class="headerlink" href="#prefix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Пре­фикс про­стран­ст­ва имен для дан­но­го эле­мен­та. Обыч­но это свой­ст­во со­дер­жит зна­че­ние null. Ис­клю­че­ние со­став­ля­ют XML-до­ку­мен­ты, в ко­то­рых ис­поль­зу­ют­ся про­стран­ст­ва имен.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="previousElementSibling">
+<code class="descname">previousElementSibling</code><a class="headerlink" href="#previousElementSibling" title="Permalink to this definition">¶</a></dt>
+<dd><p>Это свой­ст­во по­доб­но свой­ст­ву <code class="xref js js-attr docutils literal"><span class="pre">Node.previousSibling,</span> <span class="pre">но</span> <span class="pre">оно</span> <span class="pre">иг­но­ри­ру­ет</span> <span class="pre">уз­лы</span> <span class="pre">Text</span> <span class="pre">и</span> <span class="pre">Comment</span> <span class="pre">и</span> <span class="pre">воз­вра­ща­ет</span> <span class="pre">толь­ко</span> <span class="pre">эле­мен­ты</span> <span class="pre">ти­па</span> <span class="pre">:js:class:`Element</span></code>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scrollHeight">
+<code class="descname">scrollHeight</code><a class="headerlink" href="#scrollHeight" title="Permalink to this definition">¶</a></dt>
+<dd><p>Видимая высота прокручиваемого элемента</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scrollLeft">
+<code class="descname">scrollLeft</code><a class="headerlink" href="#scrollLeft" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает или устанавливает размер прокрутки в окне влево для элемента</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scrollTop">
+<code class="descname">scrollTop</code><a class="headerlink" href="#scrollTop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает или устанавливает размер прокрутки в окне вниз для элемента</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scrollWidth">
+<code class="descname">scrollWidth</code><a class="headerlink" href="#scrollWidth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Видимая ширина прокручиваемого элемента</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="style">
+<code class="descname">style</code><a class="headerlink" href="#style" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="CSSStyleDeclaration.html#CSSStyleDeclaration" title="CSSStyleDeclaration"><code class="xref js js-class docutils literal"><span class="pre">CSSStyleDeclaration()</span></code></a> CSS-сти­ли для эле­мен­та.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="tagName">
+<code class="descname">tagName</code><a class="headerlink" href="#tagName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает имя элемента</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="title">
+<code class="descname">title</code><a class="headerlink" href="#title" title="Permalink to this definition">¶</a></dt>
+<dd><p>Зна­че­ние ат­ри­бу­та title эле­мен­та. Мно­гие бро­узе­ры ото­бра­жа­ют зна­че­ние это­го ат­ри­бу­та в ви­де всплы­ваю­щей под­сказ­ки при на­ве­де­нии ука­за­те­ля мы­ши на эле­мент.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="addEventListener">
+<code class="descname">addEventListener</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#addEventListener" title="Permalink to this definition">¶</a></dt>
+<dd><p>Задает обработчик некоторого события для элемента</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Blur">
+<code class="descname">Blur</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Blur" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="blur">
+<code class="descname">blur</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#blur" title="Permalink to this definition">¶</a></dt>
+<dd><p>Переносит фокус с текущего элемента</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="click">
+<code class="descname">click</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#click" title="Permalink to this definition">¶</a></dt>
+<dd><p>Симулирует щелчок по текущему элементу</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="dispatchEvent">
+<code class="descname">dispatchEvent</code><span class="sig-paren">(</span><em>event</em><span class="sig-paren">)</span><a class="headerlink" href="#dispatchEvent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Передает событие, связанное с этим элементом, в DOM</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="focus">
+<code class="descname">focus</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#focus" title="Permalink to this definition">¶</a></dt>
+<dd><p>Переносит фокус на текущий элемент</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="getAttribute">
+<code class="descname">getAttribute</code><span class="sig-paren">(</span><em>attrName</em><span class="sig-paren">)</span><a class="headerlink" href="#getAttribute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает значение атрибута</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="getAttributeNS">
+<code class="descname">getAttributeNS</code><span class="sig-paren">(</span><em>namespace</em>, <em>localName</em><span class="sig-paren">)</span><a class="headerlink" href="#getAttributeNS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Этот ме­тод дей­ст­ву­ет так же, как ме­тод <a href="#id1"><span class="problematic" id="id2">:js:funct:`getAttribute()`</span></a>, кро­ме то­го, что ат­ри­бут за­ да­ет­ся ком­би­на­ци­ей URI про­стран­ст­ва имен и ло­каль­но­го име­ни, оп­ре­де­лен­но­го в дан­ном про­стран­ст­ве имен.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="getBoundingClientRect">
+<code class="descname">getBoundingClientRect</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#getBoundingClientRect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает <a class="reference internal" href="ClientRect.html#ClientRect" title="ClientRect"><code class="xref js js-class docutils literal"><span class="pre">ClientRect()</span></code></a>, опи­сы­ваю­щий пря­мо­уголь­ник, ог­ра­ни­чи­ваю­щий дан­ный эле­мент.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="getClientRects">
+<code class="descname">getClientRects</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#getClientRects" title="Permalink to this definition">¶</a></dt>
+<dd><p>Воз­вра­ща­ет объ­ект, по­доб­ный мас­си­ву, со­дер­жа­щий объ­ек­ты <code class="xref js js-class docutils literal"><span class="pre">ClientRects()</span></code>, ко­то­рые опи­сы­ва­ют один или бо­лее пря­мо­уголь­ни­ков, ог­ра­ни­чи­ваю­щих дан­ный эле­мент.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="getElementsByClassName">
+<code class="descname">getElementsByClassName</code><span class="sig-paren">(</span><em>elementClassName</em><span class="sig-paren">)</span><a class="headerlink" href="#getElementsByClassName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает список <a class="reference internal" href="NodeList.html#NodeList" title="NodeList"><code class="xref js js-class docutils literal"><span class="pre">NodeList()</span></code></a> элементов с указанным классом</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="getElementsByTagName">
+<code class="descname">getElementsByTagName</code><span class="sig-paren">(</span><em>tagName</em><span class="sig-paren">)</span><a class="headerlink" href="#getElementsByTagName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает список <a class="reference internal" href="NodeList.html#NodeList" title="NodeList"><code class="xref js js-class docutils literal"><span class="pre">NodeList()</span></code></a> элементов с указанным тегом</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="getElementsByTagNameNS">
+<code class="descname">getElementsByTagNameNS</code><span class="sig-paren">(</span><em>namespace</em>, <em>localName</em><span class="sig-paren">)</span><a class="headerlink" href="#getElementsByTagNameNS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Этот ме­тод дей­ст­ву­ет по­доб­но ме­то­ду <a class="reference internal" href="#getElementsByTagName" title="getElementsByTagName"><code class="xref js js-func docutils literal"><span class="pre">getElementsByTagName()</span></code></a>, за ис­клю­че­ни­ем то­го, что имя те­га тре­буе­мых эле­мен­тов ука­зы­ва­ет­ся как ком­би­на­ция URI про­стран­ст­ва имен и ло­каль­но­го име­ни в этом про­стран­ст­ве имен.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="hasAttribute">
+<code class="descname">hasAttribute</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#hasAttribute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Проверяет, есть ли у элемента атрибут</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="hasAttributeNS">
+<code class="descname">hasAttributeNS</code><span class="sig-paren">(</span><em>namespace</em>, <em>localName</em><span class="sig-paren">)</span><a class="headerlink" href="#hasAttributeNS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Этот ме­тод дей­ст­ву­ет так же, как ме­тод <a class="reference internal" href="#hasAttribute" title="hasAttribute"><code class="xref js js-func docutils literal"><span class="pre">hasAttribute()</span></code></a>, за ис­клю­че­ни­ем то­го, что ат­ри­бут за­да­ет­ся ком­би­на­ци­ей URI про­стран­ст­ва имен и ло­каль­но­го име­ни в этом про­стран­ст­ве имен.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="hasAttributes">
+<code class="descname">hasAttributes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hasAttributes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Проверяет, есть ли у элемента атрибуты</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="insertAdjacentHTML">
+<code class="descname">insertAdjacentHTML</code><span class="sig-paren">(</span><em>string position</em>, <em>string text</em><span class="sig-paren">)</span><a class="headerlink" href="#insertAdjacentHTML" title="Permalink to this definition">¶</a></dt>
+<dd><p>Встав­ля­ет раз­мет­ку HTML text в по­зи­цию position от­но­си­тель­но дан­но­го эле­мен­ та.</p>
+<ul>
+<li><p class="first"><cite>position</cite> -</p>
+<blockquote>
+<div><ul class="simple">
+<li><cite>beforebegin</cite> - Встав­ля­ет текст пе­ред от­кры­ваю­щим те­гом эле­мен­та</li>
+<li><cite>afterend</cite> - Встав­ля­ет текст по­сле за­кры­ваю­ще­го те­га эле­мен­та</li>
+<li><cite>afterbegin</cite> - Встав­ля­ет текст сра­зу по­сле от­кры­ваю­ще­го те­га эле­мен­та</li>
+<li><cite>beforeend</cite> - Встав­ля­ет текст не­по­сред­ст­вен­но пе­ред за­кры­ваю­щим те­гом эле­мен­та</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</dd></dl>
+
+<dl class="function">
+<dt id="querySelector">
+<code class="descname">querySelector</code><span class="sig-paren">(</span><em>string selectors</em><span class="sig-paren">)</span><a class="headerlink" href="#querySelector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Воз­вра­ща­ет пер­вый вло­жен­ный эле­мент <a class="reference internal" href="#Element" title="Element"><code class="xref js js-class docutils literal"><span class="pre">Element()</span></code></a>, со­от­вет­ст­вую­щий CSS-се­лек­то­рам selec­tors (это мо­жет быть един­ст­вен­ный CSS-се­лек­тор или груп­па се­лек­то­ров, раз­де­лен­ных за­пя­ты­ми).</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="querySelectorAll">
+<code class="descname">querySelectorAll</code><span class="sig-paren">(</span><em>string selectors</em><span class="sig-paren">)</span><a class="headerlink" href="#querySelectorAll" title="Permalink to this definition">¶</a></dt>
+<dd><p>Воз­вра­ща­ет объ­ект <a class="reference internal" href="NodeList.html#NodeList" title="NodeList"><code class="xref js js-class docutils literal"><span class="pre">NodeList()</span></code></a>, со­дер­жа­щий все эле­мен­ты, вло­жен­ные в  дан­ный эле­мент, ко­то­рые со­от­вет­ст­ву­ют се­лек­то­рам selectors (это мо­жет быть един­ст­вен­ный CSS-се­лек­тор или груп­па се­лек­то­ров, раз­де­лен­ных за­пя­ты­ми).</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="removeAttribute">
+<code class="descname">removeAttribute</code><span class="sig-paren">(</span><em>attrName</em><span class="sig-paren">)</span><a class="headerlink" href="#removeAttribute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Удаляет указанный атрибут</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="removeAttributeNS">
+<code class="descname">removeAttributeNS</code><span class="sig-paren">(</span><em>string namespace</em>, <em>string localName</em><span class="sig-paren">)</span><a class="headerlink" href="#removeAttributeNS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ме­тод дей­ст­ву­ет так же, как ме­тод <a class="reference internal" href="#removeAttribute" title="removeAttribute"><code class="xref js js-func docutils literal"><span class="pre">removeAttribute()</span></code></a>, за ис­клю­че­ни­ем то­го, что уда­ляе­мый ат­ри­бут за­да­ет­ся URI про­стран­ст­ва имен и ло­каль­но­го име­ни.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="removeAttributeNode">
+<code class="descname">removeAttributeNode</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#removeAttributeNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Удаляет указанный атрибутный узел</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="removeEventListener">
+<code class="descname">removeEventListener</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#removeEventListener" title="Permalink to this definition">¶</a></dt>
+<dd><p>Удаляет обработчик события для данного элемента</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="scrollIntoView">
+<code class="descname">scrollIntoView</code><span class="sig-paren">(</span><span class="optional">[</span><em>boolean top</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#scrollIntoView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ес­ли HTML-эле­мент в на­стоя­щий мо­мент на­хо­дит­ся за пре­де­ла­ми ок­на, этот ме­тод про­кру­тит до­ку­мент так, что эле­мент ока­жет­ся в пре­де­лах ок­на. Ар­гу­мент top яв­ ля­ет­ся не­обя­за­тель­ным и под­ска­зы­ва­ет ме­то­ду, дол­жен ли эле­мент ока­зать­ся бли­ же к верх­не­му или к ниж­не­му краю ок­на. Ес­ли он ра­вен true или от­сут­ст­ву­ет, бро­узер ста­ра­ет­ся вы­пол­нить про­крут­ку так, что­бы эле­мент ока­зал­ся бли­же к верх­не­му краю ок­на. Ес­ли он ра­вен false, бро­узер ста­ра­ет­ся вы­пол­нить про­крут­ку так, что­бы эле­мент ока­зал­ся бли­же к ниж­не­му краю ок­на. Для эле­мен­тов, при­ни­маю­щих фо­кус вво­да, та­ких как эле­мен­ты Input, ме­тод focus() не­яв­но вы­пол­ня­ет точ­но та­кую же опе­ра­цию про­крут­ки.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="setAttribute">
+<code class="descname">setAttribute</code><span class="sig-paren">(</span><em>string qualifiedName</em>, <em>string value</em><span class="sig-paren">)</span><a class="headerlink" href="#setAttribute" title="Permalink to this definition">¶</a></dt>
+<dd><p>При­сваи­ва­ет ука­зан­ное зна­че­ние ат­ри­бу­ту с  ука­зан­ным име­нем. Ес­ли ат­ри­бут с та­ким име­нем еще не су­ще­ст­ву­ет, в эле­мент до­бав­ля­ет­ся но­вый ат­ри­бут. В HTML-до­ку­мен­тах пе­ред при­сваи­ва­ни­ем зна­че­ния сим­во­лы в име­ни ат­ри­бу­та пре­об­ра­зу­ют­ся в ниж­ний ре­гистр. Об­ра­ти­те вни­ма­ние: в HTML-до­ку­мен­те Ja­va­Script-свой­ст­ва, со­от­вет­ст­вую­щие всем стан­дарт­ным HTML-ат­ри­бу­там, оп­ре­де­ля­ют­ся объ­ек­та­ми HTMLElement. По­это­му дан­ный ме­тод обыч­но ис­поль­зу­ет­ся лишь для дос­ту­па к не­стан­дарт­ным ат­ри­бу­там.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="setAttributeNS">
+<code class="descname">setAttributeNS</code><span class="sig-paren">(</span><em>string namespace</em>, <em>string qualifiedName</em>, <em>string value</em><span class="sig-paren">)</span><a class="headerlink" href="#setAttributeNS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Этот ме­тод дей­ст­ву­ет так же, как ме­тод <a class="reference internal" href="#setAttribute" title="setAttribute"><code class="xref js js-func docutils literal"><span class="pre">setAttribute()</span></code></a>, за ис­клю­че­ни­ем то­го, что имя ат­ри­бу­та ука­зы­ва­ет­ся как ком­би­на­ция URI про­стран­ст­ва имен и ква­ли­фи­ци­ро­ван­но­го име­ни, со­стоя­ще­го из пре­фик­са про­стран­ст­ва имен, двое­то­чия и  ло­каль­но­го име­ни в этом про­стран­ст­ве имен.</p>
+</dd></dl>
+
+</dd></dl>
+
+<table border="1" class="docutils">
+<colgroup>
+<col width="4%" />
+<col width="96%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Эле­мент</th>
+<th class="head">Ат­ри­бу­ты</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>&lt;a&gt;</td>
+<td>href, target, ping, rel, media, hreflang, type</td>
+</tr>
+<tr class="row-odd"><td>&lt;area&gt;</td>
+<td>alt, coords, shape, href, target, ping, rel, media, hreflang, type</td>
+</tr>
+<tr class="row-even"><td>&lt;audio&gt;</td>
+<td>src, preload, autoplay, loop, controls</td>
+</tr>
+<tr class="row-odd"><td>&lt;base&gt;</td>
+<td>href, target</td>
+</tr>
+<tr class="row-even"><td>&lt;blockquote&gt;</td>
+<td>cite</td>
+</tr>
+<tr class="row-odd"><td>&lt;body&gt;</td>
+<td>onafterprint, onbeforeprint, onbeforeunload, onblur, onerror, onfocus, onhash­, change, onload, onmessage, onoffline, ononline, onpagehide, onpage­show, onpopstate, onredo, onresize, onscroll, onstorage, onundo, onunload</td>
+</tr>
+<tr class="row-even"><td>&lt;button&gt;</td>
+<td>autofocus, disabled, form, formaction, formenctype, formmethod, form­nova­, lidate, formtarget, name, type, value</td>
+</tr>
+<tr class="row-odd"><td>&lt;canvas&gt;</td>
+<td>width, height</td>
+</tr>
+<tr class="row-even"><td>&lt;col&gt;</td>
+<td>span</td>
+</tr>
+<tr class="row-odd"><td>&lt;colgroup&gt;</td>
+<td>span</td>
+</tr>
+<tr class="row-even"><td>&lt;command&gt;</td>
+<td>type, label, icon, disabled, checked, radiogroup</td>
+</tr>
+<tr class="row-odd"><td>&lt;del&gt;</td>
+<td>cite, datetime</td>
+</tr>
+<tr class="row-even"><td>&lt;details&gt;</td>
+<td>open</td>
+</tr>
+<tr class="row-odd"><td>&lt;embed&gt;</td>
+<td>src, type, width, height</td>
+</tr>
+<tr class="row-even"><td>&lt;fieldset&gt;</td>
+<td>disabled, form, name</td>
+</tr>
+<tr class="row-odd"><td>&lt;form&gt;</td>
+<td>accept-charset, action, autocomplete, enctype, method, name, novalidate, target</td>
+</tr>
+<tr class="row-even"><td>&lt;html&gt;</td>
+<td>manifest</td>
+</tr>
+<tr class="row-odd"><td>&lt;iframe&gt;</td>
+<td>src, srcdoc, name, sandbox, seamless, width, height</td>
+</tr>
+<tr class="row-even"><td>&lt;img&gt;</td>
+<td>alt, src, usemap, ismap, width, height</td>
+</tr>
+<tr class="row-odd"><td>&lt;input&gt;</td>
+<td>accept, alt, autocomplete, autofocus, checked, dirname, disabled, form, form­, ac­tion, formenctype, formmethod, formnovalidate, formtarget, height, list, max, maxlength, min, multiple, name, pattern, placeholder, readonly, required, size, src, step, type, value, width</td>
+</tr>
+<tr class="row-even"><td>&lt;ins&gt;</td>
+<td>cite, datetime</td>
+</tr>
+<tr class="row-odd"><td>&lt;keygen&gt;</td>
+<td>autofocus, challenge, disabled, form, keytype, name</td>
+</tr>
+<tr class="row-even"><td>&lt;label&gt;</td>
+<td>form, for</td>
+</tr>
+<tr class="row-odd"><td>&lt;li&gt;</td>
+<td>value</td>
+</tr>
+<tr class="row-even"><td>&lt;link&gt;</td>
+<td>href, rel, media, hreflang, type, sizes</td>
+</tr>
+<tr class="row-odd"><td>&lt;map&gt;</td>
+<td>name</td>
+</tr>
+<tr class="row-even"><td>&lt;menu&gt;</td>
+<td>type, label</td>
+</tr>
+<tr class="row-odd"><td>&lt;meta&gt;</td>
+<td>name, http-equiv, content, charset</td>
+</tr>
+<tr class="row-even"><td>&lt;meter&gt;</td>
+<td>value, min, max, low, high, optimum, form</td>
+</tr>
+<tr class="row-odd"><td>&lt;object&gt;</td>
+<td>data, type, name, usemap, form, width, height</td>
+</tr>
+<tr class="row-even"><td>&lt;ol&gt;</td>
+<td>reversed, start</td>
+</tr>
+<tr class="row-odd"><td>&lt;optgroup&gt;</td>
+<td>disabled, label</td>
+</tr>
+<tr class="row-even"><td>&lt;option&gt;</td>
+<td>disabled, label, selected, value</td>
+</tr>
+<tr class="row-odd"><td>&lt;output&gt;</td>
+<td>for, form, name</td>
+</tr>
+<tr class="row-even"><td>&lt;param&gt;</td>
+<td>name, value</td>
+</tr>
+<tr class="row-odd"><td>&lt;progress&gt;</td>
+<td>value, max, form</td>
+</tr>
+<tr class="row-even"><td>&lt;q&gt;</td>
+<td>cite</td>
+</tr>
+<tr class="row-odd"><td>&lt;script&gt;</td>
+<td>src, async, defer, type, charset</td>
+</tr>
+<tr class="row-even"><td>&lt;select&gt;</td>
+<td>autofocus, disabled, form, multiple, name, required, size</td>
+</tr>
+<tr class="row-odd"><td>&lt;source&gt;</td>
+<td>src, type, media</td>
+</tr>
+<tr class="row-even"><td>&lt;style&gt;</td>
+<td>media, type, scoped</td>
+</tr>
+<tr class="row-odd"><td>&lt;table&gt;</td>
+<td>summary</td>
+</tr>
+<tr class="row-even"><td>&lt;td&gt;</td>
+<td>colspan, rowspan, headers</td>
+</tr>
+<tr class="row-odd"><td>&lt;textarea&gt;</td>
+<td>autofocus, cols, disabled, form, maxlength, name, placeholder, readonly, requi­r­ed, rows, wrap</td>
+</tr>
+<tr class="row-even"><td>&lt;th&gt;</td>
+<td>colspan, rowspan, headers, scope</td>
+</tr>
+<tr class="row-odd"><td>&lt;time&gt;</td>
+<td>datetime, pubdate</td>
+</tr>
+<tr class="row-even"><td>&lt;track&gt;</td>
+<td>default, kind, label, src, srclang</td>
+</tr>
+<tr class="row-odd"><td>&lt;video&gt;</td>
+<td>src, poster, preload, autoplay, loop, controls, width, height</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="Button.html"
+                        title="previous chapter">Button - html элемент button</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/dom/Element.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="Button.html" title="Button - html элемент button"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.26 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >DOM - дерево html документа</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

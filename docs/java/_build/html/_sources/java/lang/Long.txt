@@ -1,0 +1,26 @@
+Long
+====
+
+.. py:class:: Long()
+
+    объект число, 64 бита
+
+
+    .. py:staticmethod:: longBitsToDouble()
+
+        
+
+
+    .. py:staticmethod:: parseLong(String str)
+
+        вохзвращает объект из строки
+
+
+    .. py:attribute:: MAX_VALUE
+
+        константа максимального значения
+
+
+    .. py:attribute:: MIN_VALUE
+
+        константа минимального значения значения

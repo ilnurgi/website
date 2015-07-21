@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Лейауты, вьюхи &mdash; android 14.10.12 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '14.10.12',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="android 14.10.12 documentation" href="index.html" />
+    <link rel="next" title="android.app.Activity" href="android/app/Activity.html" />
+    <link rel="prev" title="Описание файловой структуры проектов" href="file_structure.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="android/app/Activity.html" title="android.app.Activity"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="file_structure.html" title="Описание файловой структуры проектов"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">android 14.10.12 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="id1">
+<h1>Лейауты, вьюхи<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>Основные виды лейаутов:<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><em class="xref std std-ref">android.widget.LinerLayout</em> - отображает view-элементы в виде одной строки (вертикальный экран) или одного столбца (горизонтальный экран)</li>
+<li><em class="xref std std-ref">android.widget.TableLayout</em> - отображает view-элементы в виде таблицы, по строкам и столбцам. Он состоит из строк TableRow (TR). Каждая TR в свою очередь содержит View-элементы, формирующие столбцы. Т.е. кол-во View в TR - это кол-во столбцов. Но кол-во столбцов в таблице должно быть равным для всех строк. Поэтому, если в разных TR разное кол-во View-элементов (столбцов), то общее кол-во определяется по TR с максимальным кол-вом.</li>
+<li><em class="xref std std-ref">android.widget.RelativeLayout</em> - для каждого элемента настраивается его положение относительно других элементов</li>
+<li><em class="xref std std-ref">android.widget.AbsoluteLayout</em> - для каждого элемента указывается явная позиция на экране в системе координат, возможно уберут в будущем</li>
+<li><em class="xref std std-ref">android.widget.FrameLayout</em> - элементы добавляются слева в верхний угол</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>Основные виды вьюх:<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="android/widget/TextView.html#android-widget-textview"><em>android.widget.TextView</em></a></li>
+<li><a class="reference internal" href="android/widget/EditText.html#android-widget-edittext"><em>android.widget.EditText</em></a></li>
+<li><a class="reference internal" href="android/view/ListView.html#android-view-listview"><em>android.view.ListView</em></a></li>
+<li>android:id - иденификатор<ul>
+<li>&#8220;&#64;+id/textView1&#8221;</li>
+</ul>
+</li>
+<li>android:layout_width, android:layout_height - лэйаут заполнения по горизонтали/верткали<ul>
+<li>&#8220;wrap_content&#8221; - по содержимому</li>
+<li>&#8220;match_parent&#8221; - по родителю</li>
+<li>&#8220;100dp&#8221;</li>
+</ul>
+</li>
+<li>android:layout_weight - цифра, характеризует область, в которой распологается элемент<ul>
+<li>1, 2, 3 ...</li>
+</ul>
+</li>
+<li>android:layout_gravity - расположение внутри родителя относительно краев<ul>
+<li>topleftrightbottomcenter</li>
+</ul>
+</li>
+<li>android:layout_x, android:layout_y - абсолютные расположения</li>
+<li>android:layout_toLeftOf, android:layout_toRightOf, android:layout_above, android:layout_below - расположение элемента относительно указанного, слева, справа, сверху, снизу<ul>
+<li>&#8220;&#64;+id/label&#8221; - указатель на элемент по id</li>
+</ul>
+</li>
+<li>android:layout_alignLeft, android:layout_alignRight, android:layout_alignTop, android:layout_alignBottom - выравнивание элемента относительно укзанного по краям, слева, справа, сверху, снизу</li>
+<li>android:layout_alignParentLeft, android:layout_alignParentRight, android:layout_alignParentTop, android:layout_alignParentBottom - выравнивание элемента относительно родителя, слева, справа, сверху, снизу</li>
+<li>android:layout_centerVertical, android:layout_centerHorizontal, android:layout_centerInParent - выравнивание элемента по центру вертикально, по центру горизонтально, по центру веритикально и горизонтально относительно родителя<ul>
+<li>&#8220;true&#8221;</li>
+</ul>
+</li>
+<li>android:layout_margin, android:layout_marginLeft, android:layout_marginRight, android:layout_marginBottom, android:layout_marginTop - отступы<ul>
+<li>&#8220;10dip&#8221;</li>
+</ul>
+</li>
+<li>android:background</li>
+<li>android:orientation - ориентация<ul>
+<li>&#8220;vertical&#8221;</li>
+<li>&#8220;horizontal&#8221;</li>
+</ul>
+</li>
+<li>android:text - текст<ul>
+<li>&#8220;&#64;string/helo_world&#8221;</li>
+</ul>
+</li>
+<li>android:textSize - размер текста</li>
+<li>android:paddingBottom</li>
+<li>android:paddingLeft</li>
+<li>android:paddingRight</li>
+<li>android:paddingTop</li>
+<li>android:padding</li>
+<li>android:scrollbars</li>
+<li>android:fadingEdge</li>
+<li>tools:context</li>
+<li>android:onClick - имя метода обрабочика</li>
+</ul>
+<p>dp или dip - Density-independent Pixels. Абстрактная ЕИ, позволяющая приложениям выглядеть одинаково на
+различных экранах и разреш ениях.
+sp - Scale-independent Pixels. То же, что и dp, только используется для размеров ш рифта в View элементах
+pt - 1/72 дюйма, определяется по физическому размеру экрана. Эта ЕИ из типографии.
+px – пиксел, не рекомендуется использовать т.к. на разных экранах приложение будет выглядеть по-разному.
+mm – миллиметр, определяется по физическому размеру экрана
+in – дюйм, определяется по физическому размеру экрана</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Лейауты, вьюхи</a><ul>
+<li><a class="reference internal" href="#id2">Основные виды лейаутов:</a></li>
+<li><a class="reference internal" href="#id3">Основные виды вьюх:</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="file_structure.html"
+                        title="previous chapter">Описание файловой структуры проектов</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="android/app/Activity.html"
+                        title="next chapter">android.app.Activity</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/layout.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="android/app/Activity.html" title="android.app.Activity"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="file_structure.html" title="Описание файловой структуры проектов"
+             >previous</a> |</li>
+        <li><a href="index.html">android 14.10.12 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

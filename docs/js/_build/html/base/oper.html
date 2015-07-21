@@ -1,0 +1,346 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Операторы &mdash; js doc 2015.06.26 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2015.06.26',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="js doc 2015.06.26 documentation" href="../index.html" />
+    <link rel="up" title="Основные объекты" href="index.html" />
+    <link rel="next" title="undefined - неопределнное значение" href="undefined.html" />
+    <link rel="prev" title="Object - объект" href="Object.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="undefined.html" title="undefined - неопределнное значение"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="Object.html" title="Object - объект"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.26 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Основные объекты</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>Операторы<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>Логические<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">оператор</th>
+<th class="head">описание</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>||</td>
+<td>или</td>
+</tr>
+<tr class="row-odd"><td>&amp;&amp;</td>
+<td>И</td>
+</tr>
+<tr class="row-even"><td>!</td>
+<td>не</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id3">
+<h2>Битовые<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="42%" />
+<col width="58%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Оператор</th>
+<th class="head">Описание</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>&amp;</td>
+<td>И (AND)</td>
+</tr>
+<tr class="row-odd"><td>|</td>
+<td>ИЛИ (OR)</td>
+</tr>
+<tr class="row-even"><td>^</td>
+<td>XOR</td>
+</tr>
+<tr class="row-odd"><td>~</td>
+<td>НЕ (NOT)</td>
+</tr>
+<tr class="row-even"><td>&lt;&lt;</td>
+<td>Shift Left</td>
+</tr>
+<tr class="row-odd"><td>&gt;&gt;</td>
+<td>Shift Right</td>
+</tr>
+<tr class="row-even"><td>&gt;&gt;&gt;</td>
+<td>Shift Right</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="if">
+<h2>if<a class="headerlink" href="#if" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-js"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">c1</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">c2</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">c3</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="nx">c1</span> <span class="o">?</span> <span class="mi">1</span><span class="o">:</span> <span class="p">(</span><span class="nx">c2</span> <span class="o">?</span> <span class="mi">2</span><span class="o">:</span> <span class="nx">c3</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(){</span>
+    <span class="p">...</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="for">
+<h2>for<a class="headerlink" href="#for" title="Permalink to this headline">¶</a></h2>
+<p>Итерация по элементам массива или объекта.</p>
+<div class="highlight-js"><div class="highlight"><pre><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">myarray</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">max</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="nx">attr</span> <span class="k">in</span> <span class="nx">obj</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">attr</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="while">
+<h2>while<a class="headerlink" href="#while" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-js"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">while</span> <span class="p">(</span><span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+    <span class="nx">i</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="switch">
+<h2>switch<a class="headerlink" href="#switch" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-js"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="k">switch</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="mi">1</span><span class="o">:</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;one&#39;</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="mi">0</span><span class="o">:</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;zero&#39;</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="k">default</span><span class="o">:</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;not one zero&#39;</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="break">
+<h2>break<a class="headerlink" href="#break" title="Permalink to this headline">¶</a></h2>
+<p>Прерывает работу циклов</p>
+</div>
+<div class="section" id="continue">
+<h2>continue<a class="headerlink" href="#continue" title="Permalink to this headline">¶</a></h2>
+<p>Перейти к новой итерации цикла</p>
+</div>
+<div class="section" id="instanceof">
+<h2>instanceof<a class="headerlink" href="#instanceof" title="Permalink to this headline">¶</a></h2>
+<p>Проверяет тип объекта</p>
+<div class="highlight-js"><div class="highlight"><pre><span class="kd">function</span> <span class="nx">Human</span><span class="p">(){</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="p">(</span><span class="k">this</span> <span class="k">instanceof</span> <span class="nx">Human</span><span class="p">))</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nx">Human</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="try-catche-finally">
+<h2>try, catche, finally<a class="headerlink" href="#try-catche-finally" title="Permalink to this headline">¶</a></h2>
+<p>Перехват и обработка исключений</p>
+<div class="highlight-js"><div class="highlight"><pre><span class="k">try</span> <span class="p">{</span>
+    <span class="c1">// код который вызывает исключение</span>
+<span class="p">}</span> <span class="nx">catche</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// перехват исключений</span>
+<span class="p">}</span> <span class="k">finally</span> <span class="p">{</span>
+    <span class="c1">// данный блок выполнится в любом случае</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="throw">
+<h2>throw<a class="headerlink" href="#throw" title="Permalink to this headline">¶</a></h2>
+<p>Прерывает выполнение функции, возбуждая исключение</p>
+<div class="highlight-js"><div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">a</span> <span class="o">!==</span> <span class="s1">&#39;number&#39;</span> <span class="o">||</span> <span class="k">typeof</span> <span class="nx">b</span> <span class="o">!==</span> <span class="s1">&#39;number&#39;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="p">{</span>
+        <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;TypeError&#39;</span><span class="p">,</span>
+        <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;add needs numbers&#39;</span>
+    <span class="p">};</span>
+
+    <span class="c1">// throw &#39;error text&#39;;</span>
+    <span class="c1">// throw 123;</span>
+    <span class="c1">// throw new Error(&quot;message&quot;);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="in">
+<h2>in<a class="headerlink" href="#in" title="Permalink to this headline">¶</a></h2>
+<p>Проверка существования свойства в объекте, по всей цепочке прототипов</p>
+<div class="highlight-js"><div class="highlight"><pre><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;x&#39;</span> <span class="k">in</span> <span class="nx">point</span><span class="p">);</span>
+<span class="c1">// true</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>?<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-js"><div class="highlight"><pre><span class="p">(</span><span class="nx">age</span> <span class="o">==</span> <span class="mi">18</span><span class="p">)</span> <span class="o">?</span> <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Большой&#39;</span><span class="p">)</span><span class="o">:</span> <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Маленький&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="do-while">
+<h2>do - while<a class="headerlink" href="#do-while" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-js"><div class="highlight"><pre><span class="k">do</span> <span class="p">{</span>
+    <span class="p">...</span>
+<span class="p">}</span> <span class="k">while</span> <span class="p">(...)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>метки<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-js"><div class="highlight"><pre><span class="nx">outer</span><span class="o">:</span> <span class="k">for</span> <span class="p">(...){</span>
+    <span class="nx">inner</span><span class="o">:</span> <span class="k">while</span> <span class="p">(...){</span>
+        <span class="k">if</span> <span class="p">(...){</span>
+            <span class="k">break</span> <span class="nx">inner</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="delete">
+<h2>delete<a class="headerlink" href="#delete" title="Permalink to this headline">¶</a></h2>
+<p>Удаляет объекты</p>
+<div class="highlight-js"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">];</span>
+<span class="nx">del</span> <span class="nx">a</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+<span class="nx">a</span><span class="p">;</span>
+<span class="c1">// [4]</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Операторы</a><ul>
+<li><a class="reference internal" href="#id2">Логические</a></li>
+<li><a class="reference internal" href="#id3">Битовые</a></li>
+<li><a class="reference internal" href="#if">if</a></li>
+<li><a class="reference internal" href="#for">for</a></li>
+<li><a class="reference internal" href="#while">while</a></li>
+<li><a class="reference internal" href="#switch">switch</a></li>
+<li><a class="reference internal" href="#break">break</a></li>
+<li><a class="reference internal" href="#continue">continue</a></li>
+<li><a class="reference internal" href="#instanceof">instanceof</a></li>
+<li><a class="reference internal" href="#try-catche-finally">try, catche, finally</a></li>
+<li><a class="reference internal" href="#throw">throw</a></li>
+<li><a class="reference internal" href="#in">in</a></li>
+<li><a class="reference internal" href="#id4">?</a></li>
+<li><a class="reference internal" href="#do-while">do - while</a></li>
+<li><a class="reference internal" href="#id5">метки</a></li>
+<li><a class="reference internal" href="#delete">delete</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="Object.html"
+                        title="previous chapter">Object - объект</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="undefined.html"
+                        title="next chapter">undefined - неопределнное значение</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/base/oper.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="undefined.html" title="undefined - неопределнное значение"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="Object.html" title="Object - объект"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.26 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Основные объекты</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

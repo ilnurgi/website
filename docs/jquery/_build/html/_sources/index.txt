@@ -1,0 +1,19 @@
+Конспекты по jQuery
+===================
+
+jQuery — библиотека JavaScript, которая содержит необходимые функции, помогающие легко получать доступ к любому элементу DOM, обращаться к атрибутам и содержимому элементов DOM, манипулировать ими.
+
+
+.. toctree::
+   :maxdepth: 2
+
+   jquery
+   selectors
+   base
+   getters
+   setter
+   events
+   animation
+   ajax   
+   methods
+   jqueryui/index

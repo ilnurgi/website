@@ -120,7 +120,10 @@ service nginx restart
 vim /etc/supervisor/conf.d/website.conf
 
     [program:website]
-    command=/root/virtual_envs/website/bin/gunicorn website.wsgi -b unix:/tmp/website.sock --access-logfile /var/www/website/logs/gunicorn_acces.log --error-logfile /var/www/website/logs/gunicorn_error.log
+    command=/root/virtual_envs/website/bin/gunicorn website.wsgi 
+        -b unix:/tmp/website.sock 
+        --access-logfile /var/www/website/logs/gunicorn_acces.log 
+        --error-logfile /var/www/website/logs/gunicorn_error.log
 
     directory=/var/www/website/
 

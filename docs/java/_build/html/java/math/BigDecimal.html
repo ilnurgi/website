@@ -1,0 +1,337 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>BigDecimal &mdash; java doc 14.10.12 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '14.10.12',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="java doc 14.10.12 documentation" href="../../index.html" />
+    <link rel="up" title="Welcome to java doc’s documentation!" href="index.html" />
+    <link rel="next" title="BigInteger" href="BigInteger.html" />
+    <link rel="prev" title="Welcome to java doc’s documentation!" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="BigInteger.html" title="BigInteger"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to java doc’s documentation!"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">java doc 14.10.12 documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Welcome to java doc&#8217;s documentation!</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Welcome to java doc&#8217;s documentation!</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="bigdecimal">
+<h1>BigDecimal<a class="headerlink" href="#bigdecimal" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="BigDecimal">
+<em class="property">class </em><tt class="descname">BigDecimal</tt><a class="headerlink" href="#BigDecimal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Каждый объект этого класса хранит два целочисленных значения: мантиссу вещественного числа в виде объекта класса BigInteger и неотрицательный десятичный порядок числа типа int . Например, для числа 76,34862 будет храниться мантисса 7 634 862 в объекте класса BigInteger и порядок 5 как целое число типа int . Таким образом, мантисса может содержать любое количество цифр, а порядок ограничен значением константы Integer.MAX_VALUE .</p>
+<dl class="method">
+<dt id="BigDecimal.BigDecimal">
+<tt class="descname">BigDecimal</tt><big>(</big><em>BigInteger bi</em><big>)</big><a class="headerlink" href="#BigDecimal.BigDecimal" title="Permalink to this definition">¶</a></dt>
+<dd><p>объект будет хранить большое целое bi , порядок равен нулю</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">BigDecimal</tt><big>(</big><em>BigInteger mantissa</em>, <em>int scale</em><big>)</big></dt>
+<dd><p>задается мантисса mantissa и неотрицательный порядок scale объекта; если порядок scale отрицателен, возникает исключительная ситуация</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">BigDecimal</tt><big>(</big><em>double d</em><big>)</big></dt>
+<dd><p>объект будет содержать вещественное число удвоенной точности d ; если значение d бесконечно или NaN , то возникает исключительная ситуация;</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">BigDecimal</tt><big>(</big><em>String val</em><big>)</big></dt>
+<dd><p>число задается строкой символов val , которая должна содержать запись числа по правилам языка Java.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="BigDecimal.doubleValue">
+<tt class="descname">doubleValue</tt><big>(</big><big>)</big><a class="headerlink" href="#BigDecimal.doubleValue" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="BigDecimal.floatValue">
+<tt class="descname">floatValue</tt><big>(</big><big>)</big><a class="headerlink" href="#BigDecimal.floatValue" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="BigDecimal.intValue">
+<tt class="descname">intValue</tt><big>(</big><big>)</big><a class="headerlink" href="#BigDecimal.intValue" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="BigDecimal.longValue">
+<tt class="descname">longValue</tt><big>(</big><big>)</big><a class="headerlink" href="#BigDecimal.longValue" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="BigDecimal.abs">
+<tt class="descname">abs</tt><big>(</big><big>)</big><a class="headerlink" href="#BigDecimal.abs" title="Permalink to this definition">¶</a></dt>
+<dd><p>абсолютное значение объекта this</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="BigDecimal.add">
+<tt class="descname">add</tt><big>(</big><em>BigDecimal x</em><big>)</big><a class="headerlink" href="#BigDecimal.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>операция сложения this + x</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="BigDecimal.divide">
+<tt class="descname">divide</tt><big>(</big><em>BigDecimal x</em>, <em>r</em><big>)</big><a class="headerlink" href="#BigDecimal.divide" title="Permalink to this definition">¶</a></dt>
+<dd><p>операция деления this / x с округлением по способу r</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">divide</tt><big>(</big><em>BigDecimal x</em>, <em>Integer n</em>, <em>r</em><big>)</big></dt>
+<dd><p>операция деления this / x с изменением порядка и округлением по способу r</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="BigDecimal.max">
+<tt class="descname">max</tt><big>(</big><em>BigDecimal x</em><big>)</big><a class="headerlink" href="#BigDecimal.max" title="Permalink to this definition">¶</a></dt>
+<dd><p>наибольшее из this и x ;</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="BigDecimal.min">
+<tt class="descname">min</tt><big>(</big><em>BigDecimal x</em><big>)</big><a class="headerlink" href="#BigDecimal.min" title="Permalink to this definition">¶</a></dt>
+<dd><p>наименьшее из this и x</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="BigDecimal.movePointLeft">
+<tt class="descname">movePointLeft</tt><big>(</big><em>Integer n</em><big>)</big><a class="headerlink" href="#BigDecimal.movePointLeft" title="Permalink to this definition">¶</a></dt>
+<dd><p>сдвиг влево на n разрядов</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="BigDecimal.movePointRight">
+<tt class="descname">movePointRight</tt><big>(</big><em>Integer n</em><big>)</big><a class="headerlink" href="#BigDecimal.movePointRight" title="Permalink to this definition">¶</a></dt>
+<dd><p>сдвиг вправо на n разрядов</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="BigDecimal.multiply">
+<tt class="descname">multiply</tt><big>(</big><em>BigDecimal x</em><big>)</big><a class="headerlink" href="#BigDecimal.multiply" title="Permalink to this definition">¶</a></dt>
+<dd><p>операция умножения this * x</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="BigDecimal.negate">
+<tt class="descname">negate</tt><big>(</big><big>)</big><a class="headerlink" href="#BigDecimal.negate" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает объект с обратным знаком</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="BigDecimal.scale">
+<tt class="descname">scale</tt><big>(</big><big>)</big><a class="headerlink" href="#BigDecimal.scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает порядок числа</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="BigDecimal.setScale">
+<tt class="descname">setScale</tt><big>(</big><em>Integer n</em><big>)</big><a class="headerlink" href="#BigDecimal.setScale" title="Permalink to this definition">¶</a></dt>
+<dd><p>устанавливает новый порядок n</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">setScale</tt><big>(</big><em>Integer n</em>, <em>r</em><big>)</big></dt>
+<dd><p>устанавливает новый порядок n и округляет число при необходимости по способу r</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="BigDecimal.signum">
+<tt class="descname">signum</tt><big>(</big><big>)</big><a class="headerlink" href="#BigDecimal.signum" title="Permalink to this definition">¶</a></dt>
+<dd><p>знак числа, хранящегося в объекте</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="BigDecimal.subtract">
+<tt class="descname">subtract</tt><big>(</big><em>BigDecimal x</em><big>)</big><a class="headerlink" href="#BigDecimal.subtract" title="Permalink to this definition">¶</a></dt>
+<dd><p>операция вычитания this — x</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="BigDecimal.toBigInteger">
+<tt class="descname">toBigInteger</tt><big>(</big><big>)</big><a class="headerlink" href="#BigDecimal.toBigInteger" title="Permalink to this definition">¶</a></dt>
+<dd><p>округление числа, хранящегося в объекте</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="BigDecimal.unscaledValue">
+<tt class="descname">unscaledValue</tt><big>(</big><big>)</big><a class="headerlink" href="#BigDecimal.unscaledValue" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает мантиссу числа</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="BigDecimal.upl">
+<tt class="descname">upl</tt><big>(</big><big>)</big><a class="headerlink" href="#BigDecimal.upl" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает расстояние до следующего числа</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="BigDecimal.ROUND_CEILING">
+<tt class="descname">ROUND_CEILING</tt><a class="headerlink" href="#BigDecimal.ROUND_CEILING" title="Permalink to this definition">¶</a></dt>
+<dd><p>округление в сторону большего целого</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="BigDecimal.ROUND_DOWN">
+<tt class="descname">ROUND_DOWN</tt><a class="headerlink" href="#BigDecimal.ROUND_DOWN" title="Permalink to this definition">¶</a></dt>
+<dd><p>округление к нулю, к меньшему по модулю целому значению</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="BigDecimal.ROUND_FLOOR">
+<tt class="descname">ROUND_FLOOR</tt><a class="headerlink" href="#BigDecimal.ROUND_FLOOR" title="Permalink to this definition">¶</a></dt>
+<dd><p>округление к меньшему целому</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="BigDecimal.ROUND_HALF_DOWN">
+<tt class="descname">ROUND_HALF_DOWN</tt><a class="headerlink" href="#BigDecimal.ROUND_HALF_DOWN" title="Permalink to this definition">¶</a></dt>
+<dd><p>округление к ближайшему целому, среднее значение округляется к меньшему целому</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="BigDecimal.ROUND_HALF_EVEN">
+<tt class="descname">ROUND_HALF_EVEN</tt><a class="headerlink" href="#BigDecimal.ROUND_HALF_EVEN" title="Permalink to this definition">¶</a></dt>
+<dd><p>округление к ближайшему целому, среднее значение округляется к четному числу</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="BigDecimal.ROUND_HALF_UP">
+<tt class="descname">ROUND_HALF_UP</tt><a class="headerlink" href="#BigDecimal.ROUND_HALF_UP" title="Permalink to this definition">¶</a></dt>
+<dd><p>округление к ближайшему целому, среднее значение округляется к большему целому</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="BigDecimal.ROUND_UNNECESSARY">
+<tt class="descname">ROUND_UNNECESSARY</tt><a class="headerlink" href="#BigDecimal.ROUND_UNNECESSARY" title="Permalink to this definition">¶</a></dt>
+<dd><p>предполагается, что результат будет целым, и округление не понадобится</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="BigDecimal.ROUND_UP">
+<tt class="descname">ROUND_UP</tt><a class="headerlink" href="#BigDecimal.ROUND_UP" title="Permalink to this definition">¶</a></dt>
+<dd><p>округление от нуля, к большему по модулю целому значению</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="BigDecimal.ZERO">
+<tt class="descname">ZERO</tt><a class="headerlink" href="#BigDecimal.ZERO" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="BigDecimal.ONE">
+<tt class="descname">ONE</tt><a class="headerlink" href="#BigDecimal.ONE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="BigDecimal.TEN">
+<tt class="descname">TEN</tt><a class="headerlink" href="#BigDecimal.TEN" title="Permalink to this definition">¶</a></dt>
+<dd><p>моделируют вещественные нуль, единицу и вещественное число десять в операциях с объектами класса BigDecimal .</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Welcome to java doc&#8217;s documentation!</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="BigInteger.html"
+                        title="next chapter">BigInteger</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/java/math/BigDecimal.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="BigInteger.html" title="BigInteger"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to java doc’s documentation!"
+             >previous</a> |</li>
+        <li><a href="../../index.html">java doc 14.10.12 documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Welcome to java doc&#8217;s documentation!</a> &raquo;</li>
+          <li><a href="index.html" >Welcome to java doc&#8217;s documentation!</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

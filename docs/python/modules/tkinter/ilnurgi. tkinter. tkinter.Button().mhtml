@@ -1,0 +1,363 @@
+From: <Saved by WebKit>
+Subject: ilnurgi. tkinter. tkinter.Button()
+Date: Fri, 19 Dec 2013 11:00:22 +0400
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----=_NextPart_000_87AC_C309F8BE.1253CABB"
+
+------=_NextPart_000_87AC_C309F8BE.1253CABB
+Content-Type: text/html
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://ilnurgi1.ru/doc/tkinter/tkinterbutton
+
+<!DOCTYPE html><html><head><meta charset=3D"UTF-8">
+
+   =20
+    <meta name=3D"yandex-verification" content=3D"431f2ece5bc15665">
+    <meta name=3D"wmail-verification" content=3D"22f7a02d6ade789f">
+    <meta name=3D"google-site-verification" content=3D"84y9A4q0QF0YiwyLi-xe=
+frzNN8d6B5W2E84xYUtoQYc">  =20
+   =20
+
+    <title>ilnurgi. tkinter. tkinter.Button()</title>
+
+    <link rel=3D"stylesheet" type=3D"text/css" href=3D"http://ilnurgi1.ru/s=
+tatic/styles.css">
+    <style type=3D"text/css"></style>
+
+
+</head>
+<body>
+
+   =20
+
+        <div class=3D"bar navigation_top">
+            <ul>
+                <li><a href=3D"http://ilnurgi1.ru/"> =D0=93=D0=BB=D0=B0=D0=
+=B2=D0=BD=D0=B0=D1=8F </a></li>
+                <li><a href=3D"http://ilnurgi1.ru/blog/"> =D0=91=D0=BB=D0=
+=BE=D0=B3 </a></li>
+                <li><a href=3D"http://ilnurgi1.ru/tests/tablet/"> TT </a></=
+li>
+                <li><a href=3D"http://ilnurgi1.ru/tests/smartphone/"> ST </=
+a></li>
+                <li><a href=3D"http://ilnurgi1.ru/tests/pc"> TPC </a></li>
+                <li><a href=3D"http://ilnurgi1.ru/site_map/"> =D0=9A=D0=B0=
+=D1=80=D1=82=D0=B0 =D1=81=D0=B0=D0=B9=D1=82=D0=B0 </a></li>
+                <li><a href=3D"http://ilnurgi1.ru/about/"> =D0=9F=D1=80=D0=
+=BE =D0=BC=D0=B5=D0=BD=D1=8F </a></li>
+            </ul>
+            <div style=3D"clear:left;"></div>
+        </div>
+   =20
+
+   =20
+
+    <div class=3D"bar navigation_top">
+        <ul>
+           =20
+                <li><a href=3D"http://ilnurgi1.ru/doc/html" style=3D"font-w=
+eight: normal;">html</a></li>
+           =20
+                <li><a href=3D"http://ilnurgi1.ru/doc/pys60" style=3D"font-=
+weight: normal;">pys60</a></li>
+           =20
+                <li><a href=3D"http://ilnurgi1.ru/doc/python" style=3D"font=
+-weight: normal;">python</a></li>
+           =20
+                <li><a href=3D"http://ilnurgi1.ru/doc/tkinter" style=3D"fon=
+t-weight: normal;">tkinter</a></li>
+           =20
+        </ul>
+        <div style=3D"clear:left;"></div>
+    </div>
+
+    <div class=3D"bar post">
+        <a class=3D"title" href=3D"http://ilnurgi1.ru/doc/tkinter/tkinterbu=
+tton">tkinter.Button()</a>
+        <div class=3D"message">
+            =D0=92=D0=B8=D0=B4=D0=B6=D0=B5=D1=82=D0=B0 =D0=BA=D0=BD=D0=BE=
+=D0=BF=D0=BA=D0=B0
+
+<pre>import Tkinter
+def Button1_press():
+	print '=D0=9D=D0=B0=D0=B6=D0=B0=D1=82=D0=B0 =D0=BA=D0=BD=D0=BE=D0=BF=D0=BA=
+=D0=B0 Button1'
+main_window=3DTkinter.Tk()
+button=3DTkinter.Button(main_window,text=3D'Button 1',command=3DButton1_pre=
+ss)
+button.pack()
+main_window.mainloop()
+
+<img src=3D"http://ilnurgi1.ru/media/doc/60__tkinter_button.png"></pre>
+<ul>
+	<li><i>bg (background)</i> - =D1=86=D0=B2=D0=B5=D1=82 =D1=84=D0=BE=D0=BD=
+=D0=B0</li>
+	<li><i>command</i> - =D1=84=D1=83=D0=BD=D0=BA=D1=86=D0=B8=D1=8F, =D0=BA=D0=
+=BE=D1=82=D0=BE=D1=80=D0=B0=D1=8F =D0=B1=D1=83=D0=B4=D0=B5=D1=82 =D0=B2=D1=
+=8B=D0=BF=D0=BE=D0=BB=D0=BD=D1=8F=D1=82=D1=8C=D1=81=D1=8F =D0=BF=D1=80=D0=
+=B8 =D0=BD=D0=B0=D0=B6=D0=B0=D1=82=D0=B8=D0=B8 =D0=BD=D0=B0 =D0=B2=D0=B8=D0=
+=B4=D0=B6=D0=B5=D1=82</li>
+	<li><i>fg (foreground)</i> - =D1=86=D0=B2=D0=B5=D1=82 =D0=BF=D0=B5=D1=80=
+=D0=B5=D0=B4=D0=BD=D0=B5=D0=B3=D0=BE =D0=BF=D0=BB=D0=B0=D0=BD=D0=B0, =D0=BD=
+=D0=B0=D0=B4=D0=BF=D0=B8=D1=81=D0=B8</li>
+	<li><i>height/width</i> - =D1=80=D0=B0=D0=B7=D0=BC=D0=B5=D1=80=D1=8B =D0=
+=B2=D0=B8=D0=B4=D0=B6=D0=B5=D1=82=D0=B0 (=D0=BA=D0=BE=D0=BB=D0=B8=D1=87=D0=
+=B5=D1=81=D1=82=D0=B2=D0=BE =D0=B7=D0=BD=D0=B0=D0=BA=D0=BE=D0=B2)</li>
+	<li><i>main_window</i> - =D1=82=D0=B5=D0=BA=D1=81=D1=82 =D0=BD=D0=B0=D0=B4=
+=D0=BF=D0=B8=D1=81=D0=B8 =D0=BD=D0=B0 =D0=B2=D0=B8=D0=B4=D0=B6=D0=B5=D1=82=
+=D0=B5</li>
+	<li><i>text	=D1=82=D0=B5=D0=BA=D1=81=D1=82</i> - =D0=BD=D0=B0=D0=B4=D0=BF=
+=D0=B8=D1=81=D0=B8 =D0=BD=D0=B0 =D0=B2=D0=B8=D0=B4=D0=B6=D0=B5=D1=82=D0=B5<=
+/li>
+</ul>
+        </div>
+        <div class=3D"static" style=3D"text-align:right;">
+            <i class=3D"title_bottom">=D0=9E=D0=BF=D1=83=D0=B1=D0=BB=D0=B8=
+=D0=BA=D0=BE=D0=B2=D0=B0=D0=BD=D0=BE =D0=B2 =D1=80=D1=83=D0=B1=D1=80=D0=B8=
+=D0=BA=D0=B5
+                <a class=3D"category" href=3D"http://ilnurgi1.ru/doc/tkinte=
+r/tkinterbutton">
+                    tkinter</a>, 11 =D0=B8=D1=8E=D0=BB=D1=8F 2012 =D0=B3. 0=
+:00:00.</i>
+            <br><i class=3D"title_bottom">=D0=9A=D0=BE=D0=BC=D0=BC=D0=B5=D0=
+=BD=D1=82=D0=B0=D1=80=D0=B8=D0=B5=D0=B2:
+            0</i>
+            <br><i class=3D"title_bottom">=D0=9F=D1=80=D0=BE=D1=81=D0=BC=D0=
+=BE=D1=82=D1=80=D0=BE=D0=B2:
+            38</i>
+        </div>
+    </div>
+
+    <div class=3D"bar comment">
+        =D0=94=D0=BE=D0=B1=D0=B0=D0=B2=D0=B8=D1=82=D1=8C =D0=BA=D0=BE=D0=BC=
+=D0=B5=D0=BD=D1=82=D0=B0=D1=80=D0=B8=D0=B8
+        <form action=3D"http://ilnurgi1.ru/doc/add_comment" method=3D"post"=
+>
+            <div style=3D"display:none"><input type=3D"hidden" name=3D"csrf=
+middlewaretoken" value=3D"JBP5zEUMSVwSvRdfKAHwbrGlZxdDhvrx"></div>
+            <label for=3D"usernme">=D0=98=D0=BC=D1=8F</label>
+            <br><input type=3D"text" name=3D"username">
+            <br><label for=3D"email">email</label>
+            <br><input type=3D"text" name=3D"email">
+            <br>=D0=9A=D0=BE=D0=BC=D0=B5=D0=BD=D1=82=D0=B0=D1=80=D0=B8=D0=
+=B8
+            <br><textarea name=3D"message" cols=3D"100" rows=3D"10"></texta=
+rea>
+            <br><label for=3D"passw">=D0=9E=D1=81=D1=82=D0=B0=D0=B2=D1=8C=
+=D1=82=D0=B5 =D0=BF=D0=BE=D0=BB=D0=B5 =D0=BF=D1=83=D1=81=D1=82=D1=8B=D0=BC<=
+/label>
+            <br><input type=3D"text" name=3D"passw" value=3D"">
+            <input type=3D"hidden" name=3D"post_id" value=3D"63" <br=3D""><=
+input type=3D"submit" value=3D"=D0=9E=D1=82=D0=BF=D1=80=D0=B0=D0=B2=D0=B8=
+=D1=82=D1=8C">
+        </form>
+    </div>
+
+    <div class=3D"bar comments">
+        =D0=9A=D0=BE=D0=BC=D0=B5=D0=BD=D1=82=D0=B0=D1=80=D0=B8=D0=B8<br>
+       =20
+    </div>
+
+
+
+
+
+
+
+   =20
+
+
+</body></html>
+------=_NextPart_000_87AC_C309F8BE.1253CABB
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://ilnurgi1.ru/static/styles.css
+
+* { margin: 0px; padding: 0px; }
+
+body { background-color: rgb(221, 221, 221); min-width: 200px; }
+
+a { text-decoration: none; color: rgb(0, 0, 0); }
+
+a:hover { text-decoration: underline; }
+
+img { display: block; }
+
+p.vinoska { margin: 5px 0px 0px 30px; background-color: rgb(255, 221, 221);=
+ }
+
+dt { font-style: italic; }
+
+dd { margin-left: 50px; padding: 10px 0px; }
+
+div.bar { border: 1px solid rgb(170, 170, 170); padding: 10px; background-c=
+olor: rgb(238, 238, 238); margin: 10px; }
+
+div.navigation_top a { border-bottom-width: 1px; border-bottom-style: solid=
+; border-bottom-color: rgb(0, 0, 0); margin-right: 10px; font-weight: bold;=
+ }
+
+div.navigation_top a:hover { color: rgb(0, 85, 0); border-bottom-style: non=
+e; }
+
+div.navigation_top li { list-style: none; float: left; }
+
+@media screen and (min-width: 1024px) {=20
+  div.news { float: left; }
+}
+
+div.news span { font-size: 0.8em; }
+
+div.news h3, div.news h3 a { color: rgb(153, 0, 0); }
+
+div.news h3 a:hover { text-decoration: underline; color: rgb(153, 0, 0); }
+
+div.news ul, div.statistic ul { margin-left: 20px; }
+
+div.news li, div.statistic ul { list-style: none; }
+
+div.news li a { text-decoration: underline; }
+
+div.news li a:hover { color: rgb(136, 0, 0); }
+
+div.post { border: 1px solid rgb(170, 170, 170); padding: 10px; margin: 10p=
+x; }
+
+div.post a.title { color: rgb(153, 0, 0); font-weight: bold; }
+
+div.message a { text-decoration: underline; }
+
+div.message ul { margin: 10px 0px 10px 20px; list-style: none; }
+
+div.message ul li, div.message ol li { margin-bottom: 5px; }
+
+div.message ol { margin: 10px 0px 10px 30px; }
+
+div.message pre { border-left-width: 1px; border-left-style: dotted; border=
+-left-color: rgb(0, 153, 0); padding: 10px 0px 10px 20px; margin: 10px 20px=
+; white-space: pre-wrap; }
+
+div.message pre i { color: rgb(170, 0, 0); }
+
+div.message img { margin: 10px 30px; }
+
+div.message iframe { margin: 10px 0px 0px 50px; display: block; }
+
+div.message h3 i { color: rgb(153, 153, 153); font-size: 1em; }
+
+div.message h3 { margin: 10px 0px; }
+
+div.message p { margin-left: 10px; }
+
+div.message ul { margin-left: 10px; }
+
+div.message ul li { padding-left: 20px; }
+
+div.comments div.comment { border-bottom-width: 1px; border-bottom-style: d=
+otted; border-bottom-color: black; padding: 10px; }
+
+div.comments div.message { padding: 10px; }
+
+div.comments div.comment i { color: rgb(153, 0, 0); }
+
+div.statistic h3 { color: rgb(153, 0, 0); }
+
+div.site_map ul { list-style: none; margin-left: 10px; padding: 5px; }
+
+ul.u1 { margin-left: 10px; }
+
+ul.u1 > li { border-top-width: 1px; border-top-style: solid; border-top-col=
+or: black; padding: 10px; list-style: none; margin-left: 10px; }
+
+ul.u1 p + ul { margin-left: 20px; }
+
+ul.u1 p + ul li { list-style: none; }
+
+ul.u1 > li > pre { border-left-width: 2px; border-left-style: dotted; borde=
+r-left-color: rgb(0, 0, 119); padding: 10px; margin-left: 40px; background-=
+color: rgb(170, 187, 204); }
+
+div.tests { overflow-x: scroll; }
+
+div.tests table td { padding: 5px; border-bottom-width: 1px; border-bottom-=
+style: dotted; border-bottom-color: black; border-right-width: 1px; border-=
+right-style: dotted; border-right-color: black; text-align: center; }
+
+div.tests table.no_border td { padding: 5px; border: none; text-align: cent=
+er; max-width: 240px; }
+
+div.tests table th { padding: 15px; }
+
+div.tests div.cut { display: none; }
+
+dl.def_list { margin-top: 10px; padding: 0px; }
+
+dl.def_list dt { margin-left: 10px; padding: 0px; font-style: normal; font-=
+weight: bold; }
+
+dl.def_list dd { margin-left: 30px; padding: 0px; }
+
+.form_input_one_line { float: left; }
+
+em { font-style: normal; }
+
+a.td_processor, em.td_processor { color: rgb(102, 0, 0); }
+
+a.td_video, em.td_video { color: rgb(0, 102, 153); }
+
+a.td_mainb, em.td_mainb { color: rgb(102, 102, 0); }
+------=_NextPart_000_87AC_C309F8BE.1253CABB
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://ilnurgi1.ru/media/doc/60__tkinter_button.png
+
+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
+------=_NextPart_000_87AC_C309F8BE.1253CABB--

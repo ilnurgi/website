@@ -1,0 +1,38 @@
+Dom objects
+===========
+
+.. js:attribute:: innerHTML
+    
+    HTML содержимое
+
+    .. code-block:: js
+
+        alert(window.document.body.innerHTML);
+
+        window.document.body.innerHTML = 'пусто';
+
+.. js:attribute:: children
+    
+    Дети объекта, массив
+
+    .. code-block:: js
+
+        alert(window.document.body.children);
+
+.. js:attribute:: parentNode
+    
+    Родиетльский элемент
+
+    .. code-block:: js
+
+        alert(span2.parentNode);
+
+.. js:attribute:: onclick
+    
+    Обработчик клика по элементу
+
+.. js:attribute:: disabled
+    
+    Элемент отключен
+
+    

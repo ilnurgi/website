@@ -1,0 +1,477 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>keypress &mdash; pys60 14.10.12 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.10.12',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="pys60 14.10.12 documentation" href="../index.html" />
+    <link rel="up" title="Стандартные модули" href="index.html" />
+    <link rel="next" title="location" href="location.html" />
+    <link rel="prev" title="keycapture" href="keycapture.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="location.html" title="location"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="keycapture.html" title="keycapture"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">pys60 14.10.12 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Стандартные модули</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <span class="target" id="module-keypress"></span><div class="section" id="keypress">
+<h1>keypress<a class="headerlink" href="#keypress" title="Permalink to this headline">¶</a></h1>
+<dl class="method">
+<dt id="keypress.simulate_key">
+<tt class="descclassname">keypress.</tt><tt class="descname">simulate_key</tt><big>(</big><em>scan</em>, <em>scan</em><big>)</big><a class="headerlink" href="#keypress.simulate_key" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>scan</strong> &#8211; сканкод кнопки</td>
+</tr>
+</tbody>
+</table>
+<p>Симулирует нажатие клавиши.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">После нажатия необходимо вставить задержку ao_sleep(0.1) иначе не работает второе нажатие.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="keypress.simulate_key_mod">
+<tt class="descclassname">keypress.</tt><tt class="descname">simulate_key_mod</tt><big>(</big><em>scan</em>, <em>scan</em>, <em>mode</em><big>)</big><a class="headerlink" href="#keypress.simulate_key_mod" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>scan</strong> &#8211; сканкод кнопки</li>
+<li><strong>mode</strong> &#8211; 0|1 нажать|снять удержание</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Симулирует удержание клавиши</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="keypress.simulate_keyMenu">
+<tt class="descclassname">keypress.</tt><tt class="descname">simulate_keyMenu</tt><big>(</big><big>)</big><a class="headerlink" href="#keypress.simulate_keyMenu" title="Permalink to this definition">¶</a></dt>
+<dd><p>Эмулируется правая софт клавиша</p>
+</dd></dl>
+
+<div class="section" id="id1">
+<h2>Список всех сканкодов:<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Скан код</th>
+<th class="head">Обозначение</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>18</td>
+<td>C (стирание)</td>
+</tr>
+<tr class="row-odd"><td>32</td>
+<td>space</td>
+</tr>
+<tr class="row-even"><td>33</td>
+<td>!</td>
+</tr>
+<tr class="row-odd"><td>34</td>
+<td>&#8220;</td>
+</tr>
+<tr class="row-even"><td>35</td>
+<td>#</td>
+</tr>
+<tr class="row-odd"><td>36</td>
+<td>$</td>
+</tr>
+<tr class="row-even"><td>37</td>
+<td>%</td>
+</tr>
+<tr class="row-odd"><td>38</td>
+<td>&amp;</td>
+</tr>
+<tr class="row-even"><td>39</td>
+<td>&#8216;</td>
+</tr>
+<tr class="row-odd"><td>40</td>
+<td>(</td>
+</tr>
+<tr class="row-even"><td>41</td>
+<td>)</td>
+</tr>
+<tr class="row-odd"><td>42</td>
+<td>звездочка (*)</td>
+</tr>
+<tr class="row-even"><td>43</td>
+<td>плюс (+)</td>
+</tr>
+<tr class="row-odd"><td>44</td>
+<td>,</td>
+</tr>
+<tr class="row-even"><td>45</td>
+<td>минус (-)</td>
+</tr>
+<tr class="row-odd"><td>46</td>
+<td>.</td>
+</tr>
+<tr class="row-even"><td>47</td>
+<td>/</td>
+</tr>
+<tr class="row-odd"><td>48</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>49</td>
+<td>1</td>
+</tr>
+<tr class="row-odd"><td>50</td>
+<td>2</td>
+</tr>
+<tr class="row-even"><td>51</td>
+<td>3</td>
+</tr>
+<tr class="row-odd"><td>52</td>
+<td>4</td>
+</tr>
+<tr class="row-even"><td>53</td>
+<td>5</td>
+</tr>
+<tr class="row-odd"><td>54</td>
+<td>6</td>
+</tr>
+<tr class="row-even"><td>55</td>
+<td>7</td>
+</tr>
+<tr class="row-odd"><td>56</td>
+<td>8</td>
+</tr>
+<tr class="row-even"><td>57</td>
+<td>9</td>
+</tr>
+<tr class="row-odd"><td>58</td>
+<td>:</td>
+</tr>
+<tr class="row-even"><td>59</td>
+<td>;</td>
+</tr>
+<tr class="row-odd"><td>60</td>
+<td>&lt;</td>
+</tr>
+<tr class="row-even"><td>61</td>
+<td>=</td>
+</tr>
+<tr class="row-odd"><td>62</td>
+<td>&gt;</td>
+</tr>
+<tr class="row-even"><td>63</td>
+<td>?</td>
+</tr>
+<tr class="row-odd"><td>64</td>
+<td>&#64;</td>
+</tr>
+<tr class="row-even"><td>65</td>
+<td>A</td>
+</tr>
+<tr class="row-odd"><td>66</td>
+<td>B</td>
+</tr>
+<tr class="row-even"><td>67</td>
+<td>C</td>
+</tr>
+<tr class="row-odd"><td>68</td>
+<td>D</td>
+</tr>
+<tr class="row-even"><td>69</td>
+<td>E</td>
+</tr>
+<tr class="row-odd"><td>70</td>
+<td>F</td>
+</tr>
+<tr class="row-even"><td>71</td>
+<td>G</td>
+</tr>
+<tr class="row-odd"><td>72</td>
+<td>H</td>
+</tr>
+<tr class="row-even"><td>73</td>
+<td>I</td>
+</tr>
+<tr class="row-odd"><td>74</td>
+<td>J</td>
+</tr>
+<tr class="row-even"><td>75</td>
+<td>K</td>
+</tr>
+<tr class="row-odd"><td>76</td>
+<td>L</td>
+</tr>
+<tr class="row-even"><td>77</td>
+<td>M</td>
+</tr>
+<tr class="row-odd"><td>78</td>
+<td>N</td>
+</tr>
+<tr class="row-even"><td>79</td>
+<td>O</td>
+</tr>
+<tr class="row-odd"><td>80</td>
+<td>P</td>
+</tr>
+<tr class="row-even"><td>81</td>
+<td>Q</td>
+</tr>
+<tr class="row-odd"><td>82</td>
+<td>R</td>
+</tr>
+<tr class="row-even"><td>83</td>
+<td>S</td>
+</tr>
+<tr class="row-odd"><td>84</td>
+<td>T</td>
+</tr>
+<tr class="row-even"><td>85</td>
+<td>U</td>
+</tr>
+<tr class="row-odd"><td>86</td>
+<td>V</td>
+</tr>
+<tr class="row-even"><td>87</td>
+<td>W</td>
+</tr>
+<tr class="row-odd"><td>88</td>
+<td>X</td>
+</tr>
+<tr class="row-even"><td>89</td>
+<td>Y</td>
+</tr>
+<tr class="row-odd"><td>90</td>
+<td>Z</td>
+</tr>
+<tr class="row-even"><td>91</td>
+<td>[</td>
+</tr>
+<tr class="row-odd"><td>92</td>
+<td>bs</td>
+</tr>
+<tr class="row-even"><td>93</td>
+<td>]</td>
+</tr>
+<tr class="row-odd"><td>94</td>
+<td>^</td>
+</tr>
+<tr class="row-even"><td>95</td>
+<td>_</td>
+</tr>
+<tr class="row-odd"><td>97</td>
+<td>a</td>
+</tr>
+<tr class="row-even"><td>98</td>
+<td>b</td>
+</tr>
+<tr class="row-odd"><td>99</td>
+<td>c</td>
+</tr>
+<tr class="row-even"><td>100</td>
+<td>d</td>
+</tr>
+<tr class="row-odd"><td>101</td>
+<td>e</td>
+</tr>
+<tr class="row-even"><td>102</td>
+<td>f</td>
+</tr>
+<tr class="row-odd"><td>103</td>
+<td>g</td>
+</tr>
+<tr class="row-even"><td>104</td>
+<td>h</td>
+</tr>
+<tr class="row-odd"><td>105</td>
+<td>i</td>
+</tr>
+<tr class="row-even"><td>106</td>
+<td>j</td>
+</tr>
+<tr class="row-odd"><td>107</td>
+<td>k</td>
+</tr>
+<tr class="row-even"><td>108</td>
+<td>l</td>
+</tr>
+<tr class="row-odd"><td>109</td>
+<td>m</td>
+</tr>
+<tr class="row-even"><td>110</td>
+<td>n</td>
+</tr>
+<tr class="row-odd"><td>111</td>
+<td>o</td>
+</tr>
+<tr class="row-even"><td>112</td>
+<td>p</td>
+</tr>
+<tr class="row-odd"><td>113</td>
+<td>q</td>
+</tr>
+<tr class="row-even"><td>114</td>
+<td>r</td>
+</tr>
+<tr class="row-odd"><td>115</td>
+<td>s</td>
+</tr>
+<tr class="row-even"><td>116</td>
+<td>t</td>
+</tr>
+<tr class="row-odd"><td>117</td>
+<td>u</td>
+</tr>
+<tr class="row-even"><td>118</td>
+<td>v</td>
+</tr>
+<tr class="row-odd"><td>119</td>
+<td>w</td>
+</tr>
+<tr class="row-even"><td>120</td>
+<td>x</td>
+</tr>
+<tr class="row-odd"><td>121</td>
+<td>y</td>
+</tr>
+<tr class="row-even"><td>122</td>
+<td>z</td>
+</tr>
+<tr class="row-odd"><td>123</td>
+<td>{</td>
+</tr>
+<tr class="row-even"><td>124</td>
+<td>вертикальная черта (|)</td>
+</tr>
+<tr class="row-odd"><td>125</td>
+<td>}</td>
+</tr>
+<tr class="row-even"><td>180</td>
+<td>Меню</td>
+</tr>
+<tr class="row-odd"><td>196</td>
+<td>Вызов (зелёная кнопка)</td>
+</tr>
+<tr class="row-even"><td>197</td>
+<td>Отбой (красная кнпка)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">keypress</a><ul>
+<li><a class="reference internal" href="#id1">Список всех сканкодов:</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="keycapture.html"
+                        title="previous chapter">keycapture</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="location.html"
+                        title="next chapter">location</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/moduls_def/keypress.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="location.html" title="location"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="keycapture.html" title="keycapture"
+             >previous</a> |</li>
+        <li><a href="../index.html">pys60 14.10.12 documentation</a> &raquo;</li>
+          <li><a href="index.html" >Стандартные модули</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,436 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Селекторы &mdash; jquery 2015.07.09 documentation</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2015.07.09',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="jquery 2015.07.09 documentation" href="index.html" />
+    <link rel="next" title="Базовые свойства и методы объекта jQuery" href="base.html" />
+    <link rel="prev" title="jQuery" href="jquery.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="base.html" title="Базовые свойства и методы объекта jQuery"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="jquery.html" title="jQuery"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">jquery 2015.07.09 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>Селекторы<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>Простые<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="49%" />
+<col width="51%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">селектор</th>
+<th class="head">описание</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>$(&#8216;*&#8217;);</td>
+<td>все</td>
+</tr>
+<tr class="row-odd"><td>$(&#8216;#sidebar&#8217;);</td>
+<td>все, с id == sidebar</td>
+</tr>
+<tr class="row-even"><td>$(&#8216;div.post&#8217;);</td>
+<td>все div, с class == post</td>
+</tr>
+<tr class="row-odd"><td>$(&#8216;.post&#8217;);</td>
+<td>все, с class == post</td>
+</tr>
+<tr class="row-even"><td>$(&#8216;div&#8217;);</td>
+<td>все div</td>
+</tr>
+<tr class="row-odd"><td>$(&#8216;div, span&#8217;);</td>
+<td>все div и span</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id3">
+<h2>Комбинированные<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="67%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">селектор</th>
+<th class="head">описание</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>$(&#8216;div span&#8217;);</td>
+<td>все span внутри div</td>
+</tr>
+<tr class="row-odd"><td>$(&#8216;div &gt; span&#8217;);</td>
+<td>все span внутри div, span - прямой потомком div</td>
+</tr>
+<tr class="row-even"><td>$(&#8216;div + span&#8217;);</td>
+<td>все span после div</td>
+</tr>
+<tr class="row-odd"><td>$(&#8216;div ~ span&#8217;);</td>
+<td>все span смежные по отношению к div</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id4">
+<h2>Фильтры аттрибутов<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="29%" />
+<col width="71%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">селектор</th>
+<th class="head">описание</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>$(&#8220;div[title]&#8221;);</td>
+<td>значение атрибут title</td>
+</tr>
+<tr class="row-odd"><td>$(&#8220;div[title=&#8217;title&#8217;]&#8221;);</td>
+<td>значение атрибута равна title</td>
+</tr>
+<tr class="row-even"><td>$(&#8220;div[title!=&#8217;title&#8217;]&#8221;);</td>
+<td>значение атрибута не равна &#8216;title&#8217;</td>
+</tr>
+<tr class="row-odd"><td>$(&#8220;div[title^=&#8217;ti&#8217;]&#8221;);</td>
+<td>значение атрибута начинается с ti</td>
+</tr>
+<tr class="row-even"><td>$(&#8220;div[title$=&#8217;le&#8217;]&#8221;);</td>
+<td>значение атрибута заканчивается на le</td>
+</tr>
+<tr class="row-odd"><td>$(&#8220;div[title*=&#8217;itl&#8217;]&#8221;);</td>
+<td>значение атрибута содержит &#8220;itl&#8221;</td>
+</tr>
+<tr class="row-even"><td>$(&#8220;div[title~=&#8217;itl&#8217;]&#8221;);</td>
+<td>значение атрибута содержит &#8220;itl&#8221; как слово</td>
+</tr>
+<tr class="row-odd"><td>$(&#8220;div[title|=&#8217;itl&#8217;]&#8221;);</td>
+<td>зна­че­ние ат­ри­бу­та на­чи­на­ет­ся с itl и не­обя­за­тель­но­го де­фи­са</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id5">
+<h2>Фильт­ры по ти­пам эле­мен­тов<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="51%" />
+<col width="49%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">селектор</th>
+<th class="head">описание</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>:button</td>
+<td>элементы типа button</td>
+</tr>
+<tr class="row-odd"><td>:checkbox</td>
+<td>элементы типа checkbox</td>
+</tr>
+<tr class="row-even"><td>:file</td>
+<td>элементы типа file</td>
+</tr>
+<tr class="row-odd"><td>:header</td>
+<td>элементы типа header</td>
+</tr>
+<tr class="row-even"><td>:image</td>
+<td>элементы типа image</td>
+</tr>
+<tr class="row-odd"><td>:input</td>
+<td>элементы типа input</td>
+</tr>
+<tr class="row-even"><td>:password</td>
+<td>элементы типа password</td>
+</tr>
+<tr class="row-odd"><td>:radio</td>
+<td>элементы типа radio</td>
+</tr>
+<tr class="row-even"><td>:reset</td>
+<td>элементы типа reset</td>
+</tr>
+<tr class="row-odd"><td>:submit</td>
+<td>элементы типа submit</td>
+</tr>
+<tr class="row-even"><td>:text</td>
+<td>текстовые элементы</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id6">
+<h2>Фильт­ры по со­стоя­нию эле­мен­тов<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="37%" />
+<col width="63%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">селектор</th>
+<th class="head">описание</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>:animated</td>
+<td>все анимируемые в данный момент элементы</td>
+</tr>
+<tr class="row-odd"><td>:checked</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>:disabled</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>:enabled</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>:hidden</td>
+<td>скрытые элементы</td>
+</tr>
+<tr class="row-odd"><td>:selected</td>
+<td>выбранные элементы</td>
+</tr>
+<tr class="row-even"><td>:visible</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id7">
+<h2>Фильт­ры по по­зи­ции<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="66%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">селектор</th>
+<th class="head">описание</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>:eq(n)</td>
+<td>элемент с указанным индексом</td>
+</tr>
+<tr class="row-odd"><td>:even</td>
+<td>все четные элементы</td>
+</tr>
+<tr class="row-even"><td>:first</td>
+<td>первый из подходящих</td>
+</tr>
+<tr class="row-odd"><td>:gt(n)</td>
+<td>элементы, индекс которых превышает указанный</td>
+</tr>
+<tr class="row-even"><td>:last</td>
+<td>последний из подходящих</td>
+</tr>
+<tr class="row-odd"><td>:lt(n)</td>
+<td>элменеты, индекс которых меньше указанной</td>
+</tr>
+<tr class="row-even"><td>:nth(n)</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>:odd</td>
+<td>все нечетные</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id8">
+<h2>Фильт­ры по по­зи­ции в документе<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="74%" />
+<col width="26%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">селектор</th>
+<th class="head">описание</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>:first-child</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>:last-child</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>:only-child</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>:nth-child(n)</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>:nth-child(even)</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>:nth-child(odd)</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>:nth-child(xn+y)</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id9">
+<h2>Фильт­ры прочие<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="76%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">селектор</th>
+<th class="head">описание</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>:contains(text)</td>
+<td>элементы, содержащие текст</td>
+</tr>
+<tr class="row-odd"><td>:empty</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>:has(selector)</td>
+<td>элементы, которые содержат хотябы один элемент, соответсвующий указанному</td>
+</tr>
+<tr class="row-odd"><td>:not(selector)</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>:parent</td>
+<td>элементы являются родительским по отношению к другим элементам</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-js"><div class="highlight"><pre><span class="c1">// div с атрибутом title == &quot;title&quot;, видимый, содержащий теги p</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div[title = &#39;title&#39;]:visible:has(p)&quot;</span><span class="p">);</span>
+
+<span class="c1">// выбранные элементы select</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;form select option:selected&quot;</span><span class="p">);</span>
+
+<span class="c1">// получение выбранного значения радиобатона с именем some</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;form :radio[name=some]:checked&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+
+<span class="c1">// выбор всех выбранных чекбоксов</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;form :checkbox:checked&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Селекторы</a><ul>
+<li><a class="reference internal" href="#id2">Простые</a></li>
+<li><a class="reference internal" href="#id3">Комбинированные</a></li>
+<li><a class="reference internal" href="#id4">Фильтры аттрибутов</a></li>
+<li><a class="reference internal" href="#id5">Фильт­ры по ти­пам эле­мен­тов</a></li>
+<li><a class="reference internal" href="#id6">Фильт­ры по со­стоя­нию эле­мен­тов</a></li>
+<li><a class="reference internal" href="#id7">Фильт­ры по по­зи­ции</a></li>
+<li><a class="reference internal" href="#id8">Фильт­ры по по­зи­ции в документе</a></li>
+<li><a class="reference internal" href="#id9">Фильт­ры прочие</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="jquery.html"
+                        title="previous chapter">jQuery</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="base.html"
+                        title="next chapter">Базовые свойства и методы объекта jQuery</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/selectors.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="base.html" title="Базовые свойства и методы объекта jQuery"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="jquery.html" title="jQuery"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">jquery 2015.07.09 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

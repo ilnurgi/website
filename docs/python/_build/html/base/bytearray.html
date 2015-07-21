@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>bytearray - изменяемая nоследовательность байтов &mdash; Документация python документация 2015.05.20</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2015.05.20',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Документация python документация 2015.05.20" href="../index.html" />
+    <link rel="up" title="Основные объекты" href="index.html" />
+    <link rel="next" title="bytes - неизменяемая последовательность байтов" href="bytes.html" />
+    <link rel="prev" title="bool - логический тип данных" href="bool.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Алфавитный указатель"
+             accesskey="I">указатель</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="bytes.html" title="bytes - неизменяемая последовательность байтов"
+             accesskey="N">вперёд</a> |</li>
+        <li class="right" >
+          <a href="bool.html" title="bool - логический тип данных"
+             accesskey="P">назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Документация python документация 2015.05.20</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Основные объекты</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="bytearray-n">
+<h1>bytearray - изменяемая nоследовательность байтов<a class="headerlink" href="#bytearray-n" title="Ссылка на этот заголовок">¶</a></h1>
+<dl class="class">
+<dt id="bytearray">
+<em class="property">class </em><code class="descname">bytearray</code><a class="headerlink" href="#bytearray" title="Ссылка на это определение">¶</a></dt>
+<dd><p>изменяемая последовательность байтов. Тип <cite>bytearray</cite> аналогичен типу <code class="xref py py-class docutils literal"><span class="pre">bytes</span></code>, но позволяет изменять элементы по индексу и содержит доnолнительные методы, позволяющие добавлять и удалять элементы.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span> <span class="p">(</span><span class="nb">bytearray</span> <span class="p">(</span><span class="s">&quot;Строка&quot;</span><span class="p">,</span> <span class="s">&quot;utf-8&quot;</span><span class="p">))</span>
+<span class="go">&lt;class &#39;bytearray&#39;&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="s">&quot;str&quot;</span><span class="p">,</span> <span class="s">&quot;cpl251&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="p">[</span><span class="n">O</span><span class="p">]</span> <span class="o">=</span> <span class="mi">49</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span>
+<span class="go">bytearray(b&#39;ltr&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">55</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span>
+<span class="go">bytearray(b&#39;ltr7&#39;)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<div class="section" id="id1">
+<h2>Функции работы с <a class="reference internal" href="#bytearray" title="bytearray"><code class="xref py py-class docutils literal"><span class="pre">bytearray</span></code></a><a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="function">
+<dt>
+<code class="descname">bytearray</code><span class="sig-paren">(</span><em>obj</em>, <em>encoding</em><span class="optional">[</span>, <em>errors='replace'</em><span class="optional">]</span><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>obj</strong> &#8211; объект (<code class="xref py py-class docutils literal"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal"><span class="pre">list</span></code>,  <code class="xref py py-class docutils literal"><span class="pre">tuple</span></code>)</li>
+<li><strong>encoding</strong> (<em>str</em>) &#8211; кодировка для <code class="xref py py-class docutils literal"><span class="pre">str</span></code></li>
+<li><strong>errors</strong> (<em>str</em>) &#8211; обработка ошибок для <code class="xref py py-class docutils literal"><span class="pre">str</span></code></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>возвращает <a class="reference internal" href="#bytearray" title="bytearray"><code class="xref py py-class docutils literal"><span class="pre">bytearray</span></code></a>, преобразованный из объекта. для последовательностей, если число не попадает в диапазон 0...255, то возбуждается исклю­чение Va1ueError</p>
+<p>Через атрибут <cite>errors</cite> настраивается обработка ошибок:</p>
+<blockquote>
+<div><ul class="simple">
+<li><cite>strict</cite> - при ошибке возбуждается исключение <code class="xref py py-class docutils literal"><span class="pre">UnicodeDecodeError</span></code></li>
+<li><cite>replace</cite> - неизвестный символ заменяется символом, имеющим код uFFFD</li>
+<li><cite>ignore</cite> - неизвестные символы игнорируются</li>
+</ul>
+</div></blockquote>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">bytearray</span><span class="p">(</span><span class="s">&quot;cтpoкa&quot;</span> <span class="mi">1</span> <span class="s">&quot;ср1251&quot;</span><span class="p">)</span>
+<span class="go">bytearray(b&#39;\xf1\xf2\xf0\xee\xea\xe0&#39;)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">b</span><span class="o">=</span> <span class="nb">bytearray</span><span class="p">([</span><span class="mi">2251</span> <span class="mi">2261</span> <span class="mi">2241</span> <span class="mi">1741</span> <span class="mi">1701</span> <span class="mi">160</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span>
+<span class="go">bytearray (b &#39;\xe1\xe2\xe0\xae\xaa\xa0&#39; )</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">str</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="s">&quot;ср866&quot;</span><span class="p">)</span>
+<span class="go">&#39;строка&#39;</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="append">
+<code class="descname">append</code><span class="sig-paren">(</span><em>bytes</em><span class="sig-paren">)</span><a class="headerlink" href="#append" title="Ссылка на это определение">¶</a></dt>
+<dd><p>добавляет элемент в конец объекта</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="s">&#39;string&#39;</span><span class="p">,</span> <span class="s">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">b</span><span class="s">&#39;1&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span>
+<span class="go">bytearray(b&#39;string1&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">+</span> <span class="n">b</span><span class="s">&#39;2&#39;</span>
+<span class="go">bytearray(b&#39;string12&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">+=</span> <span class="n">b</span><span class="s">&#39;2&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span>
+<span class="go">bytearray(b&#39;string12&#39;)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="extend">
+<code class="descname">extend</code><span class="sig-paren">(</span><em>bytes</em><span class="sig-paren">)</span><a class="headerlink" href="#extend" title="Ссылка на это определение">¶</a></dt>
+<dd><p>добавляет последовательность элементов в конец объекта</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="s">&#39;string&#39;</span><span class="p">,</span> <span class="s">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">b</span><span class="s">&#39;123&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span>
+<span class="go">bytearray(b&#39;string123&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">+</span> <span class="n">b</span><span class="s">&#39;45&#39;</span>
+<span class="go">bytearray(b&#39;string12345&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">+=</span> <span class="n">b</span><span class="s">&#39;45&#39;</span>
+<span class="go">bytearray(b&#39;string1234&#39;)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="insert">
+<code class="descname">insert</code><span class="sig-paren">(</span><em>index</em>, <em>int</em><span class="sig-paren">)</span><a class="headerlink" href="#insert" title="Ссылка на это определение">¶</a></dt>
+<dd><p>добавяет элемент по позиции</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="s">&#39;string&#39;</span><span class="p">,</span> <span class="s">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="s">&#39;1&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span>
+<span class="go">bytearray(b&#39;1string&#39;)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pop">
+<code class="descname">pop</code><span class="sig-paren">(</span><span class="optional">[</span><em>index</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#pop" title="Ссылка на это определение">¶</a></dt>
+<dd><p>удаляет элемент из массива и возвращает его</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="s">&#39;string&#39;</span><span class="p">,</span> <span class="s">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<span class="go">103</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span>
+<span class="go">bytearray(b&#39;strin&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">del</span> <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="go">bytearray(b&#39;trin&#39;)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="remove">
+<code class="descname">remove</code><span class="sig-paren">(</span><em>int</em><span class="sig-paren">)</span><a class="headerlink" href="#remove" title="Ссылка на это определение">¶</a></dt>
+<dd><p>удаляет первый элемент, содержащий указанное значение</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="s">&#39;string&#39;</span><span class="p">,</span> <span class="s">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">b</span><span class="s">&#39;s&#39;</span><span class="p">)</span>
+<span class="go">bytearray(b&#39;tring&#39;)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="reverse">
+<code class="descname">reverse</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#reverse" title="Ссылка на это определение">¶</a></dt>
+<dd><p>изменяет порядок следования элементов на противоположный</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="s">&#39;string&#39;</span><span class="p">,</span> <span class="s">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span>
+<span class="go">bytearray(b&#39;gnirts&#39;)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Оглавление</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">bytearray - изменяемая nоследовательность байтов</a><ul>
+<li><a class="reference internal" href="#id1">Функции работы с <code class="docutils literal"><span class="pre">bytearray</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Предыдущий раздел</h4>
+  <p class="topless"><a href="bool.html"
+                        title="предыдущая глава">bool - логический тип данных</a></p>
+  <h4>Следующий раздел</h4>
+  <p class="topless"><a href="bytes.html"
+                        title="следующая глава">bytes - неизменяемая последовательность байтов</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Эта страница</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/base/bytearray.txt"
+            rel="nofollow">Исходный текст</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Быстрый поиск</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Искать" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Введите слова для поиска или имя модуля, класса или функции.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Алфавитный указатель"
+             >указатель</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="bytes.html" title="bytes - неизменяемая последовательность байтов"
+             >вперёд</a> |</li>
+        <li class="right" >
+          <a href="bool.html" title="bool - логический тип данных"
+             >назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Документация python документация 2015.05.20</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Основные объекты</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright ilnurgi.
+      Создано с помощью <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

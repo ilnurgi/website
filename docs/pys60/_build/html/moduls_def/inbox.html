@@ -1,0 +1,287 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>inbox &mdash; pys60 14.10.12 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.10.12',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="pys60 14.10.12 documentation" href="../index.html" />
+    <link rel="up" title="Стандартные модули" href="index.html" />
+    <link rel="next" title="key_codes" href="key_codes.html" />
+    <link rel="prev" title="graphics" href="graphics.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="key_codes.html" title="key_codes"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="graphics.html" title="graphics"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">pys60 14.10.12 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Стандартные модули</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <span class="target" id="module-inbox"></span><div class="section" id="inbox">
+<h1>inbox<a class="headerlink" href="#inbox" title="Permalink to this headline">¶</a></h1>
+<p>Модуль, позволяющий работать с сообщениями. Имеет доступ к папкам входящие, исходящие, отправленные и черновики.</p>
+<dl class="class">
+<dt id="inbox.Inbox">
+<em class="property">class </em><tt class="descclassname">inbox.</tt><tt class="descname">Inbox</tt><big>(</big><span class="optional">[</span><em>folder_type</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#inbox.Inbox" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>folder_type</strong> &#8211; <p>тип папки с которой работать, по умолчанию inbox.EInbox</p>
+<ul class="simple">
+<li>inbox.EInbox - работа с папкой Входящие;</li>
+<li>inbox.EOutbox - работа с папкой Исходящие;</li>
+<li>inbox.ESent - работа с папкой Переданные;</li>
+<li>inbox.EDraft - работа с папкой Черновики.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">box</span> <span class="o">=</span> <span class="n">inbox</span><span class="o">.</span><span class="n">Inbox</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="inbox.Inbox.address">
+<tt class="descclassname">Inbox.</tt><tt class="descname">address</tt><big>(</big><em>sms_id</em><big>)</big><a class="headerlink" href="#inbox.Inbox.address" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>sms_id</strong> (<em>int</em>) &#8211; уникальный номер сообщения</td>
+</tr>
+</tbody>
+</table>
+<p>Возвращает адресата SMS сообщения</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">box</span><span class="o">.</span><span class="n">address</span><span class="p">(</span><span class="mi">1048589</span><span class="p">)</span>
+<span class="go">&#39;ilnurgii&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="inbox.Inbox.bind">
+<tt class="descclassname">Inbox.</tt><tt class="descname">bind</tt><big>(</big><em>callback</em><big>)</big><a class="headerlink" href="#inbox.Inbox.bind" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>callback</strong> &#8211; обработчик</td>
+</tr>
+</tbody>
+</table>
+<p>Привязывает обработчик, при поступлении сообщения, передает в функцию 1 параметр, ID нового сообщения.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">print_id_sms</span><span class="p">(</span><span class="nb">id</span><span class="p">):</span>
+<span class="go">        print id</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">box</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">print_id_sms</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="inbox.Inbox.content">
+<tt class="descclassname">Inbox.</tt><tt class="descname">content</tt><big>(</big><em>sms_id</em><big>)</big><a class="headerlink" href="#inbox.Inbox.content" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>sms_id</strong> (<em>int</em>) &#8211; уникальный номер сообщения</td>
+</tr>
+</tbody>
+</table>
+<p>Возвращает содержимое сообщения</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">box</span><span class="o">.</span><span class="n">content</span><span class="p">(</span><span class="mi">1048589</span><span class="p">)</span>
+<span class="go">&#39;hello world&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="inbox.Inbox.delete">
+<tt class="descclassname">Inbox.</tt><tt class="descname">delete</tt><big>(</big><em>sms_id</em><big>)</big><a class="headerlink" href="#inbox.Inbox.delete" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>sms_id</strong> (<em>int</em>) &#8211; уникальный номер сообщения</td>
+</tr>
+</tbody>
+</table>
+<p>Удаляет SMS сообщение</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">box</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">1048589</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="inbox.Inbox.sms_messages">
+<tt class="descclassname">Inbox.</tt><tt class="descname">sms_messages</tt><big>(</big><big>)</big><a class="headerlink" href="#inbox.Inbox.sms_messages" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает список ID SMS сообщений, находящихся в папке.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">box</span><span class="o">.</span><span class="n">sms_messages</span><span class="p">()</span>
+<span class="go">[..., 1048589, 1048586, 1048584, ...]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="inbox.Inbox.set_unread">
+<tt class="descclassname">Inbox.</tt><tt class="descname">set_unread</tt><big>(</big><em>sms_id</em>, <em>status</em><big>)</big><a class="headerlink" href="#inbox.Inbox.set_unread" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>sms_id</strong> (<em>int</em>) &#8211; уникальный номер сообщения</li>
+<li><strong>status</strong> &#8211; 0|1 прочтено|не прочтено</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Устанавливает статус SMS сообщение</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">box</span><span class="o">.</span><span class="n">set_unread</span><span class="p">(</span><span class="mi">1048589</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="inbox.Inbox.time">
+<tt class="descclassname">Inbox.</tt><tt class="descname">time</tt><big>(</big><em>sms_id</em><big>)</big><a class="headerlink" href="#inbox.Inbox.time" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">param sms_id:</th><td class="field-body">уникальный номер сообщения</td>
+</tr>
+<tr class="field-even field"><th class="field-name">type sms_id:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+<p>Возвращает время создания SMS сообщения</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">box</span><span class="o">.</span><span class="n">time</span><span class="p">(</span><span class="mi">1048589</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>1348454678.02</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="inbox.Inbox.unread">
+<tt class="descclassname">Inbox.</tt><tt class="descname">unread</tt><big>(</big><em>sms_id</em><big>)</big><a class="headerlink" href="#inbox.Inbox.unread" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>sms_id</strong> (<em>int</em>) &#8211; уникальный номер сообщения</td>
+</tr>
+</tbody>
+</table>
+<p>Возвращает статус SMS сообщение, (0 - если сообщение прочтено, 1 - если не прочтено).</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">box</span><span class="o">.</span><span class="n">unread</span><span class="p">(</span><span class="mi">1048589</span><span class="p">)</span>
+<span class="go">0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="graphics.html"
+                        title="previous chapter">graphics</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="key_codes.html"
+                        title="next chapter">key_codes</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/moduls_def/inbox.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="key_codes.html" title="key_codes"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="graphics.html" title="graphics"
+             >previous</a> |</li>
+        <li><a href="../index.html">pys60 14.10.12 documentation</a> &raquo;</li>
+          <li><a href="index.html" >Стандартные модули</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

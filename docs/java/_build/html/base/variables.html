@@ -1,0 +1,270 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Тип данных &mdash; java doc 14.10.12 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.10.12',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="java doc 14.10.12 documentation" href="../index.html" />
+    <link rel="next" title="String" href="String.html" />
+    <link rel="prev" title="Начало" href="start.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="String.html" title="String"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="start.html" title="Начало"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">java doc 14.10.12 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="data-types">
+<span id="id1"></span><h1>Тип данных<a class="headerlink" href="#data-types" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="void">
+<h2>(void)<a class="headerlink" href="#void" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="infinity">
+<h2>Бесконечность (Infinity)<a class="headerlink" href="#infinity" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre>double d = 1.0 / 0
+// Infinity
+</pre></div>
+</div>
+</div>
+<div class="section" id="nan">
+<h2>Не число (Nan)<a class="headerlink" href="#nan" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre>0 / 0
+// NaN
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>Целые числа<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first"><cite>byte</cite> - 1 байт</p>
+</li>
+<li><p class="first"><cite>short</cite> - 2 байта</p>
+</li>
+<li><p class="first"><cite>int</cite> - 4 байта</p>
+</li>
+<li><p class="first"><cite>long</cite> - 8 байта</p>
+<blockquote>
+<div><div class="highlight-python"><div class="highlight"><pre>int age;
+age = 29;
+age = 0xff;
+age = 0b1010;
+age = 123_345;
+age = 0b0101_1010;
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>Числа с плавающей точкой<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><cite>float</cite> - 4 байт</li>
+<li><cite>double</cite> - 8 байт</li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h2>Символы<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><cite>char</cite></li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre>char st;
+
+// код переменной Х
+st = 88;
+
+st = &#39;X&#39;
+
+// st  = &#39;Y&#39;
+st++;
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>Булевые<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><cite>boolean</cite></li>
+</ul>
+</div>
+<div class="section" id="string">
+<h2>Строки (String)<a class="headerlink" href="#string" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="array">
+<h2>Массивы (array)<a class="headerlink" href="#array" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre>int month_days[];
+month_days = new int[12];
+month_days[0] = 31;
+...
+month_days[11 ] = 31;
+
+int month_days[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
+int ar1[][] = new int[2][2];
+
+int ar2[][] = {
+    {0, 1},
+    {2, 3}
+}
+
+int ar3[][];
+ar3 = new int{
+    {0, 1},
+    {2, 3}
+}
+
+int[] a = {1, 2, 3};
+a.length;
+// 3
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>Преобразования<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>Правила повышения типа</p>
+<ol class="arabic simple">
+<li>тип всех значений byte, short и char повышается до int</li>
+<li>если один операнд имеет тип long, тип всего выражения повышается до long.</li>
+<li>если один операнд имеет тип float, тип всего выражения повышается до float</li>
+</ol>
+<div class="highlight-python"><div class="highlight"><pre>class Conversion {
+
+    public static void main(String args[]) {
+
+        byte b;
+        int i = 257;
+        double d = 323.142;
+
+        System.out.println(&quot;Преобразование int в byte.&quot;);
+        b = (byte) i;
+        System.out.println(&quot;i и b &quot; + i + &quot; &quot; + b);
+        // 257 и 1, остаток от деления 257/256
+
+        System.out.println(&quot;Преобразование double в int.&quot;);
+        i = (int) d;
+        System.out.println(&quot;d и i &quot; + d + &quot; &quot; + i);
+        // 323.142 и 323, дробь отбрасывается
+
+        System.out.println(&quot;Преобразование double в byte.&quot;);
+        b = (byte) d;
+        System.out.println(&quot;d и b &quot; + d + &quot; &quot; + b );
+        // 323.142 и 67, остаток от деления 323/256
+    }
+}
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>byte b = 50;
+b = b * 2;
+// Ошибка! Значение типа int не может быть присвоено переменной типа byte!, ява повышает тип переменных до int
+b = (byte) (b * 2)
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Тип данных</a><ul>
+<li><a class="reference internal" href="#void">(void)</a></li>
+<li><a class="reference internal" href="#infinity">Бесконечность (Infinity)</a></li>
+<li><a class="reference internal" href="#nan">Не число (Nan)</a></li>
+<li><a class="reference internal" href="#id2">Целые числа</a></li>
+<li><a class="reference internal" href="#id3">Числа с плавающей точкой</a></li>
+<li><a class="reference internal" href="#id4">Символы</a></li>
+<li><a class="reference internal" href="#id5">Булевые</a></li>
+<li><a class="reference internal" href="#string">Строки (String)</a></li>
+<li><a class="reference internal" href="#array">Массивы (array)</a></li>
+<li><a class="reference internal" href="#id6">Преобразования</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="start.html"
+                        title="previous chapter">Начало</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="String.html"
+                        title="next chapter">String</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/base/variables.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="String.html" title="String"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="start.html" title="Начало"
+             >previous</a> |</li>
+        <li><a href="../index.html">java doc 14.10.12 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

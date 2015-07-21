@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>ApplicationCache - прикладной интерфейс управления кэшем приложений &mdash; js doc 2015.06.26 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2015.06.26',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="js doc 2015.06.26 documentation" href="../index.html" />
+    <link rel="up" title="DOM - дерево html документа" href="index.html" />
+    <link rel="next" title="ArrayBuffer - последовательность байтов фиксированной длины" href="ArrayBuffer.html" />
+    <link rel="prev" title="HTMLTableCellElement" href="HTMLTableCellElement.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="ArrayBuffer.html" title="ArrayBuffer - последовательность байтов фиксированной длины"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="HTMLTableCellElement.html" title="HTMLTableCellElement"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.26 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">DOM - дерево html документа</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="applicationcache">
+<h1>ApplicationCache - прикладной интерфейс управления кэшем приложений<a class="headerlink" href="#applicationcache" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ApplicationCache">
+<em class="property">class </em><code class="descname">ApplicationCache</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ApplicationCache" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="oncached">
+<code class="descname">oncached</code><a class="headerlink" href="#oncached" title="Permalink to this definition">¶</a></dt>
+<dd><p>Приложение впервые сохраняется в кеше</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="onchecking">
+<code class="descname">onchecking</code><a class="headerlink" href="#onchecking" title="Permalink to this definition">¶</a></dt>
+<dd><p>Браузер начинает проверку наличия обновленного файла обновления</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ondownloading">
+<code class="descname">ondownloading</code><a class="headerlink" href="#ondownloading" title="Permalink to this definition">¶</a></dt>
+<dd><p>Браузер начинает загрузку ресурсов</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="onerror">
+<code class="descname">onerror</code><a class="headerlink" href="#onerror" title="Permalink to this definition">¶</a></dt>
+<dd><p>В ходе обновления кеша возникает ошибка</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="onnoupdate">
+<code class="descname">onnoupdate</code><a class="headerlink" href="#onnoupdate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Браузер определяет, что файл объявления не изменился и приложение в кеше имеет текущую версию</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="onobsolette">
+<code class="descname">onobsolette</code><a class="headerlink" href="#onobsolette" title="Permalink to this definition">¶</a></dt>
+<dd><p>Исчезает фалй объявления кешируемого приложения</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="onprogress">
+<code class="descname">onprogress</code><a class="headerlink" href="#onprogress" title="Permalink to this definition">¶</a></dt>
+<dd><p>Идет загрузка и сохранение файлов приложения</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="onupdateready">
+<code class="descname">onupdateready</code><a class="headerlink" href="#onupdateready" title="Permalink to this definition">¶</a></dt>
+<dd><p>Браузер грузит и сохранит в кеше новую версию приложения</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="status">
+<code class="descname">status</code><a class="headerlink" href="#status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Состояние кеша текущего документа</p>
+<ul class="simple">
+<li><cite>ApplicationCache.UNCACHED</cite> = 0,  Это при­ло­же­ние не име­ет ат­ри­бу­та manifest: оно не кэ­ши­ру­ет­ся.</li>
+<li><cite>ApplicationCache.IDLE</cite> = 1,  Файл объ­яв­ле­ния про­ве­рен, дан­ное при­ло­же­ние со­хра­не­но в кэ­ше и об­нов­ле­но.</li>
+<li><cite>ApplicationCache.CHECKING</cite> = 2,  В на­стоя­щее вре­мя бро­узер про­ве­ря­ет файл объ­яв­ле­ния.</li>
+<li><cite>ApplicationCache.DOWNLOADING</cite> = 3,  Бро­узер за­гру­жа­ет и со­хра­ня­ет в кэ­ше фай­лы, пе­ре­чис­лен­ные в объ­яв­ле­нии.</li>
+<li><cite>ApplicationCache.UPDATEREADY</cite> = 4,  Бы­ла за­гру­же­на и со­хра­не­на в кэ­ше но­вая вер­сия при­ло­же­ния.</li>
+<li><cite>ApplicationCache.OBSOLETE</cite> = 5,  Файл объ­яв­ле­ния не най­ден и при­ло­же­ние бу­дет уда­ле­но из кэ­ша.</li>
+</ul>
+</dd></dl>
+
+<dl class="function">
+<dt id="swapCache">
+<code class="descname">swapCache</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#swapCache" title="Permalink to this definition">¶</a></dt>
+<dd><p>Сообщает браузеру, что он может немедленно удалить старые версии и начать использовать новые версии файлов</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="update">
+<code class="descname">update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Проверить наличие обновлений</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="HTMLTableCellElement.html"
+                        title="previous chapter">HTMLTableCellElement</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="ArrayBuffer.html"
+                        title="next chapter">ArrayBuffer - последовательность байтов фиксированной длины</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/dom/ApplicationCache.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="ArrayBuffer.html" title="ArrayBuffer - последовательность байтов фиксированной длины"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="HTMLTableCellElement.html" title="HTMLTableCellElement"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.26 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >DOM - дерево html документа</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

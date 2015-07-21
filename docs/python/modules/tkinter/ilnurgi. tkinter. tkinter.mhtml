@@ -1,0 +1,777 @@
+From: <Saved by WebKit>
+Subject: ilnurgi. tkinter. tkinter
+Date: Fri, 19 Dec 2013 11:00:19 +0400
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----=_NextPart_000_F7C5_DBE9FB5D.C48CE729"
+
+------=_NextPart_000_F7C5_DBE9FB5D.C48CE729
+Content-Type: text/html
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://ilnurgi1.ru/doc/tkinter/tkinter
+
+<!DOCTYPE html><html><head><meta charset=3D"UTF-8">
+
+   =20
+    <meta name=3D"yandex-verification" content=3D"431f2ece5bc15665">
+    <meta name=3D"wmail-verification" content=3D"22f7a02d6ade789f">
+    <meta name=3D"google-site-verification" content=3D"84y9A4q0QF0YiwyLi-xe=
+frzNN8d6B5W2E84xYUtoQYc">  =20
+   =20
+
+    <title>ilnurgi. tkinter. tkinter</title>
+
+    <link rel=3D"stylesheet" type=3D"text/css" href=3D"http://ilnurgi1.ru/s=
+tatic/styles.css">
+    <style type=3D"text/css"></style>
+
+
+</head>
+<body>
+
+   =20
+
+        <div class=3D"bar navigation_top">
+            <ul>
+                <li><a href=3D"http://ilnurgi1.ru/"> =D0=93=D0=BB=D0=B0=D0=
+=B2=D0=BD=D0=B0=D1=8F </a></li>
+                <li><a href=3D"http://ilnurgi1.ru/blog/"> =D0=91=D0=BB=D0=
+=BE=D0=B3 </a></li>
+                <li><a href=3D"http://ilnurgi1.ru/tests/tablet/"> TT </a></=
+li>
+                <li><a href=3D"http://ilnurgi1.ru/tests/smartphone/"> ST </=
+a></li>
+                <li><a href=3D"http://ilnurgi1.ru/tests/pc"> TPC </a></li>
+                <li><a href=3D"http://ilnurgi1.ru/site_map/"> =D0=9A=D0=B0=
+=D1=80=D1=82=D0=B0 =D1=81=D0=B0=D0=B9=D1=82=D0=B0 </a></li>
+                <li><a href=3D"http://ilnurgi1.ru/about/"> =D0=9F=D1=80=D0=
+=BE =D0=BC=D0=B5=D0=BD=D1=8F </a></li>
+            </ul>
+            <div style=3D"clear:left;"></div>
+        </div>
+   =20
+
+   =20
+
+    <div class=3D"bar navigation_top">
+        <ul>
+           =20
+                <li><a href=3D"http://ilnurgi1.ru/doc/html" style=3D"font-w=
+eight: normal;">html</a></li>
+           =20
+                <li><a href=3D"http://ilnurgi1.ru/doc/pys60" style=3D"font-=
+weight: normal;">pys60</a></li>
+           =20
+                <li><a href=3D"http://ilnurgi1.ru/doc/python" style=3D"font=
+-weight: normal;">python</a></li>
+           =20
+                <li><a href=3D"http://ilnurgi1.ru/doc/tkinter" style=3D"fon=
+t-weight: normal;">tkinter</a></li>
+           =20
+        </ul>
+        <div style=3D"clear:left;"></div>
+    </div>
+
+    <div class=3D"bar post">
+        <a class=3D"title" href=3D"http://ilnurgi1.ru/doc/tkinter/tkinter">=
+tkinter</a>
+        <div class=3D"message">
+            =D0=9C=D0=BE=D0=B4=D1=83=D0=BB=D1=8C =D0=BF=D1=80=D0=B5=D0=B4=
+=D1=81=D1=82=D0=B0=D0=B2=D0=BB=D1=8F=D0=B5=D1=82 =D1=81=D1=80=D0=B5=D0=B4=
+=D1=81=D1=82=D0=B2=D0=B0 =D1=80=D0=B0=D0=B7=D1=80=D0=B0=D0=B1=D0=BE=D1=82=
+=D0=BA=D0=B8 =D0=B3=D1=80=D0=B0=D1=84=D0=B8=D1=87=D0=B5=D1=81=D0=BA=D0=BE=
+=D0=B3=D0=BE =D0=BF=D0=BE=D0=BB=D1=8C=D0=B7=D0=BE=D0=B2=D0=B0=D1=82=D0=B5=
+=D0=BB=D1=8C=D1=81=D0=BA=D0=BE=D0=B3=D0=BE =D0=B8=D0=BD=D1=82=D0=B5=D1=80=
+=D1=84=D0=B5=D0=B9=D1=81=D0=B0 (GUI =E2=80=94 Grafical User Interface) =D0=
+=B2 Python.
+<pre>import Tkinter
+main_window=3DTkinter.Tk()
+main_window['width']=3D100
+main_window['height']=3D100
+main_window.mainloop()
+
+<img src=3D"http://ilnurgi1.ru/media/doc/59__tkinter_main_window.png"></pre=
+>
+
+<div class=3D"bar">
+<b>=D0=9C=D0=B5=D1=82=D0=BE=D0=B4=D1=8B =D0=B4=D0=BB=D1=8F =D1=80=D0=B0=D1=
+=81=D0=BF=D0=BE=D0=BB=D0=BE=D0=B6=D0=B5=D0=BD=D0=B8=D1=8F =D0=B2=D0=B8=D0=
+=B4=D0=B6=D0=B5=D1=82=D0=BE=D0=B2 =D0=BD=D0=B0 =D1=84=D0=BE=D1=80=D0=BC=D0=
+=B5/=D0=B2=D0=B8=D0=B4=D0=B6=D0=B5=D1=82=D0=B0=D1=85</b>
+
+<br><br><b>grid(row,column,columnspan,rowspan,sticky,padx,pady)</b>
+<br>=D0=94=D0=B5=D0=BB=D0=B8=D1=82 =D0=BF=D1=80=D0=BE=D1=81=D1=82=D1=80=D0=
+=B0=D0=BD=D1=81=D1=82=D0=B2=D0=BE =D1=80=D0=BE=D0=B4=D0=B8=D1=82=D0=B5=D0=
+=BB=D1=8C=D1=81=D0=BA=D0=BE=D0=B3=D0=BE =D0=B2=D0=B8=D0=B4=D0=B6=D0=B5=D1=
+=82=D0=B0 =D0=BD=D0=B0 =D1=8F=D1=87=D0=B5=D0=B9=D0=BA=D0=B8, =D0=BA=D0=BE=
+=D0=BB=D0=B8=D1=87=D0=B5=D1=81=D1=82=D0=B2=D0=BE =D0=BA=D0=BE=D1=82=D0=BE=
+=D1=80=D1=8B=D1=85 =D0=BE=D0=BF=D1=80=D0=B5=D0=B4=D0=B5=D0=BB=D1=8F=D0=B5=
+=D1=82=D1=81=D1=8F =D0=B4=D0=BE=D1=87=D0=B5=D1=80=D0=BD=D0=B8=D0=BC=D0=B8 =
+=D0=B2=D0=B8=D0=B4=D0=B6=D0=B5=D1=82=D0=B0=D0=BC=D0=B8. =D0=AF=D1=87=D0=B5=
+=D0=B9=D0=BA=D0=B0 =D0=B8=D0=B4=D0=B5=D0=BD=D1=82=D0=B8=D1=84=D0=B8=D1=86=
+=D0=B8=D1=80=D1=83=D0=B5=D1=82=D1=81=D1=8F =D0=BD=D0=BE=D0=BC=D0=B5=D1=80=
+=D0=BE=D0=BC =D1=81=D1=82=D1=80=D0=BE=D0=BA=D0=B8 <i>row</i> =D0=B8 =D0=BD=
+=D0=BE=D0=BC=D0=B5=D1=80=D0=BE=D0=BC =D1=81=D1=82=D0=BE=D0=BB=D0=B1=D1=86=
+=D0=B0 <i>column</i>. =D0=AF=D1=87=D0=B5=D0=B9=D0=BA=D0=B8 =D0=BC=D0=BE=D0=
+=B6=D0=BD=D0=BE =D0=BE=D0=B1=D1=8A=D0=B5=D0=B4=D0=B8=D0=BD=D1=8F=D1=82=D1=
+=8C =D0=BA=D0=B0=D0=BA =D0=BF=D0=BE =D0=B3=D0=BE=D1=80=D0=B8=D0=B7=D0=BE=D0=
+=BD=D1=82=D0=B0=D0=BB=D0=B8 <i>columnspan</i>, =D1=82=D0=B0=D0=BA =D0=B8 =
+=D0=BF=D0=BE =D0=B2=D0=B5=D1=80=D1=82=D0=B8=D0=BA=D0=B0=D0=BB=D0=B8 <i>rows=
+pan</i>.
+<br><i>sticky</i> - =D0=B2=D1=8B=D1=80=D0=B0=D0=B2=D0=BD=D0=B8=D0=B2=D0=B0=
+=D0=BD=D0=B8=D0=B5 =D0=B2=D0=B8=D0=B4=D0=B6=D0=B5=D1=82=D0=B0 =D0=B2 =D1=8F=
+=D1=87=D0=B5=D0=B9=D0=BA=D0=B5 S, N, E =D0=B8 W, =D0=B8=D0=BB=D0=B8 NW, NE,=
+ SW =D0=B8 SE
+<br><i>padx</i>/<i>pady</i> - =D0=B7=D0=B0=D0=BF=D0=BE=D0=BB=D0=BD=D1=8F=D0=
+=B5=D1=82 =D0=BF=D1=83=D1=81=D1=82=D0=BE=D1=82=D0=BE=D0=B9 =D0=BC=D0=B5=D1=
+=81=D1=82=D0=BE =D0=B2=D0=BE=D0=BA=D1=80=D1=83=D0=B3 =D0=B2=D0=B8=D0=B4=D0=
+=B6=D0=B5=D1=82=D0=B0
+<pre>button=3DTkinter.Button()
+button.grid(row=3D0,column=3D0,columnspan=3D2)</pre>
+
+<b>place(anchor,relwidth, relheight,relx, rely,width, height,x, y)</b>
+<br>=D0=AF=D0=B2=D0=BD=D0=BE =D1=83=D0=BA=D0=B0=D0=B7=D1=8B=D0=B2=D0=B0=D0=
+=B5=D1=82=D1=81=D1=8F =D0=B2=D0=B8=D0=B4=D0=B6=D0=B5=D1=82=D1=83 =D0=BD=D0=
+=B0 =D0=B5=D0=B3=D0=BE =D0=BC=D0=B5=D1=81=D1=82=D0=BE =D1=81 =D0=BF=D0=BE=
+=D0=BC=D0=BE=D1=89=D1=8C=D1=8E =D0=BA=D0=BE=D0=BE=D1=80=D0=B4=D0=B8=D0=BD=
+=D0=B0=D1=82, =D0=BA=D0=B0=D0=BA =D0=B2 =D0=B0=D0=B1=D1=81=D0=BE=D0=BB=D1=
+=8E=D1=82=D0=BD=D1=8B=D1=85 =D0=B7=D0=BD=D0=B0=D1=87=D0=B5=D0=BD=D0=B8=D1=
+=8F=D1=85 (=D0=B2 =D0=BF=D0=B8=D0=BA=D1=81=D0=B5=D0=BB=D1=8F=D1=85), =D1=82=
+=D0=B0=D0=BA =D0=B8 =D0=BE=D1=82=D0=BD=D0=BE=D1=81=D0=B8=D1=82=D0=B5=D0=BB=
+=D1=8C=D0=BD=D0=BE =D1=80=D0=BE=D0=B4=D0=B8=D1=82=D0=B5=D0=BB=D1=8C=D1=81=
+=D0=BA=D0=BE=D0=B3=D0=BE =D0=BE=D0=BA=D0=BD=D0=B0 (=D0=B2 =D0=B4=D0=BE=D0=
+=BB=D1=8F=D1=85). =D0=A2=D0=B0=D0=BA=D0=B6=D0=B5 =D0=BE=D1=82=D0=BD=D0=BE=
+=D1=81=D0=B8=D1=82=D0=B5=D0=BB=D1=8C=D0=BD=D0=BE =D0=B8 =D0=B0=D0=B1=D1=81=
+=D0=BE=D0=BB=D1=8E=D1=82=D0=BD=D0=BE =D0=BC=D0=BE=D0=B6=D0=BD=D0=BE =D0=B7=
+=D0=B0=D0=B4=D0=B0=D0=B2=D0=B0=D1=82=D1=8C =D1=80=D0=B0=D0=B7=D0=BC=D0=B5=
+=D1=80 =D1=81=D0=B0=D0=BC=D0=BE=D0=B3=D0=BE =D0=B2=D0=B8=D0=B4=D0=B6=D0=B5=
+=D1=82=D0=B0.
+<ul>
+	<li><i>anchor</i> (=D1=8F=D0=BA=D0=BE=D1=80=D1=8C) =E2=80=93 =D0=BE=D0=BF=
+=D1=80=D0=B5=D0=B4=D0=B5=D0=BB=D1=8F=D0=B5=D1=82 =D1=87=D0=B0=D1=81=D1=82=
+=D1=8C =D0=B2=D0=B8=D0=B4=D0=B6=D0=B5=D1=82=D0=B0, =D0=B4=D0=BB=D1=8F =D0=
+=BA=D0=BE=D1=82=D0=BE=D1=80=D0=BE=D0=B9 =D0=B7=D0=B0=D0=B4=D0=B0=D1=8E=D1=
+=82=D1=81=D1=8F =D0=BA=D0=BE=D0=BE=D1=80=D0=B4=D0=B8=D0=BD=D0=B0=D1=82=D1=
+=8B. =D0=9F=D1=80=D0=B8=D0=BD=D0=B8=D0=BC=D0=B0=D0=B5=D1=82 =D0=B7=D0=BD=D0=
+=B0=D1=87=D0=B5=D0=BD=D0=B8=D1=8F - N, NE, E, SE, SW, W, NW, =D0=B8=D0=BB=
+=D0=B8 CENTER. =D0=9F=D0=BE =D1=83=D0=BC=D0=BE=D0=BB=D1=87=D0=B0=D0=BD=D0=
+=B8=D1=8E NW (=D0=B2=D0=B5=D1=80=D1=85=D0=BD=D0=B8=D0=B9 =D0=BB=D0=B5=D0=B2=
+=D1=8B=D0=B9 =D1=83=D0=B3=D0=BE=D0=BB).</li>
+	<li><br><i>relwidth, relheight</i> (=D0=BE=D1=82=D0=BD=D0=BE=D1=81=D0=B8=
+=D1=82=D0=B5=D0=BB=D1=8C=D0=BD=D1=8B=D0=B5 =D1=88=D0=B8=D1=80=D0=B8=D0=BD=
+=D0=B0 =D0=B8 =D0=B2=D1=8B=D1=81=D0=BE=D1=82=D0=B0) =E2=80=93 =D0=BE=D0=BF=
+=D1=80=D0=B5=D0=B4=D0=B5=D0=BB=D1=8F=D1=8E=D1=82 =D1=80=D0=B0=D0=B7=D0=BC=
+=D0=B5=D1=80 =D0=B2=D0=B8=D0=B4=D0=B6=D0=B5=D1=82=D0=B0 =D0=BF=D0=BE =D0=BE=
+=D1=82=D0=BD=D0=BE=D1=88=D0=B5=D0=BD=D0=B8=D1=8E =D0=BA =D0=B5=D0=B3=D0=BE =
+=D1=80=D0=BE=D0=B4=D0=B8=D1=82=D0=B5=D0=BB=D1=8E.</li>
+	<li><br><i>relx, rely</i> =E2=80=93 =D0=BE=D0=BF=D1=80=D0=B5=D0=B4=D0=B5=
+=D0=BB=D1=8F=D1=8E=D1=82 =D0=BE=D1=82=D0=BD=D0=BE=D1=81=D0=B8=D1=82=D0=B5=
+=D0=BB=D1=8C=D0=BD=D1=83=D1=8E =D0=BF=D0=BE=D0=B7=D0=B8=D1=86=D0=B8=D1=8E =
+=D0=BE=D0=B1=D1=8B=D1=87=D0=BD=D0=BE =D0=B2 =D1=80=D0=BE=D0=B4=D0=B8=D1=82=
+=D0=B5=D0=BB=D1=8C=D1=81=D0=BA=D0=BE=D0=BC =D0=B2=D0=B8=D0=B4=D0=B6=D0=B5=
+=D1=82=D0=B5. =D0=9A=D0=BE=D0=BE=D1=80=D0=B4=D0=B8=D0=BD=D0=B0=D1=82=D0=B0 =
+(0;0) =E2=80=93 =D1=83 =D0=BB=D0=B5=D0=B2=D0=BE=D0=B3=D0=BE =D0=B2=D0=B5=D1=
+=80=D1=85=D0=BD=D0=B5=D0=B3=D0=BE =D1=83=D0=B3=D0=BB=D0=B0, (1;1) - =D1=83 =
+=D0=BF=D1=80=D0=B0=D0=B2=D0=BE=D0=B3=D0=BE =D0=BD=D0=B8=D0=B6=D0=BD=D0=B5=
+=D0=B3=D0=BE.</li>
+	<li><br><i>width, height</i>  =E2=80=93 =D0=B0=D0=B1=D1=81=D0=BE=D0=BB=D1=
+=8E=D1=82=D0=BD=D1=8B=D0=B9 =D1=80=D0=B0=D0=B7=D0=BC=D0=B5=D1=80 =D0=B2 =D0=
+=BF=D0=B8=D0=BA=D1=81=D0=B5=D0=BB=D0=B0=D1=85. =D0=97=D0=BD=D0=B0=D1=87=D0=
+=B5=D0=BD=D0=B8=D1=8F =D0=BF=D0=BE =D1=83=D0=BC=D0=BE=D0=BB=D1=87=D0=B0=D0=
+=BD=D0=B8=D1=8E (=D0=BA=D0=BE=D0=B3=D0=B4=D0=B0 =D0=B4=D0=B0=D0=BD=D0=BD=D1=
+=8B=D0=B5 =D0=BE=D0=BF=D1=86=D0=B8=D0=B8 =D0=BE=D0=BF=D1=83=D1=89=D0=B5=D0=
+=BD=D1=8B) =D0=BF=D1=80=D0=B8=D1=80=D0=B0=D0=B2=D0=BD=D0=B8=D0=B2=D0=B0=D1=
+=8E=D1=82=D1=81=D1=8F =D0=BA "=D0=B5=D1=81=D1=82=D0=B5=D1=81=D1=82=D0=B2=D0=
+=B5=D0=BD=D0=BD=D0=BE=D0=BC=D1=83" =D1=80=D0=B0=D0=B7=D0=BC=D0=B5=D1=80=D1=
+=83 =D0=B2=D0=B8=D0=B4=D0=B6=D0=B5=D1=82=D0=B0.</li>
+	<li><br><i>x, y</i>  - =D0=B0=D0=B1=D1=81=D0=BE=D0=BB=D1=8E=D1=82=D0=BD=D0=
+=B0=D1=8F =D0=BF=D0=BE=D0=B7=D0=B8=D1=86=D0=B8=D1=8F =D0=B2 =D0=BF=D0=B8=D0=
+=BA=D1=81=D0=B5=D0=BB=D0=B0=D1=85. =D0=97=D0=BD=D0=B0=D1=87=D0=B5=D0=BD=D0=
+=B8=D1=8F =D0=BF=D0=BE =D1=83=D0=BC=D0=BE=D0=BB=D1=87=D0=B0=D0=BD=D0=B8=D1=
+=8E =D0=BF=D1=80=D0=B8=D1=80=D0=B0=D0=B2=D0=BD=D0=B8=D0=B2=D0=B0=D1=8E=D1=
+=82=D1=81=D1=8F =D0=BA 0.</li>
+</ul>
+<pre>button=3DTkinter.Button()
+button.pack()</pre>
+
+<b>pack(side)</b>
+<br>=D0=A0=D0=B0=D1=81=D0=BF=D0=BE=D0=BB=D0=B0=D0=B3=D0=B0=D0=B5=D1=82 =D0=
+=B2=D0=B8=D0=B4=D0=B6=D0=B5=D1=82=D1=8B =D0=B4=D1=80=D1=83=D0=B3 =D0=B7=D0=
+=B0 =D0=B4=D1=80=D1=83=D0=B3=D0=BE=D0=BC =D0=BF=D0=BE =D1=82=D0=BE=D0=B9 =
+=D0=B8=D0=BB=D0=B8 =D0=B8=D0=BD=D0=BE=D0=B9 =D1=81=D1=82=D0=BE=D1=80=D0=BE=
+=D0=BD=D0=B5.
+<br><i>side</i> - =D0=B2=D1=8B=D1=80=D0=B0=D0=B2=D0=BD=D0=B8=D0=B2=D0=B0=D0=
+=BD=D0=B8=D0=B5 =D0=B2=D0=B8=D0=B4=D0=B6=D0=B5=D1=82=D0=BE=D0=B2
+<ul>
+	<li><i>Tkinter.TOP</i> - =D0=BF=D0=BE=D0=B2=D0=B5=D1=80=D1=85=D1=83, =D0=
+=B7=D0=BD=D0=B0=D1=87=D0=B5=D0=BD=D0=B8=D0=B5 =D0=BF=D0=BE-=D1=83=D0=BC=D0=
+=BE=D0=BB=D1=87=D0=B0=D0=BD=D0=B8=D1=8E</li>
+	<li><i>Tkinter.LEFT</i> - =D1=81=D0=BB=D0=B5=D0=B2=D0=B0</li>
+	<li><i>Tkinter.BOTTOM</i> - =D1=81=D0=BD=D0=B8=D0=B7=D1=83</li>
+	<li><i>Tkinter.RIGHT</i> - =D1=81=D0=BF=D1=80=D0=B0=D0=B2=D0=B0</li>
+</ul>
+<pre>button=3DTkinter.Button()
+button.pack()</pre>
+</div>
+
+<b>StringVar()</b>
+<br>=D0=A1=D0=BE=D1=85=D1=80=D0=B0=D0=BD=D1=8F=D0=B5=D1=82 =D1=81=D1=82=D1=
+=80=D0=BE=D0=BA=D0=B8
+<pre>=D1=85 =3D StringVar(" =D0=A2=D0=B5=D0=BA=D1=81=D1=82")</pre>
+
+<b>IntVar()</b>
+<br>=D0=A1=D0=BE=D1=85=D1=80=D0=B0=D0=BD=D1=8F=D0=B5=D1=82 =D1=86=D0=B5=D0=
+=BB=D1=8B=D0=B5 =D0=B7=D0=BD=D0=B0=D1=87=D0=B5=D0=BD=D0=B8=D1=8F
+<pre>x=3DIntVar(32)</pre>
+
+<b>DoubleVar()</b>
+<br>=D0=A1=D0=BE=D1=85=D1=80=D0=B0=D0=BD=D1=8F=D0=B5=D1=82 =D0=B7=D0=BD=D0=
+=B0=D1=87=D0=B5=D0=BD=D0=B8=D1=8F =D1=81 =D0=BF=D0=BB=D0=B0=D0=B2=D0=B0=D1=
+=8E=D1=89=D0=B5=D0=B9 =D0=B7=D0=B0=D0=BF=D1=8F=D1=82=D0=BE=D0=B9
+<pre>x=3DDoubleVar(3.123)</pre>
+
+<b>BooleanVar()</b>
+<br>=D0=A1=D0=BE=D1=85=D1=80=D0=B0=D0=BD=D1=8F=D0=B5=D1=82 =D0=B1=D1=83=D0=
+=BB=D0=B5=D0=B2=D1=8B=D0=B5 =D0=B7=D0=BD=D0=B0=D1=87=D0=B5=D0=BD=D0=B8=D1=
+=8F
+<pre>=D1=87=3DBooleanVar()</pre>
+
+<b>bind(event,function)</b>
+<br>=D0=9D=D0=B0=D0=B7=D0=BD=D0=B0=D1=87=D0=B0=D0=B5=D1=82 =D0=B2=D1=8B=D0=
+=BF=D0=BE=D0=BB=D0=BD=D0=B5=D0=BD=D0=B8=D0=B5 =D1=84=D1=83=D0=BD=D0=BA=D1=
+=86=D0=B8=D0=B8 <i>function</i> =D0=BD=D0=B0 =D1=81=D0=BE=D0=B1=D1=8B=D1=82=
+=D0=B8=D0=B5 <i>event</i>
+<pre>def my_func():
+	pass
+button=3DTkinter.Button()
+button.bind("&lt;Button1&gt;",my_func)</pre>
+=D0=A1=D0=BF=D0=B8=D1=81=D0=BE=D0=BA =D0=BF=D0=BE=D0=B4=D0=B4=D0=B5=D1=80=
+=D0=B6=D0=B8=D0=B2=D0=B0=D0=B5=D0=BC=D1=8B=D1=85 <i>event</i>
+<ul>
+  <li>&lt;Button-1&gt; - =D1=89=D0=B5=D0=BB=D1=87=D0=BE=D0=BA =D0=BB=D0=B5=
+=D0=B2=D0=BE=D0=B9 =D0=BA=D0=BD=D0=BE=D0=BF=D0=BA=D0=BE=D0=B9 =D0=BC=D1=8B=
+=D1=88=D0=B8</li>
+  <li>&lt;Button-2&gt; - =D1=89=D0=B5=D0=BB=D1=87=D0=BE=D0=BA =D1=81=D1=80=
+=D0=B5=D0=B4=D0=BD=D0=B5=D0=B9 =D0=BA=D0=BD=D0=BE=D0=BF=D0=BA=D0=BE=D0=B9 =
+=D0=BC=D1=8B=D1=88=D0=B8</li>
+  <li>&lt;Button-3&gt; - =D1=89=D0=B5=D0=BB=D1=87=D0=BE=D0=BA =D0=BF=D1=80=
+=D0=B0=D0=B2=D0=BE=D0=B9 =D0=BA=D0=BD=D0=BE=D0=BF=D0=BA=D0=BE=D0=B9 =D0=BC=
+=D1=8B=D1=88=D0=B8</li>
+  <li>&lt;Double-Button-1&gt; - =D0=B4=D0=B2=D0=BE=D0=B9=D0=BD=D0=BE=D0=B9 =
+=D0=BA=D0=BB=D0=B8=D0=BA =D0=BB=D0=B5=D0=B2=D0=BE=D0=B9 =D0=BA=D0=BD=D0=BE=
+=D0=BF=D0=BA=D0=BE=D0=B9 =D0=BC=D1=8B=D1=88=D0=B8</li>
+  <li>&lt;Motion&gt; - =D0=B4=D0=B2=D0=B8=D0=B6=D0=B5=D0=BD=D0=B8=D0=B5 =D0=
+=BC=D1=8B=D1=88=D0=B8</li>
+  <li>&lt;Return&gt; - =D0=BA=D0=BD=D0=BE=D0=BF=D0=BA=D0=B0 Enter</li>
+  <li>&lt;space&gt; - =D0=BA=D0=BD=D0=BE=D0=BF=D0=BA=D0=B0 =D0=BF=D1=80=D0=
+=BE=D0=B1=D0=B5=D0=BB</li>
+  <li>&lt;Control-Shift&gt; - =D0=BE=D0=B4=D0=BD=D0=BE=D0=B2=D1=80=D0=B5=D0=
+=BC=D0=B5=D0=BD=D0=BD=D0=BE=D0=B5 =D0=BD=D0=B0=D0=B6=D0=B0=D1=82=D0=B8=D0=
+=B5 Ctrl =D0=B8 Shift</li>
+  <li>'O' - =D0=BA=D0=BD=D0=BE=D0=BF=D0=BA=D0=B0 =D0=9E =D0=BD=D0=B0 =D0=BA=
+=D0=BB=D0=B0=D0=B2=D0=B8=D0=B0=D1=82=D1=83=D1=80=D0=B5</li>
+</ul>
+
+=D0=A1=D0=BE=D0=B1=D1=8B=D1=82=D0=B8=D1=8F, =D0=BF=D0=BE=D0=B4=D0=B4=D0=B5=
+=D1=80=D0=B6=D0=B8=D0=B2=D0=B0=D0=B5=D0=BC=D1=8B=D0=B5 tkinter
+<table>
+<tbody><tr>
+<td align=3D"center">=D0=A1=D0=BE=D0=B1=D1=8B=D1=82=D0=B8=D0=B5</td>
+<td align=3D"left">=D0=9E=D0=BF=D0=B8=D1=81=D0=B0=D0=BD=D0=B8=D0=B5</td>
+</tr>
+<tr>
+<td align=3D"center"><br>Activate</td>
+<td><br>=D0=94=D0=B0=D0=BD=D0=BD=D0=BE=D0=B5 =D0=BE=D0=BA=D0=BD=D0=BE =D0=
+=B8=D0=BB=D0=B8 =D0=B3=D1=80=D0=B0=D1=84=D0=B8=D1=87=D0=B5=D1=81=D0=BA=D0=
+=B8=D0=B9 =D0=BE=D0=B1=D1=8A=D0=B5=D0=BA=D1=82 =D1=81=D1=82=D0=B0=D0=BD=D0=
+=BE=D0=B2=D1=8F=D1=82=D1=81=D1=8F =D0=B0=D0=BA=D1=82=D0=B8=D0=B2=D0=BD=D1=
+=8B=D0=BC=D0=B8</td>
+</tr>
+<tr>
+<td align=3D"center"><br>ButtonPress, Button</td>
+<td><br>=D0=9D=D0=B0=D0=B6=D0=B0=D1=82=D0=B8=D0=B5 =D0=BF=D0=B5=D1=80=D0=B2=
+=D0=BE=D0=B9, =D0=B2=D1=82=D0=BE=D1=80=D0=BE=D0=B9 =D0=BA=D0=BD=D0=BE=D0=BF=
+=D0=BA=D0=B8 =D0=BC=D1=8B=D1=88=D0=B8, =D1=81=D0=BE=D0=BE=D1=82=D0=B2=D0=B5=
+=D1=82=D1=81=D1=82=D0=B2=D0=B5=D0=BD=D0=BD=D0=BE Buttonl =D0=B8 =D1=82.=D0=
+=B4., Double-Button- 1 =E2=80=94=D0=B4=D0=B2=D0=BE=D0=B9=D0=BD=D0=BE=D0=B9 =
+=D1=89=D0=B5=D0=BB=D1=87=D0=BE=D0=BA =D0=BF=D0=B5=D1=80=D0=B2=D0=BE=D0=B9 =
+=D0=BA=D0=BD=D0=BE=D0=BF=D0=BA=D0=BE=D0=B9 =D0=BC=D1=8B=D1=88=D0=B8. =D0=9C=
+=D0=BE=D0=B6=D0=BD=D0=BE =D0=B4=D0=B0=D0=B6=D0=B5 =D0=B7=D0=B0=D0=B4=D0=B0=
+=D1=82=D1=8C =D1=82=D1=80=D0=BE=D0=B9=D0=BD=D0=BE=D0=B9 =D1=89=D0=B5=D0=BB=
+=D1=87=D0=BE=D0=BA: Triple-Button-1</td>
+</tr>
+<tr>
+<td align=3D"center"><br>ButtonRelease</td>
+<td><br>=D0=9E=D1=82=D0=BF=D1=83=D1=81=D0=BA=D0=B0=D0=BD=D0=B8=D0=B5 =D0=BA=
+=D0=BD=D0=BE=D0=BF=D0=BA=D0=B8 =D0=BC=D1=8B=D1=88=D0=B8</td>
+</tr>
+<tr>
+<td align=3D"center"><br>Circulate</td>
+<td><br>=D0=98=D0=B7=D0=BC=D0=B5=D0=BD=D0=B5=D0=BD=D0=B8=D0=B5 =D0=BF=D0=BE=
+=D0=B7=D0=B8=D1=86=D0=B8=D0=B8 =D0=BE=D0=BA=D0=BD=D0=B0 =D0=B8=D0=BB=D0=B8 =
+=D0=B3=D1=80=D0=B0=D1=84=D0=B8=D1=87=D0=B5=D1=81=D0=BA=D0=BE=D0=B3=D0=BE =
+=D0=BE=D0=B1=D1=8A=D0=B5=D0=BA=D1=82=D0=B0 =D0=B2 Z-=D0=BF=D0=BE=D1=81=D0=
+=BB=D0=B5=D0=B4=D0=BE=D0=B2=D0=B0=D1=82=D0=B5=D0=BB=D1=8C=D0=BD=D0=BE=D1=81=
+=D1=82=D0=B8</td>
+</tr>
+<tr>
+<td align=3D"center"><br>Colormap</td>
+<td><br>=D0=98=D0=B7=D0=BC=D0=B5=D0=BD=D0=B5=D0=BD=D0=B8=D0=B5 =D1=86=D0=B2=
+=D0=B5=D1=82=D0=BE=D0=B2=D0=BE=D0=B9 =D1=81=D1=85=D0=B5=D0=BC=D1=8B. (=D0=
+=9F=D0=BE-=D0=BC=D0=BE=D0=B5=D0=BC=D1=83, =D1=8D=D1=82=D0=BE =D1=81=D0=BE=
+=D0=B1=D1=8B=D1=82=D0=B8=D0=B5 =D0=BD=D0=B5 =D0=BF=D1=80=D0=BE=D0=B8=D1=81=
+=D1=85=D0=BE=D0=B4=D0=B8=D1=82 =D0=B2 Windows.)</td>
+</tr>
+<tr>
+<td align=3D"center"><br>Configure</td>
+<td><br>=D0=98=D0=B7=D0=BC=D0=B5=D0=BD=D0=B5=D0=BD=D0=B8=D0=B5 =D1=80=D0=B0=
+=D0=B7=D0=BC=D0=B5=D1=80=D0=B0, =D1=84=D0=BE=D1=80=D0=BC=D1=8B =D0=B8=D0=BB=
+=D0=B8 =D0=BF=D0=BE=D0=BB=D0=BE=D0=B6=D0=B5=D0=BD=D0=B8=D1=8F =D0=B3=D1=80=
+=D0=B0=D1=84=D0=B8=D1=87=D0=B5=D1=81=D0=BA=D0=BE=D0=B3=D0=BE =D0=BE=D0=B1=
+=D1=8A=D0=B5=D0=BA=D1=82=D0=B0</td>
+</tr>
+<tr>
+<td align=3D"center"><br>Deactivate</td>
+<td><br>=D0=94=D0=B0=D0=BD=D0=BD=D0=BE=D0=B5 =D0=BE=D0=BA=D0=BD=D0=BE =D0=
+=B8=D0=BB=D0=B8 =D0=B3=D1=80=D0=B0=D1=84=D0=B8=D1=87=D0=B5=D1=81=D0=BA=D0=
+=B8=D0=B9 =D0=BE=D0=B1=D1=8A=D0=B5=D0=BA=D1=82 =D0=BF=D0=B5=D1=80=D0=B5=D1=
+=81=D1=82=D0=B0=D1=8E=D1=82 =D0=B1=D1=8B=D1=82=D1=8C =D0=B0=D0=BA=D1=82=D0=
+=B8=D0=B2=D0=BD=D1=8B=D0=BC=D0=B8</td>
+</tr>
+<tr>
+<td align=3D"center"><br>Destroy</td>
+<td><br>=D0=94=D0=B0=D0=BD=D0=BD=D1=8B=D0=B9 =D0=B3=D1=80=D0=B0=D1=84=D0=B8=
+=D1=87=D0=B5=D1=81=D0=BA=D0=B8=D0=B9 =D0=BE=D0=B1=D1=8A=D0=B5=D0=BA=D1=82 =
+=D0=BD=D0=B0=D0=B7=D0=BD=D0=B0=D1=87=D0=B5=D0=BD =D0=B4=D0=BB=D1=8F =D1=83=
+=D0=B4=D0=B0=D0=BB=D0=B5=D0=BD=D0=B8=D1=8F</td>
+</tr>
+<tr>
+<td align=3D"center"><br>Enter</td>
+<td><br>=D0=A3=D0=BA=D0=B0=D0=B7=D0=B0=D1=82=D0=B5=D0=BB=D1=8C =D0=BC=D1=8B=
+=D1=88=D0=B8 =D0=BF=D0=B5=D1=80=D0=B5=D1=81=D0=B5=D0=BA =D0=B3=D1=80=D0=B0=
+=D0=BD=D0=B8=D1=86=D1=8B =D0=B4=D0=B0=D0=BD=D0=BD=D0=BE=D0=B3=D0=BE =D0=BE=
+=D0=BA=D0=BD=D0=B0 =D0=B8=D0=BB=D0=B8 =D0=B3=D1=80=D0=B0=D1=84=D0=B8=D1=87=
+=D0=B5=D1=81=D0=BA=D0=BE=D0=B3=D0=BE =D0=BE=D0=B1=D1=8A=D0=B5=D0=BA=D1=82=
+=D0=B0 (=D0=BE=D0=BA=D0=B0=D0=B7=D0=B0=D0=BB=D1=81=D1=8F =D0=BD=D0=B0=D0=B4=
+ =D0=BE=D0=B1=D1=8A=D0=B5=D0=BA=D1=82=D0=BE=D0=BC)</td>
+</tr>
+<tr>
+<td align=3D"center"><br>Expose</td>
+<td><br>=D0=9D=D0=B5=D0=BA=D0=BE=D1=82=D0=BE=D1=80=D1=8B=D0=B5 =D0=B8=D0=BB=
+=D0=B8 =D0=B2=D1=81=D0=B5 =D0=BE=D0=BA=D0=BD=D0=B0 =D0=B8 =D0=B3=D1=80=D0=
+=B0=D1=84=D0=B8=D1=87=D0=B5=D1=81=D0=BA=D0=B8=D0=B5 =D0=BE=D0=B1=D1=8A=D0=
+=B5=D0=BA=D1=82=D1=8B =D0=B8=D0=B7=D0=BC=D0=B5=D0=BD=D0=B8=D0=BB=D0=B8 =D1=
+=8D=D0=BA=D1=81=D0=BF=D0=BE=D0=B7=D0=B8=D1=86=D0=B8=D1=8E</td>
+</tr>
+<tr>
+<td align=3D"center"><br>Focusln</td>
+<td><br>=D0=94=D0=B0=D0=BD=D0=BD=D1=8B=D0=B9 =D0=B3=D1=80=D0=B0=D1=84=D0=B8=
+=D1=87=D0=B5=D1=81=D0=BA=D0=B8=D0=B9 =D0=BE=D0=B1=D1=8A=D0=B5=D0=BA=D1=82 =
+=D0=BF=D0=BE=D0=BB=D1=83=D1=87=D0=B8=D0=BB =D1=84=D0=BE=D0=BA=D1=83=D1=81</=
+td>
+</tr>
+<tr>
+<td align=3D"center"><br>FocusOut</td>
+<td><br>=D0=94=D0=B0=D0=BD=D0=BD=D1=8B=D0=B9 =D0=B3=D1=80=D0=B0=D1=84=D0=B8=
+=D1=87=D0=B5=D1=81=D0=BA=D0=B8=D0=B9 =D0=BE=D0=B1=D1=8A=D0=B5=D0=BA=D1=82 =
+=D0=BF=D0=BE=D1=82=D0=B5=D1=80=D1=8F=D0=BB =D1=84=D0=BE=D0=BA=D1=83=D1=81</=
+td>
+</tr>
+<tr>
+<td align=3D"center"><br>Gravity</td>
+<td><br>=D0=A1=D0=BC=D1=8B=D1=81=D0=BB =D1=8D=D1=82=D0=BE=D0=B3=D0=BE =D1=
+=81=D0=BE=D0=B1=D1=8B=D1=82=D0=B8=D1=8F =D1=82=D1=80=D1=83=D0=B4=D0=BD=D0=
+=BE =D0=BE=D0=B1=D1=8A=D1=8F=D1=81=D0=BD=D0=B8=D1=82=D1=8C =D0=BD=D0=B0=D1=
+=87=D0=B8=D0=BD=D0=B0=D1=8E=D1=89=D0=B5=D0=BC=D1=83 =D0=BF=D1=80=D0=BE=D0=
+=B3=D1=80=D0=B0=D0=BC=D0=BC=D0=B8=D1=81=D1=82=D1=83</td>
+</tr>
+<tr>
+<td align=3D"center"><br>KeyPress, Key</td>
+<td><br>=D0=9D=D0=B0=D0=B6=D0=B0=D1=82=D0=B8=D0=B5 =D0=BA=D0=BB=D0=B0=D0=B2=
+=D0=B8=D1=88=D0=B8; =D0=9A=D0=B5=D1=83=D0=B0 =E2=80=94 =D0=BD=D0=B0=D0=B6=
+=D0=B0=D1=82=D0=B8=D0=B5 =D0=BA=D0=BB=D0=B0=D0=B2=D0=B8=D1=88=D0=B8 =D0=B0 =
+=D0=B8 =D1=82.=D0=B4.</td>
+</tr>
+<tr>
+<td align=3D"center"><br>KeyRelease</td>
+<td><br>=D0=9E=D1=82=D0=BF=D1=83=D1=81=D0=BA=D0=B0=D0=BD=D0=B8=D0=B5 =D0=BA=
+=D0=BB=D0=B0=D0=B2=D0=B8=D1=88=D0=B8</td>
+</tr>
+<tr>
+<td align=3D"center"><br>Motion</td>
+<td><br>=D0=9F=D0=B5=D1=80=D0=B5=D0=BC=D0=B5=D1=89=D0=B5=D0=BD=D0=B8=D0=B5 =
+=D1=83=D0=BA=D0=B0=D0=B7=D0=B0=D1=82=D0=B5=D0=BB=D1=8F =D0=BC=D1=8B=D1=88=
+=D0=B8</td>
+</tr>
+<tr>
+<td align=3D"center"><br>Map Property</td>
+<td><br>=D0=94=D0=B0=D0=BD=D0=BD=D0=BE=D0=B5 =D0=BE=D0=BA=D0=BD=D0=BE =D0=
+=B8=D0=BB=D0=B8 =D0=B3=D1=80=D0=B0=D1=84=D0=B8=D1=87=D0=B5=D1=81=D0=BA=D0=
+=B8=D0=B9 =D0=BE=D0=B1=D1=8A=D0=B5=D0=BA=D1=82 =D0=B1=D1=8B=D0=BB=D0=B8 =D0=
+=B2=D1=8B=D0=B2=D0=B5=D0=B4=D0=B5=D0=BD=D1=8B =D0=BD=D0=B0 =D1=8D=D0=BA=D1=
+=80=D0=B0=D0=BD</td>
+</tr>
+<tr>
+<td align=3D"center"><br>Reparent</td>
+<td><br>=D0=9D=D0=B5=D0=BA=D0=BE=D1=82=D0=BE=D1=80=D0=BE=D0=B5 =D1=81=D0=B2=
+=D0=BE=D0=B9=D1=81=D1=82=D0=B2=D0=BE (=D0=BD=D0=B0=D0=BF=D1=80=D0=B8=D0=BC=
+=D0=B5=D1=80, =D1=86=D0=B2=D0=B5=D1=82) =D0=BE=D0=BA=D0=BD=D0=B0 =D0=B8=D0=
+=BB=D0=B8 =D0=B3=D1=80=D0=B0=D1=84=D0=B8=D1=87=D0=B5=D1=81=D0=BA=D0=BE=D0=
+=B3=D0=BE =D0=BE=D0=B1=D1=8A=D0=B5=D0=BA=D1=82=D0=B0 =D0=B1=D1=8B=D0=BB=D0=
+=BE =D0=B8=D0=B7=D0=BC=D0=B5=D0=BD=D0=B5=D0=BD=D0=BE</td>
+</tr>
+<tr>
+<td align=3D"center"><br>Unmap</td>
+<td><br>=D0=A0=D0=BE=D0=B4=D0=B8=D1=82=D0=B5=D0=BB=D1=8C=D1=81=D0=BA=D0=B8=
+=D0=BC =D0=B4=D0=BB=D1=8F =D0=B4=D0=B0=D0=BD=D0=BD=D0=BE=D0=B3=D0=BE =D0=BE=
+=D0=BA=D0=BD=D0=B0/=D0=B3=D1=80=D0=B0=D1=84=D0=B8=D1=87=D0=B5=D1=81=D0=BA=
+=D0=BE=D0=B3=D0=BE =D0=BE=D0=B1=D1=8A=D0=B5=D0=BA=D1=82=D0=B0 =D1=81=D1=82=
+=D0=B0=D0=BB=D0=BE =D0=B4=D1=80=D1=83=D0=B3=D0=BE=D0=B5 =D0=BE=D0=BA=D0=BD=
+=D0=BE/=D0=B3=D1=80=D0=B0=D1=84=D0=B8=D1=87=D0=B5=D1=81=D0=BA=D0=B8=D0=B9 =
+=D0=BE=D0=B1=D1=8A=D0=B5=D0=BA=D1=82</td>
+</tr>
+<tr>
+<td align=3D"center"><br>Visibility</td>
+<td><br>=D0=94=D0=B0=D0=BD=D0=BD=D0=BE=D0=B5 =D0=BE=D0=BA=D0=BD=D0=BE =D0=
+=B8=D0=BB=D0=B8 =D0=B3=D1=80=D0=B0=D1=84=D0=B8=D1=87=D0=B5=D1=81=D0=BA=D0=
+=B8=D0=B9 =D0=BE=D0=B1=D1=8A=D0=B5=D0=BA=D1=82 =D0=BD=D0=B5 =D0=B1=D1=8B=D0=
+=BB=D0=B8 =D0=B2=D1=8B=D0=B2=D0=B5=D0=B4=D0=B5=D0=BD=D1=8B =D0=BD=D0=B0 =D1=
+=8D=D0=BA=D1=80=D0=B0=D0=BD =D0=98=D0=B7=D0=BC=D0=B5=D0=BD=D0=B8=D0=BB=D1=
+=81=D1=8F =D0=B2=D0=B8=D0=B4 =D0=BE=D1=82=D0=BE=D0=B1=D1=80=D0=B0=D0=B6=D0=
+=B5=D0=BD=D0=B8=D1=8F =D0=BE=D0=BA=D0=BD=D0=B0: =D1=81=D0=B2=D0=B5=D1=80=D0=
+=BD=D1=83=D1=82=D0=BE, =D0=B2=D0=BE=D1=81=D1=81=D1=82=D0=B0=D0=BD=D0=BE=D0=
+=B2=D0=BB=D0=B5=D0=BD=D0=BE =D0=B8 =D1=82.=D0=B4.</td>
+</tr>
+<tr>
+<td align=3D"center"><br>Leave</td>
+<td><br>=D0=A3=D0=BA=D0=B0=D0=B7=D0=B0=D1=82=D0=B5=D0=BB=D1=8C =D0=BC=D1=8B=
+=D1=88=D0=B8 =D0=B2=D1=8B=D1=88=D0=B5=D0=BB =D0=B7=D0=B0 =D0=B3=D1=80=D0=B0=
+=D0=BD=D0=B8=D1=86=D1=8B =D0=B4=D0=B0=D0=BD=D0=BD=D0=BE=D0=B3=D0=BE =D0=BE=
+=D0=BA=D0=BD=D0=B0 =D0=B8=D0=BB=D0=B8 =D0=B3=D1=80=D0=B0=D1=84=D0=B8=D1=87=
+=D0=B5=D1=81=D0=BA=D0=BE=D0=B3=D0=BE =D0=BE=D0=B1=D1=8A=D0=B5=D0=BA=D1=82=
+=D0=B0</td>
+</tr>
+</tbody></table>
+        </div>
+        <div class=3D"static" style=3D"text-align:right;">
+            <i class=3D"title_bottom">=D0=9E=D0=BF=D1=83=D0=B1=D0=BB=D0=B8=
+=D0=BA=D0=BE=D0=B2=D0=B0=D0=BD=D0=BE =D0=B2 =D1=80=D1=83=D0=B1=D1=80=D0=B8=
+=D0=BA=D0=B5
+                <a class=3D"category" href=3D"http://ilnurgi1.ru/doc/tkinte=
+r/tkinter">
+                    tkinter</a>, 11 =D0=B8=D1=8E=D0=BB=D1=8F 2012 =D0=B3. 0=
+:00:00.</i>
+            <br><i class=3D"title_bottom">=D0=9A=D0=BE=D0=BC=D0=BC=D0=B5=D0=
+=BD=D1=82=D0=B0=D1=80=D0=B8=D0=B5=D0=B2:
+            0</i>
+            <br><i class=3D"title_bottom">=D0=9F=D1=80=D0=BE=D1=81=D0=BC=D0=
+=BE=D1=82=D1=80=D0=BE=D0=B2:
+            60</i>
+        </div>
+    </div>
+
+    <div class=3D"bar comment">
+        =D0=94=D0=BE=D0=B1=D0=B0=D0=B2=D0=B8=D1=82=D1=8C =D0=BA=D0=BE=D0=BC=
+=D0=B5=D0=BD=D1=82=D0=B0=D1=80=D0=B8=D0=B8
+        <form action=3D"http://ilnurgi1.ru/doc/add_comment" method=3D"post"=
+>
+            <div style=3D"display:none"><input type=3D"hidden" name=3D"csrf=
+middlewaretoken" value=3D"JBP5zEUMSVwSvRdfKAHwbrGlZxdDhvrx"></div>
+            <label for=3D"usernme">=D0=98=D0=BC=D1=8F</label>
+            <br><input type=3D"text" name=3D"username">
+            <br><label for=3D"email">email</label>
+            <br><input type=3D"text" name=3D"email">
+            <br>=D0=9A=D0=BE=D0=BC=D0=B5=D0=BD=D1=82=D0=B0=D1=80=D0=B8=D0=
+=B8
+            <br><textarea name=3D"message" cols=3D"100" rows=3D"10"></texta=
+rea>
+            <br><label for=3D"passw">=D0=9E=D1=81=D1=82=D0=B0=D0=B2=D1=8C=
+=D1=82=D0=B5 =D0=BF=D0=BE=D0=BB=D0=B5 =D0=BF=D1=83=D1=81=D1=82=D1=8B=D0=BC<=
+/label>
+            <br><input type=3D"text" name=3D"passw" value=3D"">
+            <input type=3D"hidden" name=3D"post_id" value=3D"62" <br=3D""><=
+input type=3D"submit" value=3D"=D0=9E=D1=82=D0=BF=D1=80=D0=B0=D0=B2=D0=B8=
+=D1=82=D1=8C">
+        </form>
+    </div>
+
+    <div class=3D"bar comments">
+        =D0=9A=D0=BE=D0=BC=D0=B5=D0=BD=D1=82=D0=B0=D1=80=D0=B8=D0=B8<br>
+       =20
+    </div>
+
+
+
+
+
+
+
+   =20
+
+
+</body></html>
+------=_NextPart_000_F7C5_DBE9FB5D.C48CE729
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://ilnurgi1.ru/static/styles.css
+
+* { margin: 0px; padding: 0px; }
+
+body { background-color: rgb(221, 221, 221); min-width: 200px; }
+
+a { text-decoration: none; color: rgb(0, 0, 0); }
+
+a:hover { text-decoration: underline; }
+
+img { display: block; }
+
+p.vinoska { margin: 5px 0px 0px 30px; background-color: rgb(255, 221, 221);=
+ }
+
+dt { font-style: italic; }
+
+dd { margin-left: 50px; padding: 10px 0px; }
+
+div.bar { border: 1px solid rgb(170, 170, 170); padding: 10px; background-c=
+olor: rgb(238, 238, 238); margin: 10px; }
+
+div.navigation_top a { border-bottom-width: 1px; border-bottom-style: solid=
+; border-bottom-color: rgb(0, 0, 0); margin-right: 10px; font-weight: bold;=
+ }
+
+div.navigation_top a:hover { color: rgb(0, 85, 0); border-bottom-style: non=
+e; }
+
+div.navigation_top li { list-style: none; float: left; }
+
+@media screen and (min-width: 1024px) {=20
+  div.news { float: left; }
+}
+
+div.news span { font-size: 0.8em; }
+
+div.news h3, div.news h3 a { color: rgb(153, 0, 0); }
+
+div.news h3 a:hover { text-decoration: underline; color: rgb(153, 0, 0); }
+
+div.news ul, div.statistic ul { margin-left: 20px; }
+
+div.news li, div.statistic ul { list-style: none; }
+
+div.news li a { text-decoration: underline; }
+
+div.news li a:hover { color: rgb(136, 0, 0); }
+
+div.post { border: 1px solid rgb(170, 170, 170); padding: 10px; margin: 10p=
+x; }
+
+div.post a.title { color: rgb(153, 0, 0); font-weight: bold; }
+
+div.message a { text-decoration: underline; }
+
+div.message ul { margin: 10px 0px 10px 20px; list-style: none; }
+
+div.message ul li, div.message ol li { margin-bottom: 5px; }
+
+div.message ol { margin: 10px 0px 10px 30px; }
+
+div.message pre { border-left-width: 1px; border-left-style: dotted; border=
+-left-color: rgb(0, 153, 0); padding: 10px 0px 10px 20px; margin: 10px 20px=
+; white-space: pre-wrap; }
+
+div.message pre i { color: rgb(170, 0, 0); }
+
+div.message img { margin: 10px 30px; }
+
+div.message iframe { margin: 10px 0px 0px 50px; display: block; }
+
+div.message h3 i { color: rgb(153, 153, 153); font-size: 1em; }
+
+div.message h3 { margin: 10px 0px; }
+
+div.message p { margin-left: 10px; }
+
+div.message ul { margin-left: 10px; }
+
+div.message ul li { padding-left: 20px; }
+
+div.comments div.comment { border-bottom-width: 1px; border-bottom-style: d=
+otted; border-bottom-color: black; padding: 10px; }
+
+div.comments div.message { padding: 10px; }
+
+div.comments div.comment i { color: rgb(153, 0, 0); }
+
+div.statistic h3 { color: rgb(153, 0, 0); }
+
+div.site_map ul { list-style: none; margin-left: 10px; padding: 5px; }
+
+ul.u1 { margin-left: 10px; }
+
+ul.u1 > li { border-top-width: 1px; border-top-style: solid; border-top-col=
+or: black; padding: 10px; list-style: none; margin-left: 10px; }
+
+ul.u1 p + ul { margin-left: 20px; }
+
+ul.u1 p + ul li { list-style: none; }
+
+ul.u1 > li > pre { border-left-width: 2px; border-left-style: dotted; borde=
+r-left-color: rgb(0, 0, 119); padding: 10px; margin-left: 40px; background-=
+color: rgb(170, 187, 204); }
+
+div.tests { overflow-x: scroll; }
+
+div.tests table td { padding: 5px; border-bottom-width: 1px; border-bottom-=
+style: dotted; border-bottom-color: black; border-right-width: 1px; border-=
+right-style: dotted; border-right-color: black; text-align: center; }
+
+div.tests table.no_border td { padding: 5px; border: none; text-align: cent=
+er; max-width: 240px; }
+
+div.tests table th { padding: 15px; }
+
+div.tests div.cut { display: none; }
+
+dl.def_list { margin-top: 10px; padding: 0px; }
+
+dl.def_list dt { margin-left: 10px; padding: 0px; font-style: normal; font-=
+weight: bold; }
+
+dl.def_list dd { margin-left: 30px; padding: 0px; }
+
+.form_input_one_line { float: left; }
+
+em { font-style: normal; }
+
+a.td_processor, em.td_processor { color: rgb(102, 0, 0); }
+
+a.td_video, em.td_video { color: rgb(0, 102, 153); }
+
+a.td_mainb, em.td_mainb { color: rgb(102, 102, 0); }
+------=_NextPart_000_F7C5_DBE9FB5D.C48CE729
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://ilnurgi1.ru/media/doc/59__tkinter_main_window.png
+
+iVBORw0KGgoAAAANSUhEUgAAAOAAAAD6CAYAAAC4YEscAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAABoaSURBVHhe7Z37kxzVdcfnj3C5qAo/5Yc4qTI/
+JOCq1FY5qRI4LstlYkxiJ3GBwBabkMqCCQYFl2PEKyQYzApLQQ/ES7AI5FDISCtpJfRA77e0EruS
+diWtpNVjCUgrrRSqKKiTe7r7zty5c3tu3+6e7ume71Sdmn7ee+653889/Zierpz9+Bo12i56secp
+WjZkWpd0WdSyw7aLur/Fz6EV9HjPYtog2y/ml33I+8QpX90nzv66r3oZPN9DPQt2GfpK3TeNupP2
+r7L/h4upp05HY7TsiR56/N0xSzvi9kOKvhu50Nqm9oenp/q2Db77lLWtlcMjn1KjbaU5PU/S6ztN
+65Iui1p22HZR97f4uXoh9cx+jzY3tD9O+eo+cfbXfTWUsfM9mt2zkN439pfcP426k/av3P8ovT67
+h+as1sqL1A7ep53aYogJt0PRz+a+J2lOn1j2260BT9x+O0MCwItiBzbZYH1azO9cLjpfjMCeLRIi
+kPvE+Vbr0fZX6pndtzwYBFR/eF/ph/j2GhvHB1lmD83uO6aVEfi3utbmum2MsWgSu1j+mWJ0LBB0
+0N5mfhh918vU5kNjHzO+XnkmrXA7WJhKvzb4a+rncH9Zl3NWazruWxToVe1jP4a+jtV94rRRbYec
+Zh9lm/Vprc2BfxXPkTWXaOj4Nk/wb+xuNi3WrVlEs5eOiO15uzjG9SgQCYdXeuX4y31fLtG2pU+K
+IEXwJ5YP0u8ReuOxoDOCeqUfPY8tp21ctmgvDzo1H6VPaizCYhcnPnr8631t7CvdD9Ee6ftuhsAU
+Q1Mfh8U+Zhu4bulHXR/5Ma+1I7m/Qw3tFGXO3ebrU+0/npbLE+nGj8nKuUo7graunBvEu64uXR81
+/yrDJybJt+30AnfWHm16j5r9AnDmbg/2kfu6fKv1KPtxPaIR223+1PnpUm+TbYM2vjCgxyFqLEJi
+V22Lq5+mGLFwg/4J7ZPG/VgkkdoVGntX34PtPR/FwNUQA6Udhr6M7K9WdvT9REYUCaSm+5jt43YN
+MNCCBfktlm0XiYPLl99N2RLbV46enCTf/M57c682vdcP5KrqdnL7uN9qPUoZXI8QwQ6bP3V+xvWh
+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
+TkSuQmCC
+------=_NextPart_000_F7C5_DBE9FB5D.C48CE729--

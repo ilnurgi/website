@@ -1,0 +1,271 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Battery &mdash; p4a doc 14.10.12 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.10.12',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="p4a doc 14.10.12 documentation" href="../index.html" />
+    <link rel="next" title="Bluetooth" href="Bluetooth.html" />
+    <link rel="prev" title="ActivityResultFacade" href="ActivityResult.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="Bluetooth.html" title="Bluetooth"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="ActivityResult.html" title="ActivityResultFacade"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">p4a doc 14.10.12 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="battery">
+<h1>Battery<a class="headerlink" href="#battery" title="Permalink to this headline">¶</a></h1>
+<p>Перед вызовом методов batteryGet*, необходимо выполнить метод <a class="reference internal" href="#batteryStartMonitoring" title="batteryStartMonitoring"><tt class="xref py py-meth docutils literal"><span class="pre">batteryStartMonitoring()</span></tt></a> и дождаться ответа.</p>
+<p>Результат работы всех методов <a class="reference internal" href="Event.html#Result" title="Result"><tt class="xref py py-class docutils literal"><span class="pre">Result</span></tt></a></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">batteryStartMonitoring</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="batteryCheckPresent">
+<tt class="descname">batteryCheckPresent</tt><big>(</big><big>)</big><a class="headerlink" href="#batteryCheckPresent" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает статус мониторинга батареи</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">batteryCheckPresent</span><span class="p">()</span><span class="o">.</span><span class="n">result</span>
+<span class="go">None</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">batteryStartMonitoring</span><span class="p">()</span><span class="o">.</span><span class="n">result</span>
+<span class="go">None</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">batteryCheckPresent</span><span class="p">()</span><span class="o">.</span><span class="n">result</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="batteryGetHealth">
+<tt class="descname">batteryGetHealth</tt><big>(</big><big>)</big><a class="headerlink" href="#batteryGetHealth" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает уровень заряда батареи</p>
+<blockquote>
+<div><ul class="simple">
+<li>1 - unknown</li>
+<li>2 - good</li>
+<li>3 - overheat</li>
+<li>4 - dead</li>
+<li>5 - over voltage</li>
+<li>6 - unspecified failure</li>
+</ul>
+</div></blockquote>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">batteryGetHealth</span><span class="p">()</span><span class="o">.</span><span class="n">result</span>
+<span class="go">2</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="batteryGetLevel">
+<tt class="descname">batteryGetLevel</tt><big>(</big><big>)</big><a class="headerlink" href="#batteryGetLevel" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает уровень зарядя батареи в процентах</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">batteryGetLevel</span><span class="p">()</span><span class="o">.</span><span class="n">result</span>
+<span class="go">50</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="batteryGetPlugType">
+<tt class="descname">batteryGetPlugType</tt><big>(</big><big>)</big><a class="headerlink" href="#batteryGetPlugType" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает тип устройства, откуда идет зарядка</p>
+<blockquote>
+<div><ul class="simple">
+<li>-1 - unknown</li>
+<li>0 - unplugged</li>
+<li>1 - power source is an AC charger</li>
+<li>2 - power source is a USB port</li>
+</ul>
+</div></blockquote>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">batteryGetPlugType</span><span class="p">()</span><span class="o">.</span><span class="n">result</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="batteryGetStatus">
+<tt class="descname">batteryGetStatus</tt><big>(</big><big>)</big><a class="headerlink" href="#batteryGetStatus" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает статус зарядки</p>
+<blockquote>
+<div><ul class="simple">
+<li>1 - unknown</li>
+<li>2 - charging</li>
+<li>3 - discharging</li>
+<li>4 - not charging</li>
+<li>5 - full</li>
+</ul>
+</div></blockquote>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">batteryGetStatus</span><span class="p">()</span><span class="o">.</span><span class="n">result</span>
+<span class="go">2</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="batteryGetTechnology">
+<tt class="descname">batteryGetTechnology</tt><big>(</big><big>)</big><a class="headerlink" href="#batteryGetTechnology" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает тип аккумулятора</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">batteryGetTechnology</span><span class="p">()</span><span class="o">.</span><span class="n">result</span>
+<span class="go">Li-ion</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="batteryGetTemperature">
+<tt class="descname">batteryGetTemperature</tt><big>(</big><big>)</big><a class="headerlink" href="#batteryGetTemperature" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает температуру батареи</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">batteryGetTemperature</span><span class="p">()</span><span class="o">.</span><span class="n">result</span>
+<span class="go">0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="batteryGetVoltage">
+<tt class="descname">batteryGetVoltage</tt><big>(</big><big>)</big><a class="headerlink" href="#batteryGetVoltage" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает вольтаж батареи</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">batteryGetVoltage</span><span class="p">()</span><span class="o">.</span><span class="n">result</span>
+<span class="go">0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="batteryStartMonitoring">
+<tt class="descname">batteryStartMonitoring</tt><big>(</big><big>)</big><a class="headerlink" href="#batteryStartMonitoring" title="Permalink to this definition">¶</a></dt>
+<dd><p>запуск мониторинга батареи</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">batteryStopMonitoring</span><span class="p">()</span><span class="o">.</span><span class="n">result</span>
+<span class="go">None</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="batteryStopMonitoring">
+<tt class="descname">batteryStopMonitoring</tt><big>(</big><big>)</big><a class="headerlink" href="#batteryStopMonitoring" title="Permalink to this definition">¶</a></dt>
+<dd><p>останавливает мониторинг</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">batteryStopMonitoring</span><span class="p">()</span><span class="o">.</span><span class="n">result</span>
+<span class="go">None</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="readBatteryData">
+<tt class="descname">readBatteryData</tt><big>(</big><big>)</big><a class="headerlink" href="#readBatteryData" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает данные о батареи</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">readBatteryData</span><span class="p">()</span><span class="o">.</span><span class="n">result</span>
+<span class="go">{</span>
+<span class="go">    u&#39;status&#39;: 2,</span>
+<span class="go">    u&#39;temperature&#39;: 0,</span>
+<span class="go">    u&#39;level&#39;: 50,</span>
+<span class="go">    u&#39;battery_present&#39;: True,</span>
+<span class="go">    u&#39;plugged&#39;: 1,</span>
+<span class="go">    u&#39;health&#39;: 2,</span>
+<span class="go">    u&#39;voltage&#39;: 0,</span>
+<span class="go">    u&#39;technology&#39;: u&#39;Li-ion&#39;</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="ActivityResult.html"
+                        title="previous chapter">ActivityResultFacade</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="Bluetooth.html"
+                        title="next chapter">Bluetooth</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/Battary.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="Bluetooth.html" title="Bluetooth"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="ActivityResult.html" title="ActivityResultFacade"
+             >previous</a> |</li>
+        <li><a href="../index.html">p4a doc 14.10.12 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

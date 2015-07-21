@@ -1,0 +1,398 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>android.app.Activity &mdash; android 14.10.12 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '14.10.12',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="android 14.10.12 documentation" href="../../index.html" />
+    <link rel="next" title="android.app.Application" href="Application.html" />
+    <link rel="prev" title="Лейауты, вьюхи" href="../../layout.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="Application.html" title="android.app.Application"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../../layout.html" title="Лейауты, вьюхи"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">android 14.10.12 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="android-app-activity">
+<span id="id1"></span><h1>android.app.Activity<a class="headerlink" href="#android-app-activity" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="android.app.Activity">
+<em class="property">class </em><tt class="descclassname">android.app.</tt><tt class="descname">Activity</tt><a class="headerlink" href="#android.app.Activity" title="Permalink to this definition">¶</a></dt>
+<dd><p>базовый класс для визуальных и интерактивных компонентов приложения.</p>
+<dl class="method">
+<dt id="android.app.Activity.onCreate">
+<tt class="descname">onCreate</tt><big>(</big><em>savedInstanceState</em><big>)</big><a class="headerlink" href="#android.app.Activity.onCreate" title="Permalink to this definition">¶</a></dt>
+<dd><p>обработчик создания</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>savedInstanceState</strong> &#8211; <em class="xref std std-ref">Bundle</em></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="android.app.Activity.onRestoreInstanceState">
+<tt class="descname">onRestoreInstanceState</tt><big>(</big><em>savedInstanceState</em><big>)</big><a class="headerlink" href="#android.app.Activity.onRestoreInstanceState" title="Permalink to this definition">¶</a></dt>
+<dd><p>Вызывается, когда метод onCreate завершил свою работу, и используется для восстановления состояния пользовательского интерфейса</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>savedInstanceState</strong> &#8211; <em class="xref std std-ref">Bundle</em></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="android.app.Activity.onSaveInstanceState">
+<tt class="descname">onSaveInstanceState</tt><big>(</big><em>savedInstanceState</em><big>)</big><a class="headerlink" href="#android.app.Activity.onSaveInstanceState" title="Permalink to this definition">¶</a></dt>
+<dd><p>Вызывается для того, чтобы сохранить пользовательский интерфейс перед выходом из &#8220;активного&#8221; состояния.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>savedInstanceState</strong> &#8211; <em class="xref std std-ref">Bundle</em></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="android.app.Activity.onRestart">
+<tt class="descname">onRestart</tt><big>(</big><big>)</big><a class="headerlink" href="#android.app.Activity.onRestart" title="Permalink to this definition">¶</a></dt>
+<dd><p>Вызывается, перед тем, как активность становится &#8220;видимой&#8221;</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="android.app.Activity.onStart">
+<tt class="descname">onStart</tt><big>(</big><big>)</big><a class="headerlink" href="#android.app.Activity.onStart" title="Permalink to this definition">¶</a></dt>
+<dd><p>Вызывается, вначале &#8220;видимого&#8221; состояния</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="android.app.Activity.onStop">
+<tt class="descname">onStop</tt><big>(</big><big>)</big><a class="headerlink" href="#android.app.Activity.onStop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Вызывается перед тем, как Активность перестает быть &#8220;видимой&#8221;</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="android.app.Activity.onResume">
+<tt class="descname">onResume</tt><big>(</big><big>)</big><a class="headerlink" href="#android.app.Activity.onResume" title="Permalink to this definition">¶</a></dt>
+<dd><p>Вызывается, вначале &#8220;активного&#8221; состояния</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="android.app.Activity.onPause">
+<tt class="descname">onPause</tt><big>(</big><big>)</big><a class="headerlink" href="#android.app.Activity.onPause" title="Permalink to this definition">¶</a></dt>
+<dd><p>Вызывается, перед выходом из &#8220;активного&#8221; состояния</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="android.app.Activity.onDestroy">
+<tt class="descname">onDestroy</tt><big>(</big><big>)</big><a class="headerlink" href="#android.app.Activity.onDestroy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Вызывается, перед выходом из &#8220;полноценного&#8221; состояния</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="android.app.Activity.onCreateOptionsMenu">
+<tt class="descname">onCreateOptionsMenu</tt><big>(</big><em>menu</em><big>)</big><a class="headerlink" href="#android.app.Activity.onCreateOptionsMenu" title="Permalink to this definition">¶</a></dt>
+<dd><p>обработчик создания меню, вызывается 1 раз при первом показе меню</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>menu</strong> &#8211; <a class="reference internal" href="../view/Menu.html#android-view-menu"><em>android.view.Menu</em></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="android.app.Activity.onPrepareOptionsMenu">
+<tt class="descname">onPrepareOptionsMenu</tt><big>(</big><em>menu</em><big>)</big><a class="headerlink" href="#android.app.Activity.onPrepareOptionsMenu" title="Permalink to this definition">¶</a></dt>
+<dd><p>обработчик создания меню, вызывается каждый раз показе меню. Можно менять меню при каждом показе</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>menu</strong> &#8211; <a class="reference internal" href="../view/Menu.html#android-view-menu"><em>android.view.Menu</em></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="android.app.Activity.onOptionsItemSelected">
+<tt class="descname">onOptionsItemSelected</tt><big>(</big><em>item</em><big>)</big><a class="headerlink" href="#android.app.Activity.onOptionsItemSelected" title="Permalink to this definition">¶</a></dt>
+<dd><p>обработчик выбора элемента в меню</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>item</strong> &#8211; <a class="reference internal" href="../view/MenuItem.html#android-view-menuitem"><em>android.view.MenuItem</em></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="android.app.Activity.onCreateContextMenu">
+<tt class="descname">onCreateContextMenu</tt><big>(</big><em>menu</em>, <em>view</em>, <em>menuInfo</em><big>)</big><a class="headerlink" href="#android.app.Activity.onCreateContextMenu" title="Permalink to this definition">¶</a></dt>
+<dd><p>обработчик контекстного меню, вызывается каждый раз перед показом</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>menu</strong> &#8211; <a class="reference internal" href="../view/ContextMenu.html#android-view-contextmenu"><em>android.view.ContextMenu</em></a></li>
+<li><strong>view</strong> &#8211; <a class="reference internal" href="../view/View.html#android-view-view"><em>android.view.View</em></a></li>
+<li><strong>menuInfo</strong> &#8211; <em class="xref std std-ref">android_view_ContextMenu_ContextMenuInfo</em></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="android.app.Activity.onContextItemSelected">
+<tt class="descname">onContextItemSelected</tt><big>(</big><em>item</em><big>)</big><a class="headerlink" href="#android.app.Activity.onContextItemSelected" title="Permalink to this definition">¶</a></dt>
+<dd><p>обработчик выбора элемента в контекстном меню</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>item</strong> &#8211; <a class="reference internal" href="../view/MenuItem.html#android-view-menuitem"><em>android.view.MenuItem</em></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="android.app.Activity.onConfigurationChanged">
+<tt class="descname">onConfigurationChanged</tt><big>(</big><em>config</em><big>)</big><a class="headerlink" href="#android.app.Activity.onConfigurationChanged" title="Permalink to this definition">¶</a></dt>
+<dd><p>обработчик изменения конфигурации</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>item</strong> &#8211; <em class="xref std std-ref">_android_content_res_Configuration</em></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="android.app.Activity.registerForContextMenu">
+<tt class="descname">registerForContextMenu</tt><big>(</big><em>view</em><big>)</big><a class="headerlink" href="#android.app.Activity.registerForContextMenu" title="Permalink to this definition">¶</a></dt>
+<dd><p>добавляет для вью обработчик контекста</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>view</strong> &#8211; <a class="reference internal" href="../view/View.html#android-view-view"><em>android.view.View</em></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="android.app.Activity.setContentView">
+<tt class="descname">setContentView</tt><big>(</big><big>)</big><a class="headerlink" href="#android.app.Activity.setContentView" title="Permalink to this definition">¶</a></dt>
+<dd><p>устанавливает содержимое активити из лэйаута</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">setContentView</span><span class="p">(</span><span class="n">R</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">main</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="android.app.Activity.findViewById">
+<tt class="descname">findViewById</tt><big>(</big><em>id</em><big>)</big><a class="headerlink" href="#android.app.Activity.findViewById" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает объект по иди</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">findViewById</span><span class="p">(</span><span class="n">R</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">textView</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="android.app.Activity.getResources">
+<tt class="descname">getResources</tt><big>(</big><big>)</big><a class="headerlink" href="#android.app.Activity.getResources" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает объект <a class="reference internal" href="../content/res/Resources.html#android-content-res-resources"><em>android.content.res.Resources</em></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="android.app.Activity.getMenuInflater">
+<tt class="descname">getMenuInflater</tt><big>(</big><em>).inflate(R.menu.mymenu</em>, <em>menu</em><big>)</big><a class="headerlink" href="#android.app.Activity.getMenuInflater" title="Permalink to this definition">¶</a></dt>
+<dd><p>getMenuInflater возвращает объект MenuInflater</p>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="id2">
+<h2>Примеры<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre>publick class MainActivity extends Activity impements OnClickListener {
+
+    @Override
+    publick void onCreate(Bundle savedInstanceState) {
+        // обработчик создания активити
+        super.onCreate(savedInstanceState);
+        ...
+    };
+
+    @Override
+    publick void onClick(View) {
+        // обработчик клика по вью
+        ...
+    };
+
+    @Override
+    publick boolean onCreateOptionsMenu(Menu menu) {
+        // обработчик создания меню, вызывается 1 раз при первом показе меню
+        ...
+        return super.onCreateOptionsMenu(menu);
+    };
+
+    @Override
+    publick boolean onPrepareOptionsMenu(Menu menu) {
+        // обработчик создания меню, вызывается каждый раз показе меню
+        ...
+        return super.onCreateOptionsMenu(menu);
+    };
+
+    @Override
+    publick boolean onOptionsItemSelected(MenuItem item) {
+        // обработчик выбора элемента в меню
+        ...
+        return super.onOptionsItemSelected(item);
+    };
+
+    @Override
+    publick boolean onOptionsItemSelected(MenuItem item) {
+        // обработчик контекстного меню, вызывается каждый раз перед показом
+        ...
+        return super.onOptionsItemSelected(item);
+    };
+
+    @Override
+    publick boolean onOptionsItemSelected(MenuItem item) {
+        // обработчик выбора элемента в контекстном меню
+        ...
+        return super.onOptionsItemSelected(item);
+    };
+
+    @Override
+    public void onConfigurationChanged(Configuration conf) {
+        super.onConfigurationChanged(conf);
+        // обработчик изменения конфигурации
+        ...
+
+
+};
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">android.app.Activity</a><ul>
+<li><a class="reference internal" href="#id2">Примеры</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../../layout.html"
+                        title="previous chapter">Лейауты, вьюхи</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="Application.html"
+                        title="next chapter">android.app.Application</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/android/app/Activity.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="Application.html" title="android.app.Application"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../../layout.html" title="Лейауты, вьюхи"
+             >previous</a> |</li>
+        <li><a href="../../index.html">android 14.10.12 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

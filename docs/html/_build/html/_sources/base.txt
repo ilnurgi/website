@@ -1,0 +1,16 @@
+Основы
+======
+
+.. code-block:: js
+
+    <!DOCTYPE html>
+
+    <html>
+
+        <head>
+            <title>Заголовок</title>
+        </head>
+
+        <body></body>
+
+    </html>

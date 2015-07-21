@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Navigator - свойства браузера &mdash; js doc 2015.06.26 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2015.06.26',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="js doc 2015.06.26 documentation" href="../index.html" />
+    <link rel="up" title="DOM - дерево html документа" href="index.html" />
+    <link rel="next" title="Screen - информация о дисплее" href="Screen.html" />
+    <link rel="prev" title="Location - адрес текущей страницы" href="Location.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="Screen.html" title="Screen - информация о дисплее"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="Location.html" title="Location - адрес текущей страницы"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.26 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">DOM - дерево html документа</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="navigator">
+<h1>Navigator - свойства браузера<a class="headerlink" href="#navigator" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="Navigator">
+<em class="property">class </em><code class="descname">Navigator</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Navigator" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="appCodeName">
+<code class="descname">appCodeName</code><a class="headerlink" href="#appCodeName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Кодовое имя браузера</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="appName">
+<code class="descname">appName</code><a class="headerlink" href="#appName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Название веб браузера</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="appVersion">
+<code class="descname">appVersion</code><a class="headerlink" href="#appVersion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Номер версии или другая информация</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cookieEnabled">
+<code class="descname">cookieEnabled</code><a class="headerlink" href="#cookieEnabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Номер версии или другая информация</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="geolocation">
+<code class="descname">geolocation</code><a class="headerlink" href="#geolocation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ссыл­ка на объ­ект <a class="reference internal" href="Geolocation.html#Geolocation" title="Geolocation"><code class="xref js js-class docutils literal"><span class="pre">Geolocation()</span></code></a> для дан­но­го бро­узе­ра. Ме­то­ды это­го объ­ек­та по­зво­ ля­ют сце­на­ри­ям за­пра­ши­вать те­ку­щее гео­гра­фи­че­ское ме­сто­на­хо­ж­де­ние поль­зо­ ва­те­ля.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="onLine">
+<code class="descname">onLine</code><a class="headerlink" href="#onLine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Име­ет зна­че­ние false, ес­ли бро­узер не бу­дет пред­при­ни­мать по­пы­ток за­гру­зить что-ли­бо из се­ти. Это мо­жет быть обу­слов­ле­но тем, что бро­узер вы­пол­ня­ет­ся на ком­пь­ю­те­ре, не под­клю­чен­ном к се­ти, или тем, что поль­зо­ва­тель на­стро­ил бро­узер на ав­то­ном­ную ра­бо­ту. Ес­ли бро­узер бу­дет пред­при­ни­мать пы­тать­ся за­гру­зить что-ли­бо(по­то­му что ком­пь­ю­тер под­клю­чен к се­ти), это свой­ст­во бу­дет иметь зна­че­ние true.
+Ко­гда зна­че­ние это­го свой­ст­ва из­ме­ня­ет­ся, бро­узер воз­бу­ж­да­ет со­бы­тия «online» и «offline» в объ­ек­те Window.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="platform">
+<code class="descname">platform</code><a class="headerlink" href="#platform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Аппаратная платформа, на которой работает браузер</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="userAgent">
+<code class="descname">userAgent</code><a class="headerlink" href="#userAgent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="javaEnabled">
+<code class="descname">javaEnabled</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#javaEnabled" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="registerContentHandler">
+<code class="descname">registerContentHandler</code><span class="sig-paren">(</span><em>string mimeType</em>, <em>string url</em>, <em>string title</em><span class="sig-paren">)</span><a class="headerlink" href="#registerContentHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Этот ме­тод вы­пол­ня­ет за­прос на ре­ги­ст­ра­цию url как об­ра­бот­чи­ка, ис­поль­зуе­мо­го для ото­бра­же­ния со­дер­жи­мо­го ти­па mimeType. Ар­гу­мент title – за­го­ло­вок сай­та, ко­то­рый мо­жет ото­бра­жать­ся пе­ред поль­зо­ва­те­лем. Ар­гу­мент url дол­жен со­дер­жать стро­ку «%s». Ко­гда этот об­ра­бот­чик со­дер­жи­мо­го дол­жен бу­дет ис­поль­зо­вать­ся для об­ра­бот­ки веб-стра­ни­цы ука­зан­но­го ти­па mimeType, URL-ад­рес этой веб-стра­ни­цы бу­дет за­ко­ди­ро­ван и встав­лен в url на ме­сто «%s». За­тем бро­узер пе­рей­дет по по­лу­чив­ше­му­ся URL-ад­ре­су. Это но­вый ме­тод, вве­ден­ный спе­ци­фи­ка­ци­ей HTML5, и он мо­жет быть реа­ли­зо­ван не во всех бро­узе­рах.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="registerProtocolHandler">
+<code class="descname">registerProtocolHandler</code><span class="sig-paren">(</span><em>string scheme</em>, <em>string url</em>, <em>string title</em><span class="sig-paren">)</span><a class="headerlink" href="#registerProtocolHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Дей­ст­ву­ет по­доб­но ме­то­ду registerContentHandler(), но ре­ги­ст­ри­ру­ет веб-сайт для ис­поль­зо­ва­ния в ка­че­ст­ве об­ра­бот­чи­ка схе­мы про­то­ко­ла scheme, ука­зан­но­го в URL-ад­ре­се. Ар­гу­мент scheme дол­жен быть стро­кой, та­кой как «mailto» или «sms» без двое­то­чия. Это но­вый ме­тод, вве­ден­ный спе­ци­фи­ка­ци­ей HTML5, и он мо­жет быть реа­ли­зо­ван не во всех бро­узе­рах.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="yieldForStorageUpdates">
+<code class="descname">yieldForStorageUpdates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#yieldForStorageUpdates" title="Permalink to this definition">¶</a></dt>
+<dd><p>Сце­на­рии, ис­поль­зую­щие объ­ек­ты Document.cookie, Window.localStorage и Window.Ses­si­on­Storage, не име­ют воз­мож­но­сти оп­ре­де­лять, про­из­во­дят­ся
+ли из­ме­не­ния в хра­ни­ли­ще па­рал­лель­но вы­пол­няю­щи­ми­ся в раз­ных ок­нах сце­на­рия­ми (с тем же про­ис­хо­ж­де­ни­ем). Бро­узе­ры мо­гут (хо­тя на мо­мент на­пи­са­ния этих строк та­кую воз­мож­ность под­дер­жи­ва­ли не все бро­узе­ры) пре­дот­вра­тить па­рал­лель­ные из­ме­не­ния с по­мо­щью ме­ха­низ­ма бло­ки­ро­вок, по­доб­но­го то­му, что ис­поль­зу­ет­ся в ба­зах дан­ных. В бро­узе­рах, под­дер­жи­ваю­щих та­кую воз­мож­ность, этот ме­тод не­яв­но ос­во­бо­ж­да­ет бло­ки­ров­ку, пре­дос­тав­ляя воз­мож­ность сце­на­ри­ям в дру­гих ок­нах со­хра­нить свои из­ме­не­ния. Зна­че­ния, из­вле­кае­мые из хра­ни­ли­ща по­слевы­зо­ва это­го ме­то­да, мо­гут от­ли­чать­ся от тех, что из­вле­ка­лись пе­ред его вы­зо­вом.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="Location.html"
+                        title="previous chapter">Location - адрес текущей страницы</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="Screen.html"
+                        title="next chapter">Screen - информация о дисплее</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/dom/Navigator.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="Screen.html" title="Screen - информация о дисплее"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="Location.html" title="Location - адрес текущей страницы"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.26 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >DOM - дерево html документа</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

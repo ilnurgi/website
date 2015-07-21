@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>QThread - поток &mdash; Документация python документация 2015.05.20</title>
+    
+    <link rel="stylesheet" href="../../../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2015.05.20',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Документация python документация 2015.05.20" href="../../../index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="Алфавитный указатель"
+             accesskey="I">указатель</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Документация python документация 2015.05.20</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <span class="target" id="module-QtCore"></span><div class="section" id="qthread">
+<h1>QThread - поток<a class="headerlink" href="#qthread" title="Ссылка на этот заголовок">¶</a></h1>
+<dl class="class">
+<dt id="QtCore.QThread">
+<em class="property">class </em><code class="descclassname">QtCore.</code><code class="descname">QThread</code><span class="sig-paren">(</span><span class="optional">[</span><em>parent=None</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#QtCore.QThread" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Поток</p>
+<p>Наследник <a class="reference internal" href="index.html#QtCore.QObject" title="QtCore.QObject"><code class="xref py py-class docutils literal"><span class="pre">QtCore.QObject</span></code></a>.</p>
+<p>Для использования потоков, необходимо отнаследоваться от данного класса и определить в нем метод <cite>run</cite>, который выполнится в отдельном потоке.</p>
+<dl class="staticmethod">
+<dt id="QtCore.QThread.msleep">
+<em class="property">static </em><code class="descname">msleep</code><span class="sig-paren">(</span><em>millisec</em><span class="sig-paren">)</span><a class="headerlink" href="#QtCore.QThread.msleep" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="QtCore.QThread.sleep">
+<em class="property">static </em><code class="descname">sleep</code><span class="sig-paren">(</span><em>sec</em><span class="sig-paren">)</span><a class="headerlink" href="#QtCore.QThread.sleep" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="QtCore.QThread.usleep">
+<em class="property">static </em><code class="descname">usleep</code><span class="sig-paren">(</span><em>microsec</em><span class="sig-paren">)</span><a class="headerlink" href="#QtCore.QThread.usleep" title="Ссылка на это определение">¶</a></dt>
+<dd><p>временно прерывает выполнение потока</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="bp">self</span><span class="o">.</span><span class="n">msleep</span><span class="p">(</span><span class="mi">3000</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">usleep</span><span class="p">(</span><span class="mi">3000000</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="QtCore.QThread.emit">
+<code class="descname">emit</code><span class="sig-paren">(</span><em>signal</em>, <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#QtCore.QThread.emit" title="Ссылка на это определение">¶</a></dt>
+<dd><p>генерирует сигнал и передает данные</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="bp">self</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="n">QtCore</span><span class="o">.</span><span class="n">SIGNAL</span><span class="p">(</span><span class="s">&#39;mysignal(QString)&#39;</span><span class="p">),</span> <span class="s">&#39;i={0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="QtCore.QThread.isFinished">
+<code class="descname">isFinished</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#QtCore.QThread.isFinished" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает истину или ложь, поток завершен</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="QtCore.QThread.isRunning">
+<code class="descname">isRunning</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#QtCore.QThread.isRunning" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает истину или ложь, поток запущен</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="QtCore.QThread.priority">
+<code class="descname">priority</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#QtCore.QThread.priority" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает текущий приоритет потока</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="QtCore.QThread.setPriority">
+<code class="descname">setPriority</code><span class="sig-paren">(</span><em>&lt;приоритет&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#QtCore.QThread.setPriority" title="Ссылка на это определение">¶</a></dt>
+<dd><p>задает приоритет потока</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="QtCore.QThread.start">
+<code class="descname">start</code><span class="sig-paren">(</span><span class="optional">[</span><em>priority=QThread.InheritPriority</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#QtCore.QThread.start" title="Ссылка на это определение">¶</a></dt>
+<dd><p>запускает поток, с определенным приоритетом, по отношению к другим потокам потокам.
+Приоритеты в порядке увеличения:</p>
+<ol class="arabic simple" start="0">
+<li>IdlePriority - самый низкий приоритет</li>
+<li>LowestPriority</li>
+<li>LowPriority</li>
+<li>NormalPriority</li>
+<li>HightPriority</li>
+<li>HighestPriority</li>
+<li>TimeCriticalPriority - самый высокий приоритет</li>
+<li>InheritPriority - автоматический выбор приоритета</li>
+</ol>
+</dd></dl>
+
+<dl class="method">
+<dt id="QtCore.QThread.terminate">
+<code class="descname">terminate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#QtCore.QThread.terminate" title="Ссылка на это определение">¶</a></dt>
+<dd><p>прерывает выполенение потока, не рекомендуется использовать</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="QtCore.QThread.finished">
+<code class="descname">finished</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#QtCore.QThread.finished" title="Ссылка на это определение">¶</a></dt>
+<dd><p>сигнал, генерируется после завершения потока</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="QtCore.QThread.started">
+<code class="descname">started</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#QtCore.QThread.started" title="Ссылка на это определение">¶</a></dt>
+<dd><p>сигнал, генерируется при запуске потока</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>Эта страница</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/modules_user/pyqt/qtcore/qthread.txt"
+            rel="nofollow">Исходный текст</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Быстрый поиск</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Искать" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Введите слова для поиска или имя модуля, класса или функции.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="Алфавитный указатель"
+             >указатель</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Документация python документация 2015.05.20</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright ilnurgi.
+      Создано с помощью <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

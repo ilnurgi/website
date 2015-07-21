@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Location &mdash; p4a doc 14.10.12 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.10.12',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="p4a doc 14.10.12 documentation" href="../index.html" />
+    <link rel="next" title="MediaPlayer" href="MediaPlayer.html" />
+    <link rel="prev" title="Event - события" href="Event.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="MediaPlayer.html" title="MediaPlayer"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="Event.html" title="Event - события"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">p4a doc 14.10.12 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="location">
+<h1>Location<a class="headerlink" href="#location" title="Permalink to this headline">¶</a></h1>
+<dl class="method">
+<dt id="geocode">
+<tt class="descname">geocode</tt><big>(</big><em>double latitude</em>, <em>double longitude</em><span class="optional">[</span>, <em>int maxResults=1</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#geocode" title="Permalink to this definition">¶</a></dt>
+<dd><p>список адресов по геокоду</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="getLastKnownLocation">
+<tt class="descname">getLastKnownLocation</tt><big>(</big><big>)</big><a class="headerlink" href="#getLastKnownLocation" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает последнюю известную позицию</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="locationProviderEnabled">
+<tt class="descname">locationProviderEnabled</tt><big>(</big><em>str provider</em><big>)</big><a class="headerlink" href="#locationProviderEnabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>гпс устройство включено</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="locationProviders">
+<tt class="descname">locationProviders</tt><big>(</big><big>)</big><a class="headerlink" href="#locationProviders" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает доступные гпс устройства</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="readLocation">
+<tt class="descname">readLocation</tt><big>(</big><big>)</big><a class="headerlink" href="#readLocation" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает данные с гпс устройства</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="startLocating">
+<tt class="descname">startLocating</tt><big>(</big><span class="optional">[</span><em>int minDistance=60000 ms</em>, <em>int minUpdateDistance=30 m</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#startLocating" title="Permalink to this definition">¶</a></dt>
+<dd><p>включает гпс учтройство, возбуждает &#8220;location&#8221; events.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="stopLocating">
+<tt class="descname">stopLocating</tt><big>(</big><big>)</big><a class="headerlink" href="#stopLocating" title="Permalink to this definition">¶</a></dt>
+<dd><p>выключает гпс устройство</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="Event.html"
+                        title="previous chapter">Event - события</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="MediaPlayer.html"
+                        title="next chapter">MediaPlayer</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/Location.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="MediaPlayer.html" title="MediaPlayer"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="Event.html" title="Event - события"
+             >previous</a> |</li>
+        <li><a href="../index.html">p4a doc 14.10.12 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

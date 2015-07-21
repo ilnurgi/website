@@ -1,0 +1,243 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>dialog - виджет Dialog &mdash; jquery 2015.07.09 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2015.07.09',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="jquery 2015.07.09 documentation" href="../index.html" />
+    <link rel="up" title="jQueryUI" href="index.html" />
+    <link rel="next" title="draggable" href="draggable.html" />
+    <link rel="prev" title="datepicker - виджет Datepicker" href="datepicker.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="draggable.html" title="draggable"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="datepicker.html" title="datepicker - виджет Datepicker"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">jquery 2015.07.09 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">jQueryUI</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="dialog-dialog">
+<h1>dialog - виджет Dialog<a class="headerlink" href="#dialog-dialog" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="dialog">
+<code class="descname">dialog</code><span class="sig-paren">(</span><span class="optional">[</span><em>methodName</em>, <em>option</em>, <em>value</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#dialog" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descname">dialog</code><span class="sig-paren">(</span><span class="optional">[</span><em>methodName</em>, <em>param_obj</em><span class="optional">]</span><span class="sig-paren">)</span></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descname">dialog</code><span class="sig-paren">(</span><span class="optional">[</span><em>param_obj</em><span class="optional">]</span><span class="sig-paren">)</span></dt>
+<dd><div class="highlight-js"><div class="highlight"><pre>&lt;div id=&quot;dialog&quot; title=&quot;Dialog window&quot;&gt;
+    Message
+&lt;/div&gt;
+
+$(&#39;#dialog&#39;).dialog({
+    buttons: [
+    {
+        text: &#39;OK&#39;,
+        click: function(){
+            ...
+        }
+    }, {
+        text: &#39;CANCEL&#39;,
+        click: function(){
+            ...
+        }
+    }]
+    position: &#39;left&#39;,
+    position: [10, 20],
+    position: [&#39;left&#39;, &#39;top&#39;],
+    resizable: true,
+    title: &#39;Title&#39;,
+
+});
+</pre></div>
+</div>
+<ul>
+<li><p class="first"><cite>methodName</cite></p>
+<blockquote>
+<div><ul class="simple">
+<li><cite>destroy</cite> - Удаляет виджет Dialog из базового элемента</li>
+<li><cite>disable</cite> - Отключает диалоговое окно</li>
+<li><cite>enable</cite> - Включает диалоговое окно</li>
+<li><cite>option</cite> - Изменяет одну или несколько опций</li>
+<li><cite>close</cite> - Закрывает диалоговое окно</li>
+<li><cite>isOpen</cite> - Возвращает true, если диалоговое окно видимо на экране</li>
+<li><cite>moveToTop</cite> - Перемещает диалоговое окно на вершину стека</li>
+<li><cite>open</cite> -  Отображает диалоговое окно для пользователя</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><cite>param_obj</cite></p>
+<blockquote>
+<div><ul>
+<li><p class="first"><cite>autoOpen</cite> - Если эта опция равна true, то диалоговое окно открывается сразу же после его создания с помощью метода dialog (). Значение по умолчанию — true</p>
+</li>
+<li><p class="first"><cite>beforeClose</cite> - Происходит непосредственно перед закрытием диалогового окна. Возврат значения false функцией — обработчиком события принудительно оставляет диалоговое окно открытым</p>
+</li>
+<li><p class="first"><cite>buttons</cite> - Позволяет указать набор кнопок, которые должны быть добавлены в виджет, и функ­ции, которые будут вызываться после щелчка на соответствующей кнопке. По умол­чанию кнопки отсутствуют</p>
+</li>
+<li><p class="first"><cite>create</cite> - Происходит, когда виджет Dialog применяется к базовому HTML-элементу</p>
+</li>
+<li><p class="first"><cite>close</cite> - Происходит при закрытии диалогового окна</p>
+</li>
+<li><p class="first"><cite>closeOnEscape</cite> - Если эта опция равна true, то диалоговое окно можно будет убрать с экрана, на­жав клавишу &lt;Esc&gt;. Значение по умолчанию — true</p>
+</li>
+<li><p class="first"><cite>drag</cite> - Происходит при каждом перемещении мыши в процессе перетаскивания диалогового окна</p>
+</li>
+<li><p class="first"><cite>draggable</cite> - Если эта опция равна true, то пользователь сможет перемещать диалоговое окно, перетаскивая его заголовок, в пределах окна браузера</p>
+</li>
+<li><p class="first"><cite>dragStart</cite> - Происходит, когда пользователь начинает перетаскивать диалоговое окно</p>
+</li>
+<li><p class="first"><cite>dragStop</cite> - Происходит по окончании перетаскивания пользователем диалогового окна</p>
+</li>
+<li><p class="first"><cite>focus</cite> - Происходит при получении фокуса диалоговым окном</p>
+</li>
+<li><p class="first"><cite>height</cite> - Определяет начальную высоту диалогового окна в пикселях. По умолчанию имеет значение auto, при котором высота диалогового окна устанавливается автоматически</p>
+</li>
+<li><p class="first"><cite>hide</cite> - Определяет тип анимации, используемой для сокрытия диалогового окна.</p>
+</li>
+<li><p class="first"><cite>maxHeight</cite> - Определяет максимальную высоту диалогового окна в пикселях. По умолчанию имеет значение false, которому соответствует отсутствие ограничений по высоте</p>
+</li>
+<li><p class="first"><cite>maxWidth</cite> - Определяет максимальную ширину диалогового окна в пикселях. По умолчанию име­ет значение false, которому соответствует отсутствие ограничений по ширине</p>
+</li>
+<li><p class="first"><cite>minHeight</cite> - Определяет минимальную высоту диалогового окна в пикселях. По умолчанию имеет значение false, которому соответствует отсутствие ограничений по высоте</p>
+</li>
+<li><p class="first"><cite>minwidth</cite> - Определяет минимальную ширину диалогового окна в пикселях. По умолчанию имеет значение false, которому соответствует отсутствие ограничений по ширине</p>
+</li>
+<li><p class="first"><cite>modal</cite> - Если эта опция равна true, то диалоговое окно будет создано как модальное, и по­ка оно не будет скрыто, пользователь не сможет взаимодействовать с документом</p>
+</li>
+<li><p class="first"><cite>open</cite> - Происходит при открытии диалогового окна</p>
+</li>
+<li><p class="first"><cite>position</cite> - Определяет начальную позицию диалогового окна. Значение по умолчанию — center, которому соответствует расположение диалогового окна по центру окна браузера</p>
+<blockquote>
+<div><ul class="simple">
+<li><cite>bottom</cite></li>
+<li><cite>center</cite></li>
+<li><cite>left</cite></li>
+<li><cite>right</cite></li>
+<li><cite>top</cite></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><cite>resize</cite> - Происходит при каждом перемещении мыши в процессе изменения размера диалого­вого окна</p>
+</li>
+<li><p class="first"><cite>resizable</cite> - Если эта опция равна true, то диалоговое окно будет иметь кнопку-манипулятор, с помощью которой пользователь сможет изменить его размер. Значение по умолчанию — true</p>
+</li>
+<li><p class="first"><cite>resizeStart</cite> - Происходит, когда пользователь начинает изменять размер диалогового окна</p>
+</li>
+<li><p class="first"><cite>resizeStop</cite> - Происходит по окончании изменения пользователем размеров диалогового окна</p>
+</li>
+<li><p class="first"><cite>show</cite> - Определяет тип анимации, используемой для отображения диалогового окна.</p>
+</li>
+<li><p class="first"><cite>stack</cite> - Если эта опция равна true, то щелчок на диалоговом окне перемещает его на пе­редний план на экране. Значение по умолчанию — true</p>
+</li>
+<li><p class="first"><cite>title</cite> - Определяет заголовок диалогового окна</p>
+</li>
+<li><p class="first"><cite>width</cite> - Определяет начальную ширину диалогового окна в пикселях. По умолчанию имеет значение auto, при котором высота диалогового окна устанавливается автоматиче­ски</p>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="datepicker.html"
+                        title="previous chapter">datepicker - виджет Datepicker</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="draggable.html"
+                        title="next chapter">draggable</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/jqueryui/dialog.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="draggable.html" title="draggable"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="datepicker.html" title="datepicker - виджет Datepicker"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">jquery 2015.07.09 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >jQueryUI</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

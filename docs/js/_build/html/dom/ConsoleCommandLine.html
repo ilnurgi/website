@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>ConsoleCommandLine - утилита для работы с окном консоли &mdash; js doc 2015.06.26 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2015.06.26',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="js doc 2015.06.26 documentation" href="../index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.26 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="consolecommandline">
+<h1>ConsoleCommandLine - утилита для работы с окном консоли<a class="headerlink" href="#consolecommandline" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ConsoleCommandLine">
+<em class="property">class </em><code class="descname">ConsoleCommandLine</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ConsoleCommandLine" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="_S_0">
+<code class="descname">$0</code><a class="headerlink" href="#_S_0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Эле­мент до­ку­мен­та, вы­бран­ный по­след­ним не­ко­то­ры­ми сред­ст­ва­ми от­лад­чи­ка</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="_S_1">
+<code class="descname">$1</code><a class="headerlink" href="#_S_1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Эле­мент до­ку­мен­та, вы­бран­ный пе­ред эле­мен­том $0</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="cd">
+<code class="descname">cd</code><span class="sig-paren">(</span><em>Window frame</em><span class="sig-paren">)</span><a class="headerlink" href="#cd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ко­гда до­ку­мент вклю­ча­ет вло­жен­ные фрей­мы, функ­ция cd() по­зво­ля­ет пе­ре­клю­чать гло­баль­ные объ­ек­ты и вы­пол­нять по­сле­дую­щие ко­ман­ды в об­лас­ти ви­ди­мо­сти фрей­ма frame.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="clear">
+<code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Очи­ща­ет ок­но кон­со­ли.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="dir">
+<code class="descname">dir</code><span class="sig-paren">(</span><em>object o</em><span class="sig-paren">)</span><a class="headerlink" href="#dir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Вы­во­дит свой­ст­ва или эле­мен­ты объ­ек­та или мас­си­ва o. Дей­ст­ву­ет по­доб­но ме­то­ду Console.dir().</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="dirxml">
+<code class="descname">dirxml</code><span class="sig-paren">(</span><em>Element elt</em><span class="sig-paren">)</span><a class="headerlink" href="#dirxml" title="Permalink to this definition">¶</a></dt>
+<dd><p>Вы­во­дит раз­мет­ку XML или HTML эле­мен­та elt. Дей­ст­ву­ет по­доб­но ме­то­ду Console.dirxml().</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_S_">
+<code class="descname">$</code><span class="sig-paren">(</span><em>string id</em><span class="sig-paren">)</span><a class="headerlink" href="#_S_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Крат­кий псев­до­ним функ­ции document.getElementById()</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_S__S_">
+<code class="descname">$$</code><span class="sig-paren">(</span><em>string selector</em><span class="sig-paren">)</span><a class="headerlink" href="#_S__S_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Воз­вра­ща­ет объ­ект, по­доб­ный мас­си­ву, со­дер­жа­щий все эле­мен­ты, со­от­вет­ст­вую­ щие CSS-се­лек­то­ру selector. Это крат­кий псев­до­ним функ­ции document.querySelec­torAll(). В не­ко­то­рых бро­узе­рах воз­вра­ща­ет на­стоя­щий мссив, а не объ­ект NodeList.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="inspect">
+<code class="descname">inspect</code><span class="sig-paren">(</span><em>any object</em><span class="optional">[</span>, <em>string tabname</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#inspect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ото­бра­жа­ет объ­ект object, при этом мо­жет пе­ре­клю­чать­ся из кон­со­ли на дру­гую вклад­ку от­лад­чи­ка. Во вто­ром ар­гу­мен­те пе­ре­да­ет­ся не­обя­за­тель­ная под­сказ­ка, оп­ре­де­ляю­щая, как дол­жен ото­бра­жать­ся объ­ект object. Под­дер­жи­ва­ют­ся зна­че­ния: «html», «css», «script» и «dom».</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="keys">
+<code class="descname">keys</code><span class="sig-paren">(</span><em>any object</em><span class="sig-paren">)</span><a class="headerlink" href="#keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Воз­вра­ща­ет мас­сив с име­на­ми свойств объ­ек­та object.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="monitorEvents">
+<code class="descname">monitorEvents</code><span class="sig-paren">(</span><em>Element object</em><span class="optional">[</span>, <em>string type</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#monitorEvents" title="Permalink to this definition">¶</a></dt>
+<dd><p>Вы­во­дит со­об­ще­ния о со­бы­ти­ях ти­па type, дос­тав­ляе­мых в объ­ект object. В чис­ло под­дер­жи­вае­мых зна­че­ний ар­гу­мен­та type вхо­дят: «mouse», «key», «text», «load», «form», «drag» и «contextmenu». Ес­ли ар­гу­мент type не ука­зан, вы­во­дят­ся со­об­ще­ния обо всех со­бы­ти­ях в объ­ек­те object.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="profile">
+<code class="descname">profile</code><span class="sig-paren">(</span><em>string title</em><span class="sig-paren">)</span><a class="headerlink" href="#profile" title="Permalink to this definition">¶</a></dt>
+<dd><p>За­пус­ка­ет про­фи­ли­ров­щик про­грамм­но­го ко­да. Дей­ст­ву­ет по­доб­но ме­то­ду Conso­le.profile().</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="profileEnd">
+<code class="descname">profileEnd</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#profileEnd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ос­та­нав­ли­ва­ет про­фи­ли­ров­щик. Дей­ст­ву­ет по­доб­но ме­то­ду Console.profileEnd().</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="unmonitorEvents">
+<code class="descname">unmonitorEvents</code><span class="sig-paren">(</span><em>Element object</em><span class="optional">[</span>, <em>string type</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#unmonitorEvents" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ос­та­нав­ли­ва­ет мо­ни­то­ринг со­бы­тий ти­па type в объ­ек­те object.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="] values">
+<code class="descname">] values</code><span class="sig-paren">(</span><em>any object</em><span class="sig-paren">)</span><a class="headerlink" href="#] values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Воз­вра­ща­ет мас­сив зна­че­ний свойств объ­ек­та object.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/dom/ConsoleCommandLine.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.26 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

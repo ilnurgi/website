@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Style - HTML style &mdash; js doc 2015.06.26 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2015.06.26',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="js doc 2015.06.26 documentation" href="../index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.26 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="style-html-style">
+<h1>Style - HTML style<a class="headerlink" href="#style-html-style" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="Style">
+<em class="property">class </em><code class="descname">Style</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Style" title="Permalink to this definition">¶</a></dt>
+<dd><p>Наследник <a class="reference internal" href="Element.html#Element" title="Element"><code class="xref js js-class docutils literal"><span class="pre">Element()</span></code></a></p>
+<dl class="attribute">
+<dt id="disabled">
+<code class="descname">disabled</code><a class="headerlink" href="#disabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ус­та­нов­ка это­го свой­ст­ва в  зна­че­ние true от­клю­чит таб­ли­цу сти­лей, свя­зан­ную с дан­ным эле­мен­том &lt;style&gt;, а ус­та­нов­ка в зна­че­ние false сно­ва вклю­чит ее.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="media">
+<code class="descname">media</code><a class="headerlink" href="#media" title="Permalink to this definition">¶</a></dt>
+<dd><p>Это свой­ст­во со­от­вет­ст­ву­ет HTML-ат­ри­бу­ту media и  оп­ре­де­ля­ет уст­рой­ст­ва, при ото­бра­же­нии в ко­то­рых долж­на при­ме­нять­ся ука­зан­ная таб­ли­ца сти­лей.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scoped">
+<code class="descname">scoped</code><a class="headerlink" href="#scoped" title="Permalink to this definition">¶</a></dt>
+<dd><p>Име­ет зна­че­ние true, ес­ли в эле­мен­те &lt;style&gt; при­сут­ст­ву­ет HTML-ат­ри­бут scoped, и false – в про­тив­ном слу­чае. На мо­мент на­пи­са­ния этих строк бро­узе­ры не под­дер­жи­ва­ли кон­тек­ст­ные (scoped) таб­ли­цы сти­лей.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="sheet">
+<code class="descname">sheet</code><a class="headerlink" href="#sheet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Объ­ект CSSStyleSheet, оп­ре­де­ляе­мый дан­ным эле­мен­том &lt;style&gt;.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="title">
+<code class="descname">title</code><a class="headerlink" href="#title" title="Permalink to this definition">¶</a></dt>
+<dd><p>Все HTML-эле­мен­ты име­ют ат­ри­бут title. С по­мо­щью это­го ат­ри­бу­та или свой­ст­ва эле­мен­та &lt;style&gt; мож­но дать поль­зо­ва­те­лю воз­мож­ность вы­брать аль­тер­на­тив­ную таб­ли­цу сти­лей по на­зва­нию, и ука­зан­ное зна­че­ние свой­ст­ва title мо­жет ото­бра­жать­ся в ин­тер­фей­се бро­узе­ра в не­ко­то­ром оформ­ле­нии.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="type">
+<code class="descname">type</code><a class="headerlink" href="#type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Со­от­вет­ст­ву­ет HTML-ат­ри­бу­ту type. По умол­ча­нию име­ет зна­че­ние «text/css», и обыч­но нет не­об­хо­ди­мо­сти ука­зы­вать дру­гое зна­че­ние это­го ат­ри­бу­та.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/dom/Style.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.26 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

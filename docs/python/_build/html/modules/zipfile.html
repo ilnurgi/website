@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>zipfile &mdash; Документация python документация 2015.05.20</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2015.05.20',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Документация python документация 2015.05.20" href="../index.html" />
+    <link rel="up" title="Основные модули" href="index.html" />
+    <link rel="next" title="Сторонние модули" href="../modules_user/index.html" />
+    <link rel="prev" title="xml.sax.saxutils" href="xml_sax_saxutils.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Алфавитный указатель"
+             accesskey="I">указатель</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="../modules_user/index.html" title="Сторонние модули"
+             accesskey="N">вперёд</a> |</li>
+        <li class="right" >
+          <a href="xml_sax_saxutils.html" title="xml.sax.saxutils"
+             accesskey="P">назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Документация python документация 2015.05.20</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Основные модули</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <span class="target" id="module-zipfile"></span><div class="section" id="zipfile">
+<h1>zipfile<a class="headerlink" href="#zipfile" title="Ссылка на этот заголовок">¶</a></h1>
+<dl class="class">
+<dt id="zipfile.ZipFile">
+<em class="property">class </em><code class="descclassname">zipfile.</code><code class="descname">ZipFile</code><span class="sig-paren">(</span><em>file</em>, <em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#zipfile.ZipFile" title="Ссылка на это определение">¶</a></dt>
+<dd><p>объект архив</p>
+<dl class="method">
+<dt id="zipfile.ZipFile.write">
+<code class="descname">write</code><span class="sig-paren">(</span><em>src</em>, <em>localpath</em><span class="sig-paren">)</span><a class="headerlink" href="#zipfile.ZipFile.write" title="Ссылка на это определение">¶</a></dt>
+<dd><p>добавляет в архив файл</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>src</strong> (<em>str</em>) &#8211; путь к файлу</li>
+<li><strong>localpath</strong> (<em>str</em>) &#8211; путь файла в архиве</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="zipfile.ZipFile.read">
+<code class="descname">read</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#zipfile.ZipFile.read" title="Ссылка на это определение">¶</a></dt>
+<dd><p>читает файл из архива, возвращает данные в бинарном формате</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><strong>path</strong> (<em>str</em>) &#8211; путь к файлу</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="zipfile.ZipFile.namelist">
+<code class="descname">namelist</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zipfile.ZipFile.namelist" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает список строк, путей к файлам архива</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Предыдущий раздел</h4>
+  <p class="topless"><a href="xml_sax_saxutils.html"
+                        title="предыдущая глава">xml.sax.saxutils</a></p>
+  <h4>Следующий раздел</h4>
+  <p class="topless"><a href="../modules_user/index.html"
+                        title="следующая глава">Сторонние модули</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Эта страница</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/modules/zipfile.txt"
+            rel="nofollow">Исходный текст</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Быстрый поиск</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Искать" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Введите слова для поиска или имя модуля, класса или функции.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Алфавитный указатель"
+             >указатель</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="../modules_user/index.html" title="Сторонние модули"
+             >вперёд</a> |</li>
+        <li class="right" >
+          <a href="xml_sax_saxutils.html" title="xml.sax.saxutils"
+             >назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Документация python документация 2015.05.20</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Основные модули</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright ilnurgi.
+      Создано с помощью <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

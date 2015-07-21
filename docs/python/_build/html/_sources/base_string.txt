@@ -1,0 +1,360 @@
+Строки
+======================
+
+Строки это итерируемые объекты.
+
+::
+
+    >>> 'ilnurgi' + '.ru'
+    'ilnurgi.ru'
+
+    >>> 'ilnurgi' * 3
+    'ilnurgiilnurgiilnurgi'
+
+    >>> 'il' in 'ilnurgi'
+    True
+
+    >>> 'il' not in 'ilnurgi'
+    False
+
+    >>> 'ilnurgi'[0]
+    'i'
+
+    >>> 'ilnurgi'[2]
+    'n'
+
+    >>> 'ilnurgi'[:2]
+    'il'
+
+    >>> 'ilnurgi'[-2:]
+    'gi'
+
+Методы
+------
+
+.. py:method:: str.capitalize()
+    
+    Возвращает строку, у которой первая буква заменена на прописную
+    
+    >>> 'ilnur'.capitalize()
+    'Ilnur'
+
+.. py:method:: str.center(width)  
+
+    :param width: длина возвращаемой строки 
+    :type width: int
+
+    Возвращает строку, заданной длины, выравненная по центру.
+
+    >>> 'ilnur'.center(7)
+    ' ilnur '
+
+.. py:method:: str.count(sub [, start [, end]])
+    
+    :param sub: искомая строка 
+    :type sub: str
+    :param start: начальная позиция 
+    :type start: int
+    :param end: конечноая позиция 
+    :type end: int
+
+    Возвращает число, количество вхождений искомой строки в исходной строке.
+    
+    >>> 'Help me! Help!'.count('Help')
+    2
+
+.. py:method:: str.decode(coding)
+    
+    :param coding: кодировка 
+    :type coding: str
+    
+    Возвращает строку, раскодированная из указанной кодировки в юникод.
+        
+    >>> '\xd0\xb8\xd0\xbb\xd1\x8c\xd0\xbd\xd1\x83\xd1\x80'
+    '\xd0\xb8\xd0\xbb\xd1\x8c\xd0\xbd\xd1\x83\xd1\x80'
+    >>> '\xd0\xb8\xd0\xbb\xd1\x8c\xd0\xbd\xd1\x83\xd1\x80'.decode('utf-8')
+    u'\u0438\u043b\u044c\u043d\u0443\u0440'
+
+.. py:method:: str.encode(coding)
+    
+    :param coding: кодировка 
+    :type coding: str
+    
+    Возвращает строку, закодированную из юникода в указанную кодировку.
+    
+    >>> u'Ильнур'
+    u'\u0418\u043b\u044c\u043d\u0443\u0440'
+    >>> u'Ильнур'.encode('cp1251')
+    '\xc8\xeb\xfc\xed\xf3\xf0'
+
+.. py:method:: str.endswith(sub[, start [, end]])
+    
+    :param sub: искомая строка
+    :type sub: str
+    :param strat: начальная позиция
+    :type start: int
+    :param end: конечная позиция
+    :type end: int
+    
+    Возвращает True | False, если строка заканчивается c искомой строки
+    >>> 'ilnur'.endswith('il')
+    False
+    >>> 'ilnur'.endswith('nur')
+    True
+
+.. py:method:: str.expandtabs([tabsize = 8])
+    
+    :param tabsize: количество пробелов за место табуляции 
+    :type tabsize: int
+
+    Возвращает строку, символы табуляции заменены указанным количеством пробелов.
+    
+    >>> u'\tИльнур'.expandtabs()
+    u'        \u0418\u043b\u044c\u043d\u0443\u0440'
+
+.. py:method:: str.find(sub[, start [, end]])
+    
+    :param sub: искомая строка
+    :type sub: str
+    :param start: начальная позиция 
+    :type start: int
+    :param end: конченая позиция 
+    :type end: int
+
+    Возвращает число, позиция в котором встречается искомая строка, если ничего не найдено возвращает -1, поиск ведется слева.
+    
+    >>> 'ilnur'.find('nur')
+    2
+    >>> 'ilnur'.find('run')
+    -1
+
+.. py:method:: str.format(args)
+    
+    Возвращает строку, форматированную в соответствии с параметрами args
+    
+    >>> '{0} и {1}'.format('фарш', 'яйца')
+    'фарш и яйца'
+    >>> 'Этот {food} — {adjective}.'.format(food='фарш', adjective='непередаваемо ужасен')
+    Этот фарш — непередаваемо ужасен.
+    >>> 'История о {0}е, {1}е, и {other}е.'.format('Билл', 'Манфред', other='Георг')
+    История о Билле, Манфреде, и Георге.
+    >>> 'Значение ПИ — примерно {0:.3f}.'.format(3.14))
+    Значение ПИ — примерно 3.14159.
+    >>> '{0:10} ==> {1:10d}'.format('Sjoerd', 4127)
+    Sjoerd     ==>       4127
+    table = {'Sjoerd': 4127, 'Jack': 4098, 'Dcab': 8637678}
+    >>> 'Jack: {0[Jack]:d}; Sjoerd: {0[Sjoerd]:d}; Dcab: {0[Dcab]:d}'.format(table))
+    Jack: 4098; Sjoerd: 4127; Dcab: 8637678
+
+.. py:method:: str.join(iter)
+    
+    :param iter: итерируемый объект
+    :type iter: iter
+
+    Возвращает строку, содержащий сконкатенированные значения исходной строки с итерируемым объектом.
+
+    >>> 'ilnur'.join('---')
+    '-ilnur-ilnur-'
+
+.. py:method:: str.index(sub [, start [, end]])
+    
+    :param text: искомая строка
+    :type str: str
+    :param start: начальная позиция 
+    :type start: int
+    :param end: конченая позиция 
+    :type end: int
+
+    Возвращает число, позиция в котором встречается искомая строка, если ничего не найдено вызовет исключение, поиск ведется слева.
+    
+    >>> 'ilnur'.index('nur')
+    2
+    >>> 'ilnur'.index('run')
+    Traceback (most recent call last):
+        File "<stdin>", line 1, in <module>
+    ValueError: substring not found
+
+.. py:method:: str.isalpha()
+    
+    Возвращает True | False, если строка содержит только буквы
+    
+    >>> '123'.isalpha()
+    False
+    >>> 'ilnur'.isalpha()
+    True
+
+.. py:method:: str.isdigit()
+    
+    Возвращает True | False, если строка содержит только цифры
+    
+    >>> '123'.isdigit()
+    True
+    >>> 'ilnur'.isdigit()
+    False
+
+.. py:method:: str.islower()
+
+    Возвращает True | False, если строка содержит только строчные буквы
+
+.. py:method:: str.isspace()
+    
+    Возвращает True | False, если строка содержит только пробельные символы
+
+    >>> '123'.isalpha()
+    False
+
+.. py:method:: str.istitle()
+
+    Возвращает True | False, если строка содержит только заглавные буквы
+
+.. py:method:: str.lower()
+    
+    Возвращает строку, в нижнем регистре 
+    
+    >>> 'iLnur'.lower()
+    'ilnur'
+
+.. py:method:: str.ljust(width)
+    
+    :param width: длина возвращаемой строки 
+    :type width: int
+
+    Возвращает строку, заданной длины, выравненная слева.
+
+    >>> 'ilnur'.ljust(7)
+    'ilnur  '
+
+.. py:method:: lstrip()
+    
+    Возвращает строку, с удаленными пробелами слева
+
+    >>> ' ilnur privet '.lstrip()
+    'ilnur privet  '
+
+.. py:method:: str.replace(old, new)
+    
+    :param old: старая 
+    :type old: str
+    :param new: новая 
+    :type old: str
+    
+    Возвращает строку, с замененой строкой на новую строку.
+    
+    >>> 'ilnur'.replace('nur','nurgi')
+    'ilnurgi'
+
+.. py:method:: str.rfind(sub [, start [, end]])
+
+    :param sub: искомая строка
+    :type sub: str
+    :param start: начальная позиция 
+    :type start: int
+    :param end: конченая позиция 
+    :type end: int
+
+    Аналог :py:meth:`str.find`.  
+    Возвращает число, с которого начинается искомая строка, если ничего не найдено возвращает -1, поиск ведется справа. 
+    
+.. py:method:: str.rindex(sub [, start [, end]])
+    
+    :param sub: искомая строка
+    :type sub: str
+    :param start: начальная позиция 
+    :type start: int
+    :param end: конченая позиция 
+    :type end: int
+
+    Аналог :py:meth:`str.index`.  
+    Возвращает число, с которого начинается искомая строка, если ничего не найдено вызовет исключение, поиск ведется справа.
+
+.. py:method:: str.rjust(width)
+
+    :param width: длина возвращаемой строки 
+    :type width: int
+
+    Возвращает строку, заданной длины, выравненная по центру.
+    
+    >>> 'ilnur'.rjust(7)
+    '  ilnur'
+
+.. py:method:: rstrip()
+    
+    Возвращает строку, с удаленными пробелами слева/справа или с обоих концов соответственно.
+   
+    >>> ' ilnur privet '.rstrip()
+    ' ilnur privet'
+
+.. py:method:: str.split(razd[, maxcount])
+    
+    :param razd: разделитель
+    :type razd: str
+    :param maxcount: количество элементов в списке
+    :type maxcount: int
+    
+    Возвращает список, полученный из строки, путем разделения разделителем.
+
+    >>> 'i l n u r'.split(' ')
+    ['i', 'l', 'n', 'u', 'r']
+
+.. py:method:: str.splitlines([keepends])
+    
+    :param keepends: включать ли символ перевода каретки
+    :var keepends: True/False
+    
+    Возвращает список, аналогично .. py:method: 'str.split', но использующий в качестве разделителя переход на новую строку. Символы перехода на новую строку включаются в результат, только если необязательный аргумент keepends равен 1.
+
+    >>> """Hello World!\nHello!""".splitlines()
+    ['Hello World!', 'Hello!']
+
+.. py:method:: str.startswith(sub[, start [, end]])
+    
+    :param sub: искомая строка
+    :type sub: str
+    :param strat: начальная позиция
+    :type start: int
+    :param end: конечная позиция
+    :type end: int
+    
+    Возвращает True | False, если строка начинается c искомой строки
+    >>> 'ilnur'.startswith('il')
+    True
+    >>> 'ilnur'.startswith('nur')
+    False
+
+.. py:method:: str.strip()
+    
+    Возвращает строку, с удаленными пробелами c обоих концов соответственно.
+
+    >>> ' ilnur '.strip()
+    'ilnur'
+
+.. py:method:: str.swapcase()
+    
+    Возвращает строку, в которой регистр букв изменен с верхнего на нижний и наоборот.
+
+    >>> 'Ilnur'.swapcase()
+    'iLNUR'
+
+.. py:method:: str.title()
+    
+    Возвращает строку, в которой регистр букв соответствует заголовку.
+    
+    >>> 'ilnur'.title()
+    'ILNUR'
+
+.. py:method:: str.upper()
+    
+    Возвращает строку, в верхнем регистре
+    
+    >>> 'iLnur'.upper()
+    'ILNUR'
+
+.. py:method:: str.zfill(width)
+
+    :param width: длина возвращаемой строки 
+    :type width: int
+    
+    Возвращает строку, заданной длины, пустое пространство слева заполнится нулями
+
+    >>> '12'.zfill(5)
+    '00012'

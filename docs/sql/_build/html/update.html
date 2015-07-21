@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>UPDTAE &mdash; sql doc 14.10.12 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '14.10.12',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="sql doc 14.10.12 documentation" href="index.html" />
+    <link rel="next" title="DELETE" href="delete.html" />
+    <link rel="prev" title="INSERT" href="insert.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="delete.html" title="DELETE"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="insert.html" title="INSERT"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">sql doc 14.10.12 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="updtae">
+<h1>UPDTAE<a class="headerlink" href="#updtae" title="Permalink to this headline">¶</a></h1>
+<p>Оператор обновления записи</p>
+<div class="highlight-c"><div class="highlight"><pre>UPDATE
+[OR &lt;алгоритм&gt;]
+[&lt;название БД&gt;.]&lt;таблица&gt;
+SET &lt;поле1&gt; = &lt;значение1&gt;, &lt;поле2&gt;=&lt;значение2&gt;, ...
+[WHERE &lt;условие&gt;]
+</pre></div>
+</div>
+<ul>
+<li><p class="first"><cite>[OR &lt;алгоритм&gt;]</cite> - задает способ разрешения конфликтных ситуации. Алгоритмы:</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><cite>ABORT</cite> - при ошибке, аннулируются все изменения и выводится сообщение об ошибке</p>
+</li>
+<li><p class="first"><cite>FAIL</cite> - при ошибке, изменения сохраняются, выполнение команды прерывается и выводится сообщение об ошибке</p>
+</li>
+<li><p class="first"><cite>IGNORE</cite> - ошибка игнорируется</p>
+</li>
+<li><p class="first"><cite>REPLACE</cite></p>
+<blockquote>
+<div><ul class="simple">
+<li>при нарушении условия <cite>UNIQUE</cite> существующая запись удаляется, а новая вставляется. сообщение об ошибке не выводится</li>
+<li>при нарушении условия <cite>NOT NULL</cite>, значение <cite>NULL</cite> заменяется значением по умолчанию, а если он не задан то выполняется алгоритм <cite>ABORT</cite></li>
+<li>если нарушено условие <cite>CHECK</cite>, применяется алгоритм <cite>IGNORE</cite></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><cite>ROLLBACK</cite> - при ошибке, транзакция завершается с откатом всех изменений, дальнейшее выполнение прерывается и выводится сообщение об ошибке. Если активной транзакций нет, то используется алгоритм <cite>ABORT</cite></p>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<div class="highlight-c"><div class="highlight"><pre>UPDATE table SET name=&#39;name&#39; where id=3
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="insert.html"
+                        title="previous chapter">INSERT</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="delete.html"
+                        title="next chapter">DELETE</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/update.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="delete.html" title="DELETE"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="insert.html" title="INSERT"
+             >previous</a> |</li>
+        <li><a href="index.html">sql doc 14.10.12 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

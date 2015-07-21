@@ -1,0 +1,43 @@
+altere32
+========
+
+>>> $ ensymble.py altere32
+        [--uid=0x01234567] [--secureid=0x01234567] [--vendorid=0x01234567]
+        [--caps=Cap1+Cap2+...] [--encoding=terminal,filesystem] [--verbose]
+        <infile> <outfile>
+
+>>> $ ensymble.py altere32
+        [--uid=0x01234567] [--secureid=0x01234567] [--vendorid=0x01234567]
+        [--caps=Cap1+Cap2+...] [--encoding=terminal,filesystem] [--verbose]
+        --inplace <infile>...
+
+
+Данная команда добавляет права в Symbian EXEs and DLLs. 
+
+
+Опции
+-----
+
+    * infile - путь к исходному файлу
+    * outfile - путь к результирующему файлу
+    * --inplace, -i - путь к папке с файлами
+    * --uid=0x01234567, -u 0x01234567 - юид приложения, если не задан то uid не изменится
+    * --secureid=0x01234567, -s 0x01234567 - аналогично uid
+    * --vendorid=0x01234567б -r 0x01234567 - аналогично uid
+    * --caps=Cap1+Cap2+..., -b Cap1+Cap2+..., --caps=0x12345. -b 0x12345 - права доступа
+    * --heapsize=min,max, -H min,max - ограничения использования ОЗУ
+
+Примеры
+-------
+
+    >>> $ ensymble.py altere32
+        --caps=LocalServices+Location+NetworkServices+PowerMgmt+ProtServ+
+        ReadUserData+SurroundingsDD+SWEvent+UserEnvironment+WriteUserData+
+        ReadDeviceData+TrustedUI+WriteDeviceData
+        myextension_orig.pyd myextension.pyd
+
+    >>> $ ensymble.py altere32 --caps=0xff1b4 --inplace *.dll
+
+    >>> $ ensymble.py altere32 --heapsize=4k,4M myapp_orig.exe myapp.exe
+
+.. note:: When modifying the UID, the secure ID should be modified accordingly. Modifying UIDs of application EXEs is generally not possible, because applications usually include the UID in program code as well.

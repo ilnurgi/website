@@ -1,0 +1,232 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>io &mdash; Документация python документация 2015.05.20</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2015.05.20',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Документация python документация 2015.05.20" href="../index.html" />
+    <link rel="up" title="Основные модули" href="index.html" />
+    <link rel="next" title="itertools" href="itertools.html" />
+    <link rel="prev" title="inspect - сбор информации о существующих объектах" href="inspect.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Алфавитный указатель"
+             accesskey="I">указатель</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="itertools.html" title="itertools"
+             accesskey="N">вперёд</a> |</li>
+        <li class="right" >
+          <a href="inspect.html" title="inspect - сбор информации о существующих объектах"
+             accesskey="P">назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Документация python документация 2015.05.20</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Основные модули</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <span class="target" id="module-io"></span><div class="section" id="io">
+<h1>io<a class="headerlink" href="#io" title="Ссылка на этот заголовок">¶</a></h1>
+<dl class="class">
+<dt id="io.StringIO">
+<em class="property">class </em><code class="descclassname">io.</code><code class="descname">StringIO</code><span class="sig-paren">(</span><em>[&lt;начальное значение&gt;][, newline=None]</em><span class="sig-paren">)</span><a class="headerlink" href="#io.StringIO" title="Ссылка на это определение">¶</a></dt>
+<dd><p>данный класс позволяет раьотать со строкой как с файловым объектом</p>
+<dl class="method">
+<dt id="io.StringIO.close">
+<code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#io.StringIO.close" title="Ссылка на это определение">¶</a></dt>
+<dd><p>закрыват файл</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="io.StringIO.flush">
+<code class="descname">flush</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#io.StringIO.flush" title="Ссылка на это определение">¶</a></dt>
+<dd><p>cбрасывает данные из буфера в файл</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="io.StringIO.getvalue">
+<code class="descname">getvalue</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#io.StringIO.getvalue" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает содержимое файла</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="io.StringIO.read">
+<code class="descname">read</code><span class="sig-paren">(</span><span class="optional">[</span><em>&lt;количесвто символов&gt;</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#io.StringIO.read" title="Ссылка на это определение">¶</a></dt>
+<dd><p>считывает данные из файла. Если nараметр не ука­зан, то возвращается содержимое &#8220;файла&#8221; от текущей nозиции указателя до конца &#8220;фай­ла&#8221;. Если в качестве nараметра указать число, то за каждый вызов будет возвращаться указанное количество символов. Когда достигается конец &#8220;файла&#8221;, метод возвращает nустую строку.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="io.StringIO.readline">
+<code class="descname">readline</code><span class="sig-paren">(</span><span class="optional">[</span><em>&lt;количесвто символов&gt;</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#io.StringIO.readline" title="Ссылка на это определение">¶</a></dt>
+<dd><p>считывает из файла одну строку.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="io.StringIO.readlines">
+<code class="descname">readlines</code><span class="sig-paren">(</span><span class="optional">[</span><em>&lt;количество символов&gt;</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#io.StringIO.readlines" title="Ссылка на это определение">¶</a></dt>
+<dd><p>считывает содержимое файла в список</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="io.StringIO.seek">
+<code class="descname">seek</code><span class="sig-paren">(</span><em>&lt;смещение&gt;</em><span class="optional">[</span>, <em>&lt;позиция&gt;=0</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#io.StringIO.seek" title="Ссылка на это определение">¶</a></dt>
+<dd><p>устанавливает указатель в позицию, имеющую указанное смещение отнотсительно указанной позиции.</p>
+<p>в параметре позиция могут быть следующие значения:</p>
+<ul class="simple">
+<li>0 - начало файла</li>
+<li>1 - ттекущая позиция указателя</li>
+<li>2 - конец файла</li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="io.StringIO.tell">
+<code class="descname">tell</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#io.StringIO.tell" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает позицию указателя относительно начала файла</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="io.StringIO.truncate">
+<code class="descname">truncate</code><span class="sig-paren">(</span><span class="optional">[</span><em>&lt;количесвто символов&gt;</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#io.StringIO.truncate" title="Ссылка на это определение">¶</a></dt>
+<dd><p>обрезает файл до указанного количесвта символов</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="io.StringIO.write">
+<code class="descname">write</code><span class="sig-paren">(</span><em>&lt;строка&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#io.StringIO.write" title="Ссылка на это определение">¶</a></dt>
+<dd><p>записывает указанную строку в файл</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="io.StringIO.writelines">
+<code class="descname">writelines</code><span class="sig-paren">(</span><em>&lt;последовательность&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#io.StringIO.writelines" title="Ссылка на это определение">¶</a></dt>
+<dd><p>записывате последовательность в файл</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="io.BytesIO">
+<em class="property">class </em><code class="descclassname">io.</code><code class="descname">BytesIO</code><span class="sig-paren">(</span><span class="optional">[</span><em>&lt;начальное значение&gt;</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#io.BytesIO" title="Ссылка на это определение">¶</a></dt>
+<dd><p>данный класс позволяет работать с последовательностью байтов как с файловым объектом</p>
+<dl class="method">
+<dt id="io.BytesIO.getbuffer">
+<code class="descname">getbuffer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#io.BytesIO.getbuffer" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает ссылку на <a class="reference internal" href="#io.memoryview" title="io.memoryview"><code class="xref py py-class docutils literal"><span class="pre">memoryview</span></code></a>, с помощью которого можно получать и изменять данные по индексу или срезу.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">BytesiO</span><span class="p">(</span><span class="n">b</span><span class="s">&quot;Python&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">buf</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">getbuffer</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">buf</span><span class="p">[</span><span class="n">O</span><span class="p">]</span>
+<span class="go">Ь&#39;Р&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">buf</span><span class="p">[</span><span class="n">O</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span><span class="s">&quot;J&quot;</span>
+<span class="go">»&gt; f .getva1ue ()</span>
+<span class="go">b&#39;Jython&#39;</span>
+<span class="go">»&gt; buf.to1ist()</span>
+<span class="go">[74, 121, 116, 104, 111, 110]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">buf</span><span class="o">.</span><span class="n">tobytes</span><span class="p">()</span>
+<span class="go">b&#39;Jython&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">c1ose</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="io.memoryview">
+<em class="property">class </em><code class="descclassname">io.</code><code class="descname">memoryview</code><a class="headerlink" href="#io.memoryview" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Предыдущий раздел</h4>
+  <p class="topless"><a href="inspect.html"
+                        title="предыдущая глава">inspect - сбор информации о существующих объектах</a></p>
+  <h4>Следующий раздел</h4>
+  <p class="topless"><a href="itertools.html"
+                        title="следующая глава">itertools</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Эта страница</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/modules/io.txt"
+            rel="nofollow">Исходный текст</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Быстрый поиск</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Искать" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Введите слова для поиска или имя модуля, класса или функции.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Алфавитный указатель"
+             >указатель</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="itertools.html" title="itertools"
+             >вперёд</a> |</li>
+        <li class="right" >
+          <a href="inspect.html" title="inspect - сбор информации о существующих объектах"
+             >назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Документация python документация 2015.05.20</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Основные модули</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright ilnurgi.
+      Создано с помощью <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

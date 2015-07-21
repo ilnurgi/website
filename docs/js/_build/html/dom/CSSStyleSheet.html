@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>CSSStyleSheet - таблица стилей CSS &mdash; js doc 2015.06.26 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2015.06.26',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="js doc 2015.06.26 documentation" href="../index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.26 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="cssstylesheet-css">
+<h1>CSSStyleSheet - таблица стилей CSS<a class="headerlink" href="#cssstylesheet-css" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="CSSStyleSheet">
+<em class="property">class </em><code class="descname">CSSStyleSheet</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CSSStyleSheet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cssRules">
+<code class="descname">cssRules</code><a class="headerlink" href="#cssRules" title="Permalink to this definition">¶</a></dt>
+<dd><p>Массив <a class="reference internal" href="CSSRule.html#CSSRule" title="CSSRule"><code class="xref js js-class docutils literal"><span class="pre">CSSRule()</span></code></a></p>
+<dl class="attribute">
+<dt id="disabled">
+<code class="descname">disabled</code><a class="headerlink" href="#disabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Зна­че­ние true оз­на­ча­ет, что таб­ли­ца сти­лей не­ак­тив­на и  не бу­дет при­ме­нять­ся к до­ку­мен­ту. Зна­че­ние false – таб­ли­ца сти­лей ак­тив­на и бу­дет при­ме­нять­ся к до­ку­мен­ту.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="href">
+<code class="descname">href</code><a class="headerlink" href="#href" title="Permalink to this definition">¶</a></dt>
+<dd><p>URL-ад­рес таб­ли­цы сти­лей, ко­то­рая свя­за­на с до­ку­мен­том, или null, ес­ли таб­ли­ца сти­лей встрое­на в до­ку­мент.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="media">
+<code class="descname">media</code><a class="headerlink" href="#media" title="Permalink to this definition">¶</a></dt>
+<dd><p>Спи­сок уст­ройств вы­во­да, к ко­то­рым при­ме­ня­ет­ся дан­ная таб­ли­ца сти­лей. Зна­че­ние это­го свой­ст­ва дос­туп­но для чте­ния и за­пи­си и мо­жет ин­тер­пре­ти­ро­вать­ся как еди­ная стро­ка или как объ­ект, по­доб­ный мас­си­ву, со­дер­жа­щий име­на ти­пов уст­ройств вы­во­да и  под­дер­жи­ваю­щий ме­то­ды appendMedium() и  deleteMedium().</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ownerNode">
+<code class="descname">ownerNode</code><a class="headerlink" href="#ownerNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает эле­мент до­ку­мен­та <a class="reference internal" href="Node.html#Node" title="Node"><code class="xref js js-class docutils literal"><span class="pre">Node()</span></code></a>, «вла­дею­щий» дан­ной таб­ли­цей сти­лей, или null, ес­ли та­ко­вой от­сут­ст­ву­ет.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ownerRule">
+<code class="descname">ownerRule</code><a class="headerlink" href="#ownerRule" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает объ­ект <a class="reference internal" href="CSSRule.html#CSSRule" title="CSSRule"><code class="xref js js-class docutils literal"><span class="pre">CSSRule()</span></code></a> пра­ви­ла (из ро­ди­тель­ской таб­ли­цы сти­лей), ко­то­рое при­ве­ло к вклю­че­нию дан­ной таб­ли­цы сти­лей, или null, ес­ли таб­ли­ца сти­лей бы­ла под­клю­че­на ка­ким-то дру­гим спо­со­бом. (</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="parentStyleSheet">
+<code class="descname">parentStyleSheet</code><a class="headerlink" href="#parentStyleSheet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Таб­ли­ца сти­лей <a class="reference internal" href="#CSSStyleSheet" title="CSSStyleSheet"><code class="xref js js-class docutils literal"><span class="pre">CSSStyleSheet()</span></code></a>, ко­то­рая вклю­ча­ет в се­бя дан­ную таб­ли­цу, или null, ес­ли дан­ная таб­ли­ца вклю­че­на не­по­сред­ст­вен­но в до­ку­мент.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="title">
+<code class="descname">title</code><a class="headerlink" href="#title" title="Permalink to this definition">¶</a></dt>
+<dd><p>За­го­ло­вок таб­ли­цы сти­лей, ес­ли ука­зан. За­го­ло­вок мо­жет оп­ре­де­лять­ся ат­ри­бу­том title эле­мен­та &lt;style&gt; или &lt;link&gt;, ко­то­рый ссы­ла­ет­ся на эту таб­ли­цу сти­лей.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="type">
+<code class="descname">type</code><a class="headerlink" href="#type" title="Permalink to this definition">¶</a></dt>
+<dd><p>MIME-тип дан­ной таб­ли­цы сти­лей. Таб­ли­цы сти­лей CSS име­ют тип «text/css».</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="deleteRule">
+<code class="descname">deleteRule</code><span class="sig-paren">(</span><em>unsigned long index</em><span class="sig-paren">)</span><a class="headerlink" href="#deleteRule" title="Permalink to this definition">¶</a></dt>
+<dd><p>Уда­ля­ет пра­ви­ло в по­зи­ции index из мас­си­ва cssRules.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="insertRule">
+<code class="descname">insertRule</code><span class="sig-paren">(</span><em>string rule</em>, <em>unsigned long index</em><span class="sig-paren">)</span><a class="headerlink" href="#insertRule" title="Permalink to this definition">¶</a></dt>
+<dd><p>Встав­ля­ет (или до­бав­ля­ет в ко­нец) но­вое CSS-пра­ви­ло (стро­ку, оп­ре­де­ляю­щую се­лек­тор и сти­ли в фи­гур­ных скоб­ках) в по­зи­цию index в мас­сив cssRules дан­ной таб­ли­цы сти­лей.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/dom/CSSStyleSheet.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.26 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

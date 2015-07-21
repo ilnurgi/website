@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Event - события &mdash; p4a doc 14.10.12 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.10.12',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="p4a doc 14.10.12 documentation" href="../index.html" />
+    <link rel="next" title="Location" href="Location.html" />
+    <link rel="prev" title="Contacts" href="Contacts.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="Location.html" title="Location"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="Contacts.html" title="Contacts"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">p4a doc 14.10.12 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="event">
+<h1>Event - события<a class="headerlink" href="#event" title="Permalink to this headline">¶</a></h1>
+<p>Методы для работы с очередью событий. Очередь событий может содержать 1024 событий.</p>
+<dl class="class">
+<dt id="Result">
+<em class="property">class </em><tt class="descname">Result</tt><a class="headerlink" href="#Result" title="Permalink to this definition">¶</a></dt>
+<dd><p>результат работы методов, событий</p>
+<dl class="attribute">
+<dt id="Result.id">
+<tt class="descname">id</tt><a class="headerlink" href="#Result.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>идентификатор запроса</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Result.result">
+<tt class="descname">result</tt><a class="headerlink" href="#Result.result" title="Permalink to this definition">¶</a></dt>
+<dd><p>ответ запроса</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Result.error">
+<tt class="descname">error</tt><a class="headerlink" href="#Result.error" title="Permalink to this definition">¶</a></dt>
+<dd><p>ошибка запроса</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="method">
+<dt id="eventClearBuffer">
+<tt class="descname">eventClearBuffer</tt><big>(</big><big>)</big><a class="headerlink" href="#eventClearBuffer" title="Permalink to this definition">¶</a></dt>
+<dd><p>очищает буфер событий</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="eventGetBrodcastCategories">
+<tt class="descname">eventGetBrodcastCategories</tt><big>(</big><big>)</big><a class="headerlink" href="#eventGetBrodcastCategories" title="Permalink to this definition">¶</a></dt>
+<dd><p>список всех событий</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="eventPoll">
+<tt class="descname">eventPoll</tt><big>(</big><span class="optional">[</span><em>int number_of_events=1</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#eventPoll" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает и удаляет старые события</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="eventPost">
+<tt class="descname">eventPost</tt><big>(</big><em>**kwargs</em><big>)</big><a class="headerlink" href="#eventPost" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) &#8211; название события</li>
+<li><strong>data</strong> (<em>str</em>) &#8211; содержимое</li>
+<li><strong>enqueue</strong> (<em>bool</em>) &#8211; не обязательный, по умолчанию null, если false, то событие не добавится в очередь а сразу выполнится</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>отправляет событие в очередь</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="eventRegisterForBroadcast">
+<tt class="descname">eventRegisterForBroadcast</tt><big>(</big><em>str category</em><span class="optional">[</span>, <em>bool enqueue</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#eventRegisterForBroadcast" title="Permalink to this definition">¶</a></dt>
+<dd><p>регистрирует слушателя для сигнала</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="eventUnregisterForBroadcast">
+<tt class="descname">eventUnregisterForBroadcast</tt><big>(</big><em>str category</em><big>)</big><a class="headerlink" href="#eventUnregisterForBroadcast" title="Permalink to this definition">¶</a></dt>
+<dd><p>удаляет слушателя для сигнала</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="eventWait">
+<tt class="descname">eventWait</tt><big>(</big><span class="optional">[</span><em>int timeout</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#eventWait" title="Permalink to this definition">¶</a></dt>
+<dd><p>блокирует выполнение потока, до получения какого либо события: нажатие кнопок, вьюх и т.п. возвращает результат действия <a class="reference internal" href="#Result" title="Result"><tt class="xref py py-class docutils literal"><span class="pre">Result</span></tt></a>, удаляя его из очереди событий</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">eventWait</span><span class="p">()</span><span class="o">.</span><span class="n">result</span>
+<span class="go"># нажали кнопку смарта</span>
+<span class="go">{</span>
+<span class="go">    u&#39;data&#39;: {</span>
+<span class="go">        u&#39;action&#39;: u&#39;0&#39;,</span>
+<span class="go">        u&#39;key&#39;: u&#39;4&#39;</span>
+<span class="go">    },</span>
+<span class="go">    u&#39;name&#39;: u&#39;key&#39;,</span>
+<span class="go">    u&#39;time&#39;: 1407387781577000L</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">eventWait</span><span class="p">()</span><span class="o">.</span><span class="n">result</span>
+<span class="go"># кликнули по контролу</span>
+<span class="go">{</span>
+<span class="go">    u&#39;data&#39;: None,</span>
+<span class="go">    u&#39;name&#39;: u&#39;label_event&#39;,</span>
+<span class="go">    u&#39;time&#39;: 1407400245808000L</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>4 - кнопка назад</li>
+<li>82 - кнопка меню</li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="eventWaitFor">
+<tt class="descname">eventWaitFor</tt><big>(</big><em>str eventName</em><span class="optional">[</span>, <em>int timeout</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#eventWaitFor" title="Permalink to this definition">¶</a></dt>
+<dd><p>блокирует выполнение потока, до получения указанного события: нажатие кнопок, вьюх и т.п. возвращает результат действия <a class="reference internal" href="#Result" title="Result"><tt class="xref py py-class docutils literal"><span class="pre">Result</span></tt></a>, удаляя его из очереди событий</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="startEventDispatcher">
+<tt class="descname">startEventDispatcher</tt><big>(</big><span class="optional">[</span><em>int port=0</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#startEventDispatcher" title="Permalink to this definition">¶</a></dt>
+<dd><p>Opens up a socket where you can read for events posted</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="stopEventDispatcher">
+<tt class="descname">stopEventDispatcher</tt><big>(</big><big>)</big><a class="headerlink" href="#stopEventDispatcher" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stops the event server, you can&#8217;t read in the port anymore</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="Contacts.html"
+                        title="previous chapter">Contacts</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="Location.html"
+                        title="next chapter">Location</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/Event.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="Location.html" title="Location"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="Contacts.html" title="Contacts"
+             >previous</a> |</li>
+        <li><a href="../index.html">p4a doc 14.10.12 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

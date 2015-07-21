@@ -1,0 +1,317 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>e32db &mdash; pys60 14.10.12 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.10.12',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="pys60 14.10.12 documentation" href="../index.html" />
+    <link rel="up" title="Стандартные модули" href="index.html" />
+    <link rel="next" title="globalui" href="globalui.html" />
+    <link rel="prev" title="e32" href="e32.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="globalui.html" title="globalui"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="e32.html" title="e32"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">pys60 14.10.12 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Стандартные модули</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <span class="target" id="module-e32db"></span><div class="section" id="e32db">
+<h1>e32db<a class="headerlink" href="#e32db" title="Permalink to this headline">¶</a></h1>
+<p>Модуль для работы с базами данных e32db.</p>
+<dl class="method">
+<dt id="e32db.format_rawtime">
+<tt class="descclassname">e32db.</tt><tt class="descname">format_rawtime</tt><big>(</big><em>timevalue</em><big>)</big><a class="headerlink" href="#e32db.format_rawtime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает системную дату в юникоде (Formats timevalue (Symbian time) according to the current system’s date/time formatting rules and returns it as a Unicode string.)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="e32db.format_time">
+<tt class="descclassname">e32db.</tt><tt class="descname">format_time</tt><big>(</big><em>timevalue</em><big>)</big><a class="headerlink" href="#e32db.format_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns timevalue as a Unicode string formatted so that it is acceptable as a SQL time. To make a time literal, surround the return value with hash (#) characters.</p>
+</dd></dl>
+
+<div class="section" id="dbms">
+<h2>Dbms()<a class="headerlink" href="#dbms" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="e32db.Dbms">
+<em class="property">class </em><tt class="descclassname">e32db.</tt><tt class="descname">Dbms</tt><a class="headerlink" href="#e32db.Dbms" title="Permalink to this definition">¶</a></dt>
+<dd><p>класс для записи в БД</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="e32db.Dbms.begin">
+<tt class="descclassname">Dbms.</tt><tt class="descname">begin</tt><big>(</big><big>)</big><a class="headerlink" href="#e32db.Dbms.begin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Начинает транзакцую</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="e32db.Dbms.close">
+<tt class="descclassname">Dbms.</tt><tt class="descname">close</tt><big>(</big><big>)</big><a class="headerlink" href="#e32db.Dbms.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Закрывает БД</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="e32db.Dbms.commit">
+<tt class="descclassname">Dbms.</tt><tt class="descname">commit</tt><big>(</big><big>)</big><a class="headerlink" href="#e32db.Dbms.commit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Записывает текущую Транзакцию</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="e32db.Dbms.compact">
+<tt class="descclassname">Dbms.</tt><tt class="descname">compact</tt><big>(</big><big>)</big><a class="headerlink" href="#e32db.Dbms.compact" title="Permalink to this definition">¶</a></dt>
+<dd><p>Удаляет пустые области из БД</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="e32db.Dbms.create">
+<tt class="descclassname">Dbms.</tt><tt class="descname">create</tt><big>(</big><em>path</em><big>)</big><a class="headerlink" href="#e32db.Dbms.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>создает файл БД по пути path</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="e32db.Dbms.execute">
+<tt class="descclassname">Dbms.</tt><tt class="descname">execute</tt><big>(</big><em>query</em><big>)</big><a class="headerlink" href="#e32db.Dbms.execute" title="Permalink to this definition">¶</a></dt>
+<dd><p>выполняет sql запрос query</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="e32db.Dbms.open">
+<tt class="descclassname">Dbms.</tt><tt class="descname">open</tt><big>(</big><em>path</em><big>)</big><a class="headerlink" href="#e32db.Dbms.open" title="Permalink to this definition">¶</a></dt>
+<dd><p>открывает файл БД по пути path</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="e32db.Dbms.rollback">
+<tt class="descclassname">Dbms.</tt><tt class="descname">rollback</tt><big>(</big><big>)</big><a class="headerlink" href="#e32db.Dbms.rollback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Откатывает текущую транзакцию</p>
+</dd></dl>
+
+</div>
+<div class="section" id="db-view">
+<h2>Db_view()<a class="headerlink" href="#db-view" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="e32db.Db_view">
+<em class="property">class </em><tt class="descclassname">e32db.</tt><tt class="descname">Db_view</tt><a class="headerlink" href="#e32db.Db_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>класс для чтения БД</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="e32db.Db_view.col">
+<tt class="descclassname">Db_view.</tt><tt class="descname">col</tt><big>(</big><em>index</em><big>)</big><a class="headerlink" href="#e32db.Db_view.col" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает значение строки столбца index</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="e32db.Db_view.col_count">
+<tt class="descclassname">Db_view.</tt><tt class="descname">col_count</tt><big>(</big><big>)</big><a class="headerlink" href="#e32db.Db_view.col_count" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает номер столбца</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="e32db.Db_view.col_length">
+<tt class="descclassname">Db_view.</tt><tt class="descname">col_length</tt><big>(</big><em>column</em><big>)</big><a class="headerlink" href="#e32db.Db_view.col_length" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает количество значений в колонке</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="e32db.Db_view.col_raw">
+<tt class="descclassname">Db_view.</tt><tt class="descname">col_raw</tt><big>(</big><em>column</em><big>)</big><a class="headerlink" href="#e32db.Db_view.col_raw" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает значение</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="e32db.Db_view.col_rawtime">
+<tt class="descclassname">Db_view.</tt><tt class="descname">col_rawtime</tt><big>(</big><em>column</em><big>)</big><a class="headerlink" href="#e32db.Db_view.col_rawtime" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает значение</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="e32db.Db_view.col_type">
+<tt class="descclassname">Db_view.</tt><tt class="descname">col_type</tt><big>(</big><em>column</em><big>)</big><a class="headerlink" href="#e32db.Db_view.col_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает тип значение</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="e32db.Db_view.count_line">
+<tt class="descclassname">Db_view.</tt><tt class="descname">count_line</tt><big>(</big><big>)</big><a class="headerlink" href="#e32db.Db_view.count_line" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает количество строк в БД</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="e32db.Db_view.first_line">
+<tt class="descclassname">Db_view.</tt><tt class="descname">first_line</tt><big>(</big><big>)</big><a class="headerlink" href="#e32db.Db_view.first_line" title="Permalink to this definition">¶</a></dt>
+<dd><p>переводит курсор на первую строчку</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="e32db.Db_view.get_line">
+<tt class="descclassname">Db_view.</tt><tt class="descname">get_line</tt><big>(</big><big>)</big><a class="headerlink" href="#e32db.Db_view.get_line" title="Permalink to this definition">¶</a></dt>
+<dd><p>подгатавливает строку к выдаче</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="e32db.Db_view.is_col_null">
+<tt class="descclassname">Db_view.</tt><tt class="descname">is_col_null</tt><big>(</big><em>column</em><big>)</big><a class="headerlink" href="#e32db.Db_view.is_col_null" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests whether column is empty. Empty columns can be accessed like normal columns. Empty numerical columns return a 0 or an equivalent value, and text and binary columns have a zero length.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="e32db.Db_view.next_line">
+<tt class="descclassname">Db_view.</tt><tt class="descname">next_line</tt><big>(</big><big>)</big><a class="headerlink" href="#e32db.Db_view.next_line" title="Permalink to this definition">¶</a></dt>
+<dd><p>переходим на следующую Строку</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="e32db.Db_view.prepare">
+<tt class="descclassname">Db_view.</tt><tt class="descname">prepare</tt><big>(</big><em>db</em>, <em>query</em><big>)</big><a class="headerlink" href="#e32db.Db_view.prepare" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>db</strong> (<a class="reference internal" href="#e32db.Dbms" title="e32db.Dbms"><tt class="xref py py-class docutils literal"><span class="pre">Dbms()</span></tt></a>) &#8211; база данных</li>
+<li><strong>query</strong> (<em>str</em>) &#8211; запрос</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Выполняет запрос к базе данных</p>
+</dd></dl>
+
+</div>
+<div class="section" id="id1">
+<h2>Пример<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">e32db</span>
+<span class="n">db_path</span> <span class="o">=</span> <span class="s">u&#39;e:</span><span class="se">\\</span><span class="s">data</span><span class="se">\\</span><span class="s">python</span><span class="se">\\</span><span class="s">test.db&#39;</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">e32db</span><span class="o">.</span><span class="n">Dbms</span><span class="p">()</span>
+<span class="n">db</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">db_path</span><span class="p">)</span>
+<span class="n">db</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">db_path</span><span class="p">)</span>
+<span class="n">db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s">u&#39;CREATE TABLE users (number CHAR(12), login LONG VARCHAR, password LONG VARCHAR)&#39;</span><span class="p">)</span>
+<span class="n">db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s">u&quot;&quot;&quot;INSERT INTO users VALUES(&#39;+79xxxxxxxxx&#39;,&#39;kAIST&#39;,&#39;password&#39;)&quot;&quot;&quot;</span><span class="p">)</span>
+<span class="c"># пyть к бaзe и зaпpocы дoлжны быть в юникoдe</span>
+<span class="n">db_view</span><span class="o">=</span><span class="n">e32db</span><span class="o">.</span><span class="n">Db_view</span><span class="p">()</span>
+<span class="n">db_view</span><span class="o">.</span><span class="n">prepare</span><span class="p">(</span><span class="n">db</span><span class="p">,</span><span class="s">u&#39;SELECT * from users&#39;</span><span class="p">)</span>
+<span class="c"># пpoxoдимcя пo вceм cтpoкaм</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">db_view</span><span class="o">.</span><span class="n">count_line</span><span class="p">()):</span>
+    <span class="c"># пoдгoтaвлиeм нoвyю cтpoкy к выдaчe</span>
+    <span class="n">db_view</span><span class="o">.</span><span class="n">get_line</span><span class="p">()</span>
+    <span class="c"># и cмoтpим, чтo y нac в кoлoнкax</span>
+    <span class="c"># cтpaннo, нo нyмepaция нaчиниaeтcя c 1 a нe c 0</span>
+    <span class="k">print</span> <span class="n">db_view</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">db_view</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="c"># пepexoдим нa cлeдyющyю cтpoкy</span>
+    <span class="n">db_view</span><span class="o">.</span><span class="n">next_line</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">e32db</a><ul>
+<li><a class="reference internal" href="#dbms">Dbms()</a></li>
+<li><a class="reference internal" href="#db-view">Db_view()</a></li>
+<li><a class="reference internal" href="#id1">Пример</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="e32.html"
+                        title="previous chapter">e32</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="globalui.html"
+                        title="next chapter">globalui</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/moduls_def/e32db.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="globalui.html" title="globalui"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="e32.html" title="e32"
+             >previous</a> |</li>
+        <li><a href="../index.html">pys60 14.10.12 documentation</a> &raquo;</li>
+          <li><a href="index.html" >Стандартные модули</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

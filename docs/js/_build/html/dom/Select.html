@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Select - графический список для выбора &mdash; js doc 2015.06.26 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2015.06.26',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="js doc 2015.06.26 documentation" href="../index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.26 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="select">
+<h1>Select - графический список для выбора<a class="headerlink" href="#select" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="Select">
+<em class="property">class </em><code class="descname">Select</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Select" title="Permalink to this definition">¶</a></dt>
+<dd><p>Наследнник <a class="reference internal" href="FormControl.html#FormControl" title="FormControl"><code class="xref js js-class docutils literal"><span class="pre">FormControl()</span></code></a></p>
+<dl class="attribute">
+<dt id="length">
+<code class="descname">length</code><a class="headerlink" href="#length" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ко­ли­че­ст­во эле­мен­тов в кол­лек­ции options. Объ­ек­ты Select са­ми яв­ля­ют­ся объ­ек­та­ми, по­доб­ны­ми мас­си­вам, по­это­му для объ­ек­та s ти­па Select и чис­ла n вы­ра­же­ние s[n] воз­вра­ща­ет то же зна­че­ние, что и s.options[n].</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="options">
+<code class="descname">options</code><a class="headerlink" href="#options" title="Permalink to this definition">¶</a></dt>
+<dd><p>Объ­ект, по­доб­ный мас­си­ву, с эле­мен­та­ми Option, со­дер­жа­щи­ми­ся в дан­ном эле­мен­те Select. Опи­са­ние ис­то­ри­че­ски сло­жив­ше­го­ся по­ве­де­ния этой кол­лек­ции при­во­дит­ся в спра­воч­ной ста­тье HTMLOptionsCollection.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="selectedIndex">
+<code class="descname">selectedIndex</code><a class="headerlink" href="#selectedIndex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ин­декс вы­бран­но­го ва­ри­ан­та в мас­си­ве options. Ес­ли ни один из ва­ри­ан­тов не вы­бран, зна­че­ние это­го свой­ст­ва рав­но –1. Ес­ли вы­бра­но бо­лее од­но­го ва­ри­ан­та, свой­ст­во selectedIndex оп­ре­де­ля­ет ин­декс толь­ко пер­во­го из них.
+Ус­та­нов­ка зна­че­ния это­го свой­ст­ва при­во­дит к вы­бо­ру ука­зан­но­го ва­ри­ан­та и от­ме­ня­ет вы­бор всех ос­таль­ных, да­же ес­ли в объ­ек­те Select ука­зан ат­ри­бут multiple.
+Ес­ли вы­бор реа­ли­зо­ван в ви­де спи­ска (ко­гда зна­че­ние свой­ст­ва size &gt; 1), то вы­бор всех ва­ри­ан­тов мож­но от­ме­нить, ус­та­но­вив свой­ст­во selectedIndex рав­ным –1. Об­ра­ти­те вни­ма­ние: этот спо­соб из­ме­не­ния вы­бо­ра не при­во­дит к вы­зо­ву об­ра­бот­чи­ка со­бы­тия onchange().</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="selectedOptions">
+<code class="descname">selectedOptions</code><a class="headerlink" href="#selectedOptions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Дос­туп­ный толь­ко для чте­ния объ­ект, по­доб­ный мас­си­ву, со­дер­жа­щий вы­бран­ные эле­мен­ты Option. Это но­вое свой­ст­во, оп­ре­де­ляе­мое спе­ци­фи­ка­ци­ей HTML5, ко­то­рое на мо­мент на­пи­са­ния этих строк бы­ло реа­ли­зо­ва­но не во всех бро­узе­рах.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="add">
+<code class="descname">add</code><span class="sig-paren">(</span><em>Element element</em><span class="optional">[</span>, <em>any before</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Дей­ст­ву­ет по­доб­но ме­то­ду options.add(), до­бав­ляя но­вый эле­мент Option.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="item">
+<code class="descname">item</code><span class="sig-paren">(</span><em>unsigned long index</em><span class="sig-paren">)</span><a class="headerlink" href="#item" title="Permalink to this definition">¶</a></dt>
+<dd><p>Дей­ст­ву­ет по­доб­но ме­то­ду options.item() и воз­вра­ща­ет эле­мент Option. Он так­же не­яв­но вы­зы­ва­ет­ся, ко­гда поль­зо­ва­тель об­ра­ща­ет­ся к эле­мен­ту Select как к мас­си­ву.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="namedItem">
+<code class="descname">namedItem</code><span class="sig-paren">(</span><em>string name</em><span class="sig-paren">)</span><a class="headerlink" href="#namedItem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Дей­ст­ву­ет по­доб­но ме­то­ду options.namedItem()</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="remove">
+<code class="descname">remove</code><span class="sig-paren">(</span><em>long index</em><span class="sig-paren">)</span><a class="headerlink" href="#remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>Дей­ст­ву­ет по­доб­но ме­то­ду options.remove(), уда­ляя эле­мент Option.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/dom/Select.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.26 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

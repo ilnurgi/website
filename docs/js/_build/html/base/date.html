@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Date - объект дата &mdash; js doc 2015.06.19 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2015.06.19',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="js doc 2015.06.19 documentation" href="../index.html" />
+    <link rel="up" title="Основные объекты" href="index.html" />
+    <link rel="next" title="Array - массивы" href="array.html" />
+    <link rel="prev" title="Object - объект" href="object.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="array.html" title="Array - массивы"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="object.html" title="Object - объект"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.19 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Основные объекты</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="date">
+<h1>Date - объект дата<a class="headerlink" href="#date" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="Date">
+<em class="property">class </em><code class="descname">Date</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Date" title="Permalink to this definition">¶</a></dt>
+<dd><p>Дата</p>
+<div class="highlight-js"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">g</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">g</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nx">year</span><span class="p">,</span> <span class="nx">month</span><span class="p">,</span> <span class="nx">date</span><span class="p">,</span> <span class="nx">hours</span><span class="p">,</span> <span class="nx">minutes</span><span class="p">,</span> <span class="nx">seconds</span><span class="p">,</span> <span class="nx">ms</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">g</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="mi">2013</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">g</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="mi">5000</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">g</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="s1">&#39;2013-01-01&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">g</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="s1">&#39;December 25, 2013 21:46:10&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">g</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="s1">&#39;03/09/2000&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<dl class="function">
+<dt id="getDate">
+<code class="descname">getDate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#getDate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает число месяца</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="getDay">
+<code class="descname">getDay</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#getDay" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает число, номер дня недели</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="getFullYear">
+<code class="descname">getFullYear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#getFullYear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает текущий год, 2013</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="getHours">
+<code class="descname">getHours</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#getHours" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает число, часы</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="getMilliseconds">
+<code class="descname">getMilliseconds</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#getMilliseconds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает число, миллисекунды</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="getMinutes">
+<code class="descname">getMinutes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#getMinutes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает число, минуты</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="getMonth">
+<code class="descname">getMonth</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#getMonth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает чилсо месяца</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="getSeconds">
+<code class="descname">getSeconds</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#getSeconds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает число, секунды</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="getTime">
+<code class="descname">getTime</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#getTime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает число, количество секунд прошедшее с 1970.1.1</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="getTimezoneOffset">
+<code class="descname">getTimezoneOffset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#getTimezoneOffset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает смещение даты в минутах.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="getUTC*">
+<code class="descname">getUTC*</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#getUTC*" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getYear">
+<code class="descname">getYear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#getYear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает число, количесвто лет прошедшее с 1970.1.1</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="setFullYear">
+<code class="descname">setFullYear</code><span class="sig-paren">(</span><em>year</em>, <em>month0</em>, <em>date</em><span class="sig-paren">)</span><a class="headerlink" href="#setFullYear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Задаем новый год</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="setDate">
+<code class="descname">setDate</code><span class="sig-paren">(</span><em>date</em><span class="sig-paren">)</span><a class="headerlink" href="#setDate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Задаем новое число месяца</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="setHours">
+<code class="descname">setHours</code><span class="sig-paren">(</span><em>hours</em><span class="sig-paren">)</span><a class="headerlink" href="#setHours" title="Permalink to this definition">¶</a></dt>
+<dd><p>Задаем новые часы даты</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="setMilliseconds">
+<code class="descname">setMilliseconds</code><span class="sig-paren">(</span><em>ms</em><span class="sig-paren">)</span><a class="headerlink" href="#setMilliseconds" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="setMinutes">
+<code class="descname">setMinutes</code><span class="sig-paren">(</span><em>minutes</em><span class="sig-paren">)</span><a class="headerlink" href="#setMinutes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Задаем новые минуты даты</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="setMonth">
+<code class="descname">setMonth</code><span class="sig-paren">(</span><em>month</em><span class="sig-paren">)</span><a class="headerlink" href="#setMonth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Задаем новый месяц</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="setSeconds">
+<code class="descname">setSeconds</code><span class="sig-paren">(</span><em>seconds</em><span class="sig-paren">)</span><a class="headerlink" href="#setSeconds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Задаем новые секунды даты</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="setTime">
+<code class="descname">setTime</code><span class="sig-paren">(</span><em>ms</em><span class="sig-paren">)</span><a class="headerlink" href="#setTime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Устанавливаем новую дату, время в секндах с 1.1.1970</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="setUTC*">
+<code class="descname">setUTC*</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#setUTC*" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="object.html"
+                        title="previous chapter">Object - объект</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="array.html"
+                        title="next chapter">Array - массивы</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/base/date.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="array.html" title="Array - массивы"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="object.html" title="Object - объект"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.19 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Основные объекты</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

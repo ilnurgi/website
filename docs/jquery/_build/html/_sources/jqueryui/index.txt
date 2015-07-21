@@ -1,0 +1,16 @@
+jQueryUI
+========
+
+.. toctree::
+   :maxdepth: 2
+
+   accordion
+   autocomplete
+   button
+   buttonset
+   datepicker
+   dialog
+   draggable
+   progressbar
+   slider
+   tabs

@@ -1,0 +1,105 @@
+function - функция
+==================
+
+
+.. js:class:: Function(args, function_body)
+
+    Функция/конструктор объектов
+
+
+    .. js:attribute:: prototype
+    
+        Ссылка функции на прототип
+
+
+    .. js:attribute:: __proto__
+
+        Ссылка экземпляра на прототип
+
+
+    .. js:attribute:: constructor
+
+        Ссылка на конструктор
+
+    
+.. code-block:: js
+    
+    // анонимная функция
+    (function(){
+        var property = 1;
+    })();
+
+    
+.. code-block:: js
+
+    var func = Function("x", "y", "return x + y;")
+    var result = func(20, 10)
+    // 30
+
+
+.. code-block:: js
+
+    // ничего не вернет
+    function foo() {
+        return
+        {
+            foo: 'bar'
+        }
+    }
+
+    // вернет объект
+    function bar() {
+        return {
+            foo: 'bar'
+        }
+    }
+
+
+.. code-block:: js
+
+    var average = function(x, y){
+        // массив всех принятых аргументов
+        console.log(arguments);
+
+        return (x+y)/2;
+    }
+
+
+.. code-block:: js
+
+    var a = 10;
+    (function() { console.log(a); })()
+    // 10
+
+    (function() { console.log(a); var a = 1; })()
+    // undefined
+
+
+.. code-block:: js
+
+    /* 
+     * конструктор 
+     */
+    function Human(name) {
+        // при вызове этой функции через new, this это ново-создаваемый объект
+        // иначе this глобальный
+        if (! (this instanceof Human)){
+            // если это вызов не конструктора, то все равно вернем конструктор
+            return new Human(name);
+        }
+        this.name = name;
+
+
+    }
+
+    Human.prototype.say = function(what) {
+        console.log(this.name + ':' + what);
+    }
+
+    var alex = new Human('Alex');
+
+    /*подмена контекста, this */
+
+    var jack = new Human('Jack');
+
+    alex.say.apply(jack, ['hi']);

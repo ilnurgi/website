@@ -1,0 +1,20 @@
+Основные объекты
+================
+
+Содержание:
+
+.. toctree::
+   :maxdepth: 2
+
+   base/comments
+   base/string
+   base/int
+   base/tuple
+   base/set
+   base/list
+   base/dicts
+   base/files
+   base/opers
+   base/functions
+   base/class
+   base/errors

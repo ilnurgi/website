@@ -1,0 +1,603 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Welcome to linux commands’s documentation! &mdash; linux commands 14.10.12 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '14.10.12',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="linux commands 14.10.12 documentation" href="#" />
+    <link rel="next" title="dirs" href="dirs.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="dirs.html" title="dirs"
+             accesskey="N">next</a> |</li>
+        <li><a href="#">linux commands 14.10.12 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="welcome-to-linux-commands-s-documentation">
+<h1>Welcome to linux commands&#8217;s documentation!<a class="headerlink" href="#welcome-to-linux-commands-s-documentation" title="Permalink to this headline">¶</a></h1>
+<p>Contents:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dirs.html">dirs</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><em>Index</em></a></li>
+<li><a class="reference internal" href="py-modindex.html"><em>Module Index</em></a></li>
+<li><a class="reference internal" href="search.html"><em>Search Page</em></a></li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre>Горячие клавиши
+----------------------------
+
+======= ============
+клавиша описание
+======= ============
+Ctrl+C     завершить текущую команду
+Ctrl+Z     остановить текущую команду, продолжить с fg на переднем плане или bg в фоне
+Ctrl+D     разлогиниться, тоже самое, что и exit
+Ctrl+W    удалить одно слово в текущей строке
+Ctrl+U     удалить строку
+!!             повторить последнюю команду
+======= ============
+
+Файловые команды
+-----------------------------
+
+======= ============
+команда параметры
+======= ============
+cd [dir]    Сменить директорию на домашний или на указанную
+               * dir - директория перехода
+
+&lt;pre&gt;*#перейти в директорию &#39;/home&#39;*
+cd /hom
+*# перейти в директорию уровнем выше*
+cd ..
+*# перейти в директорию двумя уровнями выше*
+cd ../..
+*# перейти в домашнюю директорию пользователя user*
+cd ~user
+*# перейти в директорию, в которой находились до перехода в текущую директорию*
+cd - &lt;/pre&gt;
+
+* chgrp group1 file1
+  Сменить группу-владельца файла
+
+    * file1 - файл
+    * group1 - группа
+
+* chmod octal file
+  Сменить права файла на указанную
+
+    * octal - права (пользователь, группа, остальные)
+      4 – чтение (r)
+      2 – запись (w)
+      1 – исполнение (x)
+    * file - путь к файлу
+&lt;pre&gt;*# чтение, запись, исполнение для всех*
+chmod 777
+*# rwx для владельца, rx для группы и остальных.*
+chmod 755&lt;/pre&gt;
+
+* chown [args] user file
+  Назначить владельцем файла пользователя
+
+    * args
+      -R - рекурсивно, всем файлам папки
+    * file - файл
+    * user - пользователь
+
+* cp [args] file1 file2
+  Cкопировать file1 в file2
+
+    * args
+      -r - копируется папка
+    * file1 - путь к файлу/папке откуда копируем
+    * file2 - путь к файлу/папке куда копируем
+&lt;pre&gt;*# копировать все файлы директории dir в текущую директорию*
+cp dir/\*.
+*# копировать директорию dir1 со всем содержимым в текущую директорию*
+cp -a /tmp/dir1
+*# копировать директорию dir1 в директорию dir2*
+cp -a dir1 dir2&lt;/pre&gt;
+
+* head file
+  Первые 10 строк файла
+
+    * file - путь к файлу
+
+* ln [args] file link
+  Создать ссылку к файлу
+
+    * args
+      -s - символическая ссылка
+    * file - путь к файлу
+    * link - имя ссылки
+
+* ls [args]
+  Список файлов и каталогов
+
+    * args
+      -a – со скрытыми каталогами и файлами
+      -l – форматированный список
+      -F - отобразить содержимое текущей директории с добавлением к именам символов, характеризующих тип
+      -h - с правами
+      -S - сортировка по возрастанию размеров
+&lt;pre&gt;*# показать файлы и директории содержащие в имени цифры*
+ls \*[0-9]\*&lt;/pre&gt;
+
+* mkdir [args] dirs
+  Создать каталог dir
+
+    * args
+      -p - создать все папки по пути
+    * dirs - пути папок
+
+
+* more file
+  Содержимое файла
+
+    * file - путь к файлу
+
+* mv file1 file2
+  Переименовать или переместить файл
+
+    * file1 - путь к файлу/папке откуда копируем
+    * file2 - путь к файлу/папке куда копируем
+
+* pwd
+  Текущий каталог
+
+* rm [args] file
+  Удалить файл или папку
+
+    * args
+      -r - папку и все содержимое
+      -f - форсированно
+    * file - путь к файлу или каталогу
+
+* rmdir dir
+  Удалить папку
+
+    * dir - путь к каталогу
+
+* tail [args] file
+  Последние 10 строк file
+
+    * args
+      -f - вывести содержимое file по мере роста, начинает с последних 10 строк
+    * file - путь к файлу или каталогу
+
+* touch file
+  Создать файл
+
+    * file - путь к файлу
+&lt;code&gt;
+*# модифицировать дату и время создания файла, при его отсутствии, создать файл с указанными датой и временем (YYMMDDhhmm)*
+touch -t 0712250000 fileditest&lt;/code&gt;
+
+* tree
+  Показать дерево файлов и директорий, начиная от корня (/)
+
+Монтирование файловых систем
+---
+
+* fuser -km /mnt/hda2
+  Принудительное размонтирование раздела. Применяется в случае, когда раздел занят каким-либо пользователем
+
+* mount /dev/hda2 /mnt/hda2
+  Монтирует раздел &#39;hda2&#39; в точку монтирования &#39;/mnt/hda2&#39;. Убедитесь в наличии директории-точки монтирования &#39;/mnt/hda2&#39;
+
+  mount /dev/sda1 /mnt/win8
+  mount -t smbfs //server/folder /mnt/winshare
+  mount -o loop disk.iso /mnt/disk
+  mount -bind / /mnt/root
+
+* umount [args] /dev/hda2
+  Размонтирует раздел &#39;hda2&#39;. Перед выполнением, покиньте &#39;/mnt/hda2&#39;
+
+    * args
+      -n - без занесения информации в /etc/mtab. Полезно когда файл имеет атрибуты &quot;только чтение&quot; или недостаточно места на диске
+&lt;code&gt;
+*# монтировать флоппи-диск*
+mount /dev/fd0 /mnt/floppy
+*# монтировать CD или DVD*
+mount /dev/cdrom /mnt/cdrom
+*# монтировать CD-R/CD-RW или DVD-R/DVD-RW(+-)*
+mount /dev/hdc /mnt/cdrecorder
+*# смонтировать ISO-образ*
+mount -o loop file.iso /mnt/cdrom
+*# монтировать файловую систему Windows FAT32*
+mount -t vfat /dev/hda5 /mnt/hda5
+*# монтировать сетевую файловую систему Windows (SMB/CIFS)*
+mount -t smbfs -o username=user,password=pass //winclient/share /mnt/share
+*# &quot;монтирует&quot; директорию в директорию (binding). Доступна с версии ядра 2.4.0. Полезна, например, для предоставления содержимого пользовательской директории через ftp при работе ftp-сервера в &quot;песочнице&quot; (chroot), когда симлинки сделать невозможно. Выполнение данной команды сделает копию содержимого /home/user/prg в /var/ftp/user*
+mount -o bind /home/user/prg /var/ftp/user&lt;/code&gt;
+
+Поиск
+---
+
+* find dir_name [kwargs]
+  Найти файлы и директории
+
+    * kwargs
+      -name - название файла/папки
+      -user - файлы/папки принадлежащие пользователю
+      -atime - время последнего обращения
+      -mtime - время создания
+    * dir_name - путь, откуда начинаем поиск
+&lt;code&gt;
+*# найти файл и директорию принадлежащие пользователю user1. Поиск начать с корня (/)*
+find / -user user1
+*# Найти все файлы и директории, имена которых оканчиваются на &#39;. bin&#39;. Поиск начать с &#39;/ home/user1&#39;*
+find /home/user1 -name &quot;\*.bin&quot;
+*# найти все файлы в &#39;/usr/bin&#39;, время последнего обращения к которым  более 100 дней*
+find /usr/bin -type f -atime +100
+*# найти все файлы в &#39;/usr/bin&#39;, созданные или изменённые в течении последних 10 дней*
+find /usr/bin -type f -mtime -10
+*# найти все фалы и директории, имена которых оканчиваются на &#39;.rpm&#39;, и изменить права доступа к ним*
+find / -name \*.rpm -exec chmod 755 &#39;{}&#39; \;
+*# найти все фалы и директории, имена которых оканчиваются на &#39;.rpm&#39;, игнорируя съёмные носители, такие как cdrom, floppy и т.п.*
+find / -xdev -name &quot;*.rpm&quot;&lt;/code&gt;
+
+* grep [args] pattern files
+  Искать строку в файлах
+
+    * args
+      -r - рекурсивно в папке
+    * files - список файлов/папок
+    * pattern - искомая строка
+&lt;code&gt;
+*#искать pattern в выводе command*
+command | grep pattern&lt;/code&gt;
+
+* locate file
+  Найти все файлы с именем file
+
+* whereis app
+  Возможное расположение программы app
+
+* which app
+  Путь к приложению app
+
+Архивация
+---
+
+* bunzip2 file
+  Сжать/разжать file bz2
+
+* gzip [args] file
+
+    * args
+      -d - разжать Сжать/разжать file и переименовать в file.gz
+
+* tar [args] file.tar files
+  Создать/распаковать tar-архив
+    * args
+      x - распаковать
+      c - создать
+      z - сжатие Gzip
+      j - сжатие Bzip
+
+Управление процессами
+---
+
+* bg
+  Список остановленных и фоновых задач; продолжить выполнение остановленной задачи в фоне
+
+* fg
+  Выносит на передний план последние задачи или указанную
+
+* kill pid
+  Убить процесс с id pid
+
+* killall proc
+  Убить все процессы с указанным именем
+
+* ps
+  Текущие активные процессы
+
+* top
+  Все запущенные процессы
+
+Системная информация
+---
+
+* arch
+  Архитектура компьютера
+
+* date [new_date]
+  Текущая дата и время
+
+    * new_date - установить системные дату и время ММДДЧЧммГГГГ.СС (МесяцДеньЧасМинутыГод.Секунды)
+
+* cal [year]
+  Календарь на текущий месяц или указанный год
+
+    * year - год
+
+* cat arg
+
+    * arg - устройство
+      /proc/cpuinfo – информация ЦПУ
+      /proc/interrupts - показать прерывания
+      /proc/meminfo – информация о памяти
+      /proc/mounts - отобразить смонтированные файловые системы
+      /proc/net/dev - показать сетевые интерфейсы и статистику по ним
+      /proc/swaps - показать файл(ы) подкачки
+      /proc/version - вывести версию ядра
+
+* clock -w
+  Сохранить системное время в BIOS
+
+* df
+  Инф. о использовании дисков
+
+* dmidecode -q
+  Аппаратные системные компоненты - (SMBIOS / DMI)
+
+* du [args] dir
+  Файлы/папки в текущем каталоге
+    * args
+      -s - подсчет и вывод размера
+      -h - размер в Gb
+    * dir - папка
+
+* free
+  Использование памяти и swap
+
+* hdparm -i /dev/hda
+  Характеристики жесткого диска
+
+* hdparm -tT /dev/sda
+  Протестировать производительность чтения данных с жесткого диска
+
+* lspci -tv
+  Показать в виде дерева PCI устройства
+
+* lsusb -tv
+  Показать в виде дерева USB устройства
+
+* man command
+  Мануал для command
+
+* shutdown [args] [time]
+  Остановить систему
+    * args
+      -h - выключить ПК
+      -r - перезагрузка
+      -c - отменить запланированное выключение
+    * time - время выключения (now, hours:minutes)
+
+* reboot
+  Перезагрузить систему
+
+* uname [args]
+  Информация о ядре
+&lt;code&gt;
+$ uname
+Linux
+$ uname -a
+Linux ilnurgiPC 3.8.0-27-generic #40-Ubuntu SMP Tue Jul 9 00:17:05 UTC 2013 x86_64 x86_64 x86_64 GNU/Linux
+$ uname -m
+x86_64
+$ uname -r
+3.8.0-27-generic&lt;/code&gt;
+
+* uptime
+  Текущий аптайм
+
+Установка пакетов
+---
+
+&lt;code&gt;
+*#Из исходников*
+./configure, make, make install
+dpkg -i pkg.deb
+Debian
+rpm -Uvh pkg.rpm
+RPM&lt;/code&gt;
+
+Пользователи и группы
+---
+
+* chage -E 2005-12-31 user1
+  Установить дату окончания действия учётной записи пользователя user1
+
+* exit
+  Разлогиниться
+
+* groupadd group_name
+  Создать новую группу
+
+* groupdel group_name
+  Удалить группу
+
+* groupmod -n new_group_name old_group_name
+  Переименовать группу old_group_name в new_group_name
+
+* grpck
+  Проверяет корректность системных файлов учётных записей. Проверяется файл/etc/group
+
+* finger user
+  Информация о user
+
+* logout
+  Выйти из системы
+
+* passwd
+  Cменить пароль
+
+* passwd user1
+  Сменить пароль пользователя user1
+
+* pwck
+  Проверить корректность системных файлов учётных записей. Проверяются файлы /etc/passwd и /etc/shadow
+
+* useradd [args] user_name
+  Создать пользователя
+    * args
+      -c comment- коментарии
+      -d dir - путь к домашней директорий
+      -g group_name - добавить в группу
+      -s dir - путь к shell&#39;y
+
+* userdel [args] user_name
+  Удалить пользователя
+    * args
+      -r - удалить домашнюю директорию
+
+* usermod [kwargs] user_name
+  Изменить атрибуты пользователя
+    * args
+      -c comment- коментарии
+      -d dir - путь к домашней директорий
+      -g group_name - добавить в группу
+      -s dir - путь к shell&#39;y
+
+* whoami
+  Имя, под которым вы залогинены
+
+Сеть
+---
+
+* dig domain
+  DNS информация domain
+
+* dig -x host
+  Реверсивно искать host
+
+* ping host
+  Пропинговать host и вывести результат
+
+* whois domain
+  Информацию для domain
+
+* wget [args] file
+  Скачать file
+
+    * args
+      -c - продолжить остановленную закачку
+
+SSH
+---
+
+* scp [kwargs] src dst
+  Копирует папки между машинами
+
+    * src - путь, откуда копируем
+    * dst - путь, куда копируем
+    * kwargs
+      -P port - порт подключения
+&lt;code&gt;scp /home/user/  user@XXX.XXX.XXX.XXX:/home/user&lt;/code&gt;
+
+* ssh [kwargs] user@host
+
+    * user - пользователь
+    * host - сервер
+    * args
+      -p port - порт Подключение
+
+* ssh-copy-id user@host
+  Добавить ваш ключ на host для user чтобы включить логин без пароля и по ключам
+
+Другое
+---
+
+* more
+  Постраничный вывод
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Welcome to linux commands&#8217;s documentation!</a></li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+
+  <h4>Next topic</h4>
+  <p class="topless"><a href="dirs.html"
+                        title="next chapter">dirs</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/index.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="dirs.html" title="dirs"
+             >next</a> |</li>
+        <li><a href="#">linux commands 14.10.12 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

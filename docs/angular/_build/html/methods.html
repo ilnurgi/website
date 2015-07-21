@@ -1,0 +1,341 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Стандартные методы модуля &mdash; angular 14.10.12 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '14.10.12',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="angular 14.10.12 documentation" href="index.html" />
+    <link rel="next" title="Синтаксис шаблонов" href="template.html" />
+    <link rel="prev" title="Добро пожаловать в документацию по AngularJS" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="template.html" title="Синтаксис шаблонов"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Добро пожаловать в документацию по AngularJS"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">angular 14.10.12 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="id1">
+<h1>Стандартные методы модуля<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>Вспомогательные методы<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="angular.bind">
+<tt class="descclassname">angular.</tt><tt class="descname">bind</tt><big>(</big><em>self</em>, <em>fn</em>, <em>args</em><big>)</big><a class="headerlink" href="#angular.bind" title="Permalink to this definition">¶</a></dt>
+<dd><p>карринг для функции fn</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="angular.bootstrap">
+<tt class="descclassname">angular.</tt><tt class="descname">bootstrap</tt><big>(</big><em>element</em><span class="optional">[</span>, <em>modules</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#angular.bootstrap" title="Permalink to this definition">¶</a></dt>
+<dd><p>используется для старта фреймфорка вручную</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="angular.callbacks">
+<tt class="descclassname">angular.</tt><tt class="descname">callbacks</tt><big>(</big><big>)</big><a class="headerlink" href="#angular.callbacks" title="Permalink to this definition">¶</a></dt>
+<dd><p>объект-коллекция колбэков для JSONP</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="angular.copy">
+<tt class="descclassname">angular.</tt><tt class="descname">copy</tt><big>(</big><em>source</em>, <em>destination</em><big>)</big><a class="headerlink" href="#angular.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>полное копирование(deep copy) объекта</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="angular.element">
+<tt class="descclassname">angular.</tt><tt class="descname">element</tt><big>(</big><em>selector</em><big>)</big><a class="headerlink" href="#angular.element" title="Permalink to this definition">¶</a></dt>
+<dd><p>Селектор из jQuery</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="angular.equals">
+<tt class="descclassname">angular.</tt><tt class="descname">equals</tt><big>(</big><em>o1</em>, <em>o2</em><big>)</big><a class="headerlink" href="#angular.equals" title="Permalink to this definition">¶</a></dt>
+<dd><p>сравнение значений/объектов</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="angular.extend">
+<tt class="descclassname">angular.</tt><tt class="descname">extend</tt><big>(</big><em>dst</em>, <em>src</em><span class="optional">[</span>, <em>src2</em><span class="optional">[</span>, <em>src3...</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#angular.extend" title="Permalink to this definition">¶</a></dt>
+<dd><p>расширение объекта</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="angular.forEach">
+<tt class="descclassname">angular.</tt><tt class="descname">forEach</tt><big>(</big><em>array</em>, <em>callback</em><span class="optional">[</span>, <em>context</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#angular.forEach" title="Permalink to this definition">¶</a></dt>
+<dd><p>Цикл по массиву</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>array</strong> (<em>array</em>) &#8211; массив</li>
+<li><strong>callback</strong> &#8211; обработчик</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre>angular.forEach([&#39;1&#39;, &#39;2&#39;], function(item){
+    console.log(item);
+})
+
+// 1
+// 2
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="angular.fromJson">
+<tt class="descclassname">angular.</tt><tt class="descname">fromJson</tt><big>(</big><big>)</big><a class="headerlink" href="#angular.fromJson" title="Permalink to this definition">¶</a></dt>
+<dd><p>конвертация из JSON</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="angular.identity">
+<tt class="descclassname">angular.</tt><tt class="descname">identity</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#angular.identity" title="Permalink to this definition">¶</a></dt>
+<dd><p>создает функцию, которая вернет значение(используется как обертка для мест, где нужно передавать строго функцию)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="angular.injector">
+<tt class="descclassname">angular.</tt><tt class="descname">injector</tt><big>(</big><em>modules</em><big>)</big><a class="headerlink" href="#angular.injector" title="Permalink to this definition">¶</a></dt>
+<dd><p>создает функцию-инжектор, которая может быть использована для получения сервисов</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="angular.isUndefined, isDefined, isString, isFunction, isObject, isNumber, isElement, isArray, isDate">
+<tt class="descclassname">angular.</tt><tt class="descname">isUndefined, isDefined, isString, isFunction, isObject, isNumber, isElement, isArray, isDate</tt><big>(</big><big>)</big><a class="headerlink" href="#angular.isUndefined, isDefined, isString, isFunction, isObject, isNumber, isElement, isArray, isDate" title="Permalink to this definition">¶</a></dt>
+<dd><p>методы проверки принадлежности типу</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="angular.lowercase">
+<tt class="descclassname">angular.</tt><tt class="descname">lowercase</tt><big>(</big><big>)</big><a class="headerlink" href="#angular.lowercase" title="Permalink to this definition">¶</a></dt>
+<dd><p>перевод в нижний регистр</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="angular.noop">
+<tt class="descclassname">angular.</tt><tt class="descname">noop</tt><big>(</big><big>)</big><a class="headerlink" href="#angular.noop" title="Permalink to this definition">¶</a></dt>
+<dd><p>функция “пустышка”, которую можно использовать как заглушку для колбэков</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="angular.toJson">
+<tt class="descclassname">angular.</tt><tt class="descname">toJson</tt><big>(</big><big>)</big><a class="headerlink" href="#angular.toJson" title="Permalink to this definition">¶</a></dt>
+<dd><p>конвертация в JSON</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="angular.uppercase">
+<tt class="descclassname">angular.</tt><tt class="descname">uppercase</tt><big>(</big><big>)</big><a class="headerlink" href="#angular.uppercase" title="Permalink to this definition">¶</a></dt>
+<dd><p>перевод в верхний регистр</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="angular.version">
+<tt class="descclassname">angular.</tt><tt class="descname">version</tt><big>(</big><big>)</big><a class="headerlink" href="#angular.version" title="Permalink to this definition">¶</a></dt>
+<dd><p>версия продукта</p>
+</dd></dl>
+
+</div>
+<div class="section" id="id3">
+<h2>Методы работы с модулем приложений<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="angular.module">
+<tt class="descclassname">angular.</tt><tt class="descname">module</tt><big>(</big><em>name</em>, <em>requires</em><big>)</big><a class="headerlink" href="#angular.module" title="Permalink to this definition">¶</a></dt>
+<dd><p>Объявляет модуль в приложений и возвращает его экземпляр</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) &#8211; название модуля</li>
+<li><strong>requires</strong> (<em>array</em>) &#8211; список зависимостей</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre>var app = angular.module(&#39;muModule&#39;, [])
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="app.controller">
+<tt class="descclassname">app.</tt><tt class="descname">controller</tt><big>(</big><em>name</em>, <em>callback</em><big>)</big><a class="headerlink" href="#app.controller" title="Permalink to this definition">¶</a></dt>
+<dd><p>Объявляет контроллер в модуле</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) &#8211; название модуля</li>
+<li><strong>callback</strong> &#8211; обработчик</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre>app.controller(
+    &#39;myController&#39;,
+    function(){
+        ...
+    }
+)
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="app.constant">
+<tt class="descclassname">app.</tt><tt class="descname">constant</tt><big>(</big><em>key</em>, <em>value</em><big>)</big><a class="headerlink" href="#app.constant" title="Permalink to this definition">¶</a></dt>
+<dd><p>Объявляет константу модуля</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) &#8211; константа</li>
+<li><strong>val</strong> &#8211; значение</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">app</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="s">&#39;CONST&#39;</span><span class="p">,</span> <span class="mi">123</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="app.directive">
+<tt class="descclassname">app.</tt><tt class="descname">directive</tt><big>(</big><em>name</em>, <em>callback</em><big>)</big><a class="headerlink" href="#app.directive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Объявляет директиву в модуле</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) &#8211; название</li>
+<li><strong>callback</strong> &#8211; обработчик</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre>app.directive(
+    &#39;myController&#39;,
+    function(){
+        restrict: &#39;A&#39;
+    }
+)
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Стандартные методы модуля</a><ul>
+<li><a class="reference internal" href="#id2">Вспомогательные методы</a></li>
+<li><a class="reference internal" href="#id3">Методы работы с модулем приложений</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Добро пожаловать в документацию по AngularJS</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="template.html"
+                        title="next chapter">Синтаксис шаблонов</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/methods.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="template.html" title="Синтаксис шаблонов"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Добро пожаловать в документацию по AngularJS"
+             >previous</a> |</li>
+        <li><a href="index.html">angular 14.10.12 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright ilnurgi, последняя сборка 2014-10-12.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

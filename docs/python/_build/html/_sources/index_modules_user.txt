@@ -1,0 +1,14 @@
+Сторонние модули
+================
+
+Содержание:
+
+.. toctree::
+   :maxdepth: 2
+
+   modules_user/docx
+   modules_user/pyaudio
+   modules_user/xlrd
+   modules_user/xlwt
+   modules_user/xlutils
+   modules_user/serial

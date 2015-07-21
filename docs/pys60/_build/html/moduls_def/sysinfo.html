@@ -1,0 +1,303 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>sysinfo &mdash; pys60 14.10.12 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.10.12',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="pys60 14.10.12 documentation" href="../index.html" />
+    <link rel="up" title="Стандартные модули" href="index.html" />
+    <link rel="next" title="telephone" href="telephone.html" />
+    <link rel="prev" title="positioning" href="positioning.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="telephone.html" title="telephone"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="positioning.html" title="positioning"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">pys60 14.10.12 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Стандартные модули</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <span class="target" id="module-sysinfo"></span><div class="section" id="sysinfo">
+<h1>sysinfo<a class="headerlink" href="#sysinfo" title="Permalink to this headline">¶</a></h1>
+<p>Модуль для работы с системной информацией.</p>
+<dl class="method">
+<dt id="sysinfo.active_profile">
+<tt class="descclassname">sysinfo.</tt><tt class="descname">active_profile</tt><big>(</big><big>)</big><a class="headerlink" href="#sysinfo.active_profile" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Возвращает активный профиль:</dt>
+<dd><ul class="first last simple">
+<li>general – Обычный</li>
+<li>silent – Без звука</li>
+<li>meeting – Встреча</li>
+<li>outdoor – На улице</li>
+<li>pager – Пейджер</li>
+<li>offline – Автономный</li>
+<li>drive – В машине</li>
+<li>user&lt;profile_value&gt; – пользовательский профиль (режим).</li>
+<li>profile_value – имя профиля, заданное пользователем.</li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">sysinfo</span><span class="o">.</span><span class="n">active_profile</span><span class="p">()</span>
+<span class="go">&#39;meeting&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="sysinfo.battery">
+<tt class="descclassname">sysinfo.</tt><tt class="descname">battery</tt><big>(</big><big>)</big><a class="headerlink" href="#sysinfo.battery" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает число, уровень заряда аккумулятора в процентах</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">sysinfo</span><span class="o">.</span><span class="n">battery</span><span class="p">()</span>
+<span class="go">100</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="sysinfo.display_pixels">
+<tt class="descclassname">sysinfo.</tt><tt class="descname">display_pixels</tt><big>(</big><big>)</big><a class="headerlink" href="#sysinfo.display_pixels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает список, размеры экрана.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">sysinfo</span><span class="o">.</span><span class="n">display_pixels</span><span class="p">()</span>
+<span class="go">(360,640)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="sysinfo.display_twips">
+<tt class="descclassname">sysinfo.</tt><tt class="descname">display_twips</tt><big>(</big><big>)</big><a class="headerlink" href="#sysinfo.display_twips" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает список, размеры экрана в твипсах (1/567 см).</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">sysinfo</span><span class="o">.</span><span class="n">display_twips</span><span class="p">()</span>
+<span class="go">(2449,4354)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="sysinfo.free_drivespace">
+<tt class="descclassname">sysinfo.</tt><tt class="descname">free_drivespace</tt><big>(</big><big>)</big><a class="headerlink" href="#sysinfo.free_drivespace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает словарь, свободное пространство на дисках.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">sysinfo</span><span class="o">.</span><span class="n">free_drivespace</span><span class="p">()</span>
+<span class="go">{u&#39;C:&#39;: 86908928, u&#39;F:&#39;: 1373974528, u&#39;D:&#39;: 115130368, u&#39;Z:&#39;: 0, u&#39;E:&#39;: 780959744}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="sysinfo.free_ram">
+<tt class="descclassname">sysinfo.</tt><tt class="descname">free_ram</tt><big>(</big><big>)</big><a class="headerlink" href="#sysinfo.free_ram" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает число, свободное озу в байтах.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">sysinfo</span><span class="o">.</span><span class="n">free_ram</span><span class="p">()</span>
+<span class="go">115109888</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="sysinfo.imei">
+<tt class="descclassname">sysinfo.</tt><tt class="descname">imei</tt><big>(</big><big>)</big><a class="headerlink" href="#sysinfo.imei" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает строку, имей смартфона.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">sysinfo</span><span class="o">.</span><span class="n">imei</span><span class="p">()</span>
+<span class="go">u&#39;1234567890123123&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="sysinfo.max_ramdrive_size">
+<tt class="descclassname">sysinfo.</tt><tt class="descname">max_ramdrive_size</tt><big>(</big><big>)</big><a class="headerlink" href="#sysinfo.max_ramdrive_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>По идее показывает максимальный размер диска D. но не работает у многих</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">sysinfo</span><span class="o">.</span><span class="n">max_ramdrive_size</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="sysinfo.os_version">
+<tt class="descclassname">sysinfo.</tt><tt class="descname">os_version</tt><big>(</big><big>)</big><a class="headerlink" href="#sysinfo.os_version" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает список, версия операционной системы</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">sysinfo</span><span class="o">.</span><span class="n">os_version</span><span class="p">()</span>
+<span class="go">(2,0,4067)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="sysinfo.ring_type">
+<tt class="descclassname">sysinfo.</tt><tt class="descname">ring_type</tt><big>(</big><big>)</big><a class="headerlink" href="#sysinfo.ring_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает строку, тип сигнала.</p>
+<blockquote>
+<div><ul class="simple">
+<li>normal – обычный</li>
+<li>scending – нарастающий</li>
+<li>ring once – одинарный</li>
+<li>beep – короткий сигнал</li>
+<li>silent – без звука</li>
+</ul>
+</div></blockquote>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">sysinfo</span><span class="o">.</span><span class="n">ring_type</span><span class="p">()</span>
+<span class="go">&#39;normal&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="sysinfo.signal_bars">
+<tt class="descclassname">sysinfo.</tt><tt class="descname">signal_bars</tt><big>(</big><big>)</big><a class="headerlink" href="#sysinfo.signal_bars" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает число, уровень сигнала сети в уровнях от 0 до 7.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">sysinfo</span><span class="o">.</span><span class="n">signal_bars</span><span class="p">()</span>
+<span class="go">7</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="sysinfo.signal_dbm">
+<tt class="descclassname">sysinfo.</tt><tt class="descname">signal_dbm</tt><big>(</big><big>)</big><a class="headerlink" href="#sysinfo.signal_dbm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает число, уровень сигнала сети в dBm</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">sysinfo</span><span class="o">.</span><span class="n">signal_dbm</span><span class="p">()</span>
+<span class="go">74</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="sysinfo.signal">
+<tt class="descclassname">sysinfo.</tt><tt class="descname">signal</tt><big>(</big><big>)</big><a class="headerlink" href="#sysinfo.signal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает число, неизвестно, похоже на signal_bars()</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">sysinfo</span><span class="o">.</span><span class="n">signal</span><span class="p">()</span>
+<span class="go">7</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="sysinfo.sw_version">
+<tt class="descclassname">sysinfo.</tt><tt class="descname">sw_version</tt><big>(</big><big>)</big><a class="headerlink" href="#sysinfo.sw_version" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает строку, версию прошивки смарта.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">sysinfo</span><span class="o">.</span><span class="n">sw_version</span><span class="p">()</span>
+<span class="go">u&#39;111.030.0607 2011-11-10 RM-596 (c) Nokia&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="sysinfo.total_ram">
+<tt class="descclassname">sysinfo.</tt><tt class="descname">total_ram</tt><big>(</big><big>)</big><a class="headerlink" href="#sysinfo.total_ram" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает число, размер озу в байтах.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">sysinfo</span><span class="o">.</span><span class="n">total_ram</span><span class="p">()</span>
+<span class="go">20971502</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="sysinfo.total_rom">
+<tt class="descclassname">sysinfo.</tt><tt class="descname">total_rom</tt><big>(</big><big>)</big><a class="headerlink" href="#sysinfo.total_rom" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает число, размер диска Z (прошивка смарта) в байтах.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">sysinfo</span><span class="o">.</span><span class="n">total_rom</span><span class="p">()</span>
+<span class="go">20971502</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="positioning.html"
+                        title="previous chapter">positioning</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="telephone.html"
+                        title="next chapter">telephone</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/moduls_def/sysinfo.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="telephone.html" title="telephone"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="positioning.html" title="positioning"
+             >previous</a> |</li>
+        <li><a href="../index.html">pys60 14.10.12 documentation</a> &raquo;</li>
+          <li><a href="index.html" >Стандартные модули</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

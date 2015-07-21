@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>light &mdash; pys60 14.10.12 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.10.12',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="pys60 14.10.12 documentation" href="../index.html" />
+    <link rel="up" title="Пользовательские модули" href="index.html" />
+    <link rel="next" title="lock" href="lock.html" />
+    <link rel="prev" title="lang" href="lang.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="lock.html" title="lock"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="lang.html" title="lang"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">pys60 14.10.12 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Пользовательские модули</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <span class="target" id="module-light"></span><div class="section" id="light">
+<h1>light<a class="headerlink" href="#light" title="Permalink to this headline">¶</a></h1>
+<p>Питоновский модуль для работы с подсветкой</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version pys60: </span>2.0.0</p>
+</div>
+<dl class="method">
+<dt id="light.disable_light_sensor">
+<tt class="descclassname">light.</tt><tt class="descname">disable_light_sensor</tt><big>(</big><big>)</big><a class="headerlink" href="#light.disable_light_sensor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Выключает датчик света</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="light.enable_light_sensor">
+<tt class="descclassname">light.</tt><tt class="descname">enable_light_sensor</tt><big>(</big><big>)</big><a class="headerlink" href="#light.enable_light_sensor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Включает датчик света</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="light.get">
+<tt class="descclassname">light.</tt><tt class="descname">get</tt><big>(</big><big>)</big><a class="headerlink" href="#light.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает уровень подсветки смартфона</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">light</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+<span class="go">30</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="light.is_light_sensor_enabled">
+<tt class="descclassname">light.</tt><tt class="descname">is_light_sensor_enabled</tt><big>(</big><big>)</big><a class="headerlink" href="#light.is_light_sensor_enabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает статус датчика света.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">light</span><span class="o">.</span><span class="n">is_light_sensor_enabled</span><span class="p">()</span>
+<span class="go">0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="light.set">
+<tt class="descclassname">light.</tt><tt class="descname">set</tt><big>(</big><em>light</em><big>)</big><a class="headerlink" href="#light.set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Устанавливает уровень подсветки дисплея в значение light.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">light</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="lang.html"
+                        title="previous chapter">lang</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="lock.html"
+                        title="next chapter">lock</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/moduls_user/light.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="lock.html" title="lock"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="lang.html" title="lang"
+             >previous</a> |</li>
+        <li><a href="../index.html">pys60 14.10.12 documentation</a> &raquo;</li>
+          <li><a href="index.html" >Пользовательские модули</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

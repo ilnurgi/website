@@ -1,0 +1,349 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Описание файловой структуры проектов &mdash; android 14.10.12 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '14.10.12',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="android 14.10.12 documentation" href="index.html" />
+    <link rel="next" title="Лейауты, вьюхи" href="layout.html" />
+    <link rel="prev" title="Welcome to android’s documentation!" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="layout.html" title="Лейауты, вьюхи"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to android’s documentation!"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">android 14.10.12 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="id1">
+<h1>Описание файловой структуры проектов<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<ul>
+<li><p class="first"><cite>src</cite> – все исходные коды</p>
+</li>
+<li><p class="first"><cite>gen</cite> – генерируемые средой файлы, необходимые для приложения. Здесь лучше ничего не трогать. (Если этой папки нет что-нибудь измените в проекте и нажмите кнопку сохранить).</p>
+</li>
+<li><p class="first"><cite>Android x.x.x</cite> – необходимые для приложения Android-библиотеки</p>
+</li>
+<li><p class="first"><cite>assets</cite> – папка для файлов-ресурсов различного типа</p>
+</li>
+<li><p class="first"><cite>res</cite> – папка для файлов-ресурсов различного типа</p>
+<ul>
+<li><p class="first"><cite>anim</cite> - содержит анимации, alpha (затемнение), scale (масштабирование), translate (перемещение) или rotate (поворот)</p>
+</li>
+<li><p class="first"><cite>drawable</cite> - содержит изображения</p>
+</li>
+<li><p class="first"><cite>values-???-???...</cite> - ресурсы приложения по модификаторам</p>
+<ul class="simple">
+<li><cite>Мобильный код страны и код мобильного оператора (MCC/MNC)</cite> - <a class="reference external" href="http://en.wikipedia.org/wiki/Mobile_Network_Code">http://en.wikipedia.org/wiki/Mobile_Network_Code</a></li>
+<li><cite>Язык и регион</cite> - en, fr ....</li>
+<li><cite>Размер экрана</cite> - small (меньше, чем HVGA), medium (HVGA или меньше, чем VGA) или large (VGA или больше)</li>
+<li><cite>Высота и ширина экрана</cite> - long или notlong</li>
+<li><cite>Ориентация экрана в пространстве</cite> - port (портретный), land (альбомный) и square (если высота экрана равна ширине)</li>
+<li><cite>Плотность пикселов на экране</cite> - ldpi, mdpi и hdpi</li>
+<li><cite>Тип сенсорного экрана</cite> - notouch, stylus или finger</li>
+<li><cite>Наличие клавиатуры</cite> - keysexposed, keyshidden или keyssoft</li>
+<li><cite>Тип ввода</cite> - nokeys, qwerty или 12key</li>
+<li><cite>Способ навигации</cite> - nonav, dpad, trackball или wheel</li>
+</ul>
+</li>
+<li><p class="first"><cite>values</cite> - ресурсы приложения</p>
+<ul>
+<li><p class="first"><cite>string</cite> - строковые ресурсы</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;string name=&#39;name&#39;&gt;value&lt;/string&gt;
+</pre></div>
+</div>
+</li>
+<li><p class="first"><cite>color</cite> - ресурсы цвета (RGB, ARGB)</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;color name=&#39;name&#39;&gt;#001100&lt;/color&gt;
+</pre></div>
+</div>
+</li>
+<li><p class="first"><cite>dimen</cite> - ресурсы размеров (px, in, pt, mm, dp, sp)</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;dimen name=&quot;standard_border&quot;&gt;5dp&lt;/dimen&gt;
+</pre></div>
+</div>
+</li>
+<li><p class="first"><cite>style</cite> - стиль</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;style name=&quot;StyleName&quot; parent=&quot;ParentStyleName&quot;&gt;
+  &lt;item name=&quot;attributeName&quot;&gt;value&lt;/item&gt;
+  &lt;item name=&quot;android:textSize&quot;&gt;14sp&lt;/item&gt;
+&lt;/style&gt;
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p class="first"><cite>layout</cite> - папка лейауты для вертикалей</p>
+</li>
+<li><p class="first"><cite>layout-land</cite> - папка лейауты для горизонтали</p>
+</li>
+<li><p class="first"><cite>menu</cite> - папка с меню</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;menu&gt;
+    &lt;item
+        android:id=&quot;@+id/menu_copy&quot;
+        android:orderInCategory=&quot;1&quot;
+        android:title=&quot;copy&quot;&gt;
+    &lt;/item&gt;
+    &lt;group android:id=&quot;@+id/group1&quot;&gt;
+        &lt;item
+            android:id=&quot;@+id/menu_copy&quot;
+            android:orderInCategory=&quot;1&quot;
+            android:title=&quot;copy&quot;&gt;
+        &lt;/item&gt;
+    &lt;/group&gt;
+&lt;/menu&gt;
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p class="first"><cite>AndroidManifest.xml</cite> – манифест или конфиг-файл приложения</p>
+<ul class="simple">
+<li><cite>manifest</cite> - включает в себя узлы, описывающие программные компоненты, настройки безопасности, классы для тестирования и требования, из которых состоит приложение.<ul>
+<li><cite>package</cite> - пакет проекта</li>
+<li><cite>android:versionCode</cite> - внутренняя версия, число</li>
+<li><cite>android:versionName</cite> - внешняя версия, строка</li>
+<li><cite>uses-sdk</cite>  - версии SDK, которые должны быть доступны на устройстве, чтобы приложение смогло правильно функционировать. Основываясь на версии SDK, можно ограничить круг устройств, способных запускать приложение.<ul>
+<li><cite>minSDKVersion</cite> - указывает на минимальную версию SDK, содержащую API, которая используется в вашей программе. Если не зададите минимальную версию, применится значение по умолчанию, а ваше приложение не сможет корректно работать, если попытается получить доступ к API, которые недоступны на текущем устройстве.</li>
+<li><cite>maxSDKVersion</cite> - позволяет определить самую позднюю версию, которую вы готовы поддерживать. Ваше приложение будет невидимым в Android Market для устройств, управляемых системой с более свежей версией. Устанавливать значение для этого атрибута рекомендуется только в том случае, если вы абсолютно уверены, что приложение не работает на платформе с версией, выше заданной.</li>
+<li><cite>targetSDKVersion</cite> - позволяет указать платформу, для которой вы разрабатывали и тестировали приложение. Устанавливая значение для этого атрибута, вы сообщаете системе, что для поддержки этой конкретной версии не требуется никаких изменений, связанных с прямой или обратной совместимостью.</li>
+</ul>
+</li>
+<li><cite>uses-configuration</cite> - механизмы ввода данных, поддерживаемые вашим приложением<ul>
+<li><cite>reqFiveWayNav</cite> — true, если необходимо устройство ввода, поддерживающее навигацию вверх, вниз, влево, вправо, а также нажатие выделенного элемента; в эту категорию входят как трекболы, так и манипуляторы D-pad;</li>
+<li><cite>reqHardKeyboard</cite> — если вашему приложению нужна аппаратная клавиатура, укажите значение true;</li>
+<li><cite>reqKeyboardType</cite> — позволяет задать тип клавиатуры — nokeys, qwerty, twelvekey или undefined;</li>
+<li><cite>reqNavigation</cite> — если требуется устройство для навигации, укажите одно из следующих значений — nonav, dpad, trackball, wheel или undefined;</li>
+<li><cite>reqTouchScreen</cite> — если вашему приложению понадобится сенсорный экран, выберите одно из следующих значений — notouch, stylus, finger или undefined.</li>
+</ul>
+</li>
+<li><cite>uses-feature</cite> - аппаратные возможности. Это предотвратит установку программы на устройства, которые не соответсвуют аппаратным требованиям.<ul>
+<li><cite>android.hardware.camera</cite> - если для работы приложения нужна аппаратная камера</li>
+<li><cite>android.hardware.camera.autofocus</cite> - если требуется камера с автоматической фокусировкой</li>
+<li><cite>android:glEsVersion</cite> - версия OpenGL ES в виде целого числа. Первые 16 бит соответствуют мажорной версии, а последние — минорной (&#8220;0x00010001&#8221;)</li>
+<li><a class="reference external" href="http://developer.android.com/guide/topics/manifest/uses-feature-element.html">http://developer.android.com/guide/topics/manifest/uses-feature-element.html</a>.</li>
+</ul>
+</li>
+<li><cite>supports-screens</cite> - экранные размеры, которые поддерживаются (и не поддерживаются) вашим приложением.<ul>
+<li><cite>smallScreens</cite> — экраны с разрешением меньшим, чем обычное HVGA, как правило, речь идет о QVGA;</li>
+<li><cite>normalScreens</cite> — используется для описания экранов стандартных мобильных телефонов, как минимум HVGA, включая HVGA и WQVGA;</li>
+<li><cite>largeScreens</cite> — экраны больших размеров, значительно больше, чем у мобильного телефона;</li>
+<li><cite>anyDensity</cite> — установите значение true, если ваше приложение способно масштабироваться для отображения на экране с любым разрешением.</li>
+</ul>
+</li>
+<li><cite>аpplication</cite> - метаданные приложения (включая его название, значок и визуальный стиль).<ul>
+<li><cite>аctivity</cite> - требуется для каждой Активности, которую отображает приложение.<ul>
+<li><cite>name</cite> - имя класса Активности.</li>
+<li><cite>label</cite> - заголовок Активности.</li>
+<li><cite>theme</cite> - тема для Активности</li>
+<li><cite>configChanges</cite> - обработка событий при изменений конфигурации<ul>
+<li><cite>оrientation</cite> — положение экрана изменено с портретного на альбомное (или наоборот);</li>
+<li><cite>keyboardHidden</cite> — клавиатура выдвинута или спрятана;</li>
+<li><cite>fontScale</cite> — пользователь изменил предпочтительный размер шрифта;</li>
+<li><cite>locale</cite> — пользователь выбрал новые языковые настройки;</li>
+<li><cite>keyboard</cite> — изменился тип клавиатуры; например, телефон может иметь 12-клавишную панель, при повороте которой появляется полноценная клавиатура;</li>
+<li><cite>touchscreen</cite> или <cite>navigation</cite> — изменился тип клавиатуры или способ навигации. Как правило, такие события не встречаются.</li>
+</ul>
+</li>
+<li><cite>intent-filter</cite> - Намерения Активности</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><cite>service</cite> - каждый класс Сервиса должен иметь тег service<ul>
+<li><cite>intent-filter</cite> - Намерения Сервиса</li>
+</ul>
+</li>
+<li><cite>provider</cite> - все Провайдеры в приложении.</li>
+<li><cite>receiver</cite> - регистрация Широковещательного приемника, не запуская при этом приложение.</li>
+<li><cite>uses-permission</cite> - описывают полномочия, которые, по вашему мнению, нужны приложению для полноценной работы.</li>
+<li><cite>permission</cite> - ограничения доступа к компоненту приложения</li>
+<li><cite>instrumentation</cite> - Классы, производные от Instrumentation, предоставляют фреймворк для тестирования программных компонентов во время их выполнения. Они содержат методы-перехватчики, с помощью которых отслеживаются работа программы и ее взаимодействия с системными ресурсами.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre>&lt;manifest
+  xmlns:android=http://schemas.android.com/apk/res/android
+  package=&quot;com.my_domain.my_app&quot;
+  android:versionCode=&quot;1&quot;
+  android:versionName=&quot;0.9 Beta&quot;&gt;
+
+    &lt;uses-sdk
+      android:minSdkVersion=&quot;4&quot;
+      android:targetSdkVersion=&quot;5&quot;&gt;
+    &lt;/uses-sdk&gt;
+
+    &lt;uses-configuration
+      android:reqTouchScreen=[&quot;finger&quot;]
+      android:reqNavigation=[&quot;trackball&quot;]
+      android:reqHardKeyboard=[&quot;true&quot;]
+      android:reqKeyboardType=[&quot;qwerty&quot;/&gt;
+
+    &lt;uses-configuration
+      android:reqTouchScreen=[&quot;finger&quot;]
+      android:reqNavigation=[&quot;trackball&quot;]
+      android:reqHardKeyboard=[&quot;true&quot;]
+      android:reqKeyboardType=[&quot;twelvekey&quot;]/&gt;
+
+    &lt;uses-feature
+      android:glEsVersion=&quot; 0x00010001&quot;
+      android:name=&quot;android.hardware.camera&quot; /&gt;
+
+    &lt;supports-screens
+      android:smallScreens=[&quot;false&quot;]
+      android:normalScreens=[&quot;true&quot;]
+      android:largeScreens=[&quot;true&quot;]
+      android:anyDensity=[&quot;false&quot;] /&gt;
+
+    &lt;application
+      android:icon=&quot;@drawable/icon&quot;
+      android:theme=&quot;@style/my_theme&quot;
+      android:name=&quot;MyApplication&quot;
+      android:debuggable=&quot;true&quot;&gt;
+
+      &lt;activity
+        android:name=&quot;.MyActivity&quot;
+        android:label=&quot;@string/app_name&quot;
+        android:theme=&quot;@style/ToDoTheme&quot;
+        android:configChanges=&quot;orientation|keyboardHidden&quot;&gt;
+          &lt;intent-filter&gt;
+            &lt;action android:name=&quot;android.intent.action.MAIN&quot; /&gt;
+            &lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;
+          &lt;/intent-filter&gt;
+      &lt;/activity&gt;
+
+      &lt;service
+        android:enabled=&quot;true&quot;
+        android:name=&quot;.MyService&quot;&gt;
+      &lt;/service&gt;
+
+      &lt;provider
+        android:permission=&quot;com.paad.MY_PERMISSION&quot;
+        android:name=&quot;.MyContentProvider&quot;
+        android:enabled=&quot;true&quot;
+        android:authorities=&quot;com.paad.myapp.MyContentProvider&quot;&gt;
+      &lt;/provider&gt;
+
+      &lt;receiver
+        android:enabled=&quot;true&quot;
+        android:label=&quot;My Intent Receiver&quot;
+        android:name=&quot;.MyIntentReceiver&quot;&gt;
+      &lt;/receiver&gt;
+
+      &lt;uses-permission
+        android:name=&quot;android.permission.ACCESS_LOCATION&quot;/&gt;
+
+      &lt;permission
+        android:name=&quot;com.paad.DETONATE_DEVICE&quot;
+        android:protectionLevel=&quot;dangerous&quot;
+        android:label=&quot;Self Destruct&quot;
+        android:description=&quot;@string/detonate_description&quot;&gt;
+      &lt;/permission&gt;
+
+      &lt;instrumentation
+        android:label=&quot;My Test&quot;
+        android:name=&quot;.MyTestClass&quot;
+        android:targetPackage=&quot;com.paad.aPackage&quot;&gt;
+      &lt;/instrumentation&gt;
+
+    &lt;/application&gt;
+
+&lt;/manifest&gt;
+</pre></div>
+</div>
+<p>&#64;+id/obj</p>
+<p>&#64;string/text</p>
+<p>&#64;color/text</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Welcome to android&#8217;s documentation!</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="layout.html"
+                        title="next chapter">Лейауты, вьюхи</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/file_structure.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="layout.html" title="Лейауты, вьюхи"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to android’s documentation!"
+             >previous</a> |</li>
+        <li><a href="index.html">android 14.10.12 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

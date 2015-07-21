@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>telephone &mdash; pys60 14.10.12 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.10.12',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="pys60 14.10.12 documentation" href="../index.html" />
+    <link rel="up" title="Стандартные модули" href="index.html" />
+    <link rel="next" title="Пользовательские модули" href="../moduls_user/index.html" />
+    <link rel="prev" title="sysinfo" href="sysinfo.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../moduls_user/index.html" title="Пользовательские модули"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="sysinfo.html" title="sysinfo"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">pys60 14.10.12 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Стандартные модули</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <span class="target" id="module-telephone"></span><div class="section" id="telephone">
+<h1>telephone<a class="headerlink" href="#telephone" title="Permalink to this headline">¶</a></h1>
+<p>Модуль позволяет осуществлять вызовы.</p>
+<dl class="method">
+<dt id="telephone.dial">
+<tt class="descclassname">telephone.</tt><tt class="descname">dial</tt><big>(</big><em>number</em><big>)</big><a class="headerlink" href="#telephone.dial" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>number</strong> (<em>unicode</em>) &#8211; номер абонента</td>
+</tr>
+</tbody>
+</table>
+<p>Осуществляет вызов. Если уже есть активный вызов, то он переводится в удержание.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">перед вызовом желательно вызвать :py:meth: hang_up()</p>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">try</span><span class="p">:</span>
+    <span class="n">telephone</span><span class="o">.</span><span class="n">hang_up</span><span class="p">()</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="k">pass</span>
+<span class="n">telephone</span><span class="o">.</span><span class="n">dial</span><span class="p">(</span><span class="s">&#39;1&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="telephone.hang_up">
+<tt class="descclassname">telephone.</tt><tt class="descname">hang_up</tt><big>(</big><big>)</big><a class="headerlink" href="#telephone.hang_up" title="Permalink to this definition">¶</a></dt>
+<dd><p>Отбивает вызов (если вызов уже отбит, то произойдет ошибка SymbianError: KErrNotReady).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="telephone.incoming_call">
+<tt class="descclassname">telephone.</tt><tt class="descname">incoming_call</tt><big>(</big><big>)</big><a class="headerlink" href="#telephone.incoming_call" title="Permalink to this definition">¶</a></dt>
+<dd><p>Останавливает выполнение программы и ждет входящего вызова, после которого выполнение программы возобновляется (программа «засыпает» до первого звонка)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="telephone.answer">
+<tt class="descclassname">telephone.</tt><tt class="descname">answer</tt><big>(</big><big>)</big><a class="headerlink" href="#telephone.answer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Отвечает на входящий вызов. После ответа и окончании разговора, желательно выполнить hung_up()</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="telephone.call_state">
+<tt class="descclassname">telephone.</tt><tt class="descname">call_state</tt><big>(</big><em>callable</em><big>)</big><a class="headerlink" href="#telephone.call_state" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>callable</strong> &#8211; обработчик</td>
+</tr>
+</tbody>
+</table>
+<p>Устанавливает обработчик состояния линии, в которую передается кортеж, абонент и статус линии.</p>
+<blockquote>
+<div><ul class="simple">
+<li>telephone.EStatusUnknown - статус неизвестен;</li>
+<li>telephone.EStatusIdle - нет активных вызовов;</li>
+<li>telephone.EStatusDialling - осуществление вызова;</li>
+<li>telephone.EStatusRinging - идут «гудки»</li>
+<li>telephone.EStatusAnswering - ответ на вызов;</li>
+<li>telephone.EStatusConnecting - подключение;</li>
+<li>telephone.EStatusConnected - подключено;</li>
+<li>telephone.EStatusReconnectPending - переподключение;</li>
+<li>telephone.EStatusDisconnecting - отключение;</li>
+<li>telephone.EStatusHold - отложено;</li>
+<li>telephone.EStatusTransferring - перенаправление;</li>
+<li>telephone.EStatusTransferAlerting - подключение к перенаправленному вызову.</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="sysinfo.html"
+                        title="previous chapter">sysinfo</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../moduls_user/index.html"
+                        title="next chapter">Пользовательские модули</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/moduls_def/telephone.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../moduls_user/index.html" title="Пользовательские модули"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="sysinfo.html" title="sysinfo"
+             >previous</a> |</li>
+        <li><a href="../index.html">pys60 14.10.12 documentation</a> &raquo;</li>
+          <li><a href="index.html" >Стандартные модули</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,1026 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>docx - инструмент для работы с docx форматом &mdash; Документация python документация 2015.05.20</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2015.05.20',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Документация python документация 2015.05.20" href="../index.html" />
+    <link rel="up" title="Сторонние модули" href="index.html" />
+    <link rel="next" title="pyaudio - инструмент для работы со звуком" href="pyaudio.html" />
+    <link rel="prev" title="Сторонние модули" href="index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Алфавитный указатель"
+             accesskey="I">указатель</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="pyaudio.html" title="pyaudio - инструмент для работы со звуком"
+             accesskey="N">вперёд</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Сторонние модули"
+             accesskey="P">назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Документация python документация 2015.05.20</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Сторонние модули</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <span class="target" id="module-docx"></span><div class="section" id="docx-docx">
+<h1>docx - инструмент для работы с docx форматом<a class="headerlink" href="#docx-docx" title="Ссылка на этот заголовок">¶</a></h1>
+<div class="section" id="document">
+<h2>Document<a class="headerlink" href="#document" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="docx.docx.api.Document">
+<em class="property">class </em><code class="descclassname">docx.api.</code><code class="descname">Document</code><span class="sig-paren">(</span><span class="optional">[</span><em>str path</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#docx.docx.api.Document" title="Ссылка на это определение">¶</a></dt>
+<dd><p>создает пустой документ или открывает существующий</p>
+<dl class="attribute">
+<dt id="docx.docx.api.Document.inline_shapes">
+<code class="descname">inline_shapes</code><a class="headerlink" href="#docx.docx.api.Document.inline_shapes" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает экземпляры <code class="xref py py-class docutils literal"><span class="pre">InlineShape</span></code> документа</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.api.Document.paragraphs">
+<code class="descname">paragraphs</code><a class="headerlink" href="#docx.docx.api.Document.paragraphs" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает список параграфов документа <code class="xref py py-class docutils literal"><span class="pre">Paragraph</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.api.Document.sections">
+<code class="descname">sections</code><a class="headerlink" href="#docx.docx.api.Document.sections" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает список секции документа <code class="xref py py-class docutils literal"><span class="pre">Sections</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.api.Document.tables">
+<code class="descname">tables</code><a class="headerlink" href="#docx.docx.api.Document.tables" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает список таблиц документа <code class="xref py py-class docutils literal"><span class="pre">Table</span></code></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="docx.docx.api.Document.add_heading">
+<code class="descname">add_heading</code><span class="sig-paren">(</span><em>str text</em><span class="optional">[</span>, <em>int level=0...9</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#docx.docx.api.Document.add_heading" title="Ссылка на это определение">¶</a></dt>
+<dd><p>добавляет заголовок и возвращает его экземпляр</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="docx.docx.api.Document.add_bage_break">
+<code class="descname">add_bage_break</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#docx.docx.api.Document.add_bage_break" title="Ссылка на это определение">¶</a></dt>
+<dd><p>добавляет новый лист в документ</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="docx.docx.api.Document.add_paragraph">
+<code class="descname">add_paragraph</code><span class="sig-paren">(</span><em>str text</em><span class="optional">[</span>, <em>str style</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#docx.docx.api.Document.add_paragraph" title="Ссылка на это определение">¶</a></dt>
+<dd><p>добавляет новый параграф в документ и возвращает его экземпляр <code class="xref py py-class docutils literal"><span class="pre">Paragraph</span></code></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="docx.docx.api.Document.add_picture">
+<code class="descname">add_picture</code><span class="sig-paren">(</span><em>str path</em><span class="optional">[</span>, <em>width</em><span class="optional">]</span><span class="optional">[</span>, <em>height</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#docx.docx.api.Document.add_picture" title="Ссылка на это определение">¶</a></dt>
+<dd><p>добавляет картинку в документ и возвращает его экземпляр</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="docx.docx.api.Document.add_section">
+<code class="descname">add_section</code><span class="sig-paren">(</span><span class="optional">[</span><em>start_type</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#docx.docx.api.Document.add_section" title="Ссылка на это определение">¶</a></dt>
+<dd><p>добавляет новцую секцию в документ и возвращает его экземпляр <code class="xref py py-class docutils literal"><span class="pre">Section</span></code> WD_SECTION.ODD_PAGE</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="docx.docx.api.Document.add_table">
+<code class="descname">add_table</code><span class="sig-paren">(</span><em>int rows</em>, <em>int cols</em><span class="optional">[</span>, <em>str style</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#docx.docx.api.Document.add_table" title="Ссылка на это определение">¶</a></dt>
+<dd><p>добавляет новую таблицу в документ и возвращает его экземпляр <code class="xref py py-class docutils literal"><span class="pre">Table</span></code></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="docx.docx.api.Document.save">
+<code class="descname">save</code><span class="sig-paren">(</span><em>str path</em><span class="sig-paren">)</span><a class="headerlink" href="#docx.docx.api.Document.save" title="Ссылка на это определение">¶</a></dt>
+<dd><p>сохраняет документ в файл</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="section">
+<h2>Section<a class="headerlink" href="#section" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="docx.docx.section.Section">
+<em class="property">class </em><code class="descclassname">docx.section.</code><code class="descname">Section</code><span class="sig-paren">(</span><em>sectPr</em><span class="sig-paren">)</span><a class="headerlink" href="#docx.docx.section.Section" title="Ссылка на это определение">¶</a></dt>
+<dd><p>объект секция</p>
+<dl class="attribute">
+<dt id="docx.docx.section.Section.bottom_margin">
+<code class="descname">bottom_margin</code><a class="headerlink" href="#docx.docx.section.Section.bottom_margin" title="Ссылка на это определение">¶</a></dt>
+<dd><p>отступ сверху</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="docx.docx.section.Section.footer_distance">
+<code class="descname">footer_distance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#docx.docx.section.Section.footer_distance" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="docx.docx.section.Section.gutter">
+<code class="descname">gutter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#docx.docx.section.Section.gutter" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="docx.docx.section.Section.header_distance">
+<code class="descname">header_distance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#docx.docx.section.Section.header_distance" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.section.Section.left_margin">
+<code class="descname">left_margin</code><a class="headerlink" href="#docx.docx.section.Section.left_margin" title="Ссылка на это определение">¶</a></dt>
+<dd><p>отступ слева</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.section.Section.orientation">
+<code class="descname">orientation</code><a class="headerlink" href="#docx.docx.section.Section.orientation" title="Ссылка на это определение">¶</a></dt>
+<dd><p>ориентация секции, <code class="xref py py-attr docutils literal"><span class="pre">WD_ORIENTATION</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.section.Section.page_height">
+<code class="descname">page_height</code><a class="headerlink" href="#docx.docx.section.Section.page_height" title="Ссылка на это определение">¶</a></dt>
+<dd><p>высота сецкии</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.section.Section.page_width">
+<code class="descname">page_width</code><a class="headerlink" href="#docx.docx.section.Section.page_width" title="Ссылка на это определение">¶</a></dt>
+<dd><p>ширина сецкии</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.section.Section.right_margin">
+<code class="descname">right_margin</code><a class="headerlink" href="#docx.docx.section.Section.right_margin" title="Ссылка на это определение">¶</a></dt>
+<dd><p>отступ слева</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.section.Section.start_type">
+<code class="descname">start_type</code><a class="headerlink" href="#docx.docx.section.Section.start_type" title="Ссылка на это определение">¶</a></dt>
+<dd><p>тип разделителя секции (NEW_PAGE(2), EVEN_PAGE (3), ODD_PAGE (4))</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.section.Section.top_margin">
+<code class="descname">top_margin</code><a class="headerlink" href="#docx.docx.section.Section.top_margin" title="Ссылка на это определение">¶</a></dt>
+<dd><p>отступ сверху</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="sections">
+<h2>Sections<a class="headerlink" href="#sections" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="docx.docx.parts.document.Sections">
+<em class="property">class </em><code class="descclassname">docx.parts.document.</code><code class="descname">Sections</code><span class="sig-paren">(</span><em>document</em><span class="sig-paren">)</span><a class="headerlink" href="#docx.docx.parts.document.Sections" title="Ссылка на это определение">¶</a></dt>
+<dd><p>секции документа</p>
+</dd></dl>
+
+</div>
+<div class="section" id="table">
+<h2>Table<a class="headerlink" href="#table" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="docx.docx.table.Table">
+<em class="property">class </em><code class="descclassname">docx.table.</code><code class="descname">Table</code><a class="headerlink" href="#docx.docx.table.Table" title="Ссылка на это определение">¶</a></dt>
+<dd><p>таблица в документе</p>
+<dl class="attribute">
+<dt id="docx.docx.table.Table.autofit">
+<code class="descname">autofit</code><a class="headerlink" href="#docx.docx.table.Table.autofit" title="Ссылка на это определение">¶</a></dt>
+<dd><p>автовыравнивание ширины столбца по содержимому</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.table.Table.columns">
+<code class="descname">columns</code><a class="headerlink" href="#docx.docx.table.Table.columns" title="Ссылка на это определение">¶</a></dt>
+<dd><p>список колонок таблицы <span class="xref std std-ref">_Columns</span></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.table.Table.rows">
+<code class="descname">rows</code><a class="headerlink" href="#docx.docx.table.Table.rows" title="Ссылка на это определение">¶</a></dt>
+<dd><p>список строк <code class="xref py py-class docutils literal"><span class="pre">_Row</span></code> таблицы</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.table.Table.style">
+<code class="descname">style</code><a class="headerlink" href="#docx.docx.table.Table.style" title="Ссылка на это определение">¶</a></dt>
+<dd><p>стиль для таблицы</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="docx.docx.table.Table.add_column">
+<code class="descname">add_column</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#docx.docx.table.Table.add_column" title="Ссылка на это определение">¶</a></dt>
+<dd><p>добавляет колонку в таблицу, возвращает <code class="xref py py-class docutils literal"><span class="pre">_Column</span></code></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="docx.docx.table.Table.add_row">
+<code class="descname">add_row</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#docx.docx.table.Table.add_row" title="Ссылка на это определение">¶</a></dt>
+<dd><p>добавляет строку в таблицу, возвращает <code class="xref py py-class docutils literal"><span class="pre">_Row</span></code></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="docx.docx.table.Table.cell">
+<code class="descname">cell</code><span class="sig-paren">(</span><em>int row</em>, <em>int coll</em><span class="sig-paren">)</span><a class="headerlink" href="#docx.docx.table.Table.cell" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает объект ячейки <code class="xref py py-class docutils literal"><span class="pre">_Cell</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="cell">
+<h2>_Cell<a class="headerlink" href="#cell" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="docx.docx.table._Cell">
+<em class="property">class </em><code class="descclassname">docx.table.</code><code class="descname">_Cell</code><span class="sig-paren">(</span><em>tc</em>, <em>parent</em><span class="sig-paren">)</span><a class="headerlink" href="#docx.docx.table._Cell" title="Ссылка на это определение">¶</a></dt>
+<dd><p>объект ячейки таблицы документа</p>
+<dl class="attribute">
+<dt id="docx.docx.table._Cell.paragraphs">
+<code class="descname">paragraphs</code><a class="headerlink" href="#docx.docx.table._Cell.paragraphs" title="Ссылка на это определение">¶</a></dt>
+<dd><p>список параграфов <code class="xref py py-class docutils literal"><span class="pre">Paragraph</span></code> ячейки</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.table._Cell.tables">
+<code class="descname">tables</code><a class="headerlink" href="#docx.docx.table._Cell.tables" title="Ссылка на это определение">¶</a></dt>
+<dd><p>список таблиц <code class="xref py py-class docutils literal"><span class="pre">Table</span></code> ячейки</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.table._Cell.text">
+<code class="descname">text</code><a class="headerlink" href="#docx.docx.table._Cell.text" title="Ссылка на это определение">¶</a></dt>
+<dd><p>значение ячейки</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.table._Cell.width">
+<code class="descname">width</code><a class="headerlink" href="#docx.docx.table._Cell.width" title="Ссылка на это определение">¶</a></dt>
+<dd><p>ширина ячейки</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="docx.docx.table._Cell.add_paragraph">
+<code class="descname">add_paragraph</code><span class="sig-paren">(</span><em>str text</em><span class="optional">[</span>, <em>str style</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#docx.docx.table._Cell.add_paragraph" title="Ссылка на это определение">¶</a></dt>
+<dd><p>добавляет новый параграф в ячейку таблицы и возвращает экземпляр <code class="xref py py-class docutils literal"><span class="pre">Paragraph</span></code></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="docx.docx.table._Cell.add_table">
+<code class="descname">add_table</code><span class="sig-paren">(</span><em>int rows</em>, <em>int cols</em><span class="sig-paren">)</span><a class="headerlink" href="#docx.docx.table._Cell.add_table" title="Ссылка на это определение">¶</a></dt>
+<dd><p>добавляет таблицу в ячейку таблицы и возвращает экземпляр <code class="xref py py-class docutils literal"><span class="pre">Table</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="row">
+<h2>_Row<a class="headerlink" href="#row" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="docx.docx.table._Row">
+<em class="property">class </em><code class="descclassname">docx.table.</code><code class="descname">_Row</code><span class="sig-paren">(</span><em>tr</em>, <em>parent</em><span class="sig-paren">)</span><a class="headerlink" href="#docx.docx.table._Row" title="Ссылка на это определение">¶</a></dt>
+<dd><p>объект строка таблицы</p>
+<dl class="attribute">
+<dt id="docx.docx.table._Row.cells">
+<code class="descname">cells</code><a class="headerlink" href="#docx.docx.table._Row.cells" title="Ссылка на это определение">¶</a></dt>
+<dd><p>список ячеек строки <code class="xref py py-class docutils literal"><span class="pre">_Cell</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="rows">
+<h2>_Rows<a class="headerlink" href="#rows" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="docx.docx.table._Rows">
+<em class="property">class </em><code class="descclassname">docx.table.</code><code class="descname">_Rows</code><span class="sig-paren">(</span><em>tr</em>, <em>parent</em><span class="sig-paren">)</span><a class="headerlink" href="#docx.docx.table._Rows" title="Ссылка на это определение">¶</a></dt>
+<dd><p>список строк таблицы</p>
+</dd></dl>
+
+</div>
+<div class="section" id="column">
+<h2>_Column<a class="headerlink" href="#column" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="docx.docx.table._Column">
+<em class="property">class </em><code class="descclassname">docx.table.</code><code class="descname">_Column</code><span class="sig-paren">(</span><em>col</em>, <em>tbl</em>, <em>parent</em><span class="sig-paren">)</span><a class="headerlink" href="#docx.docx.table._Column" title="Ссылка на это определение">¶</a></dt>
+<dd><p>объект колонка таблицы</p>
+<dl class="attribute">
+<dt id="docx.docx.table._Column.cells">
+<code class="descname">cells</code><a class="headerlink" href="#docx.docx.table._Column.cells" title="Ссылка на это определение">¶</a></dt>
+<dd><p>список ячеек колонки <code class="xref py py-class docutils literal"><span class="pre">_Cell</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.table._Column.width">
+<code class="descname">width</code><a class="headerlink" href="#docx.docx.table._Column.width" title="Ссылка на это определение">¶</a></dt>
+<dd><p>ширина колонки</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="columns">
+<h2>_Columns<a class="headerlink" href="#columns" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="docx.docx.table._Columns">
+<em class="property">class </em><code class="descclassname">docx.table.</code><code class="descname">_Columns</code><span class="sig-paren">(</span><em>tbl</em>, <em>parent</em><span class="sig-paren">)</span><a class="headerlink" href="#docx.docx.table._Columns" title="Ссылка на это определение">¶</a></dt>
+<dd><p>список колонок таблицы</p>
+</dd></dl>
+
+</div>
+<div class="section" id="paragraph">
+<h2>Paragraph<a class="headerlink" href="#paragraph" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="docx.docx.text.Paragraph">
+<em class="property">class </em><code class="descclassname">docx.text.</code><code class="descname">Paragraph</code><span class="sig-paren">(</span><em>p</em>, <em>parent</em><span class="sig-paren">)</span><a class="headerlink" href="#docx.docx.text.Paragraph" title="Ссылка на это определение">¶</a></dt>
+<dd><p>параграф</p>
+<dl class="attribute">
+<dt id="docx.docx.text.Paragraph.alignment">
+<code class="descname">alignment</code><a class="headerlink" href="#docx.docx.text.Paragraph.alignment" title="Ссылка на это определение">¶</a></dt>
+<dd><p>выранивание параграфа,  WD_PARAGRAPH_ALIGNMENT</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.text.Paragraph.runs">
+<code class="descname">runs</code><a class="headerlink" href="#docx.docx.text.Paragraph.runs" title="Ссылка на это определение">¶</a></dt>
+<dd><p>список <code class="xref py py-class docutils literal"><span class="pre">Run</span></code> объектов</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.text.Paragraph.style">
+<code class="descname">style</code><a class="headerlink" href="#docx.docx.text.Paragraph.style" title="Ссылка на это определение">¶</a></dt>
+<dd><p>стиль параграфа</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.text.Paragraph.text">
+<code class="descname">text</code><a class="headerlink" href="#docx.docx.text.Paragraph.text" title="Ссылка на это определение">¶</a></dt>
+<dd><p>содержимое параграфа</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="docx.docx.text.Paragraph.add_run">
+<code class="descname">add_run</code><span class="sig-paren">(</span><em>str text</em><span class="optional">[</span>, <em>str style</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#docx.docx.text.Paragraph.add_run" title="Ссылка на это определение">¶</a></dt>
+<dd><p>добавляет в параграф, возвращает экземпляр текста <a class="reference internal" href="../modules/tkinter/text.html#Text" title="Text"><code class="xref py py-class docutils literal"><span class="pre">Text</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="docx.docx.text.Paragraph.clear">
+<code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#docx.docx.text.Paragraph.clear" title="Ссылка на это определение">¶</a></dt>
+<dd><p>очищает параграф</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="docx.docx.text.Paragraph.insert_paragraph_before">
+<code class="descname">insert_paragraph_before</code><span class="sig-paren">(</span><em>str text</em><span class="optional">[</span>, <em>str style</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#docx.docx.text.Paragraph.insert_paragraph_before" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возваращает новы параграф, вставленный перед текущим текстом</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="run">
+<h2>Run<a class="headerlink" href="#run" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="docx.docx.text.Run">
+<em class="property">class </em><code class="descclassname">docx.text.</code><code class="descname">Run</code><span class="sig-paren">(</span><em>r</em>, <em>parent</em><span class="sig-paren">)</span><a class="headerlink" href="#docx.docx.text.Run" title="Ссылка на это определение">¶</a></dt>
+<dd><p>объект ...</p>
+<dl class="attribute">
+<dt id="docx.docx.text.Run.all_caps">
+<code class="descname">all_caps</code><a class="headerlink" href="#docx.docx.text.Run.all_caps" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.text.Run.bold">
+<code class="descname">bold</code><a class="headerlink" href="#docx.docx.text.Run.bold" title="Ссылка на это определение">¶</a></dt>
+<dd><p>жирность текста</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.text.Run.complex_script">
+<code class="descname">complex_script</code><a class="headerlink" href="#docx.docx.text.Run.complex_script" title="Ссылка на это определение">¶</a></dt>
+<dd><p>жирность текста</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.text.Run.cs_bold">
+<code class="descname">cs_bold</code><a class="headerlink" href="#docx.docx.text.Run.cs_bold" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.text.Run.cs_italic">
+<code class="descname">cs_italic</code><a class="headerlink" href="#docx.docx.text.Run.cs_italic" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.text.Run.double_strike">
+<code class="descname">double_strike</code><a class="headerlink" href="#docx.docx.text.Run.double_strike" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.text.Run.emboss">
+<code class="descname">emboss</code><a class="headerlink" href="#docx.docx.text.Run.emboss" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.text.Run.hidden">
+<code class="descname">hidden</code><a class="headerlink" href="#docx.docx.text.Run.hidden" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.text.Run.imprint">
+<code class="descname">imprint</code><a class="headerlink" href="#docx.docx.text.Run.imprint" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.text.Run.italic">
+<code class="descname">italic</code><a class="headerlink" href="#docx.docx.text.Run.italic" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.text.Run.math">
+<code class="descname">math</code><a class="headerlink" href="#docx.docx.text.Run.math" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.text.Run.no_proof">
+<code class="descname">no_proof</code><a class="headerlink" href="#docx.docx.text.Run.no_proof" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.text.Run.outline">
+<code class="descname">outline</code><a class="headerlink" href="#docx.docx.text.Run.outline" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.text.Run.rtl">
+<code class="descname">rtl</code><a class="headerlink" href="#docx.docx.text.Run.rtl" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.text.Run.shadow">
+<code class="descname">shadow</code><a class="headerlink" href="#docx.docx.text.Run.shadow" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.text.Run.small_caps">
+<code class="descname">small_caps</code><a class="headerlink" href="#docx.docx.text.Run.small_caps" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.text.Run.snap_to_grid">
+<code class="descname">snap_to_grid</code><a class="headerlink" href="#docx.docx.text.Run.snap_to_grid" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.text.Run.spec_vanish">
+<code class="descname">spec_vanish</code><a class="headerlink" href="#docx.docx.text.Run.spec_vanish" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.text.Run.strike">
+<code class="descname">strike</code><a class="headerlink" href="#docx.docx.text.Run.strike" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.text.Run.style">
+<code class="descname">style</code><a class="headerlink" href="#docx.docx.text.Run.style" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.text.Run.text">
+<code class="descname">text</code><a class="headerlink" href="#docx.docx.text.Run.text" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.text.Run.underline">
+<code class="descname">underline</code><a class="headerlink" href="#docx.docx.text.Run.underline" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.text.Run.web_hidden">
+<code class="descname">web_hidden</code><a class="headerlink" href="#docx.docx.text.Run.web_hidden" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="docx.docx.text.Run.add_break">
+<code class="descname">add_break</code><span class="sig-paren">(</span><span class="optional">[</span><em>int break_type=6</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#docx.docx.text.Run.add_break" title="Ссылка на это определение">¶</a></dt>
+<dd><p>добавляет перевод строки WD_BREAK.LINE, WD_BREAK.PAGE, and WD_BREAK.COLUMN</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="docx.docx.text.Run.add_picture">
+<code class="descname">add_picture</code><span class="sig-paren">(</span><em>str path</em><span class="optional">[</span>, <em>width</em><span class="optional">]</span><span class="optional">[</span>, <em>height</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#docx.docx.text.Run.add_picture" title="Ссылка на это определение">¶</a></dt>
+<dd><p>добавляет картинку в и возвращает экземпляр <code class="xref py py-class docutils literal"><span class="pre">InlineShape</span></code></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="docx.docx.text.Run.add_tab">
+<code class="descname">add_tab</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#docx.docx.text.Run.add_tab" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="docx.docx.text.Run.add_text">
+<code class="descname">add_text</code><span class="sig-paren">(</span><em>str text</em><span class="sig-paren">)</span><a class="headerlink" href="#docx.docx.text.Run.add_text" title="Ссылка на это определение">¶</a></dt>
+<dd><p>добавляет текст и возвращает <a class="reference internal" href="../modules/tkinter/text.html#Text" title="Text"><code class="xref py py-class docutils literal"><span class="pre">Text</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="docx.docx.text.Run.clear">
+<code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#docx.docx.text.Run.clear" title="Ссылка на это определение">¶</a></dt>
+<dd><p>очищает</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="docx.Text">
+<em class="property">class </em><code class="descclassname">docx.</code><code class="descname">Text</code><a class="headerlink" href="#docx.Text" title="Ссылка на это определение">¶</a></dt>
+<dd><p>текст</p>
+<dl class="attribute">
+<dt id="docx.Text.bold">
+<code class="descname">bold</code><a class="headerlink" href="#docx.Text.bold" title="Ссылка на это определение">¶</a></dt>
+<dd><p>текст жирный</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="docx.Text.style">
+<code class="descname">style</code><a class="headerlink" href="#docx.Text.style" title="Ссылка на это определение">¶</a></dt>
+<dd><p>стиль текста</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="inlineshape">
+<h2>InlineShape<a class="headerlink" href="#inlineshape" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="docx.docx.shape.InlineShape">
+<em class="property">class </em><code class="descclassname">docx.shape.</code><code class="descname">InlineShape</code><span class="sig-paren">(</span><em>inline</em><span class="sig-paren">)</span><a class="headerlink" href="#docx.docx.shape.InlineShape" title="Ссылка на это определение">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="docx.docx.shape.InlineShape.height">
+<code class="descname">height</code><a class="headerlink" href="#docx.docx.shape.InlineShape.height" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.shape.InlineShape.type">
+<code class="descname">type</code><a class="headerlink" href="#docx.docx.shape.InlineShape.type" title="Ссылка на это определение">¶</a></dt>
+<dd><p>WD_INLINE_SHAPE</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.shape.InlineShape.width">
+<code class="descname">width</code><a class="headerlink" href="#docx.docx.shape.InlineShape.width" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="inlineshapes">
+<h2>InlineShapes<a class="headerlink" href="#inlineshapes" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="docx.docx.parts.document.InlineShapes">
+<em class="property">class </em><code class="descclassname">docx.parts.document.</code><code class="descname">InlineShapes</code><span class="sig-paren">(</span><em>body_elem</em>, <em>parent</em><span class="sig-paren">)</span><a class="headerlink" href="#docx.docx.parts.document.InlineShapes" title="Ссылка на это определение">¶</a></dt>
+<dd><dl class="method">
+<dt id="docx.docx.parts.document.InlineShapes.add_picture">
+<code class="descname">add_picture</code><span class="sig-paren">(</span><em>str path</em>, <em>run</em><span class="sig-paren">)</span><a class="headerlink" href="#docx.docx.parts.document.InlineShapes.add_picture" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="length">
+<h2>Length<a class="headerlink" href="#length" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="docx.docx.shared.Length">
+<em class="property">class </em><code class="descclassname">docx.shared.</code><code class="descname">Length</code><a class="headerlink" href="#docx.docx.shared.Length" title="Ссылка на это определение">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="docx.docx.shared.Length.cm">
+<code class="descname">cm</code><a class="headerlink" href="#docx.docx.shared.Length.cm" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.shared.Length.wmu">
+<code class="descname">wmu</code><a class="headerlink" href="#docx.docx.shared.Length.wmu" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.shared.Length.inches">
+<code class="descname">inches</code><a class="headerlink" href="#docx.docx.shared.Length.inches" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.shared.Length.mm">
+<code class="descname">mm</code><a class="headerlink" href="#docx.docx.shared.Length.mm" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.shared.Length.twips">
+<code class="descname">twips</code><a class="headerlink" href="#docx.docx.shared.Length.twips" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="inches">
+<h2>Inches<a class="headerlink" href="#inches" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="docx.docx.shared.Inches">
+<em class="property">class </em><code class="descclassname">docx.shared.</code><code class="descname">Inches</code><a class="headerlink" href="#docx.docx.shared.Inches" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="cm">
+<h2>Cm<a class="headerlink" href="#cm" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="docx.docx.shared.Cm">
+<em class="property">class </em><code class="descclassname">docx.shared.</code><code class="descname">Cm</code><a class="headerlink" href="#docx.docx.shared.Cm" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="mm">
+<h2>Mm<a class="headerlink" href="#mm" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="docx.docx.shared.Mm">
+<em class="property">class </em><code class="descclassname">docx.shared.</code><code class="descname">Mm</code><a class="headerlink" href="#docx.docx.shared.Mm" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="emu">
+<h2>Emu<a class="headerlink" href="#emu" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="docx.docx.shared.Emu">
+<em class="property">class </em><code class="descclassname">docx.shared.</code><code class="descname">Emu</code><a class="headerlink" href="#docx.docx.shared.Emu" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="wd-align-paragraph">
+<h2>WD_ALIGN_PARAGRAPH<a class="headerlink" href="#wd-align-paragraph" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="attribute">
+<dt id="docx.docx.enum.text.WD_ALIGN_PARAGRAPH">
+<code class="descclassname">docx.enum.text.</code><code class="descname">WD_ALIGN_PARAGRAPH</code><a class="headerlink" href="#docx.docx.enum.text.WD_ALIGN_PARAGRAPH" title="Ссылка на это определение">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="docx.docx.enum.text.LEFT">
+<code class="descname">LEFT</code><a class="headerlink" href="#docx.docx.enum.text.LEFT" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.enum.text.CENTER">
+<code class="descname">CENTER</code><a class="headerlink" href="#docx.docx.enum.text.CENTER" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.enum.text.RIGHT">
+<code class="descname">RIGHT</code><a class="headerlink" href="#docx.docx.enum.text.RIGHT" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.enum.text.JUSTIFY">
+<code class="descname">JUSTIFY</code><a class="headerlink" href="#docx.docx.enum.text.JUSTIFY" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.enum.text.DISTRIBUTE">
+<code class="descname">DISTRIBUTE</code><a class="headerlink" href="#docx.docx.enum.text.DISTRIBUTE" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.enum.text.JUSTIFY_MED">
+<code class="descname">JUSTIFY_MED</code><a class="headerlink" href="#docx.docx.enum.text.JUSTIFY_MED" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.enum.text.JUSTIFY_HI">
+<code class="descname">JUSTIFY_HI</code><a class="headerlink" href="#docx.docx.enum.text.JUSTIFY_HI" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.enum.text.JUSTIFY_LOW">
+<code class="descname">JUSTIFY_LOW</code><a class="headerlink" href="#docx.docx.enum.text.JUSTIFY_LOW" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.enum.text.THAI_JUSTIFY">
+<code class="descname">THAI_JUSTIFY</code><a class="headerlink" href="#docx.docx.enum.text.THAI_JUSTIFY" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="wd-orientation">
+<h2>WD_ORIENTATION<a class="headerlink" href="#wd-orientation" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="attribute">
+<dt id="docx.docx.enum.section.WD_ORIENTATION">
+<code class="descclassname">docx.enum.section.</code><code class="descname">WD_ORIENTATION</code><a class="headerlink" href="#docx.docx.enum.section.WD_ORIENTATION" title="Ссылка на это определение">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="docx.docx.enum.section.PORTRAIT">
+<code class="descname">PORTRAIT</code><a class="headerlink" href="#docx.docx.enum.section.PORTRAIT" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.enum.section.LANDSCAPE">
+<code class="descname">LANDSCAPE</code><a class="headerlink" href="#docx.docx.enum.section.LANDSCAPE" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="wd-section-start">
+<h2>WD_SECTION_START<a class="headerlink" href="#wd-section-start" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="attribute">
+<dt id="docx.docx.enum.section.WD_SECTION_START">
+<code class="descclassname">docx.enum.section.</code><code class="descname">WD_SECTION_START</code><a class="headerlink" href="#docx.docx.enum.section.WD_SECTION_START" title="Ссылка на это определение">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="docx.docx.enum.section.CONTINUOUS">
+<code class="descname">CONTINUOUS</code><a class="headerlink" href="#docx.docx.enum.section.CONTINUOUS" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.enum.section.NEW_COLUMN">
+<code class="descname">NEW_COLUMN</code><a class="headerlink" href="#docx.docx.enum.section.NEW_COLUMN" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.enum.section.NEW_PAGE">
+<code class="descname">NEW_PAGE</code><a class="headerlink" href="#docx.docx.enum.section.NEW_PAGE" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.enum.section.EVEN_PAGE">
+<code class="descname">EVEN_PAGE</code><a class="headerlink" href="#docx.docx.enum.section.EVEN_PAGE" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.docx.enum.section.ODD_PAGE">
+<code class="descname">ODD_PAGE</code><a class="headerlink" href="#docx.docx.enum.section.ODD_PAGE" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="wd-underline">
+<h2>WD_UNDERLINE<a class="headerlink" href="#wd-underline" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="attribute">
+<dt id="docx.WD_UNDERLINE">
+<code class="descclassname">docx.</code><code class="descname">WD_UNDERLINE</code><a class="headerlink" href="#docx.WD_UNDERLINE" title="Ссылка на это определение">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="docx.NONE">
+<code class="descclassname">docx.</code><code class="descname">NONE</code><a class="headerlink" href="#docx.NONE" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.SINGLE">
+<code class="descclassname">docx.</code><code class="descname">SINGLE</code><a class="headerlink" href="#docx.SINGLE" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.WORDS">
+<code class="descclassname">docx.</code><code class="descname">WORDS</code><a class="headerlink" href="#docx.WORDS" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.DOUBLE">
+<code class="descclassname">docx.</code><code class="descname">DOUBLE</code><a class="headerlink" href="#docx.DOUBLE" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.DOTTED">
+<code class="descclassname">docx.</code><code class="descname">DOTTED</code><a class="headerlink" href="#docx.DOTTED" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.THICK">
+<code class="descclassname">docx.</code><code class="descname">THICK</code><a class="headerlink" href="#docx.THICK" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.DASH">
+<code class="descclassname">docx.</code><code class="descname">DASH</code><a class="headerlink" href="#docx.DASH" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.DOT_DASH">
+<code class="descclassname">docx.</code><code class="descname">DOT_DASH</code><a class="headerlink" href="#docx.DOT_DASH" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.DOT_DOT_DASH">
+<code class="descclassname">docx.</code><code class="descname">DOT_DOT_DASH</code><a class="headerlink" href="#docx.DOT_DOT_DASH" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.WAVY">
+<code class="descclassname">docx.</code><code class="descname">WAVY</code><a class="headerlink" href="#docx.WAVY" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.DOTTED_HEAVY">
+<code class="descclassname">docx.</code><code class="descname">DOTTED_HEAVY</code><a class="headerlink" href="#docx.DOTTED_HEAVY" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.DASH_HEAVY">
+<code class="descclassname">docx.</code><code class="descname">DASH_HEAVY</code><a class="headerlink" href="#docx.DASH_HEAVY" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.DOT_DASH_HEAVY">
+<code class="descclassname">docx.</code><code class="descname">DOT_DASH_HEAVY</code><a class="headerlink" href="#docx.DOT_DASH_HEAVY" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.DOT_DOT_DASH_HEAVY">
+<code class="descclassname">docx.</code><code class="descname">DOT_DOT_DASH_HEAVY</code><a class="headerlink" href="#docx.DOT_DOT_DASH_HEAVY" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.WAVY_HEAVY">
+<code class="descclassname">docx.</code><code class="descname">WAVY_HEAVY</code><a class="headerlink" href="#docx.WAVY_HEAVY" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.DASH_LONG">
+<code class="descclassname">docx.</code><code class="descname">DASH_LONG</code><a class="headerlink" href="#docx.DASH_LONG" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.WAVY_DOUBLE">
+<code class="descclassname">docx.</code><code class="descname">WAVY_DOUBLE</code><a class="headerlink" href="#docx.WAVY_DOUBLE" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="docx.DASH_LONG_HEAVY">
+<code class="descclassname">docx.</code><code class="descname">DASH_LONG_HEAVY</code><a class="headerlink" href="#docx.DASH_LONG_HEAVY" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">docx</span> <span class="kn">import</span> <span class="n">Document</span>
+<span class="kn">from</span> <span class="nn">docx.shared</span> <span class="kn">import</span> <span class="n">Inches</span>
+
+<span class="n">document</span> <span class="o">=</span> <span class="n">Document</span><span class="p">()</span>
+
+<span class="n">document</span><span class="o">.</span><span class="n">add_heading</span><span class="p">(</span><span class="s">&#39;Document Title&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">add_paragraph</span><span class="p">(</span><span class="s">&#39;A plain paragraph having some &#39;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_run</span><span class="p">(</span><span class="s">&#39;bold&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">bold</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_run</span><span class="p">(</span><span class="s">&#39; and some &#39;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_run</span><span class="p">(</span><span class="s">&#39;italic.&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">italic</span> <span class="o">=</span> <span class="bp">True</span>
+
+<span class="n">document</span><span class="o">.</span><span class="n">add_heading</span><span class="p">(</span><span class="s">&#39;Heading, level 1&#39;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">document</span><span class="o">.</span><span class="n">add_paragraph</span><span class="p">(</span><span class="s">&#39;Intense quote&#39;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s">&#39;IntenseQuote&#39;</span><span class="p">)</span>
+
+<span class="n">document</span><span class="o">.</span><span class="n">add_paragraph</span><span class="p">(</span>
+    <span class="s">&#39;first item in unordered list&#39;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s">&#39;ListBullet&#39;</span>
+<span class="p">)</span>
+<span class="n">document</span><span class="o">.</span><span class="n">add_paragraph</span><span class="p">(</span>
+    <span class="s">&#39;first item in ordered list&#39;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s">&#39;ListNumber&#39;</span>
+<span class="p">)</span>
+
+<span class="n">document</span><span class="o">.</span><span class="n">add_picture</span><span class="p">(</span><span class="s">&#39;monty-truth.png&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">Inches</span><span class="p">(</span><span class="mf">1.25</span><span class="p">))</span>
+
+<span class="n">table</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">add_table</span><span class="p">(</span><span class="n">rows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">hdr_cells</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">rows</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">cells</span>
+<span class="n">hdr_cells</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">&#39;Qty&#39;</span>
+<span class="n">hdr_cells</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">&#39;Id&#39;</span>
+<span class="n">hdr_cells</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">&#39;Desc&#39;</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">recordset</span><span class="p">:</span>
+    <span class="n">row_cells</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">add_row</span><span class="p">()</span><span class="o">.</span><span class="n">cells</span>
+    <span class="n">row_cells</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">qty</span><span class="p">)</span>
+    <span class="n">row_cells</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+    <span class="n">row_cells</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">desc</span>
+
+<span class="n">document</span><span class="o">.</span><span class="n">add_page_break</span><span class="p">()</span>
+
+<span class="n">document</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s">&#39;demo.docx&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Оглавление</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">docx - инструмент для работы с docx форматом</a><ul>
+<li><a class="reference internal" href="#document">Document</a></li>
+<li><a class="reference internal" href="#section">Section</a></li>
+<li><a class="reference internal" href="#sections">Sections</a></li>
+<li><a class="reference internal" href="#table">Table</a></li>
+<li><a class="reference internal" href="#cell">_Cell</a></li>
+<li><a class="reference internal" href="#row">_Row</a></li>
+<li><a class="reference internal" href="#rows">_Rows</a></li>
+<li><a class="reference internal" href="#column">_Column</a></li>
+<li><a class="reference internal" href="#columns">_Columns</a></li>
+<li><a class="reference internal" href="#paragraph">Paragraph</a></li>
+<li><a class="reference internal" href="#run">Run</a></li>
+<li><a class="reference internal" href="#inlineshape">InlineShape</a></li>
+<li><a class="reference internal" href="#inlineshapes">InlineShapes</a></li>
+<li><a class="reference internal" href="#length">Length</a></li>
+<li><a class="reference internal" href="#inches">Inches</a></li>
+<li><a class="reference internal" href="#cm">Cm</a></li>
+<li><a class="reference internal" href="#mm">Mm</a></li>
+<li><a class="reference internal" href="#emu">Emu</a></li>
+<li><a class="reference internal" href="#wd-align-paragraph">WD_ALIGN_PARAGRAPH</a></li>
+<li><a class="reference internal" href="#wd-orientation">WD_ORIENTATION</a></li>
+<li><a class="reference internal" href="#wd-section-start">WD_SECTION_START</a></li>
+<li><a class="reference internal" href="#wd-underline">WD_UNDERLINE</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Предыдущий раздел</h4>
+  <p class="topless"><a href="index.html"
+                        title="предыдущая глава">Сторонние модули</a></p>
+  <h4>Следующий раздел</h4>
+  <p class="topless"><a href="pyaudio.html"
+                        title="следующая глава">pyaudio - инструмент для работы со звуком</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Эта страница</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/modules_user/docx.txt"
+            rel="nofollow">Исходный текст</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Быстрый поиск</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Искать" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Введите слова для поиска или имя модуля, класса или функции.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Алфавитный указатель"
+             >указатель</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="pyaudio.html" title="pyaudio - инструмент для работы со звуком"
+             >вперёд</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Сторонние модули"
+             >назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Документация python документация 2015.05.20</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Сторонние модули</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright ilnurgi.
+      Создано с помощью <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,8 @@
+Checkbutton
+===========
+
+.. py:class:: Checkbutton(widget, **kwargs)
+
+    Виджет, флажок
+
+    :param variable: переменная

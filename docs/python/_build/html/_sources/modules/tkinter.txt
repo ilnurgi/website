@@ -1,0 +1,38 @@
+.. py:module:: tkinter
+
+tkinter
+=======
+
+>>> import tkinter
+
+Содержание:
+
+.. toctree::
+   :maxdepth: 2
+
+   tkinter/base
+   tkinter/vars
+   tkinter/TK
+   tkinter/button
+   tkinter/canvas
+   tkinter/checkbutton
+   tkinter/entry
+   tkinter/event
+   tkinter/frame
+   tkinter/label
+   tkinter/labelframe
+   tkinter/listbox
+   tkinter/menu
+   tkinter/menubutton
+   tkinter/optionmenu
+   tkinter/radiobutton
+   tkinter/scale
+   tkinter/scrollbar
+   tkinter/spinbox
+   tkinter/text
+   tkinter/toplevel
+   tkinter/colorchooser
+   tkinter/filedialog
+   tkinter/messagebox
+   tkinter/simpledialog
+   tkinter/ttk

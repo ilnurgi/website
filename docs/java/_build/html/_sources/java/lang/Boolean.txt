@@ -1,0 +1,32 @@
+Boolean
+=======
+
+
+.. py:class:: Boolean()
+.. py:class:: Boolean(String str)
+
+
+    ::
+
+        Boolean b = new Boolean("true");
+
+
+    .. py:method:: booleanValue()
+
+        возвращает значение объекта
+
+
+    .. py:method:: parseBoolean(String str)
+
+        возвращает объект по аргументу
+
+
+    .. py:staticmethod:: valueOf(boolean b)
+
+        возвращает объект
+
+        ::
+
+            Boolean b = Boolean.valueOf(true);
+            Boolean b = true;
+

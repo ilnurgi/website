@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Типы данных &mdash; Документация python документация 14.10.12</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.10.12',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Документация python документация 14.10.12" href="../index.html" />
+    <link rel="up" title="Основные объекты" href="index.html" />
+    <link rel="next" title="Коментарии в коде" href="comments.html" />
+    <link rel="prev" title="frozenset" href="frozenset.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Алфавитный указатель"
+             accesskey="I">указатель</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="comments.html" title="Коментарии в коде"
+             accesskey="N">вперёд</a> |</li>
+        <li class="right" >
+          <a href="frozenset.html" title="frozenset"
+             accesskey="P">назад</a> |</li>
+        <li><a href="../index.html">Документация python документация 14.10.12</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Основные объекты</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="id1">
+<h1>Типы данных<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h1>
+<div class="section" id="ellipsis">
+<h2>ellipsis<a class="headerlink" href="#ellipsis" title="Ссылка на этот заголовок">¶</a></h2>
+<p>обозначается в виде трех точек или слова Ellipsis. Тип ellipsis использу­ется в расширенном синтаксисе получения среза</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt;&gt;&gt; type ( ... ) , ... , . . . is Ellipsis
+(&lt;c1ass &#39;e11ipsis&#39;&gt;, E11ipsis, True)
+&gt;&gt;&gt; c1ass С():
+    def _getitem_(self, obj):
+        return obj
+&gt;&gt;&gt; с = C()
+&gt;&gt;&gt; с
+c[... , 1:5, 0:9:1, 0]
+(E11ipsis, s1ice(1, 5, None), s1ice(O, 9, 1), 0)
+</pre></div>
+</div>
+</div>
+<div class="section" id="none">
+<h2>None<a class="headerlink" href="#none" title="Ссылка на этот заголовок">¶</a></h2>
+<p>объект со значением None (обозначает отсутствие значения)</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span> <span class="p">(</span><span class="bp">None</span><span class="p">)</span>
+<span class="go">&lt;class &#39;NoneType&#39;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">bool</span><span class="p">(</span><span class="bp">None</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="cornplex">
+<h2>cornplex<a class="headerlink" href="#cornplex" title="Ссылка на этот заголовок">¶</a></h2>
+<p>комnлексные числа</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span> <span class="p">(</span><span class="mi">2</span><span class="o">+</span><span class="mi">2j</span><span class="p">)</span>
+<span class="go">&lt;class &#39;cornplex&#39;&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Оглавление</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Типы данных</a><ul>
+<li><a class="reference internal" href="#ellipsis">ellipsis</a></li>
+<li><a class="reference internal" href="#none">None</a></li>
+<li><a class="reference internal" href="#cornplex">cornplex</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Предыдущий раздел</h4>
+  <p class="topless"><a href="frozenset.html"
+                        title="предыдущая глава">frozenset</a></p>
+  <h4>Следующий раздел</h4>
+  <p class="topless"><a href="comments.html"
+                        title="следующая глава">Коментарии в коде</a></p>
+  <h3>Эта страница</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/base/vars.txt"
+           rel="nofollow">Исходный текст</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Быстрый поиск</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Искать" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Введите слова для поиска или имя модуля, класса или функции.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Алфавитный указатель"
+             >указатель</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="comments.html" title="Коментарии в коде"
+             >вперёд</a> |</li>
+        <li class="right" >
+          <a href="frozenset.html" title="frozenset"
+             >назад</a> |</li>
+        <li><a href="../index.html">Документация python документация 14.10.12</a> &raquo;</li>
+          <li><a href="index.html" >Основные объекты</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright ilnurgi.
+      Создано с помощью <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

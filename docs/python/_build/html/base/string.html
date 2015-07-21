@@ -1,0 +1,1080 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>str - строки &mdash; Документация python документация 2015.05.20</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2015.05.20',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Документация python документация 2015.05.20" href="../index.html" />
+    <link rel="up" title="Основные объекты" href="index.html" />
+    <link rel="next" title="tuple - кортежи" href="tuple.html" />
+    <link rel="prev" title="set - множества" href="set.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Алфавитный указатель"
+             accesskey="I">указатель</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="tuple.html" title="tuple - кортежи"
+             accesskey="N">вперёд</a> |</li>
+        <li class="right" >
+          <a href="set.html" title="set - множества"
+             accesskey="P">назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Документация python документация 2015.05.20</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Основные объекты</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="str">
+<h1>str - строки<a class="headerlink" href="#str" title="Ссылка на этот заголовок">¶</a></h1>
+<dl class="class">
+<dt>
+<em class="property">class </em><code class="descname">str</code></dt>
+<dd><p>объект, строка</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">str</span><span class="p">(),</span> <span class="nb">str</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+<span class="go">&#39;&#39;, &#39;[1, 2]&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">str</span><span class="p">(</span><span class="n">b</span><span class="s">&quot;</span><span class="se">\xf1\xf2\xf0\xee\xea\xe0</span><span class="s">&quot;</span><span class="p">)</span> <span class="c"># вернет строку не зависима от типа аргумента</span>
+<span class="go">&quot;b&#39;\\xf1\\xf2\\xf0\\xee\\xea\\xe0&#39;&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">str</span><span class="p">(</span><span class="n">b</span><span class="s">&quot;</span><span class="se">\xf1\xf2\xf0\xee\xea\xe0</span><span class="s">&quot;</span><span class="p">,</span> <span class="s">&quot;ср1251&quot;</span><span class="p">)</span> <span class="c"># вернет строку именно из типа bytes или bytearray</span>
+<span class="go">&#39;строка&#39;</span>
+</pre></div>
+</div>
+<dl class="staticmethod">
+<dt id="str.maketrans">
+<em class="property">static </em><code class="descname">maketrans</code><span class="sig-paren">(</span><em>x</em><span class="optional">[</span>, <em>y</em><span class="optional">[</span>, <em>z</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#str.maketrans" title="Ссылка на это определение">¶</a></dt>
+<dd><p>создает таблицу символов</p>
+<ul>
+<li><p class="first">Если указан только первый параметр, то он должен быть словарем:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="nb">str</span><span class="o">.</span><span class="n">maketrans</span><span class="p">({</span><span class="s">&quot;a&quot;</span><span class="p">:</span> <span class="s">&quot;А&quot;</span><span class="p">,</span> <span class="s">&quot;о&quot;</span><span class="p">:</span> <span class="s">&quot;О&quot;</span><span class="p">,</span> <span class="s">&quot;с&quot;</span><span class="p">:</span> <span class="bp">None</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">{1072: &#39;А&#39;, 1089: None, 1086: &#39;О&#39;}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&quot;cтpoкa&quot;</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="go">&#39;трОкА&#39;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Если указаны два первых параметра, то они должны быть строками одинаковой длины:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="nb">str</span><span class="o">.</span><span class="n">maketrans</span><span class="p">(</span><span class="s">&quot;абвгдежзи&quot;</span><span class="p">,</span> <span class="s">&quot;АБВГДЕЖЗИ&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">{1072: 1040, 1073: 1041, ...}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&quot;aбвгдeжзи&quot;</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="go">&#39;АБВГДЕЖЗИ&#39;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">В третьем параметре можно дополнительно указать строку из символов, которым будет сопоставлено значение None.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="nb">str</span><span class="o">.</span><span class="n">maketrans</span><span class="p">(</span><span class="s">&quot;123456789&quot;</span><span class="p">,</span> <span class="s">&quot;О&quot;</span> <span class="o">*</span> <span class="mi">9</span><span class="p">,</span> <span class="s">&quot;str&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">{116: None, 115: None, 114: None, 49: 48, ююю}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&quot;strl23456789str&quot;</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="go">&#39;000000000&#39;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.capitalize">
+<code class="descname">capitalize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#str.capitalize" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает строку, у которой первая буква заменена на прописную</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;ilnur&#39;</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
+<span class="go">&#39;Ilnur&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.center">
+<code class="descname">center</code><span class="sig-paren">(</span><em>width</em><span class="optional">[</span>, <em>pad</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#str.center" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>width</strong> (<em>int</em>) &#8211; длина возвращаемой строки</li>
+<li><strong>pad</strong> (<em>str</em>) &#8211; символ, которыми оформляются отступы, по умолчанию пробел</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Возвращает строку, заданной длины, выравненная по центру.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;ilnur&#39;</span><span class="o">.</span><span class="n">center</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="go">&#39; ilnur &#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.count">
+<code class="descname">count</code><span class="sig-paren">(</span><em>sub</em><span class="optional">[</span>, <em>start</em><span class="optional">[</span>, <em>end</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#str.count" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>sub</strong> (<em>str</em>) &#8211; искомая строка</li>
+<li><strong>start</strong> (<em>int</em>) &#8211; начальная позиция</li>
+<li><strong>end</strong> (<em>int</em>) &#8211; конечноая позиция</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Возвращает число, количество вхождений искомой строки в исходной строке.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;Help me! Help!&#39;</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s">&#39;Help&#39;</span><span class="p">)</span>
+<span class="go">2</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.decode">
+<code class="descname">decode</code><span class="sig-paren">(</span><span class="optional">[</span><em>coding</em>, <em>errors</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#str.decode" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>coding</strong> (<em>str</em>) &#8211; кодировка</li>
+<li><strong>errors</strong> &#8211; <p>???</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Возвращает строку, раскодированная из указанной кодировки в юникод.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;</span><span class="se">\xd0\xb8\xd0\xbb\xd1\x8c\xd0\xbd\xd1\x83\xd1\x80</span><span class="s">&#39;</span>
+<span class="go">&#39;\xd0\xb8\xd0\xbb\xd1\x8c\xd0\xbd\xd1\x83\xd1\x80&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;</span><span class="se">\xd0\xb8\xd0\xbb\xd1\x8c\xd0\xbd\xd1\x83\xd1\x80</span><span class="s">&#39;</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">&#39;utf-8&#39;</span><span class="p">)</span>
+<span class="go">u&#39;\u0438\u043b\u044c\u043d\u0443\u0440&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.encode">
+<code class="descname">encode</code><span class="sig-paren">(</span><span class="optional">[</span><em>coding</em>, <em>errors</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#str.encode" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><strong>coding</strong> (<em>str</em>) &#8211; кодировка</td>
+</tr>
+</tbody>
+</table>
+<p>Возвращает строку, закодированную из юникода в указанную кодировку.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">u&#39;Ильнур&#39;</span>
+<span class="go">u&#39;\u0418\u043b\u044c\u043d\u0443\u0440&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">u&#39;Ильнур&#39;</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">&#39;cp1251&#39;</span><span class="p">)</span>
+<span class="go">&#39;\xc8\xeb\xfc\xed\xf3\xf0&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.endswith">
+<code class="descname">endswith</code><span class="sig-paren">(</span><em>sub</em><span class="optional">[</span>, <em>start</em><span class="optional">[</span>, <em>end</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#str.endswith" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>sub</strong> (<em>str</em>) &#8211; искомая строка</li>
+<li><strong>strat</strong> (<em>int</em>) &#8211; начальная позиция</li>
+<li><strong>end</strong> (<em>int</em>) &#8211; конечная позиция</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Возвращает True | False, если строка заканчивается c искомой строки
+&gt;&gt;&gt; &#8216;ilnur&#8217;.endswith(&#8216;il&#8217;)
+False
+&gt;&gt;&gt; &#8216;ilnur&#8217;.endswith(&#8216;nur&#8217;)
+True</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.expandtabs">
+<code class="descname">expandtabs</code><span class="sig-paren">(</span><span class="optional">[</span><em>tabsize = 8</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#str.expandtabs" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><strong>tabsize</strong> (<em>int</em>) &#8211; количество пробелов за место табуляции</td>
+</tr>
+</tbody>
+</table>
+<p>Возвращает строку, символы табуляции заменены указанным количеством пробелов.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">u&#39;</span><span class="se">\t</span><span class="s">Ильнур&#39;</span><span class="o">.</span><span class="n">expandtabs</span><span class="p">()</span>
+<span class="go">u&#39;        \u0418\u043b\u044c\u043d\u0443\u0440&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.find">
+<code class="descname">find</code><span class="sig-paren">(</span><em>sub</em><span class="optional">[</span>, <em>start</em><span class="optional">[</span>, <em>end</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#str.find" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>sub</strong> (<em>str</em>) &#8211; искомая строка</li>
+<li><strong>start</strong> (<em>int</em>) &#8211; начальная позиция</li>
+<li><strong>end</strong> (<em>int</em>) &#8211; конченая позиция</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Возвращает число, позиция в котором встречается искомая строка, если ничего не найдено возвращает -1, поиск ведется слева.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;ilnur&#39;</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;nur&#39;</span><span class="p">)</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;ilnur&#39;</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;run&#39;</span><span class="p">)</span>
+<span class="go">-1</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.format">
+<code class="descname">format</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#str.format" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает строку, форматированную в соответствии с переданными параметрами</p>
+<p>Синтаксис: <cite>{[Поле][!Функция][:Формат]}</cite></p>
+<p>Синтаксис формата: <cite>[[Заполнитель] Выравнивание] [Знак] [#] [0] [Ширна] [,] [.Точность] [Преобразование]</cite></p>
+<blockquote>
+<div><ul>
+<li><p class="first"><cite>заполнитель</cite> - заполнитель пространства в поле</p>
+</li>
+<li><p class="first"><cite>выравнивание</cite> - выравниваение поля</p>
+<blockquote>
+<div><ul class="simple">
+<li><cite>&lt;</cite> - по левому краю</li>
+<li><cite>&gt;</cite> - по правому краю</li>
+<li><cite>^</cite> - по центру</li>
+<li>&#8216;=&#8217; - знак числа по левому краю, число по правому</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><cite>ширина</cite> - ширина поля</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&quot;&#39;{0:10}&#39;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="go">&#39;         3&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&quot;&#39;{0:{1}}&#39;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="go">&#39;         3&#39;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first"><cite>знак</cite> - управляет выводом знака числа</p>
+<blockquote>
+<div><ul class="simple">
+<li><cite>+</cite> - обязательный вывод знаков</li>
+<li><cite>-</cite> - знаки только для отрицательных</li>
+<li><cite>пробел</cite> - вывод отрицательных знаков и пробел вместо положительного знака</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><cite>преобразование</cite> - преобразование чисел</p>
+<blockquote>
+<div><ul class="simple">
+<li><cite>b</cite> - двоичное значение</li>
+<li><cite>c</cite> - преобразование числа в символ</li>
+<li><cite>d</cite> - десятичное значение</li>
+<li><cite>n</cite> - аналогично <cite>d</cite>, но с учетом локали</li>
+<li><cite>o</cite> - восьмиричное значение</li>
+<li><cite>x</cite>, &#8216;X&#8217; - шестнадцатиричное значение</li>
+<li><cite>f</cite>, <cite>F</cite> - вещественное число в десятичном представлении</li>
+<li><cite>e</cite>, <cite>E</cite> - вещественное число в экспоненциальной форме</li>
+<li><cite>g</cite>, <cite>G</cite> - эквивалентно <cite>f</cite>, <cite>e</cite> или <cite>E</cite> (выбирается более короткая запись числа)</li>
+<li><cite>n</cite> - аналогично <cite>g</cite>, но учитвает локаль</li>
+<li><cite>%</cite> - умножает число на 100 и добавляет символ процента в конце</li>
+<li>`` -</li>
+<li>`` -</li>
+<li>`` -</li>
+<li>`` -</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;{0} и {1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&#39;фарш&#39;</span><span class="p">,</span> <span class="s">&#39;яйца&#39;</span><span class="p">)</span>
+<span class="go">&#39;фарш и яйца&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;Этот {food} — {adjective}.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">food</span><span class="o">=</span><span class="s">&#39;фарш&#39;</span><span class="p">,</span> <span class="n">adjective</span><span class="o">=</span><span class="s">&#39;непередаваемо ужасен&#39;</span><span class="p">)</span>
+<span class="go">Этот фарш — непередаваемо ужасен.</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;История о {0}е, {1}е, и {other}е.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&#39;Билл&#39;</span><span class="p">,</span> <span class="s">&#39;Манфред&#39;</span><span class="p">,</span> <span class="n">other</span><span class="o">=</span><span class="s">&#39;Георг&#39;</span><span class="p">)</span>
+<span class="go">История о Билле, Манфреде, и Георге.</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;Значение ПИ — примерно {0:.3f}.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">3.14</span><span class="p">))</span>
+<span class="go">Значение ПИ — примерно 3.14159.</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;{0:10} ==&gt; {1:10d}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&#39;Sjoerd&#39;</span><span class="p">,</span> <span class="mi">4127</span><span class="p">)</span>
+<span class="go">Sjoerd     ==&gt;       4127</span>
+</pre></div>
+</div>
+<p>&gt;&gt;&gt;table = {&#8216;Sjoerd&#8217;: 4127, &#8216;Jack&#8217;: 4098, &#8216;Dcab&#8217;: 8637678}
+&gt;&gt;&gt; &#8216;Jack: {0[Jack]:d}; Sjoerd: {0[Sjoerd]:d}; Dcab: {0[Dcab]:d}&#8217;.format(table))
+Jack: 4098; Sjoerd: 4127; Dcab: 8637678&#8217;</p>
+<p># вывод в двоичном формате
+&gt;&gt;&gt; &#8216;{0:b} &amp; {1:b} = {2:b}&#8217;.format(100, 75, 100 &amp; 75)
+&#8216;1100100 &amp; 1001011 = 1000000&#8217;</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.index">
+<code class="descname">index</code><span class="sig-paren">(</span><em>sub</em><span class="optional">[</span>, <em>start</em><span class="optional">[</span>, <em>end</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#str.index" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first simple">
+<li><strong>text</strong> (<em>str</em>) &#8211; искомая строка</li>
+<li><strong>start</strong> (<em>int</em>) &#8211; начальная позиция</li>
+<li><strong>end</strong> (<em>int</em>) &#8211; конченая позиция</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raise:</th><td class="field-body"><p class="first last">ValueError</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Возвращает число, позиция в котором встречается искомая строка, если ничего не найдено вызовет исключение, поиск ведется слева.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;ilnur&#39;</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s">&#39;nur&#39;</span><span class="p">)</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;ilnur&#39;</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s">&#39;run&#39;</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+    <span class="n">File</span> <span class="s">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="gr">ValueError</span>: <span class="n">substring not found</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.isalpha">
+<code class="descname">isalpha</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#str.isalpha" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает True | False, если строка содержит только буквы</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;123&#39;</span><span class="o">.</span><span class="n">isalpha</span><span class="p">()</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;ilnur&#39;</span><span class="o">.</span><span class="n">isalpha</span><span class="p">()</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.isalnum">
+<code class="descname">isalnum</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#str.isalnum" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает True | False, если строка содержит только буквы и цифры</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.isdigit">
+<code class="descname">isdigit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#str.isdigit" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает True | False, если строка содержит только цифры</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;123&#39;</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;ilnur&#39;</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.isdecimal">
+<code class="descname">isdecimal</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#str.isdecimal" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает True | False, если строка содержит только десятичные символы</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.islower">
+<code class="descname">islower</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#str.islower" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает True | False, если строка содержит только строчные буквы</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.isnumeric">
+<code class="descname">isnumeric</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#str.isnumeric" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает True | False, если строка содержит только числовые символы</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&quot;</span><span class="se">\u2155</span><span class="s">&quot;</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">(),</span> <span class="s">&quot;</span><span class="se">\u2155</span><span class="s">&quot;</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()</span>
+<span class="go">(True, False)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\u2155</span><span class="s">&quot;</span><span class="p">)</span>
+<span class="go">&#39;1/5&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.isspace">
+<code class="descname">isspace</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#str.isspace" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает True | False, если строка содержит только пробельные символы</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;123&#39;</span><span class="o">.</span><span class="n">isalpha</span><span class="p">()</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.istitle">
+<code class="descname">istitle</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#str.istitle" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает True | False, если строка содержит слова начинающиеся с заглавной буквы</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.isupper">
+<code class="descname">isupper</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#str.isupper" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает True | False, если строка содержит только заглавные буквы</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.join">
+<code class="descname">join</code><span class="sig-paren">(</span><em>iter</em><span class="sig-paren">)</span><a class="headerlink" href="#str.join" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><strong>iter</strong> (<a class="reference internal" href="functions.html#iter" title="iter"><em>iter</em></a>) &#8211; итерируемый объект</td>
+</tr>
+</tbody>
+</table>
+<p>Возвращает строку, содержащий сконкатенированные значения исходной строки с итерируемым объектом.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;ilnur&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s">&#39;---&#39;</span><span class="p">)</span>
+<span class="go">&#39;-ilnur-ilnur-</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.ljust">
+<code class="descname">ljust</code><span class="sig-paren">(</span><em>width</em><span class="optional">[</span>, <em>fill</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#str.ljust" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>width</strong> (<em>int</em>) &#8211; длина возвращаемой строки</li>
+<li><strong>fill</strong> (<em>str</em>) &#8211; символ, которыми оформляются отступы, по умолчанию пробел</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Возвращает строку, заданной длины, выравненная слева.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;ilnur&#39;</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="go">&#39;ilnur  &#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.lower">
+<code class="descname">lower</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#str.lower" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает строку, в нижнем регистре</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;iLnur&#39;</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="go">&#39;ilnur&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.lstrip">
+<code class="descname">lstrip</code><span class="sig-paren">(</span><span class="optional">[</span><em>chrs</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#str.lstrip" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает строку, с удаленными пробелами слева</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><strong>chrs</strong> (<a class="reference internal" href="functions.html#iter" title="iter"><em>iter</em></a>) &#8211; удаляемые символы</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39; ilnur privet &#39;</span><span class="o">.</span><span class="n">lstrip</span><span class="p">()</span>
+<span class="go">&#39;ilnur privet  &#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.partition">
+<code class="descname">partition</code><span class="sig-paren">(</span><em>sep</em><span class="sig-paren">)</span><a class="headerlink" href="#str.partition" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Находит nервое вхождение символа-разделителя в строку и возвращает кортеж из трех элементов.</p>
+<blockquote>
+<div><ul class="simple">
+<li>первый элемент - содержать фрагмент, рас­nоложенный nеред разделителем</li>
+<li>второй элемент - символ-разделитель</li>
+<li>третий эле­мент - фрагмент, расnоложенный nосле символа-разделителя.</li>
+</ul>
+</div></blockquote>
+<p>Поиск nроизводится сле­ва наnраво. Если символ-разделитель не найден, то nервый элемент кортежа будет со­держать всю строку, а остальные элементы будут nустыми.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&quot;wordl word2 wordЗ&quot;</span><span class="o">.</span><span class="n">partition</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">)</span>
+<span class="go">(&#39;wordl&#39;, &#39; &#39;, &#39;word2 word3&#39;)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&quot;wordl word2 wordЗ&quot;</span><span class="o">.</span><span class="n">partition</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span>
+<span class="go">( &#39;wordl word2 wordЗ&#39;, &#39;&#39;, &#39;&#39;)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.replace">
+<code class="descname">replace</code><span class="sig-paren">(</span><em>old</em>, <em>new</em><span class="optional">[</span>, <em>maxreplace</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#str.replace" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>old</strong> (<em>str</em>) &#8211; старая</li>
+<li><strong>new</strong> (<em>str</em>) &#8211; новая</li>
+<li><strong>maxreplace</strong> (<em>ind</em>) &#8211; максимальное количество замен</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Возвращает строку, с замененой строкой на новую строку.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;ilnur&#39;</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;nur&#39;</span><span class="p">,</span><span class="s">&#39;nurgi&#39;</span><span class="p">)</span>
+<span class="go">&#39;ilnurgi&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.rfind">
+<code class="descname">rfind</code><span class="sig-paren">(</span><em>sub</em><span class="optional">[</span>, <em>start</em><span class="optional">[</span>, <em>end</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#str.rfind" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>sub</strong> (<em>str</em>) &#8211; искомая строка</li>
+<li><strong>start</strong> (<em>int</em>) &#8211; начальная позиция</li>
+<li><strong>end</strong> (<em>int</em>) &#8211; конченая позиция</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Аналог <a class="reference internal" href="#str.find" title="str.find"><code class="xref py py-meth docutils literal"><span class="pre">find()</span></code></a>.
+Возвращает число, с которого начинается искомая строка, если ничего не найдено возвращает -1, поиск ведется справа.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.rindex">
+<code class="descname">rindex</code><span class="sig-paren">(</span><em>sub</em><span class="optional">[</span>, <em>start</em><span class="optional">[</span>, <em>end</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#str.rindex" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>sub</strong> (<em>str</em>) &#8211; искомая строка</li>
+<li><strong>start</strong> (<em>int</em>) &#8211; начальная позиция</li>
+<li><strong>end</strong> (<em>int</em>) &#8211; конченая позиция</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Аналог <a class="reference internal" href="#str.index" title="str.index"><code class="xref py py-meth docutils literal"><span class="pre">index()</span></code></a>.
+Возвращает число, с которого начинается искомая строка, если ничего не найдено вызовет исключение, поиск ведется справа.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.rjust">
+<code class="descname">rjust</code><span class="sig-paren">(</span><em>width</em><span class="optional">[</span>, <em>fill</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#str.rjust" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>width</strong> (<em>int</em>) &#8211; длина возвращаемой строки</li>
+<li><strong>fill</strong> (<em>str</em>) &#8211; символ заполенения пустых мест</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Возвращает строку, заданной длины, выравненная по правому краю.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;ilnur&#39;</span><span class="o">.</span><span class="n">rjust</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="go">&#39;  ilnur&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.rpartition">
+<code class="descname">rpartition</code><span class="sig-paren">(</span><em>sep</em><span class="sig-paren">)</span><a class="headerlink" href="#str.rpartition" title="Ссылка на это определение">¶</a></dt>
+<dd><p>метод аналогичен методу <a class="reference internal" href="#str.partition" title="str.partition"><code class="xref py py-meth docutils literal"><span class="pre">str.partition()</span></code></a>, но nоиск символа­ разделителя nроизводится не слева наnраво, а, наоборот, сnрава налево. Если символ­ разделитель не найден, то nервые два элемента кортежа будут nустыми, а третий эле­мент будет содержать всю строку.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&quot;wordl word2 wordЗ&quot;</span><span class="o">.</span><span class="n">rpartition</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">)</span>
+<span class="go">(&#39;wordl word2&#39;, &#39; &#39;, &#39;wordЗ&#39;)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&quot;wordl word2 wordЗ&quot;</span><span class="o">.</span><span class="n">rpartition</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span>
+<span class="go">(&#39; &#39;, &#39;&#39;, &#39;wordl word2 word3&#39;)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.rsplit">
+<code class="descname">rsplit</code><span class="sig-paren">(</span><span class="optional">[</span><em>razd</em>, <em>maxcount</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#str.rsplit" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>razd</strong> (<em>str</em>) &#8211; разделитель</li>
+<li><strong>maxcount</strong> (<em>int</em>) &#8211; количество разбиений</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Возвращает список, полученный из строки, путем разделения разделителем.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;i l n u r&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39; &#39;</span><span class="p">)</span>
+<span class="go">[&#39;i&#39;, &#39;l&#39;, &#39;n&#39;, &#39;u&#39;, &#39;r&#39;]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.rstrip">
+<code class="descname">rstrip</code><span class="sig-paren">(</span><span class="optional">[</span><em>chrs</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#str.rstrip" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает строку, с удаленными пробелами слева/справа или с обоих концов соответственно.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><strong>chrs</strong> (<a class="reference internal" href="functions.html#iter" title="iter"><em>iter</em></a>) &#8211; удаляемые символы</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39; ilnur privet &#39;</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span>
+<span class="go">&#39; ilnur privet&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.split">
+<code class="descname">split</code><span class="sig-paren">(</span><span class="optional">[</span><em>sep</em>, <em>maxcount</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#str.split" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>sep</strong> (<em>str</em>) &#8211; разделитель</li>
+<li><strong>maxcount</strong> (<em>int</em>) &#8211; max количество разбиений</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Возвращает список, полученный из строки, путем разделения разделителем.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;i l n u r&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39; &#39;</span><span class="p">)</span>
+<span class="go">[&#39;i&#39;, &#39;l&#39;, &#39;n&#39;, &#39;u&#39;, &#39;r&#39;]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.splitlines">
+<code class="descname">splitlines</code><span class="sig-paren">(</span><span class="optional">[</span><em>keepends</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#str.splitlines" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><strong>keepends</strong> &#8211; включать ли символ перевода каретки</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Переменные:</th><td class="field-body"><strong>keepends</strong> &#8211; True/False</td>
+</tr>
+</tbody>
+</table>
+<p>Возвращает список, аналогично <a class="reference internal" href="#str.split" title="str.split"><code class="xref py py-meth docutils literal"><span class="pre">split()</span></code></a>, но использующий в качестве разделителя переход на новую строку. Символы перехода на новую строку включаются в результат, только если необязательный аргумент keepends равен 1.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="sd">&quot;&quot;&quot;Hello World!\nHello!&quot;&quot;&quot;</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
+<span class="go">[&#39;Hello World!&#39;, &#39;Hello!&#39;]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.startswith">
+<code class="descname">startswith</code><span class="sig-paren">(</span><em>sub</em><span class="optional">[</span>, <em>start</em><span class="optional">[</span>, <em>end</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#str.startswith" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>sub</strong> (<em>str</em>) &#8211; искомая строка</li>
+<li><strong>strat</strong> (<em>int</em>) &#8211; начальная позиция</li>
+<li><strong>end</strong> (<em>int</em>) &#8211; конечная позиция</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Возвращает True | False, если строка начинается c искомой строки</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;ilnur&#39;</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&#39;il&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;ilnur&#39;</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&#39;nur&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.strip">
+<code class="descname">strip</code><span class="sig-paren">(</span><span class="optional">[</span><em>chrs</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#str.strip" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><strong>chrs</strong> (<a class="reference internal" href="functions.html#iter" title="iter"><em>iter</em></a>) &#8211; удаляемые символы</td>
+</tr>
+</tbody>
+</table>
+<p>Возвращает строку, с удаленными пробелами c обоих концов соответственно.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39; ilnur &#39;</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="go">&#39;ilnur&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.swapcase">
+<code class="descname">swapcase</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#str.swapcase" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает строку, в которой регистр букв изменен с верхнего на нижний и наоборот.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;Ilnur&#39;</span><span class="o">.</span><span class="n">swapcase</span><span class="p">()</span>
+<span class="go">&#39;iLNUR&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.title">
+<code class="descname">title</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#str.title" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает строку, в которой регистр букв соответствует заголовку.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;ilnur&#39;</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+<span class="go">&#39;ILNUR&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.translate">
+<code class="descname">translate</code><span class="sig-paren">(</span><em>table</em><span class="optional">[</span>, <em>deletechars</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#str.translate" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Выполняет преобразование строки в соответствии с таблицей замены. Упростить создание <cite>таблицы символов</cite> позволяет статический метод <a class="reference internal" href="#str.maketrans" title="str.maketrans"><code class="xref py py-meth docutils literal"><span class="pre">maketrans()</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>table</strong> &#8211; таблица замены</li>
+<li><strong>deletechars</strong> &#8211; удаляемые символы</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="s">&quot;Пример&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="nb">ord</span><span class="p">(</span><span class="s">&#39;П&#39;&#39;): None, ord(&#39;</span><span class="n">p</span><span class="s">&#39;): ord(&#39;</span><span class="n">P</span><span class="s">&#39;)}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span>
+<span class="go">{1088: 1056, 1055: None}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="go">&#39;РимеР&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.upper">
+<code class="descname">upper</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#str.upper" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает строку, в верхнем регистре</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;iLnur&#39;</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<span class="go">&#39;ILNUR&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="str.zfill">
+<code class="descname">zfill</code><span class="sig-paren">(</span><em>width</em><span class="sig-paren">)</span><a class="headerlink" href="#str.zfill" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><strong>width</strong> (<em>int</em>) &#8211; длина возвращаемой строки</td>
+</tr>
+</tbody>
+</table>
+<p>Возвращает строку, заданной длины, пустое пространство слева заполнится нулями</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;12&#39;</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="go">&#39;00012&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="id1">
+<h2>Функции работы со строками<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="function">
+<dt>
+<code class="descname">str</code><span class="sig-paren">(</span><span class="optional">[</span><em>obj</em>, <em>encode</em>, <em>errors='strict'</em><span class="optional">]</span><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>obj</strong> &#8211; объект (<code class="xref py py-class docutils literal"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal"><span class="pre">bytes</span></code>, <a class="reference internal" href="bytearray.html#bytearray" title="bytearray"><code class="xref py py-class docutils literal"><span class="pre">bytearray</span></code></a>)</li>
+<li><strong>encode</strong> &#8211; кодировка для <code class="xref py py-class docutils literal"><span class="pre">bytes</span></code>, <a class="reference internal" href="bytearray.html#bytearray" title="bytearray"><code class="xref py py-class docutils literal"><span class="pre">bytearray</span></code></a></li>
+<li><strong>errors</strong> (<em>str</em>) &#8211; обработка ошибок для <code class="xref py py-class docutils literal"><span class="pre">bytes</span></code>, <a class="reference internal" href="bytearray.html#bytearray" title="bytearray"><code class="xref py py-class docutils literal"><span class="pre">bytearray</span></code></a></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Возвращает <code class="xref py py-class docutils literal"><span class="pre">str</span></code>, преобразованный из объекта</p>
+<p>Через атрибут <cite>errors</cite> настраивается обработка ошибок:</p>
+<blockquote>
+<div><ul class="simple">
+<li><cite>strict</cite> - при ошибке возбуждается исключение <code class="xref py py-class docutils literal"><span class="pre">UnicodeDecodeError</span></code></li>
+<li><cite>replace</cite> - неизвестный символ заменяется символом, имеющим код uFFFD</li>
+<li><cite>ignore</cite> - неизвестные символы игнорируются</li>
+</ul>
+</div></blockquote>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">str</span><span class="p">(</span><span class="mi">125</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="go">(&#39;125&#39;, &#39;[1, 2, 3]&#39;)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">str</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)),</span> <span class="nb">str</span><span class="p">({</span><span class="s">&quot;x&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s">&quot;у&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">})</span>
+<span class="go">(&#39;(1, 2, 3)&#39;, &quot;{&#39;у&#39;: 10, &#39;х&#39;: 5}&quot;)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>&gt;&gt;&gt; str(bуtеs(&quot;строка&quot;, &quot;utf-8&quot;) )
+&quot;b&#39;\\xd1\\x81\\xd1\\x82\\xd1\\x80\\xd0\\xbe\\xd0\\xba\\xd0\\хbО&#39;&quot;
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">str</span><span class="p">(</span><span class="nb">bytearray</span><span class="p">(</span><span class="s">&quot;строка&quot;</span><span class="p">,</span> <span class="s">&quot;utf-8&quot;</span><span class="p">)</span> <span class="p">)</span>
+<span class="go">&quot;bytearray(b&#39;\\xd1\\x81\\xd1\\x82\\xd1\\x80\\xd0\\xbe\\xd0\\xba\\xdO\\xbO&#39;)&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">str</span><span class="p">(</span><span class="nb">bytes</span><span class="p">(</span><span class="s">&quot;строка1&quot;</span><span class="p">,</span> <span class="s">&quot;utf-8&quot;</span><span class="p">),</span> <span class="s">&quot;utf-8&quot;</span><span class="p">)</span>
+<span class="go">&#39;строка1&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">str</span><span class="p">(</span><span class="nb">bytes</span><span class="p">(</span><span class="s">&quot;строка1&quot;</span><span class="p">,</span> <span class="s">&quot;utf-8&quot;</span><span class="p">),</span> <span class="s">&quot;ascii&quot;</span><span class="p">,</span> <span class="s">&quot;strict&quot;</span><span class="p">)</span>
+<span class="go">Traceback (most recent са11 1ast):</span>
+<span class="go">  Fi1e &quot;&lt;pyshe11#16&gt;&quot;, 1ine 1, in &lt;modu1e&gt;</span>
+<span class="go">    str(bytes(&quot;строка1&quot;, &quot;utf-8&quot;), &quot;ascii&quot;, &quot;strict&quot;)</span>
+<span class="go">UnicodeDecodeError: &#39;ascii&#39; codec can&#39;t decode byte Oxd1 in position 0: ordina1 not in range(128)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">str</span><span class="p">(</span><span class="nb">bytes</span><span class="p">(</span><span class="s">&quot;строка1&quot;</span><span class="p">,</span> <span class="s">&quot;utf-8&quot;</span><span class="p">),</span> <span class="s">&quot;ascii&quot;</span><span class="p">,</span> <span class="s">&quot;ignore&quot;</span><span class="p">)</span>
+<span class="go">&#39;1&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="id2">
+<h2>Форматирование строки<a class="headerlink" href="#id2" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;</span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="mi">1</span>
+<span class="go">&#39;1&#39;</span>
+</pre></div>
+</div>
+<p>&gt;&gt;&gt;&#8217;%[Ключ], [Флаг], [Ширина], [Точность]ТипПреобразования&#8217;</p>
+<ul>
+<li><p class="first">ключ - ключ словаря</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;</span><span class="si">%(name)s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">{</span><span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="s">&#39;python&#39;</span><span class="p">}</span> <span class="c"># ключ словаря</span>
+<span class="go">&#39;python&#39;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">флаг - флаг преобразования</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt;&gt;&gt; # &#39;#&#39; добавляет символ типа
+&gt;&gt;&gt; &quot;%#o %#o %#o&quot; % (Оо77, 10, 10.5)
+0o77 0o12 0o12
+&gt;&gt;&gt; &quot;%#x %#х %#х&quot; % (Oxff, 10, 10.5)
+Oxff Оха Оха
+&gt;&gt;&gt; &quot;%#X %#Х %#Х&quot; % (Oxff, 10, 10.5)
+OXFF ОХА ОХА
+&gt;&gt;&gt; &quot;%#.0F %.0F&quot; % (300, 300)
+300. 300
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>&gt;&gt;&gt; &#39;0&#39; - задает наличие ведущих нулей для числового значения
+&gt;&gt;&gt; &#39;%d - %05d&#39; % (3, 3) # 5 - ширина поля
+3 - 00003
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>&gt;&gt;&gt; &#39;-&#39; - задает выравнивание по левой границе
+&gt;&gt;&gt; &quot;&#39;%5d&#39; - &#39;%-5d&#39;&quot; % (3, 3) # 5 - ширина поля
+&#39;    3&#39; - &#39;3    &#39; -
+&gt;&gt;&gt; &quot;&#39;%05d&#39; - &#39;%-05d&#39;&quot; % (3, 3)
+&quot;&#39;00003&#39; - &#39;3    &#39;&quot;
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>&gt;&gt;&gt; &#39;+&#39; - обязательный вывод знака чисел
+&gt;&gt;&gt; &quot;&#39;%+d&#39; - &#39;%+d&#39;&quot; % (-3, 3)
+&#39;-3&#39; - &#39;+3&#39;
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>&gt;&gt;&gt; nробел - вставляет пробел перед положительным числом
+&gt;&gt;&gt; &quot;&#39;%d&#39; - &#39;%d&#39;&quot; % (- 3, 3)
+&#39;-3&#39; - &#39; 3&#39;
+</pre></div>
+</div>
+</li>
+<li><p class="first">ширина - минимальная ширина поля</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&quot;&#39;</span><span class="si">%10d</span><span class="s">&#39; - &#39;</span><span class="si">%-10d</span><span class="s">&#39;&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="go">&#39;         3&#39; - &#39;3         &#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&quot;&#39;</span><span class="si">%3s</span><span class="s">&#39;&#39;</span><span class="si">%10s</span><span class="s">&#39;&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="s">&quot;string&quot;</span><span class="p">,</span> <span class="s">&quot;string&quot;</span><span class="p">)</span>
+<span class="go">&#39;string&#39;&#39;    string&#39;&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&quot;&#39;</span><span class="si">%*s</span><span class="s">&quot;</span><span class="o">%</span><span class="mi">10</span><span class="n">s</span><span class="s">&quot;&#39; % (10, &quot;</span><span class="n">string</span><span class="s">&quot;, &quot;</span><span class="nb">str</span><span class="s">&quot;) # ширина указана в кортеже</span>
+<span class="go">&#39;    string&#39;&#39;       str&#39;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">точность - количество знаков после точки для вещественных чисел</p>
+<blockquote>
+<div><p>&gt;&gt;&gt;&gt; &#8220;%s %f %.2f&#8221; % (math.pi, math.pi, math.pi)
+&#8216;3.141592653589793 3.141593 3.14&#8217;
+&gt;&gt;&gt; &#8220;&#8217;%*.*f&#8217;&#8221; % (8, 5, math.pi) # значения берутся из кортежа
+&#8216; 3.14159&#8217;</p>
+</div></blockquote>
+</li>
+<li><p class="first">тип преобразования</p>
+<blockquote>
+<div><ul class="simple">
+<li><cite>s</cite> - строка, преобразование через функцию <cite>str()</cite></li>
+<li><cite>r</cite> - строка, преобразование через функцию <cite>repr()</cite></li>
+<li><cite>a</cite> - строка, преобразование через функцию <cite>ascii()</cite></li>
+<li><cite>c</cite> - число, значение символа</li>
+<li><cite>d</cite>, <cite>i</cite> - целая часть числа</li>
+<li><cite>o</cite> - восьмиричное значение</li>
+<li><cite>x</cite> - шестнадцатиричное значение</li>
+<li><cite>Х</cite> - шестнадцатиричное значение в верхнем регистре</li>
+<li><cite>f</cite>, <cite>F</cite> - вещественное число в десятичном представлении</li>
+<li><cite>e</cite>, <cite>E</cite> - вещественное число в экспоненциальном форме</li>
+<li><cite>g</cite>, <cite>G</cite> - эквивалентно <cite>f</cite> или <cite>g</cite> или <cite>G</cite> (выббирается более короткая запись)</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Оглавление</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">str - строки</a><ul>
+<li><a class="reference internal" href="#id1">Функции работы со строками</a></li>
+<li><a class="reference internal" href="#id2">Форматирование строки</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Предыдущий раздел</h4>
+  <p class="topless"><a href="set.html"
+                        title="предыдущая глава">set - множества</a></p>
+  <h4>Следующий раздел</h4>
+  <p class="topless"><a href="tuple.html"
+                        title="следующая глава">tuple - кортежи</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Эта страница</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/base/string.txt"
+            rel="nofollow">Исходный текст</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Быстрый поиск</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Искать" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Введите слова для поиска или имя модуля, класса или функции.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Алфавитный указатель"
+             >указатель</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="tuple.html" title="tuple - кортежи"
+             >вперёд</a> |</li>
+        <li class="right" >
+          <a href="set.html" title="set - множества"
+             >назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Документация python документация 2015.05.20</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Основные объекты</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright ilnurgi.
+      Создано с помощью <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

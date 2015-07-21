@@ -1,0 +1,266 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Phone &mdash; p4a doc 14.10.12 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.10.12',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="p4a doc 14.10.12 documentation" href="../index.html" />
+    <link rel="next" title="Preferences" href="Preferences.html" />
+    <link rel="prev" title="MediaRecorder" href="MediaRecorder.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="Preferences.html" title="Preferences"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="MediaRecorder.html" title="MediaRecorder"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">p4a doc 14.10.12 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="phone">
+<h1>Phone<a class="headerlink" href="#phone" title="Permalink to this headline">¶</a></h1>
+<dl class="method">
+<dt id="checkNetworkRoaming">
+<tt class="descname">checkNetworkRoaming</tt><big>(</big><big>)</big><a class="headerlink" href="#checkNetworkRoaming" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращае True если смарт находится в домашней зоне</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="getCellLocation">
+<tt class="descname">getCellLocation</tt><big>(</big><big>)</big><a class="headerlink" href="#getCellLocation" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает текущую информацию</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="getDeviceId">
+<tt class="descname">getDeviceId</tt><big>(</big><big>)</big><a class="headerlink" href="#getDeviceId" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает уникальный идентификатор устройства, IMEI для GSM, MEID для CDMA или null</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="getDeviceSoftwareVersion">
+<tt class="descname">getDeviceSoftwareVersion</tt><big>(</big><big>)</big><a class="headerlink" href="#getDeviceSoftwareVersion" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает версию ПО</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="getLine1Number">
+<tt class="descname">getLine1Number</tt><big>(</big><big>)</big><a class="headerlink" href="#getLine1Number" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает номер смарта для 1 линии</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="getNeighboringCellInfo">
+<tt class="descname">getNeighboringCellInfo</tt><big>(</big><big>)</big><a class="headerlink" href="#getNeighboringCellInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает информацию о сети</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="getNetworkOperator">
+<tt class="descname">getNetworkOperator</tt><big>(</big><big>)</big><a class="headerlink" href="#getNetworkOperator" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает (MCC+MNC)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="getNetworkOperatorName">
+<tt class="descname">getNetworkOperatorName</tt><big>(</big><big>)</big><a class="headerlink" href="#getNetworkOperatorName" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает название оператора</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="getNetworkType">
+<tt class="descname">getNetworkType</tt><big>(</big><big>)</big><a class="headerlink" href="#getNetworkType" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает тип сети</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="getPhoneType">
+<tt class="descname">getPhoneType</tt><big>(</big><big>)</big><a class="headerlink" href="#getPhoneType" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает тип смарта</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="getSimCountryIso">
+<tt class="descname">getSimCountryIso</tt><big>(</big><big>)</big><a class="headerlink" href="#getSimCountryIso" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает код страны в формате ISO</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="getSimOperator">
+<tt class="descname">getSimOperator</tt><big>(</big><big>)</big><a class="headerlink" href="#getSimOperator" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает MCC+MNC (mobile country code + mobile network code)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="getSimOperatorName">
+<tt class="descname">getSimOperatorName</tt><big>(</big><big>)</big><a class="headerlink" href="#getSimOperatorName" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает имя опретаора сим</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="getSimSerialNumber">
+<tt class="descname">getSimSerialNumber</tt><big>(</big><big>)</big><a class="headerlink" href="#getSimSerialNumber" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает номер SIM</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="getSimState">
+<tt class="descname">getSimState</tt><big>(</big><big>)</big><a class="headerlink" href="#getSimState" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает статус симкарты</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="getSubscriberId">
+<tt class="descname">getSubscriberId</tt><big>(</big><big>)</big><a class="headerlink" href="#getSubscriberId" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает уникальный ID</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="getVoiceMailAlphaTag">
+<tt class="descname">getVoiceMailAlphaTag</tt><big>(</big><big>)</big><a class="headerlink" href="#getVoiceMailAlphaTag" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает номер почтового сервера</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="getVoiceMailNumber">
+<tt class="descname">getVoiceMailNumber</tt><big>(</big><big>)</big><a class="headerlink" href="#getVoiceMailNumber" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает номер почтового сервера</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="phoneCall">
+<tt class="descname">phoneCall</tt><big>(</big><em>str uri</em><big>)</big><a class="headerlink" href="#phoneCall" title="Permalink to this definition">¶</a></dt>
+<dd><p>набирает номер абонента</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="phoneCallNumber">
+<tt class="descname">phoneCallNumber</tt><big>(</big><em>str phoneNumber</em><big>)</big><a class="headerlink" href="#phoneCallNumber" title="Permalink to this definition">¶</a></dt>
+<dd><p>набирает номер абонента</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="phoneDial">
+<tt class="descname">phoneDial</tt><big>(</big><em>str uri</em><big>)</big><a class="headerlink" href="#phoneDial" title="Permalink to this definition">¶</a></dt>
+<dd><p>набирает номер абонента</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="phoneDialNumber">
+<tt class="descname">phoneDialNumber</tt><big>(</big><em>str phoneNumber</em><big>)</big><a class="headerlink" href="#phoneDialNumber" title="Permalink to this definition">¶</a></dt>
+<dd><p>набирает номер абонента</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="readPhoneState">
+<tt class="descname">readPhoneState</tt><big>(</big><big>)</big><a class="headerlink" href="#readPhoneState" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает текущее состояние аппарата</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="startTrackingPhoneState">
+<tt class="descname">startTrackingPhoneState</tt><big>(</big><big>)</big><a class="headerlink" href="#startTrackingPhoneState" title="Permalink to this definition">¶</a></dt>
+<dd><p>запускает мониторинг состояния аппарата</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="stopTrackingPhoneState">
+<tt class="descname">stopTrackingPhoneState</tt><big>(</big><big>)</big><a class="headerlink" href="#stopTrackingPhoneState" title="Permalink to this definition">¶</a></dt>
+<dd><p>останавливает мониторинг состояния смарта</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="MediaRecorder.html"
+                        title="previous chapter">MediaRecorder</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="Preferences.html"
+                        title="next chapter">Preferences</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/Phone.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="Preferences.html" title="Preferences"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="MediaRecorder.html" title="MediaRecorder"
+             >previous</a> |</li>
+        <li><a href="../index.html">p4a doc 14.10.12 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

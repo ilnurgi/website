@@ -1,0 +1,564 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>UI - работа с пользовательским интерфейсом &mdash; p4a doc 14.10.12 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.10.12',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="p4a doc 14.10.12 documentation" href="../index.html" />
+    <link rel="prev" title="Wifi" href="Wifi.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="Wifi.html" title="Wifi"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">p4a doc 14.10.12 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="ui">
+<h1>UI - работа с пользовательским интерфейсом<a class="headerlink" href="#ui" title="Permalink to this headline">¶</a></h1>
+<dl class="method">
+<dt id="addContextMenuItem">
+<tt class="descname">addContextMenuItem</tt><big>(</big><em>str label</em>, <em>str event</em><span class="optional">[</span>, <em>Object eventData</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#addContextMenuItem" title="Permalink to this definition">¶</a></dt>
+<dd><p>добавляет новый элемент в контекстное меню, используется только при построении интерфейса через <a class="reference internal" href="#webViewShow" title="webViewShow"><tt class="xref py py-meth docutils literal"><span class="pre">webViewShow()</span></tt></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="addOptionsMenuItem">
+<tt class="descname">addOptionsMenuItem</tt><big>(</big><em>str label</em>, <em>str event</em><span class="optional">[</span>, <em>Object eventData</em>, <em>str iconName</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#addOptionsMenuItem" title="Permalink to this definition">¶</a></dt>
+<dd><p>добавляет новый элемент в меню</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">addOptionsMenuItem</span><span class="p">(</span><span class="s">u&#39;label&#39;</span><span class="p">,</span> <span class="s">u&#39;label_event&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="clearContextMenu">
+<tt class="descname">clearContextMenu</tt><big>(</big><big>)</big><a class="headerlink" href="#clearContextMenu" title="Permalink to this definition">¶</a></dt>
+<dd><p>очищает контекстное меню</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="clearOptionsMenu">
+<tt class="descname">clearOptionsMenu</tt><big>(</big><big>)</big><a class="headerlink" href="#clearOptionsMenu" title="Permalink to this definition">¶</a></dt>
+<dd><p>очищает меню</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">clearOptionsMenu</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialogCreateAlert">
+<tt class="descname">dialogCreateAlert</tt><big>(</big><span class="optional">[</span><em>str title</em>, <em>str message</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#dialogCreateAlert" title="Permalink to this definition">¶</a></dt>
+<dd><p>создает информационное окно, пустое, резельтат возвращается в виде события</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">dialogCreateAlert</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">dialogShow</span><span class="p">()</span>
+<span class="go">{</span>
+<span class="go">    u&#39;data&#39;: {</span>
+<span class="go">        u&#39;canceled&#39;: True</span>
+<span class="go">    },</span>
+<span class="go">    u&#39;name&#39;: u&#39;dialog&#39;,</span>
+<span class="go">    u&#39;time&#39;: 1407402590865000L</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialogCreateDatePicker">
+<tt class="descname">dialogCreateDatePicker</tt><big>(</big><span class="optional">[</span><em>int year=1970</em>, <em>int month=1</em>, <em>int day=1</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#dialogCreateDatePicker" title="Permalink to this definition">¶</a></dt>
+<dd><p>создает информационное окно выбора даты, ответ возваращается в виде события</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">dialogCreateDatePicker</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">dialogShow</span><span class="p">()</span>
+<span class="go">{</span>
+<span class="go">    u&#39;data&#39;: {</span>
+<span class="go">        u&#39;year&#39;: 1971,</span>
+<span class="go">        u&#39;day&#39;: 2,</span>
+<span class="go">        u&#39;which&#39;: u&#39;positive&#39;,</span>
+<span class="go">        u&#39;month&#39;: 1</span>
+<span class="go">    },</span>
+<span class="go">    u&#39;name&#39;: u&#39;dialog&#39;,</span>
+<span class="go">    u&#39;time&#39;: 1407401126070000L</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialogCreateHorizontalProgress">
+<tt class="descname">dialogCreateHorizontalProgress</tt><big>(</big><span class="optional">[</span><em>str title</em>, <em>str message</em>, <em>int maximumProgress=100</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#dialogCreateHorizontalProgress" title="Permalink to this definition">¶</a></dt>
+<dd><p>создает информационное окно с горизонтальным прогрессбаром</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">dialogCreateHorizontalProgress</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">dialogShow</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialogCreateInput">
+<tt class="descname">dialogCreateInput</tt><big>(</big><span class="optional">[</span><em>str title</em>, <em>str message</em>, <em>str defaultText</em>, <em>str inputType</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#dialogCreateInput" title="Permalink to this definition">¶</a></dt>
+<dd><p>создает информационное окно с текстовым полем, без кнопок, результат возвращается в виде события</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">dialogCreateInput</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">dialogShow</span><span class="p">()</span>
+<span class="go">{</span>
+<span class="go">    u&#39;data&#39;: {</span>
+<span class="go">        u&#39;canceled&#39;: True,</span>
+<span class="go">        u&#39;value&#39;: u&#39;123&#39;</span>
+<span class="go">    },</span>
+<span class="go">    u&#39;name&#39;: u&#39;dialog&#39;,</span>
+<span class="go">    u&#39;time&#39;: 1407401504232000L</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialogCreatePassword">
+<tt class="descname">dialogCreatePassword</tt><big>(</big><span class="optional">[</span><em>str title</em>, <em>str message</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#dialogCreatePassword" title="Permalink to this definition">¶</a></dt>
+<dd><p>создает информационное окно с текстовым полем для ввода пароля, без кнопок, резултат возвращается в виде события</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">dialogCreatePassword</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">dialogShow</span><span class="p">()</span>
+<span class="go">{</span>
+<span class="go">    u&#39;data&#39;: {</span>
+<span class="go">        u&#39;canceled&#39;: True,</span>
+<span class="go">        u&#39;value&#39;: u&#39;123&#39;</span>
+<span class="go">    },</span>
+<span class="go">    u&#39;name&#39;: u&#39;dialog&#39;,</span>
+<span class="go">    u&#39;time&#39;: 1407401504232000L</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialogCreateSeekBar">
+<tt class="descname">dialogCreateSeekBar</tt><big>(</big><em>int startingValue</em>, <em>int maximumValue</em>, <em>str title</em>, <em>str message</em><big>)</big><a class="headerlink" href="#dialogCreateSeekBar" title="Permalink to this definition">¶</a></dt>
+<dd><p>создает информационное окно c полосой для выбора значения из промежутка, выбор а также перемещение возбуждают событие</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">dialogCreateSeekBar</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">dialogShow</span><span class="p">()</span>
+<span class="go">{</span>
+<span class="go">    u&#39;data&#39;: {</span>
+<span class="go">        u&#39;progress&#39;: 51,</span>
+<span class="go">        u&#39;which&#39;: u&#39;seekbar&#39;,</span>
+<span class="go">        u&#39;fromuser&#39;: True</span>
+<span class="go">    },</span>
+<span class="go">    u&#39;name&#39;: u&#39;dialog&#39;,</span>
+<span class="go">    u&#39;time&#39;: 1407401975886000L</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialogCreateSpinnerProgress">
+<tt class="descname">dialogCreateSpinnerProgress</tt><big>(</big><span class="optional">[</span><em>str title</em>, <em>str message</em>, <em>int maximum_progress=100</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#dialogCreateSpinnerProgress" title="Permalink to this definition">¶</a></dt>
+<dd><p>создает информационное окно для ожидания</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">dialogCreateSpinnerProgress</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">dialogShow</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialogCreateTimePicker">
+<tt class="descname">dialogCreateTimePicker</tt><big>(</big><span class="optional">[</span><em>int hour=0</em>, <em>int minute=0</em>, <em>bool is24hour=false</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#dialogCreateTimePicker" title="Permalink to this definition">¶</a></dt>
+<dd><p>создает информационное окно выбора времени, ответ возваращается в виде события</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">dialogCreateSpinnerProgress</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">dialogShow</span><span class="p">()</span>
+<span class="go">{</span>
+<span class="go">    u&#39;data&#39;: {</span>
+<span class="go">        u&#39;hour&#39;: 12,</span>
+<span class="go">        u&#39;minute&#39;: 2,</span>
+<span class="go">        u&#39;which&#39;: u&#39;positive&#39;</span>
+<span class="go">    },</span>
+<span class="go">    u&#39;name&#39;: u&#39;dialog&#39;,</span>
+<span class="go">    u&#39;time&#39;: 1407402256633000L</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialogDismiss">
+<tt class="descname">dialogDismiss</tt><big>(</big><big>)</big><a class="headerlink" href="#dialogDismiss" title="Permalink to this definition">¶</a></dt>
+<dd><p>закрывает информационное окно</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">dialogDismiss</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialogGetInput">
+<tt class="descname">dialogGetInput</tt><big>(</big><span class="optional">[</span><em>str title='Value'</em>, <em>str message='Please enter value:'</em>, <em>str defaultText</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#dialogGetInput" title="Permalink to this definition">¶</a></dt>
+<dd><p>создает информационное окно с текстовым полем, кнопками &#8220;ОК&#8221; и &#8220;Отмена&#8221;, ответ возваращается в виде события</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">dialogGetInput</span><span class="p">()</span>
+<span class="go">{</span>
+<span class="go">    u&#39;data&#39;: {</span>
+<span class="go">        u&#39;which&#39;: u&#39;positive&#39;,</span>
+<span class="go">        u&#39;value&#39;: u&#39;123&#39;</span>
+<span class="go">    },</span>
+<span class="go">    u&#39;name&#39;: u&#39;dialog&#39;,</span>
+<span class="go">    u&#39;time&#39;: 1407402335330000L</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialogGetPassword">
+<tt class="descname">dialogGetPassword</tt><big>(</big><span class="optional">[</span><em>str title='Password'</em>, <em>str message</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#dialogGetPassword" title="Permalink to this definition">¶</a></dt>
+<dd><p>создает информационное окно с полем для ввода пароля, с кнопками &#8220;ОК&#8221; и &#8220;Отмена&#8221;, ответ возваращается в виде события</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">dialogGetPassword</span><span class="p">()</span>
+<span class="go">{</span>
+<span class="go">    u&#39;data&#39;: {</span>
+<span class="go">        u&#39;which&#39;: u&#39;positive&#39;,</span>
+<span class="go">        u&#39;value&#39;: u&#39;123&#39;</span>
+<span class="go">    },</span>
+<span class="go">    u&#39;name&#39;: u&#39;dialog&#39;,</span>
+<span class="go">    u&#39;time&#39;: 1407402335330000L</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialogGetResponse">
+<tt class="descname">dialogGetResponse</tt><big>(</big><big>)</big><a class="headerlink" href="#dialogGetResponse" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает <a class="reference internal" href="Event.html#Result" title="Result"><tt class="xref py py-class docutils literal"><span class="pre">Result</span></tt></a> работы диалога, также возбуждает событие</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">dialogGetResponse</span><span class="p">()</span><span class="o">.</span><span class="n">result</span>
+<span class="go">{</span>
+<span class="go">    u&#39;data&#39;: {</span>
+<span class="go">        u&#39;which&#39;: u&#39;positive&#39;,</span>
+<span class="go">        u&#39;value&#39;: u&#39;123&#39;</span>
+<span class="go">    },</span>
+<span class="go">    u&#39;name&#39;: u&#39;dialog&#39;,</span>
+<span class="go">    u&#39;time&#39;: 1407402335330000L</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialogGetSelectedItems">
+<tt class="descname">dialogGetSelectedItems</tt><big>(</big><big>)</big><a class="headerlink" href="#dialogGetSelectedItems" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает результат выбора элементов из списка <a class="reference internal" href="#dialogSetMultiChoiceItems" title="dialogSetMultiChoiceItems"><tt class="xref py py-meth docutils literal"><span class="pre">dialogSetMultiChoiceItems()</span></tt></a></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">dialogGetSelectedItems</span><span class="p">()</span><span class="o">.</span><span class="n">result</span>
+<span class="go">[0, 1]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialogSetCurrentProgress">
+<tt class="descname">dialogSetCurrentProgress</tt><big>(</big><em>int current</em><big>)</big><a class="headerlink" href="#dialogSetCurrentProgress" title="Permalink to this definition">¶</a></dt>
+<dd><p>устанавливает теукщее значение для диалога прогрессбара, созданного через <a class="reference internal" href="#dialogCreateHorizontalProgress" title="dialogCreateHorizontalProgress"><tt class="xref py py-meth docutils literal"><span class="pre">dialogCreateHorizontalProgress()</span></tt></a></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">dialogCreateHorizontalProgress</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">dialogShow</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">):</span>
+<span class="go">        droid.dialogSetCurrentProgress(i*10)</span>
+<span class="go">        time.sleep(1)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">dialogDismiss</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialogSetItems">
+<tt class="descname">dialogSetItems</tt><big>(</big><em>list items</em><big>)</big><a class="headerlink" href="#dialogSetItems" title="Permalink to this definition">¶</a></dt>
+<dd><p>устанавливает новый список элементов для окна запроса, результат выбора элемента возваращается в виде события</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">dialogCreateAlert</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">dialogSetItems</span><span class="p">([</span><span class="s">u&#39;1&#39;</span><span class="p">,</span> <span class="s">u&#39;2&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">dialogShow</span><span class="p">()</span>
+<span class="go">{</span>
+<span class="go">    u&#39;data&#39;: {</span>
+<span class="go">        u&#39;item&#39;: 0</span>
+<span class="go">    },</span>
+<span class="go">    u&#39;name&#39;: u&#39;dialog&#39;,</span>
+<span class="go">    u&#39;time&#39;: 1407405362417000L</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialogSetMaxProgress">
+<tt class="descname">dialogSetMaxProgress</tt><big>(</big><em>int max</em><big>)</big><a class="headerlink" href="#dialogSetMaxProgress" title="Permalink to this definition">¶</a></dt>
+<dd><p>устанавливает новое максимальное значение для прогресбара, созданного через <a class="reference internal" href="#dialogCreateHorizontalProgress" title="dialogCreateHorizontalProgress"><tt class="xref py py-meth docutils literal"><span class="pre">dialogCreateHorizontalProgress()</span></tt></a></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">dialogCreateHorizontalProgress</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">dialogShow</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">dialogSetMaxProgress</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialogSetMultiChoiceItems">
+<tt class="descname">dialogSetMultiChoiceItems</tt><big>(</big><span class="optional">[</span><em>list items</em>, <em>list selected</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#dialogSetMultiChoiceItems" title="Permalink to this definition">¶</a></dt>
+<dd><p>устанавливает новый список в информационное окно для множественного выбора</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">dialogCreateAlert</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">dialogSetMultiChoiceItems</span><span class="p">([</span><span class="s">u&#39;1&#39;</span><span class="p">,</span> <span class="s">u&#39;2&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">dialogShow</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialogSetNegativeButtonText">
+<tt class="descname">dialogSetNegativeButtonText</tt><big>(</big><em>str text</em><big>)</big><a class="headerlink" href="#dialogSetNegativeButtonText" title="Permalink to this definition">¶</a></dt>
+<dd><p>устанавливает новый текст для кнопки отрицания</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">dialogCreateAlert</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">dialogSetMultiChoiceItems</span><span class="p">([</span><span class="s">u&#39;1&#39;</span><span class="p">,</span> <span class="s">u&#39;2&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">dialogSetNegativeButtonText</span><span class="p">(</span><span class="s">u&#39;Отмена&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">dialogShow</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialogSetNeutralButtonText">
+<tt class="descname">dialogSetNeutralButtonText</tt><big>(</big><em>str text</em><big>)</big><a class="headerlink" href="#dialogSetNeutralButtonText" title="Permalink to this definition">¶</a></dt>
+<dd><p>устанавливает текст для обычной кнопки</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">dialogCreateAlert</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">dialogSetMultiChoiceItems</span><span class="p">([</span><span class="s">u&#39;1&#39;</span><span class="p">,</span> <span class="s">u&#39;2&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">dialogSetNeutralButtonText</span><span class="p">(</span><span class="s">u&#39;Хорошо&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">dialogShow</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialogSetPositiveButtonText">
+<tt class="descname">dialogSetPositiveButtonText</tt><big>(</big><em>str text</em><big>)</big><a class="headerlink" href="#dialogSetPositiveButtonText" title="Permalink to this definition">¶</a></dt>
+<dd><p>устанавливает текст для кнопки положительной</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">dialogCreateAlert</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">dialogSetMultiChoiceItems</span><span class="p">([</span><span class="s">u&#39;1&#39;</span><span class="p">,</span> <span class="s">u&#39;2&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">dialogSetPositiveButtonText</span><span class="p">(</span><span class="s">u&#39;ОК&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">dialogShow</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialogSetSingleChoiceItems">
+<tt class="descname">dialogSetSingleChoiceItems</tt><big>(</big><em>list items</em><span class="optional">[</span>, <em>int selected=0</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#dialogSetSingleChoiceItems" title="Permalink to this definition">¶</a></dt>
+<dd><p>устанавливает новый список для информационного окна с одиночным выбором</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">dialogCreateAlert</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">dialogSetSingleChoiceItems</span><span class="p">([</span><span class="s">u&#39;1&#39;</span><span class="p">,</span> <span class="s">u&#39;2&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">dialogShow</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="dialogShow">
+<tt class="descname">dialogShow</tt><big>(</big><big>)</big><a class="headerlink" href="#dialogShow" title="Permalink to this definition">¶</a></dt>
+<dd><p>отображает информационное окно</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">dialogShow</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="fullDismiss">
+<tt class="descname">fullDismiss</tt><big>(</big><big>)</big><a class="headerlink" href="#fullDismiss" title="Permalink to this definition">¶</a></dt>
+<dd><p>разрушает окно с активити</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">fullDismiss</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="fullKeyOverride">
+<tt class="descname">fullKeyOverride</tt><big>(</big><em>list keycodes</em><span class="optional">[</span>, <em>bool enable=True</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#fullKeyOverride" title="Permalink to this definition">¶</a></dt>
+<dd><p>перекрывает действия кнопок</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fullQuery">
+<tt class="descname">fullQuery</tt><big>(</big><big>)</big><a class="headerlink" href="#fullQuery" title="Permalink to this definition">¶</a></dt>
+<dd><p>возваращает элементы текущего активити</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">fullQuery</span><span class="p">()</span>
+<span class="go">{</span>
+<span class="go">    u&#39;button&#39;: {</span>
+<span class="go">        u&#39;text&#39;: u&#39;New Button&#39;,</span>
+<span class="go">        u&#39;type&#39;: u&#39;Button&#39;,</span>
+<span class="go">        u&#39;id&#39;: u&#39;button&#39;,</span>
+<span class="go">        u&#39;visibility&#39;: u&#39;0&#39;</span>
+<span class="go">    },</span>
+<span class="go">    u&#39;text_view&#39;: {</span>
+<span class="go">        u&#39;text&#39;: u&#39;HelloWorld&#39;,</span>
+<span class="go">        u&#39;type&#39;: u&#39;TextView&#39;,</span>
+<span class="go">        u&#39;id&#39;: u&#39;text_view&#39;,</span>
+<span class="go">        u&#39;visibility&#39;: u&#39;0&#39;</span>
+<span class="go">    }</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="fullQueryDetail">
+<tt class="descname">fullQueryDetail</tt><big>(</big><em>str id</em><big>)</big><a class="headerlink" href="#fullQueryDetail" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает атрибуты виджета</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">fullQueryDetail</span><span class="p">(</span><span class="s">&#39;button&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">result</span>
+<span class="go">{</span>
+<span class="go">    u&#39;text&#39;: u&#39;New Button&#39;,</span>
+<span class="go">    u&#39;type&#39;: u&#39;Button&#39;,</span>
+<span class="go">    u&#39;id&#39;: u&#39;button&#39;,</span>
+<span class="go">    u&#39;visibility&#39;: u&#39;0&#39;</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="fullSetList">
+<tt class="descname">fullSetList</tt><big>(</big><em>str id</em>, <em>list list</em><big>)</big><a class="headerlink" href="#fullSetList" title="Permalink to this definition">¶</a></dt>
+<dd><p>задает список для списка окна</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">fullSetList</span><span class="p">(</span><span class="s">&#39;listView&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s">&#39;123&#39;</span><span class="p">,</span> <span class="s">&#39;234&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="fullSetProperty">
+<tt class="descname">fullSetProperty</tt><big>(</big><em>str id</em>, <em>str property</em>, <em>str value</em><big>)</big><a class="headerlink" href="#fullSetProperty" title="Permalink to this definition">¶</a></dt>
+<dd><p>устанавливает новое свойство для виджета</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">fullSetProperty</span><span class="p">(</span><span class="s">&quot;up_bar&quot;</span><span class="p">,</span> <span class="s">&quot;background&quot;</span><span class="p">,</span> <span class="s">&quot;file://.../res/Drawable/title.jpg&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="fullSetTitle">
+<tt class="descname">fullSetTitle</tt><big>(</big><em>str title</em><big>)</big><a class="headerlink" href="#fullSetTitle" title="Permalink to this definition">¶</a></dt>
+<dd><p>устанавливает новый заголовок для текущего окна</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">fullSetTitle</span><span class="p">(</span><span class="s">u&#39;Заголовок новый&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="fullShow">
+<tt class="descname">fullShow</tt><big>(</big><em>str layout</em><span class="optional">[</span>, <em>str title</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#fullShow" title="Permalink to this definition">¶</a></dt>
+<dd><p>отображает активити</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">fullShow</span><span class="p">(</span><span class="s">&#39;...xml_text...&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="makeToast">
+<tt class="descname">makeToast</tt><big>(</big><em>str message</em><big>)</big><a class="headerlink" href="#makeToast" title="Permalink to this definition">¶</a></dt>
+<dd><p>создает всплывающее сообщение</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">makeToast</span><span class="p">(</span><span class="s">u&#39;Привет МИР&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="notify">
+<tt class="descname">notify</tt><big>(</big><em>str title</em>, <em>str message</em><big>)</big><a class="headerlink" href="#notify" title="Permalink to this definition">¶</a></dt>
+<dd><p>создает уведомление</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">notify</span><span class="p">(</span><span class="s">u&#39;уведомление&#39;</span><span class="p">,</span> <span class="s">u&#39;привет&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="webViewShow">
+<tt class="descname">webViewShow</tt><big>(</big><em>str url</em><span class="optional">[</span>, <em>bool wait</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#webViewShow" title="Permalink to this definition">¶</a></dt>
+<dd><p>рисует интерфейс из html странички</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">droid</span><span class="o">.</span><span class="n">webViewShow</span><span class="p">(</span><span class="s">&quot;index.html&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="Wifi.html"
+                        title="previous chapter">Wifi</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/UI.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="Wifi.html" title="Wifi"
+             >previous</a> |</li>
+        <li><a href="../index.html">p4a doc 14.10.12 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

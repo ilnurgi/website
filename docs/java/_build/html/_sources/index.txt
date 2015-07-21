@@ -1,0 +1,124 @@
+.. java doc documentation master file, created by
+   sphinx-quickstart on Mon Jan 27 11:51:55 2014.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to java doc's documentation!
+====================================
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   base/annotations
+   base/bultin_classes
+   base/classes
+   base/enum
+   base/generics
+   base/interface
+   base/methods
+   base/opers
+   base/packages
+   base/start
+   base/variables
+   base/String
+   java/index
+   swing
+
+
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+
+::
+
+    /** коментарии */
+    // коментарии
+
+    @Override - признак переопределнности
+
+    switch (){
+        
+        case :
+            ...
+            break
+        case :
+            ...
+            break
+        default:
+
+    }
+
+    loops циклы   
+    package com.android;
+    import ....
+
+
+    char[] array = new char[3]
+    char[][] array = new char[3][3]
+
+    public Field() {
+      this(DEFAULT_SIZE)
+    }
+
+    public Field(int size) {
+      
+    }
+
+    public class Student extends Human {}
+
+    abstract
+    implements
+
+    ArrayList, Inteher(), Float(), String()
+
+    Double.parseDouble(String str)
+
+    final методы не могут быть перекрыты
+    final классы не могут быть унаследованы
+    final атрибуты не могут быть перезаписаны
+
+    try {
+      
+    } catch (final IOException e){
+      final - оптимизирует код лучше для продакшена
+    } catch (IOException | Error2 | Error3 e){
+      final - оптимизирует код лучше для продакшена
+    } finaly {
+      
+    }
+
+    try (myFileInputStream=new FileInputStream('1.txt')){
+      throw new Exception()
+    } catch (Exception e){
+      e.printStackTrace()
+    }
+
+    implements Item1, item2 ....
+
+    instanceof
+
+    java.util
+    java.util.concurrent
+
+    <?>
+    <? extends Model>
+    <? super Model>
+
+    serialazation traNSIENT
+
+    все объекты имеюют метод ToSting()
+
+    System.arraycopy(arr0, 1, arr1, 2, 3) копирование массива
+
+
+    Character.isDigit(str)
+    Integer.valueOf(str)
+
+    "".substring()

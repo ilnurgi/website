@@ -1,0 +1,334 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>urllib.parse &mdash; Документация python документация 2015.05.20</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2015.05.20',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Документация python документация 2015.05.20" href="../index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Алфавитный указатель"
+             accesskey="I">указатель</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Документация python документация 2015.05.20</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <span class="target" id="module-urllib.parse"></span><div class="section" id="urllib-parse">
+<h1>urllib.parse<a class="headerlink" href="#urllib-parse" title="Ссылка на этот заголовок">¶</a></h1>
+<div class="admonition warning">
+<p class="first admonition-title">Предупреждение</p>
+<p class="last">данный модуль доступен на третьей ветки питона</p>
+</div>
+<dl class="method">
+<dt id="urllib.parse.parse_qsl">
+<code class="descclassname">urllib.parse.</code><code class="descname">parse_qsl</code><span class="sig-paren">(</span><em>&lt;строка запроса&gt;, [, keep_blankvalues=False][, strict_parsing=False][, encoding='utf-8'][, errors='replace']</em><span class="sig-paren">)</span><a class="headerlink" href="#urllib.parse.parse_qsl" title="Ссылка на это определение">¶</a></dt>
+<dd><p>аналогична <code class="xref py py-meth docutils literal"><span class="pre">parse_qs()</span></code>, только возвращает список кортежей, разбирает строку запроса</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>keep_blankvalues</strong> (<em>bool</em>) &#8211; если истина, то параметры, не имеющие значений внутри строки запроса, также будут добавлены в результат.</li>
+<li><strong>strict_parsing</strong> (<em>bool</em>) &#8211; если истина, то при наличии ошибки возбуждается исключение <cite>ValueError</cite></li>
+<li><strong>encoding</strong> (<em>str</em>) &#8211; кодировка данных</li>
+<li><strong>errors</strong> (<em>str</em>) &#8211; уровень обработки ошибок</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="s">&quot;str=%D1</span><span class="si">%F</span><span class="s">2</span><span class="si">%F</span><span class="s">O</span><span class="si">%E</span><span class="s">E</span><span class="si">%E</span><span class="s">A</span><span class="si">%E</span><span class="s">O&amp;v=10&amp;v=20&amp;t=&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">parse</span> <span class="n">qsl</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s">&quot;cpl251&quot;</span><span class="p">)</span>
+<span class="go">[(&#39;str&#39;, &#39;Строка&#39;), (&#39;v&#39;, &#39;10&#39;), (&#39;v&#39;, &#39;20&#39;)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">parse_qsl</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">keep_blank_values</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s">&quot;cp1251&quot;</span><span class="p">)</span>
+<span class="go">[(&#39;str&#39;, &#39;Строка&#39;), (&#39;v&#39;, &#39;10&#39;), (&#39;v&#39;, &#39;20&#39;), (&#39;t&#39;, &quot;)]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="urllib.parse.quote">
+<code class="descclassname">urllib.parse.</code><code class="descname">quote</code><span class="sig-paren">(</span><em>&lt;строка&gt;[, safe='/'][, encoding=None][, errors=None]</em><span class="sig-paren">)</span><a class="headerlink" href="#urllib.parse.quote" title="Ссылка на это определение">¶</a></dt>
+<dd><p>заменяет все специальные симолы последовательностями <cite>%nn</cite>. Цифры, анг­лийские буквы и символы подчеркивания, точки и дефиса не кодируются. Пробелы преобразуются в последовательность %20.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><strong>safe</strong> (<em>str</em>) &#8211; символы, которые преобразовывать нельзя</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">quote</span><span class="p">(</span><span class="s">&quot;Cтpoкa&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s">&quot;cp1251&quot;</span><span class="p">)</span>
+<span class="go">&#39;%D1%F2%F0%EE%EA%E0&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">quote</span><span class="p">(</span><span class="s">&quot;Cтpoкa&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">)</span>
+<span class="go">&#39;%D0%A1%D1%82%D1%80%D0%BE%D0%BA%D0%B0&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="urllib.parse.quote_plus">
+<code class="descclassname">urllib.parse.</code><code class="descname">quote_plus</code><span class="sig-paren">(</span><em>&lt;строка&gt;[, safe='/'][, encoding=None][, errors=None]</em><span class="sig-paren">)</span><a class="headerlink" href="#urllib.parse.quote_plus" title="Ссылка на это определение">¶</a></dt>
+<dd><p>функция аналогична функции <a class="reference internal" href="#urllib.parse.quote" title="urllib.parse.quote"><code class="xref py py-meth docutils literal"><span class="pre">quote()</span></code></a>, но пробелы заменяются символом <cite>+</cite>, а символ <cite>/</cite> заменяется на <cite>%2F</cite></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><strong>safe</strong> (<em>str</em>) &#8211; символы, которые преобразовывать нельзя</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="urllib.parse.quote_from_bytes">
+<code class="descclassname">urllib.parse.</code><code class="descname">quote_from_bytes</code><span class="sig-paren">(</span><em>&lt;последовательность байтов&gt;</em><span class="optional">[</span>, <em>safe='/'</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#urllib.parse.quote_from_bytes" title="Ссылка на это определение">¶</a></dt>
+<dd><p>функция аналогична функции <a class="reference internal" href="#urllib.parse.quote" title="urllib.parse.quote"><code class="xref py py-meth docutils literal"><span class="pre">quote()</span></code></a>, но в качестве первого параметра принимает последовательность байтов</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="urllib.parse.unquote">
+<code class="descclassname">urllib.parse.</code><code class="descname">unquote</code><span class="sig-paren">(</span><em>&lt;строка&gt;[, encoding='utf-8'][, errors='replace']</em><span class="sig-paren">)</span><a class="headerlink" href="#urllib.parse.unquote" title="Ссылка на это определение">¶</a></dt>
+<dd><p>заменяет последовательность <cite>%nn</cite> на соответсвующие символы. символ <cite>+</cite> не заменяется ничем</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="urllib.parse.unquote_plus">
+<code class="descclassname">urllib.parse.</code><code class="descname">unquote_plus</code><span class="sig-paren">(</span><em>&lt;строка&gt;[, encoding='utf-8'][, errors='replace']</em><span class="sig-paren">)</span><a class="headerlink" href="#urllib.parse.unquote_plus" title="Ссылка на это определение">¶</a></dt>
+<dd><p>заменяет последовательность <cite>%nn</cite> на соответсвующие символы. символ <cite>+</cite> заменяет пробелом</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="urllib.parse.urlencode">
+<code class="descclassname">urllib.parse.</code><code class="descname">urlencode</code><span class="sig-paren">(</span><em>&lt;объект&gt; [, doseq=False][, safe=''][, encoding=None][, errors=None]</em><span class="sig-paren">)</span><a class="headerlink" href="#urllib.parse.urlencode" title="Ссылка на это определение">¶</a></dt>
+<dd><p>преобразовывает отдельные составляющие в строку запроса</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>объект</strong> &#8211; словарь или список кортежей (кортеж из 2х элементов)</li>
+<li><strong>doseq</strong> (<em>bool</em>) &#8211; если истина, то можно указать последовательность из нескольких значений во втором параметре кортежа</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre>&gt;&gt;&gt; urlencode({&quot;str&quot;: &quot;Строка 2&quot;, &quot;var&quot;: 20}, encoding=&quot;cpl251&quot;)
+&#39;var=20&amp;str=&#39;Шl%F2•;FO%EE%EA%E0+2&#39;
+&gt;&gt;&gt; urlencode([(&quot;str&quot;, &quot;Строка 2&quot;), (&quot;var&quot;, 20)], encodiпg=&quot;cp1251&quot;)
+&#39;str=%D1%F2%FO%EE%EA%E0+2&amp;var=20&#39;
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="urllib.parse.urljoin">
+<code class="descclassname">urllib.parse.</code><code class="descname">urljoin</code><span class="sig-paren">(</span><em>&lt;базовый урл&gt;</em>, <em>&lt;относитьльный или абсолютный урл&gt;</em><span class="optional">[</span>, <em>&lt;разбор якоря&gt;</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#urllib.parse.urljoin" title="Ссылка на это определение">¶</a></dt>
+<dd><p>преобразует относитльный урл в абсолютный</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">urllib.parse</span> <span class="kn">import</span> <span class="n">urljoin</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">urljoin</span><span class="p">(</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">admin</span><span class="o">.</span><span class="n">ru</span><span class="o">/</span><span class="n">f1</span><span class="o">/</span><span class="n">f2</span><span class="o">/</span><span class="n">test</span><span class="o">.</span><span class="n">html</span><span class="s">&#39;, &#39;</span><span class="nb">file</span><span class="o">.</span><span class="n">html</span><span class="s">&#39;)</span>
+<span class="go">&#39;http://admin.ru/fl/f2/file.html&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">urljoin</span><span class="p">(</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">admin</span><span class="o">.</span><span class="n">ru</span><span class="o">/</span><span class="n">f1</span><span class="o">/</span><span class="n">f2</span><span class="o">/</span><span class="n">test</span><span class="o">.</span><span class="n">html</span><span class="s">&#39;, &#39;</span><span class="n">f3</span><span class="o">/</span><span class="nb">file</span><span class="o">.</span><span class="n">html</span><span class="s">&#39;)</span>
+<span class="go">&#39;http://admin.ru/fl/f2/f3/file.html&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">urljoin</span><span class="p">(</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">admin</span><span class="o">.</span><span class="n">ru</span><span class="o">/</span><span class="n">f1</span><span class="o">/</span><span class="n">f2</span><span class="o">/</span><span class="n">test</span><span class="o">.</span><span class="n">html</span><span class="s">&#39;, &#39;</span><span class="o">/</span><span class="nb">file</span><span class="o">.</span><span class="n">html</span><span class="s">&#39;)</span>
+<span class="go">&#39;http://admin.ru/file.html&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">urljoin</span><span class="p">(</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">admin</span><span class="o">.</span><span class="n">ru</span><span class="o">/</span><span class="n">f1</span><span class="o">/</span><span class="n">f2</span><span class="o">/</span><span class="n">test</span><span class="o">.</span><span class="n">html</span><span class="s">&#39;, &#39;</span><span class="o">./</span><span class="nb">file</span><span class="o">.</span><span class="n">html</span><span class="s">&#39;)</span>
+<span class="go">&#39;http://admin.ru/fl/f2/file.html&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">urljoin</span><span class="p">(</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">admin</span><span class="o">.</span><span class="n">ru</span><span class="o">/</span><span class="n">f1</span><span class="o">/</span><span class="n">f2</span><span class="o">/</span><span class="n">test</span><span class="o">.</span><span class="n">html</span><span class="s">&#39;, &#39;</span><span class="o">../</span><span class="nb">file</span><span class="o">.</span><span class="n">html</span><span class="s">&#39;)</span>
+<span class="go">&#39;http://admin.ru/fl/file.html&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="urllib.parse.urlsplit">
+<code class="descclassname">urllib.parse.</code><code class="descname">urlsplit</code><span class="sig-paren">(</span><em>&lt;url&gt;</em><span class="optional">[</span>, <em>&lt;схема&gt;</em><span class="optional">[</span>, <em>&lt;разбор_якоря&gt;=False</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#urllib.parse.urlsplit" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает <a class="reference internal" href="#urllib.parse.SplitResult" title="urllib.parse.SplitResult"><code class="xref py py-class docutils literal"><span class="pre">SplitResult</span></code></a> с результатом разбора адреса</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">urlsplit</span><span class="p">(</span><span class="s">&#39;http://ilnurgi.ru:80/test.php;st?var=5#metka&#39;</span><span class="p">)</span>
+<span class="go">SplitResult(scheme=&#39;http&#39;, netloc=&#39;ilnurgi.ru:80&#39;, path=&#39;/test.php&#39;, query=&#39;var=5&#39;, fragment=&#39;metka&#39;)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="urllib.parse.urlunparse">
+<code class="descclassname">urllib.parse.</code><code class="descname">urlunparse</code><span class="sig-paren">(</span><em>&lt;последовательность&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#urllib.parse.urlunparse" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает строку, адрес, собранную из отдельных значений</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">urlunparse</span><span class="p">((</span><span class="s">&#39;http&#39;</span><span class="p">,</span> <span class="s">&#39;ilnurgi.ru:80&#39;</span><span class="p">,</span> <span class="s">&#39;/test.php&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">,</span> <span class="s">&#39;var=5&#39;</span><span class="p">,</span> <span class="s">&#39;metka&#39;</span><span class="p">))</span>
+<span class="go">&#39;http://ilnurgi.ru:80/test.php?var=5#metka&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="urllib.parse.urlunsplit">
+<code class="descclassname">urllib.parse.</code><code class="descname">urlunsplit</code><span class="sig-paren">(</span><em>&lt;последовательность&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#urllib.parse.urlunsplit" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает строку, адрес, собранную из отдельных значений</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">urlunsplit</span><span class="p">((</span><span class="s">&#39;http&#39;</span><span class="p">,</span> <span class="s">&#39;ilnurgi.ru:80&#39;</span><span class="p">,</span> <span class="s">&#39;/test.php&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">,</span> <span class="s">&#39;var=5&#39;</span><span class="p">,</span> <span class="s">&#39;metka&#39;</span><span class="p">))</span>
+<span class="go">&#39;http://ilnurgi.ru:80/test.php?var=5#metka&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="urllib.parse.ParseResult">
+<em class="property">class </em><code class="descclassname">urllib.parse.</code><code class="descname">ParseResult</code><a class="headerlink" href="#urllib.parse.ParseResult" title="Ссылка на это определение">¶</a></dt>
+<dd><p>результат парсинга адреса</p>
+<dl class="attribute">
+<dt id="urllib.parse.ParseResult.scheme">
+<code class="descname">scheme</code><a class="headerlink" href="#urllib.parse.ParseResult.scheme" title="Ссылка на это определение">¶</a></dt>
+<dd><p>название протокола</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="urllib.parse.ParseResult.netloc">
+<code class="descname">netloc</code><a class="headerlink" href="#urllib.parse.ParseResult.netloc" title="Ссылка на это определение">¶</a></dt>
+<dd><p>название домена вместе с номером порта</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="urllib.parse.ParseResult.path">
+<code class="descname">path</code><a class="headerlink" href="#urllib.parse.ParseResult.path" title="Ссылка на это определение">¶</a></dt>
+<dd><p>путь</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="urllib.parse.ParseResult.hostname">
+<code class="descname">hostname</code><a class="headerlink" href="#urllib.parse.ParseResult.hostname" title="Ссылка на это определение">¶</a></dt>
+<dd><p>название домена в нижнем регистре</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="urllib.parse.ParseResult.port">
+<code class="descname">port</code><a class="headerlink" href="#urllib.parse.ParseResult.port" title="Ссылка на это определение">¶</a></dt>
+<dd><p>номер порта</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="urllib.parse.ParseResult.params">
+<code class="descname">params</code><a class="headerlink" href="#urllib.parse.ParseResult.params" title="Ссылка на это определение">¶</a></dt>
+<dd><p>параметры</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="urllib.parse.ParseResult.query">
+<code class="descname">query</code><a class="headerlink" href="#urllib.parse.ParseResult.query" title="Ссылка на это определение">¶</a></dt>
+<dd><p>строка запроса</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="urllib.parse.ParseResult.fragment">
+<code class="descname">fragment</code><a class="headerlink" href="#urllib.parse.ParseResult.fragment" title="Ссылка на это определение">¶</a></dt>
+<dd><p>якорь</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="urllib.parse.ParseResult.username">
+<code class="descname">username</code><a class="headerlink" href="#urllib.parse.ParseResult.username" title="Ссылка на это определение">¶</a></dt>
+<dd><p>имя пользователя</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="urllib.parse.ParseResult.password">
+<code class="descname">password</code><a class="headerlink" href="#urllib.parse.ParseResult.password" title="Ссылка на это определение">¶</a></dt>
+<dd><p>пароль</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="urllib.parse.ParseResult.geturl">
+<code class="descname">geturl</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#urllib.parse.ParseResult.geturl" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает адрес</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="urllib.parse.SplitResult">
+<em class="property">class </em><code class="descclassname">urllib.parse.</code><code class="descname">SplitResult</code><a class="headerlink" href="#urllib.parse.SplitResult" title="Ссылка на это определение">¶</a></dt>
+<dd><p>результат парсинга адреса</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>Эта страница</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/modules/urllib_parse.txt"
+            rel="nofollow">Исходный текст</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Быстрый поиск</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Искать" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Введите слова для поиска или имя модуля, класса или функции.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Алфавитный указатель"
+             >указатель</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Документация python документация 2015.05.20</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright ilnurgi.
+      Создано с помощью <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

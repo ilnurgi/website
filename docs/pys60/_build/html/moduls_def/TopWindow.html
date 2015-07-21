@@ -1,0 +1,257 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>TopWindow &mdash; pys60 14.10.12 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.10.12',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="pys60 14.10.12 documentation" href="../index.html" />
+    <link rel="up" title="Стандартные модули" href="index.html" />
+    <link rel="next" title="audio" href="audio.html" />
+    <link rel="prev" title="Стандартные модули" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="audio.html" title="audio"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Стандартные модули"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">pys60 14.10.12 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Стандартные модули</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <span class="target" id="module-TopWindow"></span><div class="section" id="topwindow">
+<h1>TopWindow<a class="headerlink" href="#topwindow" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="TopWindow.TopWindow">
+<em class="property">class </em><tt class="descclassname">TopWindow.</tt><tt class="descname">TopWindow</tt><a class="headerlink" href="#TopWindow.TopWindow" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">window</span> <span class="o">=</span> <span class="n">TopWindow</span><span class="o">.</span><span class="n">TopWindow</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="TopWindow.TopWindow.position">
+<tt class="descname">position</tt><a class="headerlink" href="#TopWindow.TopWindow.position" title="Permalink to this definition">¶</a></dt>
+<dd><p>Координаты окна отображения на экране</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">window</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="TopWindow.TopWindow.size">
+<tt class="descname">size</tt><a class="headerlink" href="#TopWindow.TopWindow.size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Размеры окна</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">window</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="TopWindow.TopWindow.images">
+<tt class="descname">images</tt><a class="headerlink" href="#TopWindow.TopWindow.images" title="Permalink to this definition">¶</a></dt>
+<dd><p>Список кортежей [(graphics.Image, position), ] изображений на окне.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">images</span><span class="o">.</span><span class="n">images</span> <span class="o">=</span> <span class="p">[(</span><span class="n">image1</span><span class="p">,(</span><span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">)),</span> <span class="p">(</span><span class="n">image2</span><span class="p">,(</span><span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span><span class="n">x2</span><span class="p">,</span><span class="n">y2</span><span class="p">)),</span> <span class="p">(</span><span class="n">image3</span><span class="p">,(</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">))]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="TopWindow.TopWindow.shadow">
+<tt class="descname">shadow</tt><a class="headerlink" href="#TopWindow.TopWindow.shadow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Создает тень у окна</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="TopWindow.TopWindow.corner_type">
+<tt class="descname">corner_type</tt><a class="headerlink" href="#TopWindow.TopWindow.corner_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Типы углов окна</p>
+<blockquote>
+<div><ul class="simple">
+<li>square</li>
+<li>corner1</li>
+<li>corner2</li>
+<li>corner3</li>
+<li>corner5</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="TopWindow.TopWindow.maximum_size">
+<tt class="descname">maximum_size</tt><a class="headerlink" href="#TopWindow.TopWindow.maximum_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает кортеж (x, y) максимально возможный размер окна системы.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="TopWindow.TopWindow.background_color">
+<tt class="descname">background_color</tt><a class="headerlink" href="#TopWindow.TopWindow.background_color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Цвет фона окна</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="TopWindow.TopWindow.visible">
+<tt class="descname">visible</tt><a class="headerlink" href="#TopWindow.TopWindow.visible" title="Permalink to this definition">¶</a></dt>
+<dd><p>Видимый</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="TopWindow.TopWindow.show">
+<tt class="descname">show</tt><big>(</big><big>)</big><a class="headerlink" href="#TopWindow.TopWindow.show" title="Permalink to this definition">¶</a></dt>
+<dd><p>Отображает окно</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">window</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="TopWindow.TopWindow.hide">
+<tt class="descname">hide</tt><big>(</big><big>)</big><a class="headerlink" href="#TopWindow.TopWindow.hide" title="Permalink to this definition">¶</a></dt>
+<dd><p>Скрывает окно</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">window</span><span class="o">.</span><span class="n">hide</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="TopWindow.TopWindow.add_image">
+<tt class="descname">add_image</tt><big>(</big><em>image</em>, <em>pos</em><big>)</big><a class="headerlink" href="#TopWindow.TopWindow.add_image" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>image</strong> (<a class="reference internal" href="graphics.html#graphics.Image" title="graphics.Image"><em>graphics.Image</em></a>) &#8211; изображение</li>
+<li><strong>pos</strong> (<em>tuple</em>) &#8211; координаты, (x1, y1[, x2, y2])</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Вставляет в окно изображение.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">window</span><span class="o">.</span><span class="n">add_image</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">window</span><span class="o">.</span><span class="n">add_image</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="TopWindow.TopWindow.remove_image">
+<tt class="descname">remove_image</tt><big>(</big><em>image</em><span class="optional">[</span>, <em>position</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#TopWindow.TopWindow.remove_image" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>image</strong> (<a class="reference internal" href="graphics.html#graphics.Image" title="graphics.Image"><em>graphics.Image</em></a>) &#8211; изображение</li>
+<li><strong>pos</strong> (<em>tuple</em>) &#8211; координаты, (x1, y1[, x2, y2])</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Удаляем изображение из окна.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">window</span><span class="o">.</span><span class="n">remove_image</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">window</span><span class="o">.</span><span class="n">remove_image</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">window</span><span class="o">.</span><span class="n">remove_image</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Стандартные модули</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="audio.html"
+                        title="next chapter">audio</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/moduls_def/TopWindow.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="audio.html" title="audio"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Стандартные модули"
+             >previous</a> |</li>
+        <li><a href="../index.html">pys60 14.10.12 documentation</a> &raquo;</li>
+          <li><a href="index.html" >Стандартные модули</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

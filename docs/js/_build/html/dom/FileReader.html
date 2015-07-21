@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>FileReader - асинхронный интерфейс чтения объекта File или Blob &mdash; js doc 2015.06.26 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2015.06.26',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="js doc 2015.06.26 documentation" href="../index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.26 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="filereader-file-blob">
+<h1>FileReader - асинхронный интерфейс чтения объекта File или Blob<a class="headerlink" href="#filereader-file-blob" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="FileReader">
+<em class="property">class </em><code class="descname">FileReader</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#FileReader" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="error">
+<code class="descname">error</code><a class="headerlink" href="#error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ес­ли ошиб­ка воз­ник­нет во вре­мя чте­ния, это свой­ст­во бу­дет ссы­лать­ся на объ­ект FileError, опи­сы­ваю­щий ошиб­ку.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="onabort">
+<code class="descname">onabort</code><a class="headerlink" href="#onabort" title="Permalink to this definition">¶</a></dt>
+<dd><p>Вы­зы­ва­ет­ся, ес­ли опе­ра­ция чте­ния бы­ла пре­рва­на ме­то­дом abort().</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="onerror">
+<code class="descname">onerror</code><a class="headerlink" href="#onerror" title="Permalink to this definition">¶</a></dt>
+<dd><p>Вы­зы­ва­ет­ся, ес­ли воз­ник­ла ка­кая-ли­бо ошиб­ка. Свой­ст­во error объ­ек­та FileReader бу­дет ссы­лать­ся на объ­ект FileError, ко­то­рый име­ет свой­ст­во code с ко­дом ошиб­ки.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="onload">
+<code class="descname">onload</code><a class="headerlink" href="#onload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Вы­зы­ва­ет­ся в  слу­чае ус­пеш­но­го за­вер­ше­ния опе­ра­ции чте­ния объ­ек­та File или Blob. Свой­ст­во result объ­ек­та FileReader хра­нит со­дер­жи­мое объ­ек­та File или Blob в ви­де, за­ви­ся­щем от ис­поль­зо­вав­ше­го­ся ме­то­да чте­ния.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="onloadend">
+<code class="descname">onloadend</code><a class="headerlink" href="#onloadend" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ка­ж­дый вы­зов ме­то­да чте­ния объ­ек­та FileReader в ко­неч­ном ито­ге воз­бу­ж­да­ет со­ бы­тие «load», «error» или «abort». Кро­ме то­го, по­сле ка­ж­до­го из этих со­бы­тий объ­ект FileReader воз­бу­ж­да­ет со­бы­тие «loadend» для про­грамм, в ко­то­рых бы­ло бы же­ла­тель­но об­ра­ба­ты­вать един­ст­вен­ное со­бы­тие вме­сто трех.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="onloadstart">
+<code class="descname">onloadstart</code><a class="headerlink" href="#onloadstart" title="Permalink to this definition">¶</a></dt>
+<dd><p>Вы­зы­ва­ет­ся по­сле вы­зо­ва ме­то­да чте­ния, но пе­ред тем как бу­дут про­чи­та­ны ка­кие-ли­бо дан­ные.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="onprogress">
+<code class="descname">onprogress</code><a class="headerlink" href="#onprogress" title="Permalink to this definition">¶</a></dt>
+<dd><p>Воз­бу­ж­да­ет­ся при­мер­но 20 раз в  се­кун­ду, по­ка вы­пол­ня­ет­ся чте­ние дан­ных из объ­ек­та File или Blob. Объ­ект ProgressEvent по­зво­ля­ет уз­нать ко­ли­че­ст­во про­чи­тан­ных бай­тов, а свой­ст­во result объ­ек­та FileReader мо­жет со­дер­жать пред­став­ле­ние этих бай­тов.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="readyState">
+<code class="descname">readyState</code><a class="headerlink" href="#readyState" title="Permalink to this definition">¶</a></dt>
+<dd><p>Это свой­ст­во опи­сы­ва­ет те­ку­щее со­стоя­ние объ­ек­та FileReader. Его зна­че­ни­ем бу­дет од­на из трех кон­стант, пе­ре­чис­лен­ных вы­ше.</p>
+<ul class="simple">
+<li><cite>EMPTY</cite> = 0, Ме­тод чте­ния еще не был вы­зван.</li>
+<li><cite>LOADING</cite> = 1, Вы­пол­ня­ет­ся опе­ра­ция чте­ния.</li>
+<li><cite>DONE</cite> = 2, Опе­ра­ция чте­ния за­вер­ши­лась, ус­пеш­но или с ошиб­кой.</li>
+</ul>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="result">
+<code class="descname">result</code><a class="headerlink" href="#result" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ес­ли опе­ра­ция чте­ния за­вер­шит­ся ус­пеш­но, это свой­ст­во бу­дет хра­нить со­дер­жи­мое объ­ек­та File или Blob в ви­де стро­ки или объ­ек­та ArrayBuffer (в за­ви­си­мо­сти от ис­поль­зо­вав­ше­го­ся ме­то­да чте­ния). Ко­гда свой­ст­во readyState име­ет зна­че­ние LOADING или ко­гда воз­бу­ж­да­ет­ся со­бы­тие «progress», это свой­ст­во мо­жет хра­нить не­пол­ное со­дер­жи­мое объ­ек­та File или Blob. Ес­ли ме­тод чте­ния еще не был вы­зван или ес­ли воз­ник­ла ошиб­ка, это свой­ст­во бу­дет иметь зна­че­ние null.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="abort">
+<code class="descname">abort</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#abort" title="Permalink to this definition">¶</a></dt>
+<dd><p>Пре­ры­ва­ет опе­ра­цию чте­ния. Он при­сваи­ва­ет свой­ст­ву readyState зна­че­ние DONE, свой­ст­ву result – зна­че­ние null и  свой­ст­ву error – объ­ект FileError со свой­ст­вом code, ус­та­нов­лен­ным в зна­че­ние FileError.ABORT_ERR. По­сле это­го воз­бу­ж­да­ют­ся со­бы­тия «abort» и «loadend».</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="readAsArrayBuffer">
+<code class="descname">readAsArrayBuffer</code><span class="sig-paren">(</span><em>Blob blob</em><span class="sig-paren">)</span><a class="headerlink" href="#readAsArrayBuffer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Асин­хрон­но чи­та­ет дан­ные из объ­ек­та blob и со­хра­ня­ет их в свой­ст­ве result в ви­де объ­ек­та ArrayBuffer.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="readAsBinaryString">
+<code class="descname">readAsBinaryString</code><span class="sig-paren">(</span><em>Blob blob</em><span class="sig-paren">)</span><a class="headerlink" href="#readAsBinaryString" title="Permalink to this definition">¶</a></dt>
+<dd><p>Асин­хрон­но чи­та­ет бай­ты дан­ных из объ­ек­та blob, пре­об­ра­зу­ет их в  дво­ич­ную стро­ку и со­хра­ня­ет ее в свой­ст­ве result. Ка­ж­дый «сим­вол» в дво­ич­ной стро­ке пред­став­лен ко­дом сим­во­ла в  диа­па­зо­не от 0 до 255. Из­вле­кать эти зна­че­ния бай­тов мож­но с  по­мо­щью ме­то­да String.charCodeAt(). Сле­ду­ет от­ме­тить, что дво­ич­ные стро­ки яв­ля­ют­ся не са­мым эф­фек­тив­ным пред­став­ле­ни­ем дво­ич­ных дан­ных: вме­сто них сле­ду­ет ис­поль­зо­вать объ­ек­ты ArrayBuffer, ко­гда это воз­мож­но.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="readAsDataURL">
+<code class="descname">readAsDataURL</code><span class="sig-paren">(</span><em>Blob blob</em><span class="sig-paren">)</span><a class="headerlink" href="#readAsDataURL" title="Permalink to this definition">¶</a></dt>
+<dd><p>Асин­хрон­но чи­та­ет бай­ты дан­ных из объ­ек­та blob, пре­об­ра­зу­ет их (учи­ты­вая тип объ­ек­та Blob) в URL-ад­рес <a class="reference external" href="data://">data://</a> и при­сваи­ва­ет по­лу­чен­ную стро­ку свой­ст­ву result.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="readAsText">
+<code class="descname">readAsText</code><span class="sig-paren">(</span><em>Blob blob</em><span class="optional">[</span>, <em>string encoding</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#readAsText" title="Permalink to this definition">¶</a></dt>
+<dd><p>Асин­хрон­но чи­та­ет бай­ты дан­ных из объ­ек­та blob, де­ко­ди­ру­ет их с ис­поль­зо­ва­ни­ем ко­ди­ров­ки encoding в тек­сто­вую стро­ку Юни­ко­да и за­тем при­сваи­ва­ет по­лу­чен­ную стро­ку свой­ст­ву result. Ес­ли ар­гу­мент encoding не ука­зан, ис­поль­зу­ет­ся ко­ди­ров­ка UTF-8 (текст в ко­ди­ров­ке UTF-16 оп­ре­де­ля­ет­ся и де­ко­ди­ру­ет­ся ав­то­ма­ти­че­ски, ес­ли он на­чи­на­ет­ся с мар­ке­ра Byte Order Mark).</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/dom/FileReader.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.26 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

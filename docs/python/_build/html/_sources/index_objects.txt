@@ -1,0 +1,191 @@
+Функции
+===================
+
+Свои функции
+------------
+
+>>> def func(X):
+        print (X)
+>>> func('http://ilnurgi.ru')
+http://ilnurgi.ru
+
+lambda функции
+------------
+
+>>> f = lambda x: x*2
+>>> for i in (1,2):
+        print f(i)
+2
+4
+
+Bultin
+------
+
+.. py:method:: dir([obj])
+
+    :param obj: объект, свойства и метода которого необходимо вернуть 
+    
+    Возвращает список, содержащий глобальные свойства и методы, иначе возвращает свойства и методы аргумента.
+    
+    >>> dir()
+    ['__builtins__', '__doc__', '__name__', '__package__']
+    >>> i = 'ilnur'
+    >>> dir()
+    ['__builtins__', '__doc__', '__name__', '__package__', 'i']
+    >>> dir(i)
+    ['__add__', '__class__', ..., 'zfill']
+
+.. py:method:: eval(obj)
+
+    :param obj: объект 
+    :type obj: str
+
+    Возвращает объект, преобразованный из строкового объекта.
+
+    >>> b = '[1, 2, 3, 4]'
+    >>> c = eval(b)
+    >>> с
+    [1, 2, 3, 4]
+
+.. py:method:: filter(func, iter)
+
+    :param func: функция, обработчик 
+    :param iter: фильтруемый объект
+    :type iter: iter
+    
+    Возвращает список, состоящий из тех элементов объекта, для которых обработчик является истинной
+
+    >>> def func(x):
+            for y in xrange(2, x):
+                if x%y == 0:
+                    return 0
+                else:
+                    return 1
+    >>> filter(func, xrange(2, 40))
+    [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37]
+
+.. py:method:: isinstance(obj, type)
+
+    :param obj: объект, тип которого необходимо проверить 
+    :param type: тип, с которым необходимо сравнить 
+    
+    Возвращает True | False, если типом объекта является сравниваемый тип.
+    
+    >>> a = 1
+    >>> isinstance(a, int)
+    1
+    >>> isinstance(a, str)
+    0
+
+.. py:method:: len(iter)
+    
+    :param iter: объект, размер которого необходимо определить
+    
+    Возвращает число, размер оъекта
+    
+    >>> len('ilnurgi')
+    7
+
+.. py:method:: locals()
+    
+    Возвращает словарь, представляющий текущую локальную таблицу символов
+    
+    >>> locals()
+    {'__builtins__': , '__package__': None, 'i': 'ilnur', '__name__': '__main__', '__doc__': None}
+
+.. py:method:: map(func, iter)
+
+    :param func: функция, обработчик 
+    :param iter: объект, итерируемый 
+    :type iter: iter
+
+    Возвращает список, который содержит элементы из итерируемого объекта обработанный обработчиком.
+    
+    >>> s = ['1', '2']
+    >>> map(unicode, 'qw')
+    [u'q', u'w']
+
+.. py:method:: max(iter)
+    
+    :param iter: итерируемый объект 
+    :type iter: iter
+    
+    Возвращает элемент, наибольший    
+    >>> max([0, 6, 1])
+    '6
+
+.. py:method:: min(iter)
+    
+    :param iter: итерируемый объект 
+    :type iter: iter
+    
+    Возвращает элемент, наименьший
+    >>> min('ilnurgi')
+    'i'
+
+.. py:method:: range(A [,B,[C]]), xrange(A [,B,[C]])
+
+    :param А: количество элементов или начальная позиция 
+    :type А: int
+    :param В: конечная позиция 
+    :type B: int    
+    :param С: шаг 
+    :type C: int
+
+    Возвращает список
+    >>> range(3)
+    [0, 1, 2]
+
+.. py:method:: repr(x)
+
+    :param obj: объект 
+    
+    Возвращает строковое представление объекта, который затем можно преобразовать в исходное значение через .. py:method:: 'eval'.
+    
+    >>> a = [1, 2, 3, 4]
+    >>> b = repr(a)
+    >>> b
+    '[1, 2, 3, 4]'
+
+.. py:method:: xrange(A [,B,[C]])
+
+    :param А: количество элементов или начальная позиция 
+    :type А: int
+    :param В: конечная позиция 
+    :type B: int    
+    :param С: шаг 
+    :type C: int
+
+    Возвращает объект, генератор.
+    
+.. py:method:: reduce(func, iter)
+    
+    :param func: функция, обработчик 
+    :param iter: объект, итерируемый 
+    :type iter: iter
+
+    Возвращает результат обработки элементов итерируемого объекта, функцией обработчиком.
+    
+    >>> reduce(lambda x,y: x+y, [1, 2, 3])
+    6
+
+.. py:method:: sorted(list [, cmp, key, reverse])
+    
+    :param list: итерируемый объект 
+    :type list: iter
+    :param cmp: функция сортировщик 
+    :param key: параметр для сортировки 
+    :param reverse: True | False, обратный порядок 
+    
+    Возвращает список, отсортированный
+    
+    >>> sorted(['567', '34566','1'], key=len)
+    ['1', '567', '34566']
+
+
+.. py:method:: type(a)
+    
+    Возвращает строку, тип аргумента   
+    
+    >>> type(5)
+    'int'

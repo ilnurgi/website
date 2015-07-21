@@ -1,0 +1,374 @@
+From: <Saved by WebKit>
+Subject: ilnurgi. tkinter. tkinter.Entry()
+Date: Fri, 19 Dec 2013 11:00:27 +0400
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----=_NextPart_000_7387_9DD7E1B2.761C652D"
+
+------=_NextPart_000_7387_9DD7E1B2.761C652D
+Content-Type: text/html
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://ilnurgi1.ru/doc/tkinter/tkinterentry
+
+<!DOCTYPE html><html><head><meta charset=3D"UTF-8">
+
+   =20
+    <meta name=3D"yandex-verification" content=3D"431f2ece5bc15665">
+    <meta name=3D"wmail-verification" content=3D"22f7a02d6ade789f">
+    <meta name=3D"google-site-verification" content=3D"84y9A4q0QF0YiwyLi-xe=
+frzNN8d6B5W2E84xYUtoQYc">  =20
+   =20
+
+    <title>ilnurgi. tkinter. tkinter.Entry()</title>
+
+    <link rel=3D"stylesheet" type=3D"text/css" href=3D"http://ilnurgi1.ru/s=
+tatic/styles.css">
+    <style type=3D"text/css"></style>
+
+
+</head>
+<body>
+
+   =20
+
+        <div class=3D"bar navigation_top">
+            <ul>
+                <li><a href=3D"http://ilnurgi1.ru/"> =D0=93=D0=BB=D0=B0=D0=
+=B2=D0=BD=D0=B0=D1=8F </a></li>
+                <li><a href=3D"http://ilnurgi1.ru/blog/"> =D0=91=D0=BB=D0=
+=BE=D0=B3 </a></li>
+                <li><a href=3D"http://ilnurgi1.ru/tests/tablet/"> TT </a></=
+li>
+                <li><a href=3D"http://ilnurgi1.ru/tests/smartphone/"> ST </=
+a></li>
+                <li><a href=3D"http://ilnurgi1.ru/tests/pc"> TPC </a></li>
+                <li><a href=3D"http://ilnurgi1.ru/site_map/"> =D0=9A=D0=B0=
+=D1=80=D1=82=D0=B0 =D1=81=D0=B0=D0=B9=D1=82=D0=B0 </a></li>
+                <li><a href=3D"http://ilnurgi1.ru/about/"> =D0=9F=D1=80=D0=
+=BE =D0=BC=D0=B5=D0=BD=D1=8F </a></li>
+            </ul>
+            <div style=3D"clear:left;"></div>
+        </div>
+   =20
+
+   =20
+
+    <div class=3D"bar navigation_top">
+        <ul>
+           =20
+                <li><a href=3D"http://ilnurgi1.ru/doc/html" style=3D"font-w=
+eight: normal;">html</a></li>
+           =20
+                <li><a href=3D"http://ilnurgi1.ru/doc/pys60" style=3D"font-=
+weight: normal;">pys60</a></li>
+           =20
+                <li><a href=3D"http://ilnurgi1.ru/doc/python" style=3D"font=
+-weight: normal;">python</a></li>
+           =20
+                <li><a href=3D"http://ilnurgi1.ru/doc/tkinter" style=3D"fon=
+t-weight: normal;">tkinter</a></li>
+           =20
+        </ul>
+        <div style=3D"clear:left;"></div>
+    </div>
+
+    <div class=3D"bar post">
+        <a class=3D"title" href=3D"http://ilnurgi1.ru/doc/tkinter/tkinteren=
+try">tkinter.Entry()</a>
+        <div class=3D"message">
+            <pre>import Tkinter
+main_window=3DTkinter.Tk()
+entry=3DTkinter.Entry(main_window)
+entry.pack()
+main_window.mainloop()
+
+<img src=3D"http://ilnurgi1.ru/media/doc/63__tkinter_entry.png"></pre>
+
+<ul>
+	<li><i>bd, borderwidth</i> - =D1=88=D0=B8=D1=80=D0=B8=D0=BD=D0=B0 =D0=B3=
+=D1=80=D0=B0=D0=BD=D0=B8=D1=86=D1=8B</li>
+	<li><i>height/width</i> - =D1=80=D0=B0=D0=B7=D0=BC=D0=B5=D1=80=D1=8B =D0=
+=B2=D0=B8=D0=B4=D0=B6=D0=B5=D1=82=D0=B0</li>
+	<li><i>main_window</i> - =D0=B2=D0=B8=D0=B4=D0=B6=D0=B5=D1=82, =D0=BD=D0=
+=B0 =D0=BA=D0=BE=D1=82=D0=BE=D1=80=D0=BE=D0=B9 =D0=B1=D1=83=D0=B4=D0=B5=D1=
+=82 =D1=80=D0=B0=D1=81=D0=BF=D0=BE=D0=BB=D0=BE=D0=B3=D0=B0=D1=82=D1=8C=D1=
+=81=D1=8F =D0=B2=D0=B8=D0=B4=D0=B6=D0=B5=D1=82</li>
+</ul>
+
+<b>get()</b>
+<br>=D0=92=D0=BE=D0=B7=D0=B2=D1=80=D0=B0=D1=89=D0=B0=D0=B5=D1=82 =D1=81=D0=
+=BE=D0=B4=D0=B5=D1=80=D0=B6=D0=B8=D0=BC=D0=BE=D0=B5 =D0=B2=D0=B8=D0=B4=D0=
+=B6=D0=B5=D1=82=D0=B0
+<pre>entry.get()</pre>
+
+<b>insert(int,str)</b>
+<br>=D0=9F=D0=BE=D0=BC=D0=B5=D1=89=D0=B0=D0=B5=D1=82 =D1=81=D1=82=D1=80=D0=
+=BE=D0=BA=D1=83 <i>str</i>, =D0=B2 =D0=BF=D0=BE=D0=B7=D0=B8=D1=86=D0=B8=D1=
+=8E <i>int</i>
+<pre>entry.insert(0,'Text')</pre>
+        </div>
+        <div class=3D"static" style=3D"text-align:right;">
+            <i class=3D"title_bottom">=D0=9E=D0=BF=D1=83=D0=B1=D0=BB=D0=B8=
+=D0=BA=D0=BE=D0=B2=D0=B0=D0=BD=D0=BE =D0=B2 =D1=80=D1=83=D0=B1=D1=80=D0=B8=
+=D0=BA=D0=B5
+                <a class=3D"category" href=3D"http://ilnurgi1.ru/doc/tkinte=
+r/tkinterentry">
+                    tkinter</a>, 11 =D0=B8=D1=8E=D0=BB=D1=8F 2012 =D0=B3. 0=
+:00:00.</i>
+            <br><i class=3D"title_bottom">=D0=9A=D0=BE=D0=BC=D0=BC=D0=B5=D0=
+=BD=D1=82=D0=B0=D1=80=D0=B8=D0=B5=D0=B2:
+            0</i>
+            <br><i class=3D"title_bottom">=D0=9F=D1=80=D0=BE=D1=81=D0=BC=D0=
+=BE=D1=82=D1=80=D0=BE=D0=B2:
+            33</i>
+        </div>
+    </div>
+
+    <div class=3D"bar comment">
+        =D0=94=D0=BE=D0=B1=D0=B0=D0=B2=D0=B8=D1=82=D1=8C =D0=BA=D0=BE=D0=BC=
+=D0=B5=D0=BD=D1=82=D0=B0=D1=80=D0=B8=D0=B8
+        <form action=3D"http://ilnurgi1.ru/doc/add_comment" method=3D"post"=
+>
+            <div style=3D"display:none"><input type=3D"hidden" name=3D"csrf=
+middlewaretoken" value=3D"JBP5zEUMSVwSvRdfKAHwbrGlZxdDhvrx"></div>
+            <label for=3D"usernme">=D0=98=D0=BC=D1=8F</label>
+            <br><input type=3D"text" name=3D"username">
+            <br><label for=3D"email">email</label>
+            <br><input type=3D"text" name=3D"email">
+            <br>=D0=9A=D0=BE=D0=BC=D0=B5=D0=BD=D1=82=D0=B0=D1=80=D0=B8=D0=
+=B8
+            <br><textarea name=3D"message" cols=3D"100" rows=3D"10"></texta=
+rea>
+            <br><label for=3D"passw">=D0=9E=D1=81=D1=82=D0=B0=D0=B2=D1=8C=
+=D1=82=D0=B5 =D0=BF=D0=BE=D0=BB=D0=B5 =D0=BF=D1=83=D1=81=D1=82=D1=8B=D0=BC<=
+/label>
+            <br><input type=3D"text" name=3D"passw" value=3D"">
+            <input type=3D"hidden" name=3D"post_id" value=3D"66" <br=3D""><=
+input type=3D"submit" value=3D"=D0=9E=D1=82=D0=BF=D1=80=D0=B0=D0=B2=D0=B8=
+=D1=82=D1=8C">
+        </form>
+    </div>
+
+    <div class=3D"bar comments">
+        =D0=9A=D0=BE=D0=BC=D0=B5=D0=BD=D1=82=D0=B0=D1=80=D0=B8=D0=B8<br>
+       =20
+    </div>
+
+
+
+
+
+
+
+   =20
+
+
+</body></html>
+------=_NextPart_000_7387_9DD7E1B2.761C652D
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://ilnurgi1.ru/static/styles.css
+
+* { margin: 0px; padding: 0px; }
+
+body { background-color: rgb(221, 221, 221); min-width: 200px; }
+
+a { text-decoration: none; color: rgb(0, 0, 0); }
+
+a:hover { text-decoration: underline; }
+
+img { display: block; }
+
+p.vinoska { margin: 5px 0px 0px 30px; background-color: rgb(255, 221, 221);=
+ }
+
+dt { font-style: italic; }
+
+dd { margin-left: 50px; padding: 10px 0px; }
+
+div.bar { border: 1px solid rgb(170, 170, 170); padding: 10px; background-c=
+olor: rgb(238, 238, 238); margin: 10px; }
+
+div.navigation_top a { border-bottom-width: 1px; border-bottom-style: solid=
+; border-bottom-color: rgb(0, 0, 0); margin-right: 10px; font-weight: bold;=
+ }
+
+div.navigation_top a:hover { color: rgb(0, 85, 0); border-bottom-style: non=
+e; }
+
+div.navigation_top li { list-style: none; float: left; }
+
+@media screen and (min-width: 1024px) {=20
+  div.news { float: left; }
+}
+
+div.news span { font-size: 0.8em; }
+
+div.news h3, div.news h3 a { color: rgb(153, 0, 0); }
+
+div.news h3 a:hover { text-decoration: underline; color: rgb(153, 0, 0); }
+
+div.news ul, div.statistic ul { margin-left: 20px; }
+
+div.news li, div.statistic ul { list-style: none; }
+
+div.news li a { text-decoration: underline; }
+
+div.news li a:hover { color: rgb(136, 0, 0); }
+
+div.post { border: 1px solid rgb(170, 170, 170); padding: 10px; margin: 10p=
+x; }
+
+div.post a.title { color: rgb(153, 0, 0); font-weight: bold; }
+
+div.message a { text-decoration: underline; }
+
+div.message ul { margin: 10px 0px 10px 20px; list-style: none; }
+
+div.message ul li, div.message ol li { margin-bottom: 5px; }
+
+div.message ol { margin: 10px 0px 10px 30px; }
+
+div.message pre { border-left-width: 1px; border-left-style: dotted; border=
+-left-color: rgb(0, 153, 0); padding: 10px 0px 10px 20px; margin: 10px 20px=
+; white-space: pre-wrap; }
+
+div.message pre i { color: rgb(170, 0, 0); }
+
+div.message img { margin: 10px 30px; }
+
+div.message iframe { margin: 10px 0px 0px 50px; display: block; }
+
+div.message h3 i { color: rgb(153, 153, 153); font-size: 1em; }
+
+div.message h3 { margin: 10px 0px; }
+
+div.message p { margin-left: 10px; }
+
+div.message ul { margin-left: 10px; }
+
+div.message ul li { padding-left: 20px; }
+
+div.comments div.comment { border-bottom-width: 1px; border-bottom-style: d=
+otted; border-bottom-color: black; padding: 10px; }
+
+div.comments div.message { padding: 10px; }
+
+div.comments div.comment i { color: rgb(153, 0, 0); }
+
+div.statistic h3 { color: rgb(153, 0, 0); }
+
+div.site_map ul { list-style: none; margin-left: 10px; padding: 5px; }
+
+ul.u1 { margin-left: 10px; }
+
+ul.u1 > li { border-top-width: 1px; border-top-style: solid; border-top-col=
+or: black; padding: 10px; list-style: none; margin-left: 10px; }
+
+ul.u1 p + ul { margin-left: 20px; }
+
+ul.u1 p + ul li { list-style: none; }
+
+ul.u1 > li > pre { border-left-width: 2px; border-left-style: dotted; borde=
+r-left-color: rgb(0, 0, 119); padding: 10px; margin-left: 40px; background-=
+color: rgb(170, 187, 204); }
+
+div.tests { overflow-x: scroll; }
+
+div.tests table td { padding: 5px; border-bottom-width: 1px; border-bottom-=
+style: dotted; border-bottom-color: black; border-right-width: 1px; border-=
+right-style: dotted; border-right-color: black; text-align: center; }
+
+div.tests table.no_border td { padding: 5px; border: none; text-align: cent=
+er; max-width: 240px; }
+
+div.tests table th { padding: 15px; }
+
+div.tests div.cut { display: none; }
+
+dl.def_list { margin-top: 10px; padding: 0px; }
+
+dl.def_list dt { margin-left: 10px; padding: 0px; font-style: normal; font-=
+weight: bold; }
+
+dl.def_list dd { margin-left: 30px; padding: 0px; }
+
+.form_input_one_line { float: left; }
+
+em { font-style: normal; }
+
+a.td_processor, em.td_processor { color: rgb(102, 0, 0); }
+
+a.td_video, em.td_video { color: rgb(0, 102, 153); }
+
+a.td_mainb, em.td_mainb { color: rgb(102, 102, 0); }
+------=_NextPart_000_7387_9DD7E1B2.761C652D
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://ilnurgi1.ru/media/doc/63__tkinter_entry.png
+
+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
+------=_NextPart_000_7387_9DD7E1B2.761C652D--

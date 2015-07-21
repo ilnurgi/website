@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Canvas - канвас страницы &mdash; js doc 2015.06.26 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2015.06.26',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="js doc 2015.06.26 documentation" href="../index.html" />
+    <link rel="up" title="DOM - дерево html документа" href="index.html" />
+    <link rel="next" title="Console - консоль браузера" href="Console.html" />
+    <link rel="prev" title="AJAX - Asynchronous Javascript and XML - «асинхронный JavaScript и XML»" href="ajax.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="Console.html" title="Console - консоль браузера"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="ajax.html" title="AJAX - Asynchronous Javascript and XML - «асинхронный JavaScript и XML»"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.26 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">DOM - дерево html документа</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="canvas">
+<h1>Canvas - канвас страницы<a class="headerlink" href="#canvas" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="Canvas">
+<em class="property">class </em><code class="descname">Canvas</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Canvas" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="height">
+<code class="descname">height</code><a class="headerlink" href="#height" title="Permalink to this definition">¶</a></dt>
+<dd><p>Высота холста</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="weight">
+<code class="descname">weight</code><a class="headerlink" href="#weight" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ширина холста</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="getContext">
+<code class="descname">getContext</code><span class="sig-paren">(</span><em>str contextid</em><span class="optional">[</span>, <em>args</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#getContext" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает контекст канваса</p>
+<p>Если contextid == &#8216;2d&#8217;, вернет <a class="reference internal" href="CanvasRenderingContext2D.html#CanvasRenderingContext2D" title="CanvasRenderingContext2D"><code class="xref js js-class docutils literal"><span class="pre">CanvasRenderingContext2D()</span></code></a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="toDataURL">
+<code class="descname">toDataURL</code><span class="sig-paren">(</span><span class="optional">[</span><em>str type='image/png'</em><span class="optional">[</span>, <em>args</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#toDataURL" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает растровое изображение холста в виде URL-адреса <cite>data://</cite></p>
+<ul class="simple">
+<li><cite>type</cite> - MIME-тип или графический формат</li>
+</ul>
+<div class="highlight-js"><div class="highlight"><pre><span class="c1">// Ско­пи­ро­вать со­дер­жи­мое хол­ста в эле­мент &lt;img&gt; и до­ба­вить его в до­ку­мент</span>
+<span class="kd">var</span> <span class="nx">canvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;my_canvas&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">image</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;img&quot;</span><span class="p">);</span>
+<span class="nx">image</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">toDataURL</span><span class="p">();</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">image</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="ajax.html"
+                        title="previous chapter">AJAX - Asynchronous Javascript and XML - «асинхронный JavaScript и XML»</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="Console.html"
+                        title="next chapter">Console - консоль браузера</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/dom/Canvas.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="Console.html" title="Console - консоль браузера"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="ajax.html" title="AJAX - Asynchronous Javascript and XML - «асинхронный JavaScript и XML»"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.26 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >DOM - дерево html документа</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

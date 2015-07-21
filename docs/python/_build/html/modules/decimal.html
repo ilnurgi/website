@@ -1,0 +1,481 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>decimal &mdash; Документация python документация 2015.05.20</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2015.05.20',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Документация python документация 2015.05.20" href="../index.html" />
+    <link rel="up" title="Основные модули" href="index.html" />
+    <link rel="next" title="fractions" href="fractions.html" />
+    <link rel="prev" title="datetime" href="datetime.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Алфавитный указатель"
+             accesskey="I">указатель</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="fractions.html" title="fractions"
+             accesskey="N">вперёд</a> |</li>
+        <li class="right" >
+          <a href="datetime.html" title="datetime"
+             accesskey="P">назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Документация python документация 2015.05.20</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Основные модули</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="decimal">
+<h1>decimal<a class="headerlink" href="#decimal" title="Ссылка на этот заголовок">¶</a></h1>
+<blockquote>
+<div><div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">decimal</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>&gt;&gt;&gt; x = decimal.Decimal(‘3.4’)
+&gt;&gt;&gt; y = decimal.Decimal(‘4.5’)
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
+<span class="go">decimal.Decimal(‘15.30’)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">/</span> <span class="n">y</span>
+<span class="go">decimal.Decimal(‘0.7555555555555555555555555556’)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">decimal</span><span class="o">.</span><span class="n">getcontext</span><span class="p">()</span><span class="o">.</span><span class="n">prec</span> <span class="o">=</span> <span class="mi">3</span> <span class="c"># Изменить точность и повторить вычисления</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
+<span class="go">decimal.Decimal(‘15.3’)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">/</span> <span class="n">y</span>
+<span class="go">decimal.Decimal(‘0.756’)</span>
+</pre></div>
+</div>
+<p># Изменить точность только для одного блока инструкций</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">with</span> <span class="n">decimal</span><span class="o">.</span><span class="n">localcontext</span><span class="p">(</span><span class="n">decimal</span><span class="o">.</span><span class="n">Context</span><span class="p">(</span><span class="n">prec</span><span class="o">=</span><span class="mi">10</span><span class="p">)):</span>
+    <span class="n">e</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>   <span class="c"># decimal.Decimal(‘15.30’)</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">x</span> <span class="o">/</span> <span class="n">y</span>   <span class="c"># decimal.Decimal(‘0.7555555556’)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<dl class="class">
+<dt id="Decimal">
+<em class="property">class </em><code class="descname">Decimal</code><span class="sig-paren">(</span><span class="optional">[</span><em>value</em><span class="optional">[</span>, <em>context</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#Decimal" title="Ссылка на это определение">¶</a></dt>
+<dd><p>значение числа может быть представлено как:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">целое</p>
+</li>
+<li><p class="first">строка &#8220;4.5&#8221;</p>
+</li>
+<li><p class="first">кортеж <cite>(sign, digits, exponent)</cite></p>
+<blockquote>
+<div><ul class="simple">
+<li>sign - 0|1, положительное|отрицательное</li>
+<li>digits - кортеж в виде целых чисел</li>
+<li>exponent - целочисленная экспонента</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<p>контекст передается в виде объекта <cite>Context()</cite></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">decimal</span><span class="o">.</span><span class="n">Decimal</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="go"># Decimal(“42”)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>&gt;&gt;&gt; a = decimal.Decimal(“37.45”)
+# Decimal(“37.45”)
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">decimal</span><span class="o">.</span><span class="n">Decimal</span><span class="p">((</span><span class="mi">1</span><span class="p">,(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span><span class="o">-</span><span class="mi">2</span><span class="p">))</span>
+<span class="go"># Decimal(“-23.45”)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>&gt;&gt;&gt; decimal.Decimal(“Infinity”)
+# бесконечность
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>&gt;&gt;&gt; decimal.Decimal(“NaN”)
+# не число
+</pre></div>
+</div>
+<dl class="method">
+<dt id="Decimal.exp">
+<code class="descname">exp</code><span class="sig-paren">(</span><span class="optional">[</span><em>context</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#Decimal.exp" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Натуральная степень e ** d</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Decimal.fma">
+<code class="descname">fma</code><span class="sig-paren">(</span><em>y</em>, <em>z</em><span class="optional">[</span>, <em>context</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#Decimal.fma" title="Ссылка на это определение">¶</a></dt>
+<dd><p>self * y + z без округления результата x*y</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Decimal.ln">
+<code class="descname">ln</code><span class="sig-paren">(</span><span class="optional">[</span><em>context</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#Decimal.ln" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Натуральный логарифм (по основанию e) числа self</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Decimal.log10">
+<code class="descname">log10</code><span class="sig-paren">(</span><span class="optional">[</span><em>context</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#Decimal.log10" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Десятичный логарифм числа self</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Decimal.sqrt">
+<code class="descname">sqrt</code><span class="sig-paren">(</span><span class="optional">[</span><em>context</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#Decimal.sqrt" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Корень квадратный из числа self</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Contexn">
+<em class="property">class </em><code class="descname">Contexn</code><span class="sig-paren">(</span><em>prec=None</em>, <em>rounding=None</em>, <em>traps=None</em>, <em>flags=None</em>, <em>Emin=None</em>, <em>Emax=None</em>, <em>capitals=1</em><span class="sig-paren">)</span><a class="headerlink" href="#Contexn" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Контекст для работы с дробными десятичными числами. Обычно новые объекты класса Context не создаются непосредственно. Для этого используются функция <a class="reference internal" href="#getcontext" title="getcontext"><code class="xref py py-meth docutils literal"><span class="pre">getcontext()</span></code></a> или <a class="reference internal" href="#localcontext" title="localcontext"><code class="xref py py-meth docutils literal"><span class="pre">localcontext()</span></code></a>, возвращающая текущий объект Context.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>prec</strong> (<em>int</em>) &#8211; количество цифр после десятичной точки</li>
+<li><strong>rounding</strong> &#8211; порядок округления</li>
+<li><strong>traps</strong> (<em>list</em>) &#8211; список сигналов, которые возбуждают исключения в различных обстоятельствах (например, при попытке выполнить деление на ноль)</li>
+<li><strong>flags</strong> (<em>list</em>) &#8211; список сигналов, свидетельствующих о начальном состоянии контекста (например, переполнение). Обычно аргумент flags не указывается.</li>
+<li><strong>Emin</strong> (<em>int</em>) &#8211; минимальное значения экспоненты</li>
+<li><strong>Emax</strong> (<em>int</em>) &#8211; максимальное значения экспоненты</li>
+<li><strong>capitals</strong> (<em>int</em>) &#8211; какой символ, ‘E’ или ‘e’, должен использоваться для обозначения экспоненты. По умолчанию имеет значение 1 (‘E’).</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Порядки округления</p>
+<blockquote>
+<div><ul class="simple">
+<li><cite>ROUND_CEILING</cite> - Округление в сторону положительной бесконечности. Например, число 2.52 будет округлено до 2.6, а число –2.58 до –2.5.</li>
+<li><cite>ROUND_DOWN</cite> - Округление в сторону нуля. Например, число 2.58 будет округлено до 2.5, а число –2.58 – до -2.5.</li>
+<li><cite>ROUND_FLOOR</cite> - Округление в сторону отрицательной бесконечности. Например, число 2.52 будет округлено до 2.5, а число –2.58 до –2.6.</li>
+<li><cite>ROUND_HALF_DOWN</cite> - Округление в сторону от нуля, если округляемая часть больше половины последнего значимого разряда, в противном случае округление будет выполнено в сторону нуля. Например, число 2.58 будет округлено до 2.6, число 2.55 будет округлено до 2.5, а число –2.58 до –2.6.</li>
+<li><cite>ROUND_HALF_EVEN</cite> - То же, что и ROUND_HALF_DOWN, только если округляемая часть равна точно половине последнего значимого разряда, результат округляется вниз, если предыдущая цифра четная, и вверх – если предыдущая цифра нечетная. Например, число 2.65 будет округлено до 2.6, число 2.55 также будет округлено до 2.6.</li>
+<li><cite>ROUND_HALF_UP</cite> - То же, что и ROUND_HALF_DOWN, только если округляемая часть равна точно половине последнего значимого разряда, результат округляется в сторону от нуля. Например, число 2.55 будет округлено до 2.6, а число –2.55 до –2.6.</li>
+<li><cite>ROUND_UP</cite> - Округление в сторону от нуля. Например, число 2.52 будет округлено до 2.6, а число –2.52 – до –2.6.</li>
+<li><cite>ROUND_05UP</cite> - Округление в сторону от нуля, если последний значимый разряд содержит цифру 0 или 5, в противном случае округление выполняется в сторону нуля. Например, число 2.54 будет округлено до 2.6, число 2.64 также будет округлено до 2.6.</li>
+</ul>
+</div></blockquote>
+<p>Типы сигналов</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Сигнал</th>
+<th class="head">Описание</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Clamped</td>
+<td>Экспонента была откорректирована в соответствии с допустимым диапазоном.</td>
+</tr>
+<tr class="row-odd"><td>DivisionByZero</td>
+<td>Деление небесконечного числа на 0.</td>
+</tr>
+<tr class="row-even"><td>Inexact</td>
+<td>Погрешность округления.</td>
+</tr>
+<tr class="row-odd"><td>InvalidOperation</td>
+<td>Выполнена недопустимая операция.</td>
+</tr>
+<tr class="row-even"><td>Overflow</td>
+<td>После округления экспонента превысила значение Emax. Также генерирует сигналы Inexact и Rounded.</td>
+</tr>
+<tr class="row-odd"><td>Rounded</td>
+<td>Округление выполнено. Может появиться, если при округлении точность представления числа не пострадала (например, при округлении «1.00» до «1.0»).</td>
+</tr>
+<tr class="row-even"><td>Subnormal</td>
+<td>Перед округлением экспонента была меньше значения Emin.</td>
+</tr>
+<tr class="row-odd"><td>Underflow</td>
+<td>Потеря значащих разрядов числа. Результат операции был округлен до 0. Также генерирует сигналы Inexact и Subnormal.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Иерархия сигналов</p>
+<blockquote>
+<div><ul>
+<li><dl class="first docutils">
+<dt>ArithmeticError (встроенное исключение)</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>DecimalException</dt>
+<dd><ul class="first last simple">
+<li>Clamped</li>
+<li>DivisionByZero</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Inexact</dt>
+<dd><ul class="first last simple">
+<li>Overflow</li>
+<li>Underflow</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">InvalidOperation</p>
+</li>
+<li><dl class="first docutils">
+<dt>Rounded</dt>
+<dd><ul class="first last simple">
+<li>Overflow</li>
+<li>Underflow</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Subnormal</dt>
+<dd><ul class="first last simple">
+<li>Underflow</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<dl class="method">
+<dt id="Contexn.clear_flags">
+<code class="descname">clear_flags</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Contexn.clear_flags" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Сбрасывает все флаги</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Contexn.copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Contexn.copy" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает копию контекста</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Contexn.create_decimal">
+<code class="descname">create_decimal</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#Contexn.create_decimal" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Создает новый объект <a class="reference internal" href="#Decimal" title="Decimal"><code class="xref py py-class docutils literal"><span class="pre">Decimal</span></code></a>, используя контекст. Это может пригодиться, когда потребуется создавать числа, точность представления и правила округления для которых должны отличаться от установленных по умолчанию.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="BasicContext">
+<em class="property">class </em><code class="descname">BasicContext</code><a class="headerlink" href="#BasicContext" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Предопределенный контекст с точностью до девяти знаков после десятичной точки. Использует правило округления ROUND_HALF_UP; параметр Emin имеет значение -999999999; параметр Emax имеет значение 999999999; разрешены все сигналы, кроме Inexact, Rounded и Subnormal.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="DefaultContext">
+<em class="property">class </em><code class="descname">DefaultContext</code><a class="headerlink" href="#DefaultContext" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Контекст по умолчанию, который используется при создании нового контекста (то есть значения параметров этого контекста используются как значения по умолчанию для параметров нового контекста). Определяет точность до 28 знаков после десятичной точки; округление ROUND_HALF_EVEN; включает флаги Overflow, InvalidOperation и DivisionByZero.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="ExtendedContext">
+<em class="property">class </em><code class="descname">ExtendedContext</code><a class="headerlink" href="#ExtendedContext" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Предопределенный контекст с точностью до девяти знаков после десятичной точки. Использует правило округления ROUND_HALF_EVEN; параметр Emin имеет значение -999999999; параметр Emax имеет значение 999999999; все сигналы запрещены. Никогда не возбуждает исключения, но в результате операций может возвращаться значение NaN или Infinity.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="Inf">
+<em class="property">class </em><code class="descname">Inf</code><a class="headerlink" href="#Inf" title="Ссылка на это определение">¶</a></dt>
+<dd><p>То же, что и Decimal(“Infinity”).</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="negInf">
+<em class="property">class </em><code class="descname">negInf</code><a class="headerlink" href="#negInf" title="Ссылка на это определение">¶</a></dt>
+<dd><p>То же, что и Decimal(“-Infinity”).</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="NaN">
+<em class="property">class </em><code class="descname">NaN</code><a class="headerlink" href="#NaN" title="Ссылка на это определение">¶</a></dt>
+<dd><p>То же, что и Decimal(“NaN”).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="getcontext">
+<code class="descname">getcontext</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#getcontext" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает текущий объект Context</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="localcontext">
+<code class="descname">localcontext</code><span class="sig-paren">(</span><span class="optional">[</span><em>c</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#localcontext" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Создает менеджера контекста, который устанавливает контекст в качестве текущего для тела <cite>with</cite>. Без аргумента возвращает копию текущего контекста.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">localcontext</span><span class="p">()</span> <span class="k">as</span> <span class="n">c</span><span class="p">:</span>
+<span class="go">        c.prec = 5</span>
+<span class="go">        # инструкции</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="setcontext">
+<code class="descname">setcontext</code><span class="sig-paren">(</span><em>c</em><span class="sig-paren">)</span><a class="headerlink" href="#setcontext" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Устанавливает контекст для потока выполнения.</p>
+</dd></dl>
+
+<div class="section" id="id1">
+<h2>Примеры<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre>&gt;&gt;&gt; a = Decimal(“42.5”)
+&gt;&gt;&gt; b = Decimal(“37.1”)
+&gt;&gt;&gt; a + b
+Decimal(“79.6”)
+&gt;&gt;&gt; a / b
+Decimal(“1.145552560646900269541778976”)
+&gt;&gt;&gt; divmod(a,b)
+(Decimal(“1”), Decimal(“5.4”))
+&gt;&gt;&gt; max(a,b)
+Decimal(“42.5”)
+&gt;&gt;&gt; c = [Decimal(“4.5”), Decimal(“3”), Decimal(“1.23e3”)]
+&gt;&gt;&gt; sum(c)
+Decimal(“1237.5”)
+&gt;&gt;&gt; [10*x for x in c]
+[Decimal(“45.0”), Decimal(“30”), Decimal(“1.230e4”)]
+&gt;&gt;&gt; float(a)
+42.5
+&gt;&gt;&gt; str(a)
+‘42.5’
+&gt;&gt;&gt; getcontext().prec = 4
+&gt;&gt;&gt; a = Decimal(“3.4562384105”)
+&gt;&gt;&gt; a
+Decimal(“3.4562384105”)
+&gt;&gt;&gt; b = Decimal(“5.6273833”)
+&gt;&gt;&gt; getcontext().flags[Rounded]
+0
+&gt;&gt;&gt; a + b
+9.084
+&gt;&gt;&gt; getcontext().flags[Rounded]
+1
+&gt;&gt;&gt; a / Decimal(“0”)
+Traceback (most recent call last):
+File “&lt;stdin&gt;”, line 1, in ?
+decimal.DivisionByZero: x / 0
+&gt;&gt;&gt; getcontext().traps[DivisionByZero] = False
+&gt;&gt;&gt; a / Decimal(“0”)
+Decimal(“Infinity”)
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Оглавление</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">decimal</a><ul>
+<li><a class="reference internal" href="#id1">Примеры</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Предыдущий раздел</h4>
+  <p class="topless"><a href="datetime.html"
+                        title="предыдущая глава">datetime</a></p>
+  <h4>Следующий раздел</h4>
+  <p class="topless"><a href="fractions.html"
+                        title="следующая глава">fractions</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Эта страница</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/modules/decimal.txt"
+            rel="nofollow">Исходный текст</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Быстрый поиск</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Искать" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Введите слова для поиска или имя модуля, класса или функции.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Алфавитный указатель"
+             >указатель</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="fractions.html" title="fractions"
+             >вперёд</a> |</li>
+        <li class="right" >
+          <a href="datetime.html" title="datetime"
+             >назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Документация python документация 2015.05.20</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Основные модули</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright ilnurgi.
+      Создано с помощью <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

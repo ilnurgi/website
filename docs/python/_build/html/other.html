@@ -1,0 +1,244 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Интерпретатор &mdash; Документация python документация 2015.05.20</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2015.05.20',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Документация python документация 2015.05.20" href="index.html" />
+    <link rel="prev" title="xlutils - инструмент для работы с xls файлами" href="modules_user/xlutils.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Алфавитный указатель"
+             accesskey="I">указатель</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="modules_user/xlutils.html" title="xlutils - инструмент для работы с xls файлами"
+             accesskey="P">назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Документация python документация 2015.05.20</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>Интерпретатор<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h1>
+<div class="section" id="id2">
+<h2>Параметры командной строки, принимаемые интерпретатором<a class="headerlink" href="#id2" title="Ссылка на этот заголовок">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="5%" />
+<col width="95%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Параметр</th>
+<th class="head">Описание</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>-3</td>
+<td>Включить вывод предупреждений об использовании особенностей, которые были удалены или изменены в Python 3.</td>
+</tr>
+<tr class="row-odd"><td>-B</td>
+<td>Не создавать файлы с расширениями .pyc и .pyo инструкцией import.</td>
+</tr>
+<tr class="row-even"><td>-E</td>
+<td>Игнорировать переменные окружения.</td>
+</tr>
+<tr class="row-odd"><td>-h</td>
+<td>Вывести список всех доступных параметров командной строки.</td>
+</tr>
+<tr class="row-even"><td>-i</td>
+<td>Перейти в интерактивный режим по завершении выполнения программы.</td>
+</tr>
+<tr class="row-odd"><td>-m</td>
+<td>module Запустить библиотечный модуль module, как самостоятельную программу.</td>
+</tr>
+<tr class="row-even"><td>-O</td>
+<td>Включить режим оптимизации.</td>
+</tr>
+<tr class="row-odd"><td>-OO</td>
+<td>Включить режим оптимизации и дополнительно удалить строки документирования при создании файла .pyo.</td>
+</tr>
+<tr class="row-even"><td>-Q arg</td>
+<td>Определить поведение оператора деления в версии Python 2. Аргумент arg может быть одним из следующих: -Qold (по умолчанию), -Qnew, -Qwarn или -Qwarnall.</td>
+</tr>
+<tr class="row-odd"><td>-s</td>
+<td>Предотвратить возможность добавления пользователем новых каталогов в переменную sys.path.</td>
+</tr>
+<tr class="row-even"><td>-S</td>
+<td>Не импортировать модуль site во время инициализации.</td>
+</tr>
+<tr class="row-odd"><td>-t</td>
+<td>Вывести предупреждение в случае непоследовательного использования символов табуляции.</td>
+</tr>
+<tr class="row-even"><td>-tt</td>
+<td>Возбудить исключение TabError в случае непоследовательного использования символов табуляции.</td>
+</tr>
+<tr class="row-odd"><td>-u</td>
+<td>Отключить буферизацию для потоков stdout и stderr.</td>
+</tr>
+<tr class="row-even"><td>-U</td>
+<td>Интерпретировать все строковые литералы как строки Юникода (только в Python 2).</td>
+</tr>
+<tr class="row-odd"><td>-v</td>
+<td>Включить режим вывода отладочной информации для инструкций import.</td>
+</tr>
+<tr class="row-even"><td>-V</td>
+<td>Вывести номер версии и выйти.</td>
+</tr>
+<tr class="row-odd"><td>-x</td>
+<td>Пропустить первую строку в исходной программе.</td>
+</tr>
+<tr class="row-even"><td>-c cmd</td>
+<td>Выполнить строку cmd, как инструкцию.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id3">
+<h2>Переменные окружения, используемые интерпретатором<a class="headerlink" href="#id3" title="Ссылка на этот заголовок">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="11%" />
+<col width="89%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Переменная</th>
+<th class="head">Описание</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>PYTHONPATH</td>
+<td>Список каталогов, разделенных двоеточием, образующий путь поиска модулей.</td>
+</tr>
+<tr class="row-odd"><td>PYTHONSTARTUP</td>
+<td>Файл, выполняемый при запуске интерпретатора в интерактивном режиме.</td>
+</tr>
+<tr class="row-even"><td>PYTHONHOME</td>
+<td>Каталог установки Python.</td>
+</tr>
+<tr class="row-odd"><td>PYTHONINSPECT</td>
+<td>Имеет значение параметра –i.</td>
+</tr>
+<tr class="row-even"><td>PYTHONUNBUFFERED</td>
+<td>Имеет значение параметра –u .</td>
+</tr>
+<tr class="row-odd"><td>PYTHONIOENCODING</td>
+<td>Кодировка по умолчанию и политика обработки ошибок при работе с потоками stdin, stdout и stderr. Значение этой переменной – строка вида “encoding[:errors]”, например: “utf-8” или “utf-8:ignore”.</td>
+</tr>
+<tr class="row-even"><td>PYTHONDONTWRITEBYTECODE</td>
+<td>Имеет значение параметра –B.</td>
+</tr>
+<tr class="row-odd"><td>PYTHONOPTIMIZE</td>
+<td>Имеет значение параметра –O.</td>
+</tr>
+<tr class="row-even"><td>PYTHONNOUSERSITE</td>
+<td>Имеет значение параметра –s.</td>
+</tr>
+<tr class="row-odd"><td>PYTHONVERBOSE</td>
+<td>Имеет значение параметра –v.</td>
+</tr>
+<tr class="row-even"><td>PYTHONUSERBASE</td>
+<td>Корневой каталог пользовательской библиотеки пакетов.</td>
+</tr>
+<tr class="row-odd"><td>PYTHONCASEOK</td>
+<td>Если определена, интерпретатор будет импортировать модули без учета регистра символов в их именах.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Оглавление</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Интерпретатор</a><ul>
+<li><a class="reference internal" href="#id2">Параметры командной строки, принимаемые интерпретатором</a></li>
+<li><a class="reference internal" href="#id3">Переменные окружения, используемые интерпретатором</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Предыдущий раздел</h4>
+  <p class="topless"><a href="modules_user/xlutils.html"
+                        title="предыдущая глава">xlutils - инструмент для работы с xls файлами</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Эта страница</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/other.txt"
+            rel="nofollow">Исходный текст</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Быстрый поиск</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Искать" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Введите слова для поиска или имя модуля, класса или функции.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Алфавитный указатель"
+             >указатель</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="modules_user/xlutils.html" title="xlutils - инструмент для работы с xls файлами"
+             >назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Документация python документация 2015.05.20</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright ilnurgi.
+      Создано с помощью <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

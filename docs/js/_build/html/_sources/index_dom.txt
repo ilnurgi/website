@@ -1,0 +1,11 @@
+DOM
+======================
+
+Содержание:
+
+.. toctree::
+   :maxdepth: 2
+
+   dom/window
+   dom/document
+   dom/objects

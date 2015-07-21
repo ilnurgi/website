@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>globalui &mdash; pys60 14.10.12 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.10.12',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="pys60 14.10.12 documentation" href="../index.html" />
+    <link rel="up" title="Стандартные модули" href="index.html" />
+    <link rel="next" title="graphics" href="graphics.html" />
+    <link rel="prev" title="e32db" href="e32db.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="graphics.html" title="graphics"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="e32db.html" title="e32db"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">pys60 14.10.12 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Стандартные модули</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <span class="target" id="module-globalui"></span><div class="section" id="globalui">
+<h1>globalui<a class="headerlink" href="#globalui" title="Permalink to this headline">¶</a></h1>
+<p>Дaнный мoдyль имeeт вoзмoжнocть paбoты c глoбaльными cpeдcтвaми интepфeйca S60.</p>
+<dl class="method">
+<dt id="globalui.global_msg_query">
+<tt class="descclassname">globalui.</tt><tt class="descname">global_msg_query</tt><big>(</big><em>message</em>, <em>label</em><span class="optional">[</span>, <em>timeout = 0</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#globalui.global_msg_query" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>message</strong> &#8211; отекст запроса</li>
+<li><strong>label</strong> &#8211; заголовок окна</li>
+<li><strong>timeout</strong> &#8211; время отображения</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Создает окно с запросом с выбором да или нет, возвращает 1 или 0 соответственно.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="globalui.global_note">
+<tt class="descclassname">globalui.</tt><tt class="descname">global_note</tt><big>(</big><em>label</em><span class="optional">[</span>, <em>type = 'info'</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#globalui.global_note" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>label</strong> &#8211; заголовок окна</li>
+<li><strong>type</strong> &#8211; <p>тип окна</p>
+<ul>
+<li>error, info, warn, confirm</li>
+<li>text - oкнo бeз cигнaлизиpyющeй aнимaции</li>
+<li>perm - aнaлoгичeн пpeдыдyщeмy (вoт тoлькo ничeм нe yбиpaeтcя)</li>
+<li>wait - oкнo oжидaния</li>
+<li>charging - oкнo &#8220;зapяжaeтcя&#8221;</li>
+<li>not_charging - oкнo &#8220;нe зapяжaeтcя&#8221;</li>
+<li>battery_full - &#8220;aккyмyлятop зapяжeн&#8221;</li>
+<li>battery_low - &#8220;aккyмyлятop paзpяжeн&#8221;</li>
+<li>recharge_battery - &#8220;зapядитe aккyмyлятop&#8221;</li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Создает информационное окно.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="globalui.global_popup_menu">
+<tt class="descclassname">globalui.</tt><tt class="descname">global_popup_menu</tt><big>(</big><em>variables</em><span class="optional">[</span>, <em>label</em><span class="optional">[</span>, <em>timeout = 0</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#globalui.global_popup_menu" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>variables</strong> &#8211; список</li>
+<li><strong>label</strong> &#8211; заголовок окна</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Paran timeout:</th><td class="field-body"><p class="first last">время отображения окна</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Создает всплывающее окно со списком для выбора. Возвращает номер находящегося под курсором элемента списка</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="globalui.global_query">
+<tt class="descclassname">globalui.</tt><tt class="descname">global_query</tt><big>(</big><em>label</em><span class="optional">[</span>, <em>timeout = 0</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#globalui.global_query" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>label</strong> &#8211; заголовок окна,</li>
+<li><strong>timeout</strong> &#8211; время отображения окна</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Создает окно с запросом да/нет, возвращает 1 если ответили да, 0 - нет.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="e32db.html"
+                        title="previous chapter">e32db</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="graphics.html"
+                        title="next chapter">graphics</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/moduls_def/globalui.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="graphics.html" title="graphics"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="e32db.html" title="e32db"
+             >previous</a> |</li>
+        <li><a href="../index.html">pys60 14.10.12 documentation</a> &raquo;</li>
+          <li><a href="index.html" >Стандартные модули</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

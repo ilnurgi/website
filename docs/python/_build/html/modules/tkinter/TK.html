@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Tk &mdash; Документация python документация 2015.05.20</title>
+    
+    <link rel="stylesheet" href="../../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '2015.05.20',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Документация python документация 2015.05.20" href="../../index.html" />
+    <link rel="up" title="tkinter - кроссплатформенная библиотека для построения графического интерфейса" href="index.html" />
+    <link rel="next" title="Button" href="button.html" />
+    <link rel="prev" title="Переменные" href="vars.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="Алфавитный указатель"
+             accesskey="I">указатель</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="button.html" title="Button"
+             accesskey="N">вперёд</a> |</li>
+        <li class="right" >
+          <a href="vars.html" title="Переменные"
+             accesskey="P">назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Документация python документация 2015.05.20</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >Основные модули</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">tkinter - кроссплатформенная библиотека для построения графического интерфейса</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="tk">
+<h1>Tk<a class="headerlink" href="#tk" title="Ссылка на этот заголовок">¶</a></h1>
+<dl class="class">
+<dt id="Tk">
+<em class="property">class </em><code class="descname">Tk</code><a class="headerlink" href="#Tk" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Основной объект, виджет, модуля, является основной формой, окном интерфейса.</p>
+<div class="highlight-py"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">tkinter</span> <span class="kn">as</span> <span class="nn">tk</span>
+
+<span class="n">window</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="Tk.geometry">
+<code class="descname">geometry</code><span class="sig-paren">(</span><em>str</em><span class="sig-paren">)</span><a class="headerlink" href="#Tk.geometry" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Устанавливает размеры окна, &#8216;высотаХширина+Х+У&#8217;</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">window</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s">u&#39;100х100+10+10&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Tk.iconbitmap">
+<code class="descname">iconbitmap</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#Tk.iconbitmap" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Устанавливает иконку окна</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">window</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">u&#39;key.ico&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Tk.mainloop">
+<code class="descname">mainloop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tk.mainloop" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Отрисовывает форму</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">window</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Tk.maxsize">
+<code class="descname">maxsize</code><span class="sig-paren">(</span><em>height</em>, <em>width</em><span class="sig-paren">)</span><a class="headerlink" href="#Tk.maxsize" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Устанавливает максимальный размер окна</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">window</span><span class="o">.</span><span class="n">maxsize</span><span class="p">(</span><span class="mi">1024</span><span class="p">,</span> <span class="mi">786</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Tk.minsize">
+<code class="descname">minsize</code><span class="sig-paren">(</span><em>height</em>, <em>width</em><span class="sig-paren">)</span><a class="headerlink" href="#Tk.minsize" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Устанавливает минимальный размер окна</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">window</span><span class="o">.</span><span class="n">minsize</span><span class="p">(</span><span class="mi">124</span><span class="p">,</span> <span class="mi">76</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Tk.title">
+<code class="descname">title</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#Tk.title" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Устанавливает заголовок окна</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">window</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">u&#39;Заголовок&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Tk.menu">
+<code class="descname">menu</code><a class="headerlink" href="#Tk.menu" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Меню окна, объект Menu</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Предыдущий раздел</h4>
+  <p class="topless"><a href="vars.html"
+                        title="предыдущая глава">Переменные</a></p>
+  <h4>Следующий раздел</h4>
+  <p class="topless"><a href="button.html"
+                        title="следующая глава">Button</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Эта страница</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/modules/tkinter/TK.txt"
+            rel="nofollow">Исходный текст</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Быстрый поиск</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Искать" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Введите слова для поиска или имя модуля, класса или функции.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="Алфавитный указатель"
+             >указатель</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="button.html" title="Button"
+             >вперёд</a> |</li>
+        <li class="right" >
+          <a href="vars.html" title="Переменные"
+             >назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Документация python документация 2015.05.20</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >Основные модули</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" >tkinter - кроссплатформенная библиотека для построения графического интерфейса</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright ilnurgi.
+      Создано с помощью <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

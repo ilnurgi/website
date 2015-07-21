@@ -1,0 +1,423 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Object - объект &mdash; js doc 2015.06.26 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2015.06.26',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="js doc 2015.06.26 documentation" href="../index.html" />
+    <link rel="up" title="Основные объекты" href="index.html" />
+    <link rel="next" title="Операторы" href="oper.html" />
+    <link rel="prev" title="Symbol" href="Symbol.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="oper.html" title="Операторы"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="Symbol.html" title="Symbol"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.26 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Основные объекты</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="object">
+<h1>Object - объект<a class="headerlink" href="#object" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="Object">
+<em class="property">class </em><code class="descname">Object</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Object" title="Permalink to this definition">¶</a></dt>
+<dd><p>Объект, является прототипом для всех объектов языка</p>
+<div class="highlight-js"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{};</span>
+<span class="kd">var</span> <span class="nx">obj2</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Object</span><span class="p">();</span>
+
+<span class="kd">var</span> <span class="nx">person</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;name&#39;</span><span class="o">:</span> <span class="s1">&#39;Alex&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;age&#39;</span><span class="o">:</span> <span class="mi">25</span>
+<span class="p">};</span>
+
+<span class="nx">person</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
+<span class="c1">// &#39;Alex&#39;</span>
+
+<span class="nx">person</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">];</span>
+<span class="c1">// &#39;Alex&#39;</span>
+
+<span class="k">delete</span> <span class="nx">person</span><span class="p">.</span><span class="nx">age</span><span class="p">;</span>
+
+<span class="c1">// создание дочерних объектов</span>
+<span class="kd">var</span> <span class="nx">Megaperson</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">person</span><span class="p">);</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="constructor">
+<code class="descname">constructor</code><a class="headerlink" href="#constructor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ссылка на конструктор</p>
+<div class="highlight-js"><div class="highlight"><pre><span class="nx">a</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
+<span class="nx">a</span><span class="p">.</span><span class="nx">constructor</span> <span class="o">==</span> <span class="nb">Array</span><span class="p">;</span>
+<span class="c1">// true</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="hasOwnProperty">
+<code class="descname">hasOwnProperty</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#hasOwnProperty" title="Permalink to this definition">¶</a></dt>
+<dd><p>Определяет, обладает ли объект свойством.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="isPrototypeOf">
+<code class="descname">isPrototypeOf</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#isPrototypeOf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Яв­ля­ет­ся ли дан­ный объ­ект про­то­ти­пом для ука­зан­но­го объ­ек­та</p>
+<div class="highlight-js"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">o</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Object</span><span class="p">();</span>                         <span class="c1">// Соз­дать объ­ект</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">isPrototypeOf</span><span class="p">(</span><span class="nx">o</span><span class="p">)</span>             <span class="c1">// true: o – объ­ект</span>
+<span class="nb">Function</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">isPrototypeOf</span><span class="p">(</span><span class="nx">o</span><span class="p">.</span><span class="nx">toString</span><span class="p">);</span> <span class="c1">// true: toString – функ­ция</span>
+<span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">isPrototypeOf</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]);</span>       <span class="c1">// true: [1,2,3] – мас­сив</span>
+<span class="c1">// Ту же про­вер­ку мож­но вы­пол­нить дру­гим спо­со­бом</span>
+<span class="p">(</span><span class="nx">o</span><span class="p">.</span><span class="nx">constructor</span> <span class="o">==</span> <span class="nb">Object</span><span class="p">);</span> <span class="c1">// true: o соз­дан с по­мо­щью кон­ст­рук­то­ра Object()</span>
+<span class="p">(</span><span class="nx">o</span><span class="p">.</span><span class="nx">toString</span><span class="p">.</span><span class="nx">constructor</span> <span class="o">==</span> <span class="nb">Function</span><span class="p">);</span>         <span class="c1">// true: o.toString – функ­ция</span>
+<span class="c1">// Объ­ек­ты-про­то­ти­пы са­ми име­ют про­то­ти­пы. Сле­дую­щий вы­зов вер­нетtrue, по­ка­зы­вая, что</span>
+<span class="c1">// объ­ек­ты-функ­ции на­сле­ду­ют свой­ст­ва от Function.prototype, а так­же от Object.prototype.</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">isPrototypeOf</span><span class="p">(</span><span class="nb">Function</span><span class="p">.</span><span class="nx">prototype</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="propertyIsEnumerable">
+<code class="descname">propertyIsEnumerable</code><span class="sig-paren">(</span><em>var</em><span class="sig-paren">)</span><a class="headerlink" href="#propertyIsEnumerable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Су­ще­ст­ву­ет ли свой­ст­во с ука­зан­ным име­нем и бу­дет ли оно пе­ре­чис­ле­но цик­лом for/in</p>
+<div class="highlight-js"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">o</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Object</span><span class="p">();</span>               <span class="c1">// Соз­дать объ­ект</span>
+<span class="nx">o</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">;</span>                         <span class="c1">// Оп­ре­де­лить свой­ст­во</span>
+<span class="nx">o</span><span class="p">.</span><span class="nx">propertyIsEnumerable</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">);</span>        <span class="c1">// true: x - ло­каль­ное и пе­ре­чис­ли­мое</span>
+<span class="nx">o</span><span class="p">.</span><span class="nx">propertyIsEnumerable</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">);</span>        <span class="c1">// false: o не име­ет свой­ст­ва y</span>
+<span class="nx">o</span><span class="p">.</span><span class="nx">propertyIsEnumerable</span><span class="p">(</span><span class="s2">&quot;toString&quot;</span><span class="p">);</span> <span class="c1">// false: toString унас­ле­до­ван­ное свой­ст­во</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">propertyIsEnumerable</span><span class="p">(</span><span class="s2">&quot;toString&quot;</span><span class="p">);</span> <span class="c1">// false: не­пе­ре­чис­ли­мое</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="toLocaleString">
+<code class="descname">toLocaleString</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toLocaleString" title="Permalink to this definition">¶</a></dt>
+<dd><p>Локализованное строчное представление объекта</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="toString">
+<code class="descname">toString</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toString" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает строковое представление объекта</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="valueOf">
+<code class="descname">valueOf</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#valueOf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает значение объекта</p>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="id1">
+<h2>Методы, доступные только в объекте Object<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="create">
+<code class="descname">create</code><span class="sig-paren">(</span><em>prototype</em><span class="optional">[</span>, <em>descriptors</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Соз­да­ет но­вый объ­ект с ука­зан­ным про­то­ти­пом и свой­ст­ва­ми.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version ECMAScript5.</span></p>
+</div>
+<div class="highlight-js"><div class="highlight"><pre><span class="c1">// Соз­дать объ­ект, ко­то­рый име­ет соб­ст­вен­ные свой­ст­ва x и y и на­сле­ду­ет свой­ст­во z</span>
+<span class="kd">var</span> <span class="nx">p</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span><span class="nx">z</span><span class="o">:</span><span class="mi">0</span><span class="p">},</span> <span class="p">{</span>
+    <span class="nx">x</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">value</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="nx">writable</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nx">enumerable</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
+        <span class="nx">configurable</span><span class="o">:</span> <span class="kc">true</span>
+    <span class="p">},</span>
+    <span class="nx">y</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">value</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="nx">writable</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nx">enumerable</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
+        <span class="nx">configurable</span><span class="o">:</span> <span class="kc">true</span>
+    <span class="p">},</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="defineProperties">
+<code class="descname">defineProperties</code><span class="sig-paren">(</span><em>obj</em>, <em>descriptors</em><span class="sig-paren">)</span><a class="headerlink" href="#defineProperties" title="Permalink to this definition">¶</a></dt>
+<dd><p>Соз­да­ет или на­страи­ва­ет од­но или бо­лее свойств в ука­зан­ном объ­ек­те.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version ECMAScript5.</span></p>
+</div>
+<div class="highlight-js"><div class="highlight"><pre><span class="c1">// До­ба­вить в но­вый объ­ект свой­ст­ва</span>
+<span class="kd">var</span> <span class="nx">p</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperties</span><span class="p">({},</span>
+    <span class="nx">x</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">value</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="nx">writable</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nx">enumerable</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
+        <span class="nx">configurable</span><span class="o">:</span> <span class="kc">true</span>
+    <span class="p">},</span>
+    <span class="nx">y</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">value</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="nx">writable</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nx">enumerable</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
+        <span class="nx">configurable</span><span class="o">:</span> <span class="kc">true</span>
+    <span class="p">},</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="defineProperty">
+<code class="descname">defineProperty</code><span class="sig-paren">(</span><em>obj</em>, <em>name</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#defineProperty" title="Permalink to this definition">¶</a></dt>
+<dd><p>Соз­да­ет или на­страи­ва­ет свой­ст­во в ука­зан­ном объ­ек­те.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version ECMAScript5.</span></p>
+</div>
+<div class="highlight-js"><div class="highlight"><pre><span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">({},</span> <span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">value</span><span class="o">:</span> <span class="nx">v</span><span class="p">,</span>
+    <span class="nx">writable</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nx">enumerable</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">configurable</span><span class="o">:</span><span class="kc">false</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="freeze">
+<code class="descname">freeze</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#freeze" title="Permalink to this definition">¶</a></dt>
+<dd><p>Де­ла­ет ука­зан­ный объ­ект не­из­ме­няе­мым.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version ECMAScript5.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getOwnPropertyDescriptor">
+<code class="descname">getOwnPropertyDescriptor</code><span class="sig-paren">(</span><em>obj</em>, <em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#getOwnPropertyDescriptor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Воз­вра­ща­ет ат­ри­бу­ты ука­зан­но­го свой­ст­ва в ука­зан­ном объ­ек­те.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version ECMAScript5.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getOwnPropertyNames">
+<code class="descname">getOwnPropertyNames</code><span class="sig-paren">(</span><em>obj</em>, <em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#getOwnPropertyNames" title="Permalink to this definition">¶</a></dt>
+<dd><p>Воз­вра­ща­ет мас­сив имен всех не­унас­ле­до­ван­ных свойств в  ука­зан­ном объ­ек­те, вклю­чая свой­ст­ва, не ­пе­ре­чис­ляе­мые цик­лом for/in.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version ECMAScript5.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getPrototypeOf">
+<code class="descname">getPrototypeOf</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#getPrototypeOf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Воз­вра­ща­ет про­то­тип ука­зан­но­го объ­ек­та.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version ECMAScript5.</span></p>
+</div>
+<div class="highlight-js"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">p</span> <span class="o">=</span> <span class="p">{};</span>              <span class="c1">// Обыч­ный объ­ект</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">getPrototypeOf</span><span class="p">(</span><span class="nx">p</span><span class="p">)</span> <span class="c1">// =&gt; Object.prototype</span>
+<span class="kd">var</span> <span class="nx">o</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">p</span><span class="p">)</span> <span class="c1">// Объ­ект, на­сле­дую­щий объ­ект p</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">getPrototypeOf</span><span class="p">(</span><span class="nx">o</span><span class="p">)</span> <span class="c1">// =&gt; p</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="isExtensible">
+<code class="descname">isExtensible</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#isExtensible" title="Permalink to this definition">¶</a></dt>
+<dd><p>Оп­ре­де­ля­ет, мо­гут ли до­бав­лять­ся но­вые свой­ст­ва в ука­зан­ный объ­ект.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version ECMAScript5.</span></p>
+</div>
+<div class="highlight-js"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">o</span> <span class="o">=</span> <span class="p">{};</span>                  <span class="c1">// Соз­дать но­вый объ­ект</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">isExtensible</span><span class="p">(</span><span class="nx">o</span><span class="p">)</span>       <span class="c1">// =&gt; true: он яв­ля­ет­ся рас­ши­ряе­мым</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">preventExtensions</span><span class="p">(</span><span class="nx">o</span><span class="p">);</span> <span class="c1">// Сде­лать не­рас­ши­ряе­мым</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">isExtensible</span><span class="p">(</span><span class="nx">o</span><span class="p">)</span>       <span class="c1">// =&gt; false: те­перь он не­рас­ши­ряе­мый</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="isFrozen">
+<code class="descname">isFrozen</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#isFrozen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Оп­ре­де­ля­ет, яв­ля­ет­ся ли ука­зан­ный объ­ект фик­си­ро­ван­ным.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version ECMAScript5.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="isSealed">
+<code class="descname">isSealed</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#isSealed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Оп­ре­де­ля­ет, яв­ля­ет­ся ли ука­зан­ный объ­ект не­рас­ши­ряе­мым, а его свой­ст­ва не­дос­туп­ны­ми для на­строй­ки.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version ECMAScript5.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="keys">
+<code class="descname">keys</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Воз­вра­ща­ет мас­сив имен не­унас­ле­до­ван­ных пе­ре­чис­ли­мых свойств в ука­зан­ном объ­ек­те.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version ECMAScript5.</span></p>
+</div>
+<div class="highlight-js"><div class="highlight"><pre><span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">({</span><span class="nx">x</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span><span class="mi">2</span><span class="p">})</span> <span class="c1">// =&gt; [&quot;x&quot;, &quot;y&quot;]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="preventExtensions">
+<code class="descname">preventExtensions</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#preventExtensions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Пре­дот­вра­ща­ет воз­мож­ность до­бав­ле­ния но­вых свойств в ука­зан­ный объ­ект.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version ECMAScript5.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="seal">
+<code class="descname">seal</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#seal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Пре­дот­вра­ща­ет воз­мож­ность до­бав­ле­ния но­вых и уда­ле­ния су­ще­ст­вую­щих свойств в ука­зан­ном объ­ек­те.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version ECMAScript5.</span></p>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="id2">
+<h2>Дескрипторы свойств<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Де­ск­рип­тор свой­ст­ва – это обыч­ный Ja­va­Script-объ­ект, опи­сы­ваю­щий ат­ри­бу­ты (и ино­гда зна­че­ние) свой­ст­ва.</p>
+<p>В язы­ке Ja­va­Script су­ще­ст­ву­ет два ти­па свойств.</p>
+<p>Свой­ст­ва-дан­ные, имею­щие зна­че­ние и три ат­ри­бу­та: enumerable, writable и  configurable.</p>
+<blockquote>
+<div><div class="highlight-js"><div class="highlight"><pre><span class="p">{</span>
+    <span class="nx">value</span><span class="o">:</span>        <span class="cm">/* лю­бое зна­че­ние, до­пус­ти­мое в язы­ке Ja­va­Script */</span><span class="p">,</span>
+    <span class="nx">writable</span><span class="o">:</span>     <span class="cm">/* true или false */</span><span class="p">,</span>
+    <span class="nx">enumerable</span><span class="o">:</span>   <span class="cm">/* true или false */</span><span class="p">,</span>
+    <span class="nx">configurable</span><span class="o">:</span> <span class="cm">/* true или false */</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Свой­ст­ва с ме­то­да­ми дос­ту­па, имею­щие ме­тод чте­ния и/или ме­тод за­пи­си, а так­же
+ат­ри­бу­ты enumerable и configurable.</p>
+<blockquote>
+<div><div class="highlight-js"><div class="highlight"><pre><span class="p">{</span>
+    <span class="nx">get</span><span class="o">:</span>          <span class="cm">/* функ­ция или undefined: вза­мен свой­ст­ва value */</span><span class="p">,</span>
+    <span class="nx">set</span><span class="o">:</span>          <span class="cm">/* функ­ция или undefined: вза­мен ат­ри­бу­та writable */</span><span class="p">,</span>
+    <span class="nx">enumerable</span><span class="o">:</span>   <span class="cm">/* true или false */</span><span class="p">,</span>
+    <span class="nx">configurable</span><span class="o">:</span> <span class="cm">/* true или false */</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Object - объект</a><ul>
+<li><a class="reference internal" href="#id1">Методы, доступные только в объекте Object</a></li>
+<li><a class="reference internal" href="#id2">Дескрипторы свойств</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="Symbol.html"
+                        title="previous chapter">Symbol</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="oper.html"
+                        title="next chapter">Операторы</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/base/Object.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="oper.html" title="Операторы"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="Symbol.html" title="Symbol"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.26 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Основные объекты</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,1312 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Document(HTMLDocument) - текущий документ страницы &mdash; js doc 2015.06.26 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2015.06.26',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="js doc 2015.06.26 documentation" href="../index.html" />
+    <link rel="up" title="DOM - дерево html документа" href="index.html" />
+    <link rel="next" title="History - журнал посещений объекта Window" href="History.html" />
+    <link rel="prev" title="Console - консоль браузера" href="Console.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="History.html" title="History - журнал посещений объекта Window"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="Console.html" title="Console - консоль браузера"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.26 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">DOM - дерево html документа</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="document-htmldocument">
+<h1>Document(HTMLDocument) - текущий документ страницы<a class="headerlink" href="#document-htmldocument" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="Document">
+<em class="property">class </em><code class="descname">Document</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Document" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="HTMLDocument">
+<em class="property">class </em><code class="descname">HTMLDocument</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#HTMLDocument" title="Permalink to this definition">¶</a></dt>
+<dd><p>Наследник <a class="reference internal" href="Node.html#Node" title="Node"><code class="xref js js-class docutils literal"><span class="pre">Node()</span></code></a></p>
+<div class="highlight-js"><div class="highlight"><pre><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-js"><div class="highlight"><pre>&lt;form name=&#39;test&#39;&gt;
+    &lt;input name=&#39;test_input&#39;/&gt;
+&lt;/form&gt;
+
+var form = document.test,
+    input = document.test.test_input,
+    elem = form.elements[0];
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="activeElement">
+<code class="descname">activeElement</code><a class="headerlink" href="#activeElement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Эле­мент до­ку­мен­та <a class="reference internal" href="Element.html#Element" title="Element"><code class="xref js js-class docutils literal"><span class="pre">Element()</span></code></a>, вла­дею­щий в на­стоя­щий мо­мент фо­ку­сом вво­да.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="anchors">
+<code class="descname">anchors</code><a class="headerlink" href="#anchors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Массив якорей страницы</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="async">
+<code class="descname">async</code><a class="headerlink" href="#async" title="Permalink to this definition">¶</a></dt>
+<dd><p>Определяет, будет ли загрузка XML документа с сервера осуществяться асинхронно</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="body">
+<code class="descname">body</code><a class="headerlink" href="#body" title="Permalink to this definition">¶</a></dt>
+<dd><p>Тело документа</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bgColor">
+<code class="descname">bgColor</code><a class="headerlink" href="#bgColor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Цвет фона документа</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="characterSet">
+<code class="descname">characterSet</code><a class="headerlink" href="#characterSet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ко­ди­ров­ка сим­во­лов до­ку­мен­та</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="charset">
+<code class="descname">charset</code><a class="headerlink" href="#charset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ко­ди­ров­ка сим­во­лов до­ку­мен­та. Это свой­ст­во по­доб­но свой­ст­ву characterSet, но его зна­че­ние мож­но из­ме­нить, что­бы сме­нить ко­ди­ров­ку до­ку­мен­та.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="compatMode">
+<code class="descname">compatMode</code><a class="headerlink" href="#compatMode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Это свой­ст­во со­дер­жит стро­ку «BackCompat», ес­ли до­ку­мент ото­бра­жа­ет­ся в «ре­жи­ме со­вмес­ти­мо­сти» для об­рат­ной со­вмес­ти­мо­сти со старыми браузерами</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cookie">
+<code class="descname">cookie</code><a class="headerlink" href="#cookie" title="Permalink to this definition">¶</a></dt>
+<dd><p>Сслыка на куки</p>
+<div class="highlight-js"><div class="highlight"><pre><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span> <span class="o">=</span> <span class="s2">&quot;info=123; max-age=604800&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="defaultCharset">
+<code class="descname">defaultCharset</code><a class="headerlink" href="#defaultCharset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ко­ди­ров­ка сим­во­лов в бро­узе­ре по умол­ча­нию.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="defaultView">
+<code class="descname">defaultView</code><a class="headerlink" href="#defaultView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Объ­ект <a class="reference internal" href="Window.html#Window" title="Window"><code class="xref js js-class docutils literal"><span class="pre">Window()</span></code></a> бро­узе­ра, в ко­то­ром ото­бра­жа­ет­ся дан­ный до­ку­мент.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="designMode">
+<code class="descname">designMode</code><a class="headerlink" href="#designMode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ес­ли это свой­ст­во име­ет зна­че­ние «on», до­ку­мент це­ли­ком дос­ту­пен для ре­дак­ти­ро­ва­ния. Ес­ли это свой­ст­во име­ет зна­че­ние «off», до­ку­мент це­ли­ком не­дос­ту­пен для ре­дак­ти­ро­ва­ния. (Но при этом дос­туп­ны­ми для ре­дак­ти­ро­ва­ния мо­гут быть от­ дель­ные эле­мен­ты с ус­та­нов­лен­ным свой­ст­вом contenteditable.)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="dir">
+<code class="descname">dir</code><a class="headerlink" href="#dir" title="Permalink to this definition">¶</a></dt>
+<dd><p>В  HTML-до­ку­мен­тах это свой­ст­во со­от­вет­ст­ву­ет ат­ри­бу­ту dir эле­мен­та &lt;html&gt;. То есть это то же са­мое зна­че­ние, что и documentElement.dir.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="doctype">
+<code class="descname">doctype</code><a class="headerlink" href="#doctype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Узел <a class="reference internal" href="DocumentType.html#DocumentType" title="DocumentType"><code class="xref js js-class docutils literal"><span class="pre">DocumentType()</span></code></a>, пред­став­ляю­щий объ­яв­ле­ние &lt;!DOCTYPE&gt; до­ку­мен­та.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="documentElement">
+<code class="descname">documentElement</code><a class="headerlink" href="#documentElement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает корневой элемент документа <a class="reference internal" href="Element.html#Element" title="Element"><code class="xref js js-class docutils literal"><span class="pre">Element()</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="domain">
+<code class="descname">domain</code><a class="headerlink" href="#domain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Доменное имя сервера</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="embeds">
+<code class="descname">embeds</code><a class="headerlink" href="#embeds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Объ­ект, по­доб­ный мас­си­ву, со­дер­жа­щий эле­мен­ты &lt;embed&gt;, при­сут­ст­вую­щие в до­ку­мен­те.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="forms">
+<code class="descname">forms</code><a class="headerlink" href="#forms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Массив <a class="reference internal" href="Form.html#Form" title="Form"><code class="xref js js-class docutils literal"><span class="pre">Form()</span></code></a> на странице</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="head">
+<code class="descname">head</code><a class="headerlink" href="#head" title="Permalink to this definition">¶</a></dt>
+<dd><p>В HTML-до­ку­мен­тах это свой­ст­во ссы­ла­ет­ся на эле­мент &lt;head&gt;.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="inputEncoding">
+<code class="descname">inputEncoding</code><a class="headerlink" href="#inputEncoding" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает входную кодировку документа</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="images">
+<code class="descname">images</code><a class="headerlink" href="#images" title="Permalink to this definition">¶</a></dt>
+<dd><p>Массив <a class="reference internal" href="Image.html#Image" title="Image"><code class="xref js js-class docutils literal"><span class="pre">Image()</span></code></a> на странице</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="implementation">
+<code class="descname">implementation</code><a class="headerlink" href="#implementation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ссылка на <a class="reference internal" href="DOMSettableTokenList.html#DOMImplementation" title="DOMImplementation"><code class="xref js js-class docutils literal"><span class="pre">DOMImplementation()</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="lastModified">
+<code class="descname">lastModified</code><a class="headerlink" href="#lastModified" title="Permalink to this definition">¶</a></dt>
+<dd><p>Дата последнего изменения документа</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="links">
+<code class="descname">links</code><a class="headerlink" href="#links" title="Permalink to this definition">¶</a></dt>
+<dd><p>Массив ссылок на странице</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="location">
+<code class="descname">location</code><a class="headerlink" href="#location" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ссылка на урл <a class="reference internal" href="Location.html#Location" title="Location"><code class="xref js js-class docutils literal"><span class="pre">Location()</span></code></a> документа</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="plugins">
+<code class="descname">plugins</code><a class="headerlink" href="#plugins" title="Permalink to this definition">¶</a></dt>
+<dd><p>Синоним embed</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="readyState">
+<code class="descname">readyState</code><a class="headerlink" href="#readyState" title="Permalink to this definition">¶</a></dt>
+<dd><p>Это свой­ст­во со­дер­жит стро­ку «loading», по­ка про­дол­жа­ет­ся за­груз­ка до­ку­мен­та, и стро­ку «complete» по ее окон­ча­нии. Ко­гда это свой­ст­во по­лу­ча­ет зна­че­ние «comp­le­te», бро­узер воз­бу­ж­да­ет со­бы­тие «readystatechange» в объ­ек­те Document.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="referrer">
+<code class="descname">referrer</code><a class="headerlink" href="#referrer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Адрес документа, содержащего ссылку, которая привела на текущую страницу</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="scripts">
+<code class="descname">scripts</code><a class="headerlink" href="#scripts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Объ­ект, по­доб­ный мас­си­ву, со­дер­жа­щий все эле­мен­ты &lt;script&gt;, при­сут­ст­вую­щие в до­ку­мен­те.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="styleSheets">
+<code class="descname">styleSheets</code><a class="headerlink" href="#styleSheets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Кол­лек­ция <a class="reference internal" href="CSSStyleSheet.html#CSSStyleSheet" title="CSSStyleSheet"><code class="xref js js-class docutils literal"><span class="pre">CSSStyleSheet()</span></code></a>, пред­став­ляю­щих все таб­ли­цы сти­лей, встро­ен­ные в  до­ку­мент, или на ко­то­рые есть ссыл­ки из не­го. В HTML-до­ку­мен­тах они вклю­ча­ют таб­ли­цы сти­лей, оп­ре­де­лен­ные с по­мо­щью те­гов &lt;link&gt; и &lt;style&gt;.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="title">
+<code class="descname">title</code><a class="headerlink" href="#title" title="Permalink to this definition">¶</a></dt>
+<dd><p>Заголовок окна</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xmlEncoding">
+<code class="descname">xmlEncoding</code><a class="headerlink" href="#xmlEncoding" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает XML кодировку документа</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="adoptNode">
+<code class="descname">adoptNode</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#adoptNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Уда­ля­ет узел node из лю­бо­го до­ку­мен­та, ча­стью ко­то­ро­го он яв­лял­ся на мо­мент вы­зо­ва, и  за­пи­сы­ва­ет в  свой­ст­во ownerDocument уз­ла ссыл­ку на те­ку­щий до­ку­мент, под­го­тав­ли­вая его к  до­бав­ле­нию в  те­ку­щий до­ку­мент.</p>
+<p>По­хо­жий на не­го ме­тод importNode() ко­пи­ру­ет узел из дру­го­го до­ку­мен­та, не уда­ляя его.</p>
+<p>Возвращает <a class="reference internal" href="Node.html#Node" title="Node"><code class="xref js js-class docutils literal"><span class="pre">Node()</span></code></a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="close">
+<code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#close" title="Permalink to this definition">¶</a></dt>
+<dd><p>За­кры­ва­ет по­ток вы­во­да до­ку­мен­та, от­кры­тый ме­то­дом open(), за­став­ляя вы­вес­ти все бу­фе­ри­зо­ван­ные дан­ные.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="createAttribute">
+<code class="descname">createAttribute</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#createAttribute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает <a class="reference internal" href="Attr.html#Attr" title="Attr"><code class="xref js js-class docutils literal"><span class="pre">Attr()</span></code></a>, создает атрибутный узел с указанным именем</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="createComment">
+<code class="descname">createComment</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#createComment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Создает и возвращает узел <a class="reference internal" href="Comment.html#Comment" title="Comment"><code class="xref js js-class docutils literal"><span class="pre">Comment()</span></code></a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="createDocumentFragment">
+<code class="descname">createDocumentFragment</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#createDocumentFragment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Создает и возвращает <a class="reference internal" href="DocumentFragment.html#DocumentFragment" title="DocumentFragment"><code class="xref js js-class docutils literal"><span class="pre">DocumentFragment()</span></code></a> пустой фрагмент документа</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="createElement">
+<code class="descname">createElement</code><span class="sig-paren">(</span><em>html_cod</em><span class="sig-paren">)</span><a class="headerlink" href="#createElement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Создает и возвращает новый <a class="reference internal" href="Element.html#Element" title="Element"><code class="xref js js-class docutils literal"><span class="pre">Element()</span></code></a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="createElementNS">
+<code class="descname">createElementNS</code><span class="sig-paren">(</span><em>namespace</em>, <em>qualifiedName</em><span class="sig-paren">)</span><a class="headerlink" href="#createElementNS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Создает и возвращает новый уникальный <a class="reference internal" href="Element.html#Element" title="Element"><code class="xref js js-class docutils literal"><span class="pre">Element()</span></code></a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="createProcessingInstruction">
+<code class="descname">createProcessingInstruction</code><span class="sig-paren">(</span><em>target</em>, <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#createProcessingInstruction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает <a class="reference internal" href="ProcessingInstruction.html#ProcessingInstruction" title="ProcessingInstruction"><code class="xref js js-class docutils literal"><span class="pre">ProcessingInstruction()</span></code></a> узел</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="createEvent">
+<code class="descname">createEvent</code><span class="sig-paren">(</span><em>eventInterface</em><span class="sig-paren">)</span><a class="headerlink" href="#createEvent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Создает и возвращает неинициализированный объект <a class="reference internal" href="Event.html#Event" title="Event"><code class="xref js js-class docutils literal"><span class="pre">Event()</span></code></a></p>
+<ul>
+<li><p class="first"><cite>eventInterface</cite></p>
+<blockquote>
+<div><ul class="simple">
+<li><cite>Event</cite></li>
+<li><cite>UIEvent</cite></li>
+<li><cite>MouseEvent</cite></li>
+<li><cite>MessageEvent</cite></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descname">createProcessingInstruction</code><span class="sig-paren">(</span><em>target</em>, <em>data</em><span class="sig-paren">)</span></dt>
+<dd><p>Создает и возвращает новый узел <a class="reference internal" href="ProcessingInstruction.html#ProcessingInstruction" title="ProcessingInstruction"><code class="xref js js-class docutils literal"><span class="pre">ProcessingInstruction()</span></code></a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="createTextNode">
+<code class="descname">createTextNode</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#createTextNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает текстовый узел <a class="reference internal" href="Text.html#Text" title="Text"><code class="xref js js-class docutils literal"><span class="pre">Text()</span></code></a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="elementFromPoint">
+<code class="descname">elementFromPoint</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#elementFromPoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает самый глубоко вложенный <a class="reference internal" href="Element.html#Element" title="Element"><code class="xref js js-class docutils literal"><span class="pre">Element()</span></code></a> с оконными координатами</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="execCommand">
+<code class="descname">execCommand</code><span class="sig-paren">(</span><em>commandId</em><span class="optional">[</span>, <em>showUI</em><span class="optional">[</span>, <em>value</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#execCommand" title="Permalink to this definition">¶</a></dt>
+<dd><p>Выполняет команду редактирования.</p>
+<ul class="simple">
+<li><cite>bold</cite></li>
+<li><cite>createLi</cite></li>
+<li><cite>delete</cite></li>
+<li><cite>formatBloc</cite></li>
+<li><cite>forwardDelete</cite></li>
+<li><cite>insertImage</cite></li>
+<li><cite>insertHTML</cite></li>
+<li><cite>insertLineBreak</cite></li>
+<li><cite>insertOrderedList</cite></li>
+<li><cite>insertUnorderedList</cite></li>
+<li><cite>insertParagraph</cite></li>
+<li><cite>insertText</cite></li>
+<li><cite>italic</cite></li>
+<li><cite>redo</cite></li>
+<li><cite>selectAll</cite></li>
+<li><cite>subscript</cite></li>
+<li><cite>superscript</cite></li>
+<li><cite>undo</cite></li>
+<li><cite>unlink</cite></li>
+<li><cite>unselect</cite></li>
+</ul>
+</dd></dl>
+
+<dl class="function">
+<dt id="getElementById">
+<code class="descname">getElementById</code><span class="sig-paren">(</span><em>elementId</em><span class="sig-paren">)</span><a class="headerlink" href="#getElementById" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает элемент <a class="reference internal" href="Element.html#Element" title="Element"><code class="xref js js-class docutils literal"><span class="pre">Element()</span></code></a> по id</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="getElementsByClassName">
+<code class="descname">getElementsByClassName</code><span class="sig-paren">(</span><em>elementClassName</em><span class="sig-paren">)</span><a class="headerlink" href="#getElementsByClassName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает список <a class="reference internal" href="NodeList.html#NodeList" title="NodeList"><code class="xref js js-class docutils literal"><span class="pre">NodeList()</span></code></a> элементов с указанным классом</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="getElementsByName">
+<code class="descname">getElementsByName</code><span class="sig-paren">(</span><em>elementName</em><span class="sig-paren">)</span><a class="headerlink" href="#getElementsByName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает список <a class="reference internal" href="NodeList.html#NodeList" title="NodeList"><code class="xref js js-class docutils literal"><span class="pre">NodeList()</span></code></a> элементов с указанным именем</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="getElementsByTagName">
+<code class="descname">getElementsByTagName</code><span class="sig-paren">(</span><em>tagName</em><span class="sig-paren">)</span><a class="headerlink" href="#getElementsByTagName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает список <a class="reference internal" href="NodeList.html#NodeList" title="NodeList"><code class="xref js js-class docutils literal"><span class="pre">NodeList()</span></code></a> элементов с указанным тегом</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="hasFocus">
+<code class="descname">hasFocus</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hasFocus" title="Permalink to this definition">¶</a></dt>
+<dd><p>Документ в фокусе</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="importNode">
+<code class="descname">importNode</code><span class="sig-paren">(</span><em>node</em>, <em>deep</em><span class="sig-paren">)</span><a class="headerlink" href="#importNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает узел <a class="reference internal" href="Node.html#Node" title="Node"><code class="xref js js-class docutils literal"><span class="pre">Node()</span></code></a> определенный в другом документе.</p>
+<ul class="simple">
+<li><cite>deep</cite> - копировать потомки узла</li>
+</ul>
+</dd></dl>
+
+<dl class="function">
+<dt id="open">
+<code class="descname">open</code><span class="sig-paren">(</span><em>url</em>, <em>name</em>, <em>features</em><span class="optional">[</span>, <em>replace</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает <a class="reference internal" href="Window.html#Window" title="Window"><code class="xref js js-class docutils literal"><span class="pre">Window()</span></code></a>, аналог <code class="xref js js-func docutils literal"><span class="pre">Window.open()</span></code></p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descname">open</code><span class="sig-paren">(</span><span class="optional">[</span><em>type='text/html'</em><span class="optional">[</span>, <em>replace</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span></dt>
+<dd><p>Возвращает <a class="reference internal" href="#Document" title="Document"><code class="xref js js-class docutils literal"><span class="pre">Document()</span></code></a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="queryCommandEnabled">
+<code class="descname">queryCommandEnabled</code><span class="sig-paren">(</span><em>string commandId</em><span class="sig-paren">)</span><a class="headerlink" href="#queryCommandEnabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Воз­вра­ща­ет true, ес­ли в на­стоя­щий мо­мент мож­но пе­ре­дать ко­ман­ду commandId ме­то­ ду execCommand(), и false – в про­тив­ном слу­чае. На­при­мер, бес­смыс­лен­но пе­ре­да­вать ко­ман­ду «undo», ко­гда не­че­го от­ме­нять.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="queryCommandIndeterm">
+<code class="descname">queryCommandIndeterm</code><span class="sig-paren">(</span><em>string commandId</em><span class="sig-paren">)</span><a class="headerlink" href="#queryCommandIndeterm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Воз­вра­ща­ет true, ес­ли commandId на­хо­дит­ся в со­стоя­нии, для ко­то­ро­го query­Com­mand­State() не мо­жет вер­нуть ка­кое-то оп­ре­де­лен­ное зна­че­ние. Ко­ман­ды, оп­ре­де­ляе­мые спе­ци­фи­ка­ци­ей HTML5, не мо­гут на­хо­дить­ся в не­оп­ре­де­лен­ном со­стоя­нии, но ко­ман­ды, оп­ре­де­ляе­мые бро­узе­ром, – мо­гут.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="queryCommandState">
+<code class="descname">queryCommandState</code><span class="sig-paren">(</span><em>string commandId</em><span class="sig-paren">)</span><a class="headerlink" href="#queryCommandState" title="Permalink to this definition">¶</a></dt>
+<dd><p>Воз­вра­ща­ет со­стоя­ние ко­ман­ды commandId. Не­ко­то­рые ко­ман­ды ре­дак­ти­ро­ва­ния, та­кие как «bold» и  «italic», име­ют со­стоя­ние true, ес­ли под тек­сто­вым кур­со­ром или в вы­де­лен­ной об­лас­ти на­хо­дит­ся текст, на­бран­ный кур­си­вом, и false – в про­тив­ном слу­чае. Од­на­ко боль­шин­ст­во ко­манд не име­ют со­стоя­ния, и для них этот ме­тод все­гда воз­вра­ща­ет false.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="queryCommandSupported">
+<code class="descname">queryCommandSupported</code><span class="sig-paren">(</span><em>string commandId</em><span class="sig-paren">)</span><a class="headerlink" href="#queryCommandSupported" title="Permalink to this definition">¶</a></dt>
+<dd><p>Воз­вра­ща­ет true, ес­ли бро­узер под­дер­жи­ва­ет ука­зан­ную ко­ман­ду, и false – в про­тив­ном слу­чае.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="queryCommandValue">
+<code class="descname">queryCommandValue</code><span class="sig-paren">(</span><em>string commandId</em><span class="sig-paren">)</span><a class="headerlink" href="#queryCommandValue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Воз­вра­ща­ет со­стоя­ние ука­зан­ной ко­ман­ды в ви­де стро­ки.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="querySelector">
+<code class="descname">querySelector</code><span class="sig-paren">(</span><em>string selectors</em><span class="sig-paren">)</span><a class="headerlink" href="#querySelector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Воз­вра­ща­ет пер­вый эле­мент <a class="reference internal" href="Element.html#Element" title="Element"><code class="xref js js-class docutils literal"><span class="pre">Element()</span></code></a> в дан­ном до­ку­мен­те, со­от­вет­ст­вую­щий CSS-се­лек­то­рам selectors (это мо­жет быть един­ст­вен­ный CSS-се­лек­тор или груп­па се­лек­то­ров, раз­де­лен­ных за­пя­ты­ми).</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="querySelectorAll">
+<code class="descname">querySelectorAll</code><span class="sig-paren">(</span><em>string selectors</em><span class="sig-paren">)</span><a class="headerlink" href="#querySelectorAll" title="Permalink to this definition">¶</a></dt>
+<dd><p>Воз­вра­ща­ет мас­си­в <a class="reference internal" href="NodeList.html#NodeList" title="NodeList"><code class="xref js js-class docutils literal"><span class="pre">NodeList()</span></code></a>, со­дер­жа­щий все эле­мен­ты Element в  дан­ном до­ку­мен­те, со­от­вет­ст­вую­щие се­лек­то­рам selectors (это мо­жет быть един­ст­вен­ный CSS-се­лек­тор или груп­па се­лек­то­ров, раз­де­лен­ных за­пя­ты­ми). В от­ли­чие от объ­ек­тов NodeList, воз­вра­щае­мых ме­то­дом getElementsByTagName() и ана­ло­гич­ны­ми ему, объ­ект NodeList, воз­вра­щае­мый этим ме­то­дом, яв­ля­ет­ся ста­ти­че­ским и со­дер­жит эле­мен­ты, со­от­вет­ст­вую­щие се­лек­то­рам, су­ще­ст­во­вав­шие на мо­мент вы­зо­ва ме­то­да.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="write">
+<code class="descname">write</code><span class="sig-paren">(</span><em>text[, text1 [...]]</em><span class="sig-paren">)</span><a class="headerlink" href="#write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Записываем строку в документ</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="writeln">
+<code class="descname">writeln</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#writeln" title="Permalink to this definition">¶</a></dt>
+<dd><p>Записываем строку в документ с переводом каретки</p>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="id1">
+<h2>Узлы дерева<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="Node">
+<em class="property">class </em><code class="descname">Node</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Node" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="action">
+<code class="descname">action</code><a class="headerlink" href="#action" title="Permalink to this definition">¶</a></dt>
+<dd><p><cite>form</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="checked">
+<code class="descname">checked</code><a class="headerlink" href="#checked" title="Permalink to this definition">¶</a></dt>
+<dd><p><cite>input</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cols">
+<code class="descname">cols</code><a class="headerlink" href="#cols" title="Permalink to this definition">¶</a></dt>
+<dd><p><cite>textarea</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="currentStyle">
+<code class="descname">currentStyle</code><a class="headerlink" href="#currentStyle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Текущие CSS стили для IE</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="data">
+<code class="descname">data</code><a class="headerlink" href="#data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Текст узла</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="dataset">
+<code class="descname">dataset</code><a class="headerlink" href="#dataset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Датасет</p>
+<div class="highlight-js"><div class="highlight"><pre><span class="o">&lt;</span><span class="nx">input</span> <span class="p">...</span> <span class="nx">data</span><span class="o">-</span><span class="nx">val</span><span class="o">=</span><span class="s2">&quot;1&quot;</span> <span class="nx">data</span><span class="o">-</span><span class="nx">val</span><span class="o">-</span><span class="nx">msg</span><span class="o">=</span><span class="s2">&quot;123&quot;</span> <span class="o">/&gt;</span>
+
+<span class="kd">var</span> <span class="nx">value</span> <span class="o">=</span> <span class="nx">elem</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">val</span><span class="p">,</span>
+    <span class="nx">message</span> <span class="o">=</span> <span class="nx">elem</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">valMsg</span><span class="p">;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="defaultChecked">
+<code class="descname">defaultChecked</code><a class="headerlink" href="#defaultChecked" title="Permalink to this definition">¶</a></dt>
+<dd><p><cite>input</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="defaultselected">
+<code class="descname">defaultselected</code><a class="headerlink" href="#defaultselected" title="Permalink to this definition">¶</a></dt>
+<dd><p><cite>option</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="defaultValue">
+<code class="descname">defaultValue</code><a class="headerlink" href="#defaultValue" title="Permalink to this definition">¶</a></dt>
+<dd><p><cite>input, textarea</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="disabled">
+<code class="descname">disabled</code><a class="headerlink" href="#disabled" title="Permalink to this definition">¶</a></dt>
+<dd><p><cite>textarea, select, option</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="elements">
+<code class="descname">elements</code><a class="headerlink" href="#elements" title="Permalink to this definition">¶</a></dt>
+<dd><p><cite>form</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="enctype">
+<code class="descname">enctype</code><a class="headerlink" href="#enctype" title="Permalink to this definition">¶</a></dt>
+<dd><p><cite>form</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="form">
+<code class="descname">form</code><a class="headerlink" href="#form" title="Permalink to this definition">¶</a></dt>
+<dd><p>ссылка на форму, в которой находится элемент</p>
+<p><cite>input, textarea, select, option</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="index">
+<code class="descname">index</code><a class="headerlink" href="#index" title="Permalink to this definition">¶</a></dt>
+<dd><p><cite>option</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="innerHTML">
+<code class="descname">innerHTML</code><a class="headerlink" href="#innerHTML" title="Permalink to this definition">¶</a></dt>
+<dd><p>HTML Содержание узла</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="label">
+<code class="descname">label</code><a class="headerlink" href="#label" title="Permalink to this definition">¶</a></dt>
+<dd><p><cite>option</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="length">
+<code class="descname">length</code><a class="headerlink" href="#length" title="Permalink to this definition">¶</a></dt>
+<dd><p><cite>form, select</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="maxLength">
+<code class="descname">maxLength</code><a class="headerlink" href="#maxLength" title="Permalink to this definition">¶</a></dt>
+<dd><p><cite>input</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="method">
+<code class="descname">method</code><a class="headerlink" href="#method" title="Permalink to this definition">¶</a></dt>
+<dd><p><cite>form</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="multiple">
+<code class="descname">multiple</code><a class="headerlink" href="#multiple" title="Permalink to this definition">¶</a></dt>
+<dd><p><cite>select</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="name">
+<code class="descname">name</code><a class="headerlink" href="#name" title="Permalink to this definition">¶</a></dt>
+<dd><p>имя элемента управления</p>
+<p><cite>form, name, select</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="onabort">
+<code class="descname">onabort</code><a class="headerlink" href="#onabort" title="Permalink to this definition">¶</a></dt>
+<dd><p>Обработчик, прерывание загрузки изображения</p>
+<p><cite>img</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="onblur">
+<code class="descname">onblur</code><a class="headerlink" href="#onblur" title="Permalink to this definition">¶</a></dt>
+<dd><p>Обработчик, элемент теряет фокус</p>
+<p><cite>button, input, label, select, textarea, body</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="onchange">
+<code class="descname">onchange</code><a class="headerlink" href="#onchange" title="Permalink to this definition">¶</a></dt>
+<dd><p>Обработчик, элемент потерял фокус и его значение с момента получения фокуса изменилось</p>
+<p><cite>input, select, textarea</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="onclick">
+<code class="descname">onclick</code><a class="headerlink" href="#onclick" title="Permalink to this definition">¶</a></dt>
+<dd><p>Обработчик, нажата или отпущена клавиша мыши</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="oncontextmenu">
+<code class="descname">oncontextmenu</code><a class="headerlink" href="#oncontextmenu" title="Permalink to this definition">¶</a></dt>
+<dd><p>Отображается контекстоное меню</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ondblclick">
+<code class="descname">ondblclick</code><a class="headerlink" href="#ondblclick" title="Permalink to this definition">¶</a></dt>
+<dd><p>Обработчик, двойной щелчок</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ondrag">
+<code class="descname">ondrag</code><a class="headerlink" href="#ondrag" title="Permalink to this definition">¶</a></dt>
+<dd><p>бук­си­ров­ка про­дол­жа­ет­ся (воз­бу­ж­да­ет­ся в эле­мен­те-ис­точ­ни­ке)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ondragend">
+<code class="descname">ondragend</code><a class="headerlink" href="#ondragend" title="Permalink to this definition">¶</a></dt>
+<dd><p>бук­си­ров­ка за­вер­ше­на (воз­бу­ж­да­ет­ся в эле­мен­те-ис­точ­ни­ке)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ondragenter">
+<code class="descname">ondragenter</code><a class="headerlink" href="#ondragenter" title="Permalink to this definition">¶</a></dt>
+<dd><p>бук­си­руе­мые дан­ные ока­за­лись над эле­мен­том (воз­бу­ж­да­ет­ся в эле­мен­те-при­ем­ни­ке)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ondragleave">
+<code class="descname">ondragleave</code><a class="headerlink" href="#ondragleave" title="Permalink to this definition">¶</a></dt>
+<dd><p>бук­си­руе­мые дан­ные вы­шли за гра­ни­цы эле­мен­та (воз­бу­ж­да­ет­ся в эле­мен­те-при­ем­ни­ке)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ondragover">
+<code class="descname">ondragover</code><a class="headerlink" href="#ondragover" title="Permalink to this definition">¶</a></dt>
+<dd><p>бук­си­ров­ка про­дол­жа­ет­ся (воз­бу­ж­да­ет­ся в эле­мен­те-при­ем­ни­ке)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ondragstart">
+<code class="descname">ondragstart</code><a class="headerlink" href="#ondragstart" title="Permalink to this definition">¶</a></dt>
+<dd><p>поль­зо­ва­тель на­чал опе­ра­цию бук­си­ров­ки (воз­бу­ж­да­ет­ся в эле­мен­те-ис­точ­ни­ке)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ondrop">
+<code class="descname">ondrop</code><a class="headerlink" href="#ondrop" title="Permalink to this definition">¶</a></dt>
+<dd><p>поль­зо­ва­тель за­вер­шил бук­си­ров­ку (воз­бу­ж­да­ет­ся в эле­мен­те-при­ем­ни­ке)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="onerror">
+<code class="descname">onerror</code><a class="headerlink" href="#onerror" title="Permalink to this definition">¶</a></dt>
+<dd><p>Обработчик, ошибка загрузки изображения</p>
+<p><cite>img</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="onfocus">
+<code class="descname">onfocus</code><a class="headerlink" href="#onfocus" title="Permalink to this definition">¶</a></dt>
+<dd><p>Обработчик, элемент получил фокус</p>
+<p><cite>button, input, label, select, textarea, body</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="oninput">
+<code class="descname">oninput</code><a class="headerlink" href="#oninput" title="Permalink to this definition">¶</a></dt>
+<dd><p>вы­пол­нен ввод в эле­мент фор­мы (воз­бу­ж ­да­ет­ся зна­чи­тель­но ча­ще, чем onchange)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="onkeydown">
+<code class="descname">onkeydown</code><a class="headerlink" href="#onkeydown" title="Permalink to this definition">¶</a></dt>
+<dd><p>Обработчик, клавиши нажата</p>
+<p><cite>body, form etc</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="onkeypress">
+<code class="descname">onkeypress</code><a class="headerlink" href="#onkeypress" title="Permalink to this definition">¶</a></dt>
+<dd><p>Обработчик, клавиши нажата или отпущена</p>
+<p><cite>body, form etc</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="onkeyup">
+<code class="descname">onkeyup</code><a class="headerlink" href="#onkeyup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Обработчик, клавиши отпущена</p>
+<p><cite>body, form etc</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="onload">
+<code class="descname">onload</code><a class="headerlink" href="#onload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Обработчик, загрузка завершена</p>
+<p><cite>body, frameset, img</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="onmousedown">
+<code class="descname">onmousedown</code><a class="headerlink" href="#onmousedown" title="Permalink to this definition">¶</a></dt>
+<dd><p>Обработчик, нажата кнопка мыши</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="onmousemove">
+<code class="descname">onmousemove</code><a class="headerlink" href="#onmousemove" title="Permalink to this definition">¶</a></dt>
+<dd><p>Обработчик, перемещение указателя мыши</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="onmouseout">
+<code class="descname">onmouseout</code><a class="headerlink" href="#onmouseout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Обработчик, указатель мыши выходит за границы элемента</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="onmouseover">
+<code class="descname">onmouseover</code><a class="headerlink" href="#onmouseover" title="Permalink to this definition">¶</a></dt>
+<dd><p>Обработчик, указаетль мыши входит в границы элемента</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="onmouseup">
+<code class="descname">onmouseup</code><a class="headerlink" href="#onmouseup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Обработчик, отпущена кнопка мыши</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="onmousewheel">
+<code class="descname">onmousewheel</code><a class="headerlink" href="#onmousewheel" title="Permalink to this definition">¶</a></dt>
+<dd><p>поль­зо­ва­тель по­вер­нул ко­ле­си­ко мы­ши</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="onreset">
+<code class="descname">onreset</code><a class="headerlink" href="#onreset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Обработчик, запрос на очистку полей формы</p>
+<p><cite>form</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="onresize">
+<code class="descname">onresize</code><a class="headerlink" href="#onresize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Обработчик, изменени размеры окна</p>
+<p><cite>body, frameset</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="onscroll">
+<code class="descname">onscroll</code><a class="headerlink" href="#onscroll" title="Permalink to this definition">¶</a></dt>
+<dd><p>Прокрутка элемента</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="onselect">
+<code class="descname">onselect</code><a class="headerlink" href="#onselect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Обработчик, выбор текста</p>
+<p><cite>input, textarea</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="onsubmit">
+<code class="descname">onsubmit</code><a class="headerlink" href="#onsubmit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Обработчик, запрос на передачу данных формы</p>
+<p><cite>form</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="onunload">
+<code class="descname">onunload</code><a class="headerlink" href="#onunload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Документ выгружен</p>
+<p><cite>body, frameset</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ownerDocument">
+<code class="descname">ownerDocument</code><a class="headerlink" href="#ownerDocument" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="options">
+<code class="descname">options</code><a class="headerlink" href="#options" title="Permalink to this definition">¶</a></dt>
+<dd><p><cite>select</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="readOnly">
+<code class="descname">readOnly</code><a class="headerlink" href="#readOnly" title="Permalink to this definition">¶</a></dt>
+<dd><p><cite>textarea</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rows">
+<code class="descname">rows</code><a class="headerlink" href="#rows" title="Permalink to this definition">¶</a></dt>
+<dd><p><cite>textarea</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="selected">
+<code class="descname">selected</code><a class="headerlink" href="#selected" title="Permalink to this definition">¶</a></dt>
+<dd><p><cite>option</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="selectedIndex">
+<code class="descname">selectedIndex</code><a class="headerlink" href="#selectedIndex" title="Permalink to this definition">¶</a></dt>
+<dd><p><cite>select</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="size">
+<code class="descname">size</code><a class="headerlink" href="#size" title="Permalink to this definition">¶</a></dt>
+<dd><p><cite>input, select</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="style">
+<code class="descname">style</code><a class="headerlink" href="#style" title="Permalink to this definition">¶</a></dt>
+<dd><p>CSS стили узла</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="tabIndex">
+<code class="descname">tabIndex</code><a class="headerlink" href="#tabIndex" title="Permalink to this definition">¶</a></dt>
+<dd><p><cite>textarea, select</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="target">
+<code class="descname">target</code><a class="headerlink" href="#target" title="Permalink to this definition">¶</a></dt>
+<dd><p><cite>form</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="text">
+<code class="descname">text</code><a class="headerlink" href="#text" title="Permalink to this definition">¶</a></dt>
+<dd><p><cite>option</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="type">
+<code class="descname">type</code><a class="headerlink" href="#type" title="Permalink to this definition">¶</a></dt>
+<dd><p>тип элемента управления</p>
+<p><cite>input, textarea, select</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="value">
+<code class="descname">value</code><a class="headerlink" href="#value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Значение элемента</p>
+<p><cite>input, textarea, select, option</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ELEMENT">
+<code class="descname">ELEMENT</code><a class="headerlink" href="#ELEMENT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Элемент</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ATTRIBUTE">
+<code class="descname">ATTRIBUTE</code><a class="headerlink" href="#ATTRIBUTE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Атрибут элемента</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="TEXT">
+<code class="descname">TEXT</code><a class="headerlink" href="#TEXT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Текстовый узел</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="CDATASECTION">
+<code class="descname">CDATASECTION</code><a class="headerlink" href="#CDATASECTION" title="Permalink to this definition">¶</a></dt>
+<dd><p>Раздел CDATA (его содержимое не будет обрабатываться парсером)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="entityreference">
+<code class="descname">entityreference</code><a class="headerlink" href="#entityreference" title="Permalink to this definition">¶</a></dt>
+<dd><p>Имя ссылки на сущность</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="entity">
+<code class="descname">entity</code><a class="headerlink" href="#entity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Сущность</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="processinginstruction">
+<code class="descname">processinginstruction</code><a class="headerlink" href="#processinginstruction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Процессуальная инструкция</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="COMMENT">
+<code class="descname">COMMENT</code><a class="headerlink" href="#COMMENT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Комментарии</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="DOCUMENT">
+<code class="descname">DOCUMENT</code><a class="headerlink" href="#DOCUMENT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Весь документ</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="DocumentType">
+<code class="descname">DocumentType</code><a class="headerlink" href="#DocumentType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Декларация типа документа</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="DocumentFragment">
+<code class="descname">DocumentFragment</code><a class="headerlink" href="#DocumentFragment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Часть документа</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Notation">
+<code class="descname">Notation</code><a class="headerlink" href="#Notation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Имя нотации</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="add">
+<code class="descname">add</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#add" title="Permalink to this definition">¶</a></dt>
+<dd><p><cite>select</cite></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="addEventListener">
+<code class="descname">addEventListener</code><span class="sig-paren">(</span><em>event</em>, <em>handler</em>, <em>capture</em><span class="sig-paren">)</span><a class="headerlink" href="#addEventListener" title="Permalink to this definition">¶</a></dt>
+<dd><p>Добавляем свой обработчик элементу.</p>
+<ul class="simple">
+<li>event - имя события, строка</li>
+<li>handler - функция обраотчик</li>
+<li>capture - true-обработчик срабатывает на этапе перехвата, false-обработчик срабатывает на этапе всплывания</li>
+</ul>
+<p>Доступно на DOM lvl.2</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="attachEvent">
+<code class="descname">attachEvent</code><span class="sig-paren">(</span><em>event</em>, <em>handler</em><span class="sig-paren">)</span><a class="headerlink" href="#attachEvent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Аналог <a class="reference internal" href="EventTarget.html#addEventListener" title="addEventListener"><code class="xref js js-func docutils literal"><span class="pre">addEventListener()</span></code></a>, для IE</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="blur">
+<code class="descname">blur</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#blur" title="Permalink to this definition">¶</a></dt>
+<dd><p><cite>input, textarea, select</cite></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="click">
+<code class="descname">click</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#click" title="Permalink to this definition">¶</a></dt>
+<dd><p><cite>input</cite></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="cloneNode">
+<code class="descname">cloneNode</code><span class="sig-paren">(</span><em>bool</em><span class="sig-paren">)</span><a class="headerlink" href="#cloneNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Создать копию узла, аргумент - в доме или нет.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="detachEvent">
+<code class="descname">detachEvent</code><span class="sig-paren">(</span><em>event</em>, <em>handler</em><span class="sig-paren">)</span><a class="headerlink" href="#detachEvent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Аналог <a class="reference internal" href="EventTarget.html#removeEventListener" title="removeEventListener"><code class="xref js js-func docutils literal"><span class="pre">removeEventListener()</span></code></a>, для IE</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="focus">
+<code class="descname">focus</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#focus" title="Permalink to this definition">¶</a></dt>
+<dd><p><cite>input, textarea, select</cite></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="getComputedStyle">
+<code class="descname">getComputedStyle</code><span class="sig-paren">(</span><em>element</em>, <em>null</em><span class="sig-paren">)</span><a class="headerlink" href="#getComputedStyle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает вычисляемые CSS стили</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="remove">
+<code class="descname">remove</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#remove" title="Permalink to this definition">¶</a></dt>
+<dd><p><cite>select</cite></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="removeAttribute">
+<code class="descname">removeAttribute</code><span class="sig-paren">(</span><em>attr</em><span class="sig-paren">)</span><a class="headerlink" href="#removeAttribute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Удаляет атрибут из узла</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="removeEventListener">
+<code class="descname">removeEventListener</code><span class="sig-paren">(</span><em>event</em>, <em>handler</em>, <em>capture</em><span class="sig-paren">)</span><a class="headerlink" href="#removeEventListener" title="Permalink to this definition">¶</a></dt>
+<dd><p>Удаляет обработчик из элемента, <a class="reference internal" href="EventTarget.html#addEventListener" title="addEventListener"><code class="xref js js-func docutils literal"><span class="pre">addEventListener()</span></code></a></p>
+<p>Доступно на DOM lvl.2</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="reset">
+<code class="descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#reset" title="Permalink to this definition">¶</a></dt>
+<dd><p><cite>form</cite></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="select">
+<code class="descname">select</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#select" title="Permalink to this definition">¶</a></dt>
+<dd><p><cite>input, textarea</cite></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="setAttribute">
+<code class="descname">setAttribute</code><span class="sig-paren">(</span><em>attr</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#setAttribute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Устанавливает атрибут для узла</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="submit">
+<code class="descname">submit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#submit" title="Permalink to this definition">¶</a></dt>
+<dd><p><cite>form</cite></p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="id2">
+<h2>Ивент события<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="Eent">
+<em class="property">class </em><code class="descname">Eent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Eent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ивент события</p>
+<dl class="attribute">
+<dt id="altKey">
+<code class="descname">altKey</code><a class="headerlink" href="#altKey" title="Permalink to this definition">¶</a></dt>
+<dd><p>Булево, нажата кнопка Альт</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bubbles">
+<code class="descname">bubbles</code><a class="headerlink" href="#bubbles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Булево, событие может всплывать по дереву элементов.</p>
+<p>События <cite>blur, focus, load, unload</cite> не всплывают</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="button">
+<code class="descname">button</code><a class="headerlink" href="#button" title="Permalink to this definition">¶</a></dt>
+<dd><p>Номер кнопки мыши, 0 - левая, 1 - средняя, 2 - правая (1,2,4 для IE)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cancelable">
+<code class="descname">cancelable</code><a class="headerlink" href="#cancelable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Булево, с этим событием связано действие по умолчанию и его можно отменить с помощью метода <a class="reference internal" href="Event.html#preventDefault" title="preventDefault"><code class="xref js js-func docutils literal"><span class="pre">preventDefault()</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cancelBubble">
+<code class="descname">cancelBubble</code><a class="headerlink" href="#cancelBubble" title="Permalink to this definition">¶</a></dt>
+<dd><p>Аналог <code class="xref js js-func docutils literal"><span class="pre">stopPropagation()</span></code> для IE</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="charCode">
+<code class="descname">charCode</code><a class="headerlink" href="#charCode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Код клавиши события</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="clientX, clientY">
+<code class="descname">clientX, clientY</code><a class="headerlink" href="#clientX, clientY" title="Permalink to this definition">¶</a></dt>
+<dd><p>Координаты относительно левого верхнего угла документа</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ctrlKey">
+<code class="descname">ctrlKey</code><a class="headerlink" href="#ctrlKey" title="Permalink to this definition">¶</a></dt>
+<dd><p>Булево, кнопка Ctrl нажата</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="currentTarget">
+<code class="descname">currentTarget</code><a class="headerlink" href="#currentTarget" title="Permalink to this definition">¶</a></dt>
+<dd><p>Элемент, событие которого исполняется в данное время</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="eventPhase">
+<code class="descname">eventPhase</code><a class="headerlink" href="#eventPhase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Число, указывающее этап</p>
+<ul class="simple">
+<li>Event.CAPTURING_PHASE</li>
+<li>Event.AT_TARGET</li>
+<li>Event.BUBBLING_PHASE</li>
+</ul>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="keyCode">
+<code class="descname">keyCode</code><a class="headerlink" href="#keyCode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Код клавииш для события</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="offsetX, offsetY">
+<code class="descname">offsetX, offsetY</code><a class="headerlink" href="#offsetX, offsetY" title="Permalink to this definition">¶</a></dt>
+<dd><p>Координаты, относительно элемента, в котором произошло событие. Для IE</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="returnValue">
+<code class="descname">returnValue</code><a class="headerlink" href="#returnValue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Аналог <a class="reference internal" href="Event.html#preventDefault" title="preventDefault"><code class="xref js js-func docutils literal"><span class="pre">preventDefault()</span></code></a> для IE</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="screenX, screenY">
+<code class="descname">screenX, screenY</code><a class="headerlink" href="#screenX, screenY" title="Permalink to this definition">¶</a></dt>
+<dd><p>Координаты относительно экрана</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="shiftKey">
+<code class="descname">shiftKey</code><a class="headerlink" href="#shiftKey" title="Permalink to this definition">¶</a></dt>
+<dd><p>Булево, кнопка Shift нажата</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="srcElement">
+<code class="descname">srcElement</code><a class="headerlink" href="#srcElement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Отправитель события, для IE</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">target</code></dt>
+<dd><p>Элемент, который был инициатором события</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="timeStamp">
+<code class="descname">timeStamp</code><a class="headerlink" href="#timeStamp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Дата события</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">type</code></dt>
+<dd><p>Тип события</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="preventDefault();">
+<code class="descname">preventDefault();</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#preventDefault();" title="Permalink to this definition">¶</a></dt>
+<dd><p>Прекращает выполнение стандртной операции (сабмит формы)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="stopPropagation();">
+<code class="descname">stopPropagation();</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#stopPropagation();" title="Permalink to this definition">¶</a></dt>
+<dd><p>Отменить распространение события другому узлу</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="option">
+<h2>Option<a class="headerlink" href="#option" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-js"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">o</span> <span class="o">=</span> <span class="nx">Option</span><span class="p">(</span><span class="nx">text</span><span class="p">,</span> <span class="nx">value</span><span class="p">,</span> <span class="nx">defaultSelected</span><span class="p">,</span> <span class="nx">selected</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Document(HTMLDocument) - текущий документ страницы</a><ul>
+<li><a class="reference internal" href="#id1">Узлы дерева</a></li>
+<li><a class="reference internal" href="#id2">Ивент события</a></li>
+<li><a class="reference internal" href="#option">Option</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="Console.html"
+                        title="previous chapter">Console - консоль браузера</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="History.html"
+                        title="next chapter">History - журнал посещений объекта Window</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/dom/Document.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="History.html" title="History - журнал посещений объекта Window"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="Console.html" title="Console - консоль браузера"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.26 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >DOM - дерево html документа</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

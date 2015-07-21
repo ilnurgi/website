@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>DOM - дерево html документа &mdash; js doc 2015.06.26 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2015.06.26',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="js doc 2015.06.26 documentation" href="../index.html" />
+    <link rel="next" title="ApplicationCache - прикладной интерфейс управления кэшем приложений" href="ApplicationCache.html" />
+    <link rel="prev" title="undefined - неопределнное значение" href="../base/undefined.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="ApplicationCache.html" title="ApplicationCache - прикладной интерфейс управления кэшем приложений"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../base/undefined.html" title="undefined - неопределнное значение"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.26 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="dom-html">
+<h1>DOM - дерево html документа<a class="headerlink" href="#dom-html" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ApplicationCache.html">ApplicationCache - прикладной интерфейс управления кэшем приложений</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ArrayBuffer.html">ArrayBuffer - последовательность байтов фиксированной длины</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ArrayBufferView.html">ArrayBufferView - общие свойства типов, основанных на ArrayBuffer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Attr.html">Attr - атрибут элемента документа</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Audio.html">Audio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BeforeUnloadEvent.html">BeforeUnloadEvent - объект Event для событий выгрузки</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Blob.html">Blob - блок двоичных данных</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BlobBuilder.html">BlobBuilder - используется для создания новых Blob</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Button.html">Button - html элемент button</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Canvas.html">Canvas - канвас страницы</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Console.html">Console - консоль браузера</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Document.html">Document(HTMLDocument) - текущий документ страницы</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Document.html#id1">Узлы дерева</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Document.html#id2">Ивент события</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Document.html#option">Option</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Element.html">Element(HTMLElement) - узел дом дерева документа</a></li>
+<li class="toctree-l1"><a class="reference internal" href="HTMLFormElement.html">HTMLFormElement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="HTMLInputElement.html">HTMLInputElement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="HTMLOptionElement.html">HTMLOptionElement (Option)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="HTMLSelectElement.html">HTMLSelectElement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="HTMLTableCellElement.html">HTMLTableCellElement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="HTMLTableElement.html">HTMLTableElement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="HTMLTableRowElement.html">HTMLTableRowElement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="HTMLTableSectionElement.html">HTMLTableSectionElement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="HTMLTextAreaElement.html">HTMLTextAreaElement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="History.html">History - журнал посещений объекта Window</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Image.html">Image(HTMLImageElement) - HTML img</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LocalStorage.html">LocalStorage - key-value хранилище</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Location.html">Location - адрес текущей страницы</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Navigator.html">Navigator - свойства браузера</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Screen.html">Screen - информация о дисплее</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SessionStorage.html">SessionStorage - key-value хранилище</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Window.html">Window - окно, вкладка или фрейм веб-броузера</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ajax.html">AJAX - Asynchronous Javascript and XML - «асинхронный JavaScript и XML»</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSSRule.html">CSSRule - правило в таблице стилей CSS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSSStyleDeclaration.html">CSSStyleDeclaration - набор css-атрибутов и их значений</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSSStyleSheet.html">CSSStyleSheet - таблица стилей CSS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CanvasGradient.html">CanvasGradient - цветной градиент для использования в канвасе</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CanvasPattern.html">CanvasPattern - шаблон заполнения холста на основе готового изображения</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CanvasRenderingContext2D.html">CanvasRenderingContext2D - объект, используемый для создания изображений</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ClientRect.html">ClientRect - прямоугольник, описанный вокруг элемента</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CloseEvent.html">CloseEvent - определяет, был ли закрыт веб-сокет без ошибок</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Comment.html">Comment - коментарии в доме</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ConsoleCommandLine.html">ConsoleCommandLine - утилита для работы с окном консоли</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Context.html">Context - контекст канвас страницы</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DOMException.html">DOMException - исключение, возбуждаемое web api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DOMImplementation.html">DOMImplementation - глобальные методы DOM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DOMSettableTokenList.html">DOMSettableTokenList - список лексем с настраиваемым строковым значением</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DOMTokenList.html">DOMTokenList - множество лексем, разделенных пробелами</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DataTransfer.html">DataTransfer - передача данных в операциях драгндроп мышью</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DataView.html">DataView - реализует чтение/запись значений в ArrayBuffer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DocumentFragment.html">DocumentFragment - смежные узлы и их поддеревья</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DocumentType.html">DocumentType - doctype документа</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ErrorEvent.html">ErrorEvent - необработанное исключение в фоновом потоке</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Event.html">Event - информация о сбоытии</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EventSource.html">EventTarget - comet-соединение с http-сервером</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EventTarget.html">EventTarget - объект, способный принимать события</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FieldSet.html">FieldSet - HTML fieldset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="File.html">File - файл в локальной файловой системе</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FileError.html">FileError - ошибка, возникшая во время чтения файла</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FileReader.html">FileReader - асинхронный интерфейс чтения объекта File или Blob</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FileReaderSync.html">FileReaderSync - синхронный интерфейс чтения объекта File или Blob</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Form.html">Form - HTML form</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FormControl.html">FormControl - общие особенности всех элементов форм</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FormData.html">FormData - тело HTTP-запроса multipart/form-data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FormValidity.html">FormValidity - реализует проверку элемента формы</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Geocoordinates.html">Geocoordinates - географическре местонахождение</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Geolocation.html">Geolocation - позволяет получить широту и долготу местоположения пользователя</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GeolocationError.html">GeolocationError - ошибка возникающая в ходе определения местонахождения</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Geoposition.html">Geoposition - информация о местонахождении с указанием времени определения</a></li>
+<li class="toctree-l1"><a class="reference internal" href="HTMLFormControlsCollection.html">HTMLFormControlsCollection - объект, типа массив, содержащий элементы формы</a></li>
+<li class="toctree-l1"><a class="reference internal" href="HTMLOptionsCollection.html">HTMLOptionsCollection - коллекция элементов Option</a></li>
+<li class="toctree-l1"><a class="reference internal" href="HashChangeEvent.html">HashChangeEvent - объект события, поставляемый по событию hashchange</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IFrame.html">IFrame - HTML iframe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ImageData.html">ImageData - массив пискелей канваса</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Input.html">Input - HTML input</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MediaElement.html">MediaElement - элемент проигрывателя</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MediaError.html">MediaError - ошибка в элементе audio, video</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageChannel.html">MessageChannel - пара соединенных объектов MessagePorts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessageEvent.html">MessageEvent - сообщение из другого контекста выполнения</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MessagePort.html">MessagePort - передает асинхронные сообщения</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Meter.html">Meter - графический индикатор, шкала</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MouseEvent.html">MouseEvent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NamedNodeMap.html">NamedNodeMap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Node.html">Node - узел дом дерева документа</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NodeList.html">NodeList (HTMLCollection) - живой список узлов</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Option.html">Option - HTML option</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Output.html">Output - HTML output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PageTransitionEvent.html">PageTransitionEvent - объект события для событий «pageshow» и «pagehide»</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PopStateEvent.html">PopStateEvent - событие перемещения по истории посещений</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ProcessingInstruction.html">ProcessingInstruction - инструкция обработки в XML-документе</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Progress.html">Progress - индикатор хода выполнения операции</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ProgressEvent.html">ProgressEvent - событие продолжения загрузки, выгрузки или чтения файла</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Script.html">Script - HTML-script</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Select.html">Select - графический список для выбора</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Storage.html">Storage - хранилище пар имя/значение на стороне клиента</a></li>
+<li class="toctree-l1"><a class="reference internal" href="StorageEvent.html">StorageEvent - хранилище пар имя/значение на стороне клиента</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Style.html">Style - HTML style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Table.html">Table - HTML table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TableCell.html">TableCell - ячейка HTML таблицы</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TableRow.html">TableRow - HTML tr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TableSection.html">TableSection - раздел верхнего или нижнего колонтитула либо тела таблицы</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Text.html">Text - текстовая последовательность в документе</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TextArea.html">TextArea - многострочная область ввода текста</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TextMetrics.html">TextMetrics - определяет размеры текстовой строки</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TimeRanges.html">TimeRanges - множество фрагментов мультимедийных данных</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TypedArray.html">TypedArray - массивы с двоичными элементами фиксированного размера</a></li>
+<li class="toctree-l1"><a class="reference internal" href="URL.html">URL - методы для работы с URL-адресами, ссылающимися на объекты Blob</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Video.html">Video - HTML video</a></li>
+<li class="toctree-l1"><a class="reference internal" href="WebSocket.html">WebSocket - двунаправленное сетевое соединение, подобное сокету</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Worker.html">Worker - фоновый поток выполнения</a></li>
+<li class="toctree-l1"><a class="reference internal" href="WorkerGlobalScope.html">WorkerGlobalScope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="WorkerLocation.html">WorkerLocation - URL-адрес главного сценария в фоновом потоке выполнения</a></li>
+<li class="toctree-l1"><a class="reference internal" href="WorkerNavigator.html">WorkerNavigator - информация о броузере для фонового потока выполнения</a></li>
+<li class="toctree-l1"><a class="reference internal" href="XMLHttpRequest.html">XMLHttpRequest(AJAX) - позволяет выполнять HTTP-запросы и получать ответы</a></li>
+<li class="toctree-l1"><a class="reference internal" href="XMLHttpRequestUpload.html">XMLHttpRequestUpload</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../base/undefined.html"
+                        title="previous chapter">undefined - неопределнное значение</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="ApplicationCache.html"
+                        title="next chapter">ApplicationCache - прикладной интерфейс управления кэшем приложений</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/dom/index.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="ApplicationCache.html" title="ApplicationCache - прикладной интерфейс управления кэшем приложений"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../base/undefined.html" title="undefined - неопределнное значение"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.26 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

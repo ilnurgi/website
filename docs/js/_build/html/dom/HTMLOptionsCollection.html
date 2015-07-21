@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>HTMLOptionsCollection - коллекция элементов Option &mdash; js doc 2015.06.26 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2015.06.26',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="js doc 2015.06.26 documentation" href="../index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.26 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="htmloptionscollection-option">
+<h1>HTMLOptionsCollection - коллекция элементов Option<a class="headerlink" href="#htmloptionscollection-option" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="HTMLOptionsCollection">
+<em class="property">class </em><code class="descname">HTMLOptionsCollection</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#HTMLOptionsCollection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Наследник <a class="reference internal" href="NodeList.html#HTMLCollection" title="HTMLCollection"><code class="xref js js-class docutils literal"><span class="pre">HTMLCollection()</span></code></a></p>
+<dl class="attribute">
+<dt id="length">
+<code class="descname">length</code><a class="headerlink" href="#length" title="Permalink to this definition">¶</a></dt>
+<dd><p>Воз­вра­ща­ет ко­ли­че­ст­во эле­мен­тов в кол­лек­ции. Од­на­ко, в от­ли­чие от свой­ст­ва length обыч­но­го объ­ек­та HTMLCollection, это свой­ст­во дос­туп­но не толь­ко для чте­ния. Ес­ли при­сво­ить ему зна­че­ние мень­ше те­ку­ще­го, кол­лек­ция эле­мен­тов Option бу­дет усе­че­на, а эле­мен­ты Option, ока­зав­шие­ся за пре­де­ла­ми кол­лек­ции, бу­дут уда­ле­ны из эле­мен­та Select. Ес­ли при­сво­ить свой­ст­ву length зна­че­ние боль­ше те­ку­ще­го, бу­дут соз­да­ны и до­бав­ле­ны в эле­мент Select и в кол­лек­цию но­вые пус­тые эле­мен­ты &lt;option/&gt;.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="selectedIndex">
+<code class="descname">selectedIndex</code><a class="headerlink" href="#selectedIndex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ин­декс пер­во­го вы­бран­но­го эле­мен­та Option в кол­лек­ции или –1, ес­ли ни один эле­мент Option не был вы­бран. Это свой­ст­во мож­но ис­поль­зо­вать, что­бы про­грамм­но вы­брать тре­буе­мый эле­мент.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="add">
+<code class="descname">add</code><span class="sig-paren">(</span><em>Element option</em><span class="optional">[</span>, <em>any before</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Встав­ля­ет эле­мент option (ко­то­рый дол­жен быть эле­мен­том &lt;option&gt; или &lt;optgroup&gt;) в дан­ную кол­лек­цию (и в эле­мент Select), в по­зи­цию, оп­ре­де­ляе­мую ар­гу­мен­том before. Ес­ли ар­гу­мент before име­ет зна­че­ние null, но­вый эле­мент встав­ля­ет­ся в ко­нец кол­лек­ции. Ес­ли ар­гу­мент before име­ет це­ло­чис­лен­ное зна­че­ние, но­вый эле­мент бу­дет встав­лен пе­ред эле­мен­том, ко­то­рый в те­ку­щий мо­мент име­ет этот ин­декс. Ес­ли пе­ре­дать в ар­гу­мен­те before дру­гой эле­мент Element, option бу­дет встав­ лен пе­ред этим эле­мен­том.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="item">
+<code class="descname">item</code><span class="sig-paren">(</span><em>unsigned long index</em><span class="sig-paren">)</span><a class="headerlink" href="#item" title="Permalink to this definition">¶</a></dt>
+<dd><p>Объ­ект HTMLOptionsCollection на­сле­ду­ет этот ме­тод от HTMLCollection. Он воз­вра­ща­ет эле­мент <a class="reference internal" href="Element.html#Element" title="Element"><code class="xref js js-class docutils literal"><span class="pre">Element()</span></code></a> с ин­дек­сом index или null, ес­ли ин­декс вы­хо­дит за гра­ни­цы кол­лек­ции.</p>
+<p>Кол­лек­цию мож­но так­же ин­дек­си­ро­вать не­по­сред­ст­вен­но, ис­поль­зуя квад­рат­ные скоб­ки и не вы­зы­вая этот ме­тод яв­но.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="">
+<code class="descname"></code><span class="sig-paren">(</span><em>)namedItem(string name</em><span class="sig-paren">)</span><a class="headerlink" href="#" title="Permalink to this definition">¶</a></dt>
+<dd><p>Воз­вра­ща­ет все эле­мен­ты Option из кол­лек­ции, имею­щие зна­че­ние name в ат­ри­бу­те id или name. Ес­ли эле­мен­ты с та­ким име­нем от­сут­ст­ву­ют, воз­вра­ща­ет­ся зна­че­ние null. Этот ме­тод мож­но не вы­зы­вать яв­но, а ука­зать имя в квад­рат­ных скоб­ках. Ес­ли за­дан­но­му име­ни со­от­вет­ст­ву­ет толь­ко один эле­мент Option, воз­вра­ща­ет­ся этот эле­мент. Ес­ли за­дан­но­му име­ни со­от­вет­ст­ву­ет бо­лее од­но­го эле­мен­та, воз­вра­ща­ет­ся объ­ект NodeList с эти­ми эле­мен­та­ми. Об­ра­ти­те вни­ма­ние, что объ­ек­ты HTML­OptionsCollection мож­но ин­дек­си­ро­вать не­по­сред­ст­вен­но, ис­поль­зуя зна­че­ние name как имя свой­ст­ва, вме­сто яв­но­го вы­зо­ва это­го ме­то­да.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="remove">
+<code class="descname">remove</code><span class="sig-paren">(</span><em>long index</em><span class="sig-paren">)</span><a class="headerlink" href="#remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>Уда­ля­ет из кол­лек­ции эле­мент &lt;option&gt; с ин­дек­сом index. При вы­зо­ве без ар­гу­мен­та или со зна­че­ни­ем ар­гу­мен­та, ко­то­рое вы­хо­дит за гра­ни­цы кол­лек­ции, мо­жет уда­лить пер­вый эле­мент кол­лек­ции.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/dom/HTMLOptionsCollection.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.26 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

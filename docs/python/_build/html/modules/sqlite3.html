@@ -1,0 +1,508 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>sqlite3 &mdash; Документация python документация 2015.05.20</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2015.05.20',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Документация python документация 2015.05.20" href="../index.html" />
+    <link rel="up" title="Основные модули" href="index.html" />
+    <link rel="next" title="string" href="string.html" />
+    <link rel="prev" title="socket" href="socket.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Алфавитный указатель"
+             accesskey="I">указатель</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="string.html" title="string"
+             accesskey="N">вперёд</a> |</li>
+        <li class="right" >
+          <a href="socket.html" title="socket"
+             accesskey="P">назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Документация python документация 2015.05.20</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Основные модули</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <span class="target" id="module-sqlite3"></span><div class="section" id="sqlite3">
+<h1>sqlite3<a class="headerlink" href="#sqlite3" title="Ссылка на этот заголовок">¶</a></h1>
+<p>Модуль, позволяющий работать с базой данных SQLite3</p>
+<p>Согласно спецификации DB-API 2.0 последовательность работы с базой данных выглядит следующим образом:</p>
+<ol class="arabic simple">
+<li>Производится подключение к базе данных с помощью функции <a class="reference internal" href="#sqlite3.connect" title="sqlite3.connect"><code class="xref py py-meth docutils literal"><span class="pre">connect()</span></code></a>. Функция воз­вращает объект соединения, с помощью которого осуществляется дальнейшая работа с базой данных.</li>
+<li>Создается объект-курсор.</li>
+<li>Выnолняются SQL-зanpocы и обрабатываются результаты. Перед выnолнением nервого заnроса. который изменяет заnиси (INSERT, REPIACE, UPDATE и DELETE), автоматически за­пускается транзакция.</li>
+<li>Завершается транзакция или отменяются все изменения в рамках транзакции.</li>
+<li>Закрывается объект-курсор.</li>
+<li>Закрывается соединение с базой данных.</li>
+</ol>
+<div class="section" id="id1">
+<h2>Атрибуты модуля<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="attribute">
+<dt id="sqlite3.apilevel">
+<code class="descclassname">sqlite3.</code><code class="descname">apilevel</code><a class="headerlink" href="#sqlite3.apilevel" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает строку, номер спецификации DB-API</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">sqlite3</span><span class="o">.</span><span class="n">apilevel</span>
+<span class="go">&#39;2.0&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="sqlite3.sqlite_version">
+<code class="descclassname">sqlite3.</code><code class="descname">sqlite_version</code><a class="headerlink" href="#sqlite3.sqlite_version" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает строку, номер версии моудля</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">sqlite3</span><span class="o">.</span><span class="n">sqlite_version</span>
+<span class="go">&#39;3.7.4&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="sqlite3.sqlite_version_info">
+<code class="descclassname">sqlite3.</code><code class="descname">sqlite_version_info</code><a class="headerlink" href="#sqlite3.sqlite_version_info" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает кортеж, номер версии модуля</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">sqlite3</span><span class="o">.</span><span class="n">sqlite_version_info</span>
+<span class="go">(3, 7, 4)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="id2">
+<h2>Методы модуля<a class="headerlink" href="#id2" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="method">
+<dt id="sqlite3.complete_statement">
+<code class="descclassname">sqlite3.</code><code class="descname">complete_statement</code><span class="sig-paren">(</span><em>sql</em><span class="sig-paren">)</span><a class="headerlink" href="#sqlite3.complete_statement" title="Ссылка на это определение">¶</a></dt>
+<dd><p>проверка завершенности запроса</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">sqlite3</span><span class="o">.</span><span class="n">complete_statement</span><span class="p">(</span><span class="s">&#39;SELECT 10 &gt;5;&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="sqlite3.connect">
+<code class="descclassname">sqlite3.</code><code class="descname">connect</code><span class="sig-paren">(</span><em>database[, timeout=5] [, lsolatlon_level] [, detect_types] [, factory] [, check_same_thread] [, cached_statements]</em><span class="sig-paren">)</span><a class="headerlink" href="#sqlite3.connect" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает объект <a class="reference internal" href="#sqlite3.Connection" title="sqlite3.Connection"><code class="xref py py-class docutils literal"><span class="pre">Connection</span></code></a> для работы с БД</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>database</strong> (<em>str</em>) &#8211; путь к БД, если БД не существует она автоматический создастся. Также можно указать значение <cite>:memory:</cite>, которая означает что БД создается в памяти.</li>
+<li><strong>timeout</strong> (<em>int</em>) &#8211; время ожидания снятия блокировки с открываемой БД, в секундах</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sqlite3.register_adapter">
+<code class="descclassname">sqlite3.</code><code class="descname">register_adapter</code><span class="sig-paren">(</span><em>&lt;тип данных или класс&gt;</em>, <em>&lt;ссылка на функцию&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#sqlite3.register_adapter" title="Ссылка на это определение">¶</a></dt>
+<dd><p>регистрирует пользовательскую функцию, которая будети вызываться при попытке вставки объекта в запросе.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Car</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+</pre></div>
+</div>
+<blockquote>
+<div><dl class="docutils">
+<dt>def __init__(self, model, color):</dt>
+<dd>self.model, self.color = model, color</dd>
+</dl>
+</div></blockquote>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">my_adapter</span><span class="p">(</span><span class="n">car</span><span class="p">):</span>
+<span class="go">        return &#39;{0}|{1}&#39;.format(car.model, car.color)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sqlite3</span><span class="o">.</span><span class="n">register_adapter</span><span class="p">(</span><span class="n">Car</span><span class="p">,</span> <span class="n">my_adapter</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">car</span> <span class="o">=</span> <span class="n">Car</span><span class="p">(</span><span class="s">&#39;car1&#39;</span><span class="p">,</span> <span class="s">&#39;red&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s">&#39;INSERT INTO cars VALUES (?)&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">car</span><span class="p">,</span> <span class="p">))</span>
+</pre></div>
+</div>
+<p>Вместо регистрации функции преобразования типа можно внутри класса определить метод __conform__(self, &lt;Протокол&gt;), где протокол соответсввует PrepareProtokol.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Car</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+</pre></div>
+</div>
+<blockquote>
+<div><dl class="docutils">
+<dt>def __init__(self, model, color):</dt>
+<dd>self.model, self.color = model, color</dd>
+<dt>def __conform__(self, protokol):</dt>
+<dd><dl class="first last docutils">
+<dt>if protokol is sqlite3.PrepareProtokol:</dt>
+<dd>return &#8216;{0}|{1}&#8217;.format(car.model, car.color)</dd>
+</dl>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="sqlite3.register_converter">
+<code class="descclassname">sqlite3.</code><code class="descname">register_converter</code><span class="sig-paren">(</span><em>&lt;тип данных&gt;</em>, <em>&lt;ссылка на функцию&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#sqlite3.register_converter" title="Ссылка на это определение">¶</a></dt>
+<dd><p>регистрирует пользовательскую функцию преобразования типа данных</p>
+<p>Чтобы интерпретатор смог определить, какую функцию необходимо вызвать для преобразования типа данных, следует явно указать местоположение метки с помощью параметра <cite>detect_types</cite> функции <a class="reference internal" href="#sqlite3.connect" title="sqlite3.connect"><code class="xref py py-meth docutils literal"><span class="pre">connect()</span></code></a>. Параметр может принимать следующие значения (или их комбинацию через <a href="#id3"><span class="problematic" id="id4">|</span></a>):</p>
+<blockquote>
+<div><ul>
+<li><p class="first">sqlite3.PARSE_COLNAMES - тип данных указывается в запросе в псевдониме поля внутри квадратных скобок</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;SELECT model as &quot;c [mycar]&quot; FROM mycars&#39;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">sqlite3.PARSE_DECLTYPES - тип данных определяется по значению, указанному после названия поля в инструкции CREATE TABLE.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;CREATE TABLE cars (model mycar)&#39;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div></blockquote>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Car</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<span class="go">        def __init__(self, model, color):</span>
+<span class="go">            self.model, self.color = model, color</span>
+<span class="go">        def __repr__(self):</span>
+<span class="go">            return &#39;{0} {1}&#39;.format(self.model, self.color)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">myconverter</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+<span class="go">        value = str(value, &#39;utf-8&#39;)</span>
+<span class="go">        model, color = value.split(&#39;|&#39;)</span>
+<span class="go">        return Car(model, color)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sqlite3</span><span class="o">.</span><span class="n">register_converter</span><span class="p">(</span><span class="s">&#39;mycar&#39;</span><span class="p">,</span> <span class="n">myconverter</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s">&#39;SELECT model as &quot;c [mycar]&quot; FROM cars&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="id5">
+<h2>Классы модуля<a class="headerlink" href="#id5" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="sqlite3.Connection">
+<em class="property">class </em><code class="descclassname">sqlite3.</code><code class="descname">Connection</code><a class="headerlink" href="#sqlite3.Connection" title="Ссылка на это определение">¶</a></dt>
+<dd><p>объект для работы с БД</p>
+<dl class="method">
+<dt id="sqlite3.Connection.close">
+<code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sqlite3.Connection.close" title="Ссылка на это определение">¶</a></dt>
+<dd><p>закрывает соединение с БД</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sqlite3.Connection.commit">
+<code class="descname">commit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sqlite3.Connection.commit" title="Ссылка на это определение">¶</a></dt>
+<dd><p>завершает текущую транзакцию</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sqlite3.Connection.create_aggregation">
+<code class="descname">create_aggregation</code><span class="sig-paren">(</span><em>&lt;название функции&gt;</em>, <em>&lt;количесвто параметров&gt;</em>, <em>&lt;ссылка на класс&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#sqlite3.Connection.create_aggregation" title="Ссылка на это определение">¶</a></dt>
+<dd><p>связывает название функции в SQL-запросе с пользовательской функцией.</p>
+<p>Класс должен иметь два метода:</p>
+<blockquote>
+<div><ul class="simple">
+<li><cite>step()</cite> - сюда передаются параметры</li>
+<li><cite>finalize()</cite> - возвращает результат</li>
+</ul>
+</div></blockquote>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">MyClass</span><span class="p">:</span>
+<span class="go">        def __init__(self) :</span>
+<span class="go">            self.result = []</span>
+<span class="go">        def step(self, value):</span>
+<span class="go">            self.result.append(value)</span>
+<span class="go">        def finalize(self):</span>
+<span class="go">            self.result.sort()</span>
+<span class="go">            return &quot; - &quot;.join(self.result)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">con</span><span class="o">.</span><span class="n">create_aggregate</span><span class="p">(</span><span class="s">&quot;myfunc&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">MyClass</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cur</span><span class="o">.</span><span class="n">execute</span> <span class="p">(</span> <span class="s">&quot;SELECT myfunc(nаme) FROM table&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="sqlite3.Connection.create_collation">
+<code class="descname">create_collation</code><span class="sig-paren">(</span><em>&lt;название функции сортировки&gt;</em>, <em>&lt;ссылка на функцию сортировки&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#sqlite3.Connection.create_collation" title="Ссылка на это определение">¶</a></dt>
+<dd><p>связывает название функции в SQL-запросе с пользовательской функцией. Функция сортировки принимает две строки и должна возвращать: 1 - если первая больше второй, -1 - если вторая больше первой, 0 - если они равны.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">myfunc</span> <span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">):</span>
+<span class="go">        s1 = s1.1ower()</span>
+<span class="go">        s2 = s2 .1ower ()</span>
+<span class="go">        if s1 == s2:</span>
+<span class="go">            return О</span>
+<span class="go">        elif s1 &gt; s2:</span>
+<span class="go">            return 1</span>
+<span class="go">        else:</span>
+<span class="go">            return -1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">con</span><span class="o">.</span><span class="n">create_collatlon</span><span class="p">(</span><span class="s">&quot;myfunc&quot;</span><span class="p">,</span> <span class="n">myfunc</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cur</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s">&quot;SELECT * FROM words ORDER ВУ word COLLATE myfunc&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="sqlite3.Connection.create_function">
+<code class="descname">create_function</code><span class="sig-paren">(</span><em>&lt;название функции&gt;</em>, <em>&lt;количество параметров&gt;</em>, <em>&lt;ссылка на функцию&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#sqlite3.Connection.create_function" title="Ссылка на это определение">¶</a></dt>
+<dd><p>связывает название функции в SQL-запросе с пользовательской функцией. Функция сортировки принимает две строки и должна возвращать: 1 - если первая больше второй, -1 - если вторая больше первой, 0 - если они равны.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">myfunc</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+<span class="go">        return s .1ower ()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">con</span><span class="o">.</span><span class="n">create_function</span><span class="p">(</span><span class="s">&quot;mylower&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">myfunc</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cur</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s">&quot;SELECT * FROM words WHERE mylower(name) like &#39;ilnurgi&#39;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="sqlite3.Connection.cursor">
+<code class="descname">cursor</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sqlite3.Connection.cursor" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает объект <a class="reference internal" href="#sqlite3.Cursor" title="sqlite3.Cursor"><code class="xref py py-class docutils literal"><span class="pre">Cursor</span></code></a> для выполнения запросов</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sqlite3.Connection.rollback">
+<code class="descname">rollback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sqlite3.Connection.rollback" title="Ссылка на это определение">¶</a></dt>
+<dd><p>откатывает изменения в текущей транзакции</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="sqlite3.Cursor">
+<em class="property">class </em><code class="descclassname">sqlite3.</code><code class="descname">Cursor</code><a class="headerlink" href="#sqlite3.Cursor" title="Ссылка на это определение">¶</a></dt>
+<dd><p>объект для выполнения запросов</p>
+<dl class="method">
+<dt id="sqlite3.Cursor.close">
+<code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sqlite3.Cursor.close" title="Ссылка на это определение">¶</a></dt>
+<dd><p>закрывает объект курсор</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sqlite3.Cursor.execute">
+<code class="descname">execute</code><span class="sig-paren">(</span><em>sql</em><span class="optional">[</span>, <em>&lt;значения&gt;</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#sqlite3.Cursor.execute" title="Ссылка на это определение">¶</a></dt>
+<dd><p>выполянет один запрос</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><strong>sql</strong> (<em>str</em>) &#8211; строка запроса</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rasises:</th><td class="field-body">sqlite3.DataBaseError</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s">&#39;insert into table (name) values (?)&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s">&#39;ilnurgi&#39;</span><span class="p">,</span> <span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s">&#39;insert into table values (?, ?)&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s">&#39;ilnurgi&#39;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s">&#39;insert into table values (:id, :name)&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;id&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="n">ilnurgi</span><span class="s">&#39;})</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="sqlite3.Cursor.executemany">
+<code class="descname">executemany</code><span class="sig-paren">(</span><em>sql</em>, <em>args</em><span class="sig-paren">)</span><a class="headerlink" href="#sqlite3.Cursor.executemany" title="Ссылка на это определение">¶</a></dt>
+<dd><p>выполняет запрос несколько раз</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s">&#39;insert into table values (?, ?)&#39;</span><span class="p">,</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="s">&#39;ilnurgi&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s">&#39;ilnurgi&#39;</span><span class="p">)])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="sqlite3.Cursor.exequtescript">
+<code class="descname">exequtescript</code><span class="sig-paren">(</span><em>sql</em><span class="sig-paren">)</span><a class="headerlink" href="#sqlite3.Cursor.exequtescript" title="Ссылка на это определение">¶</a></dt>
+<dd><p>выполняет несколько запросов за один раз</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><strong>sql</strong> (<em>str</em>) &#8211; строка с несколькими запросами</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rasises:</th><td class="field-body">sqlite3.DataBaseError</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sqlite3.Cursor.fetchall">
+<code class="descname">fetchall</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sqlite3.Cursor.fetchall" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает список кортежей всех записей запроса</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sqlite3.Cursor.fetchmany">
+<code class="descname">fetchmany</code><span class="sig-paren">(</span><span class="optional">[</span><em>size=cursor.arraysize</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#sqlite3.Cursor.fetchmany" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает список кортежей записей запроса</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">cur</span><span class="o">.</span><span class="n">fetchmany</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="go">[(1, &#39;name1&#39;), (2, &#39;name2&#39;), (3, &#39;name3&#39;)]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="sqlite3.Cursor.fetchone">
+<code class="descname">fetchone</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sqlite3.Cursor.fetchone" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает одну запись из результата запроса в виде кортежа. Если записей больше нет, вернет None.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sqlite3.Cursor.__next__">
+<code class="descname">__next__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sqlite3.Cursor.__next__" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает одну запись из результата запроса в виде кортежа. Если записей больше нет, возбуждает исключение StopIteration.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="sqlite3.Cursor.description">
+<code class="descname">description</code><a class="headerlink" href="#sqlite3.Cursor.description" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает кортеж кортежей с именами полей в результате выполнения инструкции SELECT.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="sqlite3.Cursor.lastrowid">
+<code class="descname">lastrowid</code><a class="headerlink" href="#sqlite3.Cursor.lastrowid" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает индекс последней добавленной записи с помощью инструкции INSERT и метода <cite>exequte()</cite>. Если индекс не определен то вернет None.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="sqlite3.Cursor.rowcount">
+<code class="descname">rowcount</code><a class="headerlink" href="#sqlite3.Cursor.rowcount" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает количество измененных или удаленных записей. Если количество не определено, возвращает -1.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="id6">
+<h2>Иерархия ошибок модуля<a class="headerlink" href="#id6" title="Ссылка на этот заголовок">¶</a></h2>
+<ul>
+<li><p class="first">Exception -</p>
+<blockquote>
+<div><ul>
+<li><p class="first">Warning - важные предупреждения</p>
+</li>
+<li><p class="first">Error - базовый класс для всех ошибок</p>
+<blockquote>
+<div><ul>
+<li><p class="first">InterfaceError - ошибки с интерфейсом</p>
+</li>
+<li><p class="first">DatabaseError - базовый класс для ошибок БД</p>
+<blockquote>
+<div><ul class="simple">
+<li>DataError - ошибка при обработке данных</li>
+<li>OperationError - ошибка связана с опрецией в БД</li>
+<li>IntegrityError - ошибка с внешними ключами или индексом</li>
+<li>InternalError - внутренняя ошибка БД</li>
+<li>ProgrammingError - ошибка программирования</li>
+<li>NotSupportedError - ошибка при использовании методов, не поддерживаемых БД</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Оглавление</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">sqlite3</a><ul>
+<li><a class="reference internal" href="#id1">Атрибуты модуля</a></li>
+<li><a class="reference internal" href="#id2">Методы модуля</a></li>
+<li><a class="reference internal" href="#id5">Классы модуля</a></li>
+<li><a class="reference internal" href="#id6">Иерархия ошибок модуля</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Предыдущий раздел</h4>
+  <p class="topless"><a href="socket.html"
+                        title="предыдущая глава">socket</a></p>
+  <h4>Следующий раздел</h4>
+  <p class="topless"><a href="string.html"
+                        title="следующая глава">string</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Эта страница</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/modules/sqlite3.txt"
+            rel="nofollow">Исходный текст</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Быстрый поиск</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Искать" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Введите слова для поиска или имя модуля, класса или функции.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Алфавитный указатель"
+             >указатель</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="string.html" title="string"
+             >вперёд</a> |</li>
+        <li class="right" >
+          <a href="socket.html" title="socket"
+             >назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Документация python документация 2015.05.20</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Основные модули</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright ilnurgi.
+      Создано с помощью <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

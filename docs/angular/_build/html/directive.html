@@ -1,0 +1,420 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Директивы &mdash; angular 14.10.12 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '14.10.12',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="angular 14.10.12 documentation" href="index.html" />
+    <link rel="next" title="Фильтры" href="filters.html" />
+    <link rel="prev" title="Синтаксис шаблонов" href="template.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="filters.html" title="Фильтры"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="template.html" title="Синтаксис шаблонов"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">angular 14.10.12 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="id1">
+<h1>Директивы<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Директивы являются одной из ключевых возможностей Angular.JS.
+Они позволяют разработчику описать поведение отдельных элементов и расширить синтаксис HTML.
+В js коде директивы принято называть camelCase&#8217;ом <cite>ngApp</cite>, а в шаблонах писать их через тире <cite>ng-app</cite></p>
+<div class="section" id="id2">
+<h2>Стандартные директивы<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<dl class="attribute">
+<dt id="ngApp">
+<tt class="descname">ngApp</tt><a class="headerlink" href="#ngApp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Главная директива приложения, задает область ангуляр приложения или создает область для модуля.
+Можно указать дополнительный атрибут, название приложения.</p>
+<ol class="arabic simple">
+<li>создается инжектор(injector), который будет использоваться для dependency injection</li>
+<li>инжектор создает root scope, что является контекстом для модели нашего приложения</li>
+<li>AngularJS “компилирует” DOM начиная с ngApp.</li>
+</ol>
+<div class="highlight-python"><div class="highlight"><pre>&lt;body ng-app&gt;&lt;/body&gt;
+
+// или
+
+&lt;body ng-app=&#39;myApp&#39;&gt;&lt;/body&gt;
+
+var app = angular.module(&#39;myApp&#39;, []);
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ngChange">
+<tt class="descname">ngChange</tt><a class="headerlink" href="#ngChange" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ngChecked">
+<tt class="descname">ngChecked</tt><a class="headerlink" href="#ngChecked" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ngClass">
+<tt class="descname">ngClass</tt><a class="headerlink" href="#ngClass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Задает новый класс элементу</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ngClassEven">
+<tt class="descname">ngClassEven</tt><a class="headerlink" href="#ngClassEven" title="Permalink to this definition">¶</a></dt>
+<dd><p>Задает новый класс каждому четному элементу</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ngClassOdd">
+<tt class="descname">ngClassOdd</tt><a class="headerlink" href="#ngClassOdd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Задает новый класс каждому нечетному элементу</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ngClick">
+<tt class="descname">ngClick</tt><a class="headerlink" href="#ngClick" title="Permalink to this definition">¶</a></dt>
+<dd><p>Обработчик клика по элементу</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ngController">
+<tt class="descname">ngController</tt><a class="headerlink" href="#ngController" title="Permalink to this definition">¶</a></dt>
+<dd><p>Связывание элемента html c контроллером</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;div ng-controller=&#39;myController&#39;&gt;&lt;/div&gt;
+
+app.controller(
+    &#39;myController&#39;,
+    function($scope, $location){
+        // данная функция может принимать любые параметры
+        // всех их ангуляр достанет используя dependence ingection
+        ...
+    }
+)
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ngDisabled">
+<tt class="descname">ngDisabled</tt><a class="headerlink" href="#ngDisabled" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ngHide">
+<tt class="descname">ngHide</tt><a class="headerlink" href="#ngHide" title="Permalink to this definition">¶</a></dt>
+<dd><p>Скрывает элемент</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ngHref">
+<tt class="descname">ngHref</tt><a class="headerlink" href="#ngHref" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ngDblClick">
+<tt class="descname">ngDblClick</tt><a class="headerlink" href="#ngDblClick" title="Permalink to this definition">¶</a></dt>
+<dd><p>Обработчик двойного клика по элементу</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ngForm">
+<tt class="descname">ngForm</tt><a class="headerlink" href="#ngForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Связывает элементы формы</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ngInclude">
+<tt class="descname">ngInclude</tt><a class="headerlink" href="#ngInclude" title="Permalink to this definition">¶</a></dt>
+<dd><p>подключает отдельный файлы</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ngMousedown">
+<tt class="descname">ngMousedown</tt><a class="headerlink" href="#ngMousedown" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ngMouseenter">
+<tt class="descname">ngMouseenter</tt><a class="headerlink" href="#ngMouseenter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ngMouseleave">
+<tt class="descname">ngMouseleave</tt><a class="headerlink" href="#ngMouseleave" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ngMousemove">
+<tt class="descname">ngMousemove</tt><a class="headerlink" href="#ngMousemove" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ngMouseover">
+<tt class="descname">ngMouseover</tt><a class="headerlink" href="#ngMouseover" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ngMouseup">
+<tt class="descname">ngMouseup</tt><a class="headerlink" href="#ngMouseup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ngModel">
+<tt class="descname">ngModel</tt><a class="headerlink" href="#ngModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Задает модель для связывания</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ngReadOnly">
+<tt class="descname">ngReadOnly</tt><a class="headerlink" href="#ngReadOnly" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ngRepeat">
+<tt class="descname">ngRepeat</tt><a class="headerlink" href="#ngRepeat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Цикл перебора массива</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;ul&gt;
+    &lt;li ng-repeat=&quot;phone in phones&quot;&gt;
+        {{phone.name}}
+    &lt;/li&gt;
+&lt;/ul&gt;
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ngSelected">
+<tt class="descname">ngSelected</tt><a class="headerlink" href="#ngSelected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ngShow">
+<tt class="descname">ngShow</tt><a class="headerlink" href="#ngShow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Отображает элемент</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ngSrc">
+<tt class="descname">ngSrc</tt><a class="headerlink" href="#ngSrc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ngStyle">
+<tt class="descname">ngStyle</tt><a class="headerlink" href="#ngStyle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ngSubmit">
+<tt class="descname">ngSubmit</tt><a class="headerlink" href="#ngSubmit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Позволяет забиндить действие, которое будет выполняться при отправке данных из формы.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ngTransclude">
+<tt class="descname">ngTransclude</tt><a class="headerlink" href="#ngTransclude" title="Permalink to this definition">¶</a></dt>
+<dd><p>используется внутри кастомных директив для вывода контета заданого снаржу при объявлении директивы</p>
+</dd></dl>
+
+</div>
+<div class="section" id="id3">
+<h2>Как написать свою директиву<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-js"><div class="highlight"><pre><span class="c1">// простая директива</span>
+<span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">&#39;transclude&#39;</span><span class="p">,</span> <span class="p">[])</span>
+    <span class="p">.</span><span class="nx">directive</span><span class="p">(</span>
+        <span class="s1">&#39;pane&#39;</span><span class="p">,</span>
+        <span class="kd">function</span><span class="p">(){</span>
+            <span class="k">return</span> <span class="kd">function</span><span class="p">(){</span>
+                <span class="p">...</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">);</span>
+
+<span class="c1">// директива с настройками</span>
+<span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">&#39;transclude&#39;</span><span class="p">,</span> <span class="p">[])</span>
+    <span class="p">.</span><span class="nx">directive</span><span class="p">(</span>
+        <span class="s1">&#39;pane&#39;</span><span class="p">,</span>
+        <span class="kd">function</span><span class="p">(){</span>
+            <span class="k">return</span> <span class="p">{</span>
+                <span class="nx">restrict</span><span class="o">:</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span>
+                <span class="nx">transclude</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="nx">scope</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">title</span><span class="o">:</span><span class="s1">&#39;@&#39;</span>
+                <span class="p">},</span>
+                <span class="nx">template</span><span class="o">:</span> <span class="s1">&#39;&lt;div style=&quot;border: 1px solid black;&quot;&gt;&#39;</span> <span class="o">+</span>
+                          <span class="s1">&#39;&lt;div style=&quot;background-color: gray&quot;&gt;{{title}}&lt;/div&gt;&#39;</span> <span class="o">+</span>
+                          <span class="s1">&#39;&lt;div ng-transclude&gt;&lt;/div&gt;&#39;</span> <span class="o">+</span>
+                          <span class="s1">&#39;&lt;/div&gt;&#39;</span>
+            <span class="p">};</span>
+        <span class="p">};</span>
+    <span class="p">});</span>
+</pre></div>
+</div>
+<p>Описание параметров директив</p>
+<ul>
+<li><p class="first"><cite>priority</cite> - приоретива выполения(для случая когда на одном элементе несколько директив) <cite>1</cite></p>
+</li>
+<li><p class="first"><cite>template</cite> - шаблон HTML <cite>&lt;div ng-click=”doSomething()”&gt;&lt;/div&gt;</cite></p>
+</li>
+<li><p class="first"><cite>templateUrl</cite> - ссылка на файл шаблона <cite>./views/alert.html</cite></p>
+</li>
+<li><p class="first"><cite>replace</cite> - если <cite>true</cite> – то шаблон диретивы заменит элемент, <cite>false</cite> – произойдет append</p>
+</li>
+<li><p class="first"><cite>transclude</cite> - компилирует контект элемента и делает возможные его вставку внутрь шаблона (по средством ngTransclude )</p>
+</li>
+<li><dl class="first docutils">
+<dt><cite>restrict</cite> - задает способ встраивания(смотри выше):</dt>
+<dd><ul class="first last simple">
+<li><cite>E</cite> - тэг(имя элемента)</li>
+<li><cite>A</cite> - атрибут</li>
+<li><cite>C</cite> - класс</li>
+<li><cite>M</cite> - комментарий</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><cite>scope</cite> - Определяет способ переда scope в директиву</dt>
+<dd><p class="first">В зависимости от типа переданного параметра видет себя по разному:</p>
+<ul class="last">
+<li><p class="first"><cite>true</cite> – создается новый scope конкретно для этой директивы</p>
+</li>
+<li><dl class="first docutils">
+<dt><cite>{}</cite> - задается конкретный изолированный scope – т.е. scope не унаследованный от родительского</dt>
+<dd><p class="first last">Может влючать в себе ссылки на элементы родительского scope при использоварнии нетривиального синтаксиса
+(специальный префикс символ (&#64;, =, &amp; )перед имеем метода/переменой):
+* <cite>&#64;</cite> – переменную локального scope со значением DOM аттрибута
+* <cite>=</cite> – двустороннее связывание значения атрибута и переменной
+* <cite>&amp;</cite> – позволяет выполнять выражения из аттрибута в рамках родительского scope</p>
+</dd>
+</dl>
+</li>
+<li><p class="first"><cite>false</cite> - используется scope ближайшего контроллера (default)</p>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><cite>controller</cite> - метод (либо ссылка на метод) где описано поведение(логика) <cite>dialogDirectiveController</cite></dt>
+<dd><p class="first last">Необходима в случае, когда логика директивы выходит за пределы одного метода и нам уже необходимма группа методов.
+Такую группу методов мы можем объединить в функцию-контроллер.
+Это будет специальный тип контроллера &#8220;связанный с директивой&#8221;,
+которые должен взаимодействать только с данной директивой.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><cite>compile</cite> - метод(либо ссылка на метод) с инструкциями по компиляции шаблона <cite>function(tElement, tAttrs, transclude){ … }</cite></dt>
+<dd><p class="first last">Функция компиляции compile (используется довольно редко)  трансформирует HTML шаблон.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><cite>link</cite> - основной параметр фаблири – метод(либо ссылка на метод) по связыванию директивы с приложением <cite>function(scope, iElement, iAttrs){ … }</cite></dt>
+<dd><p class="first last">После компиляции функция линковки link регистрирует обработчики событий на DOM обновленного HTML.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Директивы</a><ul>
+<li><a class="reference internal" href="#id2">Стандартные директивы</a></li>
+<li><a class="reference internal" href="#id3">Как написать свою директиву</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="template.html"
+                        title="previous chapter">Синтаксис шаблонов</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="filters.html"
+                        title="next chapter">Фильтры</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/directive.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="filters.html" title="Фильтры"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="template.html" title="Синтаксис шаблонов"
+             >previous</a> |</li>
+        <li><a href="index.html">angular 14.10.12 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright ilnurgi, последняя сборка 2014-10-12.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

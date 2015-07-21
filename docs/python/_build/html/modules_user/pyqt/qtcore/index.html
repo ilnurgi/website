@@ -1,0 +1,450 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>QtCore - модуль содержит классы, не связанные с реализацией графического интерфейса. &mdash; Документация python документация 2015.05.20</title>
+    
+    <link rel="stylesheet" href="../../../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2015.05.20',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Документация python документация 2015.05.20" href="../../../index.html" />
+    <link rel="up" title="pyqt - кросплатформенный фреймворк" href="../index.html" />
+    <link rel="next" title="Qt - класс, содержащий константы" href="qt.html" />
+    <link rel="prev" title="pyqt - кросплатформенный фреймворк" href="../index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="Алфавитный указатель"
+             accesskey="I">указатель</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="qt.html" title="Qt - класс, содержащий константы"
+             accesskey="N">вперёд</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="pyqt - кросплатформенный фреймворк"
+             accesskey="P">назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Документация python документация 2015.05.20</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Сторонние модули</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" accesskey="U">pyqt - кросплатформенный фреймворк</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <span class="target" id="module-QtCore"></span><div class="section" id="qtcore">
+<h1>QtCore - модуль содержит классы, не связанные с реализацией графического интерфейса.<a class="headerlink" href="#qtcore" title="Ссылка на этот заголовок">¶</a></h1>
+<div class="section" id="id1">
+<h2>Список классов модуля<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="qt.html">Qt - класс, содержащий константы</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qpoint.html">QPoint - объект, точка</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qpointf.html">QPointF - объект, точка (для работы с вещественными числами)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qrect.html">QRect - объект, область</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qrectf.html">QRectF - объект, область ()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qsize.html">QSize - объект, задает размер</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qsizef.html">QSizeF - объект, задает размер (для работы с вещественными числами)</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>Базовые типы данных фреймворка<a class="headerlink" href="#id2" title="Ссылка на этот заголовок">¶</a></h2>
+</div>
+<div class="section" id="qobject">
+<h2>QObject<a class="headerlink" href="#qobject" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="QtCore.QObject">
+<em class="property">class </em><code class="descclassname">QtCore.</code><code class="descname">QObject</code><a class="headerlink" href="#QtCore.QObject" title="Ссылка на это определение">¶</a></dt>
+<dd><p>базовый класс для всех объектов модуля</p>
+<blockquote>
+<div><dl class="method">
+<dt id="QtCore.QObject.blockSignals">
+<code class="descname">blockSignals</code><span class="sig-paren">(</span><em>block</em><span class="sig-paren">)</span><a class="headerlink" href="#QtCore.QObject.blockSignals" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><strong>block</strong> (<em>bool</em>) &#8211; </td>
+</tr>
+</tbody>
+</table>
+<p>Возвращает предыдущее состояние и временно блокирует/разблокирует прием сигналов.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="QtCore.QObject.connect">
+<code class="descname">connect</code><span class="sig-paren">(</span><em>qobject</em>, <em>signal</em>, <em>callback</em><span class="optional">[</span>, <em>&lt;ConnectionType&gt;</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#QtCore.QObject.connect" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">connect</code><span class="sig-paren">(</span><em>qobject</em>, <em>signal</em>, <em>qobject2</em>, <em>slot</em><span class="optional">[</span>, <em>&lt;ConnectionType&gt;</em><span class="optional">]</span><span class="sig-paren">)</span></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">connect</code><span class="sig-paren">(</span><em>qobject</em>, <em>signal</em>, <em>qobject2</em>, <em>signal2</em><span class="optional">[</span>, <em>&lt;ConnectionType&gt;</em><span class="optional">]</span><span class="sig-paren">)</span></dt>
+<dd><p>Вешает обработчик на какой то сигнал, и возвращает логический статус работы.</p>
+<ul class="simple">
+<li>qobject - <a class="reference internal" href="#QtCore.QObject" title="QtCore.QObject"><code class="xref py py-class docutils literal"><span class="pre">QtCore.QObject</span></code></a>, объект, сигнал которого мы слушаем</li>
+<li>qobject2 - <a class="reference internal" href="#QtCore.QObject" title="QtCore.QObject"><code class="xref py py-class docutils literal"><span class="pre">QtCore.QObject</span></code></a>, объект, сигал которого мы вызываем при обработке сигнала первого объекта</li>
+<li>signal - <code class="xref py py-class docutils literal"><span class="pre">QtCore.SIGNAL</span></code>, сигнал объекта, который мы слушаем</li>
+<li>signal2 - <code class="xref py py-class docutils literal"><span class="pre">QtCore.SIGNAL</span></code>, сигнал второго объекта, который мы слушаем</li>
+<li>slot - <code class="xref py py-class docutils literal"><span class="pre">QtCore.SLOT</span></code>, слот второго бъекта, который мы вызываем</li>
+<li>callback - обработчик сигнала. В качестве обработчиков можно использовать функции, экземпляры класса, которые должны иметь метод <cite>__call__</cite></li>
+<li>ConnectionType - определяет тип соединения между сигналом и обработчиком. Используется при использовании нескольких потоков в приложении, т.к. изменять гуи поток из другого потока нельзя.<ul>
+<li>QtCore.Qt.AutoConnection - по умолчанию. Если источник сигнала и обработчик находятся в одном потоке, то эквивалентно значению DirectConnection, а если в разных - то QueuedConnection</li>
+<li>QtCore.Qt.DirectConnection - обработчик вызывается сразу после генерации сигнала</li>
+<li>QtCore.Qt.QueuedConnection - сигнал помещается в очередь обработки событий</li>
+<li>QtCore.Qt.BlockingQueuedConnection - аналогично QueuedConnection, но пока сигнал не обработан, поток будет заблокирован. Источник сигнала и обработчик должны быть в разных потоках</li>
+<li>QtCore.Qt.UniqueConnection - аналогично AutoConnection, но обработчик можно назначить только если он не был назначен ранее.</li>
+<li>QtCore.Qt.Autocornpatconnection - значение используется в Qt3</li>
+</ul>
+</li>
+</ul>
+<div class="highlight-py"><div class="highlight"><pre><span class="n">QtCore</span><span class="o">.</span><span class="n">QObject</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">button</span><span class="p">,</span> <span class="n">QtCore</span><span class="o">.</span><span class="n">SIGNAL</span><span class="p">(</span><span class="s">&quot;clicked()&quot;</span><span class="p">),</span> <span class="n">on</span> <span class="n">clicked</span><span class="p">)</span>
+
+<span class="n">widget</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">button</span><span class="p">,</span> <span class="n">QtCore</span><span class="o">.</span><span class="n">SIGNAL</span><span class="p">(</span><span class="s">&#39;clicked()&#39;</span><span class="p">),</span> <span class="n">widget</span><span class="p">,</span> <span class="n">QtCore</span><span class="o">.</span><span class="n">SLOT</span><span class="p">(</span><span class="s">&#39;func()&#39;</span><span class="p">))</span>
+
+<span class="n">widget</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">button</span><span class="p">,</span> <span class="n">QtCore</span><span class="o">.</span><span class="n">SIGNAL</span><span class="p">(</span><span class="s">&#39;clicked()&#39;</span><span class="p">),</span> <span class="n">callback</span><span class="p">)</span>
+
+<span class="c"># ======================================</span>
+<span class="c"># другой способ навешивания обработчиков</span>
+<span class="c"># ======================================</span>
+<span class="n">button</span><span class="o">.</span><span class="n">clicked</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+
+<span class="c"># обработчик - класс, которому мы передаем какие то доп параметры</span>
+<span class="n">button</span><span class="o">.</span><span class="n">clicked</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">MyClass</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+
+<span class="bp">self</span><span class="o">.</span><span class="n">button2</span><span class="o">.</span><span class="n">clicked</span><span class="p">[</span><span class="s">&quot;bool&quot;</span><span class="p">]</span> <span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">on_clicked_button2</span><span class="p">)</span>
+
+<span class="c"># через декоратор</span>
+<span class="nd">@button.clicked.connect</span>
+<span class="k">def</span> <span class="nf">func</span><span class="p">():</span> <span class="k">pass</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="QtCore.QObject.disconnect">
+<code class="descname">disconnect</code><span class="sig-paren">(</span><em>qobject</em>, <em>signal</em>, <em>callback</em><span class="sig-paren">)</span><a class="headerlink" href="#QtCore.QObject.disconnect" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">disconnect</code><span class="sig-paren">(</span><em>qobject</em>, <em>signal</em>, <em>qobject2</em>, <em>slot</em><span class="sig-paren">)</span></dt>
+<dd><p>Удаляет обработчик сигнала, и возвращает логический статус работы.</p>
+<ul class="simple">
+<li>qobject - <a class="reference internal" href="#QtCore.QObject" title="QtCore.QObject"><code class="xref py py-class docutils literal"><span class="pre">QtCore.QObject</span></code></a>, объект, сигнал которого мы слушали</li>
+<li>qobject2 - <a class="reference internal" href="#QtCore.QObject" title="QtCore.QObject"><code class="xref py py-class docutils literal"><span class="pre">QtCore.QObject</span></code></a>, объект, сигал которого мы вызывали при обработке сигнала первого объекта</li>
+<li>signal - <code class="xref py py-class docutils literal"><span class="pre">QtCore.SIGNAL</span></code>, сигнал объекта, который мы слушали</li>
+<li>signal2 - <code class="xref py py-class docutils literal"><span class="pre">QtCore.SIGNAL</span></code>, сигнал второго объекта, который мы слушали</li>
+<li>slot - <code class="xref py py-class docutils literal"><span class="pre">QtCore.SLOT</span></code>, слот второго бъекта, который мы вызывали</li>
+<li>callback - обработчик сигнала.</li>
+</ul>
+<div class="highlight-py"><div class="highlight"><pre><span class="c"># ======================================</span>
+<span class="c"># другой способ удаления обработчиков</span>
+<span class="c"># ======================================</span>
+
+<span class="bp">self</span><span class="o">.</span><span class="n">buttonl</span><span class="o">.</span><span class="n">clicked</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">button2</span><span class="o">.</span><span class="n">clicked</span><span class="p">[</span><span class="s">&quot;bool&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">disconnect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">on_clicked_button2</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="QtCore.QObject.emit">
+<code class="descname">emit</code><span class="sig-paren">(</span><em>signal</em><span class="optional">[</span>, <em>args</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#QtCore.QObject.emit" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Генерирует сигнал в системе</p>
+<div class="highlight-py"><div class="highlight"><pre><span class="bp">self</span><span class="o">.</span><span class="n">button2</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="n">QtCore</span><span class="o">.</span><span class="n">SIGNAL</span><span class="p">(</span><span class="s">&quot;c1icked(boo1)&quot;</span><span class="p">),</span> <span class="bp">False</span><span class="p">)</span>
+
+<span class="c"># ======================================</span>
+<span class="c"># другой способ генерации сигналов</span>
+<span class="c"># ======================================</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">button2</span><span class="o">.</span><span class="n">clicked</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">button2</span><span class="o">.</span><span class="n">clicked</span><span class="p">[</span><span class="s">&quot;bool&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="QtCore.QObject.signalBlocked">
+<code class="descname">signalBlocked</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#QtCore.QObject.signalBlocked" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает логическое предтсаление состояни блокировки приема сигналов</p>
+</dd></dl>
+
+</div></blockquote>
+</dd></dl>
+
+</div>
+<div class="section" id="qstring">
+<h2>QString<a class="headerlink" href="#qstring" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="QtCore.QString">
+<em class="property">class </em><code class="descclassname">QtCore.</code><code class="descname">QString</code><a class="headerlink" href="#QtCore.QString" title="Ссылка на это определение">¶</a></dt>
+<dd><p>юникод строка</p>
+</dd></dl>
+
+</div>
+<div class="section" id="qchar">
+<h2>QChar<a class="headerlink" href="#qchar" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="QtCore.QChar">
+<em class="property">class </em><code class="descclassname">QtCore.</code><code class="descname">QChar</code><a class="headerlink" href="#QtCore.QChar" title="Ссылка на это определение">¶</a></dt>
+<dd><p>юникод символ</p>
+</dd></dl>
+
+</div>
+<div class="section" id="qstringlist">
+<h2>QStringList<a class="headerlink" href="#qstringlist" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="QtCore.QStringList">
+<em class="property">class </em><code class="descclassname">QtCore.</code><code class="descname">QStringList</code><a class="headerlink" href="#QtCore.QStringList" title="Ссылка на это определение">¶</a></dt>
+<dd><p>массив юникод строк</p>
+</dd></dl>
+
+</div>
+<div class="section" id="qbytearray">
+<h2>QByteArray<a class="headerlink" href="#qbytearray" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="QtCore.QByteArray">
+<em class="property">class </em><code class="descclassname">QtCore.</code><code class="descname">QByteArray</code><a class="headerlink" href="#QtCore.QByteArray" title="Ссылка на это определение">¶</a></dt>
+<dd><p>массив байтов</p>
+</dd></dl>
+
+</div>
+<div class="section" id="qvariant">
+<h2>QVariant<a class="headerlink" href="#qvariant" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="QtCore.QVariant">
+<em class="property">class </em><code class="descclassname">QtCore.</code><code class="descname">QVariant</code><a class="headerlink" href="#QtCore.QVariant" title="Ссылка на это определение">¶</a></dt>
+<dd><p>может хранить данные любого типа</p>
+<dl class="method">
+<dt id="QtCore.QVariant.toPyObject">
+<code class="descname">toPyObject</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#QtCore.QVariant.toPyObject" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает, преобразованные в python тип, данные</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="qpynullvariant">
+<h2>QPyNullVariant<a class="headerlink" href="#qpynullvariant" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="QtCore.QPyNullVariant">
+<em class="property">class </em><code class="descclassname">QtCore.</code><code class="descname">QPyNullVariant</code><span class="sig-paren">(</span><em>&lt;тип&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#QtCore.QPyNullVariant" title="Ссылка на это определение">¶</a></dt>
+<dd><p>пустой объект, определенного типа</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">a</span> <span class="o">=</span> <span class="n">QPyNullVariant</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">isNull</span><span class="p">(),</span> <span class="n">a</span><span class="o">.</span><span class="n">typeName</span><span class="p">()</span>
+<span class="bp">True</span><span class="p">,</span> <span class="s">&#39;int&#39;</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">QPyNullVariant</span><span class="p">(</span><span class="s">&#39;QString&#39;</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">isNull</span><span class="p">(),</span> <span class="n">a</span><span class="o">.</span><span class="n">typeName</span><span class="p">()</span>
+<span class="bp">True</span><span class="p">,</span> <span class="s">&#39;QString&#39;</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="QtCore.QPyNullVariant.isNull">
+<code class="descname">isNull</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#QtCore.QPyNullVariant.isNull" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает истину или ложь, объект пустой</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="QtCore.QPyNullVariant.typeName">
+<code class="descname">typeName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#QtCore.QPyNullVariant.typeName" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает тип объекта</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="qdate">
+<h2>QDate<a class="headerlink" href="#qdate" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="QtCore.QDate">
+<em class="property">class </em><code class="descclassname">QtCore.</code><code class="descname">QDate</code><a class="headerlink" href="#QtCore.QDate" title="Ссылка на это определение">¶</a></dt>
+<dd><p>представление даты</p>
+</dd></dl>
+
+</div>
+<div class="section" id="qtime">
+<h2>QTime<a class="headerlink" href="#qtime" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="QtCore.QTime">
+<em class="property">class </em><code class="descclassname">QtCore.</code><code class="descname">QTime</code><a class="headerlink" href="#QtCore.QTime" title="Ссылка на это определение">¶</a></dt>
+<dd><p>представление времени</p>
+</dd></dl>
+
+</div>
+<div class="section" id="qdatetime">
+<h2>QDateTime<a class="headerlink" href="#qdatetime" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="QtCore.QDateTime">
+<em class="property">class </em><code class="descclassname">QtCore.</code><code class="descname">QDateTime</code><a class="headerlink" href="#QtCore.QDateTime" title="Ссылка на это определение">¶</a></dt>
+<dd><p>представление даты и времени</p>
+</dd></dl>
+
+</div>
+<div class="section" id="qtextstream">
+<h2>QTextStream<a class="headerlink" href="#qtextstream" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="QtCore.QTextStream">
+<em class="property">class </em><code class="descclassname">QtCore.</code><code class="descname">QTextStream</code><a class="headerlink" href="#QtCore.QTextStream" title="Ссылка на это определение">¶</a></dt>
+<dd><p>текстовый поток</p>
+</dd></dl>
+
+</div>
+<div class="section" id="qurl">
+<h2>QUrl<a class="headerlink" href="#qurl" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="QtCore.QUrl">
+<em class="property">class </em><code class="descclassname">QtCore.</code><code class="descname">QUrl</code><a class="headerlink" href="#QtCore.QUrl" title="Ссылка на это определение">¶</a></dt>
+<dd><p>url-адрес</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="QtCore.pyqtSignal">
+<code class="descclassname">QtCore.</code><code class="descname">pyqtSignal</code><span class="sig-paren">(</span><em>*types</em><span class="optional">[</span>, <em>name</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#QtCore.pyqtSignal" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Регистрирует пользовательские сигналы в системе</p>
+<ul class="simple">
+<li>args - названия типов данных, которые принимает метод.<ul>
+<li>Если тип из с++, его указывает в виде строки</li>
+<li>Если сигнал имеет несколько перегруженных методов, то типы указываются в виде списка</li>
+</ul>
+</li>
+<li>name - имя сигнала</li>
+</ul>
+<div class="highlight-py"><div class="highlight"><pre><span class="n">mysignal</span> <span class="o">=</span> <span class="n">QtCore</span><span class="o">.</span><span class="n">pyqtSignal</span><span class="p">([</span><span class="nb">int</span><span class="p">],</span> <span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s">&#39;mysignal&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="QtCore.pyqtSlot">
+<code class="descclassname">QtCore.</code><code class="descname">pyqtSlot</code><span class="sig-paren">(</span><em>*types</em>, <em>name=None</em>, <em>result=None</em><span class="sig-paren">)</span><a class="headerlink" href="#QtCore.pyqtSlot" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Декоратор, устанавливает пользовательский метод как слот. Чтобы создать перегруженную версию слота, декоратор указывается несколько раз</p>
+<ul class="simple">
+<li>args - названия типов данных, которые принимает метод.<ul>
+<li>Если тип из с++, его указывает в виде строки</li>
+</ul>
+</li>
+<li>name - имя слота, если не задан то соответсвует имени слота</li>
+<li>result - тип возвращаемых данных</li>
+</ul>
+<div class="highlight-py"><div class="highlight"><pre><span class="n">mysignal</span> <span class="o">=</span> <span class="n">QtCore</span><span class="o">.</span><span class="n">pyqtSignal</span><span class="p">([</span><span class="nb">int</span><span class="p">],</span> <span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s">&#39;mysignal&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../../index.html">Оглавление</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">QtCore - модуль содержит классы, не связанные с реализацией графического интерфейса.</a><ul>
+<li><a class="reference internal" href="#id1">Список классов модуля</a></li>
+<li><a class="reference internal" href="#id2">Базовые типы данных фреймворка</a></li>
+<li><a class="reference internal" href="#qobject">QObject</a></li>
+<li><a class="reference internal" href="#qstring">QString</a></li>
+<li><a class="reference internal" href="#qchar">QChar</a></li>
+<li><a class="reference internal" href="#qstringlist">QStringList</a></li>
+<li><a class="reference internal" href="#qbytearray">QByteArray</a></li>
+<li><a class="reference internal" href="#qvariant">QVariant</a></li>
+<li><a class="reference internal" href="#qpynullvariant">QPyNullVariant</a></li>
+<li><a class="reference internal" href="#qdate">QDate</a></li>
+<li><a class="reference internal" href="#qtime">QTime</a></li>
+<li><a class="reference internal" href="#qdatetime">QDateTime</a></li>
+<li><a class="reference internal" href="#qtextstream">QTextStream</a></li>
+<li><a class="reference internal" href="#qurl">QUrl</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Предыдущий раздел</h4>
+  <p class="topless"><a href="../index.html"
+                        title="предыдущая глава">pyqt - кросплатформенный фреймворк</a></p>
+  <h4>Следующий раздел</h4>
+  <p class="topless"><a href="qt.html"
+                        title="следующая глава">Qt - класс, содержащий константы</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Эта страница</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/modules_user/pyqt/qtcore/index.txt"
+            rel="nofollow">Исходный текст</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Быстрый поиск</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Искать" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Введите слова для поиска или имя модуля, класса или функции.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="Алфавитный указатель"
+             >указатель</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="qt.html" title="Qt - класс, содержащий константы"
+             >вперёд</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="pyqt - кросплатформенный фреймворк"
+             >назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Документация python документация 2015.05.20</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Сторонние модули</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >pyqt - кросплатформенный фреймворк</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright ilnurgi.
+      Создано с помощью <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

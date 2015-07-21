@@ -1,0 +1,628 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>String &mdash; java doc 14.10.12 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.10.12',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="java doc 14.10.12 documentation" href="../index.html" />
+    <link rel="next" title="Welcome to java doc’s documentation!" href="../java/index.html" />
+    <link rel="prev" title="Тип данных" href="variables.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../java/index.html" title="Welcome to java doc’s documentation!"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="variables.html" title="Тип данных"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">java doc 14.10.12 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="string">
+<h1>String<a class="headerlink" href="#string" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="String">
+<em class="property">class </em><tt class="descname">String</tt><a class="headerlink" href="#String" title="Permalink to this definition">¶</a></dt>
+<dd><p>объект строка, реализует интерфейс CharSequense</p>
+<dl class="method">
+<dt id="String.String">
+<tt class="descname">String</tt><big>(</big><big>)</big><a class="headerlink" href="#String.String" title="Permalink to this definition">¶</a></dt>
+<dd><p>создается объект с пустой строкой</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">String</tt><big>(</big><em>String str</em><big>)</big></dt>
+<dd><p>конструктор копирования: из одного объекта создается его точная копия, поэтому данный конструктор используется редко</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">String</tt><big>(</big><em>StringBuffer str</em><big>)</big></dt>
+<dd><p>преобразованная копия объекта класса StringBuffer</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">String</tt><big>(</big><em>StringBuilder str</em><big>)</big></dt>
+<dd><p>преобразованная копия объекта класса StringBuilder</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">String</tt><big>(</big><em>byte[] byteArray</em><big>)</big></dt>
+<dd><p>объект создается из массива байтов byteArray</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">String</tt><big>(</big><em>char[] charArray</em><big>)</big></dt>
+<dd><p>объект создается из массива charArray символов Unicode</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">String</tt><big>(</big><em>byte[] byteArray</em>, <em>int offset</em>, <em>int count</em><big>)</big></dt>
+<dd><p>объект создается из части массива байтов byteArray , начинающейся с индекса offset и содержащей count байтов</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">String</tt><big>(</big><em>char[] charArray</em>, <em>int offset</em>, <em>int count</em><big>)</big></dt>
+<dd><p>то же, но массив состоит из символов Unicode</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">String</tt><big>(</big><em>int[] intArray</em>, <em>int offset</em>, <em>int count</em><big>)</big></dt>
+<dd><p>то же, но массив состоит из символов Unicode, записанных в массив целого типа, что позволяет использовать символы Unicode, занимающие больше двух байтов</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">String</tt><big>(</big><em>byte[] byteArray</em>, <em>String encoding</em><big>)</big></dt>
+<dd><p>символы, записанные в массиве байтов, задаются в Unicode-строке с учетом кодировки encoding</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">String</tt><big>(</big><em>byte[] byteArray</em>, <em>int offset</em>, <em>int count</em>, <em>String encoding</em><big>)</big></dt>
+<dd><p>то же самое, но только для части массива</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">String</tt><big>(</big><em>byte[] byteArray</em>, <em>Charset charset</em><big>)</big></dt>
+<dd><p>символы, записанные в массиве байтов, задаются в Unicode-строке с учетом кодировки, заданной объектом charset</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">String</tt><big>(</big><em>byte[] byteArray</em>, <em>int offset</em>, <em>int count</em>, <em>Charset charset</em><big>)</big></dt>
+<dd><p>то же самое, но только для части массива</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="String.copyValueOf">
+<em class="property">static </em><tt class="descname">copyValueOf</tt><big>(</big><em>char[] charArray</em><big>)</big><a class="headerlink" href="#String.copyValueOf" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt>
+<em class="property">static </em><tt class="descname">copyValueOf</tt><big>(</big><em>char[] charArray</em>, <em>int offset</em>, <em>int length</em><big>)</big></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="String.isEmpty">
+<em class="property">static </em><tt class="descname">isEmpty</tt><big>(</big><big>)</big><a class="headerlink" href="#String.isEmpty" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="String.getChars">
+<em class="property">static </em><tt class="descname">getChars</tt><big>(</big><em>int begin</em>, <em>int end</em>, <em>char[] dst</em>, <em>int ind</em><big>)</big><a class="headerlink" href="#String.getChars" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="String.substring">
+<em class="property">static </em><tt class="descname">substring</tt><big>(</big><em>int begin</em>, <em>int end</em><big>)</big><a class="headerlink" href="#String.substring" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt>
+<em class="property">static </em><tt class="descname">substring</tt><big>(</big><em>int begin</em><big>)</big></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="String.split">
+<em class="property">static </em><tt class="descname">split</tt><big>(</big><em>str str</em><big>)</big><a class="headerlink" href="#String.split" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="String.equals">
+<em class="property">static </em><tt class="descname">equals</tt><big>(</big><em>Object obj</em><big>)</big><a class="headerlink" href="#String.equals" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="String.equalsIgnoreCase">
+<em class="property">static </em><tt class="descname">equalsIgnoreCase</tt><big>(</big><em>Object obj</em><big>)</big><a class="headerlink" href="#String.equalsIgnoreCase" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="String.compareTo">
+<em class="property">static </em><tt class="descname">compareTo</tt><big>(</big><em>String str</em><big>)</big><a class="headerlink" href="#String.compareTo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="String.compareToIgnoreCase">
+<em class="property">static </em><tt class="descname">compareToIgnoreCase</tt><big>(</big><em>String str</em><big>)</big><a class="headerlink" href="#String.compareToIgnoreCase" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="String.indexOf">
+<em class="property">static </em><tt class="descname">indexOf</tt><big>(</big><em>int ch</em><big>)</big><a class="headerlink" href="#String.indexOf" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает число, позицию, указанного символа. поиск начинается сначала</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt>
+<em class="property">static </em><tt class="descname">indexOf</tt><big>(</big><em>String sub</em><big>)</big></dt>
+<dd><p>возвращает число, позицию, указанной строки. поиск начинается сначала</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt>
+<em class="property">static </em><tt class="descname">indexOf</tt><big>(</big><em>int ch</em>, <em>int ind</em><big>)</big></dt>
+<dd><p>возвращает число, позицию, указанного символа. поиск ведется от указанной позиции</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="String.lastIndexOf">
+<em class="property">static </em><tt class="descname">lastIndexOf</tt><big>(</big><em>int ch</em><big>)</big><a class="headerlink" href="#String.lastIndexOf" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает число, позицию, указанного символа. поиск начинается сконца</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt>
+<em class="property">static </em><tt class="descname">lastIndexOf</tt><big>(</big><em>int ch</em>, <em>int ind</em><big>)</big></dt>
+<dd><p>возвращает число, позицию, указанного символа. поиск начинается сконца с указанной позиции</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="String.startsWith">
+<em class="property">static </em><tt class="descname">startsWith</tt><big>(</big><em>String sub</em><big>)</big><a class="headerlink" href="#String.startsWith" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает булево, начинается ли строка от указанной строки</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt>
+<em class="property">static </em><tt class="descname">startsWith</tt><big>(</big><em>String sub</em>, <em>int ind</em><big>)</big></dt>
+<dd><p>возвращает булево, начинается ли строка от указанной строки с указанной позиции</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="String.endsWith">
+<em class="property">static </em><tt class="descname">endsWith</tt><big>(</big><em>String sub</em><big>)</big><a class="headerlink" href="#String.endsWith" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает булево, заканчивается ли строка от указанной строки</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="String.regionMatches">
+<em class="property">static </em><tt class="descname">regionMatches</tt><big>(</big><em>int ind1</em>, <em>String str</em>, <em>int ind2</em>, <em>int len</em><big>)</big><a class="headerlink" href="#String.regionMatches" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt>
+<em class="property">static </em><tt class="descname">regionMatches</tt><big>(</big><em>boolean flag</em>, <em>int ind1</em>, <em>String str</em>, <em>int ind2</em>, <em>int len</em><big>)</big></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="String.toCharArray">
+<tt class="descname">toCharArray</tt><big>(</big><big>)</big><a class="headerlink" href="#String.toCharArray" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает массив символово из строки</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="String.charAt">
+<tt class="descname">charAt</tt><big>(</big><em>int index</em><big>)</big><a class="headerlink" href="#String.charAt" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает символ из строки</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="String.toLowerCase">
+<tt class="descname">toLowerCase</tt><big>(</big><big>)</big><a class="headerlink" href="#String.toLowerCase" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">toLowerCase</tt><big>(</big><em>Locale loc</em><big>)</big></dt>
+<dd><p>возвращает новую строку, с нижним регистром символов</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="String.toUpperCase">
+<tt class="descname">toUpperCase</tt><big>(</big><big>)</big><a class="headerlink" href="#String.toUpperCase" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">toUpperCase</tt><big>(</big><em>Locale loc</em><big>)</big></dt>
+<dd><p>возвращает новую строку, с верхним регистром символов</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="String.replace">
+<tt class="descname">replace</tt><big>(</big><em>char old</em>, <em>char new</em><big>)</big><a class="headerlink" href="#String.replace" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">replace</tt><big>(</big><em>String old</em>, <em>String new</em><big>)</big></dt>
+<dd><p>возвращает новую строку, с замененными символами, строками</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="String.replaceFirst">
+<tt class="descname">replaceFirst</tt><big>(</big><em>String old</em>, <em>String new</em><big>)</big><a class="headerlink" href="#String.replaceFirst" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает новую строку, с замененным символом одним символом</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="String.trim">
+<tt class="descname">trim</tt><big>(</big><big>)</big><a class="headerlink" href="#String.trim" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает новую строку, с удаленными пробелами сначала и конца</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="String.valueOf">
+<em class="property">static </em><tt class="descname">valueOf</tt><big>(</big><em>Boolean vool</em><big>)</big><a class="headerlink" href="#String.valueOf" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt>
+<em class="property">static </em><tt class="descname">valueOf</tt><big>(</big><em>Char char</em><big>)</big></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt>
+<em class="property">static </em><tt class="descname">valueOf</tt><big>(</big><em>Integer int</em><big>)</big></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt>
+<em class="property">static </em><tt class="descname">valueOf</tt><big>(</big><em>Long long</em><big>)</big></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt>
+<em class="property">static </em><tt class="descname">valueOf</tt><big>(</big><em>Float float</em><big>)</big></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt>
+<em class="property">static </em><tt class="descname">valueOf</tt><big>(</big><em>Double double</em><big>)</big></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt>
+<em class="property">static </em><tt class="descname">valueOf</tt><big>(</big><em>Char[] char</em><big>)</big></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt>
+<em class="property">static </em><tt class="descname">valueOf</tt><big>(</big><em>Object obj</em><big>)</big></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt>
+<em class="property">static </em><tt class="descname">valueOf</tt><big>(</big><em>Char[] char</em>, <em>int offset</em>, <em>int len</em><big>)</big></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="CharSequense">
+<em class="property">class </em><tt class="descname">CharSequense</tt><a class="headerlink" href="#CharSequense" title="Permalink to this definition">¶</a></dt>
+<dd><p>интерфейс работы со строками</p>
+<dl class="method">
+<dt id="CharSequense.length">
+<tt class="descname">length</tt><big>(</big><big>)</big><a class="headerlink" href="#CharSequense.length" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает длину строки</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="CharSequense.charAt">
+<tt class="descname">charAt</tt><big>(</big><em>int pos</em><big>)</big><a class="headerlink" href="#CharSequense.charAt" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает символ по позиции</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="CharSequense.subSequence">
+<tt class="descname">subSequence</tt><big>(</big><em>int start</em>, <em>int end</em><big>)</big><a class="headerlink" href="#CharSequense.subSequence" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращщает пдстроку по позиции</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="StringBulder">
+<em class="property">class </em><tt class="descname">StringBulder</tt><a class="headerlink" href="#StringBulder" title="Permalink to this definition">¶</a></dt>
+<dd><p>строка, переменной длины</p>
+<dl class="method">
+<dt id="StringBulder.StringBuilder">
+<tt class="descname">StringBuilder</tt><big>(</big><big>)</big><a class="headerlink" href="#StringBulder.StringBuilder" title="Permalink to this definition">¶</a></dt>
+<dd><p>создает пустой объект с емкостью 16 символов</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">StringBuilder</tt><big>(</big><em>int capacity</em><big>)</big></dt>
+<dd><p>создает пустой объект заданной емкости capacity</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">StringBuilder</tt><big>(</big><em>String str</em><big>)</big></dt>
+<dd><p>создает объект емкостью str.length() + 16 , содержащий строку str</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">StringBuilder</tt><big>(</big><em>CharSequence str</em><big>)</big></dt>
+<dd><p>создает объект, содержащий строку str</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="StringBulder.append">
+<tt class="descname">append</tt><big>(</big><em>String str</em><big>)</big><a class="headerlink" href="#StringBulder.append" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">append</tt><big>(</big><em>Boolean vool</em><big>)</big></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">append</tt><big>(</big><em>Char char</em><big>)</big></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">append</tt><big>(</big><em>Integer int</em><big>)</big></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">append</tt><big>(</big><em>Long long</em><big>)</big></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">append</tt><big>(</big><em>Float float</em><big>)</big></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">append</tt><big>(</big><em>Double double</em><big>)</big></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">append</tt><big>(</big><em>Char[] char</em><big>)</big></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">append</tt><big>(</big><em>Object obj</em><big>)</big></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">append</tt><big>(</big><em>Char[] char</em>, <em>int offset</em>, <em>int len</em><big>)</big></dt>
+<dd><p>добавляет строку в строку</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="StringBulder.insert">
+<tt class="descname">insert</tt><big>(</big><em>Integer ind</em>, <em>String str</em><big>)</big><a class="headerlink" href="#StringBulder.insert" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">insert</tt><big>(</big><em>Integer ind</em>, <em>Boolean vool</em><big>)</big></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">insert</tt><big>(</big><em>Integer ind</em>, <em>Char char</em><big>)</big></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">insert</tt><big>(</big><em>Integer ind</em>, <em>Integer int</em><big>)</big></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">insert</tt><big>(</big><em>Integer ind</em>, <em>Long long</em><big>)</big></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">insert</tt><big>(</big><em>Integer ind</em>, <em>Float float</em><big>)</big></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">insert</tt><big>(</big><em>Integer ind</em>, <em>Double double</em><big>)</big></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">insert</tt><big>(</big><em>Integer ind</em>, <em>Char[] char</em><big>)</big></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">insert</tt><big>(</big><em>Integer ind</em>, <em>Object obj</em><big>)</big></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">insert</tt><big>(</big><em>Integer ind</em>, <em>Char[] char</em>, <em>int offset</em>, <em>int len</em><big>)</big></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">insert(int ind, СharSequence str);</tt></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">insert(int ind, CharSequence sub, int start, int end);</tt></dt>
+<dd><p>добавляет строку в строку</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="StringBulder.delete">
+<tt class="descname">delete</tt><big>(</big><em>int begin</em>, <em>int end</em><big>)</big><a class="headerlink" href="#StringBulder.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>удаляет подстроку из строки</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="StringBulder.deleteCharAt">
+<tt class="descname">deleteCharAt</tt><big>(</big><em>int ind</em><big>)</big><a class="headerlink" href="#StringBulder.deleteCharAt" title="Permalink to this definition">¶</a></dt>
+<dd><p>удаляет символ по индексу</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="StringBulder.capacity">
+<tt class="descname">capacity</tt><big>(</big><big>)</big><a class="headerlink" href="#StringBulder.capacity" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает емкость строки</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="StringBulder.ensureCapacity">
+<tt class="descname">ensureCapacity</tt><big>(</big><em>int minCapacity</em><big>)</big><a class="headerlink" href="#StringBulder.ensureCapacity" title="Permalink to this definition">¶</a></dt>
+<dd><p>увеличивает емкость строки</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="StringBulder.length">
+<tt class="descname">length</tt><big>(</big><big>)</big><a class="headerlink" href="#StringBulder.length" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает длину строки</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="StringBulder.replace">
+<tt class="descname">replace</tt><big>(</big><em>int begin</em>, <em>int end</em>, <em>String str</em><big>)</big><a class="headerlink" href="#StringBulder.replace" title="Permalink to this definition">¶</a></dt>
+<dd><p>меняет указанную последовательность строки на строку</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="StringBulder.reverse">
+<tt class="descname">reverse</tt><big>(</big><big>)</big><a class="headerlink" href="#StringBulder.reverse" title="Permalink to this definition">¶</a></dt>
+<dd><p>меняет порядок расположения символово в строке</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="StringBulder.setLength">
+<tt class="descname">setLength</tt><big>(</big><em>int newLength</em><big>)</big><a class="headerlink" href="#StringBulder.setLength" title="Permalink to this definition">¶</a></dt>
+<dd><p>устанавливает новую длину для строки, обрезая либо дополняя старую</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="StringBuffer">
+<em class="property">class </em><tt class="descname">StringBuffer</tt><a class="headerlink" href="#StringBuffer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="variables.html"
+                        title="previous chapter">Тип данных</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../java/index.html"
+                        title="next chapter">Welcome to java doc&#8217;s documentation!</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/base/String.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../java/index.html" title="Welcome to java doc’s documentation!"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="variables.html" title="Тип данных"
+             >previous</a> |</li>
+        <li><a href="../index.html">java doc 14.10.12 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

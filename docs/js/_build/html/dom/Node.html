@@ -1,0 +1,261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Node - узел дом дерева документа &mdash; js doc 2015.06.26 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2015.06.26',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="js doc 2015.06.26 documentation" href="../index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.26 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="node">
+<h1>Node - узел дом дерева документа<a class="headerlink" href="#node" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="Node">
+<em class="property">class </em><code class="descname">Node</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Node" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="attributes">
+<code class="descname">attributes</code><a class="headerlink" href="#attributes" title="Permalink to this definition">¶</a></dt>
+<dd><p>список атрибутов данного узла</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="baseURI">
+<code class="descname">baseURI</code><a class="headerlink" href="#baseURI" title="Permalink to this definition">¶</a></dt>
+<dd><p>Оп­ре­де­ля­ет ба­зо­вый URL-ад­рес для дан­но­го объ­ек­та Node, ко­то­рый бу­дет ис­поль­зо­вать­ся при раз­ре­ше­нии от­но­си­тель­ных URL-ад­ре­сов. Для всех уз­лов в HTML-до­ку­мен­тах этот URL-ад­рес оп­ре­де­ля­ет­ся эле­мен­том &lt;base&gt; или свой­ст­вом Docu­ment.URL, из зна­че­ния ко­то­ро­го ис­клю­ча­ет­ся иден­ти­фи­ка­тор фраг­мен­та.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="childNodes">
+<code class="descname">childNodes</code><a class="headerlink" href="#childNodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>список <a class="reference internal" href="NodeList.html#NodeList" title="NodeList"><code class="xref js js-class docutils literal"><span class="pre">NodeList()</span></code></a> детей данного узла</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="firstChild">
+<code class="descname">firstChild</code><a class="headerlink" href="#firstChild" title="Permalink to this definition">¶</a></dt>
+<dd><p>первый дочерний элемент <a class="reference internal" href="#Node" title="Node"><code class="xref js js-class docutils literal"><span class="pre">Node()</span></code></a> данного узла</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="lastChild">
+<code class="descname">lastChild</code><a class="headerlink" href="#lastChild" title="Permalink to this definition">¶</a></dt>
+<dd><p>последний дочерний элемент <a class="reference internal" href="#Node" title="Node"><code class="xref js js-class docutils literal"><span class="pre">Node()</span></code></a> данного узла</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="nextSibling">
+<code class="descname">nextSibling</code><a class="headerlink" href="#nextSibling" title="Permalink to this definition">¶</a></dt>
+<dd><p>следующий элемент <a class="reference internal" href="#Node" title="Node"><code class="xref js js-class docutils literal"><span class="pre">Node()</span></code></a>, дочерний элемент того же родительского элемента</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="nodeName">
+<code class="descname">nodeName</code><a class="headerlink" href="#nodeName" title="Permalink to this definition">¶</a></dt>
+<dd><p>имя узла</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="nodeType">
+<code class="descname">nodeType</code><a class="headerlink" href="#nodeType" title="Permalink to this definition">¶</a></dt>
+<dd><p>тип узла в виде числа</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="nodeValue">
+<code class="descname">nodeValue</code><a class="headerlink" href="#nodeValue" title="Permalink to this definition">¶</a></dt>
+<dd><p>значение узла</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ownerDocument">
+<code class="descname">ownerDocument</code><a class="headerlink" href="#ownerDocument" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ссылка на корневой узел <a class="reference internal" href="Document.html#Document" title="Document"><code class="xref js js-class docutils literal"><span class="pre">Document()</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="parentNode">
+<code class="descname">parentNode</code><a class="headerlink" href="#parentNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>родитель данного узла</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="previousSibling">
+<code class="descname">previousSibling</code><a class="headerlink" href="#previousSibling" title="Permalink to this definition">¶</a></dt>
+<dd><p>предыдущий дочерний элемент , обладающий тем же родительским элементом что и данный узел</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="textContent">
+<code class="descname">textContent</code><a class="headerlink" href="#textContent" title="Permalink to this definition">¶</a></dt>
+<dd><p>текстовое содержимое узла и его наследников</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="appendChild">
+<code class="descname">appendChild</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#appendChild" title="Permalink to this definition">¶</a></dt>
+<dd><p>добавляет узел - наследник. Привязывает новый узел к дереву , ставя его последним в списке дочерних узлов данного узла</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="cloneNode">
+<code class="descname">cloneNode</code><span class="sig-paren">(</span><em>deep</em><span class="sig-paren">)</span><a class="headerlink" href="#cloneNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Соз­да­ет и воз­вра­ща­ет ко­пию уз­ла, для ко­то­ро­го он вы­зван.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="compareDocumentPosition">
+<code class="descname">compareDocumentPosition</code><span class="sig-paren">(</span><em>Node other</em><span class="sig-paren">)</span><a class="headerlink" href="#compareDocumentPosition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Срав­ни­ва­ет по­зи­цию дан­но­го уз­ла в до­ку­мен­те с по­зи­ци­ей уз­ла other и воз­вра­ща­ет чис­ло, би­ты ко­то­ро­го опи­сы­ва­ют от­но­ше­ния ме­ж­ду уз­ла­ми. Ес­ли срав­ни­вае­мые уз­лы яв­ля­ют­ся од­ним и тем же уз­лом, все би­ты в ре­зуль­та­те бу­дут сбро­ше­ны, т. е. ме­тод вер­нет 0. Ина­че в воз­вра­щае­мом зна­че­нии бу­дет ус­та­нов­лен один или бо­лее би­тов.</p>
+<ul class="simple">
+<li><cite>Node.DISCONNECTED</cite> = 0x01, Два уз­ла при­над­ле­жат раз­ным до­ку­мен­том, по­это­му их по­зи­ции не мо­гут срав­ни­вать­ся.</li>
+<li><cite>Node.PRECEDING</cite> = 0x02, Узел other рас­по­ла­га­ет­ся пе­ред дан­ным уз­лом.</li>
+<li><cite>Node.FOLLOWING</cite> = 0x04, Узел other рас­по­ла­га­ет­ся по­сле дан­но­го уз­ла.</li>
+<li><cite>Node.CONTAINS</cite> = 0x08, Узел other со­дер­жит дан­ный узел. Ко­гда ус­та­нов­лен этот бит, все­гда бу­дет ус­та­нов­лен бит PRECEDING.</li>
+<li><cite>Node.CONTAINED_BY</cite> = 0x10, Узел other со­дер­жит­ся внут­ри дан­но­го уз­ла. Ко­гда ус­та­нов­лен этот бит, все­гда бу­дет ус­та­нов­лен бит FOLLOWING.</li>
+</ul>
+</dd></dl>
+
+<dl class="function">
+<dt id="hasChildNodes">
+<code class="descname">hasChildNodes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hasChildNodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает значение true , если узел имеет хотя бы один дочерний узел</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="insertBefore">
+<code class="descname">insertBefore</code><span class="sig-paren">(</span><em>newNode</em>, <em>refNode</em><span class="sig-paren">)</span><a class="headerlink" href="#insertBefore" title="Permalink to this definition">¶</a></dt>
+<dd><p>вставляет новый узел, newNode, перед существующим узлом refNode</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="isDefaultNamespace">
+<code class="descname">isDefaultNamespace</code><span class="sig-paren">(</span><em>string namespace</em><span class="sig-paren">)</span><a class="headerlink" href="#isDefaultNamespace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Воз­вра­ща­ет true, ес­ли URL-ад­рес про­стран­ст­ва имен namespace сов­па­да­ет с URL-ад­ре­сом про­стран­ст­ва имен по умол­ча­нию, ко­то­рый воз­вра­ща­ет вы­зов lookupName­spaceURI(null), и false – в про­тив­ном слу­чае.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="isEqualNode">
+<code class="descname">isEqualNode</code><span class="sig-paren">(</span><em>Node other</em><span class="sig-paren">)</span><a class="headerlink" href="#isEqualNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Воз­вра­ща­ет true, ес­ли дан­ный узел и узел other яв­ля­ют­ся иден­тич­ны­ми, т. е. име­ют один и тот же тип, имя те­га, ат­ри­бу­ты и (ре­кур­сив­но) до­чер­ние уз­лы. Воз­вра­ща­ет false, ес­ли два уз­ла не яв­ля­ют­ся эк­ви­ва­лент­ны­ми.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="isSameNode">
+<code class="descname">isSameNode</code><span class="sig-paren">(</span><em>Node other</em><span class="sig-paren">)</span><a class="headerlink" href="#isSameNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Воз­вра­ща­ет true, ес­ли дан­ный узел и узел other яв­ля­ют­ся од­ним и тем же уз­лом, и false – в про­тив­ном слу­чае. Вме­сто это­го ме­то­да мож­но так­же про­сто ис­поль­зо­вать опе­ра­тор ==.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="lookupNamespaceURI">
+<code class="descname">lookupNamespaceURI</code><span class="sig-paren">(</span><em>string prefix</em><span class="sig-paren">)</span><a class="headerlink" href="#lookupNamespaceURI" title="Permalink to this definition">¶</a></dt>
+<dd><p>Воз­вра­ща­ет URL-ад­рес про­стран­ст­ва имен, свя­зан­но­го с  ука­зан­ным пре­фик­сом про­стран­ст­ва имен prefix, или null, ес­ли та­кой пре­фикс не оп­ре­де­лен. Ес­ли ар­гу­мент prefix име­ет зна­че­ние null, воз­вра­ща­ет URL-ад­рес про­стран­ст­ва имен по умол­ча­нию.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="lookupPrefix">
+<code class="descname">lookupPrefix</code><span class="sig-paren">(</span><em>string namespace</em><span class="sig-paren">)</span><a class="headerlink" href="#lookupPrefix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Воз­вра­ща­ет пре­фикс про­стран­ст­ва имен, свя­зан­но­го с  ука­зан­ным URL-ад­ре­сом про­стран­ст­ва имен, или null, ес­ли та­кое про­стран­ст­во имен не оп­ре­де­ле­но.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="normalize">
+<code class="descname">normalize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#normalize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Нор­ма­ли­зу­ет все уз­лы, яв­ляю­щие­ся по­том­ка­ми дан­но­го, объ­еди­няя смеж­ные уз­лы и уда­ляя пус­тые. Обыч­но до­ку­мен­ты не име­ют пус­тых или смеж­ных тек­сто­вых уз­лов, но они мо­гут по­явить­ся в ре­зуль­та­те до­бав­ле­ния и уда­ле­ния уз­лов сце­на­ри­ем.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="removeChild">
+<code class="descname">removeChild</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#removeChild" title="Permalink to this definition">¶</a></dt>
+<dd><p>удаляет указанный узел - наследник</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="replaceChild">
+<code class="descname">replaceChild</code><span class="sig-paren">(</span><em>newNode</em>, <em>oldNode</em><span class="sig-paren">)</span><a class="headerlink" href="#replaceChild" title="Permalink to this definition">¶</a></dt>
+<dd><p>заменяет старый узел oldNode новым узлом newNode</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/dom/Node.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.26 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

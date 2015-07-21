@@ -1,0 +1,232 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>shutil &mdash; Документация python документация 2015.05.20</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2015.05.20',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Документация python документация 2015.05.20" href="../index.html" />
+    <link rel="up" title="Основные модули" href="index.html" />
+    <link rel="next" title="socket" href="socket.html" />
+    <link rel="prev" title="shelve" href="shelve.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Алфавитный указатель"
+             accesskey="I">указатель</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="socket.html" title="socket"
+             accesskey="N">вперёд</a> |</li>
+        <li class="right" >
+          <a href="shelve.html" title="shelve"
+             accesskey="P">назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Документация python документация 2015.05.20</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Основные модули</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <span class="target" id="module-shutil"></span><div class="section" id="shutil">
+<h1>shutil<a class="headerlink" href="#shutil" title="Ссылка на этот заголовок">¶</a></h1>
+<p>Модуль для копирования и перемещения файлов</p>
+<dl class="method">
+<dt id="shutil.copy">
+<code class="descclassname">shutil.</code><code class="descname">copy</code><span class="sig-paren">(</span><em>path1</em>, <em>path2</em><span class="sig-paren">)</span><a class="headerlink" href="#shutil.copy" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first simple">
+<li><strong>path1</strong> (<em>str</em>) &#8211; исходный путь</li>
+<li><strong>path2</strong> (<em>str</em>) &#8211; путь назначения</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Исключение IOError:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first last">если файл не удалось скопировать</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>копирует содержимое файла из исходной пути в путь назначения. копируются также права доступа</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="shutil.copyfile">
+<code class="descclassname">shutil.</code><code class="descname">copyfile</code><span class="sig-paren">(</span><em>path1</em>, <em>path2</em><span class="sig-paren">)</span><a class="headerlink" href="#shutil.copyfile" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first simple">
+<li><strong>path1</strong> (<em>str</em>) &#8211; исходный путь</li>
+<li><strong>path2</strong> (<em>str</em>) &#8211; путь назначения</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Исключение IOError:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first last">если файл не удалось скопировать</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>копирует содержимое файла из исходной пути в путь назначения. никакие метаданные не копируются</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="shutil.copy2">
+<code class="descclassname">shutil.</code><code class="descname">copy2</code><span class="sig-paren">(</span><em>path1</em>, <em>path2</em><span class="sig-paren">)</span><a class="headerlink" href="#shutil.copy2" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first simple">
+<li><strong>path1</strong> (<em>str</em>) &#8211; исходный путь</li>
+<li><strong>path2</strong> (<em>str</em>) &#8211; путь назначения</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Исключение IOError:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first last">если файл не удалось скопировать</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>копирует содержимое файла из исходной пути в путь назначения, вместе с метаданными</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="shutil.move">
+<code class="descclassname">shutil.</code><code class="descname">move</code><span class="sig-paren">(</span><em>path1</em>, <em>path2</em><span class="sig-paren">)</span><a class="headerlink" href="#shutil.move" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first simple">
+<li><strong>path1</strong> (<em>str</em>) &#8211; исходный путь</li>
+<li><strong>path2</strong> (<em>str</em>) &#8211; путь назначения</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Исключение:</th><td class="field-body"><ul class="first last simple">
+<li><strong>IOError</strong> &#8211; если файл не удалось переместить</li>
+<li><strong>WindowsError</strong> &#8211; если файл удалить нельзя</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>копирует содержимое файла из исходной пути в путь назначения, а затем удаляет исходный файл</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="shutil.rmtree">
+<code class="descclassname">shutil.</code><code class="descname">rmtree</code><span class="sig-paren">(</span><em>path[, errors=False][, errors_callback]</em><span class="sig-paren">)</span><a class="headerlink" href="#shutil.rmtree" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>path</strong> (<em>str</em>) &#8211; путь к папке</li>
+<li><strong>errors</strong> (<em>bool</em>) &#8211; игнорировать ошибки</li>
+<li><strong>errors_callback</strong> &#8211; обработчик ошибок, если ошибки не игнорируются</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Предыдущий раздел</h4>
+  <p class="topless"><a href="shelve.html"
+                        title="предыдущая глава">shelve</a></p>
+  <h4>Следующий раздел</h4>
+  <p class="topless"><a href="socket.html"
+                        title="следующая глава">socket</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Эта страница</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/modules/shutil.txt"
+            rel="nofollow">Исходный текст</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Быстрый поиск</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Искать" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Введите слова для поиска или имя модуля, класса или функции.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Алфавитный указатель"
+             >указатель</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="socket.html" title="socket"
+             >вперёд</a> |</li>
+        <li class="right" >
+          <a href="shelve.html" title="shelve"
+             >назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Документация python документация 2015.05.20</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Основные модули</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright ilnurgi.
+      Создано с помощью <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

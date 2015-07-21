@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Text &mdash; Документация python документация 2015.05.20</title>
+    
+    <link rel="stylesheet" href="../../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '2015.05.20',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Документация python документация 2015.05.20" href="../../index.html" />
+    <link rel="up" title="tkinter - кроссплатформенная библиотека для построения графического интерфейса" href="index.html" />
+    <link rel="next" title="TopLevel" href="toplevel.html" />
+    <link rel="prev" title="Spinbox" href="spinbox.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="Алфавитный указатель"
+             accesskey="I">указатель</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="toplevel.html" title="TopLevel"
+             accesskey="N">вперёд</a> |</li>
+        <li class="right" >
+          <a href="spinbox.html" title="Spinbox"
+             accesskey="P">назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Документация python документация 2015.05.20</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >Основные модули</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">tkinter - кроссплатформенная библиотека для построения графического интерфейса</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="text">
+<h1>Text<a class="headerlink" href="#text" title="Ссылка на этот заголовок">¶</a></h1>
+<dl class="class">
+<dt id="Text">
+<em class="property">class </em><code class="descname">Text</code><span class="sig-paren">(</span><em>widget</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#Text" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Виджет, многострочное текстовое поле. Поддерживает те же методы что и Entry, но индексы передаются в виде &#8216;1.0&#8217;</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>widget</strong> &#8211; родительский виджет</li>
+<li><strong>height</strong> (<em>int</em>) &#8211; высота виджета</li>
+<li><strong>width</strong> (<em>int</em>) &#8211; ширина виджета</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="Text.clipboard_clear">
+<code class="descname">clipboard_clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Text.clipboard_clear" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Очищает буфер обмена</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Text.clipboard_append">
+<code class="descname">clipboard_append</code><span class="sig-paren">(</span><em>str</em><span class="sig-paren">)</span><a class="headerlink" href="#Text.clipboard_append" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Добавляет в буфер текст</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Text.mark_set">
+<code class="descname">mark_set</code><span class="sig-paren">(</span><em>type</em>, <em>pos</em><span class="sig-paren">)</span><a class="headerlink" href="#Text.mark_set" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Устанавливает метку</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parsam type:</th><td class="field-body">tk.INSERT</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Параметры:</th><td class="field-body"><strong>pos</strong> (<em>str</em>) &#8211; позиция метки</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">mark_set</span><span class="p">(</span><span class="n">tk</span><span class="o">.</span><span class="n">INSERT</span><span class="p">,</span> <span class="s">&#39;2.5&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">mark_set</span><span class="p">(</span><span class="s">&#39;first&#39;</span><span class="p">,</span> <span class="s">&#39;2.5&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Text.tag_add">
+<code class="descname">tag_add</code><span class="sig-paren">(</span><em>name</em>, <em>start</em>, <em>end</em><span class="sig-paren">)</span><a class="headerlink" href="#Text.tag_add" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Добавляет тег в текст</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) &#8211; название тега</li>
+<li><strong>start</strong> &#8211; начало</li>
+<li><strong>end</strong> &#8211; конец</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">tag_add</span><span class="p">(</span><span class="s">&#39;tag&#39;</span><span class="p">,</span> <span class="n">tk</span><span class="o">.</span><span class="n">SEL_FIRST</span><span class="p">,</span> <span class="n">tk</span><span class="o">.</span><span class="n">SEL_LAST</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Text.tag_config">
+<code class="descname">tag_config</code><span class="sig-paren">(</span><em>name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#Text.tag_config" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Конфигурирует тег</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) &#8211; название тега</li>
+<li><strong>background</strong> (<em>str</em>) &#8211; фон</li>
+<li><strong>foregraund</strong> (<em>str</em>) &#8211; текст</li>
+<li><strong>font</strong> (<em>typle</em>) &#8211; параметры шрифта</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">tag_config</span><span class="p">(</span><span class="s">&#39;tag&#39;</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="s">&#39;black&#39;</span><span class="p">,</span> <span class="n">foregraund</span><span class="o">=</span><span class="s">&#39;red&#39;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="p">(</span><span class="s">&#39;times&#39;</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="s">&#39;italic&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Text.see">
+<code class="descname">see</code><span class="sig-paren">(</span><em>pos</em><span class="sig-paren">)</span><a class="headerlink" href="#Text.see" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Прокручивает текстовое поле до позиции</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Text.selection_get">
+<code class="descname">selection_get</code><span class="sig-paren">(</span><em>selection</em><span class="sig-paren">)</span><a class="headerlink" href="#Text.selection_get" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Конфигурирует тег</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) &#8211; название тега</li>
+<li><strong>background</strong> (<em>str</em>) &#8211; фон</li>
+<li><strong>foregraund</strong> (<em>str</em>) &#8211; текст</li>
+<li><strong>font</strong> (<em>typle</em>) &#8211; параметры шрифта</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">tag_config</span><span class="p">(</span><span class="s">&#39;tag&#39;</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="s">&#39;black&#39;</span><span class="p">,</span> <span class="n">foregraund</span><span class="o">=</span><span class="s">&#39;red&#39;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="p">(</span><span class="s">&#39;times&#39;</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="s">&#39;italic&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Text.yview">
+<code class="descname">yview</code><a class="headerlink" href="#Text.yview" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Text.xview">
+<code class="descname">xview</code><a class="headerlink" href="#Text.xview" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Предыдущий раздел</h4>
+  <p class="topless"><a href="spinbox.html"
+                        title="предыдущая глава">Spinbox</a></p>
+  <h4>Следующий раздел</h4>
+  <p class="topless"><a href="toplevel.html"
+                        title="следующая глава">TopLevel</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Эта страница</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/modules/tkinter/text.txt"
+            rel="nofollow">Исходный текст</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Быстрый поиск</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Искать" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Введите слова для поиска или имя модуля, класса или функции.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="Алфавитный указатель"
+             >указатель</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="toplevel.html" title="TopLevel"
+             >вперёд</a> |</li>
+        <li class="right" >
+          <a href="spinbox.html" title="Spinbox"
+             >назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Документация python документация 2015.05.20</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >Основные модули</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" >tkinter - кроссплатформенная библиотека для построения графического интерфейса</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright ilnurgi.
+      Создано с помощью <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

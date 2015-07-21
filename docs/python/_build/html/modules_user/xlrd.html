@@ -1,0 +1,2427 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>xlrd - интсрумент для чтения xls фалйов &mdash; Документация python документация 2015.05.20</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2015.05.20',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Документация python документация 2015.05.20" href="../index.html" />
+    <link rel="up" title="Сторонние модули" href="index.html" />
+    <link rel="next" title="xlwt - интсурмент для создания xls файлов" href="xlwt.html" />
+    <link rel="prev" title="uic - вспомогательный модуль, для работы с ui-фалйами, сгенерированными в дизайнере" href="pyqt/uic/index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Алфавитный указатель"
+             accesskey="I">указатель</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="xlwt.html" title="xlwt - интсурмент для создания xls файлов"
+             accesskey="N">вперёд</a> |</li>
+        <li class="right" >
+          <a href="pyqt/uic/index.html" title="uic - вспомогательный модуль, для работы с ui-фалйами, сгенерированными в дизайнере"
+             accesskey="P">назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Документация python документация 2015.05.20</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Сторонние модули</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <span class="target" id="module-xlrd"></span><div class="section" id="xlrd-xls">
+<h1>xlrd - интсрумент для чтения xls фалйов<a class="headerlink" href="#xlrd-xls" title="Ссылка на этот заголовок">¶</a></h1>
+<p><a class="reference external" href="http://www.python-excel.org/">Страничка проекта</a></p>
+<p><a class="reference external" href="http://pypi.python.org/pypi/xlrd">Скачать</a></p>
+<p><a class="reference external" href="https://secure.simplistix.co.uk/svn/xlrd/trunk/xlrd/doc/xlrd.html?p=4966">Официальная документация</a></p>
+<p><a class="reference external" href="https://github.com/python-excel/xlrd">GitHub</a></p>
+<div class="section" id="id4">
+<h2>Функции модуля<a class="headerlink" href="#id4" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="attribute">
+<dt id="xlrd.empty_cell">
+<code class="descclassname">xlrd.</code><code class="descname">empty_cell</code><a class="headerlink" href="#xlrd.empty_cell" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Пустая ячейка.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">xlrd</span><span class="o">.</span><span class="n">empty_cell</span>
+<span class="go">empty:&#39;&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.error_text_from_code">
+<code class="descclassname">xlrd.</code><code class="descname">error_text_from_code</code><a class="headerlink" href="#xlrd.error_text_from_code" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Словарь ошибок</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="8%" />
+<col width="14%" />
+<col width="78%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">hex</th>
+<th class="head">value</th>
+<th class="head">описание</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0x00</td>
+<td>#NULL!</td>
+<td>Intersection of two cell ranges is empty</td>
+</tr>
+<tr class="row-odd"><td>0x07</td>
+<td>#DIV/0!</td>
+<td>деление на ноль</td>
+</tr>
+<tr class="row-even"><td>0x0F</td>
+<td>#VALUE!</td>
+<td>не правильный оператор</td>
+</tr>
+<tr class="row-odd"><td>0x17</td>
+<td>#REF!</td>
+<td>Illegal or deleted cell reference</td>
+</tr>
+<tr class="row-even"><td>0x1D</td>
+<td>#NAME?</td>
+<td>Wrong function or range name</td>
+</tr>
+<tr class="row-odd"><td>0x24</td>
+<td>#NUM!</td>
+<td>Value range overflow</td>
+</tr>
+<tr class="row-even"><td>0x2A</td>
+<td>#N/A</td>
+<td>Argument or function not available</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">xlrd</span><span class="o">.</span><span class="n">error_text_from_code</span>
+<span class="go">{0: &#39;#NULL!&#39;,</span>
+<span class="go"> 7: &#39;#DIV/0!&#39;,</span>
+<span class="go"> 15: &#39;#VALUE!&#39;,</span>
+<span class="go"> 23: &#39;#REF!&#39;,</span>
+<span class="go"> 29: &#39;#NAME?&#39;,</span>
+<span class="go"> 36: &#39;#NUM!&#39;,</span>
+<span class="go"> 42: &#39;#N/A&#39;}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="xlrd.cellname">
+<code class="descclassname">xlrd.</code><code class="descname">cellname</code><span class="sig-paren">(</span><em>rowx</em>, <em>colx</em><span class="sig-paren">)</span><a class="headerlink" href="#xlrd.cellname" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает название ячейки</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>rowx</strong> (<em>int</em>) &#8211; столбец</li>
+<li><strong>colx</strong> (<em>int</em>) &#8211; строка</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">xlrd</span><span class="o">.</span><span class="n">cellname</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<span class="go">&#39;Н6&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="xlrd.cellnameabs">
+<code class="descclassname">xlrd.</code><code class="descname">cellnameabs</code><span class="sig-paren">(</span><em>rowx</em>, <em>colx</em>, <em>r1c1=0</em><span class="sig-paren">)</span><a class="headerlink" href="#xlrd.cellnameabs" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает абсолютное название ячейки</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>rowx</strong> (<em>int</em>) &#8211; столбец</li>
+<li><strong>colx</strong> (<em>int</em>) &#8211; строка</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">xlrd</span><span class="o">.</span><span class="n">cellname</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<span class="go">&#39;$Н$6&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="xlrd.colname">
+<code class="descclassname">xlrd.</code><code class="descname">colname</code><span class="sig-paren">(</span><em>colx</em><span class="sig-paren">)</span><a class="headerlink" href="#xlrd.colname" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает название столбца</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><strong>colx</strong> (<em>int</em>) &#8211; столбец</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">xlrd</span><span class="o">.</span><span class="n">colname</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="go">&#39;Н&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xlrd</span><span class="o">.</span><span class="n">colname</span><span class="p">(</span><span class="mi">27</span><span class="p">)</span>
+<span class="go">&#39;AB&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="xlrd.count_records">
+<code class="descclassname">xlrd.</code><code class="descname">count_records</code><span class="sig-paren">(</span><em>filename</em>, <em>outfile=sys.stdout</em><span class="sig-paren">)</span><a class="headerlink" href="#xlrd.count_records" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Для отладки и анализа: обобщить BIFF записи файла. Т.е. получаем отсортированный файл (запись, количесвто).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>filename</strong> (<em>str</em>) &#8211; путь к файлу</li>
+<li><strong>outfile</strong> &#8211; объект для записи (должен иметь метод write) результатов</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">xlrd</span><span class="o">.</span><span class="n">count_records</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="n">dst</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="xlrd.dump">
+<code class="descclassname">xlrd.</code><code class="descname">dump</code><span class="sig-paren">(</span><em>filename</em>, <em>outfile=sys.stdout</em>, <em>unnumbered=False</em><span class="sig-paren">)</span><a class="headerlink" href="#xlrd.dump" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Для отладки, выгрузка BIFF записей в char и hex</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>filename</strong> (<em>str</em>) &#8211; путь к файлу</li>
+<li><strong>outfile</strong> &#8211; объект для записи (должен иметь метод write) результатов</li>
+<li><strong>unnumbered</strong> &#8211; опустить смещения</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">xlrd</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="n">dst</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="xlrd.open_workbook">
+<code class="descclassname">xlrd.</code><code class="descname">open_workbook</code><span class="sig-paren">(</span><em>filename=None</em>, <em>logfile=sys.stdout</em>, <em>verbosity=0</em>, <em>pickleable=True</em>, <em>use_mmap=USE_MMAP</em>, <em>file_contents=None</em>, <em>encoding_override=None</em>, <em>formatting_info=False</em>, <em>on_demand=False</em>, <em>ragged_rows=False</em><span class="sig-paren">)</span><a class="headerlink" href="#xlrd.open_workbook" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Открывает файл и возвращает объект <a class="reference internal" href="#xlrd.Book" title="xlrd.Book"><code class="xref py py-class docutils literal"><span class="pre">xlrd.Book</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>filename</strong> (<em>str</em>) &#8211; путь к файлу</li>
+<li><strong>logfile</strong> &#8211; объект, для записи лог информации</li>
+<li><strong>verbosity</strong> &#8211; уровень логируемой информации</li>
+<li><strong>pickleable</strong> &#8211; что то связанное с использованием памяти, актуально для 2.4 и ниже. (Default is true. In Python 2.4 or earlier, setting to false will cause use of array.array objects which save some memory but can&#8217;t be pickled. In Python 2.5, array.arrays are used unconditionally. Note: if you have large files that you need to read multiple times, it can be much faster to cPickle.dump() the xlrd.Book object once, and use cPickle.load() multiple times.)</li>
+<li><strong>use_mmap</strong> &#8211; Whether to use the mmap module is determined heuristically. Use this arg to override the result. Current heuristic: mmap is used if it exists.</li>
+<li><strong>file_contents</strong> &#8211; as a string or an mmap.mmap object or some other behave-alike object. If file_contents is supplied, filename will not be used, except (possibly) in messages.</li>
+<li><strong>encoding_override</strong> &#8211; кодировка открываемого файла &#8211; New in version 0.6.0</li>
+<li><strong>formatting_info</strong> &#8211; Governs provision of a reference to an XF (eXtended Format) object for each cell in the worksheet. Default is False. This is backwards compatible and saves memory. &#8220;Blank&#8221; cells (those with their own formatting information but no data) are treated as empty (by ignoring the file&#8217;s BLANK and MULBLANK records). It cuts off any bottom &#8220;margin&#8221; of rows of empty (and blank) cells and any right &#8220;margin&#8221; of columns of empty (and blank) cells. Only cell_value and cell_type are available. True provides all cells, including empty and blank cells. XF information is available for each cell. &#8211; New in version 0.6.1</li>
+<li><strong>on_demand</strong> &#8211; управляет загрузкой листов. При открытии файла загружаются сразу все листы или листы будут загружены позже при необходимости.</li>
+<li><strong>ragged_rows</strong> &#8211; False (the default) means all rows are padded out with empty cells so that all rows have the same size (Sheet.ncols). True means that there are no empty cells at the ends of rows. This can result in substantial memory savings if rows are of widely varying sizes. See also the Sheet.row_len() method. &#8211; New in version 0.7.2</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="xlrd.rangename3d">
+<code class="descclassname">xlrd.</code><code class="descname">rangename3d</code><span class="sig-paren">(</span><em>book</em>, <em>ref3d</em><span class="sig-paren">)</span><a class="headerlink" href="#xlrd.rangename3d" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Ref3D((1, 4, 5, 20, 7, 10)) =&gt; &#8216;Sheet2:Sheet3!$H$6:$J$20&#8217;</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="xlrd.rangename3drel">
+<code class="descclassname">xlrd.</code><code class="descname">rangename3drel</code><span class="sig-paren">(</span><em>book</em>, <em>ref3d</em>, <em>browx=None</em>, <em>bcolx=None</em>, <em>r1c1=0</em><span class="sig-paren">)</span><a class="headerlink" href="#xlrd.rangename3drel" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Ref3D(coords=(0, 1, -32, -22, -13, 13), relflags=(0, 0, 1, 1, 1, 1)) R1C1 mode =&gt; &#8216;Sheet1!R[-32]C[-13]:R[-23]C[12]&#8217; A1 mode =&gt; depends on base cell (browx, bcolx)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="xlrd.xldate_as_tuple">
+<code class="descclassname">xlrd.</code><code class="descname">xldate_as_tuple</code><span class="sig-paren">(</span><em>xldate</em>, <em>datemode</em><span class="sig-paren">)</span><a class="headerlink" href="#xlrd.xldate_as_tuple" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Преобразует дату из Excel формата в кортеж c датой (год, месяц, день, час, минута, секунды).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first simple">
+<li><strong>xldate</strong> &#8211; дата в Excel формате</li>
+<li><strong>datemode</strong> &#8211; 0: 1900-based, 1: 1904-based.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Исключение:</th><td class="field-body"><ul class="first last simple">
+<li><strong>XLDateNegative</strong> &#8211; xldate &lt; 0.00</li>
+<li><strong>XLDateAmbiguous</strong> &#8211; The 1900 leap-year problem (datemode == 0 and 1.0 &lt;= xldate &lt; 61.0)</li>
+<li><strong>XLDateTooLarge</strong> &#8211; Gregorian year 10000 or later</li>
+<li><strong>XLDateBadDatemode</strong> &#8211; datemode arg is neither 0 nor 1</li>
+<li><strong>XLDateError</strong> &#8211; Covers the 4 specific errors</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="first admonition-title">Предупреждение</p>
+<p class="last">when using this function to interpret the contents of a workbook, you should pass in the Book.datemode attribute of that workbook. Whether the workbook has ever been anywhere near a Macintosh is irrelevant.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Примечание</p>
+<p class="last">1904-01-01 is not regarded as a valid date in the datemode 1 system; its &#8220;serial number&#8221; is zero.</p>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">date</span><span class="o">.</span><span class="n">value</span>
+<span class="go">41403.9227662037</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xlrd</span><span class="o">.</span><span class="n">xldate_as_tuple</span><span class="p">(</span><span class="n">date</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="go">(2013, 5, 9, 22, 8, 47)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xlrd</span><span class="o">.</span><span class="n">xldate_as_tuple</span><span class="p">(</span><span class="n">date</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="go">(2017, 5, 10, 22, 8, 47)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="xlrd.xldate_from_date_tuple">
+<code class="descclassname">xlrd.</code><code class="descname">xldate_from_date_tuple</code><span class="sig-paren">(</span><em>(year</em>, <em>month</em>, <em>day)</em>, <em>datemode</em><span class="sig-paren">)</span><a class="headerlink" href="#xlrd.xldate_from_date_tuple" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Преобразует дату из кортежа, в формат даты Excel.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><p class="first"><strong>datemode</strong> &#8211; 0: 1900-based, 1: 1904-based.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Исключение:</th><td class="field-body"><ul class="first last simple">
+<li><strong>XLDateAmbiguous</strong> &#8211; The 1900 leap-year problem (datemode == 0 and 1.0 &lt;= xldate &lt; 61.0)</li>
+<li><strong>XLDateBadDatemode</strong> &#8211; datemode arg is neither 0 nor 1</li>
+<li><strong>XLDateBadTuple</strong> &#8211; (year, month, day) is too early/late or has invalid component(s)</li>
+<li><strong>XLDateError</strong> &#8211; Covers the specific errors</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="xlrd.xldate_from_datetime_tuple">
+<code class="descclassname">xlrd.</code><code class="descname">xldate_from_datetime_tuple</code><span class="sig-paren">(</span><em>datetime_tuple</em>, <em>datemode</em><span class="sig-paren">)</span><a class="headerlink" href="#xlrd.xldate_from_datetime_tuple" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Преобразует дату и время из кортежа в формат даты и времени Excel.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><strong>datemode</strong> &#8211; 0: 1900-based, 1: 1904-based.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="xlrd.xldate_from_time_tuple">
+<code class="descclassname">xlrd.</code><code class="descname">xldate_from_time_tuple</code><span class="sig-paren">(</span><em>(hour</em>, <em>minute</em>, <em>second)</em><span class="sig-paren">)</span><a class="headerlink" href="#xlrd.xldate_from_time_tuple" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Преобразует время из кортежа, во время в формате Excel</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Исключение XLDateBadTuple:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Out-of-range hour, minute, or second</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="baseobject">
+<h2>BaseObject<a class="headerlink" href="#baseobject" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="xlrd.BaseObject">
+<em class="property">class </em><code class="descclassname">xlrd.</code><code class="descname">BaseObject</code><a class="headerlink" href="#xlrd.BaseObject" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Родительсикй класс для других классов модуля</p>
+<dl class="method">
+<dt id="xlrd.BaseObject.dump">
+<code class="descname">dump</code><span class="sig-paren">(</span><em>f=None</em>, <em>header=None</em>, <em>footer=None</em>, <em>indent=0</em><span class="sig-paren">)</span><a class="headerlink" href="#xlrd.BaseObject.dump" title="Ссылка на это определение">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>f</strong> &#8211; файловый объект для выгрузки дампа</li>
+<li><strong>header</strong> (<em>str</em>) &#8211; текс, записываемы в файл дампа перед дампом</li>
+<li><strong>footer</strong> (<em>str</em>) &#8211; текст, записываемый после дампа</li>
+<li><strong>indent</strong> (<em>int</em>) &#8211; количество пробелов, заменяющих табуляцию</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="book">
+<h2>Book<a class="headerlink" href="#book" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="xlrd.Book">
+<em class="property">class </em><code class="descclassname">xlrd.</code><code class="descname">Book</code><a class="headerlink" href="#xlrd.Book" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Объект &#8220;Книга&#8221;</p>
+<div class="admonition warning">
+<p class="first admonition-title">Предупреждение</p>
+<p class="last">Вы не можете создать экземпляры данного класса сами. Данный объект возвращает метод <a class="reference internal" href="#xlrd.open_workbook" title="xlrd.open_workbook"><code class="xref py py-meth docutils literal"><span class="pre">xlrd.open_workbook()</span></code></a>.</p>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">book</span> <span class="o">=</span> <span class="n">xlrd</span><span class="o">.</span><span class="n">open_workbook</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="xlrd.Book.biff_version">
+<code class="descname">biff_version</code><a class="headerlink" href="#xlrd.Book.biff_version" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает число, версию о BIFF (Binary Interchange File Format) используемый при создании файла. (Latest is 8.0 (represented here as 80), introduced with Excel 97. Earliest supported by this module: 2.0 (represented as 20).)</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">book</span><span class="o">.</span><span class="n">biff_version</span>
+<span class="go">80</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Book.codepage">
+<code class="descname">codepage</code><a class="headerlink" href="#xlrd.Book.codepage" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает число, кодировку файла. Для BIFF 8 и выше это будет 1200, что означает юникод (UTF_16_LE). Для более ранних версии, используется число натиболее подходящее кодировке Python, например 1252 -&gt; &#8216;cp1252&#8217;, 10000 -&gt; &#8216;mac_roman&#8217;.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">book</span><span class="o">.</span><span class="n">codepage</span>
+<span class="go">1200</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Book.colour_map">
+<code class="descname">colour_map</code><a class="headerlink" href="#xlrd.Book.colour_map" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает словарь, индексы цветов. Только если открывать книгу с атрибутом open_workbook(..., formatting_info=True)</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">book</span> <span class="o">=</span> <span class="n">xlrd</span><span class="o">.</span><span class="n">open_workbook</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">book</span><span class="o">.</span><span class="n">colour_map</span>
+<span class="go">{}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">book</span> <span class="o">=</span> <span class="n">xlrd</span><span class="o">.</span><span class="n">open_workbook</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">formatting_info</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">book</span><span class="o">.</span><span class="n">colour_map</span>
+<span class="go">{0: (0, 0, 0),</span>
+<span class="go"> 1: (255, 255, 255),</span>
+<span class="go"> 2: (255, 0, 0),</span>
+<span class="go"> 3: (0, 255, 0),</span>
+<span class="go"> ...}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Book.countries">
+<code class="descname">countries</code><a class="headerlink" href="#xlrd.Book.countries" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает кортеж, содержащий код страны для</p>
+<ol class="arabic simple" start="0">
+<li>настройки пользовательского интерфейса</li>
+<li>региональных настроек</li>
+</ol>
+<p>Например: (1, 61) meaning (USA, Australia).</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">book</span><span class="o">.</span><span class="n">countries</span>
+<span class="go">(1, 7)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Book.datemode">
+<code class="descname">datemode</code><a class="headerlink" href="#xlrd.Book.datemode" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает число, формат даты файла</p>
+<ol class="arabic simple" start="0">
+<li>=&gt; 1900 system (the Excel for Windows default).</li>
+<li>=&gt; 1904 system (the Excel for Macintosh default).</li>
+</ol>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">book</span><span class="o">.</span><span class="n">datemode</span>
+<span class="go">0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Book.font_list">
+<code class="descname">font_list</code><a class="headerlink" href="#xlrd.Book.font_list" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возврашает список экземпляров объекта <a class="reference internal" href="#xlrd.Font" title="xlrd.Font"><code class="xref py py-class docutils literal"><span class="pre">xlrd.Font</span></code></a> каждая из которых соответствует записи</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">book</span><span class="o">.</span><span class="n">font_list</span>
+<span class="go">[&lt;xlrd.formatting.Font at 0xb5f96c8c&gt;,</span>
+<span class="go"> &lt;xlrd.formatting.Font at 0xb5f0418c&gt;,</span>
+<span class="go"> ...]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Book.format_list">
+<code class="descname">format_list</code><a class="headerlink" href="#xlrd.Book.format_list" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает список экземпляров объекта <a class="reference internal" href="#xlrd.Format" title="xlrd.Format"><code class="xref py py-class docutils literal"><span class="pre">xlrd.Format</span></code></a> каждая из которых соответствует записи.
+It does not contain builtin formats. If you are creating an output file using (for example) pyExcelerator, use this list. The collection to be used for all visual rendering purposes is format_map.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">book</span><span class="o">.</span><span class="n">format_list</span>
+<span class="go">[&lt;xlrd.formatting.Format at 0xb5f04a4c&gt;,</span>
+<span class="go"> &lt;xlrd.formatting.Format at 0xb5f04aac&gt;,</span>
+<span class="go"> ...]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Book.format_map">
+<code class="descname">format_map</code><a class="headerlink" href="#xlrd.Book.format_map" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает словарь, полученный путем связывания <a class="reference internal" href="#xlrd.XF.format_key" title="xlrd.XF.format_key"><code class="xref py py-attr docutils literal"><span class="pre">xlrd.XF.format_key</span></code></a> с объектом <a class="reference internal" href="#xlrd.Format" title="xlrd.Format"><code class="xref py py-class docutils literal"><span class="pre">xlrd.Format</span></code></a></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">book</span><span class="o">.</span><span class="n">format_map</span>
+<span class="go">{0: &lt;xlrd.formatting.Format at 0xb5f04dcc&gt;,</span>
+<span class="go"> 1: &lt;xlrd.formatting.Format at 0xb5f04dec&gt;,</span>
+<span class="go"> ...}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Book.load_time_stage_1">
+<code class="descname">load_time_stage_1</code><a class="headerlink" href="#xlrd.Book.load_time_stage_1" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает число, время в секундах извлеченич XLS образа в одну строку. (Time in seconds to extract the XLS image as a contiguous string (or mmap equivalent).)</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">book</span><span class="o">.</span><span class="n">load_time_stage_1</span>
+<span class="go">0.0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Book.load_time_stage_2">
+<code class="descname">load_time_stage_2</code><a class="headerlink" href="#xlrd.Book.load_time_stage_2" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает число, время в секундах разбора XLS образа. (Time in seconds to extract the XLS image as a contiguous string (or mmap equivalent).)</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">book</span><span class="o">.</span><span class="n">load_time_stage_2</span>
+<span class="go">0.14</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Book.name_and_scope_map">
+<code class="descname">name_and_scope_map</code><a class="headerlink" href="#xlrd.Book.name_and_scope_map" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает словарь. (A mapping from (lower_case_name, scope) to a single Name object.)</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">book</span><span class="o">.</span><span class="n">name_and_scope_map</span>
+<span class="go">{}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Book.name_map">
+<code class="descname">name_map</code><a class="headerlink" href="#xlrd.Book.name_map" title="Ссылка на это определение">¶</a></dt>
+<dd><p>A mapping from lower_case_name to a list of Name objects. The list is sorted in scope order. Typically there will be one item (of global scope) in the list.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">book</span><span class="o">.</span><span class="n">name_map</span>
+<span class="go">{}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Book.name_obj_list">
+<code class="descname">name_obj_list</code><a class="headerlink" href="#xlrd.Book.name_obj_list" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает список, содержит объект <a class="reference internal" href="#xlrd.Name" title="xlrd.Name"><code class="xref py py-class docutils literal"><span class="pre">xlrd.Name</span></code></a> для каждой записи книги</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">book</span><span class="o">.</span><span class="n">name_obj_list</span>
+<span class="go">[]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Book.nsheets">
+<code class="descname">nsheets</code><a class="headerlink" href="#xlrd.Book.nsheets" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает число, количество листов в книге</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">book</span><span class="o">.</span><span class="n">nsheets</span>
+<span class="go">3</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Book.palette_record">
+<code class="descname">palette_record</code><a class="headerlink" href="#xlrd.Book.palette_record" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает список.
+Если пользователь изменил любой из цветов в стандартной палитре, файл XLS будет содержать запись Палитра с 56 (16 для Excel 4.0 и ранее) значения RGB в нем, и этот список будет, например, [(r0, b0, g0 ), ..., (r55, b55, g55)]. В противном случае этот список будет пустым. Это то, что вам нужно, если вы пишете файл XLS выходной. Если вы хотите сделать клетки на экране или в PDF файле, используйте colour_map.
+Книга должна быть открыта с параметром <code class="xref py py-meth docutils literal"><span class="pre">xlrd.open_workbook(...,</span> <span class="pre">formatting_info=True)()</span></code></p>
+<p>(If the user has changed any of the colours in the standard palette, the XLS file will contain a PALETTE record with 56 (16 for Excel 4.0 and earlier) RGB values in it, and this list will be e.g. [(r0, b0, g0), ..., (r55, b55, g55)]. Otherwise this list will be empty. This is what you need if you are writing an output XLS file. If you want to render cells on screen or in a PDF file, use colour_map.)</p>
+<p>Extracted only if open_workbook(..., formatting_info=True)</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">book</span><span class="o">.</span><span class="n">palette_record</span>
+<span class="go">[]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Book.user_name">
+<code class="descname">user_name</code><a class="headerlink" href="#xlrd.Book.user_name" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает строку, автора, который последним изменил файл.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">book</span><span class="o">.</span><span class="n">user_name</span>
+<span class="go">&#39;ilnurgi&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="xlrd.Book.xf_list">
+<code class="descname">xf_list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#xlrd.Book.xf_list" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает список объектов, экземпляров класса <a class="reference internal" href="#xlrd.XF" title="xlrd.XF"><code class="xref py py-class docutils literal"><span class="pre">xlrd.XF</span></code></a> соответствующих каждой записи XF</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">book</span><span class="o">.</span><span class="n">xf_list</span>
+<span class="go">[&lt;xlrd.formatting.XF at 0xb5f04c4c&gt;,</span>
+<span class="go"> &lt;xlrd.formatting.XF at 0xb5f04dac&gt;,</span>
+<span class="go"> &lt;xlrd.formatting.XF at 0xb5f0a74c&gt;,</span>
+<span class="go"> ...]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="xlrd.Book.style_name_map">
+<code class="descname">style_name_map</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#xlrd.Book.style_name_map" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает словарь.
+This provides access via name to the extended format information for both built-in styles and user-defined styles.
+It maps name to (built_in, xf_index), where:
+name is either the name of a user-defined style, or the name of one of the built-in styles. Known built-in names are Normal, RowLevel_1 to RowLevel_7, ColLevel_1 to ColLevel_7, Comma, Currency, Percent, &#8220;Comma [0]&#8221;, &#8220;Currency [0]&#8221;, Hyperlink, and &#8220;Followed Hyperlink&#8221;.
+built_in 1 = built-in style, 0 = user-defined
+xf_index is an index into Book.xf_list.
+References: OOo docs s6.99 (STYLE record); Excel UI Format/Style</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">book</span><span class="o">.</span><span class="n">style_name_map</span>
+<span class="go">{u&#39;20% - Accent1&#39;: (0, 16),</span>
+<span class="go"> u&#39;20% - Accent2&#39;: (0, 17),</span>
+<span class="go"> u&#39;20% - Accent3&#39;: (0, 18),</span>
+<span class="go"> u&#39;20% - Accent4&#39;: (0, 19),</span>
+<span class="go"> u&#39;20% - Accent5&#39;: (0, 20),</span>
+<span class="go"> ...}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="xlrd.Book.release_resources">
+<code class="descname">release_resources</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#xlrd.Book.release_resources" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Данный метод имеет двойное предназначение.</p>
+<ol class="arabic simple">
+<li>Вы можете вызвать данный метод для освобождения памяти, после загрузки необходимого листа.</li>
+<li>Также данный метод вызывается автоматический:</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>когда open_workbook вызывает исключение</li>
+<li>если вы используете оператор <code class="xref py py-meth docutils literal"><span class="pre">with()</span></code></li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="xlrd.Book.sheet_by_index">
+<code class="descname">sheet_by_index</code><span class="sig-paren">(</span><em>sheetx</em><span class="sig-paren">)</span><a class="headerlink" href="#xlrd.Book.sheet_by_index" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает лист книги по индексу, экземпляр класса <a class="reference internal" href="#xlrd.Sheet" title="xlrd.Sheet"><code class="xref py py-class docutils literal"><span class="pre">xlrd.Sheet</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><strong>sheetx</strong> (<em>int</em>) &#8211; индекс листа</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">sheet</span> <span class="o">=</span> <span class="n">book</span><span class="o">.</span><span class="n">sheet_by_index</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sheet</span>
+<span class="go">&lt;xlrd.sheet.Sheet at 0xb5f04cec&gt;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="xlrd.Book.sheet_by_name">
+<code class="descname">sheet_by_name</code><span class="sig-paren">(</span><em>sheet_name</em><span class="sig-paren">)</span><a class="headerlink" href="#xlrd.Book.sheet_by_name" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает лист книги по наименованию, экземпляр класса <a class="reference internal" href="#xlrd.Sheet" title="xlrd.Sheet"><code class="xref py py-class docutils literal"><span class="pre">xlrd.Sheet</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><strong>sheet_name</strong> (<em>str</em>) &#8211; название листа</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">names</span> <span class="o">=</span> <span class="n">book</span><span class="o">.</span><span class="n">sheet_names</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sheet</span> <span class="o">=</span> <span class="n">book</span><span class="o">.</span><span class="n">sheet_by_name</span><span class="p">(</span><span class="n">names</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sheet</span>
+<span class="go">&lt;xlrd.sheet.Sheet at 0xb5f04cec&gt;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="xlrd.Book.sheet_loaded">
+<code class="descname">sheet_loaded</code><span class="sig-paren">(</span><em>sheet_name_or_index</em><span class="sig-paren">)</span><a class="headerlink" href="#xlrd.Book.sheet_loaded" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает True|False, загружен ли лист</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><strong>sheet_name_or_index</strong> (<em>int, str</em>) &#8211; индекс или название листа</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">book</span><span class="o">.</span><span class="n">sheet_loaded</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">book</span><span class="o">.</span><span class="n">sheet_loaded</span><span class="p">(</span><span class="n">names</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="xlrd.Book.sheet_names">
+<code class="descname">sheet_names</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#xlrd.Book.sheet_names" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает список названий листов книги.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">book</span><span class="o">.</span><span class="n">sheet_names</span><span class="p">()</span>
+<span class="go">[u&#39;Таблица1&#39;, u&#39;Таблица 2&#39;]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="xlrd.Book.sheets">
+<code class="descname">sheets</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#xlrd.Book.sheets" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает список листов книги, экземпляров <a class="reference internal" href="#xlrd.Sheet" title="xlrd.Sheet"><code class="xref py py-class docutils literal"><span class="pre">xlrd.Sheet</span></code></a>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">book</span><span class="o">.</span><span class="n">sheets</span><span class="p">()</span>
+<span class="go">[&lt;xlrd.sheet.Sheet at 0xb5f04cec&gt;,</span>
+<span class="go"> &lt;xlrd.sheet.Sheet at 0xb5f2a66c&gt;,</span>
+<span class="go"> &lt;xlrd.sheet.Sheet at 0xb5f2adac&gt;]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="xlrd.Book.unload_sheet">
+<code class="descname">unload_sheet</code><span class="sig-paren">(</span><em>sheet_name_or_index</em><span class="sig-paren">)</span><a class="headerlink" href="#xlrd.Book.unload_sheet" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Выгружает указанный лист.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><strong>sheet_name_or_index</strong> (<em>int, str</em>) &#8211; индекс или название листа</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">book</span><span class="o">.</span><span class="n">sheet_loaded</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">book</span><span class="o">.</span><span class="n">unload_sheet</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">book</span><span class="o">.</span><span class="n">sheet_loaded</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="cell">
+<h2>Cell<a class="headerlink" href="#cell" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="xlrd.Cell">
+<em class="property">class </em><code class="descclassname">xlrd.</code><code class="descname">Cell</code><span class="sig-paren">(</span><em>ctype</em>, <em>value</em>, <em>xf_index=None</em><span class="sig-paren">)</span><a class="headerlink" href="#xlrd.Cell" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Объект &#8220;Ячейка&#8221;, содержит информацию об одной ячейке</p>
+<div class="admonition warning">
+<p class="first admonition-title">Предупреждение</p>
+<p class="last">вы не сможете создать этот класс самостоятельно. Данный объект возвращается только методами объекта <a class="reference internal" href="#xlrd.Sheet" title="xlrd.Sheet"><code class="xref py py-class docutils literal"><span class="pre">xlrd.Sheet</span></code></a></p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>ctype</strong> (<em>int</em>) &#8211; </li>
+<li><strong>value</strong> &#8211; зависит от ctype</li>
+<li><strong>xf_index</strong> &#8211; None, если &#8220;formatting_info&#8221; не включен при открытии книги</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Таблица соответсвии типов ячеек:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="11%" />
+<col width="8%" />
+<col width="81%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Type symbol</th>
+<th class="head">Type number</th>
+<th class="head">Python value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>XL_CELL_EMPTY</td>
+<td>0</td>
+<td>пустая строка u&#8217;&#8216;</td>
+</tr>
+<tr class="row-odd"><td>XL_CELL_TEXT</td>
+<td>1</td>
+<td>Unicode строка</td>
+</tr>
+<tr class="row-even"><td>XL_CELL_NUMBER</td>
+<td>2</td>
+<td>число с плавающей точкой</td>
+</tr>
+<tr class="row-odd"><td>XL_CELL_DATE</td>
+<td>3</td>
+<td>число с плавающей точкой</td>
+</tr>
+<tr class="row-even"><td>XL_CELL_BOOLEAN</td>
+<td>4</td>
+<td>1 или 0</td>
+</tr>
+<tr class="row-odd"><td>XL_CELL_ERROR</td>
+<td>5</td>
+<td>число, индекс ошибки; текстовое представление ошибки можно узнать из словаря <a class="reference internal" href="#xlrd.error_text_from_code" title="xlrd.error_text_from_code"><code class="xref py py-attr docutils literal"><span class="pre">xlrd.error_text_from_code</span></code></a></td>
+</tr>
+<tr class="row-even"><td>XL_CELL_BLANK</td>
+<td>6</td>
+<td>пустая строка u&#8217;&#8216;. Тип появится, если открывать книгу с атрибутом formatting_info=True.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="colinfo">
+<h2>Colinfo<a class="headerlink" href="#colinfo" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="xlrd.Colinfo">
+<em class="property">class </em><code class="descclassname">xlrd.</code><code class="descname">Colinfo</code><a class="headerlink" href="#xlrd.Colinfo" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Объект &#8220;Колонка&#8221;</p>
+<dl class="attribute">
+<dt id="xlrd.Colinfo.bit1_flag">
+<code class="descname">bit1_flag</code><a class="headerlink" href="#xlrd.Colinfo.bit1_flag" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Value of a 1-bit flag whose purpose is unknown but is often seen set to 1</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Colinfo.collapsed">
+<code class="descname">collapsed</code><a class="headerlink" href="#xlrd.Colinfo.collapsed" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает 1|0, колокна разрушена</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Colinfo.hidden">
+<code class="descname">hidden</code><a class="headerlink" href="#xlrd.Colinfo.hidden" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает 1|0, колокна скрыта</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Colinfo.outline_level">
+<code class="descname">outline_level</code><a class="headerlink" href="#xlrd.Colinfo.outline_level" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает число, уровень границ колонки от 0 до 7</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Colinfo.width">
+<code class="descname">width</code><a class="headerlink" href="#xlrd.Colinfo.width" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает число, ширину колонки в 1/256 ширины нулевого параметра. (Width of the column in 1/256 of the width of the zero character, using default font (first FONT record in the file).)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Colinfo.xf_index">
+<code class="descname">xf_index</code><a class="headerlink" href="#xlrd.Colinfo.xf_index" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает число, XF индекс, для формирования пустой ячейки</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="eqneattrs">
+<h2>EqNeAttrs<a class="headerlink" href="#eqneattrs" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="xlrd.EqNeAttrs">
+<em class="property">class </em><code class="descclassname">xlrd.</code><code class="descname">EqNeAttrs</code><a class="headerlink" href="#xlrd.EqNeAttrs" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Миксин для объектов &#8220;Формат&#8221;, &#8220;Шрифт&#8221; и т.п., для возможности сравнивания значений объектов</p>
+</dd></dl>
+
+</div>
+<div class="section" id="font">
+<h2>Font<a class="headerlink" href="#font" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="xlrd.Font">
+<em class="property">class </em><code class="descclassname">xlrd.</code><code class="descname">Font</code><a class="headerlink" href="#xlrd.Font" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Объект &#8220;Шрифт&#8221;, содержит информацию о шрифте</p>
+<dl class="attribute">
+<dt id="xlrd.Font.bold">
+<code class="descname">bold</code><a class="headerlink" href="#xlrd.Font.bold" title="Ссылка на это определение">¶</a></dt>
+<dd><p>True|False жирность шрифта</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Font.character_set">
+<code class="descname">character_set</code><a class="headerlink" href="#xlrd.Font.character_set" title="Ссылка на это определение">¶</a></dt>
+<dd><table border="1" class="docutils">
+<colgroup>
+<col width="8%" />
+<col width="92%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">key</th>
+<th class="head">value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0</td>
+<td>ANSI Latin</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>System default</td>
+</tr>
+<tr class="row-even"><td>2</td>
+<td>Symbol</td>
+</tr>
+<tr class="row-odd"><td>77</td>
+<td>Apple Roman</td>
+</tr>
+<tr class="row-even"><td>128</td>
+<td>ANSI Japanese Shift-JIS</td>
+</tr>
+<tr class="row-odd"><td>129</td>
+<td>ANSI Korean (Hangul)</td>
+</tr>
+<tr class="row-even"><td>130</td>
+<td>ANSI Korean (Johab)</td>
+</tr>
+<tr class="row-odd"><td>134</td>
+<td>ANSI Chinese Simplified GBK</td>
+</tr>
+<tr class="row-even"><td>136</td>
+<td>ANSI Chinese Traditional BIG5</td>
+</tr>
+<tr class="row-odd"><td>161</td>
+<td>ANSI Greek</td>
+</tr>
+<tr class="row-even"><td>162</td>
+<td>ANSI Turkish</td>
+</tr>
+<tr class="row-odd"><td>163</td>
+<td>ANSI Vietnamese</td>
+</tr>
+<tr class="row-even"><td>177</td>
+<td>ANSI Hebrew</td>
+</tr>
+<tr class="row-odd"><td>178</td>
+<td>ANSI Arabic</td>
+</tr>
+<tr class="row-even"><td>186</td>
+<td>ANSI Baltic</td>
+</tr>
+<tr class="row-odd"><td>204</td>
+<td>ANSI Cyrillic</td>
+</tr>
+<tr class="row-even"><td>222</td>
+<td>ANSI Thai</td>
+</tr>
+<tr class="row-odd"><td>238</td>
+<td>ANSI Latin II (Central European)</td>
+</tr>
+<tr class="row-even"><td>255</td>
+<td>OEM Latin I</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="xlrd.Font.colour_index">
+<code class="descname">colour_index</code><a class="headerlink" href="#xlrd.Font.colour_index" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Font.escapement">
+<code class="descname">escapement</code><a class="headerlink" href="#xlrd.Font.escapement" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает число, регистр:</p>
+<ol class="arabic simple">
+<li>верхний</li>
+<li>нижний</li>
+</ol>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Font.family">
+<code class="descname">family</code><a class="headerlink" href="#xlrd.Font.family" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает число, семейство шрифта</p>
+<blockquote>
+<div><ol class="arabic simple" start="0">
+<li>None (unknown or don&#8217;t care)</li>
+<li>Roman (variable width, serifed)</li>
+<li>Swiss (variable width, sans-serifed)</li>
+<li>Modern (fixed width, serifed or sans-serifed)</li>
+<li>Script (cursive)</li>
+<li>Decorative (specialised, for example Old English, Fraktur)</li>
+</ol>
+</div></blockquote>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Font.font_index">
+<code class="descname">font_index</code><a class="headerlink" href="#xlrd.Font.font_index" title="Ссылка на это определение">¶</a></dt>
+<dd><p>The 0-based index used to refer to this Font() instance. Note that index 4 is never used; xlrd supplies a dummy place-holder.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Font.height">
+<code class="descname">height</code><a class="headerlink" href="#xlrd.Font.height" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Высота шрифта (твипы). Твип = 1/20 пукта.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Font.italic">
+<code class="descname">italic</code><a class="headerlink" href="#xlrd.Font.italic" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает 1|0, шрифт курсивый</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Font.name">
+<code class="descname">name</code><a class="headerlink" href="#xlrd.Font.name" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает строку, название шрифта.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Font.outline">
+<code class="descname">outline</code><a class="headerlink" href="#xlrd.Font.outline" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращет 1|0, шрифт с контуром (Macintosh only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Font.shadow">
+<code class="descname">shadow</code><a class="headerlink" href="#xlrd.Font.shadow" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращет 1|0, шрифт с тенью (Macintosh only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Font.struck_out">
+<code class="descname">struck_out</code><a class="headerlink" href="#xlrd.Font.struck_out" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращет 1|0, шрифт перечеркнутый</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Font.underline_type">
+<code class="descname">underline_type</code><a class="headerlink" href="#xlrd.Font.underline_type" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращет число, подчеркивание шрифта</p>
+<ol class="arabic simple" start="0">
+<li>Отсутсвует</li>
+<li>Одинарный; 0x21 (33) = Single accounting</li>
+<li>Двойное; 0x22 (34) = Double accounting</li>
+</ol>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Font.underlined">
+<code class="descname">underlined</code><a class="headerlink" href="#xlrd.Font.underlined" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращет 1|0, шрифт с подчеркиванием</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Font.weight">
+<code class="descname">weight</code><a class="headerlink" href="#xlrd.Font.weight" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает число, уровень жирности шрифта от 100 до 1000.</p>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="format">
+<h2>Format<a class="headerlink" href="#format" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="xlrd.Format">
+<em class="property">class </em><code class="descclassname">xlrd.</code><code class="descname">Format</code><span class="sig-paren">(</span><em>format_key</em>, <em>type</em>, <em>format_str</em><span class="sig-paren">)</span><a class="headerlink" href="#xlrd.Format" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Объект &#8220;Формат ячйки&#8221;</p>
+<dl class="attribute">
+<dt id="xlrd.Format.format_key">
+<code class="descname">format_key</code><a class="headerlink" href="#xlrd.Format.format_key" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает число, ключ <code class="xref py py-attr docutils literal"><span class="pre">xlrd.format_map</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Format.format_str">
+<code class="descname">format_str</code><a class="headerlink" href="#xlrd.Format.format_str" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает строку, название формата</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Format.type">
+<code class="descname">type</code><a class="headerlink" href="#xlrd.Format.type" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает число, определяющий тип формата:</p>
+<blockquote>
+<div><ul class="simple">
+<li>FUN = 0 # unknown</li>
+<li>FDT = 1 # date</li>
+<li>FNU = 2 # number</li>
+<li>FGE = 3 # general</li>
+<li>FTX = 4 # text</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="hyperlink">
+<h2>Hyperlink<a class="headerlink" href="#hyperlink" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="xlrd.Hyperlink">
+<em class="property">class </em><code class="descclassname">xlrd.</code><code class="descname">Hyperlink</code><a class="headerlink" href="#xlrd.Hyperlink" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Объект &#8220;Гиперссылка&#8221;, содержит атрибуты гиперссылки. Объект можно получить из объекта &#8220;Лист&#8221; :py:attr:Sheet.hyperlink_list` или <code class="xref py py-attr docutils literal"><span class="pre">hyperlink_map</span></code></p>
+<dl class="attribute">
+<dt id="xlrd.Hyperlink.desc">
+<code class="descname">desc</code><a class="headerlink" href="#xlrd.Hyperlink.desc" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Какое-то описание. (Description ... this is displayed in the cell, and should be identical to the cell value. Unicode string, or None. It seems impossible NOT to have a description created by the Excel UI.)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Hyperlink.fcolx">
+<code class="descname">fcolx</code><a class="headerlink" href="#xlrd.Hyperlink.fcolx" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает число, первую колонку</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Hyperlink.frowx">
+<code class="descname">frowx</code><a class="headerlink" href="#xlrd.Hyperlink.frowx" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает число, первую строку</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Hyperlink.lcolx">
+<code class="descname">lcolx</code><a class="headerlink" href="#xlrd.Hyperlink.lcolx" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает число, номер последней колонки</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Hyperlink.lrowx">
+<code class="descname">lrowx</code><a class="headerlink" href="#xlrd.Hyperlink.lrowx" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает число, номер последней строки</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Hyperlink.quicktip">
+<code class="descname">quicktip</code><a class="headerlink" href="#xlrd.Hyperlink.quicktip" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает текст, подсказка при наведении на ссылку</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Hyperlink.target">
+<code class="descname">target</code><a class="headerlink" href="#xlrd.Hyperlink.target" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Target frame. Unicode string. Note: I have not seen a case of this. It seems impossible to create one in the Excel UI.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Hyperlink.textmark">
+<code class="descname">textmark</code><a class="headerlink" href="#xlrd.Hyperlink.textmark" title="Ссылка на это определение">¶</a></dt>
+<dd><p>&#8220;Textmark&#8221;: the piece after the &#8220;#&#8221; in &#8220;<a class="reference external" href="http://docs.python.org/library#struct_module">http://docs.python.org/library#struct_module</a>&#8221;, or the Sheet1!A1:Z99 part when type is &#8220;workbook&#8221;.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Hyperlink.type">
+<code class="descname">type</code><a class="headerlink" href="#xlrd.Hyperlink.type" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает строку, тип гиперссылки: &#8216;url&#8217;, &#8216;unc&#8217;, &#8216;local file&#8217;, &#8216;workbook&#8217;, &#8216;unknown&#8217;</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Hyperlink.url_or_path">
+<code class="descname">url_or_path</code><a class="headerlink" href="#xlrd.Hyperlink.url_or_path" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает строку, полный путь ссылки</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="name">
+<h2>Name<a class="headerlink" href="#name" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="xlrd.Name">
+<em class="property">class </em><code class="descclassname">xlrd.</code><code class="descname">Name</code><a class="headerlink" href="#xlrd.Name" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Объект &#8220;Информация&#8221;</p>
+<dl class="attribute">
+<dt id="xlrd.Name.area2d">
+<code class="descname">area2d</code><span class="sig-paren">(</span><em>clipped=True</em><span class="sig-paren">)</span><a class="headerlink" href="#xlrd.Name.area2d" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает кортеж (sheet_object, rowxlo, rowxhi, colxlo, colxhi), часть области листа</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><strong>clipped</strong> &#8211; обрезает область (If true (the default), the returned rectangle is clipped to fit in (0, sheet.nrows, 0, sheet.ncols) &#8211; it is guaranteed that 0 &lt;= rowxlo &lt;= rowxhi &lt;= sheet.nrows and that the number of usable rows in the area (which may be zero) is rowxhi - rowxlo; likewise for columns.)</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Исключение XLRDError:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The name is not a constant absolute reference to a single area in a single sheet.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Name.binary">
+<code class="descname">binary</code><a class="headerlink" href="#xlrd.Name.binary" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращет число:</p>
+<blockquote>
+<div><ol class="arabic simple" start="0">
+<li>Formula definition;</li>
+<li>Binary data</li>
+</ol>
+</div></blockquote>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Name.builtin">
+<code class="descname">builtin</code><a class="headerlink" href="#xlrd.Name.builtin" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает число:</p>
+<blockquote>
+<div><ol class="arabic simple" start="0">
+<li>User-defined name;</li>
+<li>Built-in name (common examples: Print_Area, Print_Titles; see OOo docs for full list)</li>
+</ol>
+</div></blockquote>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Name.complex">
+<code class="descname">complex</code><a class="headerlink" href="#xlrd.Name.complex" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает число:</p>
+<blockquote>
+<div><ol class="arabic simple" start="0">
+<li>Простая формула</li>
+<li>Комплексная формула</li>
+</ol>
+</div></blockquote>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Name.func">
+<code class="descname">func</code><a class="headerlink" href="#xlrd.Name.func" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает число:</p>
+<blockquote>
+<div><ol class="arabic simple" start="0">
+<li>Макро команда</li>
+<li>Макро функция</li>
+</ol>
+</div></blockquote>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Name.funcgroup">
+<code class="descname">funcgroup</code><a class="headerlink" href="#xlrd.Name.funcgroup" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает строку, группу функции</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Name.hidden">
+<code class="descname">hidden</code><a class="headerlink" href="#xlrd.Name.hidden" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает число:</p>
+<blockquote>
+<div><ol class="arabic simple" start="0">
+<li>видимый</li>
+<li>скрытый</li>
+</ol>
+</div></blockquote>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Name.macro">
+<code class="descname">macro</code><a class="headerlink" href="#xlrd.Name.macro" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвразает число:</p>
+<blockquote>
+<div><ol class="arabic simple" start="0">
+<li>стандартное имя</li>
+<li>имя макроса</li>
+</ol>
+</div></blockquote>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Name.name">
+<code class="descname">name</code><a class="headerlink" href="#xlrd.Name.name" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает строку, название класса</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Name.name_index">
+<code class="descname">name_index</code><a class="headerlink" href="#xlrd.Name.name_index" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает число, индекс данного объекта в <a class="reference internal" href="#xlrd.Book.name_obj_list" title="xlrd.Book.name_obj_list"><code class="xref py py-attr docutils literal"><span class="pre">xlrd.Book.name_obj_list</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Name.raw_formula">
+<code class="descname">raw_formula</code><a class="headerlink" href="#xlrd.Name.raw_formula" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает 8 битную строку</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Name.result">
+<code class="descname">result</code><a class="headerlink" href="#xlrd.Name.result" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает результат вычисления формулы или None.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Name.scope">
+<code class="descname">scope</code><a class="headerlink" href="#xlrd.Name.scope" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает число:</p>
+<blockquote>
+<div><ul class="simple">
+<li>-1: глобальное имя</li>
+<li>-2: имя относится к листу</li>
+<li>-3: недействительное имя</li>
+<li>0 &lt;= scope &lt; book.nsheets: номер листа</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Name.vbasic">
+<code class="descname">vbasic</code><a class="headerlink" href="#xlrd.Name.vbasic" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает:</p>
+<blockquote>
+<div><ol class="arabic simple" start="0">
+<li>Sheet macro;</li>
+<li>VisualBasic macro. Relevant only if macro == 1</li>
+</ol>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="xlrd.Name.cell">
+<code class="descname">cell</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#xlrd.Name.cell" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает экземпляр объекта &#8220;Ячейка&#8221;, <a class="reference internal" href="#xlrd.Cell" title="xlrd.Cell"><code class="xref py py-class docutils literal"><span class="pre">xlrd.Cell</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Исключение XLRDError:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">The name is not a constant absolute reference to a single cell.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="note">
+<h2>Note<a class="headerlink" href="#note" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="xlrd.Note">
+<em class="property">class </em><code class="descclassname">xlrd.</code><code class="descname">Note</code><a class="headerlink" href="#xlrd.Note" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Объект &#8220;Примечание&#8221;</p>
+<dl class="attribute">
+<dt id="xlrd.Note.author">
+<code class="descname">author</code><a class="headerlink" href="#xlrd.Note.author" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает строку, автора примечания</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Note.col_hidden">
+<code class="descname">col_hidden</code><a class="headerlink" href="#xlrd.Note.col_hidden" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает True|False, если колонка скрыта</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Note.colx">
+<code class="descname">colx</code><a class="headerlink" href="#xlrd.Note.colx" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает число, номер колонки</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Note.rich_text_runlist">
+<code class="descname">rich_text_runlist</code><a class="headerlink" href="#xlrd.Note.rich_text_runlist" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает список кортежей (offset_in_string, font_index). В отличие от <a class="reference internal" href="#xlrd.Sheet.rich_text_runlist_map" title="xlrd.Sheet.rich_text_runlist_map"><code class="xref py py-attr docutils literal"><span class="pre">xlrd.Sheet.rich_text_runlist_map</span></code></a> первое смещение всегда должно быть 0.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Note.row_hidden">
+<code class="descname">row_hidden</code><a class="headerlink" href="#xlrd.Note.row_hidden" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает True|False, если строка скрыта</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Note.rowx">
+<code class="descname">rowx</code><a class="headerlink" href="#xlrd.Note.rowx" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает число, номер строки</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Note.show">
+<code class="descname">show</code><a class="headerlink" href="#xlrd.Note.show" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает True|False, если примечание всегда отображается</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Note.text">
+<code class="descname">text</code><a class="headerlink" href="#xlrd.Note.text" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает строку, текст примечания</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="operand">
+<h2>Operand<a class="headerlink" href="#operand" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="xlrd.Operand">
+<em class="property">class </em><code class="descclassname">xlrd.</code><code class="descname">Operand</code><span class="sig-paren">(</span><em>akind=None</em>, <em>avalue=None</em>, <em>arank=0</em>, <em>atext='?'</em><span class="sig-paren">)</span><a class="headerlink" href="#xlrd.Operand" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Используется в оценке формул. В следующей таблице описываются типы и как их значения представлены.</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="4%" />
+<col width="4%" />
+<col width="92%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Kind symbol</th>
+<th class="head">Kind number</th>
+<th class="head">Value representation</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>oBOOL</td>
+<td>3</td>
+<td>целое: 0 =&gt; False; 1 =&gt; True</td>
+</tr>
+<tr class="row-odd"><td>oERR</td>
+<td>4</td>
+<td>None, или код ошибки</td>
+</tr>
+<tr class="row-even"><td>oMSNG</td>
+<td>5</td>
+<td>Используется в качестве заполнителя для отсутствующего (не прилагается) аргумента функции. (Если * не * появляются в качестве окончательного результата формулы. Значение Нет. (Should <em>not</em> appear as a final formula result. Value is None.)</td>
+</tr>
+<tr class="row-odd"><td>oNUM</td>
+<td>2</td>
+<td>A float. Note that there is no way of distinguishing dates.</td>
+</tr>
+<tr class="row-even"><td>oREF</td>
+<td>-1</td>
+<td>The value is either None or a non-empty list of absolute Ref3D instances.</td>
+</tr>
+<tr class="row-odd"><td>oREL</td>
+<td>-2</td>
+<td>The value is None or a non-empty list of fully or partially relative Ref3D instances.</td>
+</tr>
+<tr class="row-even"><td>oSTRG</td>
+<td>1</td>
+<td>A Unicode string.</td>
+</tr>
+<tr class="row-odd"><td>oUNK</td>
+<td>0</td>
+<td>The kind is unknown or ambiguous. The value is None</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<dl class="attribute">
+<dt id="xlrd.Operand.akind">
+<code class="descname">akind</code><a class="headerlink" href="#xlrd.Operand.akind" title="Ссылка на это определение">¶</a></dt>
+<dd><p>oUNK means that the kind of operand is not known unambiguously.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Operand.atext">
+<code class="descname">atext</code><a class="headerlink" href="#xlrd.Operand.atext" title="Ссылка на это определение">¶</a></dt>
+<dd><p>The reconstituted text of the original formula. Function names will be in English irrespective of the original language, which doesn&#8217;t seem to be recorded anywhere. The separator is &#8221;,&#8221;, not &#8221;;&#8221; or whatever else might be more appropriate for the end-user&#8217;s locale; patches welcome.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Operand.value">
+<code class="descname">value</code><a class="headerlink" href="#xlrd.Operand.value" title="Ссылка на это определение">¶</a></dt>
+<dd><p>None means that the actual value of the operand is a variable (depends on cell data), not a constant.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="ref3d">
+<h2>Ref3D<a class="headerlink" href="#ref3d" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="xlrd.Ref3D">
+<em class="property">class </em><code class="descclassname">xlrd.</code><code class="descname">Ref3D</code><span class="sig-paren">(</span><em>atuple</em><span class="sig-paren">)</span><a class="headerlink" href="#xlrd.Ref3D" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Абсолютная или относительная ссылка на ячейку</p>
+</dd></dl>
+
+<p>The coords attribute is a tuple of the form:
+(shtxlo, shtxhi, rowxlo, rowxhi, colxlo, colxhi)
+where 0 &lt;= thingxlo &lt;= thingx &lt; thingxhi.
+Note that it is quite possible to have thingx &gt; nthings; for example Print_Titles could have colxhi == 256 and/or rowxhi == 65536 irrespective of how many columns/rows are actually used in the worksheet. The caller will need to decide how to handle this situation. Keyword: IndexError :-)</p>
+<p>The components of the coords attribute are also available as individual attributes: shtxlo, shtxhi, rowxlo, rowxhi, colxlo, and colxhi.</p>
+<p>The relflags attribute is a 6-tuple of flags which indicate whether the corresponding (sheet|row|col)(lo|hi) is relative (1) or absolute (0).
+Note that there is necessarily no information available as to what cell(s) the reference could possibly be relative to. The caller must decide what if any use to make of oREL operands. Note also that a partially relative reference may well be a typo. For example, define name A1Z10 as $a$1:$z10 (missing $ after z) while the cursor is on cell Sheet3!A27.
+The resulting Ref3D instance will have coords = (2, 3, 0, -16, 0, 26) and relflags = (0, 0, 0, 1, 0, 0).
+So far, only one possibility of a sheet-relative component in a reference has been noticed: a 2D reference located in the &#8220;current sheet&#8221;.
+This will appear as coords = (0, 1, ...) and relflags = (1, 1, ...).</p>
+</div>
+<div class="section" id="rowinfo">
+<h2>Rowinfo<a class="headerlink" href="#rowinfo" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="xlrd.Rowinfo">
+<em class="property">class </em><code class="descclassname">xlrd.</code><code class="descname">Rowinfo</code><a class="headerlink" href="#xlrd.Rowinfo" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Объект &#8220;Строка&#8221;</p>
+<dl class="attribute">
+<dt id="xlrd.Rowinfo.height">
+<code class="descname">height</code><a class="headerlink" href="#xlrd.Rowinfo.height" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Высота строки в твипсах (twip == 1/20 of a point.)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Rowinfo.has_default_height">
+<code class="descname">has_default_height</code><a class="headerlink" href="#xlrd.Rowinfo.has_default_height" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает 0|1, стандартная высота строка</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Rowinfo.outline_level">
+<code class="descname">outline_level</code><a class="headerlink" href="#xlrd.Rowinfo.outline_level" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает число, уровень границы (0 ... 7)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Rowinfo.outline_group_starts_ends">
+<code class="descname">outline_group_starts_ends</code><a class="headerlink" href="#xlrd.Rowinfo.outline_group_starts_ends" title="Ссылка на это определение">¶</a></dt>
+<dd><p>1 = Outline group starts or ends here (depending on where the outline buttons are located, see WSBOOL record [TODO ??]), and is collapsed</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Rowinfo.hidden">
+<code class="descname">hidden</code><a class="headerlink" href="#xlrd.Rowinfo.hidden" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает 1|0, строка скрыта</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Rowinfo.height_mismatch">
+<code class="descname">height_mismatch</code><a class="headerlink" href="#xlrd.Rowinfo.height_mismatch" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает 1|0 если высота строки и высота строки не совпадают</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Rowinfo.has_default_xf_index">
+<code class="descname">has_default_xf_index</code><a class="headerlink" href="#xlrd.Rowinfo.has_default_xf_index" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает 1|0 используется ли xf_index атрибут</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Rowinfo.xf_index">
+<code class="descname">xf_index</code><a class="headerlink" href="#xlrd.Rowinfo.xf_index" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает чилсо, XF индекс пустых ячеек. (Index to default XF record for empty cells in this row. Don&#8217;t use this if has_default_xf_index == 0.)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Rowinfo.additional_space_above">
+<code class="descname">additional_space_above</code><a class="headerlink" href="#xlrd.Rowinfo.additional_space_above" title="Ссылка на это определение">¶</a></dt>
+<dd><p>This flag is set, if the upper border of at least one cell in this row or if the lower border of at least one cell in the row above is formatted with a thick line style. Thin and medium line styles are not taken into account.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Rowinfo.additional_space_below">
+<code class="descname">additional_space_below</code><a class="headerlink" href="#xlrd.Rowinfo.additional_space_below" title="Ссылка на это определение">¶</a></dt>
+<dd><p>This flag is set, if the lower border of at least one cell in this row or if the upper border of at least one cell in the row below is formatted with a medium or thick line style. Thin line styles are not taken into account.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="sheet">
+<h2>Sheet<a class="headerlink" href="#sheet" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="xlrd.Sheet">
+<em class="property">class </em><code class="descclassname">xlrd.</code><code class="descname">Sheet</code><span class="sig-paren">(</span><em>book</em>, <em>position</em>, <em>name</em>, <em>number</em><span class="sig-paren">)</span><a class="headerlink" href="#xlrd.Sheet" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Объект &#8220;Лист&#8221;, содержит информацию о листе</p>
+<dl class="attribute">
+<dt id="xlrd.Sheet.book">
+<code class="descname">book</code><a class="headerlink" href="#xlrd.Sheet.book" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает родительский объект <a class="reference internal" href="#xlrd.Book" title="xlrd.Book"><code class="xref py py-class docutils literal"><span class="pre">xlrd.Book</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Sheet.cell_note_map">
+<code class="descname">cell_note_map</code><a class="headerlink" href="#xlrd.Sheet.cell_note_map" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает словарь, содержащий информацию об объектах &#8220;Примечание&#8221; <a class="reference internal" href="#xlrd.Note" title="xlrd.Note"><code class="xref py py-class docutils literal"><span class="pre">xlrd.Note</span></code></a>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Sheet.col_label_ranges">
+<code class="descname">col_label_ranges</code><a class="headerlink" href="#xlrd.Sheet.col_label_ranges" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Список адресов, диапазонов ячеек, содержащих заголовки столбцов</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">crange</span> <span class="ow">in</span> <span class="n">thesheet</span><span class="o">.</span><span class="n">col_label_ranges</span><span class="p">:</span>
+<span class="go">        rlo, rhi, clo, chi = crange</span>
+<span class="go">        for rx in xrange(rlo, rhi):</span>
+<span class="go">            for cx in xrange(clo, chi):</span>
+<span class="go">                print &quot;Column label at (rowx=%d, colx=%d) is %r&quot; \</span>
+<span class="go">                    (rx, cx, thesheet.cell_value(rx, cx))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Sheet.colinfo_map">
+<code class="descname">colinfo_map</code><a class="headerlink" href="#xlrd.Sheet.colinfo_map" title="Ссылка на это определение">¶</a></dt>
+<dd><p>The map from a column index to a Colinfo object. Often there is an entry in COLINFO records for all column indexes in range(257). Note that xlrd ignores the entry for the non-existent 257th column. On the other hand, there may be no entry for unused columns. Populated only if open_workbook(formatting_info=True).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Sheet.default_additional_space_above">
+<code class="descname">default_additional_space_above</code><a class="headerlink" href="#xlrd.Sheet.default_additional_space_above" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает строку, стандартное значение для ячейки</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Sheet.default_additional_space_below">
+<code class="descname">default_additional_space_below</code><a class="headerlink" href="#xlrd.Sheet.default_additional_space_below" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает строку, стандартное значение для ячейки</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Sheet.default_row_height">
+<code class="descname">default_row_height</code><a class="headerlink" href="#xlrd.Sheet.default_row_height" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает число, стандартное значение для высоты строки</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Sheet.default_row_height_mismatch">
+<code class="descname">default_row_height_mismatch</code><a class="headerlink" href="#xlrd.Sheet.default_row_height_mismatch" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Default value to be used for a row if there is no ROW record for that row. From the optional DEFAULTROWHEIGHT record.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Sheet.default_row_hidden">
+<code class="descname">default_row_hidden</code><a class="headerlink" href="#xlrd.Sheet.default_row_hidden" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Default value to be used for a row if there is no ROW record for that row. From the optional DEFAULTROWHEIGHT record.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Sheet.defcolwidth">
+<code class="descname">defcolwidth</code><a class="headerlink" href="#xlrd.Sheet.defcolwidth" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Default column width from DEFCOLWIDTH record, else None. From the OOo docs:
+&#8220;&#8221;&#8220;Column width in characters, using the width of the zero character from default font (first FONT record in the file). Excel adds some extra space to the default width, depending on the default font and default font size. The algorithm how to exactly calculate the resulting column width is not known.
+Example: The default width of 8 set in this record results in a column width of 8.43 using Arial font with a size of 10 points.&#8221;&#8220;&#8221;
+For the default hierarchy, refer to the Colinfo class.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Sheet.gcw">
+<code class="descname">gcw</code><a class="headerlink" href="#xlrd.Sheet.gcw" title="Ссылка на это определение">¶</a></dt>
+<dd><p>A 256-element tuple corresponding to the contents of the GCW record for this sheet. If no such record, treat as all bits zero. Applies to BIFF4-7 only. See docs of the Colinfo class for discussion.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Sheet.has_pane_record">
+<code class="descname">has_pane_record</code><a class="headerlink" href="#xlrd.Sheet.has_pane_record" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Boolean specifying if a PANE record was present, ignore unless you&#8217;re xlutils.copy</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Sheet.horizontal_page_breaks">
+<code class="descname">horizontal_page_breaks</code><a class="headerlink" href="#xlrd.Sheet.horizontal_page_breaks" title="Ссылка на это определение">¶</a></dt>
+<dd><p>A list of the horizontal page breaks in this sheet. Breaks are tuples in the form (index of row after break, start col index, end col index). Populated only if open_workbook(formatting_info=True).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Sheet.horz_split_first_visible">
+<code class="descname">horz_split_first_visible</code><a class="headerlink" href="#xlrd.Sheet.horz_split_first_visible" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Index of first visible row in bottom frozen/split pane</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Sheet.horz_split_pos">
+<code class="descname">horz_split_pos</code><a class="headerlink" href="#xlrd.Sheet.horz_split_pos" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Number of rows in top pane (frozen panes; for split panes, see comments below in code)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Sheet.hyperlink_list">
+<code class="descname">hyperlink_list</code><a class="headerlink" href="#xlrd.Sheet.hyperlink_list" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает список гиперссылок <a class="reference internal" href="#xlrd.Hyperlink" title="xlrd.Hyperlink"><code class="xref py py-class docutils literal"><span class="pre">xlrd.Hyperlink</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Sheet.hyperlink_map">
+<code class="descname">hyperlink_map</code><a class="headerlink" href="#xlrd.Sheet.hyperlink_map" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Словарь, ссылки на гиперссылки</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Sheet.merged_cells">
+<code class="descname">merged_cells</code><a class="headerlink" href="#xlrd.Sheet.merged_cells" title="Ссылка на это определение">¶</a></dt>
+<dd><p>List of address ranges of cells which have been merged. These are set up in Excel by Format &gt; Cells &gt; Alignment, then ticking the &#8220;Merge cells&#8221; box.
+Extracted only if open_workbook(formatting_info=True).
+How to deconstruct the list:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">crange</span> <span class="ow">in</span> <span class="n">thesheet</span><span class="o">.</span><span class="n">merged_cells</span><span class="p">:</span>
+<span class="go">        rlo, rhi, clo, chi = crange</span>
+<span class="go">        for rowx in xrange(rlo, rhi):</span>
+<span class="go">            for colx in xrange(clo, chi):</span>
+<span class="go">                # cell (rlo, clo) (the top left one) will carry the data</span>
+<span class="go">                # and formatting info; the remainder will be recorded as</span>
+<span class="go">                # blank cells, but a renderer will apply the formatting info</span>
+<span class="go">                # for the top left cell (e.g. border, pattern) to all cells in</span>
+<span class="go">                # the range.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Sheet.name">
+<code class="descname">name</code><a class="headerlink" href="#xlrd.Sheet.name" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Строка, название листа</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Sheet.ncols">
+<code class="descname">ncols</code><a class="headerlink" href="#xlrd.Sheet.ncols" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Число, количество колонок</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Sheet.nrows">
+<code class="descname">nrows</code><a class="headerlink" href="#xlrd.Sheet.nrows" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Число, количество строк</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Sheet.rich_text_runlist_map">
+<code class="descname">rich_text_runlist_map</code><a class="headerlink" href="#xlrd.Sheet.rich_text_runlist_map" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Mapping of (rowx, colx) to list of (offset, font_index) tuples. The offset defines where in the string the font begins to be used. Offsets are expected to be in ascending order. If the first offset is not zero, the meaning is that the cell&#8217;s XF&#8217;s font should be used from offset 0.
+This is a sparse mapping. There is no entry for cells that are not formatted with rich text.
+Populated only if open_workbook(formatting_info=True).
+How to use:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">runlist</span> <span class="o">=</span> <span class="n">thesheet</span><span class="o">.</span><span class="n">rich_text_runlist_map</span><span class="o">.</span><span class="n">get</span><span class="p">((</span><span class="n">rowx</span><span class="p">,</span> <span class="n">colx</span><span class="p">))</span>
+<span class="go">    if runlist:</span>
+<span class="go">        for offset, font_index in runlist:</span>
+<span class="go">            # do work here.</span>
+<span class="go">            pass</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Sheet.row_label_ranges">
+<code class="descname">row_label_ranges</code><a class="headerlink" href="#xlrd.Sheet.row_label_ranges" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Список адресов ячеек, содержащих названия строк</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Sheet.rowinfo_map">
+<code class="descname">rowinfo_map</code><a class="headerlink" href="#xlrd.Sheet.rowinfo_map" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Словарь, содержащий ссылки на объекты колонки <a class="reference internal" href="#xlrd.Rowinfo" title="xlrd.Rowinfo"><code class="xref py py-class docutils literal"><span class="pre">xlrd.Rowinfo</span></code></a>. Доступен только при открытии книги с параметром open_workbook(formatting_info=True).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Sheet.split_active_pane">
+<code class="descname">split_active_pane</code><a class="headerlink" href="#xlrd.Sheet.split_active_pane" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Frozen panes: ignore it. Split panes: explanation and diagrams in OOo docs.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Sheet.standardwidth">
+<code class="descname">standardwidth</code><a class="headerlink" href="#xlrd.Sheet.standardwidth" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Стандартная ширина</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Sheet.vert_split_first_visible">
+<code class="descname">vert_split_first_visible</code><a class="headerlink" href="#xlrd.Sheet.vert_split_first_visible" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Index of first visible column in right frozen/split pane</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Sheet.vert_split_pos">
+<code class="descname">vert_split_pos</code><a class="headerlink" href="#xlrd.Sheet.vert_split_pos" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Number of columns in left pane (frozen panes; for split panes, see comments below in code)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Sheet.vertical_page_breaks">
+<code class="descname">vertical_page_breaks</code><a class="headerlink" href="#xlrd.Sheet.vertical_page_breaks" title="Ссылка на это определение">¶</a></dt>
+<dd><p>A list of the vertical page breaks in this sheet. Breaks are tuples in the form (index of col after break, start row index, end row index). Populated only if open_workbook(formatting_info=True).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.Sheet.visibility">
+<code class="descname">visibility</code><a class="headerlink" href="#xlrd.Sheet.visibility" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Число, видимость листа:</p>
+<blockquote>
+<div><ol class="arabic simple" start="0">
+<li>видимый</li>
+<li>скрытый, можно отобразить через интерфейс</li>
+<li>скрытый, можно отобразить только через VBA</li>
+</ol>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="xlrd.Sheet.cell">
+<code class="descname">cell</code><span class="sig-paren">(</span><em>rowx</em>, <em>colx</em><span class="sig-paren">)</span><a class="headerlink" href="#xlrd.Sheet.cell" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает ячейку <a class="reference internal" href="#xlrd.Cell" title="xlrd.Cell"><code class="xref py py-class docutils literal"><span class="pre">xlrd.Cell</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>rowx</strong> (<em>int</em>) &#8211; номер колонки</li>
+<li><strong>colx</strong> (<em>int</em>) &#8211; номер строки</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="xlrd.Sheet.cell_type">
+<code class="descname">cell_type</code><span class="sig-paren">(</span><em>rowx</em>, <em>colx</em><span class="sig-paren">)</span><a class="headerlink" href="#xlrd.Sheet.cell_type" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает тип ячейки</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>rowx</strong> (<em>int</em>) &#8211; номер колонки</li>
+<li><strong>colx</strong> (<em>int</em>) &#8211; номер строки</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="xlrd.Sheet.cell_value">
+<code class="descname">cell_value</code><span class="sig-paren">(</span><em>rowx</em>, <em>colx</em><span class="sig-paren">)</span><a class="headerlink" href="#xlrd.Sheet.cell_value" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает значение ячейки</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>rowx</strong> (<em>int</em>) &#8211; номер колонки</li>
+<li><strong>colx</strong> (<em>int</em>) &#8211; номер строки</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="xlrd.Sheet.cell_xf_index">
+<code class="descname">cell_xf_index</code><span class="sig-paren">(</span><em>rowx</em>, <em>colx</em><span class="sig-paren">)</span><a class="headerlink" href="#xlrd.Sheet.cell_xf_index" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает xf_index ячейки</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>rowx</strong> (<em>int</em>) &#8211; номер колонки</li>
+<li><strong>colx</strong> (<em>int</em>) &#8211; номер строки</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="xlrd.Sheet.col">
+<code class="descname">col</code><span class="sig-paren">(</span><em>colx</em><span class="sig-paren">)</span><a class="headerlink" href="#xlrd.Sheet.col" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает список ячеек строки</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><strong>colx</strong> (<em>int</em>) &#8211; номер строки</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="xlrd.Sheet.col_slice">
+<code class="descname">col_slice</code><span class="sig-paren">(</span><em>colx</em>, <em>start_rowx=0</em>, <em>end_rowx=None</em><span class="sig-paren">)</span><a class="headerlink" href="#xlrd.Sheet.col_slice" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает список, срез ячеек</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>colx</strong> (<em>int</em>) &#8211; номер строки</li>
+<li><strong>start_rowx</strong> (<em>int</em>) &#8211; начальная позиция</li>
+<li><strong>end_rowx</strong> (<em>int</em>) &#8211; конечная позиция</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="xlrd.Sheet.col_types">
+<code class="descname">col_types</code><span class="sig-paren">(</span><em>colx</em>, <em>start_rowx=0</em>, <em>end_rowx=None</em><span class="sig-paren">)</span><a class="headerlink" href="#xlrd.Sheet.col_types" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает список, срез типов ячеек</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>colx</strong> (<em>int</em>) &#8211; номер строки</li>
+<li><strong>start_rowx</strong> (<em>int</em>) &#8211; начальная позиция</li>
+<li><strong>end_rowx</strong> (<em>int</em>) &#8211; конечная позиция</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="xlrd.Sheet.col_values">
+<code class="descname">col_values</code><span class="sig-paren">(</span><em>colx</em>, <em>start_rowx=0</em>, <em>end_rowx=None</em><span class="sig-paren">)</span><a class="headerlink" href="#xlrd.Sheet.col_values" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает список, срез значений ячеек</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>colx</strong> (<em>int</em>) &#8211; номер строки</li>
+<li><strong>start_rowx</strong> (<em>int</em>) &#8211; начальная позиция</li>
+<li><strong>end_rowx</strong> (<em>int</em>) &#8211; конечная позиция</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="xlrd.Sheet.computed_column_width">
+<code class="descname">computed_column_width</code><span class="sig-paren">(</span><em>colx</em><span class="sig-paren">)</span><a class="headerlink" href="#xlrd.Sheet.computed_column_width" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Число, ширина колонки</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><strong>colx</strong> (<em>int</em>) &#8211; номер колонки</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="xlrd.Sheet.row">
+<code class="descname">row</code><span class="sig-paren">(</span><em>rowx</em><span class="sig-paren">)</span><a class="headerlink" href="#xlrd.Sheet.row" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает список ячеек колонки</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><strong>rowx</strong> (<em>int</em>) &#8211; номер колонки</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="xlrd.Sheet.row_len">
+<code class="descname">row_len</code><span class="sig-paren">(</span><em>rowx</em><span class="sig-paren">)</span><a class="headerlink" href="#xlrd.Sheet.row_len" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает число, количество колонок</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><strong>rowx</strong> (<em>int</em>) &#8211; номер колонки</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="xlrd.Sheet.row_slice">
+<code class="descname">row_slice</code><span class="sig-paren">(</span><em>rowx</em>, <em>start_colx=0</em>, <em>end_colx=None</em><span class="sig-paren">)</span><a class="headerlink" href="#xlrd.Sheet.row_slice" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает список, срез ячеек</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>rowx</strong> (<em>int</em>) &#8211; номер строки</li>
+<li><strong>start_colx</strong> (<em>int</em>) &#8211; начальная позиция</li>
+<li><strong>end_colx</strong> (<em>int</em>) &#8211; конечная позиция</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="xlrd.Sheet.row_types">
+<code class="descname">row_types</code><span class="sig-paren">(</span><em>rowx</em>, <em>start_colx=0</em>, <em>end_colx=None</em><span class="sig-paren">)</span><a class="headerlink" href="#xlrd.Sheet.row_types" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает список, срез типов ячеек</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>rowx</strong> (<em>int</em>) &#8211; номер строки</li>
+<li><strong>start_colx</strong> (<em>int</em>) &#8211; начальная позиция</li>
+<li><strong>end_colx</strong> (<em>int</em>) &#8211; конечная позиция</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="xlrd.Sheet.row_values">
+<code class="descname">row_values</code><span class="sig-paren">(</span><em>rowx</em>, <em>start_colx=0</em>, <em>end_colx=None</em><span class="sig-paren">)</span><a class="headerlink" href="#xlrd.Sheet.row_values" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает список, срез значений ячеек</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>rowx</strong> (<em>int</em>) &#8211; номер строки</li>
+<li><strong>start_colx</strong> (<em>int</em>) &#8211; начальная позиция</li>
+<li><strong>end_colx</strong> (<em>int</em>) &#8211; конечная позиция</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="xf">
+<h2>XF<a class="headerlink" href="#xf" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="xlrd.XF">
+<em class="property">class </em><code class="descclassname">xlrd.</code><code class="descname">XF</code><a class="headerlink" href="#xlrd.XF" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Расширенная информация о листе, ячейки и т.п.</p>
+<p>Следующие флаги несут информацию о применении XF</p>
+<blockquote>
+<div><ul class="simple">
+<li>_alignment_flag</li>
+<li>_background_flag</li>
+<li>_border_flag</li>
+<li>_font_flag</li>
+<li>_format_flag</li>
+<li>_protection_flag</li>
+</ul>
+</div></blockquote>
+<p>Для ячеек, 0 - родительский стиль, 1 - текущий XF.</p>
+<p>Для стилей, 0 - действительный, 1 - не действительный</p>
+<dl class="attribute">
+<dt id="xlrd.XF.alignment">
+<code class="descname">alignment</code><a class="headerlink" href="#xlrd.XF.alignment" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Экземпляр объекта <a class="reference internal" href="#xlrd.XFAlignment" title="xlrd.XFAlignment"><code class="xref py py-class docutils literal"><span class="pre">xlrd.XFAlignment</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.XF.background">
+<code class="descname">background</code><a class="headerlink" href="#xlrd.XF.background" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Экземпляр объекта <a class="reference internal" href="#xlrd.XFBackground" title="xlrd.XFBackground"><code class="xref py py-class docutils literal"><span class="pre">xlrd.XFBackground</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.XF.border">
+<code class="descname">border</code><a class="headerlink" href="#xlrd.XF.border" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Экземпляр объекта <a class="reference internal" href="#xlrd.XFBorder" title="xlrd.XFBorder"><code class="xref py py-class docutils literal"><span class="pre">xlrd.XFBorder</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.XF.font_index">
+<code class="descname">font_index</code><a class="headerlink" href="#xlrd.XF.font_index" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Число, индекс из <a class="reference internal" href="#xlrd.Book.font_list" title="xlrd.Book.font_list"><code class="xref py py-attr docutils literal"><span class="pre">xlrd.Book.font_list</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.XF.format_key">
+<code class="descname">format_key</code><a class="headerlink" href="#xlrd.XF.format_key" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Число, ключ из <a class="reference internal" href="#xlrd.Book.format_map" title="xlrd.Book.format_map"><code class="xref py py-attr docutils literal"><span class="pre">xlrd.Book.format_map</span></code></a></p>
+<div class="admonition warning">
+<p class="first admonition-title">Предупреждение</p>
+<p class="last">OOo docs on the XF record call this &#8220;Index to FORMAT record&#8221;. It is not an index in the Python sense. It is a key to a map. It is true only for Excel 4.0 and earlier files that the key into format_map from an XF instance is the same as the index into format_list, and only if the index is less than 164.</p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.XF.is_style">
+<code class="descname">is_style</code><a class="headerlink" href="#xlrd.XF.is_style" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает:</p>
+<blockquote>
+<div><ol class="arabic simple" start="0">
+<li>XF ячейки</li>
+<li>XF стиля</li>
+</ol>
+</div></blockquote>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.XF.parent_style_index">
+<code class="descname">parent_style_index</code><a class="headerlink" href="#xlrd.XF.parent_style_index" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Для ячейки возвращает число, индекс <a class="reference internal" href="#xlrd.Book.xf_list" title="xlrd.Book.xf_list"><code class="xref py py-meth docutils literal"><span class="pre">xlrd.Book.xf_list()</span></code></a>.</p>
+<p>Для стиля возвращает 0xFFF</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.XF.protection">
+<code class="descname">protection</code><a class="headerlink" href="#xlrd.XF.protection" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Экземпляр объекта <a class="reference internal" href="#xlrd.XFProtection" title="xlrd.XFProtection"><code class="xref py py-class docutils literal"><span class="pre">xlrd.XFProtection</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.XF.xf_index">
+<code class="descname">xf_index</code><a class="headerlink" href="#xlrd.XF.xf_index" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Число, индекс <a class="reference internal" href="#xlrd.Book.xf_list" title="xlrd.Book.xf_list"><code class="xref py py-class docutils literal"><span class="pre">xlrd.Book.xf_list</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="xfalignment">
+<h2>XFAlignment<a class="headerlink" href="#xfalignment" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="xlrd.XFAlignment">
+<em class="property">class </em><code class="descclassname">xlrd.</code><code class="descname">XFAlignment</code><a class="headerlink" href="#xlrd.XFAlignment" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Выравнивание листа, ячейки и т.п.</p>
+<dl class="attribute">
+<dt id="xlrd.XFAlignment.hor_align">
+<code class="descname">hor_align</code><a class="headerlink" href="#xlrd.XFAlignment.hor_align" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Values: section 6.115 (p 214) of OOo docs</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.XFAlignment.indent_level">
+<code class="descname">indent_level</code><a class="headerlink" href="#xlrd.XFAlignment.indent_level" title="Ссылка на это определение">¶</a></dt>
+<dd><p>A number in range(15).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.XFAlignment.rotation">
+<code class="descname">rotation</code><a class="headerlink" href="#xlrd.XFAlignment.rotation" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Values: section 6.115 (p 215) of OOo docs.</p>
+<div class="admonition note">
+<p class="first admonition-title">Примечание</p>
+<p class="last">file versions BIFF7 and earlier use the documented &#8220;orientation&#8221; attribute; this will be mapped (without loss) into &#8220;rotation&#8221;.</p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.XFAlignment.shrink_to_fit">
+<code class="descname">shrink_to_fit</code><a class="headerlink" href="#xlrd.XFAlignment.shrink_to_fit" title="Ссылка на это определение">¶</a></dt>
+<dd><p>1 = shrink font size to fit text into cell.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.XFAlignment.text_direction">
+<code class="descname">text_direction</code><a class="headerlink" href="#xlrd.XFAlignment.text_direction" title="Ссылка на это определение">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Возвращает:</dt>
+<dd><ol class="first last arabic simple" start="0">
+<li>выравнивание по контексту</li>
+<li>слева-направо</li>
+<li>справа-налево</li>
+</ol>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.XFAlignment.text_wrapped">
+<code class="descname">text_wrapped</code><a class="headerlink" href="#xlrd.XFAlignment.text_wrapped" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>пекст переносится</li>
+</ol>
+</div></blockquote>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.XFAlignment.vert_align">
+<code class="descname">vert_align</code><a class="headerlink" href="#xlrd.XFAlignment.vert_align" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Values: section 6.115 (p 215) of OOo docs</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="xfbackground">
+<h2>XFBackground<a class="headerlink" href="#xfbackground" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="xlrd.XFBackground">
+<em class="property">class </em><code class="descclassname">xlrd.</code><code class="descname">XFBackground</code><a class="headerlink" href="#xlrd.XFBackground" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Фон листа, ячейки и т.п.</p>
+<dl class="attribute">
+<dt id="xlrd.XFBackground.background_colour_index">
+<code class="descname">background_colour_index</code><a class="headerlink" href="#xlrd.XFBackground.background_colour_index" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.XFBackground.fill_pattern">
+<code class="descname">fill_pattern</code><a class="headerlink" href="#xlrd.XFBackground.fill_pattern" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.XFBackground.pattern_colour_index">
+<code class="descname">pattern_colour_index</code><a class="headerlink" href="#xlrd.XFBackground.pattern_colour_index" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="xfborder">
+<h2>XFBorder<a class="headerlink" href="#xfborder" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="xlrd.XFBorder">
+<em class="property">class </em><code class="descclassname">xlrd.</code><code class="descname">XFBorder</code><a class="headerlink" href="#xlrd.XFBorder" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Границы листа, ячейки и т.п.</p>
+<p>Есть несколько значений типов границ:</p>
+<blockquote>
+<div><ol class="arabic simple" start="0">
+<li>нет линий</li>
+<li>тонкий</li>
+<li>средний</li>
+<li>с точками</li>
+<li>пунктирная</li>
+<li>толстая</li>
+<li>двухместный</li>
+<li>hair</li>
+<li>средний пунктирная</li>
+<li>тонкий штрихпунктирной</li>
+<li>средняя штрихпунктирной</li>
+<li>тонкий тире-точка-пунктир</li>
+<li>средняя тире-точка-пунктир</li>
+<li>наклонная среднего штрихпунктирной.</li>
+</ol>
+</div></blockquote>
+<dl class="attribute">
+<dt id="xlrd.XFBorder.bottom_colour_index">
+<code class="descname">bottom_colour_index</code><a class="headerlink" href="#xlrd.XFBorder.bottom_colour_index" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Число, индекс цвета нижней границы</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.XFBorder.bottom_line_style">
+<code class="descname">bottom_line_style</code><a class="headerlink" href="#xlrd.XFBorder.bottom_line_style" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Число, тип нижней границы</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.XFBorder.diag_colour_index">
+<code class="descname">diag_colour_index</code><a class="headerlink" href="#xlrd.XFBorder.diag_colour_index" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Число, индекс цвета диагональных линий</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.XFBorder.diag_down">
+<code class="descname">diag_down</code><a class="headerlink" href="#xlrd.XFBorder.diag_down" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает 1, если диагональ слева сверху вниз вправо</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">diag_line_stylу</code></dt>
+<dd><p>Число, тип линии диагонали</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.XFBorder.diag_up">
+<code class="descname">diag_up</code><a class="headerlink" href="#xlrd.XFBorder.diag_up" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает 1, если диагональ слева снизу вверх вправо</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.XFBorder.left_colour_index">
+<code class="descname">left_colour_index</code><a class="headerlink" href="#xlrd.XFBorder.left_colour_index" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Число, индекс цвета левой границы</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.XFBorder.left_line_style">
+<code class="descname">left_line_style</code><a class="headerlink" href="#xlrd.XFBorder.left_line_style" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Число, тип левой границы</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.XFBorder.right_colour_index">
+<code class="descname">right_colour_index</code><a class="headerlink" href="#xlrd.XFBorder.right_colour_index" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Число, индекс цвета правой границы</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.XFBorder.right_line_style">
+<code class="descname">right_line_style</code><a class="headerlink" href="#xlrd.XFBorder.right_line_style" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Число, тип правой границы</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.XFBorder.top_colour_index">
+<code class="descname">top_colour_index</code><a class="headerlink" href="#xlrd.XFBorder.top_colour_index" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Число, индекс цвета верхней границы</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.XFBorder.top_line_style">
+<code class="descname">top_line_style</code><a class="headerlink" href="#xlrd.XFBorder.top_line_style" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Число, тип верхней границы</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="xfprotection">
+<h2>XFProtection<a class="headerlink" href="#xfprotection" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="xlrd.XFProtection">
+<em class="property">class </em><code class="descclassname">xlrd.</code><code class="descname">XFProtection</code><a class="headerlink" href="#xlrd.XFProtection" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Защита листа, ячейки и т.п.</p>
+<dl class="attribute">
+<dt id="xlrd.XFProtection.cell_locked">
+<code class="descname">cell_locked</code><a class="headerlink" href="#xlrd.XFProtection.cell_locked" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает 1, ячейка заблокирована</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="xlrd.XFProtection.formula_hidden">
+<code class="descname">formula_hidden</code><a class="headerlink" href="#xlrd.XFProtection.formula_hidden" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает 1, формула скрыта</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Оглавление</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">xlrd - интсрумент для чтения xls фалйов</a><ul>
+<li><a class="reference internal" href="#id4">Функции модуля</a></li>
+<li><a class="reference internal" href="#baseobject">BaseObject</a></li>
+<li><a class="reference internal" href="#book">Book</a></li>
+<li><a class="reference internal" href="#cell">Cell</a></li>
+<li><a class="reference internal" href="#colinfo">Colinfo</a></li>
+<li><a class="reference internal" href="#eqneattrs">EqNeAttrs</a></li>
+<li><a class="reference internal" href="#font">Font</a></li>
+<li><a class="reference internal" href="#format">Format</a></li>
+<li><a class="reference internal" href="#hyperlink">Hyperlink</a></li>
+<li><a class="reference internal" href="#name">Name</a></li>
+<li><a class="reference internal" href="#note">Note</a></li>
+<li><a class="reference internal" href="#operand">Operand</a></li>
+<li><a class="reference internal" href="#ref3d">Ref3D</a></li>
+<li><a class="reference internal" href="#rowinfo">Rowinfo</a></li>
+<li><a class="reference internal" href="#sheet">Sheet</a></li>
+<li><a class="reference internal" href="#xf">XF</a></li>
+<li><a class="reference internal" href="#xfalignment">XFAlignment</a></li>
+<li><a class="reference internal" href="#xfbackground">XFBackground</a></li>
+<li><a class="reference internal" href="#xfborder">XFBorder</a></li>
+<li><a class="reference internal" href="#xfprotection">XFProtection</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Предыдущий раздел</h4>
+  <p class="topless"><a href="pyqt/uic/index.html"
+                        title="предыдущая глава">uic - вспомогательный модуль, для работы с ui-фалйами, сгенерированными в дизайнере</a></p>
+  <h4>Следующий раздел</h4>
+  <p class="topless"><a href="xlwt.html"
+                        title="следующая глава">xlwt - интсурмент для создания xls файлов</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Эта страница</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/modules_user/xlrd.txt"
+            rel="nofollow">Исходный текст</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Быстрый поиск</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Искать" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Введите слова для поиска или имя модуля, класса или функции.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Алфавитный указатель"
+             >указатель</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="xlwt.html" title="xlwt - интсурмент для создания xls файлов"
+             >вперёд</a> |</li>
+        <li class="right" >
+          <a href="pyqt/uic/index.html" title="uic - вспомогательный модуль, для работы с ui-фалйами, сгенерированными в дизайнере"
+             >назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Документация python документация 2015.05.20</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Сторонние модули</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright ilnurgi.
+      Создано с помощью <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

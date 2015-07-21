@@ -1,0 +1,22 @@
+DROP
+====
+
+DROP INDEX
+----------
+
+.. code-block:: c
+	
+	DROP INDEX indexTableName
+
+DROP TABLE
+----------
+
+уничтожает таблицу
+
+.. code-block:: c
+	
+	DROP TABLE tableName [RESTRICT | CASSCADE]
+    
+    CASSCADE - удаляет зависимые записи
+    RESTRICT - не удаляет
+

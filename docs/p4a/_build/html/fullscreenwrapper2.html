@@ -1,0 +1,394 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>FullScreenWrapper2 Framework &mdash; p4a doc 14.10.12 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '14.10.12',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="p4a doc 14.10.12 documentation" href="index.html" />
+    <link rel="next" title="Android" href="api/Android.html" />
+    <link rel="prev" title="Документация по python на андроид" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="api/Android.html" title="Android"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Документация по python на андроид"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">p4a doc 14.10.12 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <span class="target" id="module-fullscreenwrapper2"></span><div class="section" id="fullscreenwrapper2-framework">
+<h1>FullScreenWrapper2 Framework<a class="headerlink" href="#fullscreenwrapper2-framework" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="fullscreenwrapper2.FullScreenWrapper2App">
+<em class="property">class </em><tt class="descclassname">fullscreenwrapper2.</tt><tt class="descname">FullScreenWrapper2App</tt><a class="headerlink" href="#fullscreenwrapper2.FullScreenWrapper2App" title="Permalink to this definition">¶</a></dt>
+<dd><p>главный объект фреймверка, не надо создавать экземпляры данного класса, надо только использовать методы класса</p>
+<dl class="method">
+<dt id="fullscreenwrapper2.FullScreenWrapper2App.close_layout">
+<tt class="descname">close_layout</tt><big>(</big><big>)</big><a class="headerlink" href="#fullscreenwrapper2.FullScreenWrapper2App.close_layout" title="Permalink to this definition">¶</a></dt>
+<dd><p>закрытвает лэйаут, если данный лейаут был отображен поверх другого. то на экране отобразится родительский.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fullscreenwrapper2.FullScreenWrapper2App.event_loop">
+<tt class="descname">event_loop</tt><big>(</big><big>)</big><a class="headerlink" href="#fullscreenwrapper2.FullScreenWrapper2App.event_loop" title="Permalink to this definition">¶</a></dt>
+<dd><p>активизирует эвентлуп</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fullscreenwrapper2.FullScreenWrapper2App.exit_FullScreenWrapper2App">
+<tt class="descname">exit_FullScreenWrapper2App</tt><big>(</big><big>)</big><a class="headerlink" href="#fullscreenwrapper2.FullScreenWrapper2App.exit_FullScreenWrapper2App" title="Permalink to this definition">¶</a></dt>
+<dd><p>выходит из приложения</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fullscreenwrapper2.FullScreenWrapper2App.get_android_instance">
+<tt class="descname">get_android_instance</tt><big>(</big><big>)</big><a class="headerlink" href="#fullscreenwrapper2.FullScreenWrapper2App.get_android_instance" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает текущий экземпляр дроида</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fullscreenwrapper2.FullScreenWrapper2App.get_property_value">
+<tt class="descname">get_property_value</tt><big>(</big><em>id</em>, <em>property</em><big>)</big><a class="headerlink" href="#fullscreenwrapper2.FullScreenWrapper2App.get_property_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>возвращает значение атрибута объекта</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>id</strong> &#8211; иди объекта</li>
+<li><strong>property</strong> &#8211; атрибут объекта</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="fullscreenwrapper2.FullScreenWrapper2App.initialize">
+<tt class="descname">initialize</tt><big>(</big><em>droid</em><big>)</big><a class="headerlink" href="#fullscreenwrapper2.FullScreenWrapper2App.initialize" title="Permalink to this definition">¶</a></dt>
+<dd><p>инициализация фреймверка</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>droid</strong> &#8211; droid.Android()</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="fullscreenwrapper2.FullScreenWrapper2App.set_list_contents">
+<tt class="descname">set_list_contents</tt><big>(</big><em>id</em>, <em>list</em><big>)</big><a class="headerlink" href="#fullscreenwrapper2.FullScreenWrapper2App.set_list_contents" title="Permalink to this definition">¶</a></dt>
+<dd><p>задает новый список для вью</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>id</strong> &#8211; иди объекта</li>
+<li><strong>list</strong> &#8211; новый список</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="fullscreenwrapper2.FullScreenWrapper2App.set_property_value">
+<tt class="descname">set_property_value</tt><big>(</big><em>id</em>, <em>property</em>, <em>value</em><big>)</big><a class="headerlink" href="#fullscreenwrapper2.FullScreenWrapper2App.set_property_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>задает новое свойство для атрибута объекта</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>id</strong> &#8211; иди объекта</li>
+<li><strong>property</strong> &#8211; атрибут объекта</li>
+<li><strong>value</strong> &#8211; значение</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="fullscreenwrapper2.FullScreenWrapper2App.show_layout">
+<tt class="descname">show_layout</tt><big>(</big><em>layout</em>, <em>show_mode=SHOW_LAYOUT_PUSH_OVER_CURRENT</em><big>)</big><a class="headerlink" href="#fullscreenwrapper2.FullScreenWrapper2App.show_layout" title="Permalink to this definition">¶</a></dt>
+<dd><p>отображает лэйаут</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>layout</strong> &#8211; <a class="reference internal" href="#fullscreenwrapper2.Layout" title="fullscreenwrapper2.Layout"><tt class="xref py py-class docutils literal"><span class="pre">Layout</span></tt></a></li>
+<li><strong>show_mode</strong> &#8211; тип отображения лейаута</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fullscreenwrapper2.FullScreenWrapper2App.SHOW_LAYOUT_PUSH_OVER_CURRENT">
+<tt class="descname">SHOW_LAYOUT_PUSH_OVER_CURRENT</tt><a class="headerlink" href="#fullscreenwrapper2.FullScreenWrapper2App.SHOW_LAYOUT_PUSH_OVER_CURRENT" title="Permalink to this definition">¶</a></dt>
+<dd><p>отображать лейаут поверх старого</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fullscreenwrapper2.FullScreenWrapper2App.SHOW_LAYOUT_REPLACING_CURRENT">
+<tt class="descname">SHOW_LAYOUT_REPLACING_CURRENT</tt><a class="headerlink" href="#fullscreenwrapper2.FullScreenWrapper2App.SHOW_LAYOUT_REPLACING_CURRENT" title="Permalink to this definition">¶</a></dt>
+<dd><p>отображает лейаут заменив текущий</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="fullscreenwrapper2.Layout">
+<em class="property">class </em><tt class="descclassname">fullscreenwrapper2.</tt><tt class="descname">Layout</tt><big>(</big><em>xml</em>, <em>title</em><big>)</big><a class="headerlink" href="#fullscreenwrapper2.Layout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Абстрактный объект, типа активити. Необходимо создать свой лейаут, отнаследовавшись от этого объекта и перекрыть методы on_show и on_close.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>xml</strong> (<em>str</em>) &#8211; активити в формате xml</li>
+<li><strong>title</strong> (<em>str</em>) &#8211; заголовк окна</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="fullscreenwrapper2.Layout.add_event">
+<tt class="descname">add_event</tt><big>(</big><em>eventhandler</em><big>)</big><a class="headerlink" href="#fullscreenwrapper2.Layout.add_event" title="Permalink to this definition">¶</a></dt>
+<dd><p>вешает обработчик на сам активити</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>eventhandler</strong> &#8211; <a class="reference internal" href="#fullscreenwrapper2.click_EventHandler" title="fullscreenwrapper2.click_EventHandler"><tt class="xref py py-class docutils literal"><span class="pre">click_EventHandler</span></tt></a>, <cite>key_EventHandler</cite>, &#8216;itemclick_EventHandlers&#8217;</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="fullscreenwrapper2.Layout.on_close">
+<tt class="descname">on_close</tt><big>(</big><big>)</big><a class="headerlink" href="#fullscreenwrapper2.Layout.on_close" title="Permalink to this definition">¶</a></dt>
+<dd><p>закрытие активити</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fullscreenwrapper2.Layout.on_show">
+<tt class="descname">on_show</tt><big>(</big><big>)</big><a class="headerlink" href="#fullscreenwrapper2.Layout.on_show" title="Permalink to this definition">¶</a></dt>
+<dd><p>отображает активити на экране, перед этим инициализируя все объекты активити. Без этого метода ни один из объектов активити не инициализируется. И все работы с объектами активити необходимо проводить тут, навешивание хендлеров и т.п.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fullscreenwrapper2.Layout.remove_event">
+<tt class="descname">remove_event</tt><big>(</big><em>self</em>, <em>event_name</em><big>)</big><a class="headerlink" href="#fullscreenwrapper2.Layout.remove_event" title="Permalink to this definition">¶</a></dt>
+<dd><p>удаляет определнный евент из активити</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fullscreenwrapper2.Layout.views">
+<tt class="descname">views</tt><a class="headerlink" href="#fullscreenwrapper2.Layout.views" title="Permalink to this definition">¶</a></dt>
+<dd><p>атрибут, через которые можно обращаться ко всем контролам активити. Представляет из себя словарь, к ключам которым можно обращаться как через точку, так и обычно, как в словарях.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="fullscreenwrapper2.click_EventHandler">
+<em class="property">class </em><tt class="descclassname">fullscreenwrapper2.</tt><tt class="descname">click_EventHandler</tt><big>(</big><em>view</em>, <em>handler_function=None</em><big>)</big><a class="headerlink" href="#fullscreenwrapper2.click_EventHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>класс, для навешивания обработчиков на клик по объектам активити</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>view</strong> &#8211; какой-то контролл</li>
+<li><strong>handler_function</strong> &#8211; функция обработчик</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="fullscreenwrapper2.itemclick_EventHandlers">
+<em class="property">class </em><tt class="descclassname">fullscreenwrapper2.</tt><tt class="descname">itemclick_EventHandlers</tt><big>(</big><em>view</em>, <em>handler_function=None</em><big>)</big><a class="headerlink" href="#fullscreenwrapper2.itemclick_EventHandlers" title="Permalink to this definition">¶</a></dt>
+<dd><p>класс, для навешивания обработчиков</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>view</strong> &#8211; какой-то контролл</li>
+<li><strong>handler_function</strong> &#8211; функция обработчик</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="fullscreenwrapper2.key_EventHandler">
+<em class="property">class </em><tt class="descclassname">fullscreenwrapper2.</tt><tt class="descname">key_EventHandler</tt><big>(</big><em>key_match_id=&quot;4&quot;</em>, <em>view=None</em>, <em>handler_function=None</em><big>)</big><a class="headerlink" href="#fullscreenwrapper2.key_EventHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>класс, для навешивания обработчиков на кнопки</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>key_match_id</strong> &#8211; иди кнопки, по дефолту = 4, кнопка назад</li>
+<li><strong>handler_function</strong> &#8211; функция обработчик</li>
+<li><strong>view</strong> &#8211; вью</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">android</span><span class="o">,</span> <span class="nn">random</span>
+<span class="kn">from</span> <span class="nn">fullscreenwrapper2</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">class</span> <span class="nc">DemoLayout</span><span class="p">(</span><span class="n">Layout</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">DemoLayout</span><span class="p">,</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">xmldata</span><span class="p">,</span><span class="s">&quot;FullScreenWrapper Demo&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">on_show</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_event</span><span class="p">(</span><span class="n">key_EventHandler</span><span class="p">(</span><span class="n">handler_function</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">close_app</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">views</span><span class="o">.</span><span class="n">but_change</span><span class="o">.</span><span class="n">add_event</span><span class="p">(</span><span class="n">click_EventHandler</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">views</span><span class="o">.</span><span class="n">but_change</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">change_color</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">views</span><span class="o">.</span><span class="n">but_exit</span><span class="o">.</span><span class="n">add_event</span><span class="p">(</span><span class="n">click_EventHandler</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">views</span><span class="o">.</span><span class="n">but_exit</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">close_app</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">views</span><span class="o">.</span><span class="n">txt_colorbox</span><span class="o">.</span><span class="n">background</span><span class="o">=</span><span class="s">&quot;#ffffffff&quot;</span>
+
+    <span class="k">def</span> <span class="nf">on_close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">close_app</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">view</span><span class="p">,</span><span class="n">event</span><span class="p">):</span>
+        <span class="n">FullScreenWrapper2App</span><span class="o">.</span><span class="n">exit_FullScreenWrapper2App</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">change_color</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">view</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="n">colorvalue</span> <span class="o">=</span> <span class="s">&quot;#ff&quot;</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">get_rand_hex_byte</span><span class="p">()</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">get_rand_hex_byte</span><span class="p">()</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">get_rand_hex_byte</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">views</span><span class="o">.</span><span class="n">txt_colorbox</span><span class="o">.</span><span class="n">background</span><span class="o">=</span><span class="n">colorvalue</span>
+
+    <span class="k">def</span> <span class="nf">get_rand_hex_byte</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">)</span>
+        <span class="n">hexrep</span> <span class="o">=</span> <span class="nb">hex</span><span class="p">(</span><span class="n">j</span><span class="p">)[</span><span class="mi">2</span><span class="p">:]</span>
+        <span class="k">if</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">hexrep</span><span class="p">)</span><span class="o">==</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">hexrep</span> <span class="o">=</span> <span class="s">&#39;0&#39;</span><span class="o">+</span><span class="n">hexrep</span>
+        <span class="k">return</span> <span class="n">hexrep</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">droid</span> <span class="o">=</span> <span class="n">android</span><span class="o">.</span><span class="n">Android</span><span class="p">()</span>
+    <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">()</span>
+    <span class="n">FullScreenWrapper2App</span><span class="o">.</span><span class="n">initialize</span><span class="p">(</span><span class="n">droid</span><span class="p">)</span>
+    <span class="n">FullScreenWrapper2App</span><span class="o">.</span><span class="n">show_layout</span><span class="p">(</span><span class="n">DemoLayout</span><span class="p">())</span>
+    <span class="n">FullScreenWrapper2App</span><span class="o">.</span><span class="n">eventloop</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Документация по python на андроид</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="api/Android.html"
+                        title="next chapter">Android</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/fullscreenwrapper2.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="api/Android.html" title="Android"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Документация по python на андроид"
+             >previous</a> |</li>
+        <li><a href="index.html">p4a doc 14.10.12 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Методы вставки и удаления &mdash; jquery 2015.07.09 documentation</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2015.07.09',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="jquery 2015.07.09 documentation" href="index.html" />
+    <link rel="next" title="Методы для работы с событиями" href="events.html" />
+    <link rel="prev" title="Методы выбора" href="getters.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="events.html" title="Методы для работы с событиями"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="getters.html" title="Методы выбора"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">jquery 2015.07.09 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>Методы вставки и удаления<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Ме­то­ды встав­ля­ют, уда­ля­ют или за­ме­ща­ют со­дер­жи­мое до­ку­мен­та. В сиг­на­ту­рах ме­то­дов, при­ве­ден­ных ни­же, ар­гу­мент content мо­жет быть объ­ек­том jQuery, стро­кой с раз­мет­кой HTML или от­дель­ным эле­мен­том до­ку­мен­та, а ар­гу­мент target мо­жет быть объ­ек­том jQuery, от­дель­ным эле­мен­том до­ку­мен­та или стро­кой се­лек­то­ра.</p>
+<dl class="function">
+<dt id="after">
+<code class="descname">after</code><span class="sig-paren">(</span><em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#after" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descname">after</code><span class="sig-paren">(</span><em>f(idx):content</em><span class="sig-paren">)</span></dt>
+<dd><p>Встав­ля­ет со­дер­жи­мое content по­сле ка­ж­до­го вы­бран­но­го эле­мен­та или вы­зы­ва­ет f как ме­тод и встав­ля­ет воз­вра­щае­мое зна­че­ние по­сле ка­ж­до­го вы­бран­но­го эле­мен­та.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="append">
+<code class="descname">append</code><span class="sig-paren">(</span><em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#append" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descname">append</code><span class="sig-paren">(</span><em>f(idx</em>, <em>html):content</em><span class="sig-paren">)</span></dt>
+<dd><p>До­бав­ля­ет со­дер­жи­мое content в ко­нец ка­ж­до­го вы­бран­но­го эле­мен­та или вы­зы­ва­ет f как ме­тод и  до­бав­ля­ет воз­вра­щае­мое зна­че­ние в  ко­нец ка­ж­до­го вы­бран­но­го эле­мен­та.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="appendTo">
+<code class="descname">appendTo</code><span class="sig-paren">(</span><em>target</em><span class="sig-paren">)</span><a class="headerlink" href="#appendTo" title="Permalink to this definition">¶</a></dt>
+<dd><p>До­бав­ля­ет вы­бран­ные эле­мен­ты в  ко­нец ка­ж­до­го эле­мен­та, оп­ре­де­ляе­мо­го ар­гу­мен­том target, ко­пи­руя их, ес­ли ар­гу­мент target оп­ре­де­ля­ет бо­лее од­но­го эле­мен­та.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="before">
+<code class="descname">before</code><span class="sig-paren">(</span><em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#before" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descname">before</code><span class="sig-paren">(</span><em>f(idx):content</em><span class="sig-paren">)</span></dt>
+<dd><p>Дей­ст­ву­ет по­доб­но ме­то­ду after(), но встав­ля­ет со­дер­жи­мое content пе­ред вы­бран­ ны­ми эле­мен­та­ми, а не по­сле.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="clone">
+<code class="descname">clone</code><span class="sig-paren">(</span><span class="optional">[</span><em>data=false</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#clone" title="Permalink to this definition">¶</a></dt>
+<dd><p>Соз­да­ет пол­ную ко­пию ка­ж­до­го вы­бран­но­го эле­мен­та и воз­вра­ща­ет но­вый объ­ект jQuery, пред­став­ляю­щий мно­же­ст­во ко­пий эле­мен­тов. Ес­ли ар­гу­мент data име­ет зна­че­ние true, так­же ко­пи­ру­ет дан­ные (вклю­чая об­ра­бот­чи­ки со­бы­тий), свя­зан­ные с вы­бран­ны­ми эле­мен­та­ми.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="detach">
+<code class="descname">detach</code><span class="sig-paren">(</span><span class="optional">[</span><em>sel</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#detach" title="Permalink to this definition">¶</a></dt>
+<dd><p>Дей­ст­ву­ет по­доб­но ме­то­ду remove(), но не уда­ля­ет дан­ные, свя­зан­ные с от­со­еди­нен­ ны­ми эле­мен­та­ми.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="empty">
+<code class="descname">empty</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#empty" title="Permalink to this definition">¶</a></dt>
+<dd><p>Уда­ля­ет со­дер­жи­мое вы­бран­ных эле­мен­тов.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="html">
+<code class="descname">html</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#html" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descname">html</code><span class="sig-paren">(</span><em>htmlText</em><span class="sig-paren">)</span></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descname">html</code><span class="sig-paren">(</span><em>f(idx</em>, <em>current):htmlText</em><span class="sig-paren">)</span></dt>
+<dd><p>При вы­зо­ве без ар­гу­мен­тов воз­вра­ща­ет со­дер­жи­мое пер­во­го вы­бран­но­го эле­мен­та в ви­де стро­ки с раз­мет­кой HTML. При вы­зо­ве с од­ним ар­гу­мен­том ус­та­нав­ли­ва­ет со­дер­жи­мое всех вы­бран­ных эле­мен­тов рав­ным стро­ке htmlText или зна­че­нию, воз­вра­щае­мо­му функ­ци­ей f, ко­то­рая вы­зы­ва­ет­ся как ме­тод этих эле­мен­тов.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="insertAfter">
+<code class="descname">insertAfter</code><span class="sig-paren">(</span><em>target</em><span class="sig-paren">)</span><a class="headerlink" href="#insertAfter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Встав­ля­ет вы­бран­ные эле­мен­ты по­сле ка­ж­до­го эле­мен­та, оп­ре­де­ляе­мо­го ар­гу­мен­том target, ко­пи­руя их, ес­ли ар­гу­мент target оп­ре­де­ля­ет бо­лее од­но­го эле­мен­та.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="insertBefore(target):">
+<code class="descname">insertBefore(target):</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#insertBefore(target):" title="Permalink to this definition">¶</a></dt>
+<dd><p>Встав­ля­ет вы­бран­ные эле­мен­ты пе­ред ка­ж­дым эле­мен­том, оп­ре­де­ляе­мым ар­гу­мен­том target, ко­пи­руя их, ес­ли ар­гу­мент target оп­ре­де­ля­ет бо­лее од­но­го эле­мен­та.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="prepend">
+<code class="descname">prepend</code><span class="sig-paren">(</span><em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#prepend" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descname">prepend</code><span class="sig-paren">(</span><em>f(idx</em>, <em>html):content</em><span class="sig-paren">)</span></dt>
+<dd><p>Дей­ст­ву­ет по­доб­но ме­то­ду append(), но встав­ля­ет со­дер­жи­мое content в на­ча­ло ка­ж­до­го вы­бран­но­го эле­мен­та, а не в ко­нец.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="prependTo">
+<code class="descname">prependTo</code><span class="sig-paren">(</span><em>target</em><span class="sig-paren">)</span><a class="headerlink" href="#prependTo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Дей­ст­ву­ет по­доб­но ме­то­ду appendTo(), но встав­ля­ет вы­бран­ные эле­мен­ты в на­ча­ло эле­мен­тов, оп­ре­де­ляе­мых ар­гу­мен­том target, а не в ко­нец.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="remove">
+<code class="descname">remove</code><span class="sig-paren">(</span><span class="optional">[</span><em>sel</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>Уда­ля­ет все вы­бран­ные эле­мен­ты или все вы­бран­ные эле­мен­ты, со­от­вет­ст­вую­щие се­лек­то­ру sel, из до­ку­мен­та, уда­ляя так­же все дан­ные, свя­зан­ные с ни­ми (вклю­чая об­ра­бот­чи­ки со­бы­тий). Об­ра­ти­те вни­ма­ние, что уда­лен­ные эле­мен­ты ис­клю­ча­ют­ся из со­ста­ва до­ку­мен­та, но по-преж­не­му ос­та­ют­ся чле­на­ми воз­вра­щае­мо­го объ­ек­та jQuery.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="replaceAll">
+<code class="descname">replaceAll</code><span class="sig-paren">(</span><em>target</em><span class="sig-paren">)</span><a class="headerlink" href="#replaceAll" title="Permalink to this definition">¶</a></dt>
+<dd><p>Встав­ля­ет вы­бран­ные эле­мен­ты в до­ку­мент так, что они за­ме­ща­ют ка­ж­дый эле­мент, оп­ре­де­ляе­мый ар­гу­мен­том target, ко­пи­руя вы­бран­ные эле­мен­ты, ес­ли ар­гу­мент target оп­ре­де­ля­ет бо­лее од­но­го эле­мен­та.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="replaceWith">
+<code class="descname">replaceWith</code><span class="sig-paren">(</span><em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#replaceWith" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descname">replaceWith</code><span class="sig-paren">(</span><em>f(idx</em>, <em>html):content</em><span class="sig-paren">)</span></dt>
+<dd><p>За­ме­ща­ет ка­ж­дый вы­бран­ный эле­мент со­дер­жи­мым content или вы­зы­ва­ет функ­цию f как ме­тод для ка­ж­до­го вы­бран­но­го эле­мен­та, пе­ре­да­вая ей ин­декс эле­мен­та и те­ку­щее со­дер­жи­мое в ви­де раз­мет­ки HTML, и за­ме­ща­ет дан­ный эле­мент воз­вра­щае­мым зна­че­ни­ем.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="text">
+<code class="descname">text</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#text" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descname">text</code><span class="sig-paren">(</span><em>plainText</em><span class="sig-paren">)</span></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descname">text</code><span class="sig-paren">(</span><em>f(idx</em>, <em>current):plainText</em><span class="sig-paren">)</span></dt>
+<dd><p>При вы­зо­ве без ар­гу­мен­тов воз­вра­ща­ет со­дер­жи­мое пер­во­го вы­бран­но­го эле­мен­та в ви­де стро­ки с про­стым тек­стом. При вы­зо­ве с од­ним ар­гу­мен­том ус­та­нав­ли­ва­ет со­дер­жи­мое всех вы­бран­ных эле­мен­тов рав­ным стро­ке plainText или зна­че­нию, воз­вра­щае­мо­му функ­ци­ей f, ко­то­рая вы­зы­ва­ет­ся как ме­тод этих эле­мен­тов.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="unwrap">
+<code class="descname">unwrap</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unwrap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Уда­ля­ет ро­ди­те­ля ка­ж­до­го вы­бран­но­го эле­мен­та, за­ме­щая его вы­бран­ным эле­мен­том и смеж­ны­ми с ним эле­мен­та­ми.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="wrap">
+<code class="descname">wrap</code><span class="sig-paren">(</span><em>wrapper</em><span class="sig-paren">)</span><a class="headerlink" href="#wrap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descname">wrap</code><span class="sig-paren">(</span><em>f(idx):wrapper</em><span class="sig-paren">)</span></dt>
+<dd><p>Обер­ты­ва­ет ка­ж­дый вы­бран­ный эле­мент, ко­пи­руя оберт­ку, ес­ли вы­бран­ных эле­мен­тов бо­лее од­но­го. Ес­ли ме­то­ду пе­ре­да­на функ­ция, она бу­дет вы­зва­на как ме­тод для ка­ж­до­го вы­бран­но­го эле­мен­та, что­бы вы­чис­лить оберт­ку. Ар­гу­мент wrapper мо­жет быть эле­мен­том, объ­ек­том jQuery, се­лек­то­ром или стро­кой с раз­мет­кой HTML, но он дол­жен оп­ре­де­лять един­ст­вен­ный эле­мент-оберт­ку.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="wrapAll">
+<code class="descname">wrapAll</code><span class="sig-paren">(</span><em>wrapper</em><span class="sig-paren">)</span><a class="headerlink" href="#wrapAll" title="Permalink to this definition">¶</a></dt>
+<dd><p>Обер­ты­ва­ет все вы­бран­ные эле­мен­ты как груп­пу, встав­ляя оберт­ку wrapper в по­зи­цию пер­во­го вы­бран­но­го эле­мен­та и за­тем ко­пи­руя все вы­бран­ные эле­мен­ты в эле­мент-оберт­ку wrapper.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="wrapInner">
+<code class="descname">wrapInner</code><span class="sig-paren">(</span><em>wrapper</em><span class="sig-paren">)</span><a class="headerlink" href="#wrapInner" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descname">wrapInner</code><span class="sig-paren">(</span><em>f(idx):wrapper</em><span class="sig-paren">)</span></dt>
+<dd><p>Дей­ст­ву­ет по­доб­но ме­то­ду wrap(), но обер­ты­ва­ет эле­мен­том wrapper (или воз­вра­щае­мым зна­че­ни­ем функ­ции f) со­дер­жи­мое ка­ж­до­го вы­бран­но­го эле­мен­та, а не са­миэле­мен­ты.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="getters.html"
+                        title="previous chapter">Методы выбора</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="events.html"
+                        title="next chapter">Методы для работы с событиями</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/setter.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="events.html" title="Методы для работы с событиями"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="getters.html" title="Методы выбора"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">jquery 2015.07.09 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

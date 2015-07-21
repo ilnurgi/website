@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>FormControl - общие особенности всех элементов форм &mdash; js doc 2015.06.26 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2015.06.26',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="js doc 2015.06.26 documentation" href="../index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.26 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="formcontrol">
+<h1>FormControl - общие особенности всех элементов форм<a class="headerlink" href="#formcontrol" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="FormControl">
+<em class="property">class </em><code class="descname">FormControl</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#FormControl" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="autofocus">
+<code class="descname">autofocus</code><a class="headerlink" href="#autofocus" title="Permalink to this definition">¶</a></dt>
+<dd><p>Зна­че­ние true, ес­ли эле­мент дол­жен ав­то­ма­ти­че­ски по­лу­чать фо­кус вво­да сра­зу по­сле за­груз­ки до­ку­мен­та. (Эле­мен­ты FieldSet и Output не реа­ли­зу­ют это свой­ст­во.)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="disabled">
+<code class="descname">disabled</code><a class="headerlink" href="#disabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Зна­че­ние true, ес­ли эле­мент фор­мы на­хо­дит­ся в не­ак­тив­ном со­стоя­нии. Не­ак­тив­ные эле­мен­ты не от­кли­ка­ют­ся на ввод поль­зо­ва­те­ля и не под­вер­га­ют­ся про­вер­ке. (Эле­мен­ты Output не реа­ли­зу­ют это свой­ст­во; эле­мен­ты FieldSet ис­поль­зу­ют его для управ­ле­ния ак­тив­но­стью всех эле­мен­тов, со­дер­жа­щих­ся в них.)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="form">
+<code class="descname">form</code><a class="headerlink" href="#form" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ссыл­ка на эле­мент <a class="reference internal" href="Form.html#Form" title="Form"><code class="xref js js-class docutils literal"><span class="pre">Form()</span></code></a>, ко­то­рый яв­ля­ет­ся вла­дель­цем дан­но­го эле­мен­та, или null, ес­ли та­ко­вой от­сут­ст­ву­ет. Ес­ли эле­мент фор­мы на­хо­дит­ся внут­ри эле­мен­та &lt;form&gt;, эта фор­ма яв­ля­ет­ся его вла­дель­цем. В  про­тив­ном слу­чае, ес­ли эле­мент фор­мы име­ет HTML-ат­ри­бут form, оп­ре­де­ляю­щий зна­че­ние ат­ри­бу­та id эле­мен­та &lt;form&gt;, вла­дель­цем эле­мен­та бу­дет ука­зан­ная фор­ма.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="labels">
+<code class="descname">labels</code><a class="headerlink" href="#labels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Объ­ект <a class="reference internal" href="NodeList.html#NodeList" title="NodeList"><code class="xref js js-class docutils literal"><span class="pre">NodeList()</span></code></a>, по­доб­ный мас­си­ву, со­дер­жа­щий эле­мен­ты Label, свя­зан­ные с эле­мен­та­ми этой фор­мы. (Объ­ек­ты FieldSet не реа­ли­зу­ют это свой­ст­во.)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="name">
+<code class="descname">name</code><a class="headerlink" href="#name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Зна­че­ние HTML-ат­ри­бу­та name для дан­но­го эле­мен­та фор­мы. Име­на эле­мен­тов форм мож­но ис­поль­зо­вать в  ка­че­ст­ве имен свойств эле­мен­та Form: зна­че­ния­ми та­ких свойств яв­ля­ют­ся эле­мен­ты форм. Име­на эле­мен­тов форм так­же мож­но ис­поль­зо­вать для иден­ти­фи­ка­ции дан­ных при от­прав­ке фор­мы.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="onformchange">
+<code class="descname">onformchange</code><a class="headerlink" href="#onformchange" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ко­гда в лю­бом эле­мен­те фор­мы воз­бу­ж­да­ет­ся со­бы­тие «change», фор­ма рас­сы­ла­ет не­всплы­ваю­щее со­бы­тие «formchange» всем сво­им эле­мен­там. Эле­мен­ты форм мо­г ут ис­поль­зо­вать это свой­ст­во для оп­ре­де­ле­ния фак­та из­ме­не­ний в со­сед­них эле­мен­тах фор­мы.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="onforminput">
+<code class="descname">onforminput</code><a class="headerlink" href="#onforminput" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ко­гда в  лю­бом эле­мен­те фор­мы воз­бу­ж ­да­ет­ся со­бы­тие «input», фор­ма рас­сы­ла­ет не­всплы­ваю­щее со­бы­тие «forminput» всем сво­им эле­мен­там. Эле­мен­ты форм мо­гут ис­поль­зо­вать это свой­ст­во для оп­ре­де­ле­ния фак­та из­ме­не­ний в со­сед­них эле­мен­тах фор­мы.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="oninvalid">
+<code class="descname">oninvalid</code><a class="headerlink" href="#oninvalid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ес­ли в хо­де про­вер­ки вы­яс­нит­ся, что эле­мент фор­мы со­дер­жит не­ кор­рект­ные дан­ные, в нем бу­дет воз­бу­ж­де­но со­бы­тие «invalid». Это со­бы­тие не всплы­ва­ет, но ес­ли его от­ме­нить, бро­узер не вы­ве­дет со­об­ще­ние об ошиб­ке для это­го эле­мен­та.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="type">
+<code class="descname">type</code><a class="headerlink" href="#type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Для эле­мен­тов &lt;input&gt; свой­ст­во type име­ет зна­че­ние ат­ри­бу­та type или зна­че­ние «text», ес­ли ат­ри­бут type не ука­зан в те­ге &lt;input&gt;. Для эле­мен­тов &lt;button&gt;, &lt;select&gt; и &lt;text­area&gt; свой­ст­во type име­ет зна­че­ние «button», «select-one» (или «select-mul­tip­le», ес­ли ус­та­нов­лен ат­ри­бут multiple) и «textarea», со­от­вет­ст­вен­но. Для эле­мен­тов &lt;fieldset&gt; свой­ст­во type име­ет зна­че­ние «fieldset», а для эле­мен­тов &lt;output&gt; – зна­че­ние «output».</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="validationMessage">
+<code class="descname">validationMessage</code><a class="headerlink" href="#validationMessage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ес­ли эле­мент фор­мы со­дер­жит до­пус­ти­мые дан­ные или не под­вер­га­ет­ся про­вер­ке, это свой­ст­во бу­дет со­дер­жать пус­тую стро­ку. Ина­че это свой­ст­во бу­дет со­дер­жать ло­ка­ли­зо­ван­ную стро­ку, опи­сы­ваю­щую при­чи­ну, по ко­то­рой вве­ден­ные дан­ные при­зна­ны не­кор­рект­ны­ми.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="validity">
+<code class="descname">validity</code><a class="headerlink" href="#validity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Это свой­ст­во ссы­ла­ет­ся на объ­ект <a class="reference internal" href="FormValidity.html#FormValidity" title="FormValidity"><code class="xref js js-class docutils literal"><span class="pre">FormValidity()</span></code></a>, ко­то­рый оп­ре­де­ля­ет кор­рект­ность да­ных в этом эле­мен­те фор­мы и опи­сы­ва­ет при­чи­ну, ес­ли дан­ные при­зна­ны не­кор­рект­ны­ми.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="value">
+<code class="descname">value</code><a class="headerlink" href="#value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ка­ж­дый эле­мент фор­мы име­ет стро­ко­вое свой­ст­во value, ко­то­рое ис­поль­зу­ет­ся при от­прав­ке фор­мы. Для тек­сто­вых эле­мен­тов форм зна­че­ни­ем это­го свой­ст­ва яв­ля­ет­ся текст, вве­ден­ный поль­зо­ва­те­лем. Для кно­пок – зна­че­ние HTML-ат­ри­бу­та value. Для эле­мен­тов Output это свой­ст­во по­доб­но свой­ст­ву textContent, унас­ле­до­ван­но­му от объ­ек­та Node. Эле­мен­ты FieldSet не реа­ли­зу­ют это свой­ст­во.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="willValidate">
+<code class="descname">willValidate</code><a class="headerlink" href="#willValidate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Это свой­ст­во име­ет зна­че­ние true, ес­ли эле­мент фор­мы под­вер­га­ет­ся про­вер­ке, и false – в про­тив­ном слу­чае.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="checkValidity">
+<code class="descname">checkValidity</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#checkValidity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Воз­вра­ща­ет true, ес­ли эле­мент фор­мы со­дер­жит кор­рект­ные дан­ные (или ес­ли этот эле­мент не под­вер­га­ет­ся про­вер­ке). Ина­че воз­бу­ж­да­ет со­бы­тие «invalid» в дан­ном эле­мен­те и воз­вра­ща­ет false.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="setCustomValidity">
+<code class="descname">setCustomValidity</code><span class="sig-paren">(</span><em>string error</em><span class="sig-paren">)</span><a class="headerlink" href="#setCustomValidity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ес­ли в ар­гу­мен­те error пе­ре­дать не­пус­тую стро­ку, этот ме­тод по­ме­тит дан­ный эле­мент фор­мы как со­дер­жа­щий не­до­пус­ти­мые дан­ные и  бу­дет ис­поль­зо­вать ар­гу­мент error как ло­ка­ли­зо­ван­ное со­об­ще­ние, что­бы из­вес­тить поль­зо­ва­те­ля о при­чи­нах. Ес­ли пе­ре­дать в ар­гу­мен­те error пус­тую стро­ку, все пре­ды­ду­щие стро­ки error бу­дут уда­ле­ны, а объ­ект бу­дет по­ме­чен как со­дер­жа­щий до­пус­ти­мые дан­ные.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/dom/FormControl.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.26 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

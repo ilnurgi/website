@@ -1,0 +1,304 @@
+The "py2sis" command
+--------------------
+
+SYNOPSIS
+
+    $ ensymble.py py2sis
+        [--uid=0x01234567] [--appname=AppName] [--version=1.0.0]
+        [--lang=EN,...] [--icon=icon.svg] [--shortcaption="App. Name",...]
+        [--caption="Application Name",...] [--drive=C]
+        [--textfile=mytext_%C.txt] [--cert=mycert.cer] [--privkey=mykey.key]
+        [--passphrase=12345] [--caps=Cap1+Cap2+...]
+        [--vendor="Vendor Name",...] [--autostart]
+        [--encoding=terminal,filesystem] [--verbose]
+        <src> [sisfile]
+
+
+DESCRIPTION
+
+The "py2sis" command is used to pack a Python for S60 application script
+and its auxiliary files (if any) into a Symbian installation package
+(SIS).
+
+
+PARAMETERS
+
+    src
+
+The source script or directory name. When a directory name is given, the
+directory structure is preserved under an application specific private
+directory ("\private\<uid>\") on the phone. A file called "default.py"
+is required to exist on the root of the directory given. This will be
+the main file that starts the application. (See option "--extrasdir"
+below for more options for file placement.)
+
+When a regular file name is given, it will be located under the
+application specific private directory, with the name "default.py".
+
+    sisfile
+
+Path of the SIS file to create. If a directory name is given, output
+file name is derived from input file name and application version (see
+option "--version" below). This is also the case when no SIS file name
+is given.
+
+    --appname=AppName
+    -n AppName
+
+Name of the application. If no application name is given, it will be
+derived from the input file name.
+
+This name is used as the base for all generated file names (EXE, icon,
+resources) on the phone. It will also be used as the default caption if
+none are given, and a temporary UID (see option "--uid" below) will be
+generated from application name if not given explicitly.
+
+    --uid=0x01234567
+    -u 0x01234567
+
+Symbian UID for the application. If the UID option is not given, the
+main Python file ("default.py", see parameter "src" above) will be
+scanned for a special string. If no UID can be found, a temporary UID is
+generated from the application name (see option "--appname" and command
+"genuid" above).
+
+The special UID string can appear anywhere in the main Python file,
+including comments and as part of string literals. It is of the form
+
+    SYMBIAN_UID = UID
+
+, where whitespace around the equals sign is optional. UID is in the
+same format as with the command line parameter (see option "--uid"
+above).
+
+Note: Use a real UID for all applications to be distributed. The
+auto-generated test-range UID is only meant for development and testing,
+not for real applications. UIDs can be ordered from Symbian Signed [12].
+If you have already ordered UIDs for 1st or 2nd Edition phones, to use
+these UIDs in 3rd Edition phones the first hex digit (a "1") needs to be
+changed to an "f".
+
+Also note: When changing the application name (or source file /
+directory name in case no application name is explicitly given), the
+temporary UID changes and the SIS package will be considered a new
+application on the phone, unless an UID is explicitly specified.
+
+    --version=1.0.0
+    -r 1.0.0
+
+Application version: X.Y.Z or X,Y,Z (major, minor, build). There may be
+a "v" or "V" in front of the major number. Minor and build numbers are
+optional.
+
+If the version option is not given, the main Python file ("default.py",
+see parameter "src" above) will be scanned for a special string. If no
+version can be found, it defaults to 1.0.0.
+
+The special version string can appear anywhere in the main Python file,
+including comments and as part of string literals. It is of the form
+
+    SIS_VERSION = "1.0.0"
+
+, where whitespace around the equals sign is optional. Version is in the
+same format as with the command line parameter (see option "--version"
+above), except that it may optionally be enclosed in single or double
+quotes.
+
+    --lang=EN,...
+    -l EN,...
+
+Comma separated list of two-character language codes. These are the
+languages that the SIS file claims to support, English by default.
+Application must then somehow determine which language was selected
+during install. Symbian installation tools reference [13] lists the
+available language codes.
+
+    --icon=icon.svg
+    -i icon.svg
+
+Icon file in SVG-Tiny format. If no icon is given, the Python logo is
+used as the icon. The Python logo is a trademark of the Python Software
+Foundation.
+
+Ensymble does not support the old style MBM bitmap icons.
+
+    --shortcaption="App. Name",...
+    -s "App. Name",...
+
+    --caption="Application Name",...
+    -c "Application Name",...
+
+Comma separated list of short and long captions in all selected
+languages, i.e. there must be as many comma separated captions as there
+are languages listed with the "--lang" option. If no captions are given,
+application name is used (see option "--appname" above). If only the
+short captions are given, long captions will use those instead.
+
+Captions are visible names used in various places on the phone display.
+Short caption is displayed under the application icon when using the
+grid layout. Long caption is used on top of the screen when the
+application is launched and beside the icon in list layout. Long caption
+is also used as the package name, which is displayed during application
+installation.
+
+    --drive=C
+    -f C
+
+Installation drive "C" or "E" or "any", to select where the SIS is to be
+installed. Default is "any", which causes the phone to ask the user
+where to install the package.
+
+    --extrasdir=root
+    -x root
+
+Name of "extras" directory under the application source directory. The
+extras directory contains a directory tree which is placed under the
+root of the installation drive, instead of in the application private
+directory. If no extras directory name is given, this feature is
+disabled.
+
+Option "--extrasdir" is similar to the "simplesis" command (see below).
+It allows placing files under "\sys\bin" and "\resource", for example.
+
+    --textfile=mytext_%C.txt
+    -t mytext_%C.txt
+
+Text file (or pattern, see below) to display during install. If none is
+given, no extra text will be displayed during install.
+
+Files to display are in UTF-8 encoding, without Byte-Order Marker (BOM).
+The file name may contain formatting characters that are substituted for
+each selected language (see option "--lang" above). If no formatting
+characters are present, the same text will be used for all languages.
+
+    %%           - literal %
+    %n           - language number (01 - 99)
+    %c           - two-character language code in lowercase letters
+    %C           - two-character language code in capital letters
+    %l           - language name in English, using only lowercase letters
+    %l           - language name in English, using mixed case letters
+
+For example, if there are files named "mytext_EN.txt", "mytext_GE.txt"
+and "mytext_SP.txt", a pattern of "mytext_%C.txt" will be able to use
+them.
+
+    --cert=mycert.cer
+    -a mycert.cer
+
+Certificate to use for signing in PEM (text) format.
+
+SIS files for Symbian OS v9 and later are required to be digitally
+signed. Unsigned packages will not install on the phone. A
+self-generated ("self-signed" in crypto parlance) certificate will do,
+but only a restricted subset of features ("capabilities", see option
+"--caps" below) are available for self-signed applications.
+
+If no certificate and its private key are given, Ensymble uses a default
+self-signed certificate. Software authors are encouraged to create their
+own unique certificates for SIS packages that are to be distributed.
+
+    --privkey=mykey.key
+    -k mykey.key
+
+Private key of the certificate in PEM (text) format. If option "--cert"
+(above) is given, this option is required as well.
+
+    --passphrase=12345
+    -p 12345
+
+Pass phrase of the private key.
+
+Note: Using command line options to give the pass phrase is insecure.
+Any user of the computer will be able to see command lines of started
+programs and thus will see the pass phrase in plain view. Instead,
+standard input should be used (see examples below).
+
+If no pass phrase is given on the command line or standard input, it
+will be asked interactively.
+
+    --caps=Cap1+Cap2+...
+    -b Cap1+Cap2+...
+
+or
+
+    --caps=0x12345
+    -b 0x12345
+
+Capability names separated by "+" or a numeric capability bitmask. If no
+capability option is given, the application will not have any special
+capabilities. Symbian Signed [12] has an FAQ which explains all the
+available capabilities.
+
+    --vendor=Name,...
+    -d Name,...
+
+Comma separated list of vendor names in all selected languages, i.e.
+there must be as many comma separated vendor names as there are
+languages listed with the "--lang" option. Alternatively, if only one
+vendor name is given, it will be used for all languages. If no vendor
+names are given then "Ensymble" will be used.
+
+Vendor name is visible during installation and on the Application
+manager, except when using self-signed certificates (see option "--cert"
+above).
+
+    --autostart
+    -g
+
+Flag to control automatic startup of the application. On S60 3rd Edition
+phones, an application can register itself to be automatically started
+when the phone is turned on.
+
+Note: Self-signed applications and applications with UID in the
+unprotected range cannot register to be automatically started (see
+options "--uid" and "--cert" above).
+
+    --runinstall
+    -R
+
+Run the application after installation. After copying all files to the
+phone, the application is automatically started.
+
+Note: Phones will ignore this flag in SIS files using self-signed
+certificates (see option "--cert" above).
+
+    --heapsize=min,max
+    -H min,max
+
+Heap size limits for the application. Defaults of 4 kilobytes and one
+megabyte are used if no heap size option is given. If only one value is
+given, it is used as both the heap minimum and heap maximum value.
+
+Values may have suffix "k" or "M" (case insensitive) to denote kilobytes
+(1024 bytes) and megabytes (1048576 bytes), respectively.
+
+The heap minimum value determines if a program is allowed to start. If
+less than the set amount of memory is available, program start-up fails.
+The heap maximum value limits the memory a program can allocate. Memory
+allocations beyond the set limit will fail. The default of one megabyte
+is usually enough, but processing large datasets such as images from an
+integrated camera might require setting the heap maximum value higher.
+
+
+EXAMPLES
+
+Note: The command lines below may be wrapped over multiple lines due to
+layout constraints. In reality, each of them should be contained in one
+physical command line.
+
+    $ ensymble.py py2sis myprog.py
+
+This generates a SIS file called "myprog_v1_0_0.sis" in current working
+directory. This SIS file is ready to be uploaded to a S60 3rd Edition
+phone. Package version defaults to 1.0.0, a test-range UID is
+auto-generated for the package and a default self-signed certificate is
+used to digitally sign the SIS file. A default icon (the Python logo) is
+used for application icon.
+
+    $ echo "12345" | ensymble.py py2sis
+        --cert mycert.cer --privkey mykey.key
+        myprog.py
+
+Pass phrase can be given in Ensymble standard input, so that it will not
+be visible to all users of the computer (see option "--passphrase"
+above).

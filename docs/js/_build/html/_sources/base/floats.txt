@@ -1,0 +1,89 @@
+Number, число
+=============
+
+Только один тип числа, float64
+
+.. code-block:: js
+
+    0.1 + 0.2 == 0.3
+    // false
+
+    1 == 1.0
+    // true
+
+    1/0 = Infinity
+    // бесконечность
+
+    -1/0 = -Infinity
+    // бесконечность
+
+Основные методы чисел
+---------------------
+
+.. js:class:: Number(obj)
+
+    Возвращает объект число
+
+    .. code-block:: js
+
+        Number(10);
+        // 10
+        
+        Number(“42.23”);
+        // 42.23
+
+        Number(“71oshi”);
+        // Nan
+
+.. js:function:: Number.toExponential()
+
+    .. code-block:: js
+
+        var x = 123456789;
+        // undefined
+
+        x.toExponential();
+        //'1.23456789e+8'
+
+        x.toExponential(1);
+        //'1.2e+8'
+
+        x.toExponential(2);
+        //'1.23e+8'
+
+        x.toExponential(3);
+        //'1.235e+8'
+
+.. js:function:: Number.toFixed([ofset])
+
+    Возвращает строку, с определенным количеством знаков после запятой
+
+    .. code-block:: js
+
+        var y = 43.81327;
+        
+        y.toFixed();
+        //'44'
+
+        y.toFixed(1);
+        //'43.8'
+        
+        y.toFixed(2);
+        //'43.81'
+        
+        y.toFixed(3);
+        //'43.813'
+
+.. js:function:: Number.toString()
+
+    Преобразование в строку
+
+    .. code-block:: js
+
+        var n = 7432;
+        
+        y.toString();
+        //'7432'
+
+        y.toString(2);
+        //'1110100001000'

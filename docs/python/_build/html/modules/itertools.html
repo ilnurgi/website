@@ -1,0 +1,339 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>itertools &mdash; Документация python документация 2015.05.20</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2015.05.20',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Документация python документация 2015.05.20" href="../index.html" />
+    <link rel="up" title="Основные модули" href="index.html" />
+    <link rel="next" title="locale" href="locale.html" />
+    <link rel="prev" title="io" href="io.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Алфавитный указатель"
+             accesskey="I">указатель</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="locale.html" title="locale"
+             accesskey="N">вперёд</a> |</li>
+        <li class="right" >
+          <a href="io.html" title="io"
+             accesskey="P">назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Документация python документация 2015.05.20</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Основные модули</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <span class="target" id="module-itertools"></span><div class="section" id="itertools">
+<h1>itertools<a class="headerlink" href="#itertools" title="Ссылка на этот заголовок">¶</a></h1>
+<p>Модуль содержит функции, создающие эффективные итераторы, которые позволяют выполнять итерации по данным различными способами. Все функции в этом модуле возвращают итераторы, которые можно использовать в инструкции for и в других функциях, где применяются итераторы, например в функциях-генераторах и в выражениях-генераторах.</p>
+<dl class="method">
+<dt id="itertools.accumu1ate">
+<code class="descclassname">itertools.</code><code class="descname">accumu1ate</code><span class="sig-paren">(</span><em>&lt;Последовательность&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#itertools.accumu1ate" title="Ссылка на это определение">¶</a></dt>
+<dd><p>на каждой итерации возвращает сумму предыду­щих элементов последовательности. Начальное значение равно 0</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">accumulate</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]))</span>
+<span class="go">[1, 3, 6, 10, 15, 21]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="itertools.chain">
+<code class="descclassname">itertools.</code><code class="descname">chain</code><span class="sig-paren">(</span><em>&lt;Последовательность1&gt;</em><span class="optional">[</span>, <em>...</em>, <em>&lt;ПоследовательностьN&gt;</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#itertools.chain" title="Ссылка на это определение">¶</a></dt>
+<dd><p>на каждой итерации возвращает элементы сначала из первой последователь­ ности, затем из второй последовательности и т.д.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">chain</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]))</span>
+<span class="go">[1,2,3,4,5,6,7,8,9]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="itertools.chain.from_iterable">
+<code class="descclassname">chain.</code><code class="descname">from_iterable</code><span class="sig-paren">(</span><em>&lt;Последовательность&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#itertools.chain.from_iterable" title="Ссылка на это определение">¶</a></dt>
+<dd><p>аналогична функции <a class="reference internal" href="#itertools.chain" title="itertools.chain"><code class="xref py py-meth docutils literal"><span class="pre">chain()</span></code></a>, но прини­мает одну последовательность. каждый элемент которой считается отдельной последо­вательностью.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">chain</span><span class="o">.</span><span class="n">from_iterable</span><span class="p">([</span><span class="s">&#39;abc&#39;</span><span class="p">,</span> <span class="s">&#39;def&#39;</span><span class="p">]))</span>
+<span class="go">[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="itertools.combinations">
+<code class="descclassname">itertools.</code><code class="descname">combinations</code><span class="sig-paren">(</span><em>iterable</em>, <em>r</em><span class="sig-paren">)</span><a class="headerlink" href="#itertools.combinations" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Создает итератор, который возвращает все возможные последовательности из r элементов, взятых из итерируемого объекта iterable. Элементы в возвращаемых последовательностях располагаются в том же порядке, в каком они встречаются в исходном объекте iterable.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">combinations</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="mi">2</span><span class="p">))</span>
+<span class="go">[[1,2], [1,3], [1,4], [2,3], [2, 4], [3,4]]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="itertools.combinations_with_replacement">
+<code class="descclassname">itertools.</code><code class="descname">combinations_with_replacement</code><span class="sig-paren">(</span><em>&lt;Последовательность&gt;</em>, <em>&lt;Количество комбинации&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#itertools.combinations_with_replacement" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Создает итератор, который возвращает кортеж, содержащий комбинацию из указанного количества элементов.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">combinations</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="mi">2</span><span class="p">))</span>
+<span class="go">[[1, 1], [1,2], [1,3], [1,4], [2, 2], [2,3], [2, 4], [3, 3], [3,4], [4, 4]]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="itertools.compress">
+<code class="descclassname">itertools.</code><code class="descname">compress</code><span class="sig-paren">(</span><em>&lt;Фильтруемая последовательность&gt;</em>, <em>&lt;Последовательность логических значений&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#itertools.compress" title="Ссылка на это определение">¶</a></dt>
+<dd><p>производит фильтрацию последовательности, указанной в первом пара­метре. Элемент возвращается, только если соответствующий элемент (с таким же индек­сом) из второй последовательности трактуется как истина. Сравнение заканчивается, когда достигнут конец одной из последовательностей.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">compress</span><span class="p">(</span><span class="s">&#39;абвгде&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]))</span>
+<span class="go">[&#39;а&#39;, &#39;д&#39;, &#39;е&#39;]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="itertools.count">
+<code class="descclassname">itertools.</code><code class="descname">count</code><span class="sig-paren">(</span><em>start=0</em>, <em>step=1</em><span class="sig-paren">)</span><a class="headerlink" href="#itertools.count" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Создает итератор, который воспроизводит упорядоченную и непрерывную последовательность целых чисел, начиная с n. Если аргумент n опущен, в качестве первого значения возвращается число 0. (Обратите внимание, что этот итератор не поддерживает длинные целые числа. По достижении значения sys.maxint счетчик переполнится и итератор продолжит воспроизводить значения, начиная с -sys.maxint - 1.)</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">itertools</span><span class="o">.</span><span class="n">count</span><span class="p">():</span>
+<span class="go">        if i &gt; 5:</span>
+<span class="go">            break</span>
+<span class="go">        print i,</span>
+<span class="go">0, 1, 2, 3, 4</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="itertools.cycle">
+<code class="descclassname">itertools.</code><code class="descname">cycle</code><span class="sig-paren">(</span><em>iterable</em><span class="sig-paren">)</span><a class="headerlink" href="#itertools.cycle" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Создает итератор, который в цикле многократно выполняет обход элементов в объекте iterable. За кулисами создает копию элементов в объекте iterable. Эта копия затем используется для многократного обхода элементов в цикле.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="itertools.dropwhile">
+<code class="descclassname">itertools.</code><code class="descname">dropwhile</code><span class="sig-paren">(</span><em>&lt;Функция&gt;</em>, <em>&lt;Последовательность&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#itertools.dropwhile" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает объект итератор, который в каждой итерации возвращает элемент последовательности, начиная с элемента, дляч которого функция, указанная в первом параметре вернет False</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
+<span class="go">        return x &gt; 3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">dropwhile</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]))</span>
+<span class="go">[0, 7, 2, 3]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="itertools.filterfalse">
+<code class="descclassname">itertools.</code><code class="descname">filterfalse</code><span class="sig-paren">(</span><em>&lt;Функция&gt;</em>, <em>&lt;Последовательность&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#itertools.filterfalse" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает объект итератор, который в каждой итерации возвращает элемент последовательности, для которой функция, указанная в первом параметре, вернет значение False. Если в первом параметре вместо названия функции указать значение None, то каждый элемент последовательности будет проверен на соответствие значению Fa1se. Если эле­мент в логическом контексте возвращает значение True, то он не будет входить в возвращаемый результат.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="go">        return x &gt; 3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">itertoo1s</span><span class="o">.</span><span class="n">filterfalse</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="go">[0, 2, 3]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="itertools.groupby">
+<code class="descclassname">itertools.</code><code class="descname">groupby</code><span class="sig-paren">(</span><em>iterable</em><span class="optional">[</span>, <em>key</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#itertools.groupby" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Создает итератор, который группирует одинаковые элементы из итерируемого объекта iterable, следующие друг за другом. Процесс группировки основан на поиске одинаковых элементов. Например, если итерируемый объект iterable возвращает один и тот же элемент несколько раз подряд, этот элемент образует группу. Если функция применяется к отсортированному списку, она образует группы по числу уникальных элементов в списке. В необязательном аргументе key может передаваться функция, которая будет применяться к каждому элементу; в этом случае в сравнивании соседних элементов участвуют возвращаемые значения этой функции, а не значения самих элементов. Итератор, возвращаемый функцией, воспроизводит кортежи (key, group), где элемент key – это значение ключа для группы, а элемент group – это итератор, который возвращает все элементы, попавшие в группу.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="itertools.ifilter">
+<code class="descclassname">itertools.</code><code class="descname">ifilter</code><span class="sig-paren">(</span><em>predicate</em>, <em>iterable</em><span class="sig-paren">)</span><a class="headerlink" href="#itertools.ifilter" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Создает итератор, который воспроизводит только те элементы из объекта iterable, для которых функция predicate(item) возвращает True. Если в аргументе predicate передать None, все элементы в объекте iterable будут оцениваться как True и будут возвращаться итератором.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="itertools.ifilterfalse">
+<code class="descclassname">itertools.</code><code class="descname">ifilterfalse</code><span class="sig-paren">(</span><em>predicate</em>, <em>iterable</em><span class="sig-paren">)</span><a class="headerlink" href="#itertools.ifilterfalse" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Создает итератор, который воспроизводит только те элементы из объекта iterable, для которых функция predicate(item) возвращает False. Если в аргументе predicate передать None, все элементы в объекте iterable будут оцениваться как False и будут возвращаться итератором.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="itertools.imap">
+<code class="descclassname">itertools.</code><code class="descname">imap</code><span class="sig-paren">(</span><em>function</em>, <em>iter1</em>, <em>iter2</em>, <em>...</em>, <em>iterN</em><span class="sig-paren">)</span><a class="headerlink" href="#itertools.imap" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Создает итератор, который воспроизводит элементы function(i1,i2, ... iN), где i1, i2,..., iN – это элементы, полученные из итераторов iter1, iter2, ..., iterN соответственно. Если в аргументе function передать None, функция imap() вернет кортежи вида (i1, i2, ..., iN). Итерации прекращаются, когда один из указанных итераторов прекращает воспроизводить значения.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="itertools.islice">
+<code class="descclassname">itertools.</code><code class="descname">islice</code><span class="sig-paren">(</span><em>iterable</em>, <span class="optional">[</span><em>start</em>, <span class="optional">]</span><em>stop</em><span class="optional">[</span>, <em>step</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#itertools.islice" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Создает итератор, воспроизводящий элементы, которые вернула бы операция извлечения среза iterable[start:stop:step]. Первые start элементов пропускаются и итерации прекращаются по достижении позиции, указанной в аргументе stop. В необязательном аргументе step передается шаг выборки элементов. В отличие от срезов, в аргументах start, stop и step не допускается использовать отрицательные значения. Если аргумент start опущен, итерации начинаются с 0. Если аргумент step опущен, по умолчанию используется шаг 1.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="itertools.izip">
+<code class="descclassname">itertools.</code><code class="descname">izip</code><span class="sig-paren">(</span><em>iter1</em>, <em>iter2</em>, <em>... iterN</em><span class="sig-paren">)</span><a class="headerlink" href="#itertools.izip" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Создает итератор, который воспроизводит кортежи (i1, i2, ..., iN), где значения i1, i2, ..., iN извлекаются из итераторов iter1, iter2, ..., iterN соответственно. Итерации останавливаются, когда какой-либо из исходных итераторов прекращает возвращать значения. Итератор, возвращаемый этой функцией, воспроизводит те же значения, что и встроенная функция zip().</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="itertools.izip_longest">
+<code class="descclassname">itertools.</code><code class="descname">izip_longest</code><span class="sig-paren">(</span><em>iter1</em>, <em>iter2</em>, <em>...</em>, <em>iterN</em><span class="optional">[</span>, <em>fillvalue=None</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#itertools.izip_longest" title="Ссылка на это определение">¶</a></dt>
+<dd><p>То же, что и функция izip(), за исключением того, что возвращаемый итератор продолжает итерации, пока не будут исчерпаны все значения, воспроизводимые итераторами iter1, iter2 и так далее. В качестве недостающих значений для итераторов, которые оказались исчерпаны раньше всех, используется None, если не было указано иное значение в именованном аргументе fillvalue.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="itertools.permutations">
+<code class="descclassname">itertools.</code><code class="descname">permutations</code><span class="sig-paren">(</span><em>&lt;Последовательность&gt;</em><span class="optional">[</span>, <em>&lt;Количество элементов&gt;</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#itertools.permutations" title="Ссылка на это определение">¶</a></dt>
+<dd><p>на каждой итерации возвращает кортеж, содержащий комбинацию из указанного количества элементов. Если количество элементов не указано, то использу­ется длина последовательности.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="s">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">itertools</span><span class="o">.</span><span class="n">perrnutations</span><span class="p">(</span><span class="s">&#39;aбвг&#39;</span><span class="p">)]</span>
+<span class="go">[&#39;абвг&#39;, &#39;абгв&#39;, &#39;авбг&#39;, &#39;авгб&#39;, &#39;агбв&#39;, &#39;агвб&#39;, &#39;бавг&#39;, ...&#39;гвба&#39;]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="itertools.product">
+<code class="descclassname">itertools.</code><code class="descname">product</code><span class="sig-paren">(</span><em>&lt;Последовательность1&gt;</em>, <em>&lt;Последовательность2&gt;</em>, <em>...</em><span class="optional">[</span>, <em>repeat=1</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#itertools.product" title="Ссылка на это определение">¶</a></dt>
+<dd><p>на каждой итерации возвращает кортеж, содержащий комбинацию из эле­ментов одной или нескольких последовательностей</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">product</span><span class="p">(</span><span class="s">&#39;aбвг&#39;</span><span class="p">,</span> <span class="n">repeat</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+<span class="go">[(&#39;а&#39;, &#39;а&#39;)&#39; (&#39;а&#39;&#39; &#39;б&#39;), (&#39;а&#39;, &#39;в&#39;), ... (&#39;г&#39;, &#39;г&#39;)]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="itertools.repeat">
+<code class="descclassname">itertools.</code><code class="descname">repeat</code><span class="sig-paren">(</span><em>object</em><span class="optional">[</span>, <em>times</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#itertools.repeat" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Создает итератор, который многократно воспроизводит объект object. В необязательном аргументе times передается количество повторений. Если этот аргумент не задан, количество повторений будет бесконечным.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="itertools.starmap">
+<code class="descclassname">itertools.</code><code class="descname">starmap</code><span class="sig-paren">(</span><em>&lt;Функция&gt;</em>, <em>&lt;Последовательность&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#itertools.starmap" title="Ссылка на это определение">¶</a></dt>
+<dd><p>передает значение в функцию и возраща­ет результат ее выполнения. Обратите внимание на то, что каждый элемент должен быть последовательностью. При передаче в функцию производится распаковка последова­тельности. Иными словами, в функцию передаются отдельные элементы последовательности, а не последовательность целиком.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="go">        return x + y</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">starmap</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]]))</span>
+<span class="go">[3, 7]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="itertools.takewhile">
+<code class="descclassname">itertools.</code><code class="descname">takewhile</code><span class="sig-paren">(</span><em>&lt;Функция&gt;</em>, <em>&lt;Последовательность&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#itertools.takewhile" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает итератор, в каждой итерации возвращает элемент последовательности, пока не встретится элемент, для которой функция, указанная в превом параметре вернет значение False</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
+<span class="go">        return x &gt; 3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">takewhile</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]))</span>
+<span class="go">[4, 5, 6]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="itertools.tee">
+<code class="descclassname">itertools.</code><code class="descname">tee</code><span class="sig-paren">(</span><em>&lt;Последовательность&gt;</em><span class="optional">[</span>, <em>&lt;Количечтво&gt;</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#itertools.tee" title="Ссылка на это определение">¶</a></dt>
+<dd><p>возвращает кортеж, содержащий не­сколько итераторов для последовательности. Если второй параметр не указан, то воз­вращается кортеж из двух итераторов. Эта функция может принимать любые итерируемые объекты. При этом, когда оригинальный итератор клонируется, в кэше сохраняется его копия, которая используется во всех далее создаваемых итераторах. Будьте очень внимательны и не используйте оригинальный итератор iterable после вызова функции tee(). В противном случае механизм кэширования будет работать некорректно.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">itertoo1s</span><span class="o">.</span><span class="n">tee</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="go">(&lt;itertoo1s.tee object at Ox00rDB760&gt;, &lt;itertoo1s.tee object at Ox00rDB73B&gt;)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="itertools.zip_longest">
+<code class="descclassname">itertools.</code><code class="descname">zip_longest</code><span class="sig-paren">(</span><em>&lt;Последовательность1&gt; [ , ... &lt;ПоследовательностьN&gt;] [ , fillvalue=None]</em><span class="sig-paren">)</span><a class="headerlink" href="#itertools.zip_longest" title="Ссылка на это определение">¶</a></dt>
+<dd><p>на каждой итерации возвращает кортеж, содержащий элементы после­довательностей, которые расположены на одинаковом смещении. Если последователь­ности имеют разное количество элементов, то вместо отсутствующего элемента вставля­ется объект, указанный в параметре fillva1ue.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">zip_longest</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="p">[</span><span class="mi">4</span><span class="p">]))</span>
+<span class="go">[(1, 4), (2, None), (3, None)]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Предыдущий раздел</h4>
+  <p class="topless"><a href="io.html"
+                        title="предыдущая глава">io</a></p>
+  <h4>Следующий раздел</h4>
+  <p class="topless"><a href="locale.html"
+                        title="следующая глава">locale</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Эта страница</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/modules/itertools.txt"
+            rel="nofollow">Исходный текст</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Быстрый поиск</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Искать" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Введите слова для поиска или имя модуля, класса или функции.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Алфавитный указатель"
+             >указатель</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="locale.html" title="locale"
+             >вперёд</a> |</li>
+        <li class="right" >
+          <a href="io.html" title="io"
+             >назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Документация python документация 2015.05.20</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Основные модули</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright ilnurgi.
+      Создано с помощью <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

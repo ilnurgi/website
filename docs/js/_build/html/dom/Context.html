@@ -1,0 +1,432 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Context - контекст канвас страницы &mdash; js doc 2015.06.26 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2015.06.26',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="js doc 2015.06.26 documentation" href="../index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.26 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="context">
+<h1>Context - контекст канвас страницы<a class="headerlink" href="#context" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="Context">
+<em class="property">class </em><code class="descname">Context</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Context" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="canvas">
+<code class="descname">canvas</code><a class="headerlink" href="#canvas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ссылка на <a href="#id1"><span class="problematic" id="id2">:js:canvas:`Canvas`</span></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fillStyle">
+<code class="descname">fillStyle</code><a class="headerlink" href="#fillStyle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Цвет заливки, можно задать через <a class="reference internal" href="CanvasGradient.html#CanvasGradient" title="CanvasGradient"><code class="xref js js-class docutils literal"><span class="pre">CanvasGradient()</span></code></a>, <a class="reference internal" href="CanvasPattern.html#CanvasPattern" title="CanvasPattern"><code class="xref js js-class docutils literal"><span class="pre">CanvasPattern()</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="font">
+<code class="descname">font</code><a class="headerlink" href="#font" title="Permalink to this definition">¶</a></dt>
+<dd><p>Шрифт для рисования текста</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="globalAlpha">
+<code class="descname">globalAlpha</code><a class="headerlink" href="#globalAlpha" title="Permalink to this definition">¶</a></dt>
+<dd><p>Уровень прозрачности, от 0 до 1</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="globalCompositeOperation">
+<code class="descname">globalCompositeOperation</code><a class="headerlink" href="#globalCompositeOperation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Управляет порядком объединения пикселов</p>
+<ul class="simple">
+<li><cite>copy</cite> (R = S), Ис­ход­ный пик­сел ри­су­ет­ся без уче­та це­ле­во­го пик­се­ла.</li>
+<li><cite>destination-atop</cite> (R = (1-α d )S + α s D), Ис­ход­ный пик­сел ри­су­ет­ся под це­ле­вым. Ес­ли ис­ход­ный пик­сел яв­ля­ет­ся про­зрач­ным, ре­зуль­ти­рую­щийпик­сел так­же бу­дет про­зрач­ным.</li>
+<li><cite>destination-in</cite> (R = α s D), Це­ле­вой пик­сел ум­но­жа­ет­ся на не­про­зрач­ность ис­ход­но­го, но цвет ис­ход­но­го пик­се­ла иг­но­ри­ру­ет­ся.</li>
+<li><cite>destination-out</cite> (R = (1-α s )D), Це­ле­вой пик­сел де­ла­ет­ся про­зрач­ным, ес­ли ис­ход­ный пик­сел не­про­зра­чен, и ос­та­ет­ся без из­ме­не­ний, ес­ли ис­ход­ный пик­сел про­зра­чен. Цвет ис­ход­но­го пик­се­ла иг­но­ри­ру­ет­ся.</li>
+<li><cite>destination-over</cite> (R = (1-α d )S + D), Ис­ход­ный пик­сел ри­су­ет­ся под це­ле­вым, и его ви­ди­мость за­ви­сит от про­зрач­но­сти це­ле­во­го пик­се­ла.</li>
+<li><cite>lighter</cite> (R = S + D), Цве­то­вые со­став­ляю­щие двух пик­се­лов про­сто скла­ды­ва­ют­ся, а их сум­мы об­ре­за­ют­ся, ес­ли пре­вы­ша­ют мак­си­маль­но воз­мож­ное зна­че­ние.</li>
+</ul>
+<p><cite>source-atop</cite> (R = α d S + (1-α s )D), Ис­ход­ный пик­сел ри­су­ет­ся по­верх це­ле­во­го, но ум­но­жа­ет­ся на его не­про­зрач­ность. По­верх со­вер­шен­но про­зрач­но­го це­ле­во­го пик­се­ла ни­че­го не ри­су­ет­ся.</p>
+<ul class="simple">
+<li><cite>source-in</cite> (R = α d S), Ис­ход­ный пик­сел ум­но­жа­ет­ся на не­про­зрач­ность це­ле­во­го. Цвет це­ле­во­го пик­се­ла иг­но­ри­ру­ет­ся. Ес­ли це­ле­вой пик­сел яв­ля­ет­ся про­зрач­ным, ре­зуль­ти­рую­щий пик­сел так­же бу­дет про­зрач­ным.</li>
+<li><cite>source-out</cite> (R = (1-α d )S), Ре­зуль­ти­рую­щий пик­сел по­лу­чит цвет ис­ход­но­го, ес­ли це­ле­вой пик­сел про­зра­чен, и про­зрач­ным, ес­ли це­ле­вой пик­сел не­про­зра­чен. Цвет це­ле­во­го пик­се­ла иг­но­ри­ру­ет­ся.</li>
+<li><cite>source-over</cite> (R = S + (1-α s )D), Ис­ход­ный пик­сел ри­су­ет­ся по­верх це­ле­во­го. Ес­ли ис­ход­ный пик­сел яв­ля­ет­ся по­лу­про­зрач­ным, цвет це­ле­во­го пик­се­ла бу­дет вли­ять на цвет ре­зуль­та­та. Это зна­че­ние яв­ля­ет­ся зна­че­ни­ем по умол­ча­нию</li>
+<li><cite>xor</cite> (R = (1-α d )S + (1-α s )D), Ес­ли ис­ход­ный пик­сел про­зра­чен, ре­зeль­та­том ком­по­зи­ции ста­нет це­ле­вой пик­сел. Ес­ли це­ле­вой пик­сел про­зра­чен, ре­зуль­та­том ста­нет ис­ход­ный пик­сел. Ес­ли оба пик­се­ла, ис­ход­ный и це­ле­вой, яв­ля­ют­ся про­зрач­ны­ми или не­про­зрач­ны­ми, в ре­зуль­та­те по­лу­чит­ся про­зрач­ный пик­сел.</li>
+</ul>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="linaCap">
+<code class="descname">linaCap</code><a class="headerlink" href="#linaCap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Окончание линии</p>
+<ul class="simple">
+<li><cite>butt</cite> - Это зна­че­ние по умол­ча­нию. Оно ука­зы­ва­ет, что окон­ча­ния ли­ний не долж­ны ри­со­вать­ся. В этом слу­чае ко­нец ли­нии вы­гля­дит про­сто как пер­пен­ди­ку­ляр к бо­ко­вым сто­ро­нам ли­нии. Ли­ния не вы­сту­па­ет за свои ко­неч­ные точ­ки.</li>
+<li><cite>round</cite> - Это зна­че­ние ука­зы­ва­ет, что ли­ния долж­на иметь на­ко­неч­ник в ви­де по­лу­кру­ га с диа­мет­ром, рав­ным тол­щи­не ли­нии; в ре­зуль­та­те ли­ния вы­сту­па­ет за ко­ неч­ные точ­ки на по­ло­ви­ну сво­ей тол­щи­ны.</li>
+<li><cite>square</cite> - Это зна­че­ние ука­зы­ва­ет, что ли­ния долж­на иметь окон­ча­ние в ви­де квад­ра­та. Это зна­че­ние по сво­ему по­ве­де­нию на­по­ми­на­ет зна­че­ние «butt», но при ис­поль­ зо­ва­нии дан­но­го зна­че­ния ли­ния вы­сту­па­ет за ко­неч­ные точ­ки на по­ло­ви­ну сво­ей тол­щи­ны.</li>
+</ul>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="lineJoin">
+<code class="descname">lineJoin</code><a class="headerlink" href="#lineJoin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Тип скругления углов.</p>
+<ul class="simple">
+<li><cite>miter</cite> - значение по умолчанию, внеш­ние края двух ли­ний в точ­ке со­пря­же­ния долж­ны быть про­дол­же­ны, по­ка они не пе­ре­се­кут­ся.</li>
+<li><cite>round</cite> - внеш­ние края ли­ний, об­ра­зую­щих вер­ши­ну, долж­ны со­пря­гать­ся за­кра­шен­ной ду­гой, диа­метр ко­то­рой ра­вен тол­щи­не ли­ний</li>
+<li><cite>bevel</cite> - внеш­ние края ли­ний, об­ра­зую­щих вер­ши­ну, долж­ны со­пря­гать­ся за­кра­шен­ным тре­уголь­ни­ком</li>
+</ul>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="lineWidth">
+<code class="descname">lineWidth</code><a class="headerlink" href="#lineWidth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ширина линии</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="miterLimit">
+<code class="descname">miterLimit</code><a class="headerlink" href="#miterLimit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Максимальная длина сопряжения для типа скругления углов, mitter</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="shadowBlur">
+<code class="descname">shadowBlur</code><a class="headerlink" href="#shadowBlur" title="Permalink to this definition">¶</a></dt>
+<dd><p>Степень размытия краев тени</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="shadowColor">
+<code class="descname">shadowColor</code><a class="headerlink" href="#shadowColor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Цвет тени</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="shadowOffsetX, shadowOffsetY">
+<code class="descname">shadowOffsetX, shadowOffsetY</code><a class="headerlink" href="#shadowOffsetX, shadowOffsetY" title="Permalink to this definition">¶</a></dt>
+<dd><p>Смещение тени</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="strokeStyle">
+<code class="descname">strokeStyle</code><a class="headerlink" href="#strokeStyle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Цвет линии, можно задать через <a class="reference internal" href="CanvasGradient.html#CanvasGradient" title="CanvasGradient"><code class="xref js js-class docutils literal"><span class="pre">CanvasGradient()</span></code></a>, <a class="reference internal" href="CanvasPattern.html#CanvasPattern" title="CanvasPattern"><code class="xref js js-class docutils literal"><span class="pre">CanvasPattern()</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="textAlign">
+<code class="descname">textAlign</code><a class="headerlink" href="#textAlign" title="Permalink to this definition">¶</a></dt>
+<dd><p>Выравнивание текста по горизонтали</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="textBaseline">
+<code class="descname">textBaseline</code><a class="headerlink" href="#textBaseline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Положение базовой линии</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="arc">
+<code class="descname">arc</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>radius</em>, <em>startAngle</em>, <em>endAngle</em><span class="optional">[</span>, <em>anticlockwise</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#arc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Рисование дуг</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="arcTo">
+<code class="descname">arcTo</code><span class="sig-paren">(</span><em>x1</em>, <em>y1</em>, <em>x2</em>, <em>y2</em>, <em>radius</em><span class="sig-paren">)</span><a class="headerlink" href="#arcTo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Рисование дуг</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="beginPath();">
+<code class="descname">beginPath();</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#beginPath();" title="Permalink to this definition">¶</a></dt>
+<dd><p>Начинаем рисование геометрической фигуры</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bezierCurveTo">
+<code class="descname">bezierCurveTo</code><span class="sig-paren">(</span><em>cp1x</em>, <em>cp1y</em>, <em>cp2x</em>, <em>cp2y</em>, <em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#bezierCurveTo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Рисование кривых Безье третьего порядка</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="clearRect">
+<code class="descname">clearRect</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>h</em>, <em>w</em><span class="sig-paren">)</span><a class="headerlink" href="#clearRect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Очистка указанной области</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="clip">
+<code class="descname">clip</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#clip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Вы­чис­ля­ет пе­ре­се­че­ние внут­рен­ней об­лас­ти те­ку­ще­го кон­ту­ра с  те­ку­щей об­ла­стью от­сеч­ки и ис­поль­зу­ет эту по­лу­чен­ную об­ласть как но­вую об­ласть от­сеч­ки.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="closePath">
+<code class="descname">closePath</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#closePath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Замыкаем линии геометрической фигуры</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="createImageData">
+<code class="descname">createImageData</code><span class="sig-paren">(</span><em>imagedata</em><span class="sig-paren">)</span><a class="headerlink" href="#createImageData" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descname">createImageData</code><span class="sig-paren">(</span><em>w</em>, <em>h</em><span class="sig-paren">)</span></dt>
+<dd><p>Возвращает <a class="reference internal" href="ImageData.html#ImageData" title="ImageData"><code class="xref js js-class docutils literal"><span class="pre">ImageData()</span></code></a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="createLinearGradient">
+<code class="descname">createLinearGradient</code><span class="sig-paren">(</span><em>x0</em>, <em>y0</em>, <em>x1</em>, <em>y1</em><span class="sig-paren">)</span><a class="headerlink" href="#createLinearGradient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает <a class="reference internal" href="CanvasGradient.html#CanvasGradient" title="CanvasGradient"><code class="xref js js-class docutils literal"><span class="pre">CanvasGradient()</span></code></a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="createPattern">
+<code class="descname">createPattern</code><span class="sig-paren">(</span><em>image</em>, <em>reppetition</em><span class="sig-paren">)</span><a class="headerlink" href="#createPattern" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает <a class="reference internal" href="CanvasPattern.html#CanvasPattern" title="CanvasPattern"><code class="xref js js-class docutils literal"><span class="pre">CanvasPattern()</span></code></a>, шаблон заполнения холста на основе готового изображения</p>
+<ul>
+<li><p class="first"><cite>reppetition</cite></p>
+<blockquote>
+<div><ul class="simple">
+<li><cite>repeat</cite> - Изо­бра­же­ние вы­кла­ды­ва­ет­ся мо­заи­кой в обо­их на­прав­ле­ни­ях. Это зна­че­ние по умол­ча­нию.</li>
+<li><cite>repeat-x</cite> - Изо­бра­же­ние вы­кла­ды­ва­ет­ся мо­заи­кой толь­ко по оси X.</li>
+<li><cite>repeat-y</cite> - Изо­бра­же­ние вы­кла­ды­ва­ет­ся мо­заи­кой толь­ко по оси Y.</li>
+<li><cite>no-repeat</cite> - Изо­бра­же­ние мо­заи­ки не по­вто­ря­ет­ся, а ис­поль­зу­ет­ся од­но­крат­но.</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</dd></dl>
+
+<dl class="function">
+<dt id="createRadialGradient">
+<code class="descname">createRadialGradient</code><span class="sig-paren">(</span><em>x0</em>, <em>y0. r0</em>, <em>x1</em>, <em>y1</em>, <em>r1</em><span class="sig-paren">)</span><a class="headerlink" href="#createRadialGradient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает <a class="reference internal" href="CanvasGradient.html#CanvasGradient" title="CanvasGradient"><code class="xref js js-class docutils literal"><span class="pre">CanvasGradient()</span></code></a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="drawImage">
+<code class="descname">drawImage</code><span class="sig-paren">(</span><em>img, x, y[w, h]</em><span class="sig-paren">)</span><a class="headerlink" href="#drawImage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descname">drawImage</code><span class="sig-paren">(</span><em>img</em>, <em>sx</em>, <em>sy</em>, <em>sw</em>, <em>sh</em>, <em>dx</em>, <em>dy</em>, <em>dw</em>, <em>dh</em><span class="sig-paren">)</span></dt>
+<dd><p>Рисуем на канвасе картинку</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="fill">
+<code class="descname">fill</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fill" title="Permalink to this definition">¶</a></dt>
+<dd><p>Залить замкнутый контур</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="fillRect">
+<code class="descname">fillRect</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>h</em>, <em>w</em><span class="sig-paren">)</span><a class="headerlink" href="#fillRect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Залить замкнутый контур</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="fillText">
+<code class="descname">fillText</code><span class="sig-paren">(</span><em>text</em>, <em>x</em>, <em>y</em><span class="optional">[</span>, <em>maxWidth</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#fillText" title="Permalink to this definition">¶</a></dt>
+<dd><p>Рисует текст</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="getImageData">
+<code class="descname">getImageData</code><span class="sig-paren">(</span><em>sx</em>, <em>sy</em>, <em>sw</em>, <em>sh</em><span class="sig-paren">)</span><a class="headerlink" href="#getImageData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возвращает маcсив пикселов холста</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="isPointInPath">
+<code class="descname">isPointInPath</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#isPointInPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Проверяет, попадает ли точка в пределы текущего контура</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="lineTo">
+<code class="descname">lineTo</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#lineTo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Рисуем линию от текущего положения маркера, до указанной</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="measureText">
+<code class="descname">measureText</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#measureText" title="Permalink to this definition">¶</a></dt>
+<dd><p>Вычисляет ширину текста, которую он займет при рисовании с текущим значением свойства и возвращает <a class="reference internal" href="TextMetrics.html#TextMetrics" title="TextMetrics"><code class="xref js js-class docutils literal"><span class="pre">TextMetrics()</span></code></a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="moveTo">
+<code class="descname">moveTo</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#moveTo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Перемещаем маркер на указанную позицию</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="putImageData">
+<code class="descname">putImageData</code><span class="sig-paren">(</span><em>imagedata</em>, <em>dx</em>, <em>dy</em><span class="optional">[</span>, <em>sx</em>, <em>sy</em>, <em>sw</em>, <em>sh</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#putImageData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Устанавливает отдельные писксели</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="quadraticCurveTo">
+<code class="descname">quadraticCurveTo</code><span class="sig-paren">(</span><em>cpx</em>, <em>cpy</em>, <em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#quadraticCurveTo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Рисование кривых Безье 2 порядка</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rect">
+<code class="descname">rect</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>w</em>, <em>h</em><span class="sig-paren">)</span><a class="headerlink" href="#rect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Рисование прямоугольников</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="restore">
+<code class="descname">restore</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#restore" title="Permalink to this definition">¶</a></dt>
+<dd><p>Востоанавливаем предыдущее сохраненное состояние контекста</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rotate">
+<code class="descname">rotate</code><span class="sig-paren">(</span><em>angle</em><span class="sig-paren">)</span><a class="headerlink" href="#rotate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Поворачивает матрицу рисования на указанный угол</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="save">
+<code class="descname">save</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Сохраняем копию текущего состояния</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="scale">
+<code class="descname">scale</code><span class="sig-paren">(</span><em>sx</em>, <em>sy</em><span class="sig-paren">)</span><a class="headerlink" href="#scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Изменение масштаба матрицы рисования</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="setTransform">
+<code class="descname">setTransform</code><span class="sig-paren">(</span><em>a</em>, <em>b</em>, <em>c</em>, <em>d</em>, <em>e</em>, <em>f</em><span class="sig-paren">)</span><a class="headerlink" href="#setTransform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Задаем матрицу преобразования</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="stroke">
+<code class="descname">stroke</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#stroke" title="Permalink to this definition">¶</a></dt>
+<dd><p>Отрисовать все</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="strokeRect">
+<code class="descname">strokeRect</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>w</em>, <em>h</em><span class="sig-paren">)</span><a class="headerlink" href="#strokeRect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Отрисовка прямоугоника</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="strokeText">
+<code class="descname">strokeText</code><span class="sig-paren">(</span><em>text</em>, <em>x</em>, <em>y</em><span class="optional">[</span>, <em>maxWidth</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#strokeText" title="Permalink to this definition">¶</a></dt>
+<dd><p>Рисует контуры текста</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="transform">
+<code class="descname">transform</code><span class="sig-paren">(</span><em>a</em>, <em>b</em>, <em>c</em>, <em>d</em>, <em>e</em>, <em>f</em><span class="sig-paren">)</span><a class="headerlink" href="#transform" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="translate">
+<code class="descname">translate</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#translate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Переносим начало позиции координат на указанную точку</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/dom/Context.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.26 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

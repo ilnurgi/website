@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>xlwt - интсурмент для создания xls файлов &mdash; Документация python документация 2015.05.20</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2015.05.20',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Документация python документация 2015.05.20" href="../index.html" />
+    <link rel="up" title="Сторонние модули" href="index.html" />
+    <link rel="next" title="xlutils - инструмент для работы с xls файлами" href="xlutils.html" />
+    <link rel="prev" title="xlrd - интсрумент для чтения xls фалйов" href="xlrd.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Алфавитный указатель"
+             accesskey="I">указатель</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="xlutils.html" title="xlutils - инструмент для работы с xls файлами"
+             accesskey="N">вперёд</a> |</li>
+        <li class="right" >
+          <a href="xlrd.html" title="xlrd - интсрумент для чтения xls фалйов"
+             accesskey="P">назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Документация python документация 2015.05.20</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Сторонние модули</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <span class="target" id="module-xlwt"></span><div class="section" id="xlwt-xls">
+<h1>xlwt - интсурмент для создания xls файлов<a class="headerlink" href="#xlwt-xls" title="Ссылка на этот заголовок">¶</a></h1>
+<p><a class="reference external" href="http://www.python-excel.org/">Страничка проекта</a></p>
+<p><a class="reference external" href="http://pypi.python.org/pypi/xlwt">Скачать</a></p>
+<p><a class="reference external" href="https://secure.simplistix.co.uk/svn/xlwt/trunk/xlwt/doc/xlwt.html?p=4966">Официальная документация</a></p>
+<p><a class="reference external" href="https://github.com/python-excel/xlwt/tree/master/xlwt/examples">Примеры</a></p>
+<p><a class="reference external" href="https://github.com/python-excel/xlwt">GitHub</a></p>
+<p>Модуль для создания Excel документов</p>
+<div class="section" id="id5">
+<h2>Функции модуля<a class="headerlink" href="#id5" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="method">
+<dt id="xlwt.easyxf">
+<code class="descclassname">xlwt.</code><code class="descname">easyxf</code><span class="sig-paren">(</span><em>function</em><span class="sig-paren">)</span><a class="headerlink" href="#xlwt.easyxf" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Данная функция используется для создания и настройки XFStyle объекта для использования (например) <a class="reference internal" href="#xlwt.Worksheet.write" title="xlwt.Worksheet.write"><code class="xref py py-meth docutils literal"><span class="pre">xlwt.Worksheet.write()</span></code></a> методом, возвращает XFstyle.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>strg_to_parse</strong> &#8211; A string to be parsed to obtain attribute values for Alignment, Borders, Font, Pattern and Protection objects. Refer to the examples in the file .../examples/xlwt_easyxf_simple_demo.py and to the xf_dict dictionary in Style.py. Various synonyms including color/colour, center/centre and gray/grey are allowed. Case is irrelevant (except maybe in font names). &#8216;-&#8216; may be used instead of &#8216;_&#8217;.
+Example: &#8220;font: bold on; align: wrap on, vert centre, horiz center&#8221;</li>
+<li><strong>num_format_str</strong> &#8211; To get the &#8220;number format string&#8221; of an existing cell whose format you want to reproduce, select the cell and click on Format/Cells/Number/Custom. Otherwise, refer to Excel help.
+Examples: &#8220;#,##0.00&#8221;, &#8220;dd/mm/yyyy&#8221;</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="workbook">
+<h2>Workbook<a class="headerlink" href="#workbook" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="xlwt.Workbook">
+<em class="property">class </em><code class="descclassname">xlwt.</code><code class="descname">Workbook</code><span class="sig-paren">(</span><em>encoding='ascii'</em>, <em>style_compression=0</em><span class="sig-paren">)</span><a class="headerlink" href="#xlwt.Workbook" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Объект &#8220;Книга&#8221;</p>
+<dl class="method">
+<dt id="xlwt.Workbook.add_sheet">
+<code class="descname">add_sheet</code><span class="sig-paren">(</span><em>sheetname</em><span class="sig-paren">)</span><a class="headerlink" href="#xlwt.Workbook.add_sheet" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Добалвяет лист в книгу, возвращает объект лист <a class="reference internal" href="#xlwt.Worksheet" title="xlwt.Worksheet"><code class="xref py py-class docutils literal"><span class="pre">xlwt.Worksheet</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><strong>sheetname</strong> &#8211; </td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="xlwt.Workbook.save">
+<code class="descname">save</code><span class="sig-paren">(</span><em>filename_or_stream</em><span class="sig-paren">)</span><a class="headerlink" href="#xlwt.Workbook.save" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Сохраняет книгу</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><strong>filename_or_stream</strong> &#8211; путь к файлу или потоку вывода в который можно писать</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="worksheet">
+<h2>Worksheet<a class="headerlink" href="#worksheet" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="xlwt.Worksheet">
+<em class="property">class </em><code class="descclassname">xlwt.</code><code class="descname">Worksheet</code><a class="headerlink" href="#xlwt.Worksheet" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Объект &#8220;Лист&#8221;. Данный объект нельзя создать самому, он получается в методе <a class="reference internal" href="#xlwt.Workbook.add_sheet" title="xlwt.Workbook.add_sheet"><code class="xref py py-meth docutils literal"><span class="pre">xlwt.Workbook.add_sheet()</span></code></a></p>
+<dl class="method">
+<dt id="xlwt.Worksheet.write">
+<code class="descname">write</code><span class="sig-paren">(</span><em>r</em>, <em>c</em>, <em>label=&quot;&quot;</em>, <em>style=Style.default_style</em><span class="sig-paren">)</span><a class="headerlink" href="#xlwt.Worksheet.write" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Записывает ячейку в лист</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Параметры:</th><td class="field-body"><ul class="first last simple">
+<li><strong>r</strong> (<em>int</em>) &#8211; строка листа</li>
+<li><strong>c</strong> (<em>int</em>) &#8211; колонка листа</li>
+<li><strong>label</strong> (<em>str</em>) &#8211; значение ячейки (The data value to be written. An int, long, or decimal.Decimal instance is converted to float. A unicode instance is written as is. A str instance is converted to unicode using the encoding (default: &#8216;ascii&#8217;) specified when the Workbook instance was created. A datetime.datetime, datetime.date, or datetime.time instance is converted into Excel date format (a float representing the number of days since (typically) 1899-12-31T00:00:00, under the pretence that 1900 was a leap year). A bool instance will show up as TRUE or FALSE in Excel. None causes the cell to be blank &#8211; no data, only formatting. An xlwt.Formula instance causes an Excel formula to be written.)</li>
+<li><strong>style</strong> (<em>XF object</em>) &#8211; стиль ячейки</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Оглавление</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">xlwt - интсурмент для создания xls файлов</a><ul>
+<li><a class="reference internal" href="#id5">Функции модуля</a></li>
+<li><a class="reference internal" href="#workbook">Workbook</a></li>
+<li><a class="reference internal" href="#worksheet">Worksheet</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Предыдущий раздел</h4>
+  <p class="topless"><a href="xlrd.html"
+                        title="предыдущая глава">xlrd - интсрумент для чтения xls фалйов</a></p>
+  <h4>Следующий раздел</h4>
+  <p class="topless"><a href="xlutils.html"
+                        title="следующая глава">xlutils - инструмент для работы с xls файлами</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Эта страница</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/modules_user/xlwt.txt"
+            rel="nofollow">Исходный текст</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Быстрый поиск</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Искать" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Введите слова для поиска или имя модуля, класса или функции.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Алфавитный указатель"
+             >указатель</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Содержание модулей Python"
+             >модули</a> |</li>
+        <li class="right" >
+          <a href="xlutils.html" title="xlutils - инструмент для работы с xls файлами"
+             >вперёд</a> |</li>
+        <li class="right" >
+          <a href="xlrd.html" title="xlrd - интсрумент для чтения xls фалйов"
+             >назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Документация python документация 2015.05.20</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Сторонние модули</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright ilnurgi.
+      Создано с помощью <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

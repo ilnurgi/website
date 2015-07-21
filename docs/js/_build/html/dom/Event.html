@@ -1,0 +1,412 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Event - информация о сбоытии &mdash; js doc 2015.06.26 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2015.06.26',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="js doc 2015.06.26 documentation" href="../index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.26 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="event">
+<h1>Event - информация о сбоытии<a class="headerlink" href="#event" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="Event">
+<em class="property">class </em><code class="descname">Event</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Event" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="altKey">
+<code class="descname">altKey</code><a class="headerlink" href="#altKey" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ука­зы­ва­ет, удер­жи­ва­лась ли на­жа­той кла­ви­ша Alt в мо­мент со­бы­тия. Оп­ре­де­ле­но для со­бы­тий мы­ши и кла­виа­ту­ры, а так­же в мо­де­ли со­бы­тий IE.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bubbles">
+<code class="descname">bubbles</code><a class="headerlink" href="#bubbles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Зна­че­ние true, ес­ли тип со­бы­тия под­дер­жи­ва­ет «всплы­тие» (и ес­ли не вы­зван ме­тод stopPropagation()), и false – в про­тив­ном слу­чае. От­сут­ст­ву­ет в мо­де­ли со­бы­тий IE.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="button">
+<code class="descname">button</code><a class="headerlink" href="#button" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ука­зы­ва­ет, из­ме­не­ние со­стоя­ния ка­кой кноп­ки мы­ши вы­зва­ло со­бы­тие «mouse­ down», «mouseup» или «click». Зна­че­ние 0 со­от­вет­ст­ву­ет ле­вой кноп­ке, зна­че­ние 2 – пра­вой и зна­че­ние 1 – сред­ней кноп­ке мы­ши. Об­ра­ти­те вни­ма­ние, что зна­че­ние это­го свой­ст­ва оп­ре­де­ле­но толь­ко для со­бы­тий, свя­зан­ных с  из­ме­не­ни­ем со­стоя­ния кноп­ки мы­ши – оно не ис­поль­зу­ет­ся, на­при­мер, что­бы со­об­щить, ка­кая кноп­ка удер­жи­ва­лась при воз­ник­но­ве­нии со­бы­тия «mousemove».</p>
+<p>Кро­ме то­го, это свой­ст­во не яв­ля­ет­ся би­то­вой мас­кой: оно не по­зво­ля­ет со­об­щить об­ра­бот­чи­ку об из­ме­не­нии со­стоя­ния бо­лее чем од­ной кноп­ки. На­ко­нец, не­ко­то­рые бро­узе­ры ге­не­ри­ру­ют со­бы­тия толь­ко для ле­вой кноп­ки.</p>
+<p>Мо­дель со­бы­тий IE оп­ре­де­ля­ет не­со­вмес­ти­мое свой­ст­во button. В  этом бро­узе­ре дан­ное свой­ст­во яв­ля­ет­ся би­то­вой мас­кой: бит 1 ус­та­нав­ли­ва­ет­ся, ко­гда бы­ла на­жа­та ле­вая кноп­ка, бит 2 – ко­гда бы­ла на­жа­та пра­вая кноп­ка и бит 4 – ко­гда бы­ла на­жа­та сред­няя кноп­ка (трех­кно­поч­ной) мы­ши.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="buttons">
+<code class="descname">buttons</code><a class="headerlink" href="#buttons" title="Permalink to this definition">¶</a></dt>
+<dd><p>На­по­ми­на­ет свой­ст­во button, под­дер­жи­вае­мое в  мо­де­ли со­бы­тий IE и  опи­сан­ное вы­ше.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cancelable">
+<code class="descname">cancelable</code><a class="headerlink" href="#cancelable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Зна­че­ние true, ес­ли дей­ст­вие, пред­ла­гае­мое по умол­ча­нию и свя­зан­ное с со­бы­ти­ем, мо­жет быть от­ме­не­но с по­мо­щью ме­то­да preventDefault(), и false – в про­тив­ном слу­чае. Оп­ре­де­ле­но во всех стан­дарт­ных объ­ек­тах со­бы­тий и от­сут­ст­ву­ет в мо­де­ли со­бы­тий IE.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cancelBubble">
+<code class="descname">cancelBubble</code><a class="headerlink" href="#cancelBubble" title="Permalink to this definition">¶</a></dt>
+<dd><p>В мо­де­ли со­бы­тий IE, что­бы в об­ра­бот­чи­ке со­бы­тия ос­та­но­вить даль­ней­шее рас­про­стра­не­ние со­бы­тия вверх по де­ре­ву вме­щаю­щих объ­ек­тов, в это свой­ст­во нуж­но за­пи­сать зна­че­ние true. В стан­дарт­ной мо­де­ли со­бы­тий для этой це­ли сле­ду­ет ис­поль­зо­вать ме­тод stopPropagation().</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="char">
+<code class="descname">char</code><a class="headerlink" href="#char" title="Permalink to this definition">¶</a></dt>
+<dd><p>Для со­бы­тий кла­виа­ту­ры это свой­ст­во хра­нит стро­ку сим­во­лов (т. е. мо­жет со­дер­жать бо­лее од­но­го сим­во­ла), сге­не­ри­ро­ван­ную со­бы­ти­ем.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="charCode">
+<code class="descname">charCode</code><a class="headerlink" href="#charCode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Для со­бы­тий «keypress» это свой­ст­во со­дер­жит код Юни­ко­да сге­не­ри­ро­ван­но­го пе­чат­но­го сим­во­ла. Дан­ное свой­ст­во рав­но ну­лю в слу­чае на­жа­тия функ­цио­наль­ной кла­ви­ши. Оно не ис­поль­зу­ет­ся со­бы­тия­ми «keydown» и «keyup». Пре­об­ра­зо­вать это чис­ло в стро­ку мож­но с по­мо­щью ме­то­да String.fromCharCode(). Для со­бы­тий «key­ press» то же са­мое зна­че­ние боль­шин­ст­во бро­узе­ров за­пи­сы­ва­ют в свой­ст­во keyCode. Од­на­ко в Firefox свой­ст­во keyCode не оп­ре­де­ле­но для со­бы­тия «keypress», по­это­му сле­ду­ет ис­поль­зо­вать свой­ст­во charCode. Дан­ное свой­ст­во яв­ля­ет­ся не­стан­дарт­ным, от­сут­ст­ву­ет в мо­де­ли со­бы­тий IE и не ими­ти­ру­ет­ся в мо­де­ли со­бы­тий jQuery.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="clientX">
+<code class="descname">clientX</code><a class="headerlink" href="#clientX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="clientY">
+<code class="descname">clientY</code><a class="headerlink" href="#clientY" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ко­ор­ди­на­ты X и Y ука­за­те­ля мы­ши от­но­си­тель­но кли­ент­ской об­лас­ти или ок­на бро­узе­ра. Об­ра­ти­те вни­ма­ние: эти ко­ор­ди­на­ты не учи­ты­ва­ют ве­ли­чи­ну про­крут­ки до­ку­мен­та; ес­ли со­бы­тие про­ис­хо­дит на верх­нем краю ок­на, свой­ст­во clientY бу­дет рав­но 0 не­за­ви­си­мо от то­го, как да­ле­ко вы­пол­не­на про­крут­ка до­ку­мен­та. Эти свой­ ст­ва оп­ре­де­ле­ны для всех ти­пов со­бы­тий мы­ши, и в мо­де­ли со­бы­тий IE, и в стан­дарт­ной мо­де­ли. См. так­же pageX и pageY.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ctrlKey">
+<code class="descname">ctrlKey</code><a class="headerlink" href="#ctrlKey" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ука­зы­ва­ет, удер­жи­ва­лась ли на­жа­той кла­ви­ша Ctrl в мо­мент со­бы­тия. Оп­ре­де­ле­но для со­бы­тий мы­ши и кла­виа­ту­ры, а так­же в мо­де­ли со­бы­тий IE.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="currentTarget">
+<code class="descname">currentTarget</code><a class="headerlink" href="#currentTarget" title="Permalink to this definition">¶</a></dt>
+<dd><p>Объ­ект Element, Document или Window, об­ра­ба­ты­ваю­щий со­бы­тие в дан­ный мо­мент.
+Во вре­мя фа­зы пе­ре­хва­та и всплы­тия зна­че­ние свой­ст­ва от­ли­ча­ет­ся от target.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="data">
+<code class="descname">data</code><a class="headerlink" href="#data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Для со­бы­тий «textinput» оп­ре­де­ля­ет вве­ден­ный текст.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="dataTransfer">
+<code class="descname">dataTransfer</code><a class="headerlink" href="#dataTransfer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Для со­бы­тий бук­си­ров­ки (drag-and-drop) это свой­ст­во оп­ре­де­ля­ет объ­ект DataTrans­fer, пол­но­стью ко­ор­ди­ни­рую­щий вы­пол­не­ние опе­ра­ции бук­си­ров­ки. Со­бы­тия бук­си­ров­ки от­но­сят­ся к со­бы­ти­ям мы­ши; лю­бое со­бы­тие, имею­щее это свой­ст­во, так­же бу­дет иметь свой­ст­ва clientX, clientY и дру­гие, свой­ст­вен­ные со­бы­ти­ям мы­ши. Со­бы­тия бук­си­ров­ки «dragstart», «drag» и «dragend» воз­бу­ж­да­ют­ся в объ­ек­те-ис­точ­ни­ке; а со­бы­тия «dragenter», «dragover», «dragleave» и «drop» – в объ­ек­те-при­ем­ни­ке.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="defaultPrevented">
+<code class="descname">defaultPrevented</code><a class="headerlink" href="#defaultPrevented" title="Permalink to this definition">¶</a></dt>
+<dd><p>Зна­че­ние true, ес­ли об­ра­бот­чик это­го со­бы­тия вы­звал defaultPrevented(), и false – в про­тив­ном слу­чае. Это но­вое рас­ши­ре­ние стан­дарт­ной мо­де­ли со­бы­тий, и по­то­му мо­жет быть реа­ли­зо­ва­но не все­ми бро­узе­ра­ми. (Мо­дель со­бы­тий jQuery оп­ре­де­ля­ет ме­тод isDefaultPrevented(), дей­ст­вую­щий по­доб­но это­му свой­ст­ву.)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="deltaMode">
+<code class="descname">deltaMode</code><a class="headerlink" href="#deltaMode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Для со­бы­тий ко­ле­си­ка мы­ши это свой­ст­во оп­ре­де­ля­ет со­от­вет­ст­вую­щую ин­тер­пре­та­цию свойств deltaX, deltaY и deltaZ. Зна­че­ни­ем это­го свой­ст­ва мо­жет быть од­на из кон­стант: DOM_DELTA_PIXEL, DOM_DELTA_LINE, DOM_DELTA_PAGE. Кон­крет­ное зна­че­ ние оп­ре­де­ля­ет­ся плат­фор­мой и мо­жет за­ви­сеть от на­стро­ек сис­те­мы или от фак­та удер­жи­ва­ния на­жа­ты­ми кла­виш-мо­ди­фи­ка­то­ров во вре­мя воз­ник­но­ве­ния со­бы­ тия ко­ле­си­ка мы­ши.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="deltaX, deltaY, deltaZ">
+<code class="descname">deltaX, deltaY, deltaZ</code><a class="headerlink" href="#deltaX, deltaY, deltaZ" title="Permalink to this definition">¶</a></dt>
+<dd><p>Для со­бы­тий ко­ле­си­ка мы­ши эти свой­ст­ва оп­ре­де­ля­ют ве­ли­чи­ну про­крут­ки по ка­ж­дой из трех осей.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="detail">
+<code class="descname">detail</code><a class="headerlink" href="#detail" title="Permalink to this definition">¶</a></dt>
+<dd><p>Све­де­ния о со­бы­тии (чис­ло). Для со­бы­тий «click», «mousedown» и «mouseup» это свой­ст­во по­ка­зы­ва­ет ко­ли­че­ст­во щелч­ков: 1 – оди­нар­ный щел­чок, 2 – двой­ной щел­чок, 3 – трой­ной щел­чок и т. д. В Firefox это свой­ст­во ис­поль­зу­ет­ся со­бы­тия­ми «DOMMouseScroll», что­бы со­об­щить ве­ли­чи­ну про­крут­ки ко­ле­си­ка мы­ши.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="eventPhase">
+<code class="descname">eventPhase</code><a class="headerlink" href="#eventPhase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Те­ку­щая фа­за рас­про­стра­не­ния со­бы­тия. Зна­че­ние свой­ст­ва – од­на из трех кон­стант, опи­сан­ных вы­ше. Не под­дер­жи­ва­ет­ся в мо­де­ли со­бы­тий IE.</p>
+<blockquote>
+<div><ul class="simple">
+<li><cite>CAPTURING_PHASE</cite> = 1, со­бы­тие по­сы­ла­ет­ся пе­ре­хва­ты­ваю­щим об­ра­бот­чи­кам со­бы­тий в пред­ках це­ле­во­ го объ­ек­та.</li>
+<li><cite>AT_TARGET</cite> = 2, Со­бы­тие по­сы­ла­ет­ся об­ра­бот­чи­кам це­ле­во­го объ­ек­та</li>
+<li><cite>BUBBLING_PHASE</cite> = 3, Со­бы­тие всплы­ва­ет и по­сы­ла­ет­ся об­ра­бот­чи­кам со­бы­тий в пред­ках це­ле­во­го объ­ек­та.</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fromElement">
+<code class="descname">fromElement</code><a class="headerlink" href="#fromElement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Для со­бы­тий «mouseover» и «mouseout» в мо­де­ли IE свой­ст­во fromElement со­дер­жит ссыл­ку на объ­ект <a class="reference internal" href="Element.html#Element" title="Element"><code class="xref js js-class docutils literal"><span class="pre">Element()</span></code></a>, с ко­то­ро­го дви­гал­ся ука­за­тель мы­ши. В стан­дарт­ной мо­де­ли со­бы­тий сле­ду­ет ис­поль­зо­вать свой­ст­во relatedTarget.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="inputMethod">
+<code class="descname">inputMethod</code><a class="headerlink" href="#inputMethod" title="Permalink to this definition">¶</a></dt>
+<dd><p>Для со­бы­тий «textinput» это свой­ст­во оп­ре­де­ля­ет спо­соб вво­да тек­ста. Зна­че­ни­ем это­го свой­ст­ва мо­жет быть од­на из кон­стант: DOM_INPUT_METHOD_UNKNOWN, DOM_INPUT_METHOD_KEYBOARD, DOM_INPUT_METHOD_PASTE, DOM_INPUT_METHOD_DROP, DOM_INPUT_METHOD_IME,DOM_INPUT_METHOD_OPTION, DOM_INPUT_METHOD_HANDWRITING, DOM_INPUT_METHOD_VOICE, DOM_INPUT_METHOD_MULTIMODAL, DOM_INPUT_METHOD_SCRIPT.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="isTrusted">
+<code class="descname">isTrusted</code><a class="headerlink" href="#isTrusted" title="Permalink to this definition">¶</a></dt>
+<dd><p>Зна­че­ние true, ес­ли это со­бы­тие бы­ло соз­да­но и по­сла­но бро­узе­ром, и false – ес­ли это ис­кус­ст­вен­ное со­бы­тие, соз­дан­ное и по­слан­ное сце­на­ри­ем на язы­ке Ja­va­Script.
+Это от­но­си­тель­но но­вое рас­ши­ре­ние стан­дарт­ной мо­де­ли со­бы­тий, и  по­то­му мо­жет быть реа­ли­зо­ва­но не все­ми бро­узе­ра­ми.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="key">
+<code class="descname">key</code><a class="headerlink" href="#key" title="Permalink to this definition">¶</a></dt>
+<dd><p>Для со­бы­тий кла­виа­ту­ры, ге­не­ри­рую­щих сим­во­лы, это свой­ст­во по­лу­ча­ет то же зна­че­ние, что и свой­ст­во char. Для со­бы­тий кла­виа­ту­ры, не ге­не­ри­рую­щих сим­во­лы, это свой­ст­во со­дер­жит имя на­жа­той кла­ви­ши (та­кое как, «Tab» или «Down»).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="keyCode">
+<code class="descname">keyCode</code><a class="headerlink" href="#keyCode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Вир­ту­аль­ный код на­жа­той кла­ви­ши. Это свой­ст­во ис­поль­зу­ет­ся все­ми ти­па­ми со­бы­тий кла­виа­ту­ры. Код кла­ви­ши мо­жет за­ви­сеть от бро­узе­ра, опе­ра­ци­он­ной сис­те­мы, са­мой кла­виа­ту­ры. Обыч­но, ес­ли на кла­ви­ше изо­бра­жен пе­чат­ный сим­вол, вир­ту­а ль­ный код этой кла­ви­ши сов­па­да­ет с ко­дом сим­во­ла. Ко­ды функ­цио­наль­ных кла­виш, не со­от­вет­ст­вую­щих пе­чат­ным сим­во­лам, мо­гут су­ще­ст­вен­но от­ли­чать­ся. Это свой­ст­во не бы­ло стан­дар­ти­зо­ва­но, но оп­ре­де­ля­ет­ся все­ми бро­узе­ра­ми, вклю­чая IE.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="locale">
+<code class="descname">locale</code><a class="headerlink" href="#locale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Для со­бы­тий кла­виа­ту­ры и со­бы­тий «textinput» это свой­ст­во оп­ре­де­ля­ет код язы­ка (на­при­мер, «en-GB»), иден­ти­фи­ци­рую­щий вы­бран­ную рас­клад­ку кла­виа­ту­ры,ес­ли эта ин­фор­ма­ция дос­туп­на.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="location">
+<code class="descname">location</code><a class="headerlink" href="#location" title="Permalink to this definition">¶</a></dt>
+<dd><p>Для со­бы­тий кла­виа­ту­ры это свой­ст­во оп­ре­де­ля­ет ме­сто­по­ло­же­ние на­жа­той кла­ви­ши. Зна­че­ни­ем это­го свой­ст­ва мо­жет быть од­на из кон­стант: DOM_KEY_LOCATION_STANDARD, DOM_KEY_LOCATION_LEFT, DOM_KEY_LOCATION_RIGHT, DOM_KEY_LOCATION_NUMPAD, DOM_KEY_LOCATION_MOBILE, DOM_KEY_LOCATION_JOYSTICK.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="metaKey">
+<code class="descname">metaKey</code><a class="headerlink" href="#metaKey" title="Permalink to this definition">¶</a></dt>
+<dd><p>При­знак, по­ка­зы­ваю­щий, удер­жи­ва­лась ли кла­ви­ша Meta, ко­гда про­изош­ло со­бы­тие. Свой­ст­во оп­ре­де­ле­но для всех ти­пов со­бы­тий мы­ши и кла­виа­ту­ры, а так­же в мо­де­ли со­бы­тий IE.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="offsetX, offsetY">
+<code class="descname">offsetX, offsetY</code><a class="headerlink" href="#offsetX, offsetY" title="Permalink to this definition">¶</a></dt>
+<dd><p>В мо­де­ли со­бы­тий IE эти свой­ст­ва оп­ре­де­ля­ют ко­ор­ди­на­ты, в ко­то­рых воз­ник­ло со­бы­тие, в ко­ор­ди­нат­ной сис­те­ме эле­мен­та-ис­точ­ни­ка со­бы­тия (см. опи­са­ние свой­ ст­ва srcElement). Стан­дарт­ная мо­дель со­бы­тий не име­ет эк­ви­ва­лент­ных свойств.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pageX, pageY">
+<code class="descname">pageX, pageY</code><a class="headerlink" href="#pageX, pageY" title="Permalink to this definition">¶</a></dt>
+<dd><p>Эти не­стан­дарт­ные, но ши­ро­ко под­дер­жи­вае­мые свой­ст­ва по­доб­ны свой­ст­вам clientX и clientY, но вме­сто сис­те­мы ко­ор­ди­нат ок­на ис­поль­зу­ют сис­те­му ко­ор­ди­нат до­ку­мен­та. Эти свой­ст­ва от­сут­ст­ву­ют в мо­де­ли со­бы­тий IE, но биб­лио­те­ка jQuery ими­ти­ру­ет их во всех бро­узе­рах.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="relatedTarget">
+<code class="descname">relatedTarget</code><a class="headerlink" href="#relatedTarget" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ссы­ла­ет­ся на эле­мент (обыч­но эле­мент до­ку­мен­та) <a class="reference internal" href="EventTarget.html#EventTarget" title="EventTarget"><code class="xref js js-class docutils literal"><span class="pre">EventTarget()</span></code></a>, ко­то­рый име­ет от­но­ше­ние к це­ле­во­му эле­мен­ту со­бы­тия. Для со­бы­тий «mouseover» это эле­мент, ко­то­рый по­ки­нул ука­за­тель мы­ши при на­ве­де­нии на це­ле­вой эле­мент. Для со­бы­тий «mouse­out» это эле­мент, на ко­то­рый на­во­дит­ся ука­за­тель мы­ши, ко­гда он по­ки­да­ет це­ле­вой эле­мент. Это свой­ст­во от­сут­ст­ву­ет в мо­де­ли со­бы­тий IE, но оно ими­ти­ру­ет­ся в мо­де­ли со­бы­тий jQuery. См. так­же свой­ст­ва fromElement и toElement, оп­ре­де­ляе­мые в мо­де­ли со­бы­тий IE.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="repeat">
+<code class="descname">repeat</code><a class="headerlink" href="#repeat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Для со­бы­тий кла­виа­ту­ры это свой­ст­во бу­дет иметь зна­че­ние true, ес­ли со­бы­тие вы­зва­но дли­тель­ным удер­жа­ни­ем кла­ви­ши в на­жа­том со­стоя­нии, вы­звав­шем ав­то­по­втор вво­да.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="returnValue">
+<code class="descname">returnValue</code><a class="headerlink" href="#returnValue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Что­бы в мо­де­ли со­бы­тий IE пре­дот­вра­тить вы­пол­не­ние дей­ст­вия, пре­ду­смот­рен­о­го по умол­ча­нию эле­мен­том-ис­точ­ни­ком, в ко­то­ром воз­ник­ло со­бы­тие, дан­ное свой­ст­во сле­ду­ет ус­та­но­вить в зна­че­ние false. В стан­дарт­ной мо­де­ли со­бы­тий сле­ду­ет ис­поль­зо­вать ме­тод preventDefault().</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="screenX, screenY">
+<code class="descname">screenX, screenY</code><a class="headerlink" href="#screenX, screenY" title="Permalink to this definition">¶</a></dt>
+<dd><p>Для со­бы­тий мы­ши эти свой­ст­ва оп­ре­де­ля­ют ко­ор­ди­на­ты ука­за­те­ля мы­ши от­но­си­тель­но верх­не­го ле­во­го уг­ла эк­ра­на. Са­ми по се­бе эти свой­ст­ва не ис­поль­зу­ют­ся, но они оп­ре­де­ле­ны во всех ти­пах со­бы­тий мы­ши и под­дер­жи­ва­ют­ся обеи­ми мо­де­ля­ми со­бы­тий, стан­дарт­ной и IE.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="shiftKey">
+<code class="descname">shiftKey</code><a class="headerlink" href="#shiftKey" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ука­зы­ва­ет, удер­жи­ва­лась ли на­жа­той кла­ви­ша Shift в мо­мент со­бы­тия. Оп­ре­де­ле­но для со­бы­тий мы­ши и кла­виа­ту­ры, а так­же в мо­де­ли со­бы­тий IE.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="srcElement">
+<code class="descname">srcElement</code><a class="headerlink" href="#srcElement" title="Permalink to this definition">¶</a></dt>
+<dd><p>В мо­де­ли со­бы­тий IE это свой­ст­во оп­ре­де­ля­ет объ­ект <a class="reference internal" href="EventTarget.html#EventTarget" title="EventTarget"><code class="xref js js-class docutils literal"><span class="pre">EventTarget()</span></code></a>, в ко­то­ром бы­ло сге­не­ри­ро­ва­но со­бы­тие. В стан­дарт­ной мо­де­ли со­бы­тий вме­сто это­го свой­ст­ва сле­ду­ет ис­поль­ зо­вать свой­ст­во target.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="target">
+<code class="descname">target</code><a class="headerlink" href="#target" title="Permalink to this definition">¶</a></dt>
+<dd><p>Це­ле­вой объ­ект со­бы­тия <a class="reference internal" href="EventTarget.html#EventTarget" title="EventTarget"><code class="xref js js-class docutils literal"><span class="pre">EventTarget()</span></code></a>, т. е. объ­ект, в ко­то­ром бы­ло сге­не­ри­ро­ва­но со­бы­тие. (Все объ­ек­ты, ко­то­рые мо­гут быть це­ле­вы­ми объ­ек­та­ми со­бы­тий, реа­ли­зу­ют ме­то­ды ин­тер­фей­са EventTarget.) Это свой­ст­во от­сут­ст­ву­ет в мо­де­ли со­бы­тий IE, но ими­ти­ру­ет­ся в мо­де­ли со­бы­тий jQuery. Cм. так­же srcElement.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="timeStamp">
+<code class="descname">timeStamp</code><a class="headerlink" href="#timeStamp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Чис­ло, оп­ре­де­ляю­щее да­ту и вре­мя, ко­гда про­изош­ло со­бы­тие, или ко­то­рое мож­но ис­поль­зо­вать для оп­ре­де­ле­ния оче­ред­но­сти со­бы­тий. Мно­гие бро­узе­ры воз­вра­ща­ют зна­че­ние вре­ме­ни в се­кун­дах, ко­то­рое мож­но пе­ре­дать кон­ст­рук­то­ру Date(). Од­на­ко в Firefox вер­сии 4 и ни­же это свой­ст­во со­дер­жит ко­ли­че­ст­во мил­ли­се­кунд, про­шед­ших с  мо­мен­та вклю­че­ния ком­пь­ю­те­ра. Это свой­ст­во не под­дер­жи­ва­ет­ся в мо­де­ли со­бы­тий IE. Мо­дель со­бы­тий jQuery за­пи­сы­ва­ет в это свой­ст­во зна­че­ние в фор­ма­те, воз­вра­щае­мом ме­то­дом Date.getTime().</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="toElement">
+<code class="descname">toElement</code><a class="headerlink" href="#toElement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Для со­бы­тий «mouseover» и «mouseout» в мо­де­ли со­бы­тий IE со­дер­жит ссыл­ку на объ­ект <a class="reference internal" href="Element.html#Element" title="Element"><code class="xref js js-class docutils literal"><span class="pre">Element()</span></code></a>, в пре­де­лы ко­то­ро­го был пе­ре­ме­щен ука­за­тель мы­ши. В стан­дарт­ной мо­де­ли со­бы­тий вме­сто это­го свой­ст­ва сле­ду­ет ис­поль­зо­вать свой­ст­во relatedTarget.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="type">
+<code class="descname">type</code><a class="headerlink" href="#type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Тип со­бы­тия, ко­то­рое пред­став­ля­ет дан­ный объ­ект Event. Это имя, под ко­то­рым был за­ре­ги­ст­ри­ро­ван об­ра­бот­чик со­бы­тия, или имя свой­ст­ва об­ра­бот­чи­ка со­бы­тия, без пре­фик­са «on». На­при­мер, «click», «load» или «submit». Это свой­ст­во под­дер­жи­ва­ют­ся обеи­ми мо­де­ля­ми со­бы­тий, стан­дарт­ной и IE.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="view">
+<code class="descname">view</code><a class="headerlink" href="#view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ок­но <a class="reference internal" href="Window.html#Window" title="Window"><code class="xref js js-class docutils literal"><span class="pre">Window()</span></code></a> (ис­то­ри­че­ски на­зы­ва­ет­ся «пред­став­ле­ни­ем» («view»)), в ко­то­ром бы­ло сге­не­ри­ро­ва­но со­бы­тие. Это свой­ст­во оп­ре­де­ле­но для всех стан­дарт­ных со­бы­тий поль­зо­ва­тель­ско­го ин­тер­фей­са, та­ких как со­бы­тия мы­ши и кла­виа­ту­ры. Не под­дер­жи­ва­ет­ся в мо­де­ли со­бы­тий IE.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="wheelDelta">
+<code class="descname">wheelDelta</code><a class="headerlink" href="#wheelDelta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Для со­бы­тий ко­ле­си­ка мы­ши это свой­ст­во оп­ре­де­ля­ет ве­ли­чи­ну про­крут­ки по оси Y. Раз­лич­ные бро­узе­ры за­пи­сы­ва­ют в это свой­ст­во раз­ные зна­че­ния. Это не­стан­дарт­ное свой­ст­во, но оно под­ дер­жи­ва­ет­ся все­ми бро­узе­ра­ми, вклю­чая IE вер­сии 8 и ни­же.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="wheelDeltaX">
+<code class="descname">wheelDeltaX</code><a class="headerlink" href="#wheelDeltaX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="wheelDeltaY">
+<code class="descname">wheelDeltaY</code><a class="headerlink" href="#wheelDeltaY" title="Permalink to this definition">¶</a></dt>
+<dd><p>В бро­узе­рах, под­дер­жи­ваю­щих мы­ши с дву­мя ко­ле­си­ка­ми, эти со­бы­тия оп­ре­де­ля­ют ве­ли­чи­ну про­крут­ки по осям X и Y. Ес­ли оп­ре­де­ле­но свой­ст­во wheelDeltaY, оно бу­дет со­дер­жать то же зна­че­ние, что и свой­ст­во wheelDelta.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="which">
+<code class="descname">which</code><a class="headerlink" href="#which" title="Permalink to this definition">¶</a></dt>
+<dd><p>Это не­стан­дарт­ное, ус­та­рев­шее свой­ст­во под­дер­жи­ва­ет­ся все­ми бро­узе­ра­ми, кро­ме IE, и ими­ти­ру­ет­ся в биб­лио­те­ке jQuery. Для со­бы­тий мы­ши это еще од­но свой­ст­во, ана­ло­гич­ное свой­ст­ву button: зна­че­ние 1 со­от­вет­ст­ву­ет ле­вой кноп­ке, 2 – сред­ней кноп­ке и 3 – пра­вой. Для со­бы­тий кла­виа­ту­ры оно по­лу­ча­ет то же зна­че­ние, что и свой­ст­во keyCode.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="getModifierState">
+<code class="descname">getModifierState</code><span class="sig-paren">(</span><em>string modifier</em><span class="sig-paren">)</span><a class="headerlink" href="#getModifierState" title="Permalink to this definition">¶</a></dt>
+<dd><p>Для со­бы­тий мы­ши и кла­виа­ту­ры этот ме­тод воз­вра­ща­ет true, ес­ли в мо­мент воз­бу­ж­де­ния со­бы­тия удер­жи­ва­лась на­жа­той ука­зан­ная кла­ви­ша-мо­ди­фи­ка­тор modi­fier, и false – в про­тив­ном слу­чае. Зна­че­ни­ем ар­гу­мен­та modifier мо­жет быть од­на из строк: «Alt», «AltGraph», «CapsLock», «Control», «Fn», «Meta», «NumLock», «Scroll», «Shift», «SymbolLock» и «Win».</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="initEvent">
+<code class="descname">initEvent</code><span class="sig-paren">(</span><em>type</em>, <em>bubbles</em>, <em>cancelable</em><span class="sig-paren">)</span><a class="headerlink" href="#initEvent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Инициализация ивента</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="initUIEvent">
+<code class="descname">initUIEvent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#initUIEvent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="initMouseEvent">
+<code class="descname">initMouseEvent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#initMouseEvent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="preventDefault">
+<code class="descname">preventDefault</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#preventDefault" title="Permalink to this definition">¶</a></dt>
+<dd><p>Со­об­ща­ет веб-бро­узе­ру, что­бы он не вы­пол­нял дей­ст­вие по умол­ча­нию для это­го со­бы­тия, ес­ли та­ко­вое пре­ду­смот­ре­но. Ес­ли со­бы­тие от­но­сит­ся к ка­те­го­рии не­от­ме­няе­мых, вы­зов это­го ме­то­да не ока­зы­ва­ет ни­ка­ко­го влия­ния. Этот ме­тод от­сут­ст­ву­ет в мо­де­ли со­бы­тий IE, но ими­ти­ру­ет­ся биб­лио­те­кой jQuery. В мо­де­ли со­бы­тий IE вме­сто вы­зо­ва это­го ме­то­да сле­ду­ет при­сваи­вать зна­че­ние false свой­ст­ву returnValue.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="stopImmediatePropagation">
+<code class="descname">stopImmediatePropagation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#stopImmediatePropagation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Дей­ст­ву­ет по­доб­но ме­то­ду stopPropagation(), но, кро­ме то­го, пре­дот­вра­ща­ет вы­зов ос­таль­ных об­ра­бот­чи­ков, за­ре­ги­ст­ри­ро­ван­ных в  этом же эле­мен­те до­ку­мен­та.</p>
+<p>Этот ме­тод яв­ля­ет­ся но­вым рас­ши­ре­ни­ем стан­дарт­ной мо­де­ли со­бы­тий, и по­то­му мо­жет быть реа­ли­зо­ван не во всех бро­узе­рах. Не под­дер­жи­ва­ет­ся мо­де­лью со­бы­тий IE, но ими­ти­ру­ет­ся биб­лио­те­кой jQuery.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="StopPropagation">
+<code class="descname">StopPropagation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#StopPropagation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ос­та­нав­ли­ва­ет рас­про­стра­не­ние со­бы­тия по фа­зам за­хва­та или всплы­тия и пе­ре­да­чу его це­ле­во­му эле­мен­ту. Этот ме­тод не от­ме­ня­ет вы­зов дру­гих об­ра­бот­чи­ков со­бы­тий то­го же уз­ла до­ку­мен­та, но пре­дот­вра­ща­ет пе­ре­да­чу со­бы­тий лю­бым дру­гим уз­лам. Не под­дер­жи­ва­ет­ся мо­де­лью со­бы­тий IE, но ими­ти­ру­ет­ся биб­лио­те­кой jQuery. В IE вме­сто вы­зо­ва ме­то­да stopPropagation() сле­ду­ет при­сваи­вать зна­че­ние true свой­ст­ву cancelBubble.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/dom/Event.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">js doc 2015.06.26 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

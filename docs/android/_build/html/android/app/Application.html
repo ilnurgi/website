@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>android.app.Application &mdash; android 14.10.12 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '14.10.12',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="android 14.10.12 documentation" href="../../index.html" />
+    <link rel="next" title="android.app.ExpandableListActivity" href="ExpandableListActivity.html" />
+    <link rel="prev" title="android.app.Activity" href="Activity.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="ExpandableListActivity.html" title="android.app.ExpandableListActivity"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="Activity.html" title="android.app.Activity"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">android 14.10.12 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="android-app-application">
+<span id="id1"></span><h1>android.app.Application<a class="headerlink" href="#android-app-application" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="android.app.Application">
+<em class="property">class </em><tt class="descclassname">android.app.</tt><tt class="descname">Application</tt><a class="headerlink" href="#android.app.Application" title="Permalink to this definition">¶</a></dt>
+<dd><p>объект, приложение</p>
+<dl class="method">
+<dt id="android.app.Application.onCreate">
+<tt class="descname">onCreate</tt><big>(</big><big>)</big><a class="headerlink" href="#android.app.Application.onCreate" title="Permalink to this definition">¶</a></dt>
+<dd><p>вызывается при создании приложения</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="android.app.Application.onTerminate">
+<tt class="descname">onTerminate</tt><big>(</big><big>)</big><a class="headerlink" href="#android.app.Application.onTerminate" title="Permalink to this definition">¶</a></dt>
+<dd><p>вызывается при преждевременном завершении работы</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="android.app.Application.onLowMemory">
+<tt class="descname">onLowMemory</tt><big>(</big><big>)</big><a class="headerlink" href="#android.app.Application.onLowMemory" title="Permalink to this definition">¶</a></dt>
+<dd><p>вызывается при нехватке памяти передним приложениям</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="android.app.Application.onConfigurationChanged">
+<tt class="descname">onConfigurationChanged</tt><big>(</big><big>)</big><a class="headerlink" href="#android.app.Application.onConfigurationChanged" title="Permalink to this definition">¶</a></dt>
+<dd><p>вызывается при изменении конфигурации</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="android.app.Application.getGlobalStateValue">
+<tt class="descname">getGlobalStateValue</tt><big>(</big><big>)</big><a class="headerlink" href="#android.app.Application.getGlobalStateValue" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="android.app.Application.setGlobalStateValue">
+<tt class="descname">setGlobalStateValue</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#android.app.Application.setGlobalStateValue" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<div class="highlight-python"><div class="highlight"><pre>import android.app.Application;
+import android.content.res.Configuration;
+
+public class MyApplication extends Application {
+
+    private static MyApplication singleton;
+
+    // Возвращает экземпляр данного класса
+    public static MyApplication getInstance() {
+        return singleton;
+    }
+
+    @Override
+    public final void onCreate() {
+        super.onCreate();
+        singleton = this;
+    }
+}
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="Activity.html"
+                        title="previous chapter">android.app.Activity</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="ExpandableListActivity.html"
+                        title="next chapter">android.app.ExpandableListActivity</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/android/app/Application.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="ExpandableListActivity.html" title="android.app.ExpandableListActivity"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="Activity.html" title="android.app.Activity"
+             >previous</a> |</li>
+        <li><a href="../../index.html">android 14.10.12 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, ilnurgi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+AJAX
+====
+
+AJAX (Asynchronous Javascript and XML - «асинхронный JavaScript и XML») - подход к построению интерактивных пользовательских интерфейсов веб-приложений, заключающийся в «фоновом» обмене данными браузера с веб-сервером.
+
+Запрос к серверу посылает JavaScript, за счет чего достигается обращение к серверу без перезагрузки страницы.
+
+.. code-block:: js
+
+    function ajaxTest(input) {
+        var request = new XMLHttpRequest();
+        request.open('GET‘, 'ajax.php?input=' + input);
+        request.send();
+        request.onreadystatechange = function() {
+            if (request.readyState == 4 && request.status == 200)
+            processResult(request.responseText);
+        }
+    }
+
+Свойства request объекта
+------------------------
+
+..js:attribute:: request.onreadystatechange
+
+    Обработчик изменения стсояния
+
+..js:attribute:: request.readyState
+    
+    Состояние запроса
+
+0. запрос не инициализирован (перед вызовом open())
+1. запрос инициализирован, но не был передан (перед вызовом send()).
+2. запрос был передан и обрабатывается
+3. запрос обрабатывается (доступны частичные данные)
+4. ответ завершен; вы можете получить ответ сервера и использовать его.
+
+..js:attribute:: request.status
+
+    Код статуса запроса
+
+..js:attribute:: request.responseTexe
+
+    Текст ответа
+
+
+Методы request объекта
+----------------------
+
+..js:function:: request.open(method, url)
+
+    :param method: метод отправки
+    :param url: урл запроса
+
+..js:function:: request.send()
+
+    
