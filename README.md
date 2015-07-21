@@ -1,19 +1,20 @@
-Мой сайт
-========
+# Мой сайт
 
-Порядок разворачивания
-----------------------
 
-Установка зависимостей
+## Порядок разворачивания
 
+### Установка зависимостей
+
+```
 apt-get update 
 apt-get upgrade
 apt-get install python-pip python-dev supervisor nginx git
+```
 
 
+### Настройка python окружения 
 
-Настройка python окружения 
-
+```
 pip install pip --upgrade
 pip install virtualenwrapper
 
@@ -28,11 +29,12 @@ mkdir -p $WORKON_HOME
 mkvirtualenv website
 
 pip install -r REQUIREMENTS
+```
 
 
+### Настройка nginx
 
-Настройка nginx
-
+```
 vim /etc/nginx/sites-available/website.conf
 
     upstream backend_website  {
@@ -110,10 +112,11 @@ vim /etc/nginx/sites-available/website.conf
     }
 ln -s /etc/nginx/sites-available/website.conf /etc/nginx/sites-enabled/website
 service nginx restart
+```
 
+### Настройка supervisor
 
-Настройка supervisor
-
+```
 vim /etc/supervisor/conf.d/website.conf
 
     [program:website]
@@ -137,13 +140,15 @@ vim /etc/supervisor/conf.d/website.conf
 
 supervisoctl reread
 supervisoctl update
+```
 
 
+### Клонирование проекта
 
-Клонирование проекта
-
+```
 git clone 
 
 python manage.py syncdb
 python manage.py migrate
 python manage.py collectstatic
+```
