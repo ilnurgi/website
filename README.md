@@ -45,6 +45,7 @@ git clone https://github.com/ilnurgi/website.git
 python manage.py syncdb
 python manage.py migrate
 python manage.py collectstatic
+
 ```
 
 
@@ -136,12 +137,13 @@ service nginx restart
 vim /etc/supervisor/conf.d/website.conf
 
 [program:website]
-command=/root/virtual_envs/website/bin/python manage.py run_gunicorn
+command=/root/virtual_envs/website/bin/gunicorn
     --bind=unix:/tmp/website.sock 
     --access-logfile /var/www/website/logs/gunicorn_acces.log 
     --error-logfile /var/www/website/logs/gunicorn_error.log
+    ilnurgi.wsgi:application
 
-directory=/var/www/website/
+directory=/var/www/website/ilnurgi/
 
 user=root
 group=root
