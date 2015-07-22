@@ -40,7 +40,10 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'ilnurgi'
+    'gunicorn',
+    
+    'ilnurgi',
+
 )
 
 MIDDLEWARE_CLASSES = (
