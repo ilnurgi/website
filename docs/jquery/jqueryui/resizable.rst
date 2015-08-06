@@ -1,5 +1,5 @@
-resizable
-=========
+resizable - элемент с изменяемым размером
+=========================================
 
 
 .. js:function:: resizable([methodName, option, value])

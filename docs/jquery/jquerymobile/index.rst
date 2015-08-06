@@ -9,5 +9,10 @@ jQuery Mobile
 
    datadirection
    dataprefetch
+   datarel
    datarole
+   datatheme
    datatransition
+
+   cssstyles
+   images

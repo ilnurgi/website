@@ -16,5 +16,6 @@ jQuery — библиотека JavaScript, которая содержит не
    animation
    ajax   
    methods
+   Deffered
    jqueryui/index
    jquerymobile/index

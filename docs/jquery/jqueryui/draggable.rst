@@ -1,5 +1,5 @@
-draggable
-=========
+draggable - перетаскиваемый объект
+==================================
 
 
 .. js:function:: draggable([methodName, option, value])
