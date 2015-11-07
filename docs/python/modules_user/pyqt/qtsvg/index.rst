@@ -1,4 +1,4 @@
-.. py:miodule:: QtSvg()
+.. py:module:: QtSvg()
 
 QtSvg
 =====

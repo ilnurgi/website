@@ -10,6 +10,8 @@ QtCore - модуль содержит классы, не связанные с 
    :maxdepth: 1
 
    qt
+   qevent
+   qmutex
    qobject
    qpoint
    qpointf
@@ -17,6 +19,7 @@ QtCore - модуль содержит классы, не связанные с 
    qrectf
    qsize
    qsizef
+   qthread
    qtimer
 
 Базовые типы данных фреймворка

@@ -1,10 +1,12 @@
-Combobox
+.. py:module:: tkinter.ttk
+
+combobox
 ========
 
-.. py:class:: Combobox(widget, **kwargs)
+.. py:class:: Combobox(**kwargs)
 
     Виджет, выпадающий список
 
     :param widget: родительсикй виджет
     :param textvariable: переменная
-    :param list values: список значений
+    :param values: список значений

@@ -15,7 +15,7 @@ Document
 
     .. py:attribute:: inline_shapes
 
-        возвращает экземпляры :py:class:`InlineShape` документа
+        возвращает экземпляры :py:class:`docx.InlineShape` документа
 
 
     .. py:attribute:: paragraphs
@@ -151,7 +151,7 @@ Table
 
     .. py:attribute:: columns
 
-        список колонок таблицы :py:ref:`_Columns`
+        список колонок таблицы :py:ref:`_columns`
 
 
     .. py:attribute:: rows
@@ -260,7 +260,9 @@ _Column
         ширина колонки
 
 
-_Columns
+.. _columns:
+
+Columns
 --------
 
 

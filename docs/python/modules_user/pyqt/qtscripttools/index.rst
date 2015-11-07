@@ -1,4 +1,4 @@
-.. py:mosule:: QtScriptTools
+.. py:module:: QtScriptTools
 
 QtScriptTools
 =============

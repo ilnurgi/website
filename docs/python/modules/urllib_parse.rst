@@ -8,7 +8,7 @@ urllib.parse
     данный модуль доступен на третьей ветки питона
 
 
-.. py:module:: parse_qs(<строка запроса>, [, keep_blankvalues=False][, strict_parsing=False][, encoding='utf-8'][, errors='replace'])
+.. py:method:: parse_qs(<строка запроса>, [, keep_blankvalues=False][, strict_parsing=False][, encoding='utf-8'][, errors='replace'])
 
     разбирает строку запроса и возвращает словарь с ключами, содержащими названия параметров, и списка значений.
 
@@ -103,7 +103,7 @@ urllib.parse
     'http://admin.ru/fl/file.html'
 
 
-.. py:module:: urlparse(<url> [, <схема> [, <разбор_якоря>=False]])
+.. py:method:: urlparse(<url> [, <схема> [, <разбор_якоря>=False]])
     
     возвращает :py:class:`ParseResult` с результатом разбора адреса
 

@@ -9,6 +9,7 @@
    docx
    pyaudio
    serial
+   pymongo/index
    pyqt/index
    xlrd
    xlwt

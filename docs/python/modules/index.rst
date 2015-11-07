@@ -53,8 +53,8 @@
    traceback
    types
    unittest
-   urlib_parse
-   urlib_request
+   urllib_parse
+   urllib_request
    warnings
    weakref
    xml_sax_saxutils

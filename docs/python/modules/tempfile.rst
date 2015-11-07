@@ -8,8 +8,6 @@ tempfile
     возвращает путь к папке временных файлов
 
 
-.. py:method:: 
-
 .. py:class:: NamedTemporaryFile(delete=True)
 
     возвращает объект, временный файл

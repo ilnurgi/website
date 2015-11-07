@@ -8,8 +8,6 @@ zipfile
     
     объект архив
 
-    .. py:attribute::
-
 
     .. py:method:: write(src, localpath)
 

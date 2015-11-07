@@ -14,6 +14,7 @@ QtGui - модуль классов, реализующих компоненты
 .. toctree::
    :maxdepth: 1
 
+   qaction
    qapplication
    qbrush
    qcolor
@@ -24,6 +25,7 @@ QtGui - модуль классов, реализующих компоненты
    qlabel
    qmainwindow
    qmessagebox
+   qpaintdevice
    qpalette
    qpixmap
    qpushbutton

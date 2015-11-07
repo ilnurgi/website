@@ -71,15 +71,19 @@ sqlite3
 
     регистрирует пользовательскую функцию, которая будети вызываться при попытке вставки объекта в запросе.
 
-    >>> class Car(object):
-
+    .. code-block:: py
+        
+        class Car(object):
             def __init__(self, model, color):
                 self.model, self.color = model, color
-    >>> def my_adapter(car):
+        
+        def my_adapter(car):
             return '{0}|{1}'.format(car.model, car.color)
-    >>> sqlite3.register_adapter(Car, my_adapter)
-    >>> car = Car('car1', 'red')
-    >>> cur.execute('INSERT INTO cars VALUES (?)', (car, ))
+        
+        sqlite3.register_adapter(Car, my_adapter)
+        car = Car('car1', 'red')
+        cur.execute('INSERT INTO cars VALUES (?)', (car, ))
+        
 
     Вместо регистрации функции преобразования типа можно внутри класса определить метод __conform__(self, <Протокол>), где протокол соответсввует PrepareProtokol.
 
