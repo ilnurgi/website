@@ -29,7 +29,7 @@ mkdir -p $WORKON_HOME
 
 mkvirtualenv website
 
-pip install -r REQUIREMENTS
+pip install -r requirements
 ```
 
 
