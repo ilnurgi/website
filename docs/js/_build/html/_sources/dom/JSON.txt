@@ -1,8 +1,0 @@
-JSON
-====
-
-.. js:class:: JSON()
-
-    .. js:function:: parse(text)
-
-        Из строки в JSON
