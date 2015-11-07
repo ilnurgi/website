@@ -1,4 +1,0 @@
-_ java_io_IOException:
-
-java.io.IOException
-===================
