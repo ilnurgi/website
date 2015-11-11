@@ -41,8 +41,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     'gunicorn',
-    
-    'ilnurgi',
+    'application',
 
 )
 
@@ -57,7 +56,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
-ROOT_URLCONF = 'ilnurgi.urls'
+ROOT_URLCONF = 'application.urls'
 
 TEMPLATES = [
     {
@@ -75,7 +74,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'ilnurgi.wsgi.application'
+WSGI_APPLICATION = 'application.wsgi.application'
 
 
 # Database
@@ -107,10 +106,3 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
-
-if DEBUG:
-
-    # разрешеные ip
-    INTERNAL_IPS = (
-        '127.0.0.1',
-    )

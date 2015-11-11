@@ -16,9 +16,9 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
-from ilnurgi import views
+from application.views import HomePage
 
 urlpatterns = [
-    url(r'^$', views.home),
-    url(r'^admin/', include(admin.site.urls))
+    url(r'^admin/', include(admin.site.urls)),
+    url(r'', HomePage.as_view(), name='home_page'),
 ]
