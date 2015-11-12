@@ -20,9 +20,13 @@ class Command(BaseCommand):
     парсим nginx_access.log
     """
 
+    date_format = '%Y.%m.%d'
+
+    def add_arguments(self, parser):
+        parser.add_arguments(
+            '-d', '--date', dest='date', default=None, help=self.date_format)
+
     def handle(self, *args, **options):
-
-
 
         if 'mongo_db' not in options:
             mongo_client = MongoClient(
@@ -48,7 +52,10 @@ class Command(BaseCommand):
             ur'"(?P<user_agent>.*)"\s*$'
         )
 
-        self.today = options.get('date_today', datetime.datetime.now())
+        self.today = options.get(
+            'date_today',
+             datetime.datetime.strptime(options['date'], self.date_format)
+                if options['date'] else datetime.datetime.now())
         date_start = datetime.datetime.combine(
             self.today - datetime.timedelta(days=1),
             datetime.time(0, 0, 0))
