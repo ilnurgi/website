@@ -15,6 +15,8 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
+import yaml
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -87,6 +89,12 @@ DATABASES = {
     }
 }
 
+DATABASE_MONGO = {
+    'host': 'localhost',
+    'port': '27017',
+    'db_name': 'nginx_access'
+}
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
@@ -108,3 +116,38 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+settings_json = os.path.join(BASE_DIR, 'settings.json')
+
+LOG_PATH = os.path.join(BASE_DIR, 'logs')
+
+if os.path.exists(settings_json):
+    globals().update(yaml.load(open(settings_json)))
+
+parse_nginx_acces_log_path = os.path.join(LOG_PATH, 'nginx_access_parse_logs')
+if not os.path.exists(parse_nginx_acces_log_path):
+    os.makedirs(parse_nginx_acces_log_path)
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'parse_nginx_access': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(parse_nginx_acces_log_path, 'log.log')
+        },
+        'console': {
+            'class': 'logging.StreamHandler',
+        }
+    },
+    'loggers': {
+        'parse_nginx_access': {
+            'level': 'DEBUG',
+            'handlers': ['parse_nginx_access']
+        }
+    }
+}
+
+if DEBUG and 'console' in LOGGING['handlers']:
+    LOGGING['loggers']['parse_nginx_access']['handlers'].append('console')
