@@ -25,6 +25,8 @@ class Command(BaseCommand):
     def add_arguments(self, parser):
         parser.add_arguments(
             '-d', '--date', dest='date', default=None, help=self.date_format)
+        parser.add_arguments(
+            '-l', '--log', dest='log_file_path', default=None)
 
     def handle(self, *args, **options):
 
@@ -64,8 +66,11 @@ class Command(BaseCommand):
             datetime.time(23, 59, 59))
 
         log_file_path = os.path.join(settings.LOG_PATH, u'nginx_access.log')
-        new_log_file_path = log_file_path.replace(
-            u'.log', u'_{0}.log'.format(date_start.date()))
+        new_log_file_path = (
+            options['log_file_path']
+            if options['log_file_path']
+            else log_file_path.replace(
+                u'.log', u'_{0}.log'.format(date_start.date())))
 
         os.rename(log_file_path, new_log_file_path)
 
