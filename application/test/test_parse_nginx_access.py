@@ -43,7 +43,40 @@ class TestParsingNginxAccess(TestCase):
             '200 4403 '
             '"http://www.ilnurgi1.ru/docs/python/modules_user/pyqt/qtgui/'
             'qwidget.html" '
-            '"Mozilla/5.0 (Windows NT 6.1; WOW64)"')
+            '"Mozilla/5.0 (Windows NT 6.1; WOW64)"',
+
+            '212.193.117.227 - - '
+            '[11/Nov/2015:05:21:19 -0400] '
+            '"GET / HTTP/1.1" '
+            '200 431 '
+            '"" '
+            '"Mozilla/5.0 (compatible; statdom.ru/Bot; '
+            '+http://statdom.ru/bot.html)"',
+
+            '212.193.117.227 - - '
+            '[11/Nov/2015:05:21:22 -0400] '
+            '"GET /favicon.ico HTTP/1.1" '
+            '404 961 '
+            '"" '
+            '"Mozilla/5.0 (compatible; statdom.ru/Bot; '
+            '+http://statdom.ru/bot.html)"',
+
+            '148.251.223.21 - - '
+            '[11/Nov/2015:14:23:48 -0400] '
+            '"GET /robots.txt HTTP/1.1" '
+            '404 957 '
+            '"" '
+            '"Mozilla/5.0 (compatible; openstat.ru/Bot)"',
+
+            '61.160.247.11'
+            ' - root '
+            '[11/Nov/2015:00:50:03 -0400] '
+            '"GET /manager/html HTTP/1.1" '
+            '404 2047 '
+            '"-" '
+            '"Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1;)"'
+
+        )
 
         input_file = tempfile.TemporaryFile()
         input_file.write('\n'.join(inp))
@@ -52,7 +85,8 @@ class TestParsingNginxAccess(TestCase):
         call_command(
             'parse_nginx_access',
             mongo_db=self.mongo_db,
-            input_file=input_file
+            input_file=input_file,
+            date_today=datetime.datetime(2015, 11, 12, 0, 0, 0)
         )
 
         self.assertEqual(self.collection_log.count(), len(inp))

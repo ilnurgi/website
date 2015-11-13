@@ -23,9 +23,9 @@ class Command(BaseCommand):
     date_format = '%Y.%m.%d'
 
     def add_arguments(self, parser):
-        parser.add_arguments(
+        parser.add_argument(
             '-d', '--date', dest='date', default=None, help=self.date_format)
-        parser.add_arguments(
+        parser.add_argument(
             '-l', '--log', dest='log_file_path', default=None)
 
     def handle(self, *args, **options):
@@ -46,11 +46,11 @@ class Command(BaseCommand):
         self.collection_month_report = self.db.month_report
 
         self.log_re = re.compile(
-            ur'^\s*(?P<ip_address>\d+\.\d+\.\d+\.\d+) - - '
+            ur'^\s*(?P<ip_address>\d+\.\d+\.\d+\.\d+) - \S+ '
             ur'\[(?P<date>\S+) \S+\] '
             ur'"(?P<method>\w+) (?P<url>\S+) \S+" '
             ur'(?P<status>\d+) (?P<size>\d+) '
-            ur'"(?P<url_from>\S+)" '
+            ur'"(?P<url_from>\S*)" '
             ur'"(?P<user_agent>.*)"\s*$'
         )
 
@@ -72,20 +72,22 @@ class Command(BaseCommand):
             else log_file_path.replace(
                 u'.log', u'_{0}.log'.format(date_start.date())))
 
-        os.rename(log_file_path, new_log_file_path)
+        if 'input_file' not in options:
+            os.rename(log_file_path, new_log_file_path)
 
-        subprocess.call([u'service', u'nginx', u'restart'])
+            subprocess.call([u'service', u'nginx', u'restart'])
 
         file_obj = options.get(
             'input_file',
-            open(new_log_file_path))
+            None)
+        if file_obj is None:
+            file_obj = open(new_log_file_path)
 
         with file_obj as log_file:
             for log in log_file:
                 data = self.log_re.match(log)
                 if not data:
-                    logger.debug(u'not parsed')
-                    logger.debug(data)
+                    logger.debug(log)
                     continue
 
                 data = data.groupdict()
@@ -106,18 +108,18 @@ class Command(BaseCommand):
     def calculate_for_month(self):
 
         today = self.today
-        january = today.month == 0
+        january = today.month == 1
 
         date_start = datetime.datetime(
             today.year - (1 if january else 0),
-            11 if january else today.month - 1,
+            12 if january else today.month - 1,
             1,
             0, 0, 0)
 
-        december = today.month == 11
+        december = today.month == 12
         date_end = datetime.datetime(
             date_start.year + (1 if december else 0),
-            0 if december else date_start.month + 1,
+            1 if december else date_start.month + 1,
             1,
             0, 0, 0)
 
