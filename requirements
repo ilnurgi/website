@@ -3,3 +3,4 @@ sphinx
 gunicorn
 pymongo
 pyyaml
+psutil

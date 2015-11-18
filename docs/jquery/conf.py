@@ -11,7 +11,9 @@
 # All configuration values have a default; values that are commented out
 # serve to show the default.
 
-import sys, os, datetime
+import datetime
+import os
+import sys
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -40,15 +42,15 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'jquery'
-copyright = u'2014, ilnurgi'
+project = u'Конспекты по jquery'
+copyright = u'ilnurgi'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
 # built documents.
 #
 # The short X.Y version.
-version = datetime.datetime.now().strftime(u'%Y.%m.%d')
+version = u'{0.year}.{0.month:02}.{0.day:02}'.format(datetime.datetime.now())
 # The full version, including alpha/beta/rc tags.
 release = version
 
@@ -96,14 +98,17 @@ html_theme = 'classic'
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
-#html_theme_options = {}
+html_theme_options = {
+    #"rightsidebar": "true",
+    "stickysidebar": "true",
+}
 
 # Add any paths that contain custom themes here, relative to this directory.
 #html_theme_path = []
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
-#html_title = None
+html_title = u'{0} от {1}'.format(project, release)
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
 #html_short_title = None
