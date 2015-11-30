@@ -33,3 +33,12 @@ WebServer
             
             server.SetResponse('Go!')
 
+
+    .. js:function:: GetWebSockClients()   
+    
+    .. js:function:: SendText( txt, ip )   
+    
+    .. js:function:: SetOnReceive( callback)   
+    
+    .. js:function:: Start()
+    

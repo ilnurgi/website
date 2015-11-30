@@ -70,6 +70,8 @@ app - главный объект для работы
     .. js:function:: CreateBluetoothSerial()
 
         :js:class:`BluetoothSerial`
+
+        
     .. js:function:: CreateButton(text, width, height, options)
 
         Возвращает :js:class:`Button`
@@ -330,6 +332,24 @@ app - главный объект для работы
             
             loc = app.CreateLocator('GPS,Network');
 
+        
+    .. js:function:: CreateMediaPleer()
+
+        Возвращает :js:class:`MediaPlerr`, проигрывать музфкальных файлов
+
+        .. code-block:: js
+            
+            player = app.CreateMediaPleer()
+
+
+    .. js:function:: CreateMediaStore()
+
+        Возвращает :js:class:`MediaStore`
+
+        .. code-block:: js
+            
+            store = app.CreateMediaStore()
+
 
     .. js:function:: CreateNetClient(type)
 
@@ -364,30 +384,14 @@ app - главный объект для работы
 
         Creates the NXT object is used to manage the connection between your Android phone/tablet and the Lego Mindstorms NXT brick
 
+        :js:class:`Nxt`
+
 
     .. js:function:: CreateNxtRemote()
         
         Internal NXTRemote object. Use NXT object from app.CreateNXT()
 
         :js:class:`NxtRemote`
-
-        
-    .. js:function:: CreateMediaPleer()
-
-        Возвращает :js:class:`MediaPlerr`, проигрывать музфкальных файлов
-
-        .. code-block:: js
-            
-            player = app.CreateMediaPleer()
-
-
-    .. js:function:: CreateMediaStore()
-
-        Возвращает :js:class:`MediaStore`
-
-        .. code-block:: js
-            
-            store = app.CreateMediaStore()
 
 
     .. js:function:: CreateObject( name )
@@ -399,50 +403,6 @@ app - главный объект для работы
         .. code-block:: js
             
             playstore = app.CreatePlayStore()
-            
-
-
-    .. js:function:: CreateSeekBars(width, height)
-
-        Возвращает :js:class:`SeekBars`
-
-        .. code-block:: js
-            
-            sb = app.CreateSeekBars(0.8)
-
-
-    .. js:function:: CreateSensor(type, options)
-
-        Возвращает :js:class:`Sensor`
-
-        * `type`
-
-            * `Accelerometer` - 
-            * `MagneticField` - 
-            * `Light` - 
-            * `Orientation` - 
-            * `Proximity` - 
-
-        * `options`
-
-            * `Fast` - 
-            * `Fastest` - 
-            * `Medium` - 
-            * `Slow` - 
-
-        .. code-block:: js
-            
-            sns = app.CreateSensor( "Accelerometer" );
-            sns.SetOnChange(function(x, y, z, time){});
-            sns.Start();
-
-            sns = app.CreateSensor( "Orientation" );
-            sns.SetOnChange(function(azimuth, pitch, roll, time){});
-            sns.Start();
-
-            sns = app.CreateSensor( "Light" );
-            sns.SetOnChange(function(lux){});
-            sns.Start();
 
 
     .. js:function:: CreateScroller(width, height, options)
@@ -464,7 +424,86 @@ app - главный объект для работы
               layScroll.AddChild( img );
 
               app.AddLayout( lay );
-            }       
+            }     
+            
+
+    .. js:function:: CreateSeekBars(width, height, options)
+
+        Возвращает :js:class:`SeekBars`
+
+        .. code-block:: js
+            
+            sb = app.CreateSeekBars(0.8)
+
+
+    .. js:function:: CreateSensor(type, options)
+
+        Возвращает :js:class:`Sensor`
+
+        * `type`
+
+            * `Accelerometer` - 
+            * `MagneticField` - 
+            * `Light` - 
+            * `Orientation` - 
+            * `Proximity` - 
+            * `Temperature`
+            * `GameRotation`
+            * `GeomagneticRotation`
+            * `Gravity`
+            * `Gyroscope`
+            * `HeartRate`
+            * `Acceleration`
+            * `Pressure`
+            * `Humidity`
+            * `RotationMotion`
+            * `StepCounter`
+            * `StepDetector`
+
+        * `options`
+
+            * `Fast` - 
+            * `Fastest` - 
+            * `Medium` - 
+            * `Slow` - 
+
+        .. code-block:: js
+            
+            sns = app.CreateSensor( "Accelerometer" );
+            sns.SetOnChange(function(x, y, z, time){});
+            sns.Start();
+
+            sns = app.CreateSensor( "Orientation" );
+            sns.SetOnChange(function(azimuth, pitch, roll, time){});
+            sns.Start();
+
+            sns = app.CreateSensor( "Light" );
+            sns.SetOnChange(function(lux){});
+            sns.Start();  
+
+
+    .. js:function:: CreateService( packageName, classname, callback, options )
+
+        :js:class:`Service`    
+
+
+    .. js:function:: CreateShortcut( name,icon,script )
+
+        name is a title for the Shortcut,
+        
+        icon needs the path to a picture for the Shortcut and
+        
+        script is the fullpath to the js-file which should starting within Droidscript
+
+        .. code-block:: js
+            
+            CreateShortcut( "Hello World", "/mnt/sdcard/DroidScript/Hello World/Img/Hello World.png", "/mnt/sdcard/DroidScript/Hello World/Hello World.js" );
+
+
+    .. js:function:: CreateSmartWatch( p1 )
+
+        :js:class:`SmartWatch`
+
 
     .. js:function:: CreateSMS()
 
@@ -475,7 +514,7 @@ app - главный объект для работы
             sms = app.CreateSMS()
 
 
-    .. js:function:: CreateSpeechRec()
+    .. js:function:: CreateSpeechRec(options)
 
         Возвращает :js:class:`SpeechRec`, звукозапись
 
@@ -493,7 +532,8 @@ app - главный объект для работы
             
             spin = app.CreateSpinner( "Bilbo,Frodo,Gandalf", 0.4 );
             
-    .. js:function:: CreateSynth()
+
+    .. js:function:: CreateSynth(p1)
 
         Возвращает :js:class:`Synth`, синтезатор
 
@@ -501,6 +541,11 @@ app - главный объект для работы
             
             synth = app.CreateSynth('VCF');
             synth = app.CreateSynth('Signal');
+
+
+    .. js:function:: CreateSysProc(shell)
+
+        :js:class:`Sys`
 
 
     .. js:function:: CreateTabs(tabs, width, height, options)
@@ -543,6 +588,16 @@ app - главный объект для работы
 
         Возвращает :js:class:`TextEdit`
 
+        * `options`
+            * `AutoScale` - reduces text size to fit if needed
+            * `Bold` - Write bold Text
+            * `FontAwesome` - Use this to display Icons 
+            * `from` - this inbuilt font
+            * `Html` -     
+            * `Left` -     
+            * `Multiline` -    
+            * `Right` - 
+
         .. code-block:: js
             
             txtedit = app.CreateTextEdit('edit')
@@ -557,7 +612,7 @@ app - главный объект для работы
             btn = app.CreateToggle('toggle me')
 
 
-    .. js:function:: CreateUSBSerial()
+    .. js:function:: CreateUSBSerial(baudRate,dataBits,stopBits,parity)
 
         :js:class:`USBSerial`
 
@@ -578,11 +633,17 @@ app - главный объект для работы
         .. code-block:: js
             
             webserver = CreateWebServer(8080, 'Upload,ListDir');
+            webserver = CreateWebServer(8080, 'Reflect');
 
 
-    .. js:function:: CreateWebView(width, height)
+    .. js:function:: CreateWebView(width, height, options, zoom)
 
         Возвращает :js:class:`WebView`
+
+        * `options`
+            * `IngoreErrors`
+            * `NoScrollBars`
+            * `ScrollFade`
 
         .. code-block:: js
             
@@ -603,14 +664,9 @@ app - главный объект для работы
         Возвращает :js:class:`ZipUtil`
 
 
-    .. js:function:: Exit()
+    .. js:function:: Debug(text)
 
-        Завершает выполнение программы
-
-        .. code-block:: js
-            
-            app.Exit()
-
+    .. js:function:: DeleteDatabase(name)
 
     .. js:function:: DeleteFile(fileName)
 
@@ -630,6 +686,10 @@ app - главный объект для работы
             app.DeleteFile('/sdcard/files');
 
 
+    .. js:function:: DestroyLayout(layoout)
+
+    .. js:function:: DisableKeys(keyList)
+
     .. js:function:: EnableBackKey(enable)
 
         Включает/выключает стандартное поведение кнопки назад. Если стандартное поведение выключено, будет вызываться глобальный метод :js:func:`OnBack`
@@ -643,6 +703,34 @@ app - главный объект для работы
             function OnBack(){
                 ...
             }
+
+
+    .. js:function:: Execute(code)
+
+        This function is intended for use inside a WebView control to execute functions in the main script
+
+        .. note:: 
+
+            You should put quotes around the code you want executing too:
+            
+            .. code-block:: js
+                
+                app.Execute( "Alert( 'Hi' )" );
+                app.Execute( "Alert( \"Hi\" )" );
+
+    
+    .. js:function:: Exit(p1)
+
+        Завершает выполнение программы
+
+        .. code-block:: js
+            
+            app.Exit()
+
+
+    .. js:function:: ExtractAssets( src,dest,overwrite )    
+
+        Copy content from one folder to another. If overwrite = true, then existing files in destination folder will be overwritten.
 
 
     .. js:function:: FileExists(fileName)
@@ -663,6 +751,8 @@ app - главный объект для работы
             app.FolderExists('/sdcard/files')
 
 
+    .. js:function:: GetAccounts()
+
     .. js:function:: GetAppName()
 
         Возвращает имя приложения
@@ -681,6 +771,10 @@ app - главный объект для работы
             app_path = app.GetAppPath()
 
 
+    .. js:function:: GetBatteryLevel()
+
+    .. js:function:: GetBuildNum()
+
     .. js:function:: GetClipboardText()
 
         Возвращает текст буфера обмена, для установки используйте :js:func:`SetClipboardText`
@@ -689,6 +783,13 @@ app - главный объект для работы
             
             text = app.GetClipboardText()
 
+    .. js:function:: GetCountry()        
+
+    .. js:function:: GetCountryCode()        
+
+    .. js:function:: GetData( p1 )    
+
+    .. js:function:: GetDatabaseFolder()
 
     .. js:function:: GetDefaultOrientation()            
 
@@ -698,6 +799,8 @@ app - главный объект для работы
             
             orinet = app.GetDefaultOrientation()
 
+
+    .. js:function:: GetDeviceId()
 
     .. js:function:: GetDisplayHeight()    
 
@@ -717,6 +820,10 @@ app - главный объект для работы
             width = app.GetDisplayWidth()
 
 
+    .. js:function:: GetDSVersion()
+
+    .. js:function:: GetEnv()
+
     .. js:function:: GetExternalFolder()    
 
         Возвращает путь до флешки, microsd карточки
@@ -725,6 +832,21 @@ app - главный объект для работы
             
             external_path = app.GetExternalFolder()
 
+
+    .. js:function:: GetFileDate( file ) 
+
+        Returns the date of a file (file needs the full path).  
+
+
+    .. js:function:: GetFileSize( file ) 
+
+        Returns the size of a file in bytes (file needs the full path).
+
+    .. js:function:: GetFreeSpace( option )
+
+        Returns the free space in gigabytes. Parameter option can be: “internal” or “external”. 
+
+    .. js:function:: GetInternalFolder()
 
     .. js:function:: GetIntent()
 
@@ -790,6 +912,10 @@ app - главный объект для работы
             yaxis = app.GetJoystickState( 0, "axis-1" );
 
 
+    .. js:function:: GetLanguage()       
+
+    .. js:function:: GetLanguageCode()
+
     .. js:function:: GetLastButton()
 
         Возвращает :js:class:`Button`, последнюю нажатую кнопку
@@ -798,6 +924,7 @@ app - главный объект для работы
             
             btn = app.GetLastButton()
 
+    .. js:function:: GetLastCheckBox()
 
     .. js:function:: GetLastImage()
 
@@ -825,6 +952,9 @@ app - главный объект для работы
             
             mac = app.GetMacAddress()
 
+    .. js:function:: GetMediaFile(“MyApp”,“.png”)
+
+    .. js:function:: GetMetadata( file,keys )
 
     .. js:function:: GetModel()
 
@@ -833,6 +963,18 @@ app - главный объект для работы
         .. code-block:: js
             
             model = app.GetModel()
+
+    .. js:function:: GetName()       
+
+    .. js:function:: GetNotifyId()   
+
+        gets id of in-comming notification  1.29
+
+    .. js:function:: GetObjects()    
+
+        Returns all Objects of your App 
+
+    .. js:function:: GetOptions()
 
 
     .. js:function:: GetOrientation()
@@ -877,6 +1019,10 @@ app - главный объект для работы
             version = app.GetOSVersion()
 
 
+    .. js:function:: app.GetPackageName()        1.23b
+
+    .. js:function:: app.GetPath()
+
     .. js:function:: GetPrivateFolder(fldrName)
 
         Создает и возвращает путь до приватной папки, доступной только для приложения
@@ -885,6 +1031,7 @@ app - главный объект для работы
              
             fldr = app.GetPrivateFolder('myfolder');
 
+    .. js:function:: GetRingerMode()
 
     .. js:function:: GetRotation()
 
@@ -893,6 +1040,10 @@ app - главный объект для работы
         .. code-block:: js
             
             rot = app.GetRotation()
+
+    .. js:function:: GetRunningApps()        1.29
+
+    .. js:function:: GetRunningServices()
 
 
     .. js:function:: GetScreenDensity()
@@ -924,7 +1075,13 @@ app - главный объект для работы
 
     .. js:function:: GetSharedFiles()
 
-    .. js:function:: GetSharedText()
+    .. js:function:: GetSharedText(p1)
+
+    .. js:function:: GetSpecialFolder( name )    
+
+        'DCIM','Pictures','Movies','Downloads' etc  1.29
+
+    .. js:function:: GetTop()
 
     .. js:function:: GetUser()
 
@@ -934,6 +1091,17 @@ app - главный объект для работы
             
             user = app.GetUser()
 
+    .. js:function:: GetUser()       
+
+    .. js:function:: GetVersion()        
+
+    .. js:function:: GetVolume(stream)   
+
+        streams: alarm,dtmf,music,notification,ring,system,voicecall    1.25b
+
+    .. js:function:: GoToSleep()
+
+    .. js:function:: HideKeyboard( p1 )
 
     .. js:function:: HideProgress()
 
@@ -953,13 +1121,7 @@ app - главный объект для работы
             app.HideProgressBar();
 
 
-    .. js:function:: IsTablet()
-
-        Возвращает булево, планшет ии смартфон
-
-        .. code-block:: js
-            
-            tablet = app.IsTablet();
+    .. js:function:: IsBluetoothEnabled()
 
 
     .. js:function:: IsBluetoothOn()
@@ -970,6 +1132,18 @@ app - главный объект для работы
             
             bthOn = app.IsBluetoothOn()
 
+    .. js:function:: IsBluetoothOn() Checks if Bluetooth is on.  
+
+    .. js:function:: IsChrome()  detects running in arc welded chrome    1.23b
+
+    .. js:function:: IsFolder( folder )  Checks if folder is a file or folder.   
+
+    .. js:function:: IsKeyboardShown()       1.29
+
+    .. js:function:: IsNewVersion()      
+
+    .. js:function:: IsPro()
+
 
     .. js:function:: IsScreenOn()
 
@@ -978,9 +1152,20 @@ app - главный объект для работы
         .. code-block:: js
             
             bthOn = app.IsScreenOn()
+    
+    .. js:function:: IsTablet()
 
+        Возвращает булево, планшет ии смартфон
 
-    .. js:function:: ListFolder(path, filter, limit)
+        .. code-block:: js
+            
+            tablet = app.IsTablet();
+
+    .. js:function:: IsWifiEnabled()
+
+    .. js:function:: KillApp( file )
+
+    .. js:function:: ListFolder(path, filter, limit, options)
 
         Возвращает список файлов в указанной папке
 
@@ -989,6 +1174,7 @@ app - главный объект для работы
             files = app.ListFolder('/sdcard/');
             files = app.ListFolder('/sdcard/', '.mp3');
             files = app.ListFolder('/sdcard/', '.mp4', 10);
+            files = app.ListFolder('/sdcard/', '.mp4', 10, 'FillPath,alphasort');
 
 
     .. js:function:: LoadBoolean(valueName, default, id)
@@ -1021,6 +1207,10 @@ app - главный объект для работы
             num = app.LoadNumber('MyName', 42);
 
 
+    .. js:function:: LoadPlugin( url )
+
+    .. js:function:: LoadScript( url, callback )
+
     .. js:function:: LoadText(valueName, default, id)
 
         Загружает параматеры из пользовательской памяти, для сохранения используйте :js:func:`SaveText`
@@ -1044,6 +1234,8 @@ app - главный объект для работы
             
             app.MakeFolder('/sdcard/ilnurgi/')
 
+
+    .. js:function:: Odroid(p1,p2,p3)
 
     .. js:function:: OpenDatabase(dbName)
 
@@ -1080,10 +1272,21 @@ app - главный объект для работы
             
             app.PreventScreenLock(true);
 
+    .. js:function:: PreventWifiSleep( p1 )
 
-    .. js:function:: ReadFile(fileName)
+    .. js:function:: ReadFile(fileName, options)
 
         Возвращает содержимое файла
+
+        * `options`
+
+            * `windows-1252`
+            * `ISO-8859-1`
+            * `US-ASCII`
+            * `UTF-16`
+            * `UTF-16BE`
+            * `UTF-16LE`
+            * `UTF-8`
 
         .. code-block:: js
             
@@ -1199,7 +1402,9 @@ app - главный объект для работы
             app.SendMail('ilnurgi87@gmail.com', 'MySubject', 'Hello', '/sdcard/file.txt')
 
 
-    .. js:function:: SetAlarm(type, id, callback, timeout, periodic)
+    .. js:function:: SendMessage(msg)
+
+    .. js:function:: SetAlarm(type, id, callback, time, interval)
 
         Вызывает указанный обработчик, в указанное время, миллисекунды, даже если приложение свернуто. 
 
@@ -1219,6 +1424,18 @@ app - главный объект для работы
             app.SetAlarm("Cancel", 1);
 
 
+    .. js:function:: SetAutoBoot(TrueFalse) 
+
+        Calling app.SetAutoBoot( true ) method will cause DroidScript to be started automatically when your device boots. 
+        
+        The method will also work in your own apps if you build APKs.   
+
+    .. js:function:: SetAutoWifi(TrueFalse)  
+
+        The app.SetAutoWifi( true ) method will cause DroidScript to turn on the WiFi editor automatically  
+
+    .. js:function:: SetBluetoothEnabled(enable)
+
     .. js:function:: SetClipboardText(text)
 
         Вставляет в буфер обмена текст, для получения используйте :js:func:`GetClipboardText`  
@@ -1227,6 +1444,8 @@ app - главный объект для работы
             
             app.SetClipboardText('my text');
 
+
+    .. js:function:: SetData( name,value )
 
     .. js:function:: SetDebugEnabled(enabled)
 
@@ -1237,7 +1456,9 @@ app - главный объект для работы
             app.SetDebugEnabled(false);
 
 
-    .. js:function:: SetMenu(menuList)
+    .. js:function:: SetJoystickOptions( options )
+
+    .. js:function:: SetMenu(menuList, p2)
 
         Устанавливает элементы в меню, обработчиком выбора при этом будет :js:func:`OnMenu`, в который будет передаваться выбраннный элемент. 
 
@@ -1254,6 +1475,15 @@ app - главный объект для работы
             }   
 
 
+    .. js:function:: SetOnBroadcast( callback )      
+
+    .. js:function:: SetOnError( callback )      
+
+    .. js:function:: SetOnKey(callback)  reports key changes, including volume key   1.29
+
+    .. js:function:: SetOptions(options)
+
+
     .. js:function:: SetOrientation(orientation, callback)
 
         Устанавливает ориентацию экрана: Portrait или Landscape. :js:func:`GetDefaultOrientation`, :js:func:`GetOrientation`
@@ -1263,6 +1493,10 @@ app - главный объект для работы
             app.SetOrientation("Landscape");
             
     
+    .. js:function:: SetRingerMode( mode )  
+
+        use Normal, Vibrate or Silent to set the model
+
     .. js:function:: SetScreenBrightness(brightness)
 
         Устанавливает яркость экрана
@@ -1274,12 +1508,15 @@ app - главный объект для работы
     
     .. js:function:: SetScreenMode(mode)
 
-        Устанавливает тип экрана: `Full`, `Game`
+        Устанавливает тип экрана: `Full`, `Game`, Normal, Default
 
         .. code-block:: js
             
             app.SetScreenMode('Full');
 
+    .. js:function:: SetSharedApp( p1 )      
+
+    .. js:function:: SetTitle( p1 )  This method is obsolete
 
     .. js:function:: SetVolume(type, val)
 
@@ -1289,6 +1526,14 @@ app - главный объект для работы
             
             app.SetVolume('System', 1);
 
+
+    .. js:function:: SetWifiEnabled(enable)      
+
+    .. js:function:: ShowDebug( p1 )     
+
+    .. js:function:: ShowKeyboard( ctrl )    ctrl must already have focus    1.29
+
+    .. js:function:: ShowMenu( p1,p2 )   This Sample demonstrates how to show the menu
 
     .. js:function:: ShowPopup(text, options)
 
@@ -1324,6 +1569,19 @@ app - главный объект для работы
             setTimeout('app.HideProgressBar()', 3000);
 
 
+    .. js:function:: SimulateTouch( obj,x,y,dir )    This Sample shows how to use SimulateTouch  
+
+    .. js:function:: StartApp( file,options )    Starts DroidScript application from script in file. File is the fullpath to the app. Parameter options is optional. 
+
+    .. js:function:: StartDebugServer()      
+
+    .. js:function:: StartService(packageName,className)     
+
+    .. js:function:: StopApp( file ) Stops DroidScript application from script in file. File is the fullpath to the app. 
+
+    .. js:function:: StopService()
+
+
     .. js:function:: TextToSpeech(text, pitch, speed, callback)
 
         Произносит указанный тект
@@ -1332,6 +1590,13 @@ app - главный объект для работы
             
             app.TextToSpeech('Hello World', 1.0, 1.0, function(){});
 
+
+    .. js:function:: ToBack()
+
+        Сврпачивает приложение 
+
+
+    .. js:function:: Try(p1, p2, p3)
 
     .. js:function:: UpdateProgressBar(progress)
 
@@ -1351,6 +1616,10 @@ app - главный объект для работы
             app.Vibrate('0,100,30,100,50,300')
 
 
+    .. js:function:: Wait(secs)
+
+        is not recomendedee
+        
     .. js:function:: WriteFile(fileName, text, mode)
 
         Пишет данные в файл

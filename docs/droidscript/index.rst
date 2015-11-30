@@ -25,6 +25,7 @@ XMLHttpRequest также доступен для работы с сетью
    
    globals
    controls/index
+   plugins/index
    sensors
    mediapleer
    speechrec

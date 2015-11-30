@@ -6,6 +6,10 @@ Sensors
     :js:func:`CreateSensor`
 
 
+    .. js:function:: GetNames()
+
+        lists all the sensor information
+
     .. js:function:: SetMinChange()
 
         .. code-block:: js
@@ -31,3 +35,21 @@ Sensors
         .. code-block:: js
             
             sns.Start()
+
+
+    
+    .. js:function:: GetAzimuth() 
+    
+    .. js:function:: GetHeight()  
+    
+    .. js:function:: GetPitch()   
+    
+    .. js:function:: GetRoll()    
+    
+    .. js:function:: GetType()    
+    
+    .. js:function:: GetValues()  
+    
+    .. js:function:: SetMaxRate( rate )   default 20ms
+    
+    .. js:function:: Stop()

@@ -48,4 +48,53 @@ Spinner
                 app.ShowPopup( "Selected = " + item );
             });
 
+    .. js:function:: GetAbsHeight()  
+    
+    .. js:function:: GetAbsWidth()   
+    
+    .. js:function:: GetHeight() 
+    
+    .. js:function:: GetPosition()   
+    
+    .. js:function:: GetText()   
+    
+    .. js:function:: GetTextSize( mode ) 
+    
+    .. js:function:: GetType()   
+    
+    .. js:function:: GetVisibility() 
+    
+    .. js:function:: GetWidth()  
+    
+    .. js:function:: SelectItem( item )  See the info
+    
+    .. js:function:: SetBackColor( colorcode )   
+    
+    .. js:function:: SetBackGradient( p1,p2,p3,p4,p5,p6,p7 ) 
+    
+    .. js:function:: SetBackGradientRadial( p1,p2,p3,p4,p5,p6,p7 )   
+    
+    .. js:function:: SetList( list, p2 ) 
+    
+    .. js:function:: SetMargins( left,top,right,bottom ) 
+    
+    .. js:function:: SetOnChange( callback ) 
+    
+    .. js:function:: SetOnTouch( callback )  
+    
+    .. js:function:: SetPadding( left,top,right,bottom ) 
+    
+    .. js:function:: SetPosition( left,top,width,height )    
+    
+    .. js:function:: SetScale( x,y ) 
+    
+    .. js:function:: SetSize( width,height ) 
+    
+    .. js:function:: SetText( text ) 
+    
+    .. js:function:: SetTextColor( colorcode )   
+    
+    .. js:function:: SetTextSize( size,mode )    
+    
+    .. js:function:: SetVisibility( HideShow )
     

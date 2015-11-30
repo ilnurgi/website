@@ -31,4 +31,18 @@ Database
             }
 
             db.ExecuteSql("INSERT INTO test_table (data, data_num) VALUES (?,?)", ["test", 100], null, function(msg){});  
-    
+
+    .. js:function:: .Close()    
+
+    .. js:function:: .Delete()   
+
+    .. js:function:: .ExecuteSql( sql, params, success, error )  
+
+    .. js:function:: .GetName()  
+
+    .. js:function:: .GetType()  
+
+    .. js:function:: .openError(e)   
+
+    .. js:function:: .openSuccess()
+

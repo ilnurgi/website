@@ -23,4 +23,5 @@ UI компоененты
    tabs
    textedit
    yesnodialog
+   sys
 

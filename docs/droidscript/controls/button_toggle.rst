@@ -47,3 +47,48 @@ ButtonToggle
         * :js:func:`SetTextSize`
 
         * :js:func:`SetVisibility` 
+
+    .. js:function:: Destroy()  
+    
+    .. js:function:: GetAbsHeight() 
+    
+    .. js:function:: GetAbsWidth()  
+    
+    .. js:function:: GetChecked()   
+    
+    .. js:function:: GetHeight()    
+    
+    .. js:function:: GetPosition()  
+    
+    .. js:function:: GetText()  
+    
+    .. js:function:: GetTextSize( mode )    
+    
+    .. js:function:: GetType()  
+    
+    .. js:function:: GetVisibility()    
+    
+    .. js:function:: GetWidth() 
+    
+    .. js:function:: SetChecked( checked )  
+    
+    .. js:function:: SetMargins( left,top,right,bottom )    
+    
+    .. js:function:: SetOnTouch( callback ) 
+    
+    .. js:function:: SetPadding( left, top, right, bottom ) 
+    
+    .. js:function:: SetPosition( left, top, width, height )    
+    
+    .. js:function:: SetScale( x,y )    
+    
+    .. js:function:: SetSize( width, height )   
+    
+    .. js:function:: SetText( text )    
+    
+    .. js:function:: SetTextColor( colorCode )  
+    
+    .. js:function:: SetTextSize( size,mode )   
+    
+    .. js:function:: SetVisibility( HideShow )
+    

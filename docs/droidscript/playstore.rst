@@ -6,7 +6,7 @@ PlayStore
     :js:func:`CreatePlayStore`
             
 
-    .. js:function:: GetBillingInfo()
+    .. js:function:: GetBillingInfo(prodIDs, callback)
 
         .. code-block:: js
                         
@@ -24,7 +24,7 @@ PlayStore
             }
 
 
-    .. js:function:: GetPurchases()
+    .. js:function:: GetPurchases(callback)
 
         .. code-block:: js
                         
@@ -36,7 +36,7 @@ PlayStore
             });
 
 
-    .. js:function:: Purchase()
+    .. js:function:: Purchase(prodID,token,callback)
 
         .. code-block:: js
             

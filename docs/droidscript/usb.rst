@@ -12,4 +12,7 @@ USBSerial
 
             usbserial.SetOnReceive(function(data){})
         
-        
+    .. js:function:: Start()   
+
+    .. js:function:: Stop()    
+    

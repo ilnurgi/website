@@ -35,3 +35,23 @@ SpeechRec
 
         
     .. js:function:: Recognize()
+
+
+    .. js:function:: Cancel()  
+    
+    .. js:function:: GetRMS()  
+    
+    .. js:function:: GetType() 
+    
+    .. js:function:: IsListening() 
+    
+    .. js:function:: Recognize()   
+    
+    .. js:function:: SetOnError( callback )    
+    
+    .. js:function:: SetOnReady( callback )    
+    
+    .. js:function:: SetOnResult( callback )   
+    
+    .. js:function:: Stop()
+    

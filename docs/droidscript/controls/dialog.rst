@@ -16,11 +16,19 @@ Dialog - диалоговое окно
         Отображает дилог
 
 
-Dialog.AddLayout( layout )  
-Dialog.Dismiss()    
-Dialog.GetType()    
-Dialog.Hide()   
-Dialog.RemoveLayout( layout )   
-Dialog.SetOnCancel( callback )  
-Dialog.SetOnTouch( callback )   
-Dialog.Show()
+    .. js:function:: AddLayout( layout )  
+    
+    .. js:function:: Dismiss()    
+    
+    .. js:function:: GetType()    
+    
+    .. js:function:: Hide()   
+    
+    .. js:function:: RemoveLayout( layout )   
+    
+    .. js:function:: SetOnCancel( callback )  
+    
+    .. js:function:: SetOnTouch( callback )   
+    
+    .. js:function:: Show()
+    
