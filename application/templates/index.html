@@ -1,224 +1,156 @@
-{%  comment %}
-xs - <  768px;
-sm - >  768px;
-md - >= 992px;
-lg - >= 1200px;
-{% endcomment %}
-{% load static %}
-{% get_static_prefix as STATIC_URL %}
+{% extends 'base.html' %}
 
-<!DOCTYPE html>
+{% block extra_head %}
 
-<html>
+    <script type="text/javascript">
+        window.onload = function () {
+            var age_value = document.getElementById('age_value'),
+                date_now = new Date(),
+                year_now = date_now.getFullYear(),
+                date_birth = new Date(year_now, 1, 28),
+                age = year_now - 1987;
 
-    <head>
-        <meta name="google-site-verification" content="84y9A4q0QF0YiwyLi-xefrzNN8d6B5W2E84xYUtoQYc" />
-
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <script src="{{ STATIC_URL }}jquery-2.1.4.min.js"></script>
-
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="{{ STATIC_URL }}bootstrap/3.3.5/css/bootstrap.min.css">
-
-        <!-- Optional theme -->
-        <link rel="stylesheet" href="{{ STATIC_URL }}bootstrap/3.3.5/css/bootstrap-theme.min.css">
-
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="{{ STATIC_URL }}bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
-        <script type="text/javascript">
-            window.onload = function () {
-                var age_value = document.getElementById('age_value'),
-                    date_now = new Date(),
-                    year_now = date_now.getFullYear(),
-                    date_birth = new Date(year_now, 1, 28),
-                    age = year_now - 1987;
-
-                if (date_now < date_birth) {
-                    age -= 1;
-                }
-
-                age_value.textContent = age;
+            if (date_now < date_birth) {
+                age -= 1;
             }
 
-        </script>
+            age_value.textContent = age;
+        }
 
-        <title>ilnurgi. Главная</title>
+    </script>
 
-    </head>
+    <title>ilnurgi. Главная</title>
 
-    <body>
+{% endblock %}
 
-        <div class="container">
-            <nav class="navbar navbar-default">
-                <div class="container-fluid">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="/">Главная</a>
-                    </div>
-
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav">
-                            <li {# class="active"#}><a href="#">Блог</a></li>
-    {#                        <li class="dropdown">#}
-    {#                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Конспекты <span class="caret"></span></a>#}
-    {#                            <ul class="dropdown-menu">#}
-    {#                                <li><a href="#">Action</a></li>#}
-    {#                                <li><a href="#">Another action</a></li>#}
-    {#                                <li><a href="#">Something else here</a></li>#}
-    {#                                <li role="separator" class="divider"></li>#}
-    {#                                <li><a href="#">Separated link</a></li>#}
-    {#                                <li role="separator" class="divider"></li>#}
-    {#                                <li><a href="#">One more separated link</a></li>#}
-    {#                            </ul>#}
-    {#                        </li>#}
-                        </ul>
-    {#                    <form class="navbar-form navbar-left" role="search">#}
-    {#                        <div class="form-group">#}
-    {#                            <input type="text" class="form-control" placeholder="Search">#}
-    {#                        </div>#}
-    {#                        <button type="submit" class="btn btn-default">Submit</button>#}
-    {#                    </form>#}
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="#">Войти</a></li>
-                        </ul>
-                    </div><!-- /.navbar-collapse -->
-                </div><!-- /.container-fluid -->
-            </nav>
-
-            <div class="container">
-                <div class="row">
-                    <img class="col-xs-6 col-sm-3 col-md-2 col-lg-2 text-center" src="{{ STATIC_URL }}/avatar.jpg">
-                    <div class="col-xs-12 col-sm-9 col-md-10 col-lg-10">
-                        <dl class="dl-horizontal">
-
-                            <dt>О себе</dt>
-                            <dd>
-                                <ul class="list-unstyled">
-                                  <li>Зовут Ильнур.</li>
-                                  <li>Возраст - <em id="age_value"></em></li>
-                                  <li>С высшим образованием</li>
-                                </ul>
-                            </dd>
-
-                            <dt>Хронология</dt>
-                            <dd>
-                                <ul class="list-unstyled">
-                                    <li>28 января 1987 год. Родился</li>
-                                    <li>2004 год. Окончил Шеморданскую Среднюю Школу</li>
-                                    <li>2011 год. Окончил Казанский Химико Технологический Университет,
-                                    по специальности - инженер-конструктор</li>
-                                    <li>2011-2012 год. Служил в ВС России, в/ч 02030</li>
-                                    <li>2012-2013 год. Работал в <a href="http://www.compressormash.ru/">ОАО Казанькомпрессормаш</a>, инженер-конструктором</li>
-                                    <li>2013-2015 год. Работал в <a href="http://bars-open.ru/">АО БАРС Груп</a>, веб-разработчиком</li>
-                                    <li>С 2015 года работаю в <a href="http://tionixlabs.ru/index.php/ru/">TIONIX Laboratory</a>, разработчиком</li>
-                                </ul>
-                            </dd>
-
-                            <dt>Связь</dt>
-                            <dd>
-                                <ul class="list-unstyled">
-                                    <li>skype: ilnurgi_work</li>
-                                    <li>emails:
-                                        <ul>
-                                            <li>ilnurgi@mail.ru</li>
-                                            <li>ilnurgi87@gmail.com</li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </dd>
-
-                            <dt>Увлечения</dt>
-                            <dd>
-                                <ul class="list-unstyled">
-                                    <li>Семья</li>
-                                    <li>Python
-                                        <ul>
-                                            <li>unittest</li>
-                                            <li>django</li>
-                                            <li>flask</li>
-                                            <li>pymongo</li>
-                                            <li>pyqt</li>
-                                            <li>sqlalchemy</li>
-                                            <li>tkinter</li>
-                                        </ul>
-                                    </li>
-                                    <li>JavaScript
-                                        <ul>
-                                            <li>angular</li>
-                                            <li>extjs</li>
-                                            <li>jquery</li>
-                                        </ul>
-                                    </li>
-                                    <li>HTML, CSS
-                                        <ul>
-                                            <li>bootstrap</li>
-                                        </ul>
-                                    </li>
-                                    <li>Java
-                                        <ul>
-                                            <li>android</li>
-                                        </ul>
-                                    </li>
-                                    <li>SQL, NoSQL
-                                        <ul>
-                                            <li>MongoDB</li>
-                                            <li>MySQL</li>
-                                            <li>PostresQL</li>
-                                        </ul>
-                                    </li>
-                                    <li>Linux
-                                        <ul>
-                                            <li>Ubuntu</li>
-                                        </ul>
-                                    </li>
-                                    <li>Система контроля версии
-                                        <ul>
-                                            <li>git</li>
-                                            <li>mercurial</li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </dd>
-                        </dl>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+{% block extra_body %}
+    <div class="container">
         <div class="container">
             <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                    <div class="panel panel-default list-group">
-                        <div class="panel-heading">Мои конспекты</div>
-                        <a class="list-group-item" href="/docs/android/index.html">Android</a>
-                        <a class="list-group-item" href="/docs/java/index.html">Java</a>
+                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                    <img src="{{ STATIC_URL }}/avatar.jpg">
+                    <ul class="list-unstyled">
+                        <li>skype: ilnurgi_work</li>
+                        <li>emails:
+                            <ul>
+                                <li>ilnurgi@mail.ru</li>
+                                <li>ilnurgi87@gmail.com</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+                    <dl class="dl-horizontal">
 
-                        <a class="list-group-item" href="/docs/python/index.html">Python</a>
-                        <a class="list-group-item" href="/docs/p4a/index.html">Python4Android</a>
-                        <a class="list-group-item" href="/docs/pys60/index.html">pys60</a>
+                        <dt>О себе</dt>
+                        <dd>
+                            <ul class="list-unstyled">
+                              <li>Зовут Ильнур.</li>
+                              <li>Возраст - <em id="age_value"></em></li>
+                              <li>С высшим образованием</li>
+                            </ul>
+                        </dd>
 
-                        <a class="list-group-item" href="/docs/html/index.html">HTML</a>
-                        <a class="list-group-item" href="/docs/css/index.html">CSS</a>
-                        <a class="list-group-item" href="/docs/js/index.html">JavaScript</a>
-                        <a class="list-group-item" href="/docs/jquery/index.html">JQuery</a>
-                        <a class="list-group-item" href="/docs/angular/index.html">Angular</a>
+                        <dt>Хронология</dt>
+                        <dd>
+                            <ul class="list-unstyled">
+                                <li>28 января 1987 год. Родился</li>
+                                <li>2004 год. Окончил Шеморданскую Среднюю Школу</li>
+                                <li>2011 год. Окончил Казанский Химико Технологический Университет,
+                                по специальности - инженер-конструктор</li>
+                                <li>2011-2012 год. Служил в ВС России, в/ч 02030</li>
+                                <li>2012-2013 год. Работал в <a href="http://www.compressormash.ru/">ОАО Казанькомпрессормаш</a>, инженер-конструктором</li>
+                                <li>2013-2015 год. Работал в <a href="http://bars-open.ru/">АО БАРС Груп</a>, веб-разработчиком</li>
+                                <li>С 2015 года работаю в <a href="http://tionixlabs.ru/index.php/ru/">TIONIX Laboratory</a>, разработчиком</li>
+                            </ul>
+                        </dd>
 
-                        <a class="list-group-item" href="/docs/sql/index.html">SQL</a>
-
-                        <a class="list-group-item" href="/docs/linux/index.html">Linux</a>
-                    </div>
+                        <dt>Увлечения</dt>
+                        <dd>
+                            <ul class="list-unstyled">
+                                <li>Семья</li>
+                                <li>Python
+                                    <ul>
+                                        <li>unittest</li>
+                                        <li>django</li>
+                                        <li>flask</li>
+                                        <li>pymongo</li>
+                                        <li>pyqt</li>
+                                        <li>sqlalchemy</li>
+                                        <li>tkinter</li>
+                                        <li>openstack</li>
+                                        <li>pys60</li>
+                                        <li>python4android</li>
+                                    </ul>
+                                </li>
+                                <li>JavaScript
+                                    <ul>
+                                        <li>angular</li>
+                                        <li>extjs</li>
+                                        <li>jquery</li>
+                                        <li>DroidScript</li>
+                                    </ul>
+                                </li>
+                                <li>HTML, CSS
+                                    <ul>
+                                        <li>bootstrap</li>
+                                    </ul>
+                                </li>
+                                <li>Java
+                                    <ul>
+                                        <li>android</li>
+                                    </ul>
+                                </li>
+                                <li>SQL, NoSQL
+                                    <ul>
+                                        <li>MongoDB</li>
+                                        <li>MySQL</li>
+                                        <li>PostresQL</li>
+                                    </ul>
+                                </li>
+                                <li>Linux
+                                    <ul>
+                                        <li>Ubuntu</li>
+                                    </ul>
+                                </li>
+                                <li>Система контроля версии
+                                    <ul>
+                                        <li>git</li>
+                                        <li>mercurial</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </dd>
+                    </dl>
                 </div>
             </div>
         </div>
-    </body>
+    </div>
 
-</html>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="panel panel-default list-group">
+                    <div class="panel-heading">Мои конспекты</div>
+                    <a class="list-group-item" href="/docs/android/index.html">Android</a>
+                    <a class="list-group-item" href="/docs/java/index.html">Java</a>
+                    <a class="list-group-item" href="/docs/droidscript/index.html">DroidScript</a>
+
+                    <a class="list-group-item" href="/docs/python/index.html">Python</a>
+                    <a class="list-group-item" href="/docs/p4a/index.html">Python4Android</a>
+                    <a class="list-group-item" href="/docs/pys60/index.html">pys60</a>
+
+                    <a class="list-group-item" href="/docs/html/index.html">HTML</a>
+                    <a class="list-group-item" href="/docs/css/index.html">CSS</a>
+                    <a class="list-group-item" href="/docs/js/index.html">JavaScript</a>
+                    <a class="list-group-item" href="/docs/jquery/index.html">JQuery</a>
+                    <a class="list-group-item" href="/docs/angular/index.html">Angular</a>
+
+                    <a class="list-group-item" href="/docs/sql/index.html">SQL</a>
+
+                    <a class="list-group-item" href="/docs/linux/index.html">Linux</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
