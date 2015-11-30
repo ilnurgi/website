@@ -1,3 +1,6 @@
+icons
+=====
+
 .. code-block:: js
     
     var list_icons = [

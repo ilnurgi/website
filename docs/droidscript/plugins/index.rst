@@ -6,4 +6,5 @@ Plugins
    BarcodeReader
    gopro
    imagegrid
+   ftpclient
 

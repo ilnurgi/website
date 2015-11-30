@@ -53,3 +53,7 @@ XMLHttpRequest также доступен для работы с сетью
    nxtremote
    icons
    usb
+   sys
+   smartwatch
+   service
+   nxt
