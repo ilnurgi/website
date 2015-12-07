@@ -1,5 +1,7 @@
-icons
-=====
+.. _icons:
+
+icons - Иконки
+==============
 
 .. code-block:: js
     

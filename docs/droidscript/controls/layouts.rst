@@ -21,22 +21,37 @@ Layout - контейнер
             * 'SlideToLeft' - прячет элемент вправо
 
             * `SlideFromLeft` -  
-            * `ScaleFromLeft` -  
-            * `SlideToLeft` -  
-            * `ScaleToLeft` -  
-            * `SlideFromRight` -  
-            * `ScaleFromRight` -  
-            * `SlideToRight` -  
-            * `caleToRight` -  
-            * `SlideFromTop` -  
-            * `ScaleFromTop` -  
-            * `SlideToTop` -  
-            * `ScaleToTop` - 
-            * `SlideFromBottom` -  
-            * `ScaleFromBottom` -  
-            * `SlideToBottom` -  
-            * `ScaleToBottom` - 
 
+            * `ScaleFromLeft` -  
+
+            * `SlideToLeft` -  
+
+            * `ScaleToLeft` -  
+
+            * `SlideFromRight` -  
+
+            * `ScaleFromRight` -  
+
+            * `SlideToRight` -  
+
+            * `caleToRight` -  
+
+            * `SlideFromTop` -  
+
+            * `ScaleFromTop` -  
+
+            * `SlideToTop` -  
+
+            * `ScaleToTop` - 
+
+            * `SlideFromBottom` -  
+
+            * `ScaleFromBottom` -  
+
+            * `SlideToBottom` -  
+
+            * `ScaleToBottom` - 
+            
         .. code-block:: js
             
             lay.Animate('SlideToLeft');
@@ -54,6 +69,8 @@ Layout - контейнер
     .. js:function:: Destroy()
 
     .. js:function:: DestroyChild(child)
+
+    .. js:function:: Focus()
 
     .. js:function:: GetAbsHeight()
 
@@ -87,16 +104,6 @@ Layout - контейнер
     .. js:function:: RemovaChild(child)
 
 
-    .. js:function:: SetBackground(imageFile, options)
-
-        Устанавливает картинку, в качестве фона
-
-        .. code-block:: js
-            
-            lay.SetBackground('/Sys/Img/Blue.png');
-            lay.SetBackground( "/res/drawable/pattern_carbon", "repeat" );
-
-
     .. js:function:: SetBackColor(colorCode)
 
         Устанавливает цвет фона для компонента.
@@ -123,6 +130,13 @@ Layout - контейнер
     .. js:function:: SetBackgroud(image, options)
 
     .. js:function:: SetMargins(left, top, right, bottom)
+
+        Устанавливает картинку, в качестве фона
+
+        .. code-block:: js
+            
+            lay.SetBackground('/Sys/Img/Blue.png');
+            lay.SetBackground( "/res/drawable/pattern_carbon", "repeat" );
 
 
     .. js:function:: SetOrientation(orient)
@@ -156,7 +170,3 @@ Layout - контейнер
             
             lay.SetVisibility('Hide');
             lay.SetVisibility('Show');
-
-
-    
-        
