@@ -23,7 +23,7 @@ class TestParsingNginxAccess(TestCase):
             int(settings.DATABASE_MONGO['port']))
 
         self.mongo_db = self.mongo_client[
-            settings.DATABASE_MONGO['db_name'] + '_test']
+            settings.DATABASE_MONGO['nginx_access_db_name'] + '_test']
         self.collection_log = self.mongo_db.log
         self.collection_month_report = self.mongo_db.month_report
 

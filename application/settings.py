@@ -43,7 +43,9 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     'gunicorn',
+
     'application',
+    'metrics',
 
 )
 
@@ -92,7 +94,9 @@ DATABASES = {
 DATABASE_MONGO = {
     'host': 'localhost',
     'port': '27017',
-    'db_name': 'nginx_access'
+    'nginx_access_db_name': 'nginx_access',
+    'cpu_average_db_name': 'cpu_average',
+    'mem_average_db_name': 'mem_average',
 }
 
 

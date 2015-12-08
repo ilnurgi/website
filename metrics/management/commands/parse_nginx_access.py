@@ -38,7 +38,7 @@ class Command(BaseCommand):
             self.db = mongo_client[
                 options.get(
                     'mongo_db_name',
-                    settings.DATABASE_MONGO['db_name'])]
+                    settings.DATABASE_MONGO['nginx_access_db_name'])]
         else:
             self.db = options['mongo_db']
 
@@ -72,7 +72,7 @@ class Command(BaseCommand):
             else log_file_path.replace(
                 u'.log', u'_{0}.log'.format(date_start.date())))
 
-        if 'input_file' not in options:
+        if 'input_file' not in options or 'log_file_path' not in options:
             os.rename(log_file_path, new_log_file_path)
 
             subprocess.call([u'service', u'nginx', u'restart'])
