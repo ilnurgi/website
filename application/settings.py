@@ -97,6 +97,7 @@ DATABASE_MONGO = {
     'nginx_access_db_name': 'nginx_access',
     'cpu_average_db_name': 'cpu_average',
     'mem_average_db_name': 'mem_average',
+    'disk_io_db_name': 'disk_io_average',
 }
 
 

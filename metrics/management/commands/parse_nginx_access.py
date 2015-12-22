@@ -29,6 +29,7 @@ class Command(BaseCommand):
             '-l', '--log', dest='log_file_path', default=None)
 
     def handle(self, *args, **options):
+        logger.debug(u'='*80)
 
         if 'mongo_db' not in options:
             mongo_client = MongoClient(
@@ -58,12 +59,15 @@ class Command(BaseCommand):
             'date_today',
              datetime.datetime.strptime(options['date'], self.date_format)
                 if options['date'] else datetime.datetime.now())
+        logger.debug(u'today={0}'.format(self.today))
         date_start = datetime.datetime.combine(
             self.today - datetime.timedelta(days=1),
             datetime.time(0, 0, 0))
         date_end = datetime.datetime.combine(
             date_start,
             datetime.time(23, 59, 59))
+        logger.debug(u'date_start={0}'.format(date_start))
+        logger.debug(u'date_end={0}'.format(date_end))
 
         log_file_path = os.path.join(settings.LOG_PATH, u'nginx_access.log')
         new_log_file_path = (
@@ -71,10 +75,14 @@ class Command(BaseCommand):
             if options['log_file_path']
             else log_file_path.replace(
                 u'.log', u'_{0}.log'.format(date_start.date())))
+        logger.debug(u'log_file_path={0}'.format(log_file_path))
+        logger.debug(u'new_log_file_path={0}'.format(new_log_file_path))
 
         if 'input_file' not in options or 'log_file_path' not in options:
+            logger.debug(u'os rename')
             os.rename(log_file_path, new_log_file_path)
 
+            logger.debug(u'nginx restart')
             subprocess.call([u'service', u'nginx', u'restart'])
 
         file_obj = options.get(
