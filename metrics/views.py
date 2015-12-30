@@ -66,7 +66,7 @@ def metrics_cpu_hour_data(request):
     cpu_average_append = cpu_average.append
 
     for i in db.average_hour.find():
-        cpu_times_append(i['date'].strftime('%d.%m.%Y'))
+        cpu_times_append(i['date'].strftime('%d.%m.%Y (%H)'))
         cpu_average_append(i['percent'])
     return JsonResponse({
         'labels': cpu_times,
@@ -114,7 +114,7 @@ def metrics_mem_hour_data(request):
     cpu_average_append = cpu_average.append
 
     for i in db.average_hour.find():
-        cpu_times_append(i['date'].strftime('%d.%m.%Y'))
+        cpu_times_append(i['date'].strftime('%d.%m.%Y (%H)'))
         cpu_average_append(i['percent'])
     return JsonResponse({
         'labels': cpu_times,
