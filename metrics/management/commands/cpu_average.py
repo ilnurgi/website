@@ -43,19 +43,6 @@ class Command(BaseCommand):
                 self.calculate_hour(now)
                 self.drop_old(now)
 
-            if last_month != now.month:
-                self.collection_average_minute.find({
-                    'date': {
-                        '$lt': now.replace(month=last_month)
-                    }
-                }).drop()
-                self.collection_average_hour.find({
-                    'date': {
-                        '$lt': now.replace(month=last_month)
-                    }
-                }).drop()
-                last_month = now.month
-
             last_hour = now.hour
 
     def calculate_hour(self, date):

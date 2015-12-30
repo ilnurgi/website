@@ -1,5 +1,9 @@
 # coding: utf-8
 
+"""
+не работает на впс, т.к. нет файла /proc/d....
+"""
+
 import datetime
 import time
 
