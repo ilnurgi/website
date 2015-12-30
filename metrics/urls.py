@@ -9,6 +9,10 @@ urlpatterns = [
         r'cpu',
         views.MetricsCpu.as_view(),
         name='metrics_cpu'),
+    url(
+        r'cpu_data',
+        views.metrics_cpu_data,
+        name='metrics_cpu_data'),
 
     url(
         r'',

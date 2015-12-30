@@ -26,62 +26,29 @@ class MetricsCpu(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(MetricsCpu, self).get_context_data(**kwargs)
-
-        mongo_client = MongoClient(
-            settings.DATABASE_MONGO['host'],
-            int(settings.DATABASE_MONGO['port']))
-
-        db = mongo_client[settings.DATABASE_MONGO['cpu_average_db_name']]
-        # collection_average_hour = db.average_hour
-
-        cpu_minute_times = []
-        cpu_minute_times_append = cpu_minute_times.append
-
-        cpu_minute_average = []
-        cpu_minute_average_append = cpu_minute_average.append
-
-        for i in db.average_minute.find():
-            cpu_minute_times_append(i['date'].strftime('%H:%M'))
-            cpu_minute_average_append(i['percent'])
-
-        # context['cpu_minute_times'] = u','.join(cpu_minute_times)
-        context['cpu_minute_times'] = cpu_minute_times
-        # context['cpu_minute_average'] = u','.join(cpu_minute_average)
-        context['cpu_minute_average'] = cpu_minute_average
         context['active_page'] = 'metrics'
         context['active_page_sub'] = 'cpu'
         return context
 
 
-class LastMonthVisiters(View):
-    """
-    возвращаем данные для Chart.js вида
-     {
-        'days': [...],
-        'value': [...]
-     }
-    """
+def metrics_cpu_data(request):
+    mongo_client = MongoClient(
+        settings.DATABASE_MONGO['host'],
+        int(settings.DATABASE_MONGO['port']))
 
-    def get(self, request):
-        return JsonResponse({'1':'123'})
+    db = mongo_client[settings.DATABASE_MONGO['cpu_average_db_name']]
+    # collection_average_hour = db.average_hour
 
-        # data = {
-        #     'uniq_ips': {
-        #         'days': [],
-        #         'counts': []
-        #     }
-        # }
-        #
-        # date = None
-        # uniq_ips = set()
-        #
-        # for log in mongo_db.log.find().sort('date', pymongo.ASCENDING):
-        #     date =
+    cpu_minute_times = []
+    cpu_minute_times_append = cpu_minute_times.append
 
+    cpu_minute_average = []
+    cpu_minute_average_append = cpu_minute_average.append
 
-
-
-
-
-
-
+    for i in db.average_minute.find():
+        cpu_minute_times_append(i['date'].strftime('%H:%M'))
+        cpu_minute_average_append(i['percent'])
+    return JsonResponse({
+        'labels': cpu_minute_times,
+        'data': cpu_minute_average
+    })
