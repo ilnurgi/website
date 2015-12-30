@@ -66,15 +66,40 @@ Chart
                 // число - количество шагов анимации
                 animationSteps: 60,
 
-                // String - Animation easing effect
-                // Possible effects are:
-                // [easeInOutQuart, linear, easeOutBounce, easeInBack, easeInOutQuad,
-                //  easeOutQuart, easeOutQuad, easeInOutBounce, easeOutSine, easeInOutCubic,
-                //  easeInExpo, easeInOutBack, easeInCirc, easeInOutElastic, easeOutBack,
-                //  easeInQuad, easeInOutExpo, easeInQuart, easeOutQuint, easeInOutCirc,
-                //  easeInSine, easeOutExpo, easeOutCirc, easeOutCubic, easeInQuint,
-                //  easeInElastic, easeInOutSine, easeInOutQuint, easeInBounce,
-                //  easeOutElastic, easeInCubic]
+                // строка - тип анимации
+                // linear
+
+                // easeInBack
+                // easeInBounce
+                // easeInCirc
+                // easeInCubic
+                // easeInElastic
+                // easeInExpo
+                // easeInOutElastic
+                // easeInOutBack
+                // easeInOutBounce
+                // easeInOutCirc
+                // easeInOutCubic
+                // easeInOutExpo
+                // easeInOutQuad
+                // easeInOutQuart
+                // easeInOutQuint
+                // easeInOutSine
+                // easeInQuad
+                // easeInQuart
+                // easeInQuint
+                // easeInSine
+
+                // easeOutBack
+                // easeOutBounce
+                // easeOutCirc
+                // easeOutCubic
+                // easeOutElastic
+                // easeOutExpo
+                // easeOutQuad
+                // easeOutQuart
+                // easeOutQuint
+                // easeOutSine
                 animationEasing: "easeOutQuart",
 
                 // Boolean - If we should show the scale at all
@@ -91,7 +116,7 @@ Chart
                 // Number - The scale starting value
                 scaleStartValue: null,
 
-                // String - Colour of the scale line
+                // строка - цвет линии
                 scaleLineColor: "rgba(0,0,0,.1)",
 
                 // Number - Pixel width of the scale line
@@ -118,7 +143,7 @@ Chart
                 // String - Scale label font weight style
                 scaleFontStyle: "normal",
 
-                // String - Scale label font colour
+                // строка - цвет заливки
                 scaleFontColor: "#666",
 
                 // Boolean - whether or not the chart should be responsive and resize when the browser does.
@@ -158,7 +183,7 @@ Chart
                  */
 
 
-                // Array - Array of string names to attach tooltip events
+                // список - список поддерживаемых ивентов
                 tooltipEvents: ["mousemove", "touchstart", "touchmove"],
 
                 // String - Tooltip background colour
@@ -1062,6 +1087,10 @@ Radar
 .. js:function:: generateLegend()
 
     Возвращает HTML, сгенерированная легенда для диаграммы
+
+    .. code-block:: js
+
+        document.getElementById("legendDiv").innerHTML = myLineChart.generateLegend();
 
 
 .. js:function:: resize()

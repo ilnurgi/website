@@ -41,25 +41,21 @@ class Command(BaseCommand):
             if last_hour != now.hour:
                 self.calculate_hour(now)
                 self.drop_old(now)
-
-            last_hour = now.hour
+                last_hour = now.hour
 
     def calculate_hour(self, date):
-
-        date_end = date.replace(minute=0, hour=0)
-        date_start = date_end - datetime.timedelta(hours=1)
-
+        _date = date - datetime.timedelta(hours=1)
         rows = self.collection_average_minute.find({
             'date': {
-                '$gte': date_start,
-                '$lt': date_end
+                '$gte': _date
             }
         })
 
-        self.collection_average_hour.insert_one({
-            'date': date_end,
-            'percent': sum((i['percent'] for i in rows))/rows.count()
-        })
+        if rows.count():
+            self.collection_average_hour.insert_one({
+                'date': _date,
+                'percent': sum((i['percent'] for i in rows))/rows.count()
+            })
 
     def drop_old(self, now):
         self.collection_average_hour.delete_many({
