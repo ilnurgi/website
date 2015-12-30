@@ -47,7 +47,7 @@ class Command(BaseCommand):
     def calculate_hour(self, date):
 
         date_end = date.replace(minute=0, hour=0)
-        date_start = date_end - datetime.timedelta(hour=1)
+        date_start = date_end - datetime.timedelta(hours=1)
 
         rows = self.collection_average_minute.find({
             'date': {
