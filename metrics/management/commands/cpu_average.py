@@ -29,7 +29,6 @@ class Command(BaseCommand):
 
         now = datetime.datetime.now()
         last_hour = now.hour
-        last_month = now.month
         while True:
             percent = psutil.cpu_percent(interval=60)
             now = datetime.datetime.now()
