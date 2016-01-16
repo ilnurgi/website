@@ -60,11 +60,11 @@ class Command(BaseCommand):
     def drop_old(self, now):
         self.collection_average_hour.delete_many({
             'date': {
-                '$lt': now - datetime.timedelta(weeks=1),
+                '$lt': now - datetime.timedelta(days=3),
             }
         })
         self.collection_average_minute.delete_many({
             'date': {
-                '$lt': now - datetime.timedelta(weeks=1),
+                '$lt': now - datetime.timedelta(days=3),
             }
         })
