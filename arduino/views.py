@@ -25,14 +25,14 @@ def view(request):
         try:
             latest_doc = list(db.light.find().sort('date', -1).limit(1))[0]
         except IndexError:
-            db.light.inser_one(
+            db.light.insert_one(
                 {
                     'date': datetime.datetime.now(),
                     'light': request.GET['light']
                 })
         else:
             if latest_doc['light'] != request.GET['light']:
-                db.light.inser_one(
+                db.light.insert_one(
                     {
                         'date': datetime.datetime.now(),
                         'light': request.GET['light']
