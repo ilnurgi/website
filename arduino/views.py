@@ -7,8 +7,32 @@ from pymongo.mongo_client import MongoClient
 
 from django.shortcuts import render_to_response
 from django.conf import settings
+import logging
 
+logger = logging.getLogger(__name__)
 
 def view(request):
-    print request.POST
-    return render_to_response('arduino.html')
+
+    mongo_client = MongoClient(
+        settings.DATABASE_MONGO['host'],
+        int(settings.DATABASE_MONGO['port']))
+
+    db = mongo_client[
+        settings.DATABASE_MONGO['arduino_db_name']]
+
+    if 'light' in request.GET:
+
+        latest_doc = db.light.latest()
+
+        if latest_doc['light'] != request.GET['light']:
+            db.light.inser_one(
+                {
+                    'date': datetime.datetime.now(),
+                    'light': request.GET['light']
+                })
+
+    return render_to_response(
+        'arduino.html',
+        context={
+            'data': db.light.find()
+        })

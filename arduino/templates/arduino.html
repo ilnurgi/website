@@ -5,6 +5,9 @@
     <title>Title</title>
 </head>
 <body>
-1111
+
+{% for d in data %}
+    <br>{{ d.date }}, {{ d.light }}
+{% endfor %}
 </body>
 </html>
