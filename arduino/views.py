@@ -22,7 +22,7 @@ def view(request):
 
     if 'light' in request.GET:
 
-        latest_doc = db.light.latest()
+        latest_doc = db.light.find().sort('date', -1).limit(1)
 
         if latest_doc['light'] != request.GET['light']:
             db.light.inser_one(
