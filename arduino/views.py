@@ -22,14 +22,21 @@ def view(request):
 
     if 'light' in request.GET:
 
-        latest_doc = db.light.find().sort('date', -1).limit(1)
-
-        if latest_doc['light'] != request.GET['light']:
+        try:
+            latest_doc = list(db.light.find().sort('date', -1).limit(1))[0]
+        except IndexError:
             db.light.inser_one(
                 {
                     'date': datetime.datetime.now(),
                     'light': request.GET['light']
                 })
+        else:
+            if latest_doc['light'] != request.GET['light']:
+                db.light.inser_one(
+                    {
+                        'date': datetime.datetime.now(),
+                        'light': request.GET['light']
+                    })
 
     return render_to_response(
         'arduino.html',
