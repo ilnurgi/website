@@ -19,9 +19,11 @@ from django.contrib import admin
 
 from application.views import HomePage
 from metrics import urls as metric_urls
+from arduino import urls as arduino_urls
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^metrics/', include(metric_urls)),
+    url(r'^arduino/', include(arduino_urls)),
     url(r'', HomePage.as_view(), name='home_page'),
 ]
