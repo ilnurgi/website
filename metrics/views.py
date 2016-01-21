@@ -46,7 +46,7 @@ def metrics_cpu_data(request):
         'date': {
             '$gte': datetime.datetime.now() - datetime.timedelta(minutes=30)
         }
-    }):
+    }).sort('date'):
         cpu_times_append(i['date'].strftime('%H:%M'))
         cpu_average_append(i['percent'])
     return JsonResponse({
@@ -68,7 +68,7 @@ def metrics_cpu_hour_data(request):
     cpu_average = []
     cpu_average_append = cpu_average.append
 
-    for i in db.average_hour.find():
+    for i in db.average_hour.find().sort('date'):
         cpu_times_append(i['date'].strftime('%d.%m.%Y (%H)'))
         cpu_average_append(i['percent'])
     return JsonResponse({
@@ -94,7 +94,7 @@ def metrics_mem_data(request):
         'date': {
             '$gte': datetime.datetime.now() - datetime.timedelta(minutes=30)
         }
-    }):
+    }).sort('date'):
         cpu_times_append(i['date'].strftime('%H:%M'))
         cpu_average_append(i['percent'])
     return JsonResponse({
@@ -116,7 +116,7 @@ def metrics_mem_hour_data(request):
     cpu_average = []
     cpu_average_append = cpu_average.append
 
-    for i in db.average_hour.find():
+    for i in db.average_hour.find().sort('date'):
         cpu_times_append(i['date'].strftime('%d.%m.%Y (%H)'))
         cpu_average_append(i['percent'])
     return JsonResponse({
