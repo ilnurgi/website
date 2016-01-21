@@ -46,7 +46,6 @@ INSTALLED_APPS = (
 
     'application',
     'metrics',
-    'arduino'
 
 )
 
@@ -99,7 +98,6 @@ DATABASE_MONGO = {
     'cpu_average_db_name': 'cpu_average',
     'mem_average_db_name': 'mem_average',
     'disk_io_db_name': 'disk_io_average',
-    'arduino_db_name': 'arduino'
 }
 
 

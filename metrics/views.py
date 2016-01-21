@@ -7,21 +7,24 @@ import pymongo
 from django.conf import settings
 from django.http import JsonResponse
 from django.views.generic import TemplateView
-from pymongo.mongo_client import MongoClient
 
 
 class MetricsHomePage(TemplateView):
 
     template_name = 'base_metrics.html'
 
+    def get_context_data(self, **kwargs):
+        context = super(MetricsHomePage, self).get_context_data(**kwargs)
+        context['active_page'] = 'metrics'
+        return context
 
-class MetricsSystem(TemplateView):
+
+class MetricsSystem(MetricsHomePage):
 
     template_name = 'metrics_system.html'
 
     def get_context_data(self, **kwargs):
         context = super(MetricsSystem, self).get_context_data(**kwargs)
-        context['active_page'] = 'metrics'
         context['active_page_sub'] = 'cpu'
         return context
 
