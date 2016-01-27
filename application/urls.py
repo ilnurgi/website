@@ -17,12 +17,15 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
-from application.views import HomePage
+from application import views as app_view
 from metrics import urls as metric_urls
-from arduino import urls as arduino_urls
+# from blog import urls as blog_urls
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    # url(r'^blog/', include(blog_urls)),
+    url(r'^login/', app_view.Login.as_view(), name='login'),
+    url(r'^logout/', app_view.Logout.as_view(), name='logout'),
     url(r'^metrics/', include(metric_urls)),
-    url(r'', HomePage.as_view(), name='home_page'),
+    url(r'', app_view.HomePage.as_view(), name='home_page'),
 ]

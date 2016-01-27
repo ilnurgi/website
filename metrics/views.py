@@ -8,8 +8,10 @@ from django.conf import settings
 from django.http import JsonResponse
 from django.views.generic import TemplateView
 
+from application.views import IsSuperUserMixin
 
-class MetricsHomePage(TemplateView):
+
+class MetricsHomePage(IsSuperUserMixin, TemplateView):
 
     template_name = 'base_metrics.html'
 
