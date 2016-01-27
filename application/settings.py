@@ -46,6 +46,8 @@ INSTALLED_APPS = (
 
     'application',
     'metrics',
+    # 'blog',
+    'fileuploader'
 
 )
 
@@ -125,6 +127,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 settings_json = os.path.join(BASE_DIR, 'settings.json')
 
 LOG_PATH = os.path.join(BASE_DIR, 'logs')
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 if os.path.exists(settings_json):
     globals().update(yaml.load(open(settings_json)))

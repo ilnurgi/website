@@ -14,17 +14,20 @@ class IsSuperUserMixin(object):
         return context
 
 
+class CSRFMixin(object):
+
+    def get_context_data(self, **kwargs):
+        context = super(CSRFMixin, self).get_context_data(**kwargs)
+        context.update(csrf(self.request))
+        return context
+
+
 class HomePage(IsSuperUserMixin, TemplateView):
     template_name = 'index.html'
 
 
-class Login(IsSuperUserMixin, TemplateView):
+class Login(IsSuperUserMixin, CSRFMixin, TemplateView):
     template_name = 'login.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(Login, self).get_context_data(**kwargs)
-        context.update(csrf(self.request))
-        return context
 
     def post(self, request):
         username = request.POST.get('username', None)

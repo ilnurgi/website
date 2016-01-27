@@ -11,27 +11,27 @@ from django.views.generic import TemplateView
 from application.views import IsSuperUserMixin
 
 
-class MetricsHomePage(IsSuperUserMixin, TemplateView):
+class HomePage(IsSuperUserMixin, TemplateView):
 
     template_name = 'base_metrics.html'
 
     def get_context_data(self, **kwargs):
-        context = super(MetricsHomePage, self).get_context_data(**kwargs)
+        context = super(HomePage, self).get_context_data(**kwargs)
         context['active_page'] = 'metrics'
         return context
 
 
-class MetricsSystem(MetricsHomePage):
+class System(HomePage):
 
     template_name = 'metrics_system.html'
 
     def get_context_data(self, **kwargs):
-        context = super(MetricsSystem, self).get_context_data(**kwargs)
+        context = super(System, self).get_context_data(**kwargs)
         context['active_page_sub'] = 'cpu'
         return context
 
 
-def metrics_cpu_data(request):
+def cpu_data(request):
     mongo_client = pymongo.MongoClient(
         settings.DATABASE_MONGO['host'],
         int(settings.DATABASE_MONGO['port']))
@@ -57,7 +57,7 @@ def metrics_cpu_data(request):
     })
 
 
-def metrics_cpu_hour_data(request):
+def cpu_hour_data(request):
     mongo_client = pymongo.MongoClient(
         settings.DATABASE_MONGO['host'],
         int(settings.DATABASE_MONGO['port']))
@@ -79,7 +79,7 @@ def metrics_cpu_hour_data(request):
     })
 
 
-def metrics_mem_data(request):
+def mem_data(request):
     mongo_client = pymongo.MongoClient(
         settings.DATABASE_MONGO['host'],
         int(settings.DATABASE_MONGO['port']))
@@ -105,7 +105,7 @@ def metrics_mem_data(request):
     })
 
 
-def metrics_mem_hour_data(request):
+def mem_hour_data(request):
     mongo_client = pymongo.MongoClient(
         settings.DATABASE_MONGO['host'],
         int(settings.DATABASE_MONGO['port']))

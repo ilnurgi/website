@@ -107,12 +107,27 @@ lg - >= 1200px;
                                 {% if active_page == 'metrics' %}
                                     class="active"
                                 {% endif %}>
-                                <a href="{% url 'metrics_home_page' %}">
+                                <a href="{% url 'metrics:home_page' %}">
                                     Статистика
                                 </a>
                             </li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
+                            {% if is_superuser %}
+                                <li
+                                    {% if active_page == 'fileuploader' %}
+                                        class="active"
+                                    {% endif %}>
+                                    <a href="{% url 'fileuploader:home_page' %}">
+                                        Файлохранилище
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'admin:index' %}">
+                                        Админка
+                                    </a>
+                                </li>
+                            {% endif %}
                             {% if is_superuser %}
                                 <li><a href="{% url 'logout' %}">Выйти</a></li>
                             {% else %}

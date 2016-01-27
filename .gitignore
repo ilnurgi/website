@@ -4,4 +4,5 @@ _build
 .idea/
 logs/
 static/
+media/
 !application/static/

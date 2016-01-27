@@ -58,10 +58,10 @@
         }
 
         function createCharts(){
-            $.getJSON("{% url 'metrics_cpu_data' %}", createCPUCharts);
-            $.getJSON("{% url 'metrics_cpu_hour_data' %}", createCPUHourCharts);
-            $.getJSON("{% url 'metrics_mem_data' %}", createMEMCharts);
-            $.getJSON("{% url 'metrics_mem_hour_data' %}", createMEMHourCharts);
+            $.getJSON("{% url 'metrics:cpu_data' %}", createCPUCharts);
+            $.getJSON("{% url 'metrics:cpu_hour_data' %}", createCPUHourCharts);
+            $.getJSON("{% url 'metrics:mem_data' %}", createMEMCharts);
+            $.getJSON("{% url 'metrics:mem_hour_data' %}", createMEMHourCharts);
         }
         $(document).ready(function(){
             Chart.defaults.global.tooltipEvents = [];
