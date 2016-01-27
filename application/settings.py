@@ -123,12 +123,12 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-settings_json = os.path.join(BASE_DIR, 'settings.json')
-
 LOG_PATH = os.path.join(BASE_DIR, 'logs')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+settings_json = os.path.join(BASE_DIR, 'settings.json')
 
 if os.path.exists(settings_json):
     globals().update(yaml.load(open(settings_json)))
@@ -168,7 +168,3 @@ LOGGING = {
 
 if DEBUG and 'console' in LOGGING['handlers']:
     LOGGING['loggers']['parse_nginx_access']['handlers'].append('console')
-
-conf_path = os.path.join(BASE_DIR, 'conf.yaml')
-if os.path.exists(conf_path):
-    globals().update(yaml.load(open(conf_path)))
