@@ -67,7 +67,7 @@ lg - >= 1200px;
 {#                                {% if active_page == 'blog' %}#}
 {#                                    class="active"#}
 {#                                {% endif %}>#}
-{#                                <a href="{% url 'blog_home_page' %}">#}
+{#                                <a href="{% url 'blog:home_page' %}">#}
 {#                                    Блог#}
 {#                                </a>#}
 {#                            </li>#}
@@ -134,8 +134,8 @@ lg - >= 1200px;
                                 <li><a href="{% url 'login' %}">Войти</a></li>
                             {% endif %}
                         </ul>
-                    </div><!-- /.navbar-collapse -->
-                </div><!-- /.container-fluid -->
+                    </div>
+                </div>
             </nav>
         </div>
 

@@ -29,7 +29,6 @@ SECRET_KEY = 'tts0qt$9)n&vwgupdl6gqd8sm4v!&tf+m3p=r03f=qrt4c2uyn'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -149,9 +148,17 @@ LOGGING = {
         },
         'console': {
             'class': 'logging.StreamHandler',
+        },
+        'mail_admins': {
+            'level': 'ERROR',
+            'class': 'django.utils.log.AdminEmailHandler'
         }
     },
     'loggers': {
+        'django': {
+            'level': 'ERROR',
+            'handlers': ['mail_admins']
+        },
         'parse_nginx_access': {
             'level': 'DEBUG',
             'handlers': ['parse_nginx_access']
@@ -161,3 +168,7 @@ LOGGING = {
 
 if DEBUG and 'console' in LOGGING['handlers']:
     LOGGING['loggers']['parse_nginx_access']['handlers'].append('console')
+
+conf_path = os.path.join(BASE_DIR, 'conf.yaml')
+if os.path.exists(conf_path):
+    globals().update(yaml.load(open(conf_path)))
