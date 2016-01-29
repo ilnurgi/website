@@ -1,0 +1,10 @@
+{% extends 'base_metrics.html' %}
+
+{% block content %}
+    {% for data in urls %}
+        <h3>{{ data.date }}</h3>
+        {% for url in data.urls %}
+            <br>{{ url.1 }}, {{ url.0 }}
+        {% endfor %}
+    {% endfor %}
+{% endblock %}

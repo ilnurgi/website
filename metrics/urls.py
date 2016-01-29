@@ -25,8 +25,40 @@ urlpatterns = [
         r'system',
         views.System.as_view(),
         name='system'),
+
+    url(
+        r'ip_data',
+        views.ip_data,
+        name='ip_data'),
+    url(
+        r'visiters',
+        views.Visiters.as_view(),
+        name='visiters'),
+
+    url(
+        r'visiters',
+        views.Visiters.as_view(),
+        name='visiters'),
+
+    url(
+        r'urls_from',
+        views.URLSFrom.as_view(),
+        name='urls_from'),
+
+    url(
+        r'urls',
+        views.URLS.as_view(),
+        name='urls'),
+
+    url(
+        r'user_agents',
+        views.UserAgents.as_view(),
+        name='user_agents'),
+
     url(
         r'',
         views.HomePage.as_view(),
         name='home_page'),
+
+
 ]

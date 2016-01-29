@@ -10,11 +10,41 @@
         <ul class="nav nav-pills">
             <li
                     role="presentation"
-                    {% if active_page_sub == 'cpu' %}
+                    {% if active_page_sub == 'system' %}
                         class="active"
                     {% endif %}>
                 <a href="{% url 'metrics:system' %}">Система</a>
             </li>
+            <li
+                    role="presentation"
+                    {% if active_page_sub == 'visiters' %}
+                        class="active"
+                    {% endif %}>
+                <a href="{% url 'metrics:visiters' %}">Посещаемость</a>
+            </li>
+            {% if is_superuser %}
+                <li
+                        role="presentation"
+                        {% if active_page_sub == 'urls' %}
+                            class="active"
+                        {% endif %}>
+                    <a href="{% url 'metrics:urls' %}">urls</a>
+                </li>
+                <li
+                        role="presentation"
+                        {% if active_page_sub == 'urls_from' %}
+                            class="active"
+                        {% endif %}>
+                    <a href="{% url 'metrics:urls_from' %}">urls_from</a>
+                </li>
+                <li
+                        role="presentation"
+                        {% if active_page_sub == 'user_agents' %}
+                            class="active"
+                        {% endif %}>
+                    <a href="{% url 'metrics:user_agents' %}">user_agents</a>
+                </li>
+            {% endif %}
         </ul>
         <br>
         {% block content %}

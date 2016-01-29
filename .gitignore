@@ -1,7 +1,7 @@
 *.pyc
-*.sqlite3
 _build
 .idea/
+db/
 logs/
 static/
 media/

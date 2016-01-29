@@ -58,7 +58,7 @@ class Command(BaseCommand):
         self.today = options.get(
             'date_today',
              datetime.datetime.strptime(options['date'], self.date_format)
-                if options['date'] else datetime.datetime.now())
+             if options['date'] else datetime.datetime.now())
         logger.debug(u'today={0}'.format(self.today))
         date_start = datetime.datetime.combine(
             self.today - datetime.timedelta(days=1),
@@ -114,22 +114,27 @@ class Command(BaseCommand):
             self.drop()
 
     def calculate_for_month(self):
+        logger.debug(u'calculate_for_month')
 
         today = self.today
         january = today.month == 1
 
+        print today
         date_start = datetime.datetime(
             today.year - (1 if january else 0),
             12 if january else today.month - 1,
             1,
             0, 0, 0)
+        print date_start
 
-        december = today.month == 12
+        december = date_start.month == 12
         date_end = datetime.datetime(
             date_start.year + (1 if december else 0),
             1 if december else date_start.month + 1,
             1,
             0, 0, 0)
+        logger.debug(u'date_start = {0}'.format(date_start))
+        logger.debug(u'date_end = {0}'.format(date_end))
 
         urls = {}
         urls_from = {}
@@ -139,7 +144,7 @@ class Command(BaseCommand):
         ip_set = set()
 
         result = {
-            'date': date_start,
+            'date': date_end,
             'urls': urls,
             'urls_from': urls_from,
             'user_agents': user_agents,
