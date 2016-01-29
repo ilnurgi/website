@@ -16,6 +16,7 @@ command.today = datetime.datetime(2016, 1, 1, 0, 0, 0)
 command.collection_log = db.log
 command.collection_month_report = db.month_report
 # command.calculate_for_month()
+print db.month_report.count()
 
 print db.log.count()
 # print db.log.delete_many(

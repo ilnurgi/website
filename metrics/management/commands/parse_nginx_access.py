@@ -119,13 +119,11 @@ class Command(BaseCommand):
         today = self.today
         january = today.month == 1
 
-        print today
         date_start = datetime.datetime(
             today.year - (1 if january else 0),
             12 if january else today.month - 1,
             1,
             0, 0, 0)
-        print date_start
 
         december = date_start.month == 12
         date_end = datetime.datetime(
