@@ -56,6 +56,16 @@ urlpatterns = [
         name='user_agents'),
 
     url(
+        r'docs_data_all',
+        views.docs_data_all,
+        name='docs_data_all'),
+
+    url(
+        r'docs_data',
+        views.docs_data,
+        name='docs_data'),
+
+    url(
         r'',
         views.HomePage.as_view(),
         name='home_page'),

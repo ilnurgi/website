@@ -99,6 +99,14 @@ class Command(BaseCommand):
                     continue
 
                 data = data.groupdict()
+
+                if (
+                        data['url'].endswith('.css') or
+                        data['url'].endswith('.php') or
+                        data['url'].endswith('.js')):
+                    logger.debug(u'static: {0}'.format(data['url']))
+                    continue
+
                 data['status'] = int(data['status'])
                 data['date'] = datetime.datetime.strptime(
                     data['date'],
@@ -161,7 +169,10 @@ class Command(BaseCommand):
             urls[url] = urls.setdefault(url, 0) + 1
 
             url_from = log['url_from']
-            urls_from[url_from] = urls_from.setdefault(url_from, 0) + 1
+
+            if (not url_from.startswith('http://ilnurgi1.ru') or
+                    not url_from.startswith('http://ilnurgi1.ru')):
+                urls_from[url_from] = urls_from.setdefault(url_from, 0) + 1
 
             user_agent = log['user_agent']
             user_agents[user_agent] = user_agents.setdefault(user_agent, 0) + 1
