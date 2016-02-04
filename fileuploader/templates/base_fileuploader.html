@@ -26,6 +26,7 @@
                     <th>id</th>
                     <th>created</th>
                     <th>url</th>
+                    <th>action</th>
                 </tr>
             </thead>
             <tbody>
@@ -34,6 +35,13 @@
                         <td>{{ f.id }}, {{ f.exists }}</td>
                         <td>{{ f.created }}</td>
                         <td><a href="{{ f.file.url }}">{{ f.file_name }}</a></td>
+                        <td>
+                            <a type="button"
+                               class="btn btn-danger"
+                               href="{% url 'fileuploader:delete' file_id=f.id %}">
+                                Удалить
+                            </a>
+                        </td>
                     </tr>
                 {% endfor %}
             </tbody>

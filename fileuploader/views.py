@@ -1,4 +1,5 @@
 # coding: utf-8
+import os
 
 from django.shortcuts import redirect
 from django.views.generic import TemplateView
@@ -22,3 +23,12 @@ class HomePage(IsSuperUserMixin, CSRFMixin, TemplateView):
             f = request.FILES['file']
             File(file=f, file_name=f.name).save()
         return redirect('fileuploader:home_page')
+
+
+def delete(request, file_id):
+    fl = File.objects.get(id=file_id)
+    if os.path.exists(fl.file.path):
+        os.remove(fl.file.path)
+    fl.delete()
+
+    return redirect('fileuploader:home_page')
