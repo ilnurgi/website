@@ -29,8 +29,6 @@ SECRET_KEY = 'tts0qt$9)n&vwgupdl6gqd8sm4v!&tf+m3p=r03f=qrt4c2uyn'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-
-
 # Application definition
 
 INSTALLED_APPS = (
@@ -45,7 +43,7 @@ INSTALLED_APPS = (
 
     'application',
     'metrics',
-    # 'blog',
+    'blog',
     'fileuploader'
 
 )
@@ -105,7 +103,7 @@ DATABASE_MONGO = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru-RU'
 
 TIME_ZONE = 'Europe/Moscow'
 

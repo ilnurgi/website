@@ -4,3 +4,4 @@ gunicorn
 pymongo
 pyyaml
 psutil
+markdown

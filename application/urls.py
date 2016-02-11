@@ -19,13 +19,13 @@ from django.conf.urls.static import static
 from django.contrib import admin
 
 from application import views as app_view
-# from blog import urls as blog_urls
+from blog import urls as blog_urls
 from fileuploader import urls as fileuploader_urls
 from metrics import urls as metric_urls
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    # url(r'^blog/', include(blog_urls)),
+    url(r'^blog/', include(blog_urls, namespace='blog')),
     url(
         r'^fileuploader/',
         include(fileuploader_urls, namespace='fileuploader')),

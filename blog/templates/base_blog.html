@@ -5,5 +5,28 @@
 {% endblock %}
 
 {% block extra_body %}
+    <div class="container">
+        <ul class="nav nav-pills">
+            {% for tag in tags %}
+                <li
+                        role="presentation"
+                        {% if current_tag == tag.name %}
+                            class="active"
+                        {% endif %}>
+                    <a href="{% url 'blog:tags_page' tag_id=tag.id %}">
+                        <h4>{{ tag }}</h4>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+        {% if is_superuser %}
+            <br>
+            <a class="btn {% if active_sub_page == 'tags' %}btn-primary{% else %}btn-default{% endif %}"
+               href="{% url 'blog:tags' %}" role="button">Теги</a>
+            <a class="btn {% if active_sub_page == 'posts' %}btn-primary{% else %}btn-default{% endif %}"
+               href="{% url 'blog:posts_edit' post_id=0 %}" role="button">Посты</a>
+            <br><br>
+        {% endif %}
+    </div>
     {% block extra_blog_body %}{% endblock %}
 {% endblock %}

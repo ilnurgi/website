@@ -63,14 +63,14 @@ lg - >= 1200px;
                             class="collapse navbar-collapse"
                             id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
-{#                            <li#}
-{#                                {% if active_page == 'blog' %}#}
-{#                                    class="active"#}
-{#                                {% endif %}>#}
-{#                                <a href="{% url 'blog:home_page' %}">#}
-{#                                    Блог#}
-{#                                </a>#}
-{#                            </li>#}
+                            <li
+                                {% if active_page == 'blog' %}
+                                    class="active"
+                                {% endif %}>
+                                <a href="{% url 'blog:home_page' %}">
+                                    Блог
+                                </a>
+                            </li>
                             <li class="dropdown">
                                   <a
                                       href="#"
