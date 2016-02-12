@@ -34,7 +34,7 @@ class EditPostPage(IsSuperUserMixin, TemplateView):
         post.title = request.POST['post_title']
         post.raw_content = request.POST['post_raw_content']
         post.content = markdown(request.POST['post_raw_content'])
-        post.published = request.POST['publish'] == 'on'
+        post.published = request.POST.get('publish', 'off') == 'on'
         post.save()
         self.create_tags_relation(post, request.POST['tag_names'])
         return redirect('blog:posts_edit', post_id=post.id)
