@@ -22,6 +22,7 @@ class Post(models.Model):
     title = models.CharField(u'Post title', max_length=100)
     raw_content = models.TextField(u'Post raw content')
     content = models.TextField(u'Post content')
+    published = models.BooleanField(default=False)
 
     created = models.DateTimeField(u'Post created date', auto_now_add=True)
     modified = models.DateTimeField(u'Post modified date', auto_now=True)
@@ -35,11 +36,6 @@ class Post(models.Model):
     def tag_names(self):
         return u', '.join(
             unicode(pt.tag) for pt in self.posttags_set.order_by('tag__name'))
-
-    def comments(self):
-        return Comment.objects.filter(
-            postcomments__post=self
-        ).order_by('-created')
 
 
 class PostTags(models.Model):

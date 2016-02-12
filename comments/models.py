@@ -16,6 +16,8 @@ class Comment(models.Model):
     content = models.TextField()
     content_raw = models.TextField()
 
+    published = models.BooleanField(default=False)
+
     created = models.DateTimeField(u'Comment created date', auto_now_add=True)
     modified = models.DateTimeField(u'Comment modified date', auto_now=True)
 

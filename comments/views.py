@@ -47,6 +47,7 @@ class EditPage(IsSuperUserMixin, TemplateView):
         comment.user_email = request.POST['user_email']
         comment.content = markdown(request.POST['content_raw'])
         comment.content_raw = request.POST['content_raw']
+        comment.published = request.POST['publish'] == 'on'
         comment.save()
         if request.POST['redirect']:
             return redirect(request.POST['redirect'])

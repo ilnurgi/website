@@ -22,6 +22,11 @@
                         {% endfor %}
                     {{ post.created }} ({{ post.modified }})
                     {% if is_superuser %}
+                        {% if post.published %}
+                            <span class="label label-success">Опубликован</span>
+                        {% else %}
+                            <span class="label label-warning">Скрыт</span>
+                        {% endif %}
                         <a type="button"
                            class="btn btn-info"
                            href="{% url 'blog:posts_edit' post_id=post.id %}">

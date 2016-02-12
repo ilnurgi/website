@@ -25,7 +25,10 @@ class HomePage(BaseBlogViewMixin, IsSuperUserMixin, TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(HomePage, self).get_context_data(**kwargs)
-        context['posts'] = Post.objects.all()
+        if self.request.user.is_superuser:
+            context['posts'] = Post.objects.all()
+        else:
+            context['posts'] = Post.objects.filter(published=True)
         return context
 
 
@@ -47,6 +50,13 @@ class PostPage(CSRFMixin, HomePage):
     def get_context_data(self, **kwargs):
         context = super(HomePage, self).get_context_data(**kwargs)
         context['post'] = Post.objects.get(id=self.kwargs['post_id'])
+        comments = Comment.objects.filter(
+            postcomments__post=context['post'])
+
+        if not self.request.user.is_superuser:
+            comments = comments.filter(published=True)
+
+        context['post_comments'] = comments.order_by('-created')
         context['user'] = self.request.user
         return context
 

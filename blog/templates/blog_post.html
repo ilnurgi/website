@@ -21,6 +21,11 @@
                     {% endfor %}
                 {{ post.created }} ({{ post.modified }})
                 {% if is_superuser %}
+                    {% if post.published %}
+                        <span class="label label-success">Опубликован</span>
+                    {% else %}
+                        <span class="label label-warning">Скрыт</span>
+                    {% endif %}
                     <a type="button"
                        class="btn btn-info"
                        href="{% url 'blog:posts_edit' post_id=post.id %}">
@@ -88,7 +93,7 @@
             </div>
         </form>
 
-        {% for comment in post.comments %}
+        {% for comment in post_comments %}
             <div class="row">
                 <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 text-right">
                     <h3><span class="glyphicon glyphicon glyphicon-pencil" aria-hidden="true"></span></h3>
@@ -102,6 +107,11 @@
                         {% endif %}
                         <small>({{ comment.created }})</small>
                         {% if is_superuser %}
+                            {% if comment.published %}
+                                <span class="label label-success">Опубликован</span>
+                            {% else %}
+                                <span class="label label-warning">Скрыт</span>
+                            {% endif %}
                             <a type="button"
                                class="btn btn-info"
                                href="{% url 'comments:edit' comment_id=comment.id %}?redirect={% url 'blog:post_page' post_id=post.id %}">
