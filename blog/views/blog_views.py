@@ -53,7 +53,7 @@ class PostPage(CSRFMixin, HomePage):
         comments = Comment.objects.filter(
             postcomments__post=context['post'])
 
-        if not self.request.user.is_superuser:
+        if not self.request.user.is_superuser():
             comments = comments.filter(published=True)
 
         context['post_comments'] = comments.order_by('-created')
