@@ -20,6 +20,7 @@ from django.contrib import admin
 
 from application import views as app_view
 from blog import urls as blog_urls
+from comments import urls as comments_urls
 from fileuploader import urls as fileuploader_urls
 from metrics import urls as metric_urls
 
@@ -32,6 +33,7 @@ urlpatterns = [
     url(r'^login/', app_view.Login.as_view(), name='login'),
     url(r'^logout/', app_view.Logout.as_view(), name='logout'),
     url(r'^metrics/', include(metric_urls, namespace='metrics')),
+    url(r'^comments/', include(comments_urls, namespace='comments')),
     url(r'^$', app_view.HomePage.as_view(), name='home_page'),
 ]
 

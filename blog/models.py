@@ -3,6 +3,8 @@
 from django.contrib import admin
 from django.db import models
 
+from comments.models import Comment
+
 
 class Tags(models.Model):
 
@@ -34,6 +36,11 @@ class Post(models.Model):
         return u', '.join(
             unicode(pt.tag) for pt in self.posttags_set.order_by('tag__name'))
 
+    def comments(self):
+        return Comment.objects.filter(
+            postcomments__post=self
+        ).order_by('-created')
+
 
 class PostTags(models.Model):
 
@@ -43,6 +50,14 @@ class PostTags(models.Model):
     def __unicode__(self):
         return u'{0}/{1}'.format(self.tag, self.post)
 
+
+class PostComments(models.Model):
+
+    post = models.ForeignKey(Post)
+    comment = models.ForeignKey(Comment)
+
+
 admin.site.register(Tags)
 admin.site.register(Post)
 admin.site.register(PostTags)
+admin.site.register(PostComments)

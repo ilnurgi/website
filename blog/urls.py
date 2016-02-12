@@ -35,6 +35,10 @@ urlpatterns = [
 
     # ==========================================================================
     url(
+        r'comment_add/(?P<post_id>\w+)',
+        blog_views.comment_add,
+        name='comment_add'),
+    url(
         r'post/(?P<post_id>\w+)',
         blog_views.PostPage.as_view(),
         name='post_page'),

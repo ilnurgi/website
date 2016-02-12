@@ -115,6 +115,14 @@ lg - >= 1200px;
                         <ul class="nav navbar-nav navbar-right">
                             {% if is_superuser %}
                                 <li
+                                    {% if active_page == 'comments' %}
+                                        class="active"
+                                    {% endif %}>
+                                    <a href="{% url 'comments:home_page' %}">
+                                        Коментарии
+                                    </a>
+                                </li>
+                                <li
                                     {% if active_page == 'fileuploader' %}
                                         class="active"
                                     {% endif %}>

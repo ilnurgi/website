@@ -1,9 +1,13 @@
 # coding: utf-8
 
+from django.shortcuts import redirect
 from django.views.generic import TemplateView
 
-from application.views import IsSuperUserMixin
-from blog.models import Tags, Post
+from markdown import markdown
+
+from application.views import IsSuperUserMixin, CSRFMixin
+from blog.models import Tags, Post, PostComments
+from comments.models import Comment
 
 
 class BaseBlogViewMixin(object):
@@ -36,11 +40,27 @@ class TagPage(HomePage):
         return context
 
 
-class PostPage(HomePage):
+class PostPage(CSRFMixin, HomePage):
 
     template_name = 'blog_post.html'
 
     def get_context_data(self, **kwargs):
         context = super(HomePage, self).get_context_data(**kwargs)
         context['post'] = Post.objects.get(id=self.kwargs['post_id'])
+        context['user'] = self.request.user
         return context
+
+
+def comment_add(request, post_id):
+    comment = Comment()
+    if request.user.is_authenticated():
+        comment.user = request.user
+    else:
+        comment.user_name = request.POST['user_name']
+        comment.user_email = request.POST['user_email']
+    comment.content = markdown(request.POST['content_raw'])
+    comment.content_raw = request.POST['content_raw']
+    comment.save()
+
+    PostComments.objects.create(post_id=post_id, comment_id=comment.id)
+    return redirect(request.GET.get('redirect', '/'))

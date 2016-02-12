@@ -44,7 +44,8 @@ INSTALLED_APPS = (
     'application',
     'metrics',
     'blog',
-    'fileuploader'
+    'fileuploader',
+    'comments',
 
 )
 

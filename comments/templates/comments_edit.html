@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block extra_head %}
+    {% block extra_blog_head %}{% endblock %}
+{% endblock %}
+
+{% block extra_body %}
+    <div class="container">
+        <form class="form-horizontal" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="hidden" name="comment_id" value="{{ comment.id }}">
+            <input type="hidden" name="redirect" value="{{ redirect }}">
+            <div class="form-group">
+                <label for="name" class="col-sm-2 control-label">Зарегистрированный пользователь</label>
+                <div class="col-sm-10">
+                    <input
+                            type="text"
+                            class="form-control"
+                            id="name"
+                            disabled
+                            value="{{ comment.user }}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="user_name" class="col-sm-2 control-label">Пользователь</label>
+                <div class="col-sm-10">
+                    <input
+                            type="text"
+                            class="form-control"
+                            id="user_name"
+                            name="user_name"
+                            value="{{ comment.user_name }}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="user_email" class="col-sm-2 control-label">email</label>
+                <div class="col-sm-10">
+                    <input
+                            type="text"
+                            class="form-control"
+                            id="user_email"
+                            name="user_email"
+                            value="{{ comment.user_email }}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="content" class="col-sm-2 control-label">content</label>
+                <div class="col-sm-10">
+                    <textarea
+                            class="form-control"
+                            id="content"
+                            name="content"
+                            rows=30>{{ comment.content }}</textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="content_raw" class="col-sm-2 control-label">content_raw</label>
+                <div class="col-sm-10">
+                    <textarea
+                            class="form-control"
+                            id="content_raw"
+                            name="content_raw"
+                            rows="30">{{ comment.content_raw }}</textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default">
+                            Обновить
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    {% block extra_blog_body %}{% endblock %}
+{% endblock %}
