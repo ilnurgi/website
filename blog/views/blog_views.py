@@ -37,7 +37,7 @@ class TagPage(HomePage):
     def get_context_data(self, **kwargs):
         context = super(HomePage, self).get_context_data(**kwargs)
         context['current_tag_id'] = self.kwargs['tag_id']
-        context['posts'] = Post.objects.filter(
+        context['posts'] = context['posts'].filter(
             posttags__tag__id=self.kwargs['tag_id'])
 
         return context
