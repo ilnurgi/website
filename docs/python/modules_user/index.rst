@@ -8,10 +8,10 @@
 
    docx
    pyaudio
-   serial
    psutil
    pymongo/index
    pyqt/index
+   serial
    xlrd
    xlwt
    xlutils
