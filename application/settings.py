@@ -174,5 +174,4 @@ if DEBUG and 'console' in LOGGING['handlers']:
 djcelery.setup_loader()
 
 CELERYBEAT_SCHEDULER = "djcelery.schedulers.DatabaseScheduler"
-CELERY_ALWAYS_EAGER = False
 BROKER_BACKEND = "djkombu.transport.DatabaseTransport"

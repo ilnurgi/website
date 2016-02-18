@@ -7,6 +7,7 @@ from markdown import markdown
 
 from application.views import IsSuperUserMixin, CSRFMixin
 from blog.models import Tags, Post, PostComments
+from blog.tasks import send_email_notification
 from comments.models import Comment
 
 
@@ -73,4 +74,5 @@ def comment_add(request, post_id):
     comment.save()
 
     PostComments.objects.create(post_id=post_id, comment_id=comment.id)
+    send_email_notification.delay()
     return redirect(request.GET.get('redirect', '/'))

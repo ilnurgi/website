@@ -162,3 +162,30 @@ stderr_logfile=/var/www/website/logs/supervisor_err.log
 supervisoctl reread
 supervisoctl update
 ```
+
+```
+vim /etc/supervisor/conf.d/website_celery.conf
+
+[program:website_celery]
+command=/root/virtual_envs/website/bin/python manage.py celery worker
+
+directory=/var/www/website/ilnurgi/
+
+user=root
+group=root
+
+daemon=False
+debug=False
+
+autostart=true
+autorestart=true
+
+redirect_stderr=True
+redirect_stdout=True
+
+stdout_logfile=/var/www/website/logs/supervisor_celery_out.log
+stderr_logfile=/var/www/website/logs/supervisor_celery_err.log
+
+supervisoctl reread
+supervisoctl update
+```

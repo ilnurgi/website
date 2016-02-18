@@ -5,3 +5,5 @@ pymongo
 pyyaml
 psutil
 markdown
+django-celery
+django-kombu
