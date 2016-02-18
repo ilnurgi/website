@@ -15,6 +15,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
+import djcelery
 import yaml
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -40,6 +41,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     'gunicorn',
+    'djcelery',
+    'djkombu',
 
     'application',
     'metrics',
@@ -167,3 +170,9 @@ LOGGING = {
 
 if DEBUG and 'console' in LOGGING['handlers']:
     LOGGING['loggers']['parse_nginx_access']['handlers'].append('console')
+
+djcelery.setup_loader()
+
+CELERYBEAT_SCHEDULER = "djcelery.schedulers.DatabaseScheduler"
+CELERY_ALWAYS_EAGER = False
+BROKER_BACKEND = "djkombu.transport.DatabaseTransport"

@@ -6,3 +6,4 @@ logs/
 static/
 media/
 !application/static/
+settings.yaml
