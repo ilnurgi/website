@@ -1,5 +1,5 @@
 # coding: utf-8
-
+from django.core.urlresolvers import reverse
 from django.shortcuts import redirect
 from django.views.generic import TemplateView
 
@@ -67,6 +67,10 @@ def comment_add(request, post_id):
     if request.user.is_authenticated():
         comment.user = request.user
     else:
+        if ('user_name' not in request.POST or
+                'user_email' not in request.POST):
+            return redirect(request.GET.get('redirect', '/'))
+
         comment.user_name = request.POST['user_name']
         comment.user_email = request.POST['user_email']
     comment.content = markdown(request.POST['content_raw'])
@@ -74,5 +78,6 @@ def comment_add(request, post_id):
     comment.save()
 
     PostComments.objects.create(post_id=post_id, comment_id=comment.id)
-    send_email_notification.delay()
+    send_email_notification.delay(
+        url=reverse('blog:post_page', kwargs={'post_id': post_id}))
     return redirect(request.GET.get('redirect', '/'))
