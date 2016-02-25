@@ -21,4 +21,8 @@ class Comment(models.Model):
     created = models.DateTimeField(u'Comment created date', auto_now_add=True)
     modified = models.DateTimeField(u'Comment modified date', auto_now=True)
 
+    def __unicode__(self):
+        return u'{0}'.format(
+            self.user or u'{0} / {1}'.format(self.user_name, self.user_email))
+
 admin.site.register(Comment)
