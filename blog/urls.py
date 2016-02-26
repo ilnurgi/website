@@ -35,15 +35,15 @@ urlpatterns = [
 
     # ==========================================================================
     url(
-        r'comment_add/(?P<post_id>\w+)',
+        r'comment_add/(?P<post_id>\d+)',
         blog_views.comment_add,
         name='comment_add'),
     url(
-        r'post/(?P<post_id>\w+)',
+        r'post/(?P<post_id>\d+)',
         blog_views.PostPage.as_view(),
         name='post_page'),
     url(
-        r'tag/(?P<tag_id>\w+)',
+        r'tag/(?P<tag_id>\d+)',
         blog_views.TagPage.as_view(),
         name='tags_page'),
     url(
