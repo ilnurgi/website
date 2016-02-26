@@ -1,54 +1,265 @@
-exception - исключения
-======================
+try/except - перехват исключений
+================================
 
 >>> try:
         5/0
     except ZeroDivisionError as err:
         print err
+
 >>> raise RuntimeError(u'Ошибка какая то')
 
 >>> class MyException(Exception): pass
 
->>> asset False, u'Данная строка возбудит исключение AssertionError'
+>>> assert False, u'Данная строка возбудит исключение AssertionError'
 
 
-============================ ========
-исключение                   описание
-============================ ========
-BaseException                Базовый класс всех исключений
-\_ GeneratorExit             Возбуждается методом .close() генераторов
-\_ KeyboardInterrupt         Возбуждается нажатием клавишей прерывания (обычно Ctrl-C)
-\_ SystemExit                Завершение программы
-\_ Exception                 Базовый класс для всех исключений, не связанных с завершением программы
-\_\_ StopIteration           Возбуждается для прекращения итераций
-\_\_ StandardError           Базовый класс для всех встроенных исключений (только в Python 2). В Python 3 – базовый класс всех исключений, наследующих класс Exception
-\_\_\_ ArithmeticError       Базовый класс исключений, возбуждаемых арифметическими операциями
-\_\_\_\_ FloatingPointError  Ошибка операции с плавающей точкой
-\_\_\_\_ ZeroDivisionError   Деление или деления по модулю на ноль
-\_\_\_ AssertionError        Возбуждается инструкциями assert
-\_\_\_ AttributeError        Возбуждается при обращении к несуществующему атрибуту
-\_\_\_ EnvironmentError      Ошибка, обусловленная внешними причинами
-\_\_\_\_ IOError             Ошибка ввода-вывода при работе с файлами
-\_\_\_\_ OSError             Ошибка операционной системы
-\_\_\_ EOFError              Возбуждается по достижении конца файла
-\_\_ ImportError             Ошибка в инструкции import
-\_\_ LookupError             Ошибка обращения по индексу или ключу
-\_\_\_ IndexError            Ошибка обращения по индексу за пределами последовательности
-\_\_\_ KeyError              Ошибка обращения к несуществующему ключу словаря
-\_\_ MemoryError             Нехватка памяти
-\_\_ NameError               Не удалось отыскать локальное или глобальное имя
-\_\_ UnboundLocalError       Ошибка обращения к локальной переменной, которой еще не было присвоено значение
-\_\_ ReferenceError          Ошибка обращения к объекту, который уже был уничтожен
-\_\_ RuntimeError            Универсальное исключение
-\_\_ NotImplementedError     Обращение к нереализованному методу или функции
-\_\_ SyntaxError             Синтаксическая ошибка
-\_\_\_ IndentationError      Ошибка оформления отступов
-\_\_\_\_ TabError            Непоследовательное использование символа табуляции (генерируется при запуске интерпретатора с ключом –tt)
-\_\_ SystemError             Нефатальная системная ошибка в интерпретаторе
-\_\_ TypeError               Попытка выполнить операцию над аргументом недопустимого типа
-\_\_ ValueError              Недопустимый тип
-\_\_\_ UnicodeError          Ошибка при работе с символами Юникода
-\_\_\_ UnicodeDecodeError    Ошибка декодирования символов Юникода
-\_\_\_ UnicodeEncodeError    Ошибка кодирования символов Юникода
-\_\_\_ UnicodeTranslateError Ошибка трансляции символов Юникода
-============================ ========
+.. py:class:: AttributeError
+
+    Возбуждается при обращении к несуществующему атрибуту
+
+    Наследник :py:class:`StandardError`
+
+
+.. py:class:: ArithmeticError
+
+    Базовый класс исключений, возбуждаемых арифметическими операциями
+
+    Наследник :py:class:`StandardError`
+
+
+.. py:class:: AssertionError
+
+    Возбуждается инструкциями assert
+
+    Наследник :py:class:`StandardError`
+
+
+.. py:class:: BaseException
+
+    Базовый класс всех исключений
+
+
+.. py:class:: EnvironmentError
+
+    Ошибка, обусловленная внешними причинами
+
+    Наследник :py:class:`StandardError`
+
+
+.. py:class:: EOFError
+
+    Возбуждается по достижении конца файла
+
+    Наследник :py:class:`StandardError`
+
+
+.. py:class:: Exception
+
+    Базовый класс для всех исключений, не связанных с завершением программы
+
+    Наследник :py:class:`BaseException`
+
+
+.. py:class:: FloatingPointError
+
+    Ошибка в инструкции import
+
+    Наследник :py:class:`ArithmeticError`
+
+
+.. py:class:: GeneratorExit
+
+    Возбуждается методом .close() генераторов
+
+    Наследник :py:class:`BaseException`
+
+
+.. py:class:: ImportError
+
+    Ошибка в инструкции import
+
+    Наследник :py:class:`SyntaxError`
+
+
+.. py:class:: IndentationError
+
+    Ошибка оформления отступов
+
+    Наследник :py:class:`SyntaxError`
+
+
+.. py:class:: IndexError
+
+    Ошибка обращения по индексу за пределами последовательности.
+
+    Наследник :py:class:`LookupError`
+
+
+.. py:class:: IOError
+
+    Ошибка ввода-вывода при работе с файлами
+
+    Наследник :py:class:`EnvironmentError`
+
+
+.. py:class:: KeyError
+
+    Ошибка обращения к несуществующему ключу словаря
+
+    Наследник :py:class:`LookupError`
+
+
+.. py:class:: KeyboardInterrupt
+
+    Возбуждается нажатием клавишей прерывания (обычно Ctrl-C)
+
+    Наследник :py:class:`BaseException`
+
+
+.. py:class:: LookupError
+
+    Ошибка обращения по индексу или ключу
+
+    Наследник :py:class:`Exception`
+
+
+.. py:class:: MemoryError
+
+    Нехватка памяти
+
+    Наследник :py:class:`Exception`
+
+
+.. py:class:: NameError
+
+    Не удалось отыскать локальное или глобальное имя
+
+    Наследник :py:class:`Exception`
+
+
+.. py:class:: NotImplementedError
+
+    Обращение к нереализованному методу или функции
+
+    Наследник :py:class:`Exception`
+
+
+.. py:class:: OSError
+
+    Ошибка операционной системы
+
+    Наследник :py:class:`EnvironmentError`
+
+
+.. py:class:: ReferenceError
+
+    Ошибка обращения к объекту, который уже был уничтожен
+
+    Наследник :py:class:`Exception`
+
+
+.. py:class:: RuntimeError
+
+    Универсальное исключение
+
+    Наследник :py:class:`Exception`
+
+
+.. py:class:: StandardError
+
+    Базовый класс для всех встроенных исключений (только в Python 2).
+
+    В Python 3 – базовый класс всех исключений, наследующих класс Exception
+
+    Наследник :py:class:`Exception`
+
+
+.. py:class:: StopIteration
+
+    Возбуждается для прекращения итераций
+
+    Наследник :py:class:`Exception`
+
+
+.. py:class:: SyntaxError
+
+    Синтаксическая ошибка
+
+    Наследник :py:class:`Exception`
+
+
+.. py:class:: SystemError
+
+    Нефатальная системная ошибка в интерпретаторе
+
+    Наследник :py:class:`Exception`
+
+
+.. py:class:: SystemExit
+
+    Завершение программы
+
+    Наследник :py:class:`BaseException`
+
+
+.. py:class:: TabError
+
+    Непоследовательное использование символа табуляции (генерируется при запуске интерпретатора с ключом –tt)
+
+    Наследник :py:class:`IndentationError`
+
+
+.. py:class:: TypeError
+
+    Попытка выполнить операцию над аргументом недопустимого типа
+
+    Наследник :py:class:`Exception`
+
+
+.. py:class:: UnboundLocalError
+
+    Ошибка обращения к локальной переменной, которой еще не было присвоено значение
+
+    Наследник :py:class:`Exception`
+
+
+.. py:class:: UnicodeError
+
+    Ошибка при работе с символами Юникода
+
+    Наследник :py:class:`ValueError`
+
+
+.. py:class:: UnicodeDecodeError
+
+    Ошибка декодирования символов Юникода
+
+    Наследник :py:class:`ValueError`
+
+
+.. py:class:: UnicodeEncodeError
+
+    Ошибка кодирования символов Юникода
+
+    Наследник :py:class:`ValueError`
+
+
+.. py:class:: UnicodeTranslateError
+
+    Ошибка трансляции символов Юникода
+
+    Наследник :py:class:`ValueError`
+
+
+.. py:class:: ValueError
+
+    Недопустимый тип
+
+    Наследник :py:class:`Exception`
+
+
+.. py:class:: ZeroDivisionError
+
+    Деление или деления по модулю на ноль
+
+    Наследник :py:class:`ArithmeticError`

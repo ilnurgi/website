@@ -1,7 +1,7 @@
 .. py:module:: os.path
 
 os.path
-=================
+=======
 
 Модуль встроен в модуль os и позволяет работать с путями к файлам и папкам 
 
@@ -34,11 +34,11 @@ os.path
 
 
 .. py:method:: exists(path) 
-    
-    :param path: путь к файлу
-    :return: True или False
-    
-    проверяет, существует ли файл
+
+    Возвращает булево, True|False, существует ли указанный путь в системе
+
+    >>> os.path.exists(u'/home/ilnurgi/')
+    True
 
 
 .. py:method:: expanduser(username) 
@@ -98,9 +98,10 @@ os.path
 
 .. py:method:: isdir(path) 
     
-    :param str path: путь к файлу или каталогу
+    Возвращает булево, True|False, является ли указанный путь катологом
 
-    проверяет, указывает ли путь к каталогу
+    >>> os.path.isdir(u'/home/ilnurgi/')
+    True
 
 
 .. py:method:: isfile(path) 

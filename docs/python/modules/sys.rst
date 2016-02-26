@@ -14,6 +14,11 @@ sys
 
     Список параметров командной строки, передаваемых программе. Элемент argv[0] хранит имя программы.
 
+    .. code-block:: py
+
+        print sys.argv
+        ['script.py']
+
 
 .. py:attribute:: builtin_module_names
 
