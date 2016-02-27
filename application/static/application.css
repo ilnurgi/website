@@ -1,0 +1,32 @@
+pre {
+    background-color: #272822;
+}
+
+code {
+    font-size: 1.3em !important;
+    color: #f6f8f2 !important;
+}
+
+code span.comment {
+    color: #6d6e4e;
+}
+
+code span.keyword {
+    color: #f92640;
+}
+
+code span.exception {
+    color: #66d9ef;
+}
+
+code span.unicode {
+    color: #66d9ef;
+}
+
+code span.string {
+    color: #e2db74;
+}
+
+code span.bool {
+    color: #ae81ff;
+}

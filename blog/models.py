@@ -53,7 +53,13 @@ class PostComments(models.Model):
     comment = models.ForeignKey(Comment)
 
 
+class DocsReferences(models.Model):
+
+    socr = models.CharField(max_length=100, unique=True)
+    url = models.URLField(unique=True)
+
 admin.site.register(Tags)
 admin.site.register(Post)
 admin.site.register(PostTags)
 admin.site.register(PostComments)
+admin.site.register(DocsReferences)
