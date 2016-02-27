@@ -58,6 +58,9 @@ class DocsReferences(models.Model):
     socr = models.CharField(max_length=100, unique=True)
     url = models.URLField(unique=True)
 
+    def __unicode__(self):
+        return u'{0} / {1}'.format(self.socr, self.url)
+
 admin.site.register(Tags)
 admin.site.register(Post)
 admin.site.register(PostTags)
