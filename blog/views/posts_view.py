@@ -50,21 +50,21 @@ class EditPostPage(IsSuperUserMixin, TemplateView):
         return redirect('blog:posts_edit', post_id=post.id)
 
     def add_url_references(self, content):
-        titles = set([title for title, ref in re_references.findall(content)])
+        refs = set([ref for title, ref in re_references.findall(content)])
         refs = {
             ref.socr: ref.url
-            for ref in DocsReferences.objects.filter(socr__in=titles)
+            for ref in DocsReferences.objects.filter(socr__in=refs)
         }
+
         for title, ref in set(re_references.findall(content)):
-            if title in refs:
+            if ref in refs:
                 content = content.replace(
                     u'[{0}][{1}]'.format(title, ref),
-                    u'[{0}]({1})'.format(title, refs[title]))
+                    u'[{0}]({1})'.format(title, refs[ref]))
 
         return content
 
     def add_code_style(self, content):
-        print 'add_code_style'
         is_code = False
         code_start = u'<pre><code>'
         code_end = u'</code></pre>'
