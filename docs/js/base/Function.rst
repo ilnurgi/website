@@ -1,12 +1,23 @@
-Function - функция
-==================
+Функции и классы
+================
 
+В javascript нету классов в чистом виде
+
+
+Function
+--------
 
 .. js:class:: Function(args, function_body)
 
-    Функция/конструктор объектов
+    Функция/конструктор функции, которая возвращает функцию
 
     Наследник :js:class:`Object`
+
+    .. code-block:: js
+
+        var func = Function("x", "y", "return x + y;")
+        var result = func(20, 10)
+        // 30
 
 
     .. js:attribute:: __proto__
@@ -41,7 +52,9 @@ Function - функция
 
     .. js:function:: bind(obj[, arguments])
 
-        Возвращает новую функцию, которая вызывает данную как метод указанного объекта с указанными аргументами
+        Возвращает новую функцию,
+        которая вызывает данную,
+         как метод указанного объекта с указанными аргументами
 
         .. code-block:: js
 
@@ -53,21 +66,19 @@ Function - функция
 
         Вызывает функцию как метод указанного объекта
 
-    
+
+Анонимная функция
+-----------------
+
 .. code-block:: js
     
-    // анонимная функция
     (function(){
         var property = 1;
     })();
 
-    
-.. code-block:: js
 
-    var func = Function("x", "y", "return x + y;")
-    var result = func(20, 10)
-    // 30
-
+Примеры
+-------
 
 .. code-block:: js
 
@@ -100,10 +111,15 @@ Function - функция
 .. code-block:: js
 
     var a = 10;
-    (function() { console.log(a); })()
+    (function() {
+        console.log(a); }
+    )()
     // 10
 
-    (function() { console.log(a); var a = 1; })()
+    (function() {
+        console.log(a);
+        var a = 1;
+    })()
     // undefined
 
 

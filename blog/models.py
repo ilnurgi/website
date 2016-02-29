@@ -45,6 +45,9 @@ class Post(models.Model):
         self.content = self.add_code_style(
             markdown(
                 self.add_url_references(self.raw_content)))
+        super(Post, self).save(
+            force_insert=force_insert, force_update=force_update, using=using,
+            update_fields=update_fields)
 
     def add_url_references(self, content):
         refs = set([ref for title, ref in re_references.findall(content)])
