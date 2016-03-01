@@ -156,15 +156,7 @@ class Command(BaseCommand):
             'user_agents': user_agents,
         }
 
-        logs = self.collection_log.find(
-            {
-                'date': {
-                    '$gte': date_start,
-                    '$lt': date_end
-                }
-            })
-
-        for log in logs:
+        for log in self.get_logs(date_start, date_end):
             url = log['url']
             urls[url] = urls.setdefault(url, 0) + 1
 
@@ -193,3 +185,18 @@ class Command(BaseCommand):
 
     def drop(self):
         self.collection_log.drop()
+
+    def get_logs(self, date_start, date_end):
+        for i in xrange(40):
+            _date_start = date_start + datetime.timedelta(days=i)
+            _date_end = date_start + datetime.timedelta(days=i+1)
+            for log in self.collection_log.find(
+                {
+                    'date': {
+                        '$gte': _date_start,
+                        '$lt': _date_end
+                    }
+                }):
+                yield log
+            if _date_end == date_end:
+                break
