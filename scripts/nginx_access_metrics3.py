@@ -53,9 +53,9 @@ def parse(file_path):
 
 def calculate_for_month(date_start):
     def get_logs(date_start, date_end):
-        for i in xrange(40):
-            _date_start = date_start + datetime.timedelta(days=i)
-            _date_end = date_start + datetime.timedelta(days=i+1)
+        for i in xrange(31*2):
+            _date_start = date_start + datetime.timedelta(hours=12*i)
+            _date_end = date_start + datetime.timedelta(hours=12*(i+1))
             for log in db.log.find(
                 {
                     'date': {
