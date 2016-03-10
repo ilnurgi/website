@@ -78,7 +78,9 @@ class Command(BaseCommand):
         logger.debug(u'log_file_path={0}'.format(log_file_path))
         logger.debug(u'new_log_file_path={0}'.format(new_log_file_path))
 
-        if 'input_file' not in options and 'log_file_path' not in options:
+        if not all(
+                (options.get('input_file', None),
+                 options.get('log_file_path', None))):
             logger.debug(u'os rename')
             os.rename(log_file_path, new_log_file_path)
 
