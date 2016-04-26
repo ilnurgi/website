@@ -1,12 +1,15 @@
-.. sql doc documentation master file, created by
-   sphinx-quickstart on Mon Dec  9 11:47:52 2013.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+Конспекты по SQL
+================
 
-Welcome to sql doc's documentation!
-===================================
+SQL - язык программирования для манипулирования и управления базами данных
 
-Содержание:
+Группы операторов
+
+   * `DDl` - создающие объекты в базе
+
+   * `DML` - управляющие значениями в таблицах
+
+   * `DCL` - подтверждение прав пользователей
 
 .. toctree::
    :maxdepth: 2
