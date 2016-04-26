@@ -1,68 +1,132 @@
-Text
-====
-
-.. py:class:: Text(widget, **kwargs)
-
-    Виджет, многострочное текстовое поле. Поддерживает те же методы что и Entry, но индексы передаются в виде '1.0'
-
-    :param widget: родительский виджет
-    :param int height: высота виджета
-    :param int width: ширина виджета
-
-    .. py:method:: clipboard_clear()
-
-        Очищает буфер обмена
-
-    .. py:method:: clipboard_append(str)
-
-        Добавляет в буфер текст
+Text - виджет, поле ввода текста
+================================
 
 
-    .. py:method:: mark_set(type, pos)
+.. py:class:: Text(**kwargs)
+
+    Виджет, многострочное текстовое поле.
+
+    Наследник :py:class:`Widget`, :py:class:`XView`, :py:class:`YView`
+
+    * `autoseparators` -
+    * `exportselection` -
+    * `height` -
+    * `insertbackground` -
+    * `insertborderwidth` -
+    * `insertofftime` -
+    * `insertontime` -
+    * `insertwidth` -
+    * `maxundo` -
+    * `selectbackground` -
+    * `selectborderwidth` -
+    * `selectforeground` -
+    * `setgrid` -
+    * `spacing1` -
+    * `spacing2` -
+    * `spacing3` -
+    * `state` -
+    * `tabs` -
+    * `undo` -
+    * `xscrollcommand` -
+    * `yscrollcommand` -
+    * `width` -
+    * `wrap` - константа :ref:`const_wrap`
+
+
+    .. py:method:: get(index1, index2=None)
+
+        Возвращает символы в указанном промежутке
+
+        .. code-block:: py
+
+            text.get('1.0', 'END')
+
+
+    .. py:method:: delete(index1, index2)
+
+        Удаляет символы в указанном промежутке
+
+        .. code-block:: py
+
+            text.delete('1.0', 'END')
+
+
+    .. py:method:: index(index)
+    .. py:method:: index(mark)
+
+        Возвращает индекс индекса или индекс указанной метки
+
+
+    .. py:method:: insert(index, chars, *args)
+
+        Вставляет символы от указаннйой позиции
+
+        .. code-block:: py
+
+            text.insert(1.0, 'strings')
+            text.insert(INSERT, "Hello.....")
+            text.insert(END, "Bye Bye.....")
+
+
+    .. py:method:: mark_gravity(markName, direction=None)
+
+        Задает вес метке
+
+
+    .. py:method:: mark_names()
+
+        Возвращает список всех меток
+
+
+    .. py:method:: mark_set(markName, index)
 
         Устанавливает метку
 
-        :parsam type: tk.INSERT
-        :param str pos: позиция метки
+        .. code-block:: py
 
-        >>> t.mark_set(tk.INSERT, '2.5')
-        >>> t.mark_set('first', '2.5')
+            t.mark_set('first', '2.5')
 
-    .. py:method:: tag_add(name, start, end)
+
+    .. py:method:: mark_unset(*markNames)
+
+        Удаляет метки
+
+
+    .. py:method:: see(index)
+
+        Прокручивает виджет до указанной позиции
+
+
+    .. py:method:: tag_add(tagName, index1, *args)
 
         Добавляет тег в текст
 
-        :param str name: название тега
-        :param start: начало
-        :param end: конец
+        .. code-block:: py
 
-        >>> t.tag_add('tag', tk.SEL_FIRST, tk.SEL_LAST)
+            t.tag_add('tag', SEL_FIRST, SEL_LAST)
+            text.tag_add("here", "1.0", "1.4")
 
-    .. py:method:: tag_config(name, **kwargs)
+
+    .. py:method:: tag_config(tagName, cnf=None, **kwargs)
+    .. py:method:: tag_configure(tagName, cnf=None, **kwargs)
 
         Конфигурирует тег
 
-        :param str name: название тега
-        :param str background: фон
-        :param str foregraund: текст
-        :param typle font: параметры шрифта
+        .. code-block:: py
 
-        >>> t.tag_config('tag', background='black', foregraund='red', font=('times', 14, 'italic'))
+            t.tag_config('tag', background='black', foregraund='red', font=('times', 14, 'italic'))
+
+
+    .. py:method:: tag_delete(*tagNames)
+
+        Удаляет теги
+
+
+    .. py:method:: tag_remove(tagName, index1, index2=None)
+
+        Удаляет тег из указанного промежутка
+
 
     .. py:method:: see(pos)
 
         Прокручивает текстовое поле до позиции
-        
-    .. py:method:: selection_get(selection)
-
-        Конфигурирует тег
-
-        :param str name: название тега
-        :param str background: фон
-        :param str foregraund: текст
-        :param typle font: параметры шрифта
-
-        >>> t.tag_config('tag', background='black', foregraund='red', font=('times', 14, 'italic'))
-
-    .. py:attribute:: yview
-    .. py:attribute:: xview

@@ -1,17 +1,9 @@
-TopLevel
-========
+TopLevel - виджет, окно верхнего уровня
+=======================================
 
 
-.. py:class:: TopLevel(widget, **kwargs)
+.. py:class:: TopLevel(**kwargs)
 
-    Дополнительное окно
+    Окно верхнего уровня
 
-    :param widget: родительский виджет
-
-    .. py:method:: iconify()
-
-        Сворачивает окно в панель задач
-
-    .. py:method:: deiconify()
-
-        Разворачивает окно из панели задач
+    Наследник :py:class:`BaseWidget`, :py:class:`WM`

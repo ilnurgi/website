@@ -1,9 +1,15 @@
-Menubutton
-==========
+Menubutton - виджет, кнопка с выпадающим меню
+=============================================
 
 
-.. py:class:: Menubutton(widget, **kwargs)
+.. py:class:: Menubutton(**kwargs)
 
     Кнопка меню
 
-    :param widget: родительский виджет
+    Наследник :py:class:`Widget`
+
+    * `direction` - константа :ref:`const_side` или `above`
+    * `height` - высота кнопки, в виде количества строк
+    * `image` - картинка кнопки
+    * `menu` - :py:class:`Menu`, связь с меню
+    * `width` - ширина виджета

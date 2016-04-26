@@ -1,57 +1,60 @@
-Tk
-==
+Tk - базовый класс приложения
+=============================
 
 .. py:class:: Tk()
 
-    Основной объект, виджет, модуля, является основной формой, окном интерфейса.
+    Базовый класс приложения
+
+    Наследник :py:class:`WM`,  :py:class:`Misk`
 
     .. code-block:: py
 
-        import tkinter as tk
+        from Tkinter import Tk, Menu
 
-        window = tk.Tk()
+        # создаем наше приложение
+        window = Tk()
 
-    .. py:method:: geometry(str)
+        # создаем и добавляем меню, верхняя панель в приложение
+        menu = Menu()
+        window.config(menu=menu)
 
-        Устанавливает размеры окна, 'высотаХширина+Х+У'
+        # запускаем цикл обработки событий
+        window.mainloop()
 
-        >>> window.geometry(u'100х100+10+10')
+
+    .. py:attribute:: menu
+
+        Меню окна, объект Menu
+
+
+    .. py:method:: eval(code_str)
+
+        Выполнить строку на языке программирования tcl
+
+        .. code-block:: py
+
+            root.eval('package require tile; ttk::style theme use clam')
+            root.eval('ttk::button .b -text {ttk button}; pack .b')
+
+
+    .. py:method:: evalfile(file_path)
+
+        Выполняет код, записанный в файл.
 
 
     .. py:method:: iconbitmap(path)
 
         Устанавливает иконку окна
 
-        >>> window.title(u'key.ico')
+        .. code-block:: py
+
+            window.title(u'key.ico')
 
 
     .. py:method:: mainloop()
 
-        Отрисовывает форму
+        Отрисовывает форму и запускает цикл обработки событий
 
-        >>> window.mainloop()
+        .. code-block:: py
 
-
-    .. py:method:: maxsize(height, width)
-
-        Устанавливает максимальный размер окна
-
-        >>> window.maxsize(1024, 786)
-
-
-    .. py:method:: minsize(height, width)
-
-        Устанавливает минимальный размер окна
-
-        >>> window.minsize(124, 76)
-
-
-    .. py:method:: title(text)
-
-        Устанавливает заголовок окна
-
-        >>> window.title(u'Заголовок')
-
-    .. py:attribute:: menu
-
-        Меню окна, объект Menu
+            window.mainloop()

@@ -1,9 +1,19 @@
-LabelFrame
-==========
+LabelFrame - виджет, для группировки, с заголовком
+==================================================
 
-.. py:class:: LabelFrame(widget, text)
+
+.. py:class:: LabelFrame(**kwargs)
 
     Виджет, для группировки других виджетов с заголовком.
 
-    :param widget: родительский виджет
-    :param str text: заголовок
+    Наследник :py:class:`Widget`
+
+    * `background` -
+    * `class` -
+    * `colormap` -
+    * `container` -
+    * `height` -
+    * `labelanchor` -
+    * `labelwidget` -
+    * `visual` -
+    * `width` -

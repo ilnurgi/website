@@ -1,20 +1,48 @@
-Scale
-=====
+Scale - виджет, шкала выбора
+============================
 
-.. py:class:: Scale(widget, **kwargs)
 
-    Виджет, позволяет устанавливать некоторое значение
+.. py:class:: Scale(**kwargs)
 
-    :param widget: родительский виджет
-    :param from_: начальная позиция
-    :param to: конечная позиция
-    :param resolution: шаг
-    :param label: подпись виджета
-    :param int tickinterval: градуировка бегунка
-    :param int sliderlength: длина бегунка
-    :param orient: ориентация бегунка tk.HORIZONTAL
-    :param length: длина бегунка
+    виджет, шкала выбора
 
-    .. py:method:: coords()
+    Наследник :ref:class:`Widget`
+
+    * `command` - обработчик изменения значения виджета
+    * `digits` -
+    * `from` - начальная позиция
+    * `label` - подпись виджета
+    * `length` - длина бегунка
+    * `orient` - константа :ref:`const_orient`
+    * `repeatdelay` -
+    * `repeatinterval` -
+    * `resolution` - шаг
+    * `showvalue` -
+    * `sliderlength` - длина бегунка
+    * `sliderrelief` -
+    * `state` -
+    * `tickinterval` - градуировка бегунка
+    * `to` - конечная позиция
+    * `troughcolor` -
+    * `variable` -
+    * `width` -
+
+
+    .. py:method:: coords(value=None)
 
         Возвращает кортеж (х, у) положение слайдера относительно шкалы.
+
+
+    .. py:method:: get()
+
+        Возвращает текущее значение
+
+
+    .. py:method:: identify(x, y)
+
+        Возвращает значение, соответсвующее указанной позиции
+
+
+    .. py:method:: set(value)
+
+        Утсанавливает текущее значение

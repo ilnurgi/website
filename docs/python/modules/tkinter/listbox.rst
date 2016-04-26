@@ -1,23 +1,71 @@
-Listbox
-=======
+Listbox - виджет, список
+========================
 
-.. py:class:: Listbox(widget, **kwargs)
 
-    Невыпадающий список, виджет.
+.. py:class:: Listbox(**kwargs)
 
-    :param widget: родительский виджет
-    :param selectmode: tk.BROWSE, tk.SINGLE, tk.MULTIPLE, tk.EXTENDED
+    Виджет список
+
+    Наследник :py:class:`Widget`, :py:class:`XView`, :py:class:`YView`
+
+    * `exportselection` -
+    * `listvariable` -
+    * `selectbackground` - строка, цвет фона выбранного элемента
+    * `selectborderwidth` - строка, ширина границы выбранного элемента
+    * `selectforeground` - строка, цвет текста выбранного элемента
+    * `selectmode` - константа :ref:`const_listbox_select`, выбор элементов списка
+    * `setgrid` -
+    * `width` -
+    * `xscrollcommand` - виджет горизонтальной прокрутки
+    * `yscrollcommand` - виджет вертикальнной прокрутки
+
+
+    .. py:method:: activate(index)
+
+        Активирует элемент по указанному индексу
 
 
     .. py:method:: curselection()
 
         Возвращает кортеж, выбранных значений
 
-    .. py:method:: get(index)
 
-        Возвращает элемент по индексу. (tk.ACTIVE)
+    .. py:method:: delete(first, last=None)
 
-    .. py:method:: insert(pos, str)
+        Удаляет элементы из виджета
 
-        Добавляет в виджет элемент
+        .. code-block:: py
+
+            # удалить все эелементы из виджета
+            listbox.delete(0, END)
+
+
+    .. py:method:: get(first, last=None)
+
+        Возвращает элемент по позиции или элементы промежутка
+
+
+    .. py:method:: index(i)
+
+        Возвращает индекс индекса
+
+
+    .. py:method:: insert(pos, *elements)
+
+        Добавляет в виджет элементы
+
+
+    .. py:method:: nearest(y)
+
+        Возвращает индекс видимого элемента, ближайшего к указанной координает
+
+
+    .. py:method:: see(index)
+
+        Прокручивает виджет до указанного индекса
+
+
+    .. py:method:: size()
+
+        Возвращает количесвто элементов в виджете
 

@@ -50,6 +50,11 @@
    time
    timeit
    tkinter/index
+   ttk/index
+   tkFileDialog
+   tkFont
+   tkColorChooser
+   tkMessageBox
    traceback
    types
    unittest
