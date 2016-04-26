@@ -83,7 +83,10 @@ class Post(models.Model):
                 _lexer = line[code_start_len:].strip()
             elif line.endswith(code_end):
                 is_code = False
-                lexer = get_lexer_by_name(_lexer, stripall=True)
+                try:
+                    lexer = get_lexer_by_name(_lexer, stripall=True)
+                except ValueError:
+                    lexer = get_lexer_by_name('text', stripall=True)
                 formatter = HtmlFormatter()
                 result.append(
                     highlight(
