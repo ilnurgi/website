@@ -139,12 +139,21 @@
 
     Объявляет константу модуля
 
-    :param str name: константа
-    :param val: значение
+    .. code-block:: js
 
-    ::
+        app.constant('CONST', 123);
 
-        app.constant('CONST', 123)
+
+.. js:function:: app.config(function)
+
+    Конфигурирует модуль
+
+    .. code-block:: js::
+
+        app.config(function($routeProvider){
+            $routeProvider
+                .otherwise({redirectTo: '/'})
+        });
 
 
 .. js:function:: app.directive(name, callback)
@@ -162,3 +171,18 @@
                 restrict: 'A'
             }
         )
+
+.. js:function:: app.run()
+
+    .. code-block:: js
+
+        angular
+        .module('app', [])
+        .run(function(){
+            ...
+        });
+
+
+.. js:function:: app.value(key, value)
+
+    Объявляет переменную в модуле

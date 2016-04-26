@@ -1,14 +1,11 @@
 Фильтры
 =======
 
-Фильтры это вспомогательные функции
-
-
 .. js:attribute:: date
 
     Форматирует дату по укзанному шаблону
 
-    .. code-block: js
+    .. code-block:: js
 
         {{ today | date:'dd/MM/yyyy' }}
         // 23.05.1970
@@ -19,7 +16,7 @@
 
     Форматирует строку двумя знаками после запятой и символом доллар
 
-    .. code-block: js
+    .. code-block:: js
 
         {{ 234 | curency}}
         // $234.00
@@ -29,10 +26,15 @@
 
     Фильтрует массив
 
-    .. code-block:: js
+    .. code-block:: html
+
+        <script type="text/javascript">
+            function functionFromScope(item){}
+        </script>
 
         Search: <input ng-model="query">
-        // промежуточное сохранение выборки
+        
+        <!-- промежуточное сохранение выборки -->
         <li ng-repeat="friend in data = (friends | filter:query)"></li>
 
         <li ng-repeat="friend in friends | filter:query"></li>
@@ -42,14 +44,12 @@
         // функция сортировки
         <li ng-repeat="friend in friends | filter:functionFromScope"></li>
 
-        function functionFromScope(item){}
-
 
 .. js:attribute:: json
 
     Форматирует объект, в удобно читаемый вид
 
-    .. code-block: js
+    .. code-block:: js
 
         {{ {'key': 'value'} | json }}
 
@@ -58,7 +58,7 @@
 
     Ограничивает стрку указанным размером
 
-    .. code-block: js
+    .. code-block:: js
 
         {{ 'VeryLongString' | limitTo:10 }}
 
@@ -67,7 +67,7 @@
 
     Приводит строку к нижнему регистру
 
-    .. code-block: js
+    .. code-block:: js
 
         {{ 'VeryLongString' | lowercase }}
         // verylongstring
@@ -77,7 +77,7 @@
 
     Форматирует число
 
-    .. code-block: js
+    .. code-block:: js
 
         {{ 12345.1 | number }}
         // 1,2345.100
@@ -85,9 +85,9 @@
 
 .. js:attribute:: orderby
 
-    Сортирует массив    
+    Сортирует массив
 
-    .. code-block: js
+    .. code-block:: html
 
         <li ng-repeat="friend in friends | orderBy:predicate:reverse"></li>
         <li ng-repeat="friend in friends | orderBy:sortField"></li>
@@ -99,10 +99,24 @@
 
     Приводит строку к верхнему регистру
 
-    .. code-block: js
+    .. code-block:: js
 
         {{ 'VeryLongString' | upercase }}
         // VERYLONGSTRING
 
 
 
+Свои фильтр
+-----------
+
+.. code-block:: js
+
+    angular
+    .module('app', [])    
+    .filter(
+        'first_filter', 
+        function(){
+            return function(value){
+                return '2,' + value;
+            };
+    })
