@@ -45,27 +45,39 @@ Object - объект
 
         .. code-block::
 
-            var o = new Object();         // Соз­дать объ­ект
-            o.x = 3.14;                   // Оп­ре­де­лить не­унас­ле­до­ван­ное свой­ст­во
-            o.hasOwnProperty("x");        // Вер­нет true: x – это ло­каль­ное свой­ст­во o
-            o.hasOwnProperty("y");        // Вер­нет false: o не име­ет свой­ст­ва y
-            o.hasOwnProperty("toString"); // Вер­нет false: свой­ст­во toString унас­ле­до­ва­но
+            var o = new Object();         // Создать объект
+            o.x = 3.14;                   // Определить неунаследованное свойство
+            o.hasOwnProperty("x");        // Вернет true: x – это локальное свойство o
+            o.hasOwnProperty("y");        // Вернет false: o не имеет свойства y
+            o.hasOwnProperty("toString"); // Вернет false: свойство toString унаследовано
 
     .. js:function:: isPrototypeOf(obj)
 
-        Яв­ля­ет­ся ли дан­ный объ­ект про­то­ти­пом для ука­зан­но­го объ­ек­та
+        Является ли данный объект прототипом для указанного объекта
 
         .. code-block:: js
 
-            var o = new Object();                         // Соз­дать объ­ект
-            Object.prototype.isPrototypeOf(o)             // true: o – объ­ект
-            Function.prototype.isPrototypeOf(o.toString); // true: toString – функ­ция
-            Array.prototype.isPrototypeOf([1,2,3]);       // true: [1,2,3] – мас­сив
-            // Ту же про­вер­ку мож­но вы­пол­нить дру­гим спо­со­бом
-            (o.constructor == Object); // true: o соз­дан с по­мо­щью кон­ст­рук­то­ра Object()
-            (o.toString.constructor == Function);         // true: o.toString – функ­ция
-            // Объ­ек­ты-про­то­ти­пы са­ми име­ют про­то­ти­пы. Сле­дую­щий вы­зов вер­нетtrue, по­ка­зы­вая, что
-            // объ­ек­ты-функ­ции на­сле­ду­ют свой­ст­ва от Function.prototype, а так­же от Object.prototype.
+            var o = new Object();
+            // Создать объект
+
+            Object.prototype.isPrototypeOf(o)
+            // true: o – объект
+
+            Function.prototype.isPrototypeOf(o.toString);
+            // true: toString – функция
+
+            Array.prototype.isPrototypeOf([1,2,3]);
+            // true: [1,2,3] – массив
+
+            // Ту же проверку можно выполнить другим способом
+            (o.constructor == Object);
+            // true: o создан с помощью конструктора Object()
+
+            (o.toString.constructor == Function);
+            // true: o.toString – функция
+
+            // Объекты-прототипы сами имеют прототипы. Следующий вызов вернет true, показывая, что
+            // объекты-функции наследуют свойства от Function.prototype, а так­же от Object.prototype.
             Object.prototype.isPrototypeOf(Function.prototype);
 
 
@@ -101,13 +113,13 @@ Object - объект
 
 .. js:function:: create(prototype[, descriptors]) 
 
-    Соз­да­ет но­вый объ­ект с ука­зан­ным про­то­ти­пом и свой­ст­ва­ми.
+    Создает новый объект с указанным прототипом и свойствами.
 
     .. versionadded:: ECMAScript5
 
     .. code-block:: js
 
-        // Соз­дать объ­ект, ко­то­рый име­ет соб­ст­вен­ные свой­ст­ва x и y и на­сле­ду­ет свой­ст­во z
+        // Создать объект, который имеет собственные свойства x и y и наследует свойство z
         var p = Object.create({z:0}, {
             x: { 
                 value: 1, 
@@ -230,13 +242,14 @@ Object - объект
 
 .. js:function:: keys(obj) 
 
-    Воз­вра­ща­ет мас­сив имен не­унас­ле­до­ван­ных пе­ре­чис­ли­мых свойств в ука­зан­ном объ­ек­те.
+    Возвращает массив имен неунаследованных перечислимых свойств в указанном объекте.
 
     .. versionadded:: ECMAScript5
 
     .. code-block:: js
 
-        Object.keys({x:1, y:2}) // => ["x", "y"]
+        Object.keys({x:1, y:2})
+        // ["x", "y"]
 
     
 .. js:function:: preventExtensions(obj) 

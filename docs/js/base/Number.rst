@@ -144,23 +144,23 @@ Number - число
 
     .. js:function:: toExponential([offset])
 
-        Фор­ма­ти­ру­ет чис­ло в экс­по­нен­ци­аль­ную фор­му пред­став­ле­ния
+        Форматирует число в экспоненциальную форму представления
 
         .. code-block:: js
 
             var x = 123456789;
 
             x.toExponential();
-            //'1.23456789e+8'
+            // '1.23456789e+8'
 
             x.toExponential(1);
-            //'1.2e+8'
+            // '1.2e+8'
 
             x.toExponential(2);
-            //'1.23e+8'
+            // '1.23e+8'
 
             x.toExponential(3);
-            //'1.235e+8'
+            // '1.235e+8'
 
 
     .. js:function:: toFixed([offset])
@@ -172,16 +172,16 @@ Number - число
             var y = 43.81327;
             
             y.toFixed();
-            //'44'
+            // '44'
 
             y.toFixed(1);
-            //'43.8'
+            // '43.8'
             
             y.toFixed(2);
-            //'43.81'
+            // '43.81'
             
             y.toFixed(3);
-            //'43.813'
+            // '43.813'
 
 
     .. js:function:: toPrecission()
@@ -195,3 +195,47 @@ Number - число
 
             n.toPrecission(4);
             // '1.235e+4'
+
+    .. js:function:: toString()
+
+        Возвращает строковое представление числа
+
+        .. code-block:: js
+
+            var n = 7432;
+
+            n.toString();
+            // '7432'
+
+            n.toString(2);
+            // '1110100001000'
+
+
+Битовые операции
+----------------
+
+.. code-block:: js
+
+    var a = 5;
+    var b = 13;
+
+    a | b;
+    // OR, 13
+
+    a & b;
+    // AND, 5
+
+    a ^ b;
+    // XOR, 8
+
+    ~a;
+    // NOT, -6
+
+    a >> b;
+    // RIGHT SHIFT, 0
+
+    a << b:
+    // LEFT SHIFT, 40960
+
+    a >>> b;
+    // ZERO FILLED RIGHT SHIFT, 0

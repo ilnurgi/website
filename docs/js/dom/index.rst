@@ -1,8 +1,39 @@
 DOM - дерево html документа
 ===========================
 
+DOM - объектная модель документа.
+
+Каждому тегу на странице, в соответсвие ставится свой объект.
+
+Свойства объекта являются атрибутами тега.
+
 .. toctree::
    :maxdepth: 2
+
+   Navigator
+   Screen
+   Location
+
+   Document
+   Node
+   NodeList
+
+   Element
+   HTMLCollection
+   HTMLFormElement
+   HTMLImageElement
+   HTMLInputElement
+   HTMLOptionElement
+   HTMLSelectElement
+   HTMLTableCellElement
+   HTMLTableElement
+   HTMLTableRowElement
+   HTMLTableSectionElement
+   HTMLTextAreaElement
+
+   Characterdata
+   Text
+   Comment
 
    ApplicationCache
    ArrayBuffer
@@ -15,23 +46,9 @@ DOM - дерево html документа
    Button
    Canvas
    Console
-   Document
-   Element
-   HTMLFormElement
-   HTMLInputElement
-   HTMLOptionElement
-   HTMLSelectElement
-   HTMLTableCellElement
-   HTMLTableElement
-   HTMLTableRowElement
-   HTMLTableSectionElement
-   HTMLTextAreaElement
    History
    Image
    LocalStorage
-   Location
-   Navigator
-   Screen
    SessionStorage
    Window
    ajax
@@ -43,7 +60,7 @@ DOM - дерево html документа
    CanvasRenderingContext2D
    ClientRect
    CloseEvent
-   Comment
+
    ConsoleCommandLine
    Context
    DOMException
@@ -85,8 +102,6 @@ DOM - дерево html документа
    Meter
    MouseEvent
    NamedNodeMap
-   Node
-   NodeList
    Option
    Output
    PageTransitionEvent
@@ -103,7 +118,7 @@ DOM - дерево html документа
    TableCell
    TableRow
    TableSection
-   Text
+
    TextArea
    TextMetrics
    TimeRanges

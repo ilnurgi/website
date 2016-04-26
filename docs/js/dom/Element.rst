@@ -1,5 +1,5 @@
-Element(HTMLElement) - узел дом дерева документа
-===================================
+Element(HTMLElement) - элемент узла дом дерева
+==============================================
 
 .. js:class:: Element()
 
@@ -81,6 +81,10 @@ Element(HTMLElement) - узел дом дерева документа
     .. js:attribute:: innerHTML
 
         Содержимое элемента
+
+        .. code-block:: js
+
+            Element.innerHTML = '<div>Потомок</div>'
 
 
     .. js:attribute:: isContentEditable
@@ -195,6 +199,10 @@ Element(HTMLElement) - узел дом дерева документа
 
         Задает обработчик некоторого события для элемента
 
+        .. code-block:: js
+
+            button.addEventListener('click', function(evt){});
+
 
     .. js:function:: Blur()
     .. js:function:: blur()
@@ -307,6 +315,10 @@ Element(HTMLElement) - узел дом дерева документа
     .. js:function:: removeEventListener()
 
         Удаляет обработчик события для данного элемента
+
+        .. code-block:: js
+
+            button.removeEventListener('click', my_function)
 
 
     .. js:function:: scrollIntoView([boolean top])

@@ -54,7 +54,7 @@ Window - окно, вкладка или фрейм веб-броузера
 
     .. js:attribute:: frames
 
-        Массив объектов
+        Массив фреймов страницы
 
 
     .. js:attribute:: history
@@ -158,7 +158,16 @@ Window - окно, вкладка или фрейм веб-броузера
 
     .. js:attribute:: onpopstate 
 
-        Ко­гда бро­узер за­гру­жа­ет но­вую стра­ни­цу или вос­ста­нав­ли­ва­ет со­стоя­ние, со­хра­нен­ное с по­мо­щью ме­то­да History.pushState() или History.replaceState(). См. PopStateEvent.
+        Обработчик загрузки новой страницы
+        или восстанавливание состояния,
+        сохраненное с помощью метода History.pushState()
+        или History.replaceState()
+
+        .. code-block:: js
+
+            window.onpopstate = function(){
+                ...
+            };
 
 
     .. js:attribute:: onresize 
@@ -367,18 +376,33 @@ Window - окно, вкладка или фрейм веб-броузера
 
     .. js:function:: isNan(obj)
         
-        оп­ре­де­ля­ет, яв­ля­ет­ся ли ар­гу­мент не­чи­сло­вым зна­че­ни­ем
+        Возвращает булево, является ли аргумент нечисловым значением
 
         .. code-block:: js
 
-            isNaN(0);                 // false
-            isNaN(0/0);               // true
-            isNaN(parseInt("3"));     // false
-            isNaN(parseInt("hello")); // true
-            isNaN("3");               // false
-            isNaN("hello");           // true
-            isNaN(true);              // false
-            isNaN(undefined);         // true
+            isNaN(0);
+            // false
+
+            isNaN(0/0);
+            // true
+
+            isNaN(parseInt("3"));
+            // false
+
+            isNaN(parseInt("hello"));
+            // true
+
+            isNaN("3");
+            // false
+
+            isNaN("hello");
+            // true
+
+            isNaN(true);
+            // false
+
+            isNaN(undefined);
+            // true
 
 
     .. js:attribute:: open(url, window_title, window_params)
@@ -408,19 +432,26 @@ Window - окно, вкладка или фрейм веб-броузера
 
         .. code-block:: js
 
-            parseInt(“18”); // 18
+            parseInt(“18”);
+            // 18
         
-            parseInt(“19kdjas”); // 19
+            parseInt(“19kdjas”);
+            // 19
         
-            parseInt(“74.54”); // 74
+            parseInt(“74.54”);
+            // 74
 
-            parseInt("ff"); // Nan
+            parseInt("ff");
+            // Nan
 
-            parseInt("ff", "16"); //255
+            parseInt("ff", "16");
+            // 255
         
-            parseInt(“0x10”); // 16
+            parseInt(“0x10”);
+            // 16
             
-            parseInt(“0x10”,”10”); // 0
+            parseInt(“0x10”,”10”);
+            // 0
 
 
     .. js:function:: postMessage(any message, string targetOrigin, [MessagePort[] ports])
@@ -437,11 +468,20 @@ Window - окно, вкладка или фрейм веб-броузера
 
     .. js:function:: prompt(message, default_value)
 
-        Ме­тод prompt() вы­во­дит со­об­ще­ние message в  диа­ло­го­вом ок­не, со­дер­жа­щем по­ле вво­да и  кноп­ки OK и  Cancel, и  бло­ки­ру­ет ра­бо­ту сце­на­рия, по­ка поль­зо­ва­тель не щелк­нет на од­ной из кно­пок.
+        Выводит сообщение `message` в  диалоговом окне,
+        содержащем поле ввода и  кнопки `OK` и  `Cancel`,
+        и  блокирует работу сценария, пока пользователь не щелкнет на одной из кнопок.
         
-        Ес­ли поль­зо­ва­тель щелк­нет на кноп­ке Cancel, ме­тод prompt() вер­нет null. Ес­ли поль­зо­ва­тель щелк­нет на кноп­ке OK, ме­тод prompt() вер­нет зна­че­ние, ука­зан­ное в этот мо­мент в по­ле вво­да.
+        Если пользователь щелкнет на кнопке `Cancel`, метод вернет null.
+
+        Если пользователь щелкнет на кнопке `OK`, метод вернет значение,
+        указанное в этот момент в поле ввода.
         
-        Ар­гу­мент default оп­ре­де­ля­ет на­чаль­ное со­дер­жи­мое по­ля вво­да.
+        Аргумент `default_value` определяет начальное содержимое поля ввода.
+
+        .. code-block:: js
+
+            var userName = prompt('What is your name?)
 
 
     .. js:function:: scroll(long x, long y)

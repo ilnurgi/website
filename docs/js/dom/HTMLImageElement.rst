@@ -1,0 +1,4 @@
+HTMLImageElement
+================
+
+.. js:class:: HTMLImageElement()

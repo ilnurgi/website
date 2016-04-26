@@ -4,6 +4,11 @@
 .. toctree::
    :maxdepth: 2
 
+   Number
+   String
+   Object
+   Function
+
    Array
    Boolean
    Date
@@ -16,16 +21,12 @@
    TypeError
    URIError
 
-   Function
    JSON
    Infinity
    Math
    NaN
-   Number
    RegExp
-   String
    Symbol
-   Object
-   
+
    oper
    undefined

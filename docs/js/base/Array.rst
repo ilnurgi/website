@@ -83,10 +83,14 @@ Array - массивы
 
         .. code-block:: js
 
-            [1, 2, 3].every(function(x){ return x < 5});
+            [1, 2, 3].every(function(item, index, array){
+                return x < 5
+            });
             // true
 
-            [1, 2, 3].every(function(x){ return x < 3});
+            [1, 2, 3].every(function(item, index, array){
+                return x < 3
+            });
             // false
 
 
@@ -99,7 +103,9 @@ Array - массивы
 
         .. code-block:: js
 
-            [1,2,3].filter(function(x) { return x > 1; }); 
+            [1,2,3].filter(function(item, index, array) {
+                return item > 1;
+            });
             // [2, 3]
 
 
@@ -111,7 +117,7 @@ Array - массивы
 
         .. code-block:: js
 
-            [1, 2, 3].forEach(function(array[i], i, array){
+            [1, 2, 3].forEach(function(item, index, array){
                 ...
             }); 
 
@@ -171,10 +177,10 @@ Array - массивы
 
         .. code-block:: js
 
-            [1,2,3].map(function(x) { 
-                return x*x; 
+            [1, 2, 3].map(function(item, index, array) {
+                return item * item;
             }); 
-            // [1,4,9]
+            // [1, 4, 9]
 
             
     .. js:function:: pop()
@@ -220,7 +226,8 @@ Array - массивы
 
     .. js:function:: reduceRight(callback[, int start=0])
 
-        Вычисляет значение на основе элементов данного массива, спарва налево, свертка массива
+        Вычисляет значение на основе элементов данного массива,
+        спарва налево, свертка массива
 
         .. versionadded:: ECMAScript5
 
@@ -276,14 +283,26 @@ Array - массивы
 
         .. code-block:: js
 
-            [1,2,3].some(function(x) { return x > 5; }) // => false: нет эле­мен­тов > 5
-            [1,2,3].some(function(x) { return x > 2; }) // => true: не­ко­то­рые > 3
-            [].some(function(x) { return true; });      // => false: все­гда false для []
+            [1,2,3].some(function(item, index, array) {
+                return x > 5;
+            })
+            // => false: нет эле­мен­тов > 5
+
+            [1,2,3].some(function(item, index, array) {
+                return x > 2;
+            })
+            // => true: не­ко­то­рые > 3
+
+            [].some(function(item, index, array) {
+                return true;
+            });
+            // => false: все­гда false для []
 
 
     .. js:function:: sort([sorter_func])
 
-        Сортирует массив
+        Сортирует массив, принимает функцию сравнения,
+        которая может вернуть -1, 0, 1
 
         .. code-block:: js
 

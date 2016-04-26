@@ -198,3 +198,35 @@ delete
     del a[1];
     a;
     // [4]
+
+typeof
+------
+
+Тип объекта
+
+.. code-block:: js
+
+    typeof true;
+    // 'boolean'
+
+
+debugger
+--------
+
+Устанавливает точу останова для интерпретатора
+
+.. code-block:: js
+
+    function(){
+        debugger;
+    };
+
+
+use strict
+----------
+
+Директива включает строгий режим
+
+.. code-block:: js
+
+    'use strict';

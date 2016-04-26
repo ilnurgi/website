@@ -1,5 +1,5 @@
-Document(HTMLDocument) - текущий документ страницы
-====================================
+Document(HTMLDocument) - корневой элемент дерева
+================================================
 
 .. js:class:: Document()
 .. js:class:: HTMLDocument()
@@ -26,8 +26,18 @@ Document(HTMLDocument) - текущий документ страницы
 
     .. js:attribute:: activeElement
         
-        Эле­мент до­ку­мен­та :js:class:`Element`, вла­дею­щий в на­стоя­щий мо­мент фо­ку­сом вво­да.
+        Элемент документа :js:class:`Element`, владею­щий в настоящий момент фокусом ввода.
 
+
+    .. js:attribute:: all
+
+        Коллекция, :js:class:`HTMLAllCollection`,
+        всех элементов дерева, в порядке их появления в разметке
+
+        .. code-block:: js
+
+            document.all;
+            // HTMLAllCollection[11]
 
     .. js:attribute:: anchors
 
@@ -115,7 +125,7 @@ Document(HTMLDocument) - текущий документ страницы
 
     .. js:attribute:: forms
 
-        Массив :js:class:`Form` на странице
+        Коллекция всех форм, :js:class:`Form`, на странице
 
 
     .. js:attribute:: head
@@ -145,7 +155,7 @@ Document(HTMLDocument) - текущий документ страницы
 
     .. js:attribute:: links
 
-        Массив ссылок на странице
+        Коллекция ссылок на странице
 
 
     .. js:attribute:: location
@@ -169,12 +179,12 @@ Document(HTMLDocument) - текущий документ страницы
 
     .. js:attribute:: scripts
         
-        Объ­ект, по­доб­ный мас­си­ву, со­дер­жа­щий все эле­мен­ты <script>, при­сут­ст­вую­щие в до­ку­мен­те.
+        Коллекция, содержащий все элементы <script>, присутствующие в документе.
 
 
     .. js:attribute:: styleSheets
         
-        Кол­лек­ция :js:class:`CSSStyleSheet`, пред­став­ляю­щих все таб­ли­цы сти­лей, встро­ен­ные в  до­ку­мент, или на ко­то­рые есть ссыл­ки из не­го. В HTML-до­ку­мен­тах они вклю­ча­ют таб­ли­цы сти­лей, оп­ре­де­лен­ные с по­мо­щью те­гов <link> и <style>.
+        Коллекция стилей, :js:class:`CSSStyleSheet`, присутсвующих в документе
 
 
     .. js:attribute:: title
@@ -215,9 +225,13 @@ Document(HTMLDocument) - текущий документ страницы
         Создает и возвращает :js:class:`DocumentFragment` пустой фрагмент документа
 
 
-    .. js:function:: createElement(html_cod)
+    .. js:function:: createElement(tagname)
 
-        Создает и возвращает новый :js:class:`Element`
+        Создает и возвращает новый :js:class:`Element`, указанного типа
+
+        .. code-block:: js
+
+            var input_element = document.createElement('input');
 
 
     .. js:function:: createElementNS(namespace, qualifiedName)
@@ -372,15 +386,6 @@ Document(HTMLDocument) - текущий документ страницы
     
         Воз­вра­ща­ет со­стоя­ние ука­зан­ной ко­ман­ды в ви­де стро­ки. 
 
-
-    .. js:function:: querySelector(string selectors)
-    
-        Воз­вра­ща­ет пер­вый эле­мент :js:class:`Element` в дан­ном до­ку­мен­те, со­от­вет­ст­вую­щий CSS-се­лек­то­рам selectors (это мо­жет быть един­ст­вен­ный CSS-се­лек­тор или груп­па се­лек­то­ров, раз­де­лен­ных за­пя­ты­ми).
-
-
-    .. js:function:: querySelectorAll(string selectors)
-    
-        Воз­вра­ща­ет мас­си­в :js:class:`NodeList`, со­дер­жа­щий все эле­мен­ты Element в  дан­ном до­ку­мен­те, со­от­вет­ст­вую­щие се­лек­то­рам selectors (это мо­жет быть един­ст­вен­ный CSS-се­лек­тор или груп­па се­лек­то­ров, раз­де­лен­ных за­пя­ты­ми). В от­ли­чие от объ­ек­тов NodeList, воз­вра­щае­мых ме­то­дом getElementsByTagName() и ана­ло­гич­ны­ми ему, объ­ект NodeList, воз­вра­щае­мый этим ме­то­дом, яв­ля­ет­ся ста­ти­че­ским и со­дер­жит эле­мен­ты, со­от­вет­ст­вую­щие се­лек­то­рам, су­ще­ст­во­вав­шие на мо­мент вы­зо­ва ме­то­да.
 
     .. js:function:: write(text[, text1 [...]])
 

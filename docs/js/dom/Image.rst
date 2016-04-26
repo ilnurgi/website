@@ -1,9 +1,8 @@
-Image(HTMLImageElement) - HTML img
-==================================
+Image - HTML img
+================
 
 
 .. js:class:: Image([w, h])
-.. js:class:: HTMLImageElement()
 
     Наследник :js:class:`Element`
 

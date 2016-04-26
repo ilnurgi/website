@@ -14,10 +14,18 @@ Context - контекст канвас страницы
 
         Цвет заливки, можно задать через :js:class:`CanvasGradient`, :js:class:`CanvasPattern`
 
+        .. code-block:: js
+
+            ctx.fillStyle = 'red';
+
 
     .. js:attribute:: font
 
         Шрифт для рисования текста
+
+        .. code-block:: js
+
+            ctx.font = '14px Arial';
 
 
     .. js:attribute:: globalAlpha
@@ -76,7 +84,11 @@ Context - контекст канвас страницы
 
     .. js:attribute:: lineWidth
 
-        Ширина линии
+        Толщина линий обводки
+
+        .. code-block:: js
+
+            ctx.lineWidth = 3;
 
 
     .. js:attribute:: miterLimit
@@ -103,6 +115,10 @@ Context - контекст канвас страницы
 
         Цвет линии, можно задать через :js:class:`CanvasGradient`, :js:class:`CanvasPattern`
 
+        .. code-block:: js
+
+            ctx.strokeStyle = 'red';
+
 
     .. js:attribute:: textAlign
 
@@ -119,6 +135,10 @@ Context - контекст канвас страницы
 
         Рисование дуг
 
+        .. code-block:: js
+
+            ctx.arc(100, 100, 30, 0, Math.PI * 2);
+
 
     .. js:function:: arcTo(x1, y1, x2, y2, radius)
 
@@ -128,6 +148,10 @@ Context - контекст канвас страницы
     .. js:function:: beginPath();
 
         Начинаем рисование геометрической фигуры
+
+        .. code-block:: js
+
+            ctx.beginPath();
 
 
     .. js:function:: bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y)
@@ -139,6 +163,10 @@ Context - контекст канвас страницы
 
         Очистка указанной области
 
+        .. code-block:: js
+
+            ctx.clearRect(0, 0, 50, 50);
+
 
     .. js:function:: clip()
 
@@ -148,6 +176,10 @@ Context - контекст канвас страницы
     .. js:function:: closePath()
 
         Замыкаем линии геометрической фигуры
+
+        .. code-block:: js
+
+            ctx.closePath();
 
 
     .. js:function:: createImageData(imagedata)
@@ -181,7 +213,7 @@ Context - контекст канвас страницы
         Возвращает :js:class:`CanvasGradient`
 
 
-    .. js:function:: drawImage(img, x, y[w, h])
+    .. js:function:: drawImage(img, x, y[, w, h])
     .. js:function:: drawImage(img, sx, sy, sw, sh, dx, dy, dw, dh)
 
         Рисуем на канвасе картинку
@@ -194,12 +226,20 @@ Context - контекст канвас страницы
 
     .. js:function:: fillRect(x, y, h, w)
 
-        Залить замкнутый контур
+        Залить замкнутый контур, прямоуголник
+
+        .. code-block:: js
+
+            ctx.fillRect(0, 0, 100, 100);
 
 
     .. js:function:: fillText(text, x, y[, maxWidth])
 
         Рисует текст
+
+        .. code-block:: js
+
+            ctx.fillText('Hello', 0, 0);
 
 
     .. js:function:: getImageData(sx, sy, sw, sh)
@@ -216,6 +256,10 @@ Context - контекст канвас страницы
 
         Рисуем линию от текущего положения маркера, до указанной
 
+        .. code-block:: js
+
+            ctx.lineTo(0, 0);
+
 
     .. js:function:: measureText(text)
 
@@ -225,6 +269,10 @@ Context - контекст канвас страницы
     .. js:function:: moveTo(x, y)
 
         Перемещаем маркер на указанную позицию
+
+        .. code-block:: js
+
+            ctx.moveTo(0, 0);
 
 
     .. js:function:: putImageData(imagedata, dx, dy[, sx, sy, sw, sh])
@@ -239,7 +287,11 @@ Context - контекст канвас страницы
 
     .. js:function:: rect(x, y, w, h)
 
-        Рисование прямоугольников
+        Рисование прямоугольника
+
+        .. code-block:: js
+
+            ctx.rect(100, 100, 30, 30);
 
 
     .. js:function:: restore()
@@ -271,10 +323,18 @@ Context - контекст канвас страницы
 
         Отрисовать все
 
+        .. code-block:: js
+
+            ctx.stroke();
+
 
     .. js:function:: strokeRect(x, y, w, h)
 
-        Отрисовка прямоугоника
+        Отрисовка прямоугоника без заливки
+
+        .. code-block:: js
+
+            ctx.fillRect(0, 0, 100, 100);
 
 
     .. js:function:: strokeText(text, x, y[, maxWidth])

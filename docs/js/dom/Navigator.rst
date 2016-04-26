@@ -1,5 +1,5 @@
-Navigator - свойства браузера
-=============================
+Navigator - содержит информацию о браузере и операционной системе
+=================================================================
 
 .. js:class:: Navigator()
 
@@ -37,10 +37,23 @@ Navigator - свойства браузера
 
     .. js:attribute:: platform
 
-        Аппаратная платформа, на которой работает браузер
+        Аппаратная платформа, на которой работает браузер,
+        позволяет различать Windows/Linux/Mac и т.д.
+
+        .. code-block:: js
+
+            navigator.platform;
+            //
 
 
     .. js:attribute:: userAgent
+
+        Информация о браузере
+
+        .. code-block:: js
+
+            navigator.userAgent;
+            //
 
 
     .. js:function:: javaEnabled()

@@ -1,10 +1,35 @@
 XMLHttpRequest(AJAX) - позволяет выполнять HTTP-запросы и получать ответы 
 ===================================================================
 
+AJAX - Asynchronous Javascript and XML - асинхронный JavaScript и XML
+
+Способ загрузки данных, асинхронно - без полного обновления страницы.
+
+.. code-block:: js
+
+    function ajaxTest(input) {
+        var request = new XMLHttpRequest();
+        request.open('GET‘, 'ajax.php?input=' + input);
+        request.send();
+        request.onreadystatechange = function() {
+            if (request.readyState == 4 && request.status == 200)
+            processResult(request.responseText);
+        }
+    }
+
 
 .. js:class:: XMLHttpRequest()
 
     Наследник :js:class:`EventTarget`
+
+    Объект для работы с HTTP-запросами.
+
+    Несмотря на название умеет работать с любыми типами данных, не только с XML.
+
+    .. code-block:: js
+
+        var xhr = new XMLHttpRequest();
+
 
     .. js:attribute:: onabort
         
@@ -19,7 +44,12 @@ XMLHttpRequest(AJAX) - позволяет выполнять HTTP-запросы
 
     .. js:attribute:: onload
         
-        Вы­зы­ва­ет­ся при ус­пеш­ном вы­пол­не­нии за­про­са.
+        Вызывается при успешном выполнении запроса.
+        В обработчик передается :js:class:`XMLHttpRequestProgressEvent`
+
+        .. code-block:: js
+
+            xhr.onload = function(evt){};
 
 
     .. js:attribute:: onloadend
@@ -42,6 +72,13 @@ XMLHttpRequest(AJAX) - позволяет выполнять HTTP-запросы
         
         Вы­зы­ва­ет­ся при из­ме­не­нии зна­че­ния свой­ст­ва readyState. Наи­бо­лее ва­жен 
         для об­ра­бот­ки си­туа­ции за­вер­ше­ния за­про­са.
+
+        .. code-block:: js
+
+            xhr.onreadystatechange = function(){
+                if (xhr.readyState == 4)
+                ...
+            }
 
 
     .. js:attribute:: ontimeout
@@ -107,6 +144,10 @@ XMLHttpRequest(AJAX) - позволяет выполнять HTTP-запросы
         
         Свой­ст­во, вве­ден­ное спе­ци­фи­ка­ци­ей XHR2, оп­ре­де­ляю­щее пре­дель­ное вре­мя ожи­да­ния от­ве­та в  мил­ли­се­кун­дах. Ес­ли вы­пол­не­ние HTTP-за­про­са зай­мет боль­ше вре­ме­ни, чем ука­за­но в дан­ном свой­ст­ве, он бу­дет пре­рван и бу­дет сге­не­ри­ро­ва­но со­бы­тие «timeout». Это свой­ст­во мож­но ус­та­но­вить толь­ко по­сле вы­зо­ва ме­то­да open() и пе­ред вы­зо­вом ме­то­да send().
 
+        .. code-block:: js
+
+            xhr.timeout = 10000;
+
 
     .. js:attribute:: upload
         
@@ -145,6 +186,10 @@ XMLHttpRequest(AJAX) - позволяет выполнять HTTP-запросы
             
         Не­обя­за­тель­ные ар­гу­мен­ты user и pass оп­ре­де­ля­ют имя поль­зо­ва­те­ля и па­роль для HTTP-за­про­са.
 
+        .. code-block:: js
+
+            xhr.open('GET', 'data.json', false);
+
 
     .. js:function:: overrideMimeType(string mime)
         
@@ -156,6 +201,10 @@ XMLHttpRequest(AJAX) - позволяет выполнять HTTP-запросы
         Ини­ции­ру­ет вы­пол­не­ние HTTP-за­про­са. Ес­ли пе­ред этим не вы­зы­вал­ся ме­тод open() или, обоб­щен­но, ес­ли зна­че­ние свой­ст­ва readyState не рав­но 1, ме­тод send() воз­бу­ж­да­ет ис­клю­че­ние. В про­тив­ном слу­чае он на­чи­на­ет вы­пол­не­ние HTTP-за­про­са,
         
         Ес­ли в пред­ше­ст­вую­щем вы­зо­ве ме­то­да open() ар­гу­мент async имел зна­че­ние false, дан­ный ме­тод бло­ки­ру­ет­ся и не воз­вра­ща­ет управ­ле­ние, по­ка зна­че­ние свой­ст­ва readyState не ста­нет рав­но 4 и от­вет сер­ве­ра не бу­дет по­лу­чен пол­но­стью. В про­тив­ном слу­чае ме­тод send() не­мед­лен­но воз­вра­ща­ет управ­ле­ние, а от­вет сер­ве­ра об­ра­ба­ты­ва­ет­ся асин­хрон­но, с по­мо­щью об­ра­бот­чи­ков со­бы­тий.
+
+        .. code-block:: js
+
+            xhr.send()
 
 
     .. js:function:: setRequestHeader(string name, string value)

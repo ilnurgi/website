@@ -1,5 +1,16 @@
-Функции и классы
-================
+Функции
+=======
+
+Два метода создания функции
+
+.. code-block:: jjs
+
+    function name(){}
+    // эта функция будет создана в самом начале при чтении скрипта
+
+    var name = function(){}
+    // эта функция будет создана тогда, когда интерпретаор до него дойдет
+
 
 New
 ---
@@ -137,6 +148,11 @@ Function
         Число именованных аргументов, указанных при объявлении функции
 
 
+    .. js:attribute:: name
+
+        Название функции
+
+
     .. js:attribute:: prototype
     
         Ссылка функции на прототип
@@ -144,7 +160,11 @@ Function
 
     .. js:function:: apply(obj, arguments)
 
-        Вызывает функцию как метод указанного объекта
+        Вызывает функцию с подменой контекста
+
+        .. code-block:: js
+
+            functionName.apply(thisArg, param1, param2)
 
 
     .. js:function:: bind(obj[, arguments])
@@ -155,12 +175,12 @@ Function
 
         Таким образом можно подменить контекст
 
-
         .. code-block:: js
 
             function f(){...};
             var g = f.bind(o, 1, 2);
             // эквивалентно f.call(o, 1, 2, 3);
+
 
     .. js:function:: call(obj, argument1, ...)
 
@@ -175,6 +195,24 @@ Function
     (function(){
         var property = 1;
     })();
+
+
+Замыкани
+--------
+
+.. code-block:: js
+
+    var getAnswer = (function(){
+        var answer = 42;
+
+        return function inner(){
+            // эта переменная замыкается
+            return answer;
+        };
+    }());
+
+    getAnswer();
+    // 42
 
 
 Примеры
@@ -221,3 +259,22 @@ Function
         var a = 1;
     })()
     // undefined
+
+
+стандартные функции
+-------------------
+
+.. js:function:: isFinite()
+
+    Возвращает true  только тогда, когда n  — обычное число, а не одно из NaN , Infinity  и ‐Infinit
+
+    .. code-block:: js
+
+        isFinite(1);
+        // true
+
+        isFinite(Infinity);
+        // false
+
+        isFinite(NaN);
+        // false

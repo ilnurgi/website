@@ -35,7 +35,10 @@ String - строки
         // true
 
         'c' < 'b';
-        // false    
+        // false
+
+        'bra' / 2;
+        // NaN
 
 
     .. js:function:: length
@@ -48,7 +51,7 @@ String - строки
 
     .. js:function:: charAt(index)
 
-        Символ из строки
+        Символ из строки по индексу
 
         .. code-block:: js
 
@@ -79,12 +82,15 @@ String - строки
 
     .. js:function:: fromCharCode(code)
 
-        Статический метод, возвращает новую строку
+        Статический метод, возвращает символ по коду
 
         .. code-block:: js
 
-            String.fromCharCode(33); // '!'
-            String.fromCharCode(104, 101, 108, 108, 111); // "hello"
+            String.fromCharCode(33);
+            // '!'
+
+            String.fromCharCode(104, 101, 108, 108, 111);
+            // "hello"
 
 
     .. js:function:: indexOf(substr, [start_pos])
@@ -129,7 +135,12 @@ String - строки
 
     .. js:function:: slice(start, [end])
 
-        Поиск совпадений в строке, возвращает индекс
+        Срез строки с позиции `start` до позиции `end`, не включая его.
+
+        .. code-block:: js
+
+            'stringify'.substring(0, 1);
+            // 's'
 
 
     .. js:function:: split(разделитель, лимит)
@@ -139,12 +150,27 @@ String - строки
 
     .. js:function:: substr(start[, length])
 
-        Срез строки
+        Срез строки с позиции `start`, количество `length` символов
+
+        .. code-block:: js
+
+            'stringify'.substr(2, 4);
+            // 'ring'
 
 
-    .. js:function:: substring(start[, length])
+    .. js:function:: substring(start[, end])
 
-        Срез строки
+        Срез строки с позиции `start` до позиции `end`, не включая его.
+
+        Отрицательные значение приравниваются к нулю.
+
+        .. code-block:: js
+
+            'stringify'.substring(0, 1);
+            // 's'
+
+            'stringify'.substring(2);
+            // 'ringify'
 
 
     .. js:function:: toLowerCase()

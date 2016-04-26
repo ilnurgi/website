@@ -1,0 +1,4 @@
+XMLHttpRequestProgressEvent
+===========================
+
+.. js:class:: XMLHttpRequestProgressEvent()
