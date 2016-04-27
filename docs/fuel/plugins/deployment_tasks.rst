@@ -113,7 +113,7 @@ requires
     requires: [database]
 
 
-requires_for
+required_for
 ------------
 
 Описывает задачи, для которых необходима текущая задача
