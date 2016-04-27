@@ -47,7 +47,7 @@
     :param array array: массив
     :param callback: обработчик
 
-    ::
+   .. code-block:: js
 
         angular.forEach(['1', '2'], function(item){
             console.log(item);
@@ -113,7 +113,7 @@
     :param str name: название модуля
     :param array requires: список зависимостей
 
-    ::
+    .. code-block:: jjs
 
         var app = angular.module('muModule', [])
 
@@ -125,7 +125,7 @@
     :param str name: название модуля
     :param callback: обработчик
 
-    ::
+    .. code-block:: js
 
         app.controller(
             'myController',
@@ -148,7 +148,7 @@
 
     Конфигурирует модуль
 
-    .. code-block:: js::
+    .. code-block:: js
 
         app.config(function($routeProvider){
             $routeProvider
@@ -163,7 +163,7 @@
     :param str name: название
     :param callback: обработчик
 
-    ::
+    .. code-block:: js
 
         app.directive(
             'myController',
@@ -178,7 +178,12 @@
 
         angular
         .module('app', [])
-        .run(function(){
+        .run(function($rootScope){
+            // эта штука иногда перехвататывает ошибки,
+            // которые не отображаются в консоли
+            $rootScope.$on('$stateChangeError', function(){
+                throw arguments[5];
+            });
             ...
         });
 
