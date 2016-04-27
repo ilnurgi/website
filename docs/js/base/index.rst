@@ -2,31 +2,23 @@
 ================
 
 .. toctree::
-   :maxdepth: 2
+    :maxdepth: 1
 
-   Number
-   String
-   Object
-   Function
-
-   Array
-   Boolean
-   Date
-
-   Error
-   EvalError   
-   RangeError
-   ReferenceError
-   SyntaxError
-   TypeError
-   URIError
-
-   JSON
-   Infinity
-   Math
-   NaN
-   RegExp
-   Symbol
-
-   oper
-   undefined
+    Object
+    Number
+    Infinity
+    NaN
+    String
+    Boolean
+    null
+    undefined
+    Function
+    oper
+    class
+    Array
+    Date
+    JSON
+    Math
+    RegExp
+    Symbol
+    Error

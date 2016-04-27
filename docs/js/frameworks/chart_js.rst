@@ -3,36 +3,6 @@ Chart.js - библиотека для построения диаграмм
 
 `Официальная страница <http://www.chartjs.org/>`_
 
-Подключение
------------
-
-.. code-block:: js
-
-    <script src="Chart.js"></script>
-
-.. code-block:: js
-
-    // используя requirejs
-    require(['path/to/Chartjs'], function(Chart){
-        // Use Chart.js as normal here.
-
-        // Chart.noConflict restores the Chart global variable to it's previous owner
-        // The function returns what was previously Chart, allowing you to reassign.
-        // для улаживания конфликтов
-        var Chartjs = Chart.noConflict();
-
-    });
-
-.. code-block:: js
-
-    // используя bower
-    bower install Chart.js --save
-
-.. code-block:: js
-
-    // используя cdn
-    <script src="https://cdnjs.com/libraries/chart.js"></script>
-
 
 Chart
 -----

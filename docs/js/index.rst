@@ -10,12 +10,13 @@ JavaScript - язык программирования сценариев (scrip
 а выполняется по мере прочтения интерпретатором.
 
 
-.. code-block:: js
+.. code-block:: html
 
-    // подключение в HTML
     <script type='text/javascript'>
         alert('Hello World!');
     </script>
+
+.. code-block:: html
 
     <script type='text/javascript' src='app.js'></script>
 

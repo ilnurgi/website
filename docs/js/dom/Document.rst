@@ -13,15 +13,17 @@ Document(HTMLDocument) - корневой элемент дерева
         document.getElementById('name')
 
 
-    .. code-block:: js
+    .. code-block:: html
+
+        <script>
+            var form = document.test,
+                input = document.test.test_input,
+                elem = form.elements[0];
+        </script>
 
         <form name='test'>
             <input name='test_input'/>
         </form>
-
-        var form = document.test,
-            input = document.test.test_input,
-            elem = form.elements[0];
 
 
     .. js:attribute:: activeElement

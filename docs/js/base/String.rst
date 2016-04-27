@@ -10,17 +10,9 @@ String - строки
 
     .. code-block:: js
 
-        var a = new String('test'),
-            string = 'ilnurgi',
-            s += 's';
-
-        // в переменную а мы можем добавить свои атрибуты и методы
-
-        '\u1552'.length
-        //1
-
-        'il\'s'.length
-        //3
+        a = new String('test');
+        string = 'ilnurgi';
+        s += 's';
 
         'ilnurgi' + 123;
         // 'ilnurgi123'

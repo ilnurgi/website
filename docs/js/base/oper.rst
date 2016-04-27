@@ -29,8 +29,65 @@
 \>>>     Shift Right
 ======== ========
 
+.. code-block:: js
+
+    var a = 5;
+    var b = 13;
+
+    a | b;
+    // OR, 13
+
+    a & b;
+    // AND, 5
+
+    a ^ b;
+    // XOR, 8
+
+    ~a;
+    // NOT, -6
+
+    a >> b;
+    // RIGHT SHIFT, 0
+
+    a << b:
+    // LEFT SHIFT, 40960
+
+    a >>> b;
+    // ZERO FILLED RIGHT SHIFT, 0
+
+Бинарные
+--------
+
+.. code-block:: js
+
+    'Hello' + 'GoIt';
+    // HelloGoIT
+
+    '1' + 2;
+    // '12'
+
+    2 + '1'
+    // '21'
+
+    '1' - 2
+    // '-1'
+
+    6 / '2'
+    // '3'
+
+    +1
+    // 1
+
+    +(1-2);
+    // -1
+
+    +'2' + +'3';
+    // 5
+
 if
 --
+
+Условие
 
 .. code-block:: js
 
@@ -43,34 +100,18 @@ if
         ...
     }
 
-for 
----
-
-Итерация по элементам массива или объекта.
+?
+-
 
 .. code-block:: js
 
-    for (var i=0, max = myarray.length; i < max; i++){
-        console.log(i);
-    }
+    (age == 18) ? alert('Большой'): alert('Маленький')
 
-    for (attr in obj) {
-        console.log(attr);
-    }
-
-while
------
-
-.. code-block:: js
-
-    var i = 0;
-    while (i < 5) {
-        console.log(i);
-        i++;
-    }
 
 switch
 ------
+
+Условие
 
 .. code-block:: js
 
@@ -86,30 +127,60 @@ switch
             console.log('not one zero')
     }
 
-break
------
+for 
+---
 
-Прерывает работу циклов
-
-
-continue
---------
-
-Перейти к новой итерации цикла
-
-
-instanceof
-----------
-
-Проверяет тип объекта
+Циклы
 
 .. code-block:: js
 
-    function Human(){
+    for (var i=0, max = myarray.length; i < max; i++){
+        console.log(i);
+    }
 
-        if (! (this instanceof Human)) {
-            return new Human();
-        }
+    for (attr in obj) {
+        console.log(attr);
+    }
+
+while
+-----
+
+Циклы
+
+.. code-block:: js
+
+    var i = 0;
+    while (i < 5) {
+        console.log(i);
+        i++;
+    }
+
+do - while
+----------
+
+.. code-block:: js
+
+    do {
+        ...
+    } while (...)
+
+
+throw
+-----
+
+Прерывает выполнение функции, возбуждая исключение
+
+.. code-block:: js
+
+    if (typeof a !== 'number' || typeof b !== 'number') {
+        throw {
+            name: 'TypeError',
+            message: 'add needs numbers'
+        };
+
+        // throw 'error text';
+        // throw 123;
+        // throw new Error("message");
     }
 
 try, catche, finally
@@ -127,64 +198,28 @@ try, catche, finally
         // данный блок выполнится в любом случае
     }
 
-throw
+break
 -----
 
-Прерывает выполнение функции, возбуждая исключение
+Прерывает работу циклов
 
-.. code-block:: js
-    
-    if (typeof a !== 'number' || typeof b !== 'number') {
-        throw {
-            name: 'TypeError',
-            message: 'add needs numbers'
-        };
 
-        // throw 'error text';
-        // throw 123;
-        // throw new Error("message");
-    }
+continue
+--------
 
-in
---
+Перейти к новой итерации цикла
 
-Проверка существования свойства в объекте, по всей цепочке прототипов
 
-.. code-block:: js
-    
-    console.log('x' in point);
-    // true
+debugger
+--------
 
-?
--
+Устанавливает точу останова для интерпретатора
 
 .. code-block:: js
 
-    (age == 18) ? alert('Большой'): alert('Маленький')
-
-
-do - while
------------
-
-.. code-block:: js
-
-    do {
-        ...
-    } while (...)
-
-
-метки
------
-
-.. code-block:: js
-
-    outer: for (...){
-        inner: while (...){
-            if (...){
-                break inner;
-            }
-        }
-    }
+    function(){
+        debugger;
+    };
 
 
 delete
@@ -199,6 +234,33 @@ delete
     a;
     // [4]
 
+
+in
+--
+
+Проверка существования свойства в объекте, по всей цепочке прототипов
+
+.. code-block:: js
+
+    console.log('x' in point);
+    // true
+
+
+instanceof
+----------
+
+Проверяет тип объекта
+
+.. code-block:: js
+
+    function Human(){
+
+        if (! (this instanceof Human)) {
+            return new Human();
+        }
+    }
+
+
 typeof
 ------
 
@@ -206,20 +268,26 @@ typeof
 
 .. code-block:: js
 
+    typeof undefined;
+    // "undefined"
+
+    typeof 0;
+    // "number"
+
     typeof true;
-    // 'boolean'
+    // "boolean"
 
+    typeof "foo";
+    // "string"
 
-debugger
---------
+    typeof {};
+    // "object"
 
-Устанавливает точу останова для интерпретатора
+    typeof null;
+    // "object"
 
-.. code-block:: js
-
-    function(){
-        debugger;
-    };
+    typeof function(){};
+    // "function"
 
 
 use strict
