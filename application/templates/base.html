@@ -116,6 +116,14 @@ lg - >= 1200px;
                                     Статистика
                                 </a>
                             </li>
+                            <li
+                                {% if active_page == 'sitemap' %}
+                                    class="active"
+                                {% endif %}>
+                                <a href="{% url 'sitemap' %}">
+                                    Карта
+                                </a>
+                            </li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
                             {% if is_superuser %}

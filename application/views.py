@@ -5,6 +5,8 @@ from django.shortcuts import redirect
 from django.template.context_processors import csrf
 from django.views.generic import TemplateView, View
 
+from blog.models import Post, PostTags
+
 
 class IsSuperUserMixin(object):
 
@@ -24,6 +26,32 @@ class CSRFMixin(object):
 
 class HomePage(IsSuperUserMixin, TemplateView):
     template_name = 'index.html'
+
+
+class SiteMap(IsSuperUserMixin, TemplateView):
+    template_name = 'sitemap.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(SiteMap, self).get_context_data(**kwargs)
+
+        post_tags = PostTags.objects
+        if not self.request.user.is_superuser:
+            post_tags = post_tags.filter(post__published=True)
+
+        post_tags = post_tags.select_related()
+        group_posts = {}
+        for post_tag in post_tags:
+            group_posts.setdefault(post_tag.tag, []).append(post_tag.post)
+
+        for value in group_posts.values():
+            value.sort(key=lambda x: x.title)
+
+        group_posts = group_posts.items()
+        group_posts.sort(key=lambda x: x[0].name)
+
+        context['active_page'] = 'sitemap'
+        context['group_posts'] = group_posts
+        return context
 
 
 class Login(IsSuperUserMixin, CSRFMixin, TemplateView):

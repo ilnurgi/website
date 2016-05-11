@@ -31,6 +31,7 @@ urlpatterns = [
         r'^fileuploader/',
         include(fileuploader_urls, namespace='fileuploader')),
     url(r'^login/', app_view.Login.as_view(), name='login'),
+    url(r'^sitemap/', app_view.SiteMap.as_view(), name='sitemap'),
     url(r'^logout/', app_view.Logout.as_view(), name='logout'),
     url(r'^metrics/', include(metric_urls, namespace='metrics')),
     url(r'^comments/', include(comments_urls, namespace='comments')),

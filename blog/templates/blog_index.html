@@ -42,5 +42,22 @@
                 </div>
             </div>
         {% endfor %}
+
+        <nav>
+            <ul class="pager">
+                <li class="previous {% if not posts.has_previous %}disabled{% endif %}">
+                    <a href="{% if posts.has_previous %}?page={{ posts.previous_page_number }}{% endif %}">
+                        <span aria-hidden="true">&larr;</span>
+                        Новые
+                    </a>
+                </li>
+                <li class="next {% if not posts.has_next %}disabled{% endif %}">
+                    <a href="{% if posts.has_next %}?page={{ posts.next_page_number }}{% endif %}">
+                        Старые
+                        <span aria-hidden="true">&rarr;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </div>
 {% endblock %}

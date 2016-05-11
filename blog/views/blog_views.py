@@ -1,4 +1,6 @@
 # coding: utf-8
+
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.core.urlresolvers import reverse
 from django.shortcuts import redirect
 from django.views.generic import TemplateView
@@ -9,6 +11,9 @@ from application.views import IsSuperUserMixin, CSRFMixin
 from blog.models import Tags, Post, PostComments
 from blog.tasks import send_email_notification
 from comments.models import Comment
+
+
+POSTS_IN_PAGE = 10
 
 
 class BaseBlogViewMixin(object):
@@ -26,11 +31,25 @@ class HomePage(BaseBlogViewMixin, IsSuperUserMixin, TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(HomePage, self).get_context_data(**kwargs)
-        if self.request.user.is_superuser:
-            context['posts'] = Post.objects.all()
-        else:
-            context['posts'] = Post.objects.filter(published=True)
+
+        posts = self.get_posts()
+        page = self.request.GET.get('page')
+        paginator = Paginator(posts, POSTS_IN_PAGE)
+        try:
+            posts = paginator.page(page)
+        except PageNotAnInteger:
+            posts = paginator.page(1)
+        except EmptyPage:
+            posts = paginator.page(paginator.num_pages)
+
+        context['posts'] = posts
         return context
+
+    def get_posts(self):
+        posts = Post.objects.all()
+        if not self.request.user.is_superuser:
+            posts = posts.filter(published=True)
+        return posts
 
 
 class TagPage(HomePage):
@@ -38,10 +57,12 @@ class TagPage(HomePage):
     def get_context_data(self, **kwargs):
         context = super(TagPage, self).get_context_data(**kwargs)
         context['current_tag_id'] = self.kwargs['tag_id']
-        context['posts'] = context['posts'].filter(
-            posttags__tag__id=self.kwargs['tag_id'])
-
         return context
+
+    def get_posts(self):
+        posts = super(TagPage, self).get_posts()
+        return posts.filter(
+            posttags__tag__id=self.kwargs['tag_id'])
 
 
 class PostPage(CSRFMixin, HomePage):
