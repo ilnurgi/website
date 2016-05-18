@@ -37,6 +37,15 @@ Number - числа
     -1/0;
     // -Infinity - бесконечность
 
+.. note:: EcmaScript6
+
+    .. code-block:: js
+
+        // двоичное число
+        let a = 0b00001111;
+
+        // восьмиричное
+        let b = 0o17;
 
 .. js:class:: Number()
  
@@ -56,6 +65,11 @@ Number - числа
         // Nan
 
 
+    .. js:attribute:: EPSILON
+
+        Расчетная погрешность при сравнений чисел с плавающей запятой
+
+        
     .. js:attribute:: NaN
 
         Нечисло
@@ -73,7 +87,7 @@ Number - числа
 
     .. js:attribute:: MAX_SAFE_INTEGER
 
-        .. versionadded:: ECMAScript6
+        .. note:: ECMAScript6
 
 
     .. js:attribute:: MAX_VALUE
@@ -81,21 +95,57 @@ Number - числа
         Наибольшее представимое число
 
 
+    .. js:attribute:: MIN_SAFE_INTEGER
+
+        .. note:: ECMAScript6
+
+
     .. js:attribute:: POSITIVE_INFINITY
 
         Положительная бесконечность
 
 
-    .. js:function:: isInteger(number)
+    .. js:function:: isFinite(number)
 
-        .. versionadded:: ECMAScript6
+        Значение является конечным числом
+
+        .. note:: ECMAScript6
 
         .. code-block:: js
 
-            Number.isInteger(42);     // true
-            Number.isInteger(42.000); // true
-            Number.isInteger(42.3);   // false
+            Number.isFinite(10);
+            // true
 
+            Number.isFinite(Nan);
+            // false
+
+            Number.isFinite(null);
+            // false
+
+            Number.isFinite([]);
+            // false
+
+
+    .. js:function:: isInteger(number)
+
+        Переменная - целое число
+
+        .. note:: ECMAScript6
+
+        .. code-block:: js
+
+            Number.isInteger(42);     
+            // true
+            
+            Number.isInteger(42.000); 
+            // true
+            
+            Number.isInteger(42.3);   
+            // false
+
+        .. code-block:: js
+
+            // полифил
             if (!Number.isInteger){
                 Number.isInteger = function(num){
                     return (
@@ -108,10 +158,13 @@ Number - числа
 
     .. js:function:: isNan(number)
 
-        .. versionadded:: ECMAScript6
+        Переменная Nan
+
+        .. note:: ECMAScript6
 
         .. code-block:: js
 
+            // полифил
             if (!Number.isNan){
                 Number.isNan = function(num){
                     return (
@@ -124,7 +177,7 @@ Number - числа
 
     .. js:function:: isSafeInteger(number)
 
-        .. versionadded:: ECMAScript6
+        .. note:: ECMAScript6
 
         .. code-block:: js
 
@@ -132,6 +185,9 @@ Number - числа
             Number.isSafeInteger(Math.pow(2, 53));         // false
             Number.isSafeInteger(Math.pow(2, 53) - 1);     // true
 
+        .. code-block:: js
+
+            // полифил
             if (!Number.isSafeInteger){
                 Number.isSafeInteger = function(num){
                     return (

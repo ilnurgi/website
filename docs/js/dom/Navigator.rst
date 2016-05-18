@@ -53,8 +53,20 @@ Navigator - содержит информацию о браузере и опе�
         .. code-block:: js
 
             navigator.userAgent;
-            //
 
+
+    .. js:function:: getBattery()
+
+        Возвращает объект :js:class:`Promise`, информация о состоянии батареи
+
+        .. note:: EcmaScript6
+
+        .. code-block:: js
+
+            navigator.getBattery().then(function(value){
+                ...
+            });
+            
 
     .. js:function:: javaEnabled()
 

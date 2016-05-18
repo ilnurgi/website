@@ -20,16 +20,6 @@ DOM - объектная модель документа.
 
    Element
    HTMLCollection
-   HTMLFormElement
-   HTMLImageElement
-   HTMLInputElement
-   HTMLOptionElement
-   HTMLSelectElement
-   HTMLTableCellElement
-   HTMLTableElement
-   HTMLTableRowElement
-   HTMLTableSectionElement
-   HTMLTextAreaElement
 
    Characterdata
    Text
@@ -88,8 +78,6 @@ DOM - объектная модель документа.
    Geolocation
    GeolocationError
    Geoposition
-   HTMLFormControlsCollection
-   HTMLOptionsCollection
    HashChangeEvent
    IFrame
    ImageData

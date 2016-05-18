@@ -10,12 +10,14 @@ Array - массивы
 
     Наследник :js:class:`Object`
     
-
     .. code-block:: js
 
         var array = [];
 
         var cities = ['moscow', 'kazan'];
+        cities.length;
+        // 2
+
         cities[0];
         // 'moscow'
 
@@ -34,6 +36,8 @@ Array - массивы
         cities.length;
         // 2
 
+    .. code-block:: js
+
         var a = new Array();
 
         var b = new Array('hey', 'you');
@@ -44,10 +48,30 @@ Array - массивы
         a[5] = 5;
         for (var x in a){ 
             // выведет только 5
+            ...
         }
         for (var i=0; i<a.length; i++){
             // выведет все 5 элементов
+            ...
         }
+
+    .. node:: EcmsScript6
+
+        .. code-block:: js
+
+            let [a, b, c] = [1, 2, 3];
+
+            let [a, , b] = [1, 2, 3];
+            console.log(a, b);
+            // 1, 3
+
+            let [a, ...b] = [1, 2, 3, 4];
+            console.log(b);
+            // [2, 3, 4]
+
+            let [a, , , ...b] = [1, 2, 3, 4, 5, 6];
+            console.log(b);
+            // [4, 5, 6]
 
 
     .. js:attribute:: length
@@ -75,6 +99,42 @@ Array - массивы
             // [1, 2, 3, 4, 5]
 
 
+    .. js:function:: copyWithin(targetIndex, startIndex, endIndex)
+
+        Копирует последовательность значений массива в другое место этого массива
+
+        .. versionadded:: EcmaScript6
+
+        .. code-block:: js
+
+            let arr1 = [1, 2, 3, 4, 5];
+            arr1.copyWithin(1, 2, 4);
+            arr1;
+            // 1, 3, 4, 4, 5
+
+            let arr2 = [1, 2, 3, 4, 5];
+            arr2.copyWithin(0, 1);
+            arr2;
+            // 2, 3, 4, 5, 5
+
+            let arr3 = [1, 2, 3, 4, 5];
+            arr3.copyWithin(1, -2);
+            arr3;
+            // 1, 4, 5, 4, 5
+
+            let arr4 = [1, 2, 3, 4, 5];
+            arr4.copyWithin(1, -2, -1);
+            arr4;
+            // 1, 4, 3, 4, 5
+
+
+    .. js:function:: entries()
+
+        Возвращает итерируемый объект, содержащий массив пары ключ/значение, для каждого индекса массива.
+
+        .. versionadded:: EcmaScript6
+
+
     .. js:function:: every(callback[, this])
 
         Возвращает булево, соответсвие всех элементов массива условию обработчика.
@@ -94,6 +154,29 @@ Array - массивы
             // false
 
 
+    .. js:function:: fill(value, startIndex, endIndex)
+
+        Заменяет все элементы массива в казанном промежутке указанным значением.
+
+        .. note:: EcmaScript6
+
+        .. code-block:: js
+
+            [1, 2, 3, 4].fill(5);
+            // [5, 5, 5, 5]
+
+            [1, 2, 3, 4].fill(5, 1, 2);
+            // [1, 5, 3, 4]
+
+            [1, 2, 3, 4].fill(5, 1, 3);
+            // [1, 5, 5, 4]
+
+            [1, 2, 3, 4].fill(5, -3, 2);
+            // [1, 5, 3, 4]
+
+            [1, 2, 3, 4].fill(5, 0, -2);
+            // [5, 5, 3, 4]
+
 
     .. js:function:: filter(callback[, filter])
 
@@ -109,6 +192,38 @@ Array - массивы
             // [2, 3]
 
 
+    .. js:function:: find(testingFunc, this)
+
+        Возвращает элемент массива, который удовлетворяет условиям функции проверки
+
+        .. versionadded:: ECMAScript5
+
+        .. code-block:: js
+
+            [11, 12, 13].find(function(value, index, array){
+                if (value == this){
+                    return true;
+                }
+            }, 12);
+            // 12
+
+
+    .. js:function:: findIndex(testingFunc, this)
+
+        Возвращает индекс элемента массива удовлетворяющего условию
+
+        .. versionadded:: EcmaScript6
+
+        .. code-block:: js
+
+            [11, 12, 13].find(function(value, index, array){
+                if (value == this){
+                    return true;
+                }
+            }, 12);
+            // 1
+
+        
     .. js:function:: forEach(callback[, this])
 
         Вызывает функцию-обработчик для каждого элемента массива
@@ -122,13 +237,16 @@ Array - массивы
             }); 
 
 
-    .. js:function:: from(args)
+    .. js:function:: from(iterable, function, this)
 
-        .. versionadded:: ECMAScript6
+        .. from:: ECMAScript6
 
         .. code-block:: js
 
-            var arr = Array.from(arguments);            
+            Array.from("1, 2, 3", function(item){
+                return this.number * item;
+            }, {number: 10});
+            // [10, 20, 30]
 
 
     .. js:function:: join([str splitter=','])
@@ -161,6 +279,12 @@ Array - массивы
             // -1
 
 
+    .. js:function:: keys()
+
+        Возвращает итерируемый объект, содержащий ключи для всех идексов массива.
+
+        .. versionadded:: EcmaScript6
+
 
     .. js:function:: lastIndexOf(значение[, int pos=array.length])
 
@@ -183,6 +307,21 @@ Array - массивы
             // [1, 4, 9]
 
             
+    .. js:function:: of(values...)
+
+        Создает массив из 1 значения
+
+        .. note:: EcmaScript6
+
+        .. code-block:: js
+
+            Array(2);
+            // []
+
+            Array.of(2);
+            // [2]
+
+
     .. js:function:: pop()
 
         Возвращает последний элемент и удаляет его из массива
@@ -208,6 +347,24 @@ Array - массивы
             c.push(4);
             c;
             // [1,2,3,4]
+
+        .. code-block:: js
+
+            // копирование значений из одного массива в другой
+            var array1 = [2, 3, 4];
+            var array2 = [1];
+            Array.prototype.push.apply(array2, array1);
+            // [1, 2, 3, 4]
+
+        .. note:: EcmaScript6
+
+            .. code-block:: js
+
+                // копирование значений из одного массива в другой
+                var array1 = [2, 3, 4];
+                var array2 = [1];
+                array2.push(...array1)
+                // [1, 2, 3, 4]
 
 
     .. js:function:: reduce(callback[, int start=0])
@@ -343,3 +500,11 @@ Array - массивы
             a.unshift(1);
             a;
             // [1]
+
+
+    .. js:function:: values()
+
+        Возвращает итерируемый объект, содержащий значения элементов массива.
+
+        .. versionadded:: EcmaScript6
+        

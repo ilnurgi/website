@@ -13,12 +13,19 @@
     null
     undefined
     Function
+    modules
     oper
     class
     Array
+    ArrayBuffer
+    ArrayTyped
+    Set
+    Map
     Date
     JSON
     Math
     RegExp
     Symbol
     Error
+    Promise
+    Reflect

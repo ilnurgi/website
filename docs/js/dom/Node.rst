@@ -3,6 +3,31 @@ Node - узел дом дерева документа
 
 .. js:class:: Node()
 
+    .. js:attribute:: ELEMENT_NODE
+
+    .. js:attribute:: ATTRIBUTE_NODE
+
+    .. js:attribute:: TEXT_NODE
+
+    .. js:attribute:: CDATA_SECTION_NODE
+
+    .. js:attribute:: ENTITY_REFERENCE_NODE
+
+    .. js:attribute:: ENTITY_NODE
+
+    .. js:attribute:: PROCESSING_INSTRUCTION_NODE
+
+    .. js:attribute:: COMMENT_NODE
+
+    .. js:attribute:: DOCUMENT_NODE
+
+        Узел - документ
+
+    .. js:attribute:: DOCUMENT_TYPE_NODE
+
+    .. js:attribute:: DOCUMENT_FRAGMENT_NODE
+
+    .. js:attribute:: NOTATION_NODE
 
     .. js:attribute:: attributes
 
@@ -52,7 +77,7 @@ Node - узел дом дерева документа
 
     .. js:attribute:: nodeType
 
-        тип узла в виде числа
+        Тип узла в виде числа
 
 
     .. js:attribute:: nodeValue

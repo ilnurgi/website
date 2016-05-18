@@ -49,6 +49,16 @@ Math - математические операции
         Возвращает абсолютное значение
 
 
+    .. js:function:: cbrt(value)
+
+        Корень кубический
+
+        .. code-block:: js
+
+            Math.cbrt(8);
+            // 2
+
+
     .. js:function:: ceil(var)
 
         Округление в большую сторону
@@ -61,9 +71,39 @@ Math - математические операции
             d = Math.ceil(-1.99); // -1.0
 
 
+    .. js:function:: clz32(number)
+
+        Возвращает число ведущих нулевых бит в 32 битном представлении числа
+
+        .. note:: EcmaScript6
+
+        .. code-block:: js
+
+            Math.clz32(7);
+            // 29
+
+            Math.clz32(1000);
+            // 22
+
+            Math.clz32(295000000);
+            // 3
+
+
     .. js:function:: exp(var)
 
         Вычисляет степень числа Е
+
+
+    .. js:function:: expm1(value)
+
+        Обратное от Math.log1p
+
+        .. note:: EcmaScript6
+
+        .. code-block:: js
+
+            Math.expm1(0);
+            // 0
 
 
     .. js:function:: floor(var)
@@ -78,9 +118,81 @@ Math - математические операции
             d = Math.ceil(-1.99); // -2.0
 
 
+    .. js:function:: fround(number)
+
+        Округляет число до 32 битного значения с плавающей точкой
+
+        .. note:: EcmaScript6
+
+        .. code-block:: js
+
+            Math.fround(0);
+            // 0
+            
+            Math.fround(1);
+            // 1
+
+            Math.fround(1.137);
+            // 1.13699....
+
+            Math.fround(1.5);
+            // 1.5
+            
+
+    .. js:function:: imul(int1, int2)
+
+        Возвращает младшие 32 бита результата умножения аргументов
+
+        .. note:: EcmaScript6
+
+        .. code-block:: js
+
+            Math.imul(590, 5000000);
+            // -1344967296
+            
+            590 * 5000000;
+            // 2950000000
+
+
     .. js:function:: log(var)
 
         Вычисляет натуральный логарифм
+
+
+    .. js:function:: log2(var)
+
+        Вычисляет логарифм по основанию 2
+
+        .. note:: EcmaScript6
+
+        .. code-block:: js
+
+            Math.log2(16);
+            // 4
+
+
+    .. js:function:: log10(var)
+
+        Вычисляет логарифм по основанию 10
+
+        .. note:: EcmaScript6
+
+        .. code-block:: js
+
+            Math.log10(1000);
+            // 3
+
+
+    .. js:function:: log1p(value)
+
+        Вычисляет логарифм (1 + value)
+
+        .. note:: EcmaScript6
+
+        .. code-block:: js
+
+            Math.log1p(0);
+            // 0
 
 
     .. js:function:: max(var1, var2, ....)
@@ -118,6 +230,24 @@ Math - математические операции
         Нормальное округление
 
 
+    .. js:function:: sign(number)
+
+        Возвращает знак числа, сообщающий, является ли число отрицательным, положительным или равно нулю.
+
+        .. note:: EcmaScript6
+
+        .. code-block:: js
+
+            Math.sign(11);
+            // 1
+
+            Math.sign(-11);
+            // -1
+
+            Math.sign(0);
+            // 0
+
+
     .. js:function:: sqrt(int)
 
         Возвращает квадратный корень числа
@@ -127,6 +257,22 @@ Math - математические операции
             Math.sqrt(81);
             // 9
 
+
+    .. js:function:: trunc(number)
+
+        Возвращает целую часть числа
+
+        .. note:: EcmaScript6
+
+        .. code-block:: js
+
+            Math.trunc(11.17);
+            // 11
+
+            Math.trunc(-1.112);
+            // -1
+
+
 Тригонометрические функции
 --------------------------
 
@@ -135,14 +281,50 @@ Math - математические операции
         Вычисляет арккосинус
 
 
+    .. js:function:: acosh()
+
+        Вычисляет обратный гиперболический косинус
+
+        .. note:: EcmaScript6
+
+        .. code-block:: js
+
+            Math.acosh(1);
+            // 0
+
+
     .. js:function:: asin()
 
         Вычисляет арксинус
 
 
+    .. js:function:: asinh()
+
+        Вычисляет обратный гиперболический синус
+
+        .. note:: EcmaScript6
+
+        .. code-block:: js
+
+            Math.asinh(0);
+            // 0
+
+
     .. js:function:: atan()
 
         Вычисляет арктангенс
+
+
+    .. js:function:: atanh()
+
+        Вычисляет обратный гиперболический тангенс
+
+        .. note:: EcmaScript6
+
+        .. code-block:: js
+
+            Math.atanh(0);
+            // 0
 
 
     .. js:function:: atan2()
@@ -155,11 +337,59 @@ Math - математические операции
         Вычисляет косинус
 
 
+    .. js:function:: cosh()
+
+        Вычисляет гиперболический косинус
+
+        .. note:: EcmaScript6
+
+        .. code-block:: js
+
+            Math.cosh(0);
+            // 1
+
+
+    .. js:function:: hypot()
+
+        Теорема Пифагора
+
+        .. note:: EcmaScript6
+
+        .. code-block:: js
+
+            Math.hypot(2, 2, 1);
+            // 3
+
+
     .. js:function:: sin()
 
         Вычисляет синус
 
 
+    .. js:function:: sinh()
+
+        Вычисляет гиперболический синус
+
+        .. note:: EcmaScript6
+
+        .. code-block:: js
+
+            Math.sinh(0);
+            // 0
+
+
     .. js:function:: tan()
 
         Вычисляет тангенс
+
+
+    .. js:function:: tanh()
+
+        Вычисляет гиперболический тангенс
+
+        .. note:: EcmaScript6
+
+        .. code-block:: js
+
+            Math.tanh(0);
+            // 0

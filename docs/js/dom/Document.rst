@@ -41,9 +41,15 @@ Document(HTMLDocument) - корневой элемент дерева
             document.all;
             // HTMLAllCollection[11]
 
+
     .. js:attribute:: anchors
 
-        Массив якорей страницы
+        Список `<a>` элементов страницы с атрибутом `name`
+
+
+    .. js:attribute:: applets
+
+        Список `<applet>` элементов страницы
 
 
     .. js:attribute:: async
@@ -127,7 +133,7 @@ Document(HTMLDocument) - корневой элемент дерева
 
     .. js:attribute:: forms
 
-        Коллекция всех форм, :js:class:`Form`, на странице
+        Список `<form>` элементов страницы
 
 
     .. js:attribute:: head
@@ -142,7 +148,7 @@ Document(HTMLDocument) - корневой элемент дерева
 
     .. js:attribute:: images
 
-        Массив :js:class:`Image` на странице
+        Список `<img>` элементов страницы
 
 
     .. js:attribute:: implementation
@@ -157,7 +163,7 @@ Document(HTMLDocument) - корневой элемент дерева
 
     .. js:attribute:: links
 
-        Коллекция ссылок на странице
+        Список `<a>` элементов с атрибутом `href`
 
 
     .. js:attribute:: location

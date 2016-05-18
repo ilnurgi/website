@@ -67,9 +67,39 @@ String - строки
             // 33
 
 
+    .. js:function:: codePointAt(index)
+
+        Возвращает неотрицательное целое число - кодовый пнкт символа.
+
+        .. note:: EcmaScript6
+
+        .. code-block:: js
+
+            '\uD83D\uDE91'.codePointAt(1);
+            // 56977
+
+            '\u{1F691}'.codePointAt(1);
+            // 56977
+
+            'hello'.codePointAt(2);
+            // 1080
+
+
     .. js:function:: concat(index)
 
         Конкатенация одного или нескольких значений со строкой
+
+
+    .. js:function:: endsWith(string, index)
+
+        Проверяет, заканчивается ли строка на указанную
+
+        .. note:: EcmaScript6
+
+        .. code-block:: js
+
+            "ilnurgi".endsWith("il");
+            // false
 
 
     .. js:function:: fromCharCode(code)
@@ -83,6 +113,30 @@ String - строки
 
             String.fromCharCode(104, 101, 108, 108, 111);
             // "hello"
+
+
+    .. js:function:: fromCodePoint(number1, ...)
+
+        Возвращает строку по кодовым пунктам
+
+        .. note:: EcmaScript6
+
+        .. code-block:: js
+
+            String.fromCodePoint(0x61, 0x62, 0x63);
+            // 'abc'
+
+
+    .. js:function:: includes(string, index=0)
+
+        Проверяет наличие подстроки в строке
+
+        .. note:: EcmaScript6
+
+        .. code-block:: js
+
+            "ilnurgi".includes('il');
+            // true
 
 
     .. js:function:: indexOf(substr, [start_pos])
@@ -115,6 +169,27 @@ String - строки
         Поиск совпадений в строке, возвращает массив
 
 
+    .. js:function:: normalize()
+
+        Возвращает нормализованную строку, по умолчанию NFC.
+
+        .. note:: Нормализованная версия не используется для отображение, только для различных операции: сравнение и т.п.
+
+        .. note:: EcmaScript6
+
+
+    .. js:function:: repeat(count)
+
+        Возвращает строку, содержащую указанное количество копии
+
+        .. note:: EcmaScript6
+
+        .. code-block:: js
+
+            "a".repeat(5);
+            // "aaaaa"
+
+
     .. js:function:: replace(str1, str2)
 
         Поиск и замена
@@ -138,6 +213,18 @@ String - строки
     .. js:function:: split(разделитель, лимит)
 
         Разбиение строки на массив
+
+
+    .. js:function:: startsWith(string, index=0)
+
+        Проверяет, начинается ли строка с указанной строки
+
+        .. note:: EcmaScript6
+
+        .. code-block:: js
+
+            "ilnurgi".startsWith("il");
+            // true
 
 
     .. js:function:: substr(start[, length])
@@ -178,3 +265,34 @@ String - строки
     .. js:function:: trim()
 
         Возвращает копию строки, с удаленными пробелами вначале и в конце
+
+
+Интерполяция
+------------
+
+.. code-block:: js
+
+    var str = "My first name is " + "ilnur" + " and last name " + "ilnur" + "gii"
+
+.. note:: EcmaScript6
+
+    .. code-block:: js
+
+        let name = "ilnur";
+        let last_nme = "gii";
+        let str = `My first name is ${name} and last name ${name + last_name}`
+
+
+Многострочные строки
+--------------------
+
+.. code-block:: js
+
+    var multiline_str = "1\n2";
+
+.. note:: EcmaScript6
+
+    .. code-block:: js
+
+        let multiline_str = `1
+        2`;

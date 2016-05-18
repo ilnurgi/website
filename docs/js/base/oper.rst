@@ -84,34 +84,23 @@
     +'2' + +'3';
     // 5
 
-if
---
 
-Условие
+Условия
+-------
 
 .. code-block:: js
-
-    var c1 = false, c2 = true, c3 = false;
-    var a = c1 ? 1: (c2 ? 2: c3);
 
     if (){
         ...
     } else if () {
         ...
-    }
+    } else () {
 
-?
--
+    }
 
 .. code-block:: js
 
     (age == 18) ? alert('Большой'): alert('Маленький')
-
-
-switch
-------
-
-Условие
 
 .. code-block:: js
 
@@ -127,10 +116,8 @@ switch
             console.log('not one zero')
     }
 
-for 
----
-
 Циклы
+-----
 
 .. code-block:: js
 
@@ -142,11 +129,6 @@ for
         console.log(attr);
     }
 
-while
------
-
-Циклы
-
 .. code-block:: js
 
     var i = 0;
@@ -155,20 +137,35 @@ while
         i++;
     }
 
-do - while
-----------
-
 .. code-block:: js
 
     do {
         ...
     } while (...)
 
+.. note:: EcmaScript6
 
-throw
------
+    .. code-block:: js
 
-Прерывает выполнение функции, возбуждая исключение
+        // обход значений итерируемого объекта
+        function* gf(){
+            yield 1; 
+            yield 2; 
+        }
+        for (let value of gf()){
+            ...
+        }
+
+    .. code-block:: js
+
+        // обход значений итерируемого объекта
+        for (let value of [1, 2, 3]){
+            ...
+        }
+
+
+Исключения
+----------
 
 .. code-block:: js
 
@@ -183,11 +180,6 @@ throw
         // throw new Error("message");
     }
 
-try, catche, finally
---------------------
-
-Перехват и обработка исключений
-
 .. code-block:: js
 
     try {
@@ -198,10 +190,42 @@ try, catche, finally
         // данный блок выполнится в любом случае
     }
 
+
+Оператор расширения
+-------------------
+
+.. note:: EcmaScript6
+
+.. code-block:: js
+
+    function some(a, b){
+        return a + b;
+    };
+    var data = [1, 4];
+    some(...data);
+
+.. code-block:: js
+
+    let array1 = [2, 3, 4];
+    let array2 = [1, ...array1, 5, 6, 7];
+    // 1, 2, 3, 4, 5, 6, 7
+
+
+
 break
 -----
 
 Прерывает работу циклов
+
+
+const
+-----
+
+Объявление переменных, доступных только для чтения в пределах блока.
+
+.. code-block:: js
+
+    const PI = 3.14;
 
 
 continue
@@ -221,6 +245,8 @@ debugger
         debugger;
     };
 
+
+.. _delete:
 
 delete
 ------
@@ -257,6 +283,29 @@ instanceof
 
         if (! (this instanceof Human)) {
             return new Human();
+        }
+    }
+
+
+let
+---
+
+.. note:: EcmaScript6
+
+Объявление переменных с областью видимости в пределах блока и возможностью инициализации их значений
+
+Отличие от :ref:`var`_:
+    
+    * переменная доступна только внутри блока
+
+    * переменную повторно нельзя объявить в той области видимости
+
+.. code-block:: js
+    
+    function some() {
+        if (true){
+            // переменная доступная только в условии
+            let a = 5;
         }
     }
 
@@ -298,3 +347,56 @@ use strict
 .. code-block:: js
 
     'use strict';
+
+
+.. _var:
+
+var 
+---
+
+Объявляет переменную, доступную внутри области видимости функции
+
+
+yield, yield*
+-------------
+
+.. note:: EcmaScript6
+
+Приостанавливает функцию и возвращает значение
+
+yield* - принимает итерируемый объект и выполняет итерации по нему
+
+.. code-block:: js
+
+    function* generator_function(){
+        yield 1;
+        yield 2;
+    }
+    var generator = generator_function()
+    generator.next().value
+    // 1
+    generator.next().value
+    // 2
+
+.. code-block:: js
+
+    function* gf1(){
+        yield 2;
+        yield 3;
+    }
+    function* gf2(){
+        yield 1;
+        yield* gf1();
+        yield* [4, 5];
+    }
+    var g = gf2();
+    g.next().value;
+    // 1
+    g.next().value;
+    // 2
+    g.next().value;
+    // 3
+    g.next().value;
+    // 4
+    g.next().value;
+    // 5

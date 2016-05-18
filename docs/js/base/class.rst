@@ -2,9 +2,11 @@
 ======
 
 В javascript нету классов в чистом виде,
-"классы" создают используя функции с оператором New
+"классы" создают используя функции с оператором :ref:`new`, однако, в EcmaScript6 добавили классы :ref:`class`.
 
-New
+.. _new:
+
+new
 ---
 
 .. code-block:: js
@@ -40,6 +42,54 @@ New
 
     alex.say.apply(jack, ['hi']);
 
+
+.. _class:
+
+class
+-----
+
+.. note:: Добавлено в EcmaScript6
+
+    .. code-block:: js
+
+        class Person {
+
+            constructor(name) {
+                this._name = name;
+            }
+
+            get name(){
+                return this._name;
+            }
+
+            set name(value){
+                this.name = name;
+            }
+
+            static getDefaultName(){
+                // статический метод
+                return 'ilnurgi';
+            }
+
+            * generator_function() {
+                yield 1;
+                yield 2;
+            }
+        }
+
+        // статическое свойство
+        Person.age = 26;
+
+        let user = new Person('Ilnur');
+
+    .. code-block:: js
+
+        let Task = class {
+            
+        }
+
+
+
 Наследование
 ------------
 
@@ -64,6 +114,24 @@ New
     YotubeTrack.prototype = Object.create(Track.prototype);
     // конструктор наследовать нам не надо
     YotubeTrack.prototype.constructor = YotubeTrack;
+
+.. note:: EcmaScript6
+
+    .. code-block:: js
+
+        class Task {
+            constructor(){
+                ...
+            }
+        }        
+
+        class SubTask extends Task {
+            constructor(){
+                // вызов родительского метода обязателен
+                super();
+                ...
+            }
+        }
 
 
 Миксины
@@ -100,3 +168,5 @@ New
     }
     extend(Track.prototype, namedMixin, controlMixin);
     extend(Playlist.prototype, namedMixin, controlMixin);
+
+

@@ -1,9 +1,12 @@
-Element(HTMLElement) - элемент узла дом дерева
-==============================================
+Element - элемент узла дом дерева
+=================================
 
 .. js:class:: Element()
+.. js:class:: HTMLElement()
 
     Наследник :js:class:`Node`, :js:class:`EventTarget`
+
+    `<abbr>`, `<acronym>`, `<address>`, `<b>`, `<bdo>`, `<big>`, `<center>`, `<cite>`, `<code>`, `<dd>`, `<dfn>`, `<dt>`, `<em>`, `<i>`, `<kbd>`, `<noframes>`, `<noscript>`, `<s>`, `<samp>`, `<small>`, `<span>`, `<strike>`, `<strong>`, `<sub>`, `<sup>`, `<tt>`, `<u>`, `<var>`
 
 
     .. js:attribute:: Attributes
@@ -335,54 +338,1029 @@ Element(HTMLElement) - элемент узла дом дерева
         
         Этот ме­тод дей­ст­ву­ет так же, как ме­тод :js:func:`setAttribute()`, за ис­клю­че­ни­ем то­го, что имя ат­ри­бу­та ука­зы­ва­ет­ся как ком­би­на­ция URI про­стран­ст­ва имен и ква­ли­фи­ци­ро­ван­но­го име­ни, со­стоя­ще­го из пре­фик­са про­стран­ст­ва имен, двое­то­чия и  ло­каль­но­го име­ни в этом про­стран­ст­ве имен.
 
+
+HTMLAnchorElement
+-----------------
+
+Элемент `<a>`
+
+Наследник :js:class:`HTMLElement`
+
+.. js:class:: HTMLAnchorElement
+
+    .. js:attribute:: href
+
+    .. js:attribute:: target
+
+    .. js:attribute:: ping
+
+    .. js:attribute:: rel
+
+    .. js:attribute:: media
+
+    .. js:attribute:: hreflang
+
+    .. js:attribute:: type
+
+
+HTMLAppletElement
+-----------------
+
+Элемент `<applet>`
+
+Наследник :js:class:`HTMLElement`
+
+.. js:class:: HTMLAppletElement
+
+
+HTMLAreaElement
+-----------------
+
+Элемент `<area>`
+
+Наследник :js:class:`HTMLElement`
+
+.. js:class:: HTMLAreaElement
+
+    .. js:attribute:: alt
+
+    .. js:attribute:: coords
+
+    .. js:attribute:: shape
+
+    .. js:attribute:: href
+
+    .. js:attribute:: target
+
+    .. js:attribute:: ping
+
+    .. js:attribute:: rel
+
+    .. js:attribute:: media
+
+    .. js:attribute:: hreflang
+
+    .. js:attribute:: type
+
+
+HTMLBaseElement
+-----------------
+
+Элемент `<base>`
+
+Наследник :js:class:`HTMLElement`
+
+.. js:class:: HTMLBaseElement
+
+    .. js::attribute:: href
+
+    .. js::attribute:: target
+
+
+HTMLBaseFontElement
+-----------------
+
+Элемент `<basefont>`
+
+Наследник :js:class:`HTMLElement`
+
+.. js:class:: HTMLBaseFontElement
+
+
+HTMLBodyElement
+-----------------
+
+Элемент `<blockquote>`
+
+Наследник :js:class:`HTMLElement`
+
+.. js:class:: HTMLBodyElement
+
+    .. js:attribute:: onafterprint
+
+    .. js:attribute:: onbeforeprint
+
+    .. js:attribute:: onbeforeunload
+
+    .. js:attribute:: onblur
+
+    .. js:attribute:: onerror
+
+    .. js:attribute:: onfocus
+
+    .. js:attribute:: onhash­
+
+    .. js:attribute:: change
+
+    .. js:attribute:: onload
+
+    .. js:attribute:: onmessage
+
+    .. js:attribute:: onoffline
+
+    .. js:attribute:: ononline
+
+    .. js:attribute:: onpagehide
+
+    .. js:attribute:: onpage­show
+
+    .. js:attribute:: onpopstate
+
+    .. js:attribute:: onredo
+
+    .. js:attribute:: onresize
+
+    .. js:attribute:: onscroll
+
+    .. js:attribute:: onstorage
+
+    .. js:attribute:: onundo
+
+    .. js:attribute:: onunload
+
+
+HTMLButtonElement
+-------------
+
+Элемент `<button>`
+
+Наследник :js:class:`HTMLElement`
+
+.. js:class:: HTMLButtonElement
+
+    .. js:attribute:: autofocus
+
+    .. js:attribute:: disabled
+
+    .. js:attribute:: form
+
+    .. js:attribute:: formaction
+
+    .. js:attribute:: formenctype
+
+    .. js:attribute:: formmethod
+
+    .. js:attribute:: form­nova­
+
+    .. js:attribute:: lidate
+
+    .. js:attribute:: formtarget
+
+    .. js:attribute:: name
+
+    .. js:attribute:: type
+
+    .. js:attribute:: value
+
+
+HTMLBRElement
+-------------
+
+Элемент `<br>`
+
+Наследник :js:class:`HTMLElement`
+
+.. js:class:: HTMLBRElement
+
+
+HTMLDListElement
+-------------
+
+Элемент `<dl>`
+
+Наследник :js:class:`HTMLElement`
+
+.. js:class:: HTMLDListElement
+
+
+HTMLDirectoryElement
+-------------
+
+Элемент `<dir>`
+
+Наследник :js:class:`HTMLElement`
+
+.. js:class:: HTMLDirectoryElement
+
+
+HTMLDivElement
+-------------
+
+Элемент `<div>`
+
+Наследник :js:class:`HTMLElement`
+
+.. js:class:: HTMLDivElement
+
+
+HTMLFieldSetElement
+-------------
+
+Элемент `<fieldset>`
+
+Наследник :js:class:`HTMLElement`
+
+.. js:class:: HTMLFieldSetElement
+
+    .. js:attribute:: disabled
+    
+    .. js:attribute:: form
+    
+    .. js:attribute:: name
+
+
+HTMLFontElement
+-------------
+
+Элемент `<font>`
+
+Наследник :js:class:`HTMLElement`
+
+.. js:class:: HTMLFontElement
+
+
+HTMLFormElement
+-------------
+
+Элемент `<from>`
+
+Наследник :js:class:`HTMLElement`
+
+.. js:class:: HTMLFormElement
+
+    .. js:attribute:: accept-charset
+
+    .. js:attribute:: action
+
+    .. js:attribute:: autocomplete
+    
+    .. js:attribute:: elements
+    
+    .. js:attribute:: enctype
+    
+    .. js:attribute:: method
+    
+    .. js:attribute:: name
+    
+    .. js:attribute:: novalidate
+    
+    .. js:attribute:: target
+
+    .. js:attribute:: length
+
+    .. js:function:: submit()
+
+    .. js:function:: reset()
+
+HTMLFrameElement
+-------------
+
+Элемент `<frame>`
+
+Наследник :js:class:`HTMLElement`
+
+.. js:class:: HTMLFrameElement
+
+
+HTMLFrameSetElement
+-------------
+
+Элемент `<frameset>`
+
+Наследник :js:class:`HTMLElement`
+
+.. js:class:: HTMLFrameSetElement
+
+
+HTMLHeadElement
+-------------
+
+Элемент `<head>`
+
+Наследник :js:class:`HTMLElement`
+
+.. js:class:: HTMLHeadElement
+
+
+HTMLHeadingElement
+-------------
+
+Элемент `<h1> ... <h6>`
+
+Наследник :js:class:`HTMLElement`
+
+.. js:class:: HTMLHeadingElement
+
+
+HTMLHtmlElement
+-------------
+
+Элемент `<html>`
+
+Наследник :js:class:`HTMLElement`
+
+.. js:class:: HTMLHtmlElement
+
+    .. js:attribute:: manifest
+
+
+HTMLHRElement
+-------------
+
+Элемент `<hr>`
+
+Наследник :js:class:`HTMLElement`
+
+.. js:class:: HTMLHRElement
+
+
+HTMLImageElement
+-------------
+
+Элемент `<image>`
+
+Наследник :js:class:`HTMLElement`
+
+.. js:class:: HTMLImageElement
+
+    .. js:attribute:: alt
+    
+    .. js:attribute:: src
+    
+    .. js:attribute:: usemap
+    
+    .. js:attribute:: ismap
+    
+    .. js:attribute:: width
+    
+    .. js:attribute:: height
+
+
+HTMLInputElement
+-------------
+
+Элемент `<input>`
+
+Наследник :js:class:`HTMLElement`
+
+.. js:class:: HTMLInputElement
+
+    .. js:attribute:: accept
+
+    .. js:attribute:: alt
+
+    .. js:attribute:: autocomplete
+
+    .. js:attribute:: autofocus
+
+    .. js:attribute:: checked
+
+    .. js:attribute:: defaultChecked
+    
+    .. js:attribute:: defaultValue
+
+    .. js:attribute:: dirname
+
+    .. js:attribute:: disabled
+
+    .. js:attribute:: form
+
+    .. js:attribute:: form­
+
+    .. js:attribute:: ac­tion
+
+    .. js:attribute:: formenctype
+
+    .. js:attribute:: formmethod
+
+    .. js:attribute:: formnovalidate
+
+    .. js:attribute:: formtarget
+
+    .. js:attribute:: height
+
+    .. js:attribute:: list
+
+    .. js:attribute:: max
+
+    .. js:attribute:: maxlength
+
+    .. js:attribute:: min
+
+    .. js:attribute:: multiple
+
+    .. js:attribute:: name
+
+    .. js:attribute:: pattern
+
+    .. js:attribute:: placeholder
+
+    .. js:attribute:: readonly
+
+    .. js:attribute:: required
+
+    .. js:attribute:: size
+
+    .. js:attribute:: src
+
+    .. js:attribute:: step
+
+    .. js:attribute:: type
+
+    .. js:attribute:: value
+
+    .. js:attribute:: width
+
+    .. js:function:: blur()
+
+    .. js:function:: click()
+
+    .. js:function:: focus()
+
+    .. js:function:: select()
+
+
+HTMLIsIndexElement
+-------------
+
+Элемент `<isindex>`
+
+Наследник :js:class:`HTMLElement`
+
+.. js:class:: HTMLIsIndexElement
+
+
+HTMLIFrameElement
+-------------
+
+Элемент `<iframe>`
+
+Наследник :js:class:`HTMLElement`
+
+.. js:class:: HTMLIFrameElement
+
+    .. js:attribute:: src
+    
+    .. js:attribute:: srcdoc
+    
+    .. js:attribute:: name
+    
+    .. js:attribute:: sandbox
+    
+    .. js:attribute:: seamless
+    
+    .. js:attribute:: width
+    
+    .. js:attribute:: height
+
+
+HTMLLabelElement
+-------------
+
+Элемент `<label>`
+
+Наследник :js:class:`HTMLElement`
+
+.. js:class:: HTMLLabelElement
+
+    .. js:attribute:: form
+    
+    .. js:attribute:: for
+
+
+HTMLLegendElement
+-------------
+
+Элемент `<legend>`
+
+Наследник :js:class:`HTMLElement`
+
+.. js:class:: HTMLLegendElement
+
+
+HTMLLinkElement
+-------------
+
+Элемент `<li>`
+
+Наследник :js:class:`HTMLElement`
+
+.. js:class:: HTMLLinkElement
+
+    .. js:attribute:: href
+
+    .. js:attribute:: rel
+
+    .. js:attribute:: media
+
+    .. js:attribute:: hreflang
+
+    .. js:attribute:: type
+
+    .. js:attribute:: sizes
+
+
+HTMLLIElement
+-------------
+
+Элемент `<li>`
+
+Наследник :js:class:`HTMLElement`
+
+.. js:class:: HTMLLIElement
+
+    .. js:attribute:: value
+
+
+HTMLMapElement
+-------------
+
+Элемент `<map>`
+
+Наследник :js:class:`HTMLElement`
+
+.. js:class:: HTMLMapElement
+
+    .. js:attribute:: map
+
+
+HTMLMenuElement
+-------------
+
+Элемент `<menu>`
+
+Наследник :js:class:`HTMLElement`
+
+.. js:class:: HTMLMenuElement
+
+    .. js:attribute:: type
+
+    .. js:attribute:: label
+
+
+HTMLMetaElement
+-------------
+
+Элемент `<meta>`
+
+Наследник :js:class:`HTMLElement`
+
+.. js:class:: HTMLMetaElement
+
+    .. js:attribute:: name
+    
+    .. js:attribute:: http-equiv
+    
+    .. js:attribute:: content
+    
+    .. js:attribute:: charset
+
+
+HTMLModElement
+-------------
+
+Элемент `<del>`, `<ins>`
+
+Наследник :js:class:`HTMLElement`
+
+.. js:class:: HTMLModElement
+
+    .. js:attribute:: cite
+
+    .. js:attribute:: datetime
+
+
+HTMLObjectElement
+-------------
+
+Элемент `<object>`
+
+Наследник :js:class:`HTMLElement`
+
+.. js:class:: HTMLObjectElement
+
+    .. js:attribute:: data
+    
+    .. js:attribute:: type
+    
+    .. js:attribute:: name
+    
+    .. js:attribute:: usemap
+    
+    .. js:attribute:: form
+    
+    .. js:attribute:: width
+    
+    .. js:attribute:: height
+
+
+HTMLOptGroupElement
+-------------
+
+Элемент `<optgroup>`
+
+Наследник :js:class:`HTMLElement`
+
+.. js:class:: HTMLOptGroupElement
+
+    .. js:attribute:: disabled
+
+    .. js:attribute:: label
+
+
+HTMLOptionElement
+-------------
+
+Элемент `<option>`
+
+Наследник :js:class:`HTMLElement`
+
+.. js:class:: HTMLOptionElement
+
+    .. code-block:: js
+
+        var o = new Option(text, value, defaultSelected, selected);
+
+    .. js:attribute:: form
+
+    .. js:attribute:: defaultSelected
+
+    .. js:attribute:: disabled
+    
+    .. js:attribute:: index
+
+    .. js:attribute:: label
+    
+    .. js:attribute:: selected
+
+    .. js:attribute:: text
+
+    .. js:attribute:: value
+
+
+HTMLOListElement
+-------------
+
+Элемент `<ol>`
+
+Наследник :js:class:`HTMLElement`
+
+.. js:class:: HTMLOListElement
+
+    .. js:attribute:: reversed
+
+    .. js:attribute:: start
+
+
+HTMLParagraphElement
+-------------
+
+Элемент `<p>`
+
+Наследник :js:class:`HTMLElement`
+
+.. js:class:: HTMLParagraphElement
+
+    .. js:attribute:: cite
+
+
+HTMLParamElement
+-------------
+
+Элемент `<param>`
+
+Наследник :js:class:`HTMLElement`
+
+.. js:class:: HTMLParamElement
+
+    .. js:attribute:: name
+    
+    .. js:attribute:: value
+
+
+HTMLPreElement
+-------------
+
+Элемент `<pre>`
+
+Наследник :js:class:`HTMLElement`
+
+.. js:class:: HTMLPreElement
+
+
+HTMLQuoteElement
+-------------
+
+Элемент `<q>`, `<blockquote>`
+
+Наследник :js:class:`HTMLElement`
+
+.. js:class:: HTMLQuoteElement
+
+    .. js:attribute:: cite
+
+
+HTMLScriptElement
+-------------
+
+Элемент `<script>`
+
+Наследник :js:class:`HTMLElement`
+
+.. js:class:: HTMLScriptElement
+
+    .. js:attribute:: src
+    
+    .. js:attribute:: async
+    
+    .. js:attribute:: defer
+    
+    .. js:attribute:: type
+    
+    .. js:attribute:: charset
+
+
+HTMLSelectElement
+-------------
+
+Элемент `<select>`
+
+Наследник :js:class:`HTMLElement`
+
+.. js:class:: HTMLSelectElement
+
+    .. js:attribute:: autofocus
+
+    .. js:attribute:: disabled
+
+    .. js:attribute:: form
+
+    .. js:attribute:: length
+
+    .. js:attribute:: multiple
+
+    .. js:attribute:: name
+
+    .. js:attribute:: options
+
+    .. js:attribute:: required
+
+    .. js:attribute:: selectedIndex
+
+    .. js:attribute:: size
+
+    .. js:attribute:: tabIndex
+
+    .. js:attribute:: type
+
+    .. js:attribute:: value
+
+    .. js:function:: add()
+
+    .. js:function:: blur()
+
+    .. js:function:: focus()
+
+    .. js:function:: remove()
+
+
+HTMLStyleElement
+-------------
+
+Элемент `<select>`
+
+Наследник :js:class:`HTMLElement`
+
+.. js:class:: HTMLStyleElement
+
+    .. js:attribute:: media
+    
+    .. js:attribute:: type
+    
+    .. js:attribute:: scoped
+
+
+HTMLTableCaptionElement
+-------------
+
+Элемент `<caption>`
+
+Наследник :js:class:`HTMLElement`
+
+.. js:class:: HTMLTableCaptionElement
+
+
+HTMLTableCellElement
+-------------
+
+Элемент `<td>`, `<th>`
+
+Наследник :js:class:`HTMLElement`
+
+.. js:class:: HTMLTableCellElement
+
+    .. js:attribute:: align
+
+    .. js:attribute:: cellIndex
+
+    .. js:attribute:: colspan
+    
+    .. js:attribute:: rowspan
+    
+    .. js:attribute:: headers
+
+    .. js:attribute:: height
+
+    .. js:attribute:: innerHTML
+
+    .. js:attribute:: textContent
+
+    .. js:attribute:: vAlign
+
+    .. js:attribute:: width
+
+
+HTMLTableColElement
+-------------
+
+Элемент `<col>`, `<colgroup>`
+
+Наследник :js:class:`HTMLElement`
+
+.. js:class:: HTMLTableColElement
+
+    .. js:attribute:: span
+
+
+HTMLTableElement
+-------------
+
+Элемент `<table>`
+
+Наследник :js:class:`HTMLElement`
+
+.. js:class:: HTMLTableElement
+
+    .. js:attribute:: border
+
+    .. js:attribute:: caption 
+
+    .. js:attribute:: cellPadding
+
+    .. js:attribute:: cellSpacing
+
+    .. js:attribute:: rows[] 
+
+    .. js:attribute:: summary
+
+    .. js:attribute:: tBodies[] 
+
+    .. js:attribute:: tFoot 
+
+    .. js:attribute:: tHead 
+
+    .. js:attribute:: width 
+
+    .. js:function:: createCaption()
+
+    .. js:function:: createTFoot()
+
+    .. js:function:: createTHead()
+
+    .. js:function:: deleteCaption()
+
+    .. js:function:: deleteTFoot()
+
+    .. js:function:: deleteTHead()
+
+    .. js:function:: deleteRow(index)
+
+    .. js:function:: insertRow(index)
+
+
+HTMLTableRowElement
+-------------
+
+Элемент `<tr>`
+
+Наследник :js:class:`HTMLElement`
+
+.. js:class:: HTMLTableRowElement
+
+    .. js:attribute:: bgColor
+
+    .. js:attribute:: cells
+
+    .. js:attribute:: rowIndex
+
+    .. js:attribute:: sectionRowIndex
+
+    .. js:attribute:: vAlign
+
+    .. js:function:: deleteCell(index)
+
+    .. js:function:: insertCell(index)
+    
+
+HTMLTableSectionElement
+-------------
+
+Элемент `<tbody>`, `<tfoot>`, `<thead>`
+
+Наследник :js:class:`HTMLElement`
+
+.. js:class:: HTMLTableSectionElement
+
+    .. js:attribute:: align
+
+    .. js:attribute:: rows
+
+    .. js:attribute:: vAlign
+
+    .. js:function:: deleteRow(index)
+
+    .. js:function:: insertRow(index)
+
+
+HTMLTextAreaElement
+-------------
+
+Элемент `<textarea>`
+
+Наследник :js:class:`HTMLElement`
+
+.. js:class:: HTMLTextAreaElement
+
+    .. js:attribute:: autofocus
+    
+    .. js:attribute:: cols
+    
+    .. js:attribute:: defaultValue
+
+    .. js:attribute:: disabled
+    
+    .. js:attribute:: form
+    
+    .. js:attribute:: maxlength
+    
+    .. js:attribute:: name
+    
+    .. js:attribute:: placeholder
+    
+    .. js:attribute:: readonly
+    
+    .. js:attribute:: requi­r­ed
+    
+    .. js:attribute:: rows
+    
+    .. js:attribute:: tabIndex
+
+    .. js:attribute:: type
+
+    .. js:attribute:: value
+
+    .. js:attribute:: wrap
+
+    .. js:function:: blur()
+
+    .. js:function:: focus()
+
+    .. js:function:: select()
+
+
+HTMLTitleElement
+-------------
+
+Элемент `<title>`
+
+Наследник :js:class:`HTMLElement`
+
+.. js:class:: HTMLTitleElement
+
+
+HTMLUListElement
+-------------
+
+Элемент `<ul>`
+
+Наследник :js:class:`HTMLElement`
+
+.. js:class:: HTMLUListElement
+
+
 ============ ========
 Эле­мент      Ат­ри­бу­ты
 ============ ========
-<a>          href, target, ping, rel, media, hreflang, type
-<area>       alt, coords, shape, href, target, ping, rel, media, hreflang, type
 <audio>      src, preload, autoplay, loop, controls
-<base>       href, target
-<blockquote> cite
-<body>       onafterprint, onbeforeprint, onbeforeunload, onblur, onerror, onfocus, onhash­, change, onload, onmessage, onoffline, ononline, onpagehide, onpage­show, onpopstate, onredo, onresize, onscroll, onstorage, onundo, onunload
-<button>     autofocus, disabled, form, formaction, formenctype, formmethod, form­nova­, lidate, formtarget, name, type, value
 <canvas>     width, height
-<col>        span
-<colgroup>   span
 <command>    type, label, icon, disabled, checked, radiogroup
-<del>        cite, datetime
 <details>    open
 <embed>      src, type, width, height
-<fieldset>   disabled, form, name
-<form>       accept-charset, action, autocomplete, enctype, method, name, novalidate, target
-<html>       manifest
-<iframe>     src, srcdoc, name, sandbox, seamless, width, height
-<img>        alt, src, usemap, ismap, width, height
-<input>      accept, alt, autocomplete, autofocus, checked, dirname, disabled, form, form­, ac­tion, formenctype, formmethod, formnovalidate, formtarget, height, list, max, maxlength, min, multiple, name, pattern, placeholder, readonly, required, size, src, step, type, value, width
-<ins>        cite, datetime
 <keygen>     autofocus, challenge, disabled, form, keytype, name
-<label>      form, for
-<li>         value
-<link>       href, rel, media, hreflang, type, sizes
-<map>        name
-<menu>       type, label
-<meta>       name, http-equiv, content, charset
 <meter>      value, min, max, low, high, optimum, form
-<object>     data, type, name, usemap, form, width, height
-<ol>         reversed, start
-<optgroup>   disabled, label
-<option>     disabled, label, selected, value
 <output>     for, form, name
-<param>      name, value
 <progress>   value, max, form
-<q>          cite
-<script>     src, async, defer, type, charset
-<select>     autofocus, disabled, form, multiple, name, required, size
 <source>     src, type, media
-<style>      media, type, scoped
-<table>      summary
-<td>         colspan, rowspan, headers
-<textarea>   autofocus, cols, disabled, form, maxlength, name, placeholder, readonly, requi­r­ed, rows, wrap
-<th>         colspan, rowspan, headers, scope
 <time>       datetime, pubdate
 <track>      default, kind, label, src, srclang
 <video>      src, poster, preload, autoplay, loop, controls, width, height

@@ -27,6 +27,50 @@ Object - объекты
         // создание дочерних объектов
         var Megaperson = Object.create(person);
 
+    .. code-block:: js
+
+        var object = {
+            name: 'ilnurgi',
+            age: 23
+        }
+        var name = object.name,
+            age = object.age;
+
+    .. note:: EcmaScript6
+
+        .. code-block:: js
+
+            let object = {
+                name: 'ilnurgi',
+                age: 23,
+                ["first"+"Name"]: 'gii'
+            }
+            let {name, age} = object;
+            let {name: x, age: y} = object;
+            let {["na" + "me": x, age: y} = object;
+
+    .. note:: EcmaScript6
+
+        .. code-block:: js
+
+            let x = 1, y = 2;
+            let object = { x, y };
+
+    .. note:: EcmaScript6
+
+        .. code-block:: js
+
+            let object = { 
+                myFunction() {...};
+            };
+            object.myFunction();
+
+    .. note:: EcmaScript6
+
+        .. code-block:: js
+
+            let a = {a: 12, __proto__: {b: 13}}
+
 
     .. js:attribute:: constructor
 
@@ -37,6 +81,13 @@ Object - объекты
             a = new Array(1,2,3);  
             a.constructor == Array;
             // true
+
+
+    .. js:function:: getOwnPropertySymbols()
+
+        Возвращает массив символьных свойств объекта
+
+        .. note:: EcmaScript6
 
 
     .. js:function:: hasOwnProperty(name)
@@ -50,6 +101,7 @@ Object - объекты
             o.hasOwnProperty("x");        // Вернет true: x – это локальное свойство o
             o.hasOwnProperty("y");        // Вернет false: o не имеет свойства y
             o.hasOwnProperty("toString"); // Вернет false: свойство toString унаследовано
+
 
     .. js:function:: isPrototypeOf(obj)
 
@@ -94,6 +146,7 @@ Object - объекты
             o.propertyIsEnumerable("toString"); // false: toString унас­ле­до­ван­ное свой­ст­во
             Object.prototype.propertyIsEnumerable("toString"); // false: не­пе­ре­чис­ли­мое
 
+
     .. js:function:: toLocaleString()
 
         Локализованное строчное представление объекта
@@ -108,8 +161,36 @@ Object - объекты
 
         Возвращает значение объекта
 
+
 Методы, доступные только в объекте Object
 -----------------------------------------
+
+.. js:function:: assign(targetObj, sourceObj, ...)
+
+    Копирует значения свойств объектов в целевой.
+
+    * вызывает методы чтения источников и методы записи приемника
+
+    * просто присваивает значения свойств источника новым или существующим свойствам приемникам
+
+    * не копирет свойства `prototype` источников
+
+    * имена свойств JS могут быть строками или символами
+
+    * определения свойств не копируются из источников
+
+    * игнорирует при копировании ключи со значениями null и undefined
+
+    .. note:: EcmaScript6
+
+    .. code-block:: js
+
+        let x = { x: 12 };
+        let y = { y: 13 };
+        let z = { z: 14 };
+        let m = {};
+        Object.assign(m, x, y, z);
+
 
 .. js:function:: create(prototype[, descriptors]) 
 
@@ -212,6 +293,33 @@ Object - объекты
         Object.getPrototypeOf(o) // => p
 
 
+.. js:function:: is(value1, value2)
+
+    Проверяет равенство двух значений
+
+    .. note:: EcmaScript6
+
+    .. code-block:: js
+
+        Object.is(0, -0);
+        // false
+
+        0 === -0;
+        // true
+
+        Object.is(Nan, 0/0);
+        // true
+
+        Nan === 0/0;
+        // false
+
+        Object.is(Nan, Nan);
+        // true
+
+        NaN === NaN;
+        // false
+
+
 .. js:function:: isExtensible(obj) 
 
     Оп­ре­де­ля­ет, мо­гут ли до­бав­лять­ся но­вые свой­ст­ва в ука­зан­ный объ­ект.
@@ -266,6 +374,19 @@ Object - объекты
     .. versionadded:: ECMAScript5
 
 
+.. js:function:: setPrototypeOf(object, prototype)
+
+    Присваивание значений свойству `prototype`
+
+    .. note:: EcmaScript6
+
+    .. code-block:: js
+
+        let x = { x: 12 };
+        let y = { y: 13 };
+        Object.setPrototypeOf(y, x);
+
+
 Дескрипторы свойств
 -------------------
 Де­ск­рип­тор свой­ст­ва – это обыч­ный Ja­va­Script-объ­ект, опи­сы­ваю­щий ат­ри­бу­ты (и ино­гда зна­че­ние) свой­ст­ва. 
@@ -294,3 +415,44 @@ Object - объекты
             enumerable:   /* true или false */,
             configurable: /* true или false */
         }
+
+
+Итерируемые объекты
+-------------------
+
+.. note:: EcmaScript6
+
+
+* объект реализующий протокол итератора, должен реалиовать метод `next()`
+
+* объект реализующий итерационный протокол, должен иметь свойство с символьным ключом `Symbol.iterator`, который должен возвращать объект-итератор
+
+.. code-block:: js
+
+    let obj = {
+        array: [1, 2, 3, 4, 5].
+        nextIndex: 0,
+        next: function(){
+            return this.nextIndex < this.array.length ? 
+                {value: this.array[this.nextIndex++], done: false} :
+                {done: true}
+        }
+    }
+
+.. code-block:: js
+
+    let obj = {
+        array: [1, 2, 3, 4, 5].
+        nextIndex: 0,
+        [Symbol.iterator]: function(){
+            return {
+                array: this.array,
+                nextIndex: this.nextIndex,
+                next: function(){
+                    return this.nextIndex < this.array.length ? 
+                        {value: this.array[this.nextIndex++], done: false} :
+                        {done: true}
+                }
+            }
+        }
+    }
