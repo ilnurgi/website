@@ -1,51 +1,75 @@
 Стандартные методы модуля
 =========================
 
-Вспомогательные методы
-----------------------
 
+bind
+----
 
 .. js:function:: angular.bind(self, fn, args)
 
     карринг для функции fn
 
 
+bootstrap
+---------
+
 .. js:function:: angular.bootstrap(element[, modules])
 
-    используется для старта фреймфорка вручную
+    Ручная инициализация фреймворка
 
+    .. code-block:: js
+
+        angular.element(document).ready(function() {
+            angular.bootstrap(document);
+        });
+
+
+callbacks
+---------
 
 .. js:function:: angular.callbacks
 
     объект-коллекция колбэков для JSONP
 
 
+copy
+----
+
 .. js:function:: angular.copy(source, destination)
 
     полное копирование(deep copy) объекта
 
+
+element
+-------
 
 .. js:function:: angular.element(selector)
 
     Селектор из jQuery
 
 
+equals
+------
+
 .. js:function:: angular.equals(o1, o2)
 
     сравнение значений/объектов
 
+
+extend
+------
 
 .. js:function:: angular.extend(dst, src[,src2[,src3...]])
 
     расширение объекта
 
 
+forEach
+-------
+
 .. js:function:: angular.forEach(array, callback, [context])
 
     Цикл по массиву
-
-    :param array array: массив
-    :param callback: обработчик
 
    .. code-block:: js
 
@@ -57,137 +81,131 @@
         // 2
 
 
+fromJson
+--------
+
 .. js:function:: angular.fromJson
 
     конвертация из JSON
 
+
+identity
+--------
 
 .. js:function:: angular.identity(value)
 
     создает функцию, которая вернет значение(используется как обертка для мест, где нужно передавать строго функцию)
 
 
+injector
+--------
+
 .. js:function:: angular.injector(modules)
 
     создает функцию-инжектор, которая может быть использована для получения сервисов
 
 
-.. js:function:: angular.isUndefined, isDefined, isString, isFunction, isObject, isNumber, isElement, isArray, isDate
+isArray
+-------
 
-    методы проверки принадлежности типу
+.. js:function:: angular.isArray
 
+
+isDate
+------
+
+.. js:function:: angular.isDate
+
+
+isDefined
+---------
+
+.. js:function:: angular.isDefined
+
+
+isElement
+---------
+
+.. js:function:: angular.isElement
+
+
+isFunction
+----------
+
+.. js:function:: angular.isFunction
+
+
+isNumber
+--------
+
+.. js:function:: angular.isNumber
+
+
+isObject
+--------
+
+.. js:function:: angular.isObject
+
+
+isString
+--------
+
+.. js:function:: angular.isString
+
+
+isUndefined
+-----------
+
+.. js:function:: angular.isUndefined
+
+
+lowercase
+---------
 
 .. js:function:: angular.lowercase
 
     перевод в нижний регистр
 
 
+module
+------
+
+.. js:function:: angular.module(name, requires)
+
+    Объявляет модуль в приложений и возвращает его экземпляр
+
+    .. code-block:: jjs
+
+        var app = angular.module('myModule', [])
+
+
+noop
+----
+
 .. js:function:: angular.noop()
 
     функция “пустышка”, которую можно использовать как заглушку для колбэков
 
+
+toJson
+------
 
 .. js:function:: angular.toJson
 
     конвертация в JSON
 
 
+uppercase
+---------
+
 .. js:function:: angular.uppercase
 
     перевод в верхний регистр
 
 
+version
+-------
+
 .. js:function:: angular.version
 
     версия продукта
-
-
-Методы работы с модулем приложений
-----------------------------------
-
-
-.. js:function:: angular.module(name, requires)
-
-    Объявляет модуль в приложений и возвращает его экземпляр
-
-    :param str name: название модуля
-    :param array requires: список зависимостей
-
-    .. code-block:: jjs
-
-        var app = angular.module('muModule', [])
-
-
-.. js:function:: app.controller(name, callback)
-
-    Объявляет контроллер в модуле
-
-    :param str name: название модуля
-    :param callback: обработчик
-
-    .. code-block:: js
-
-        app.controller(
-            'myController',
-            function(){
-                ...
-            }
-        )
-
-
-.. js:function:: app.constant(key, value)
-
-    Объявляет константу модуля
-
-    .. code-block:: js
-
-        app.constant('CONST', 123);
-
-
-.. js:function:: app.config(function)
-
-    Конфигурирует модуль
-
-    .. code-block:: js
-
-        app.config(function($routeProvider){
-            $routeProvider
-                .otherwise({redirectTo: '/'})
-        });
-
-
-.. js:function:: app.directive(name, callback)
-
-    Объявляет директиву в модуле
-
-    :param str name: название
-    :param callback: обработчик
-
-    .. code-block:: js
-
-        app.directive(
-            'myController',
-            function(){
-                restrict: 'A'
-            }
-        )
-
-.. js:function:: app.run()
-
-    .. code-block:: js
-
-        angular
-        .module('app', [])
-        .run(function($rootScope){
-            // эта штука иногда перехвататывает ошибки,
-            // которые не отображаются в консоли
-            $rootScope.$on('$stateChangeError', function(){
-                throw arguments[5];
-            });
-            ...
-        });
-
-
-.. js:function:: app.value(key, value)
-
-    Объявляет переменную в модуле

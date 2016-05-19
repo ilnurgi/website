@@ -1,325 +1,797 @@
-Директивы
-=========
+Стандартные директивы
+=====================
 
 Директивы являются одной из ключевых возможностей Angular.JS.
 
-Они позволяют разработчику описать поведение отдельных элементов и расширить синтаксис HTML.
+Они позволяют разработчику описать поведение отдельных элементов и
+расширить синтаксис HTML.
 
-В js коде директивы принято называть camelCase-ом `ngApp`, а в шаблонах писать их через тире `ng-app`
+В js коде директивы принято называть camelCase-ом `ngApp`,
+а в шаблонах писать их через тире `ng-app`
 
-Стандартные директивы
----------------------
+a
+-
 
-.. js:attribute:: ng-app
+Заменяет стандартный html тег - якорь,
+т.к. в стандартном href является обязательным и
+стандартны перезагружает страницу.
 
-    Главная директива приложения, задает область ангуляр приложения или создает область для модуля.
-    
-    Можно указать дополнительный атрибут, название приложения.
+.. code-block:: html
 
-    1. создается инжектор(injector), который будет использоваться для dependency injection
-    2. инжектор создает root scope, что является контекстом для модели нашего приложения
-    3. AngularJS “компилирует” DOM начиная с ngApp.
-
-    .. code-block:: html
-
-        <body ng-app></body>
-
-    .. code-block:: html
-
-        <script type="text/javascript">
-            var app = angular.module('myApp', []);
-        </script>
-
-        <body ng-app='myApp'></body>        
+    <a ng-click="model.$save()">Save</a>
 
 
-.. js:attribute:: ng-bind
+form
+----
 
-    Связывание компонента с объектом из скоупа
+Форма :js:class:`FormController`
 
-    .. code-block:: html
+* name - необязательный параметр
 
-        Hello <span ng-bind="name"><span>
+.. code-block:: html
 
-
-.. js:attribute:: ng-change
-
-.. js:attribute:: ng-checked
-
-.. js:attribute:: ng-class
-
-    Задает новый класс элементу
-
-    .. code-block:: html
-
-        <li ng-class="{'actie':(currPath == 'main')}"></li>
+    <form name="myForm"></form>
 
 
-.. js:attribute:: ng-class-even
+input[checkbox]
+---------------
 
-    Задает новый класс каждому четному элементу
+* :ref:`ngModel`
+
+* name - имя свойства, под которым элемент управления будет доступен в области видимости
+
+* ng-true-value
+
+* ng-false-value
+
+* :ref:`ngChange`
+
+.. code-block:: html
+
+    <input
+        type="checkbox"
+        ng-model="value1">
+
+    <input
+        type="checkbox"
+        ng-model="value2"
+        ng-true-value="YES"
+        ng-false-value="NO">
 
 
-.. js:attribute:: ng-class-odd
+input[email]
+------------
 
-    Задает новый класс каждому нечетному элементу
+* :ref:`ngModel`
+
+* name - имя свойства, под которым элемент управления будет доступен в области видимости
+
+* required
+
+* :ref:`ngRequired`
+
+* ng-minlength
+
+* ng-maxlength
+
+* :ref:`ngPattern`
+
+.. code-block:: html
+
+    <input
+        type="email"
+        name="input"
+        ng-model="text"
+        required>
 
 
-.. js:attribute:: ng-click
+input[number]
+-------------
 
-    Обработчик клика по элементу
+* :ref:`ngModel`
+* name
+* min
+* max
+* required
+* :ref:`ngRequired`
+* ng-minlength
+* ng-maxlength
+* :ref:`ngPattern`
+* :ref:`ngChange`
 
 
-.. js:attribute:: ng-controller
+.. code-block:: html
 
-    Связывание элемента c контроллером
+    <input
+        type="number"
+        name="input"
+        ng-model="value"
+        min="0"
+        max="99"
+        required>
 
-    .. code-block:: html
 
-        <script type="text/javascript">            
-            angular
-            .module('myapp, []')
-            .controller('myController', function myController($scope){
-                ...
-            })
-            .controller('myController', ['$scope', function myController($scope){
-                // для корректной минификации
-                ...
-            }])
-        </script>
+input[radio]
+------------
 
-        <div ng-controller='myController'>
-            {{ myValue }}
-        </div>
+* :ref:`ngModel`
+* value
+* name
+* :ref:`ngChange`
 
-    .. code-block:: js
+.. code-block:: html
 
-        <script type="text/javascript">            
-            angular
-            .module('myapp, []')
-            .controller('myController', MyCtrl);
-            
+    <input
+        type="radio"
+        ng-model="color"
+        value="red"> Red <br/>
+
+    <input
+        type="radio"
+        ng-model="color"
+        value="green"> Green <br/>
+
+    <input
+        type="radio"
+        ng-model="color"
+        value="blue"> Blue <br/>
+
+
+input[text]
+-----------
+
+* :ref:`ngModel`
+
+* name - имя свойства, под которым элемент управления будет доступен в области видимости
+
+* required
+
+* :ref:`ngRequired`
+
+* ng-minlength
+
+* ng-maxlength
+
+* :ref:`ngPattern`
+
+* :ref:`ngChange`
+
+.. code-block:: html
+
+    <input
+        type="text"
+        name="userName"
+        ng-model="user.name"
+        required>
+
+    <input
+        type="text"
+        name="lastName"
+        ng-model="user.last"
+        ng-minlength="3"
+        ng-maxlength="10">
+
+    <input
+        type="text"
+        name="input"
+        ng-model="text"
+        ng-pattern="word"
+        required>
+
+
+input[url]
+----------
+
+* :ref:`ngModel`
+
+* name - имя свойства, под которым элемент управления будет доступен в области видимости
+
+* required
+
+* :ref:`ngRequired`
+
+* ng-minlength
+
+* ng-maxlength
+
+* :ref:`ngPattern`
+
+* :ref:`ngChange`
+
+.. code-block:: html
+
+    <input
+        type="url"
+        name="input"
+        ng-model="text"
+        required>
+
+
+ng-app
+------
+
+Главная директива приложения, задает область ангуляр приложения или
+создает область для модуля.
+
+Можно указать дополнительный атрибут, название приложения.
+
+1. создается инжектор(injector), который будет использоваться для dependency injection
+2. инжектор создает root scope, что является контекстом для модели нашего приложения
+3. AngularJS “компилирует” DOM начиная с ngApp.
+
+.. code-block:: html
+
+    <body ng-app></body>
+
+.. code-block:: html
+
+    <script type="text/javascript">
+        var app = angular.module('myApp', []);
+    </script>
+
+    <body ng-app='myApp'></body>
+
+
+ng-bind
+-------
+
+Связывание компонента с объектом из скоупа
+
+.. code-block:: html
+
+    Hello <span ng-bind="name"><span>
+
+
+ng-bind-html-unsafe
+-------------------
+
+Создает привязку через свойство `innerHTML`.
+
+.. code-block:: html
+
+    Hello <span ng-bind-html-unsafe="name"><span>
+
+
+ng-bind-template
+----------------
+
+Множественная привязка
+
+.. code-block:: html
+
+    <pre ng-bind-template="{{salutation}} {{name}}!"></pre>
+
+
+.. _ngChange:
+
+ng-change
+---------
+
+Вызывает определенную функция, приизменении значения.
+
+.. code-block:: html
+
+    <input
+        type="checkbox"
+        ng-model="confirmed"
+        ng-change="change()"
+        id="ng-change-example1" />
+
+
+ng-checked
+----------
+
+.. code-block:: html
+
+    <input
+        id="checkSlave"
+        type="checkbox"
+        ng-checked="master">
+
+
+ng-class
+--------
+
+Задает новый класс элементу
+
+.. code-block:: html
+
+    <li ng-class="{'active':(currPath == 'main')}"></li>
+
+    <span ng-class="myVar">Sample Text</span>
+
+
+ng-class-even
+-------------
+
+Задает новый класс каждому четному элементу,
+используется совместно с :ref:`ngRepeat`
+
+.. code-block:: html
+
+    <li ng-repeat="name in names">
+        <span ng-class-odd="'odd'" ng-class-even="'even'">
+            {{name}}
+        </span>
+    </li>
+
+
+ng-class-odd
+------------
+
+Задает новый класс каждому нечетному элементу,
+используется совместно с :ref:`ngRepeat`
+
+
+ng-click
+--------
+
+Обработчик клика по элементу
+
+.. code-block:: html
+
+    <button
+        ng-click="count = count + 1"
+        ng-init="count=0">
+
+
+ng-cloak
+--------
+
+Предотвращение показа в браузере шаблона angular при загрузке приложения
+
+.. code-block:: html
+
+    <div
+        id="template1"
+        ng-cloak>{{ 'hello' }}</div>
+
+ng-controller
+-------------
+
+Связывание элемента c контроллером
+
+.. code-block:: html
+
+    <script type="text/javascript">
+        angular
+        .module('myapp, []')
+        .controller('myController', function myController($scope){
+            ...
+        })
+        .controller('myController', ['$scope', function myController($scope){
             // для корректной минификации
-            MyCtrl.$inject = ['$scope'];
+            ...
+        }])
+    </script>
 
-            function MyCtrl($scope){
-                ...
-            });
-        </script>
-
-        <div ng-controller='myController'>
-            {{ myValue }}
-        </div>
-
-
-.. js:attribute:: ng-disabled
-
-.. js:attribute:: ng-hide
-
-    Скрывает элемент
-
-.. js:attribute:: ng-href
-
-.. js:attribute:: ng-dbl-click
-
-    Обработчик двойного клика по элементу
-
-
-.. js:attribute:: ng-form
-
-    Связывает элементы формы
-
-
-.. js:attribute:: ng-include
-
-    подключает отдельный файлы
-
-    .. code-block:: html
-
-        <div ng-include='/index.html'></div>
-
-
-.. js:attribute:: nginit
-
-    Директива, инициализация начальных данных
-
-    .. code-block:: html
-
-        <div ng-init="name='world'">
-            Hello {{ name }}
-        </div>
-
-
-.. js:attribute:: ng-mousedown
-
-.. js:attribute:: ng-mouseenter
-
-.. js:attribute:: ng-mouseleave
-
-.. js:attribute:: ng-mousemove
-
-.. js:attribute:: ng-mouseover
-
-.. js:attribute:: ng-mouseup
-
-.. js:attribute:: ng-model
-
-    Задает модель для связывания
-
-
-.. js:attribute:: ng-read-only
-
-.. js:attribute:: ng-repeat
-
-    Цикл перебора массива
-
-    .. code-block: html
-
-        <ul>
-            <li ng-repeat="phone in phones">
-                {{phone.name}}
-            </li>
-        </ul>
-
-
-.. js:attribute:: ng-selected
-
-.. js:attribute:: ng-show
-
-    Показывает/скрывает html элемент, в зависимости от результата выражения
-
-    .. code-block:: html
-
-        <!-- когда $scope.myValue истина, элемент отображается -->
-        <div ng-show="myValue"></div>
-
-        <input type='checkbox' ng-model='ShowValue'>
-        <div ng-show='ShowValue'>текст, который отобразится при клике по checkbox</div>
-
-
-.. js:attribute:: ng-src
-
-.. js:attribute:: ng-style
-
-.. js:attribute:: ng-submit
-
-    Позволяет забиндить действие, которое будет выполняться при отправке данных из формы.
-
-
-.. js:attribute:: ng-transclude
-
-    используется внутри кастомных директив для вывода контета заданого снаржу при объявлении директивы
-
-
-
-Как написать свою директиву
----------------------------
+    <div ng-controller='myController'>
+        {{ myValue }}
+    </div>
 
 .. code-block:: js
 
-    // простая директива
-    angular.module('app', [])
-        .directive(
-            'pane',
-            function(){
-                return function(){
-                    ...
-                }
-            }
-        );
+    <script type="text/javascript">
+        angular
+        .module('myapp, []')
+        .controller('myController', MyCtrl);
 
-    // директива с настройками
-    angular.module('app', [])
-        .directive(
-            'pane',
-            function(){
-                return {
-                    restrict: 'E',
-                    transclude: true,
-                    scope: {
-                        title:'@'
-                    },
-                    template: '<div style="border: 1px solid black;">' +
-                              '<div style="background-color: gray">{{title}}</div>' +
-                              '<div ng-transclude></div>' +
-                              '</div>',
-                    link: function(scope, element, attrs, ctrl, transclude){
-                        /*
-                         * scope -
-                         * elemnt - 
-                         * attrs -
-                         * ctrl -
-                         * transclude - функция для трансклуда
-                           transclude(scope, function(clone, scope){
-                                // scope - скоуп клинируемого элемента
-                                // если не хочется использовать transclude: true,
-                                element.append(clone);
-                            });
-                         */
-                    }
-                };
-            };
+        // для корректной минификации
+        MyCtrl.$inject = ['$scope'];
+
+        function MyCtrl($scope){
+            ...
         });
-        
-        
-Описание параметров директив
+    </script>
 
-* `priority` - приоретива выполения(для случая когда на одном элементе несколько директив)
+    <div ng-controller='myController'>
+        {{ myValue }}
+    </div>
 
-* `replace` - если `true` – то шаблон директивы заменит элемент, `false` – произойдет append
 
-* `restrict` - задает способ встраивания
+ng-csp
+------
 
-    * `E` - тэг(имя элемента)
+Включает поддержку CSP
 
-    * `A` - атрибут
+.. code-block:: html
 
-    * `C` - класс
+    <html ng-csp>...</html>
 
-    * `M` - комментарий
 
-* `scope` - Определяет способ передачи scope в директиву
+ng-dblclick
+-----------
 
-    В зависимости от типа переданного параметра ведёт себя по разному:
+Обработчик двойного клика по элементу
 
-    * `true` – создается новый scope конкретно для этой директивы
+.. code-block:: html
 
-    * `{}` - задается конкретный изолированный scope – т.е. scope не унаследованный от родительского
+    <button ng-dblclick="count = count + 1" ng-init="count=0">
 
-        Может влючать в себе ссылки на элементы родительского scope при использоварнии нетривиального синтаксиса
-        (специальный префикс символ (@, =, & ) перед имеем метода/переменой)
 
-        * `@` – переменную локального scope со значением DOM аттрибута
+ng-disabled
+-----------
 
-        * `=` – двустороннее связывание значения атрибута и переменной
+Включает/выключает элемент
 
-        * `&` – позволяет выполнять выражения из аттрибута в рамках родительского scope
+.. code-block:: html
 
-    * `false` - используется scope ближайшего контроллера (default)
+    <button
+        ng-model="button"
+        ng-disabled="checked">Button</button>
 
-* `template` - шаблон HTML
 
-* `templateUrl` - ссылка на файл шаблона
+ng-form
+-------
 
-* `transclude` - компилирует контент элемента и делает возможные его вставку внутрь шаблона (по средством ngTransclude )
-    
-    * `true` - не потерять содержимое директивы
+Форма, позволяет создавать вложенные формы
 
-    * `'element'`
 
-* `controller` - метод (либо ссылка на метод) где описано поведение(логика) `dialogDirectiveController`
-    
-    Необходима в случае, когда логика директивы выходит за пределы одного метода и нам уже необходимма группа методов.
-    
-    Такую группу методов мы можем объединить в функцию-контроллер.
-    
-    Это будет специальный тип контроллера "связанный с директивой",
-    которые должен взаимодействать только с данной директивой.
+ng-hide
+-------
 
-* `compile` - метод(либо ссылка на метод) с инструкциями по компиляции шаблона
+Скрывает элемент
 
-    Функция компиляции compile (используется довольно редко)  трансформирует HTML шаблон.
+.. code-block:: html
 
-* `link` - основной параметр фабрики – метод(либо ссылка на метод) по связыванию директивы с приложением
+    <span ng-hide="checked">I hide when you checkbox is checked?</span>
 
-    После компиляции функция линковки link регистрирует обработчики событий на DOM обновленного HTML.
+
+ng-href
+-------
+
+.. code-block:: html
+
+    <a
+        id="link-1"
+        href
+        ng-click="value = 1">link 1</a> (link, don't reload)
+
+    <a
+        id="link-2"
+        href=""
+        ng-click="value = 2">link 2</a> (link, don't reload)
+
+    <a
+        id="link-3"
+        ng-href="/{{'123'}}">link 3</a> (link, reload!)
+
+    <a
+        id="link-4"
+        href=""
+        name="xx"
+        ng-click="value = 4">anchor</a> (link, don't reload)
+
+    <a
+        id="link-5"
+        name="xxx"
+        ng-click="value = 5">anchor</a> (no link)
+
+    <a
+        id="link-6"
+        ng-href="{{value}}">link</a> (link, change location)
+
+
+ng-include
+----------
+
+Подключает отдельный файлы
+
+* src
+* onload - выполнится, когда новая часть будет загружена
+* autoscroll - прокрутка отображения к загруженному контенту
+
+.. code-block:: html
+
+    <div
+        ng-include='/index.html'
+        onload=""
+        autoscroll=""></div>
+
+
+ng-init
+-------
+
+Директива, инициализация начальных данных
+
+.. code-block:: html
+
+    <div ng-init="name='world'">
+        Hello {{ name }}
+    </div>
+
+
+ng-list
+-------
+
+Конвертирует входной текст, разделенный заданным знаком разделителем, в массив строк
+
+.. code-block:: html
+
+    <input name="namesInput" ng-model="names" ng-list required>
+
+.. _ngModel:
+
+ng-model
+--------
+
+Задает модель для связывания
+
+
+ng-mousedown
+------------
+
+Обработчик события `mousedown`, нажата кнопка мыши
+
+
+ng-mouseenter
+-------------
+
+Обработчик события `mouseenter`, курсов вошел в область
+
+
+ng-mouseleave
+-------------
+
+Обработчик события `mouseleave`, курсов вышел из области
+
+
+ng-mousemove
+------------
+
+Обработчик события `mousemove`, перемещение мыши в элементе
+
+
+ng-mouseover
+------------
+
+Обработчик события `mouseover`, мышь сверху
+
+
+ng-mouseup
+----------
+
+Обработчик события `mouseup`
+
+
+ng-multiple
+-----------
+
+.. code-block:: html
+
+    <select id="select" ng-multiple="checked">
+
+
+ng-non-bindable
+---------------
+
+Не интерпретировать фреймворку содержимое элемента
+
+.. code-block:: html
+
+    <div ng-non-bindable>Ignored: {{1 + 2}}</div>
+
+
+.. _ngOptions:
+
+ng-options
+----------
+
+
+.. _ngPattern:
+
+ng-pattern
+----------
+
+
+ng-pluralize
+------------
+
+Локализация
+
+* count - значение
+* offset
+* when - карта значений
+    * one - первый элемент
+    * other - другой элемент
+
+.. code-block:: html
+
+    <ng-pluralize
+        count="personCount"
+        when="{'0': 'Nobody is viewing.',
+               'one': '1 person is viewing.',
+               'other': '{} people are viewing.'}">
+    </ng-pluralize>
+
+    <ng-pluralize
+        count="personCount"
+        offset=2
+        when="{'0': 'Nobody is viewing.',
+               '1': '{{person1}} is viewing.',
+               '2': '{{person1}} and {{person2}} are viewing.',
+               'one': '{{person1}}, {{person2}} and one other person are viewing.',
+               'other': '{{person1}}, {{person2}} and {} other people are viewing.'}">
+    </ng-pluralize>
+
+
+ng-readonly
+-----------
+
+.. code-block:: html
+
+    <input type="text" ng-readonly="checked" value="I'm Angular"/>
+
+
+.. _ngRepeat:
+
+ng-repeat
+---------
+
+Цикл перебора массива
+
+* $index - номер текущей итерации
+* $first - первая итерация
+* $middle - не первая и не последняя итерация
+* $last - полседняя итерация
+
+.. code-block:: html
+
+    <ul>
+        <li ng-repeat="phone in phones">
+            {{$index}}. {{phone.name}}
+        </li>
+    </ul>
+
+
+.. _ngRequired:
+
+ng-required
+-----------
+
+
+ng-selected
+-----------
+
+.. code-block:: html
+
+    <option id="greet" ng-selected="selected">Greetings!</option>
+
+
+ng-show
+-------
+
+Показывает/скрывает html элемент, в зависимости от результата выражения
+
+.. code-block:: html
+
+    <!-- когда $scope.myValue истина, элемент отображается -->
+    <div ng-show="myValue"></div>
+
+    <input type='checkbox' ng-model='ShowValue'>
+    <div ng-show='ShowValue'>текст, который отобразится при клике по checkbox</div>
+
+
+ng-src
+------
+
+.. code-block:: html
+
+    <img ng-src="http://www.gravatar.com/avatar/{{hash}}"/>
+
+
+ng-style
+--------
+
+Задает стили в зависимости от условии
+
+.. code-block:: html
+
+    <span ng-style="myStyle">Sample Text</span>
+
+
+ng-submit
+---------
+
+Позволяет забиндить действие, которое будет выполняться при отправке данных из формы.
+
+.. code-block:: html
+
+    <form ng-submit="submit()" ng-controller="Ctrl">
+    </form>
+
+
+ng-switch
+---------
+
+.. code-block:: html
+
+    <div ng-switch on="selection" >
+        <div ng-switch-when="settings">Settings Div</div>
+        <span ng-switch-when="home">Home Span</span>
+        <span ng-switch-default>default</span>
+    </div>
+
+
+ng-transclude
+-------------
+
+Вставляет содержимое dom элемента в месте применения директивы
+
+Используется внутри кастомных директив
+для вывода контета заданого снаржу при объявлении директивы
+
+
+ng-view
+-------
+
+Отображение шаблона для текущего пути.
+
+.. code-block:: html
+
+    <div ng-view></div>
+
+
+script[type='text/ng-template']
+-------------------------------
+
+.. code-block:: html
+
+    <script type="text/ng-template" id="/tpl.html">
+        Content of the template.
+    </script>
+
+
+select
+------
+
+* :ref:`ngModel`
+* name
+* required
+* :ref:`ngRequired`
+* :ref:`ngOptions`
+
+.. code-block:: js
+
+    /* когда источник данных - массив:
+     * label for value in array
+     * select as label for value in array
+     * label group by group for value in array
+     * select as label group by group for value in array
+     *
+     * когда источник данных - объект:
+     * label for (key , value) in object
+     * select as label for (key , value) in object
+     * label group by group for (key, value) in object
+     * select as label group by group for (key, value) in object
+     */
+
+.. code-block:: html
+
+    <select
+        ng-model="color"
+        ng-options="c.name for c in colors"></select>
+
+    <select
+        ng-model="color"
+        ng-options="c.name group by c.shade for c in colors"></select>
+
+
+textarea
+--------
+
+* :ref:`ngModel`
+
+* name - имя свойства, под которым элемент управления будет доступен в области видимости
+
+* required
+
+* :ref:`ngRequired`
+
+* ng-minlength
+
+* ng-maxlength
+
+* :ref:`ngPattern`
+
+* :ref:`ngChange`
