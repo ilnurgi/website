@@ -50,19 +50,19 @@ Tkinter является событийно-ориентированной би�
 .. toctree::
    :maxdepth: 1
 
-   toplevel
    button
-   label
-   entry
-   text
-   listbox
-   frame
    checkbutton
-   radiobutton
-   scale
-   scrollbar
+   entry
+   frame
+   label
+   listbox
    message
    panedwindow
+   radiobutton
+   scale
+   text
+   toplevel
+   scrollbar
 
    base
    vars
