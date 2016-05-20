@@ -21,7 +21,7 @@ class BaseBlogViewMixin(object):
     def get_context_data(self, **kwargs):
         context = super(BaseBlogViewMixin, self).get_context_data(**kwargs)
         context['active_page'] = 'blog'
-        context['tags'] = list(Tags.objects.all())
+        context['tags'] = Tags.objects.all()
         return context
 
 
@@ -56,7 +56,7 @@ class TagPage(HomePage):
 
     def get_context_data(self, **kwargs):
         context = super(TagPage, self).get_context_data(**kwargs)
-        context['current_tag_id'] = self.kwargs['tag_id']
+        context['current_tag_id'] = int(self.kwargs['tag_id'])
         return context
 
     def get_posts(self):

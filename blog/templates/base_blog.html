@@ -10,7 +10,7 @@
             {% for tag in tags %}
                 <li
                         role="presentation"
-                        {% if current_tag == tag.name %}
+                        {% if current_tag_id == tag.id %}
                             class="active"
                         {% endif %}>
                     <a href="{% url 'blog:tags_page' tag_id=tag.id %}">
