@@ -2,12 +2,12 @@
 
 {% block extra_metrics_head %}
     <script>
-        function createChartJs(json, label, canvas_id){
+        function createChartJs(json, canvas_id){
             var data = {
                 labels : json.labels,
                 datasets : [
                     {
-                        label: label,
+                        label: '',
                         data : json.data,
                         fillColor: "rgba(220,220,220,0.2)",
                         strokeColor: "rgba(220,220,220,1)",
@@ -29,37 +29,44 @@
         function createDataWeekCharts(json){
 
             /*
-             * заполняем ипи за неделю
+             * заполняем ипи
              */
             createChartJs(
                 {
                     labels: json.labels,
                     data: json.ip_count
                 },
-                'Chart.js, ip visiters week',
                 "canvas_ip_week_chartjs");
 
             /*
-             * заполняем уникальные ипи за неделю
+             * заполняем уникальные ипи
              */
             createChartJs(
                 {
                     labels: json.labels,
                     data: json.ip_count_uniq
                 },
-                'Chart.js, ip uniq visiters week',
                 "canvas_ip_uniq_week_chartjs");
 
             /*
-             * заполняем просмотр документашки за неделю
+             * заполняем просмотр документашки
              */
             createChartJs(
                 {
                     labels: json.labels,
-                    data: json.docs_all_count
+                    data: json.doc_all_count
                 },
-                'Chart.js, docs visiters week',
                 "canvas_docs_week_chartjs");
+
+            /*
+             * заполняем просмотр блога
+             */
+            createChartJs(
+                {
+                    labels: json.labels,
+                    data: json.blog_all_count
+                },
+                "canvas_blog_week_chartjs");
         }
 
         /*
@@ -75,7 +82,6 @@
                     labels: json.labels,
                     data: json.ip_count
                 },
-                'Chart.js, ip visiters',
                 "canvas_ip_chartjs");
 
             /*
@@ -86,7 +92,6 @@
                     labels: json.labels,
                     data: json.ip_count_uniq
                 },
-                'Chart.js, ip uniq visiters',
                 "canvas_ip_uniq_chartjs");
 
             /*
@@ -95,10 +100,19 @@
             createChartJs(
                 {
                     labels: json.labels,
-                    data: json.docs_all_count
+                    data: json.doc_all_count
                 },
-                'Chart.js, docs visiters',
                 "canvas_docs_chartjs");
+
+            /*
+             * заполняем просмотр блога
+             */
+            createChartJs(
+                {
+                    labels: json.labels,
+                    data: json.blog_all_count
+                },
+                "canvas_blog_chartjs");
         }
 
         function createDocsAllCharts(json){
@@ -220,8 +234,8 @@
         }
 
         function createCharts(){
-            $.getJSON("{% url 'metrics:data_week' %}", createDataWeekCharts);
             $.getJSON("{% url 'metrics:data_month' %}", createDataMonthCharts);
+            $.getJSON("{% url 'metrics:data_week' %}", createDataWeekCharts);
             $.getJSON("{% url 'metrics:docs_data_all' %}", createDocsAllCharts);
 
         }
@@ -269,6 +283,18 @@
         {# неделя #}
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
             <canvas id="canvas_docs_week_chartjs"></canvas>
+        </div>
+    </div>
+
+    <h3>Количество просмотров страниц блога</h3>
+    <div class="row">
+        {# месяц #}
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <canvas id="canvas_blog_chartjs"></canvas>
+        </div>
+        {# неделя #}
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <canvas id="canvas_blog_week_chartjs"></canvas>
         </div>
     </div>
 

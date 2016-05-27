@@ -259,7 +259,8 @@ def data_month(requset):
         'labels': список дат
         'ip_count': список количеств ипи по дням
         'ip_count_uniq': список количеств уникальных ипи по дням
-        'docs_all_count': список количеств просмотров конспектов по дням
+        'doc_all_count': список количеств просмотров конспектов по дням
+        'blog_all_count': список количеств просмотров блога по дням
     }
 
     :param requset:
@@ -279,22 +280,30 @@ def data_month(requset):
     _docs_data = []
     docs_data_append = _docs_data.append
 
+    _blog_data = []
+    blog_data_append = _blog_data.append
+
     for i in db.month_report.find().sort('date'):
         times_append(i['date'].strftime('%d.%m.%Y'))
         ip_data_append(i['ip_count'])
         ip_uniq_data_append(i['ip_uniq_count'])
 
         docs_counter = 0
+        blog_counter = 0
         for url, count in json.loads(i['urls']).iteritems():
             if url.startswith('/docs/'):
                 docs_counter += count
+            elif url.startswith('/blog/'):
+                blog_counter += count
         docs_data_append(docs_counter)
+        blog_data_append(blog_counter)
 
     return JsonResponse({
         'labels': times,
         'ip_count': _ip_data,
         'ip_count_uniq': _ip_uniq_data,
-        'docs_all_count': _docs_data
+        'doc_all_count': _docs_data,
+        'blog_all_count': _blog_data,
     })
 
 
@@ -306,7 +315,8 @@ def data_week(requset):
         'labels': список дат
         'ip_count': список количеств ипи по дням
         'ip_count_uniq': список количеств уникальных ипи по дням
-        'docs_all_count': список количеств просмотров конспектов по дням
+        'doc_all_count': список количеств просмотров конспектов по дням
+        'blog_all_count': список количеств просмотров блога по дням
     }
 
     :param requset:
@@ -326,7 +336,11 @@ def data_week(requset):
     _docs_all_data = []
     docs_all_data_append = _docs_all_data.append
 
+    _blog_all_data = []
+    blog_all_data_append = _blog_all_data.append
+
     date_now = datetime.datetime.now()
+    # date_now = datetime.datetime.now() - datetime.timedelta(days=15)
     date_end = datetime.datetime.combine(
         date_now.date() - datetime.timedelta(days=1),
         datetime.time(23, 59, 59)
@@ -337,6 +351,7 @@ def data_week(requset):
     ip_count = 0
     ip_uniq_count_set = set()
     docs_all_count = 0
+    blog_all_count = 0
 
     for record in get_records(db.log, date_start=date_start, date_end=date_end):
 
@@ -349,22 +364,27 @@ def data_week(requset):
             ip_data_append(ip_count)
             ip_uniq_data_append(len(ip_uniq_count_set))
             docs_all_data_append(docs_all_count)
+            blog_all_data_append(blog_all_count)
 
             last_date = record_date
             ip_count = 0
             ip_uniq_count_set.clear()
             docs_all_count = 0
+            blog_all_count = 0
         else:
             ip_count += 1
             ip_uniq_count_set.add(record['ip_address'])
             if record['url'].startswith('/docs/'):
                 docs_all_count += 1
+            elif record['url'].startswith('/blog/'):
+                blog_all_count += 1
 
     return JsonResponse({
         'labels': times,
         'ip_count': _ip_data,
         'ip_count_uniq': _ip_uniq_data,
-        'docs_all_count': _docs_all_data,
+        'doc_all_count': _docs_all_data,
+        'blog_all_count': _blog_all_data,
     })
 
 
