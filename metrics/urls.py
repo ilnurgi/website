@@ -27,13 +27,18 @@ urlpatterns = [
         name='system'),
 
     url(
-        r'ip_data',
-        views.ip_data,
-        name='ip_data'),
+        r'data_week',
+        views.data_week,
+        name='data_week'),
+
     url(
-        r'visiters',
-        views.Visiters.as_view(),
-        name='visiters'),
+        r'data_month',
+        views.data_month,
+        name='data_month'),
+    url(
+        r'docs_data_all',
+        views.docs_data_all,
+        name='docs_data_all'),
 
     url(
         r'visiters',
@@ -56,19 +61,7 @@ urlpatterns = [
         name='user_agents'),
 
     url(
-        r'docs_data_all',
-        views.docs_data_all,
-        name='docs_data_all'),
-
-    url(
-        r'docs_data',
-        views.docs_data,
-        name='docs_data'),
-
-    url(
         r'',
         views.HomePage.as_view(),
         name='home_page'),
-
-
 ]

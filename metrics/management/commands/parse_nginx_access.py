@@ -105,6 +105,8 @@ class Command(BaseCommand):
                 if (
                         data['url'].endswith('.css') or
                         data['url'].endswith('.php') or
+                        data['url'].endswith('.ico') or
+                        data['url'].endswith('.txt') or
                         data['url'].endswith('.js')):
                     logger.debug(u'static: {0}'.format(data['url']))
                     continue

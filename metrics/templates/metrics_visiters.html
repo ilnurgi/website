@@ -2,7 +2,7 @@
 
 {% block extra_metrics_head %}
     <script>
-        function createChartJs(json, label, canvas_id, legend_id){
+        function createChartJs(json, label, canvas_id){
             var data = {
                 labels : json.labels,
                 datasets : [
@@ -19,38 +19,86 @@
                 ]
             };
 
-            var ctx = document.getElementById(canvas_id).getContext("2d");
-            var line = new Chart(ctx).Line(data);
-            var div_legend = document.getElementById(legend_id);
-            div_legend.innerHTML = line.generateLegend();
+            var ctx = document.getElementById(canvas_id).getContext("2d"),
+                line = new Chart(ctx).Line(data);
         }
 
-        function createIPCharts(json){
+        /*
+         * заполням чарты данными за неделю
+         */
+        function createDataWeekCharts(json){
+
+            /*
+             * заполняем ипи за неделю
+             */
             createChartJs(
                 {
                     labels: json.labels,
-                    data: json.ip_data
+                    data: json.ip_count
+                },
+                'Chart.js, ip visiters week',
+                "canvas_ip_week_chartjs");
+
+            /*
+             * заполняем уникальные ипи за неделю
+             */
+            createChartJs(
+                {
+                    labels: json.labels,
+                    data: json.ip_count_uniq
+                },
+                'Chart.js, ip uniq visiters week',
+                "canvas_ip_uniq_week_chartjs");
+
+            /*
+             * заполняем просмотр документашки за неделю
+             */
+            createChartJs(
+                {
+                    labels: json.labels,
+                    data: json.docs_all_count
+                },
+                'Chart.js, docs visiters week',
+                "canvas_docs_week_chartjs");
+        }
+
+        /*
+         * заполням чарты данными за месяц
+         */
+        function createDataMonthCharts(json){
+
+            /*
+             * заполняем ипи
+             */
+            createChartJs(
+                {
+                    labels: json.labels,
+                    data: json.ip_count
                 },
                 'Chart.js, ip visiters',
-                "canvas_ip_chartjs",
-                "div_legend_ip_chartjs");
+                "canvas_ip_chartjs");
 
+            /*
+             * заполняем уникальные ипи
+             */
             createChartJs(
                 {
                     labels: json.labels,
-                    data: json.ip_uniq_data
+                    data: json.ip_count_uniq
                 },
                 'Chart.js, ip uniq visiters',
-                "canvas_ip_uniq_chartjs",
-                "div_legend_ip_uniq_chartjs");
-        }
+                "canvas_ip_uniq_chartjs");
 
-        function createDocsCharts(json){
+            /*
+             * заполняем просмотр документашки
+             */
             createChartJs(
-                json,
+                {
+                    labels: json.labels,
+                    data: json.docs_all_count
+                },
                 'Chart.js, docs visiters',
-                "canvas_docs_chartjs",
-                "div_legend_docs_chartjs");
+                "canvas_docs_chartjs");
         }
 
         function createDocsAllCharts(json){
@@ -172,8 +220,8 @@
         }
 
         function createCharts(){
-            $.getJSON("{% url 'metrics:ip_data' %}", createIPCharts);
-            $.getJSON("{% url 'metrics:docs_data' %}", createDocsCharts);
+            $.getJSON("{% url 'metrics:data_week' %}", createDataWeekCharts);
+            $.getJSON("{% url 'metrics:data_month' %}", createDataMonthCharts);
             $.getJSON("{% url 'metrics:docs_data_all' %}", createDocsAllCharts);
 
         }
@@ -187,22 +235,44 @@
 {% endblock %}
 
 {% block content %}
+
+    <h3>Количество ip-адресов, которые побывали на сайте</h3>
     <div class="row">
+        {# за месяц #}
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-            <div id="div_legend_ip_chartjs"></div>
             <canvas id="canvas_ip_chartjs"></canvas>
         </div>
+        {# неделя #}
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-            <div id="div_legend_ip_uniq_chartjs"></div>
+            <canvas id="canvas_ip_week_chartjs"></canvas>
+        </div>
+    </div>
+
+    <h3>Количество уникальных ip-адресов, которые побывали на сайте</h3>
+    <div class="row">
+        {# месяц #}
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
             <canvas id="canvas_ip_uniq_chartjs"></canvas>
         </div>
-    </div>
-    <div class="row">
+        {# неделя #}
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-            <div id="div_legend_docs_chartjs"></div>
-            <canvas id="canvas_docs_chartjs"></canvas>
+            <canvas id="canvas_ip_uniq_week_chartjs"></canvas>
         </div>
     </div>
+
+    <h3>Количество просмотров страниц коспектов</h3>
+    <div class="row">
+        {# месяц #}
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <canvas id="canvas_docs_chartjs"></canvas>
+        </div>
+        {# неделя #}
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <canvas id="canvas_docs_week_chartjs"></canvas>
+        </div>
+    </div>
+
+    <h3>Количество просмотров страниц конспектов по категориям</h3>
     <div class="row">
         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
             <div id="div_legend_docs_all_chartjs"></div>

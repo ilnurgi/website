@@ -126,12 +126,23 @@ class UserAgents(HomePage):
         return context
 
 
-def cpu_data(request):
+def get_db(db_name):
+    """
+    возвращаем БД
+
+    :param db_name:
+    :return:
+    """
     mongo_client = pymongo.MongoClient(
         settings.DATABASE_MONGO['host'],
         int(settings.DATABASE_MONGO['port']))
 
-    db = mongo_client[settings.DATABASE_MONGO['cpu_average_db_name']]
+    return mongo_client[db_name]
+
+
+def cpu_data(request):
+
+    db = get_db(settings.DATABASE_MONGO['cpu_average_db_name'])
 
     cpu_times = []
     cpu_times_append = cpu_times.append
@@ -153,11 +164,7 @@ def cpu_data(request):
 
 
 def cpu_hour_data(request):
-    mongo_client = pymongo.MongoClient(
-        settings.DATABASE_MONGO['host'],
-        int(settings.DATABASE_MONGO['port']))
-
-    db = mongo_client[settings.DATABASE_MONGO['cpu_average_db_name']]
+    db = get_db(settings.DATABASE_MONGO['cpu_average_db_name'])
 
     cpu_times = []
     cpu_times_append = cpu_times.append
@@ -175,11 +182,7 @@ def cpu_hour_data(request):
 
 
 def mem_data(request):
-    mongo_client = pymongo.MongoClient(
-        settings.DATABASE_MONGO['host'],
-        int(settings.DATABASE_MONGO['port']))
-
-    db = mongo_client[settings.DATABASE_MONGO['mem_average_db_name']]
+    db = get_db(settings.DATABASE_MONGO['mem_average_db_name'])
 
     cpu_times = []
     cpu_times_append = cpu_times.append
@@ -201,11 +204,7 @@ def mem_data(request):
 
 
 def mem_hour_data(request):
-    mongo_client = pymongo.MongoClient(
-        settings.DATABASE_MONGO['host'],
-        int(settings.DATABASE_MONGO['port']))
-
-    db = mongo_client[settings.DATABASE_MONGO['mem_average_db_name']]
+    db = get_db(settings.DATABASE_MONGO['mem_average_db_name'])
 
     cpu_times = []
     cpu_times_append = cpu_times.append
@@ -222,12 +221,51 @@ def mem_hour_data(request):
     })
 
 
-def ip_data(requset):
-    mongo_client = pymongo.MongoClient(
-        settings.DATABASE_MONGO['host'],
-        int(settings.DATABASE_MONGO['port']))
+def get_records(collection, date_start, date_end):
+    """
+    итератор, возвращает данные из коллекции, делая запрос по дням
 
-    db = mongo_client[settings.DATABASE_MONGO['nginx_access_db_name']]
+    :param collection:
+
+    :param date_start: начало среза
+    :type date_start: datetime.datetime
+
+    :param date_end: конец среза
+    :type date_end: datetime.datetime
+
+    :return:
+    """
+    delta = date_end - date_start
+    for i in xrange(delta.days + 1):
+        _date_start = date_start + datetime.timedelta(days=i)
+        _date_end = date_start + datetime.timedelta(days=i + 1)
+        for record in collection.find(
+                {
+                    'date': {
+                        '$gte': _date_start,
+                        '$lt': _date_end
+                    }
+                }).sort('date'):
+            yield record
+        if _date_end == date_end:
+            break
+
+
+def data_month(requset):
+    """
+    информация по посещаемости по месяцам
+    возвращает жсон,
+    {
+        'labels': список дат
+        'ip_count': список количеств ипи по дням
+        'ip_count_uniq': список количеств уникальных ипи по дням
+        'docs_all_count': список количеств просмотров конспектов по дням
+    }
+
+    :param requset:
+    :return:
+    """
+    db = get_db(settings.DATABASE_MONGO['nginx_access_db_name'])
 
     times = []
     times_append = times.append
@@ -238,51 +276,100 @@ def ip_data(requset):
     _ip_uniq_data = []
     ip_uniq_data_append = _ip_uniq_data.append
 
-    for i in db.month_report.find().sort('date'):
-        times_append(i['date'].strftime('%d.%m.%Y'))
-        ip_data_append(i['ip_count'])
-        ip_uniq_data_append(i['ip_uniq_count'])
-
-    return JsonResponse({
-        'labels': times,
-        'ip_data': _ip_data,
-        'ip_uniq_data': _ip_uniq_data
-    })
-
-
-def docs_data(request):
-    mongo_client = pymongo.MongoClient(
-        settings.DATABASE_MONGO['host'],
-        int(settings.DATABASE_MONGO['port']))
-
-    db = mongo_client[settings.DATABASE_MONGO['nginx_access_db_name']]
-
-    times = []
-    times_append = times.append
-
     _docs_data = []
     docs_data_append = _docs_data.append
 
     for i in db.month_report.find().sort('date'):
         times_append(i['date'].strftime('%d.%m.%Y'))
-        counter = 0
+        ip_data_append(i['ip_count'])
+        ip_uniq_data_append(i['ip_uniq_count'])
+
+        docs_counter = 0
         for url, count in json.loads(i['urls']).iteritems():
             if url.startswith('/docs/'):
-                counter += count
-        docs_data_append(counter)
+                docs_counter += count
+        docs_data_append(docs_counter)
 
     return JsonResponse({
         'labels': times,
-        'data': _docs_data
+        'ip_count': _ip_data,
+        'ip_count_uniq': _ip_uniq_data,
+        'docs_all_count': _docs_data
+    })
+
+
+def data_week(requset):
+    """
+    информация по посещаемости за последнюю неделю
+    возвращает жсон,
+    {
+        'labels': список дат
+        'ip_count': список количеств ипи по дням
+        'ip_count_uniq': список количеств уникальных ипи по дням
+        'docs_all_count': список количеств просмотров конспектов по дням
+    }
+
+    :param requset:
+    :return:
+    """
+    db = get_db(settings.DATABASE_MONGO['nginx_access_db_name'])
+
+    times = []
+    times_append = times.append
+
+    _ip_data = []
+    ip_data_append = _ip_data.append
+
+    _ip_uniq_data = []
+    ip_uniq_data_append = _ip_uniq_data.append
+
+    _docs_all_data = []
+    docs_all_data_append = _docs_all_data.append
+
+    date_now = datetime.datetime.now()
+    date_end = datetime.datetime.combine(
+        date_now.date() - datetime.timedelta(days=1),
+        datetime.time(23, 59, 59)
+    )
+    date_start = date_end - datetime.timedelta(weeks=1)
+
+    last_date = None
+    ip_count = 0
+    ip_uniq_count_set = set()
+    docs_all_count = 0
+
+    for record in get_records(db.log, date_start=date_start, date_end=date_end):
+
+        record_date = record['date'].date()
+
+        if not last_date:
+            last_date = record_date
+        elif last_date != record_date:
+            times_append(record_date.strftime('%d.%m.%Y'))
+            ip_data_append(ip_count)
+            ip_uniq_data_append(len(ip_uniq_count_set))
+            docs_all_data_append(docs_all_count)
+
+            last_date = record_date
+            ip_count = 0
+            ip_uniq_count_set.clear()
+            docs_all_count = 0
+        else:
+            ip_count += 1
+            ip_uniq_count_set.add(record['ip_address'])
+            if record['url'].startswith('/docs/'):
+                docs_all_count += 1
+
+    return JsonResponse({
+        'labels': times,
+        'ip_count': _ip_data,
+        'ip_count_uniq': _ip_uniq_data,
+        'docs_all_count': _docs_all_data,
     })
 
 
 def docs_data_all(request):
-    mongo_client = pymongo.MongoClient(
-        settings.DATABASE_MONGO['host'],
-        int(settings.DATABASE_MONGO['port']))
-
-    db = mongo_client[settings.DATABASE_MONGO['nginx_access_db_name']]
+    db = get_db(settings.DATABASE_MONGO['nginx_access_db_name'])
 
     times = []
     times_append = times.append
