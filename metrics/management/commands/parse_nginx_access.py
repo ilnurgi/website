@@ -160,15 +160,17 @@ class Command(BaseCommand):
             'user_agents': user_agents,
         }
 
+        exclude_urls = {
+            'http://ilnurgi1.ru', 'http://www.ilnurgi1.ru', 'ilnurgi1.ru'}
         for log in self.get_logs(date_start, date_end):
             url = log['url']
             urls[url] = urls.setdefault(url, 0) + 1
 
             url_from = log['url_from']
 
-            if (not url_from.startswith('http://ilnurgi1.ru') or
-                    not url_from.startswith('http://ilnurgi1.ru')):
-                urls_from[url_from] = urls_from.setdefault(url_from, 0) + 1
+            for exclude_url in exclude_urls:
+                if not url_from.startswith(exclude_url):
+                    urls_from[url_from] = urls_from.setdefault(url_from, 0) + 1
 
             user_agent = log['user_agent']
             user_agents[user_agent] = user_agents.setdefault(user_agent, 0) + 1
