@@ -345,7 +345,10 @@ def data_week(requset):
         date_now.date() - datetime.timedelta(days=1),
         datetime.time(23, 59, 59)
     )
-    date_start = date_end - datetime.timedelta(weeks=1)
+    date_start = datetime.datetime.combine(
+        (date_end - datetime.timedelta(weeks=1)).date(),
+        datetime.time(0, 0, 0)
+    )
 
     last_date = None
     ip_count = 0
