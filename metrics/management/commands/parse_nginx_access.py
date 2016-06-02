@@ -82,10 +82,16 @@ class Command(BaseCommand):
                 (options.get('input_file', None),
                  options.get('log_file_path', None))):
             logger.debug(u'os rename')
-            os.rename(log_file_path, new_log_file_path)
+            try:
+                os.rename(log_file_path, new_log_file_path)
+            except Exception as err:
+                logger.debug(err)
+                raise
 
             logger.debug(u'nginx restart')
-            subprocess.call([u'service', u'nginx', u'restart'])
+            result = subprocess.call([u'service', u'nginx', u'restart'])
+            if result:
+                logger.debug(result)
 
         file_obj = options.get(
             'input_file',
