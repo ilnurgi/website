@@ -46,32 +46,43 @@ date
 
     .. py:staticmethod:: fromordinal(<Количество дней с 1 года>)
 
-        возвращает дату :py:class:`date`, соответствующую количеству дней, прошедших с 1 года
+        возвращает дату :py:class:`date`, соответствующую количеству дней,
+        прошедших с 1 года
 
-        >> datetime.date.max.toordinal()
-        3652059
-        >>> datetime.date.fromordinal(3652059)
-        datetime.date(9999, 12, 31)
-        >>> datetime.date.fromordinal(1)
-        datetime.date(1, 1, 1)
+        .. code-block:: py
+
+            datetime.date.max.toordinal()
+            # 3652059
+
+            datetime.date.fromordinal(3652059)
+            # datetime.date(9999, 12, 31)
+
+            datetime.date.fromordinal(1)
+            # datetime.date(1, 1, 1)
 
 
     .. py:staticmethod:: fromtimestamp(<Количество секунд>)
 
-        возвращает дату :py:class:`date`, соответствующую количеству секунд, прошедших с начала эпохи
+        возвращает дату :py:class:`date`, соответствующую количеству секунд,
+        прошедших с начала эпохи
 
-        >>> datetime.date.fromtimestamp(time.time()) # Текущая дата
-        datetime.date(2014, 8, 24)
-        >>> datetime.date.fromtimestamp(1233368623.0) # Дата 31-01-2009
-        datetime.date(2009, 1, 31)
+        .. code-block:: py
+
+            datetime.date.fromtimestamp(time.time())
+            # datetime.date(2014, 8, 24)
+
+            datetime.date.fromtimestamp(1233368623.0)
+            # datetime.date(2009, 1, 31)
 
 
     .. py:method:: ctime()
 
         возвращает строку специального формата
 
-        >>> datetime.date().ctime()
-        'Sun Jun 5 00:00:00 2011'
+        .. code-block:: py
+
+            datetime.date().ctime()
+            # 'Sun Jun 5 00:00:00 2011'
 
 
     .. py:method:: isocalendar()
@@ -274,38 +285,56 @@ timedelta
 
     дата  в виде количесвта дней, секунд и микросекунд
 
-    >>> d1 = datetime.timedelta(days=2)
-    >>> d2 = datetime.timedelta(days=7)
-    >>> d1 + d2, d2 - d1
-    datetime.timedelta(9), datetime.timedelta(5)
-    >>> d2 / d1
-    3.5
-    >>> d1 / 2, d2 / 2.5
-    datetime.timedelta(1), datetime.timedelta(2, 69120)
-    >>> d2 // d1
-    3
-    >>> d1 // 2, d2 // 2
-    datetime.timedelta(1), datetime.timedelta(3, 43200)
-    >>> d2 % d1
-    datetime.timedelta(1)
-    >>> d1 * 2, d2 * 2
-    datetime.timedelta(4), datetime.timedelta(14)
-    >>> 2 * d1, 2 * d2
-    datetime.timede1ta(4), datetime.timede1ta(14)
-    >>> dЗ = -d1
-    >>> dЗ, abs(d3)
-    (datetime.timede1ta(-2), datetime.timede1ta(2))
-    >>> d1 = datetime.timede1ta(days=2)
-    >>> d2 = datetime.timede1ta(days=7)
-    >>> dЗ = datetime.timede1ta(weeks=1)
-    >>> d1 == d2, d2 == dЗ
-    (Fa1se, True)
-    >>> d1 != d2, d2 != dЗ
-    (True, Fa1se)
-    >>> d1 < d2, d2 <= dЗ
-    (True, True)
-    >>> d1 > d2, d2 >= dЗ
-    (Fa1se, True)
+    .. code-block:: py
+
+        d1 = datetime.timedelta(days=2)
+        d2 = datetime.timedelta(days=7)
+
+        d1 + d2, d2 - d1
+        # datetime.timedelta(9), datetime.timedelta(5)
+
+        d2 / d1
+        # 3.5
+
+        d1 / 2, d2 / 2.5
+        # datetime.timedelta(1), datetime.timedelta(2, 69120)
+
+        d2 // d1
+        # 3
+
+        d1 // 2, d2 // 2
+        # datetime.timedelta(1), datetime.timedelta(3, 43200)
+
+        d2 % d1
+        # datetime.timedelta(1)
+
+        d1 * 2, d2 * 2
+        # datetime.timedelta(4), datetime.timedelta(14)
+
+        2 * d1, 2 * d2
+        # datetime.timede1ta(4), datetime.timede1ta(14)
+
+        dЗ = -d1
+        dЗ, abs(d3)
+        # (datetime.timede1ta(-2), datetime.timede1ta(2))
+
+    .. code-block:: py
+
+        d1 = datetime.timede1ta(days=2)
+        d2 = datetime.timede1ta(days=7)
+        dЗ = datetime.timede1ta(weeks=1)
+
+        d1 == d2, d2 == dЗ
+        # (False, True)
+
+        d1 != d2, d2 != dЗ
+        # (True, False)
+
+        d1 < d2, d2 <= dЗ
+        #(True, True)
+
+        d1 > d2, d2 >= dЗ
+        # (False, True)
 
 
     .. py:attribute:: days
@@ -353,12 +382,12 @@ time
         секунды
 
 
-    .. py:microsecond
+    .. py:attribute:: microsecond
 
         микросекунды
 
 
-    .. py:tzinfo
+    .. py:attribute:: tzinfo
 
         информаиця о временной зоне
 
@@ -367,8 +396,10 @@ time
 
         возвращает время в формате ISO 8601
 
-        >>> datetime.time(23, 12, 38, 375000).isoformat()
-        '23:12:38.375000'
+        .. code-block:: py
+
+            datetime.time(23, 12, 38, 375000).isoformat()
+            # '23:12:38.375000'
 
 
     .. py:method:: replace([hour][ , minute][ , second][ , microsecond][ , tzinfo])
@@ -387,3 +418,40 @@ tzinfo
 .. py:class:: tzinfo
 
     зона времени
+
+
+Форматирование
+--------------
+
+======= ========
+Литерал Описание
+======= ========
+j       число без нуля
+d       число с нулем
+n       месяц без нуля
+m       месяц с нулем
+E       месяц по локали
+F       месяц на английском языке
+b       месяц на английском языке, 3х буквенное обозначение: jan, feb, ...
+M       месяц на английском языке, 3х буквенное обозначение: Jan, Feb, ...
+y       год 2х значный
+Y       год 4х значный
+z       номер дня в году
+w       номер дня недели от 0 до 6
+l       день недели на английском
+D       день недели на английском, 3х буквенное: Mon, Tue
+g       часы в 12х часовом формате без начального 0
+G       часы в 24х часовом формате без начального 0
+h       часы в 12х часовом формате c начальным 0
+H       часы в 24х часовом формате c начальным 0
+a       период времени: a.m., p.m.
+A       период времени: AM, PM
+i       минуты
+s       секунды с начальным нулем
+u       микросекунды
+I       1 - летнее время, 0 - зимнее
+L       True - год високосный, False - не високосный
+t       количесвто дней в текущем месяце
+T       временная зона
+r       Дата по RFC 2822
+======= ========
