@@ -28,7 +28,9 @@ class TestParsingNginxAccess(TestCase):
         self.collection_month_report = self.mongo_db.month_report
 
     def test_parsing(self):
-
+        """
+        тестируем парсинг простой, все записи должны попасть в коллекцию
+        """
         inp = (
             '82.117.240.50 - - '
             '[11/Nov/2015:06:30:01 -0500] '
@@ -89,10 +91,13 @@ class TestParsingNginxAccess(TestCase):
             date_today=datetime.datetime(2015, 11, 12, 0, 0, 0)
         )
 
-        self.assertEqual(self.collection_log.count(), len(inp))
+        # 3 - записей статики
+        self.assertEqual(self.collection_log.count(), len(inp) - 3)
 
     def test_log_today(self):
-
+        """
+        в лог должны попасть только сегоднящние записи
+        """
         inp = (
             '82.117.240.50 - - '
             '[11/Nov/2015:06:30:01 -0500] '
@@ -123,7 +128,9 @@ class TestParsingNginxAccess(TestCase):
         self.assertEqual(self.collection_log.count(), 0)
 
     def test_calculate_month(self):
-
+        """
+        аккумулирование за месяц
+        """
         inp = (
             '82.117.240.50 - - '
             '[11/Nov/2015:06:30:01 -0500] '
@@ -132,11 +139,18 @@ class TestParsingNginxAccess(TestCase):
             '"https://www.google.com.ua/" '
             '"Mozilla/5.0 (Windows NT 6.1; WOW64)"',
 
-            '82.117.240.50 - - '
+            '82.117.240.51 - - '
             '[11/Nov/2015:06:30:01 -0500] '
             '"GET /docs/python/modules_user/pyqt/qtgui/qwidget.html HTTP/1.1" '
             '200 9078 '
             '"https://www.google.com.ua/" '
+            '"Mozilla/5.0 (Windows NT 6.1; WOW64)"',
+
+            '82.117.240.51 - - '
+            '[11/Nov/2015:06:30:01 -0500] '
+            '"GET /docs/python/modules_user/pyqt/qtgui/qwidget.html HTTP/1.1" '
+            '200 9078 '
+            '"http://www.ilnurgi1.ru/docs/python/index.html" '
             '"Mozilla/5.0 (Windows NT 6.1; WOW64)"',
 
             '82.117.240.51 - - '
@@ -158,7 +172,8 @@ class TestParsingNginxAccess(TestCase):
             date_today=datetime.datetime(2015, 11, 12, 12, 12, 12)
         )
 
-        self.assertEqual(self.collection_log.count(), len(inp))
+        # 1 - статика
+        self.assertEqual(self.collection_log.count(), len(inp) - 1)
 
         inp = (
             '82.117.240.50 - - '
@@ -193,18 +208,25 @@ class TestParsingNginxAccess(TestCase):
 
         result = self.collection_month_report.find_one()
 
+        # всего 5 просмотров, но 3 статики
         self.assertEqual(result['ip_count'], 3)
+
         self.assertEqual(result['ip_uniq_count'], 2)
 
         urls = json.loads(result['urls'])
         self.assertEqual(
             urls['/docs/python/modules_user/pyqt/qtgui/qwidget.html'],
-            2)
+            3)
 
         urls_from = json.loads(result['urls_from'])
+
         self.assertEqual(
             urls_from['https://www.google.com.ua/'],
             2)
+        self.assertNotIn(
+            'http://www.ilnurgi1.ru/docs/python/index.html',
+            urls_from,
+        )
 
         user_agents = json.loads(result['user_agents'])
         self.assertEqual(

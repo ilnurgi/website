@@ -78,7 +78,7 @@ class Command(BaseCommand):
         logger.debug(u'log_file_path={0}'.format(log_file_path))
         logger.debug(u'new_log_file_path={0}'.format(new_log_file_path))
 
-        if not all(
+        if not any(
                 (options.get('input_file', None),
                  options.get('log_file_path', None))):
             logger.debug(u'os rename')
@@ -174,9 +174,8 @@ class Command(BaseCommand):
 
             url_from = log['url_from']
 
-            for exclude_url in exclude_urls:
-                if not url_from.startswith(exclude_url):
-                    urls_from[url_from] = urls_from.setdefault(url_from, 0) + 1
+            if not any(map(url_from.startswith, exclude_urls)):
+                urls_from[url_from] = urls_from.setdefault(url_from, 0) + 1
 
             user_agent = log['user_agent']
             user_agents[user_agent] = user_agents.setdefault(user_agent, 0) + 1
