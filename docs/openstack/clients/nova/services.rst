@@ -1,17 +1,15 @@
-Services - ресурс, для управления сервисами, запущенными на хостах
-==================================================================
-
-Имеет следующие методы, для управления сервисами:
+services - сервисы, запущенные на хостах
+========================================
 
 .. py:method:: list(host=None, binary=None)
 
-    Возвращает список сервисов, запущенных на хостах.
+    Возвращает список сервисов :py:class:`novaclient.v2.Service`, запущенных на хостах.
 
     Без аргументов вернет полную информацию о запущенных сервисах на всех хостах.
 
-    :param host: название хоста
-    :param binary: название сервиса
-    :rtype: Service
+    * host - название хоста
+
+    * binary - название сервиса
 
     .. code-block:: py
 
@@ -22,56 +20,66 @@ Services - ресурс, для управления сервисами, зап�
 
     Включает указанный сервис на хосте
 
-    :param host: название хоста
-    :param binary: название сервиса
+    * host - название хоста
+
+    * binary - название сервиса
 
     .. code-block:: py
 
-        service = nova_client.services.enable(host='my_host', binary='nova-compute')
+        service = nova_client.services.enable(
+            host='my_host', binary='nova-compute')
 
 
 .. py:method:: disable(host, binary)
 
     Выключает указанный сервис на хосте
 
-    :param host: название хоста
-    :param binary: название сервиса
+    * host - название хоста
+
+    * binary - название сервиса
 
     .. code-block:: py
 
-        service = nova_client.services.disable(host='my_host', binary='nova-compute')
+        service = nova_client.services.disable(
+            host='my_host', binary='nova-compute')
 
 
 .. py:method:: disable_log_reason(host, binary, reason)
 
     Выключает указанный сервис на хосте
 
-    :param host: название хоста
-    :param binary: название сервиса
-    :param reason: причина выключения
+    * host - название хоста
+
+    * binary - название сервиса
+
+    * reason - причина выключения
 
     .. code-block:: py
 
-        service = nova_client.services.disable(host='my_host', binary='nova-compute')
+        service = nova_client.services.disable_log_reason(
+            host='my_host', binary='nova-compute', reason='my_reason')
 
 
 .. py:method:: force_down(host, binary, force_down)
 
     Выключает указанный сервис на хосте, форсированно
 
-    :param host: название хоста
-    :param binary: название сервиса
-    :param force_down:
+    * host - название хоста
+
+    * binary - название сервиса
+
+    * force_down -
 
     .. code-block:: py
 
-        service = nova_client.services.disable(host='my_host', binary='nova-compute')
+        service = nova_client.services.force_down(
+            host='my_host', binary='nova-compute')
 
 
 Service
-=======
+-------
 
-.. py:class:: Service()
+.. py:class:: novaclient.v2.Service()
 
     Сервис, запущенный на хосте
 
@@ -108,8 +116,3 @@ Service
     .. py:attribute:: zone
 
         Зона сервиса
-
-
-
-
-
