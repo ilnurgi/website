@@ -1,11 +1,24 @@
-.. _android_widget_Button:
+.. py:module:: android.widget
 
-android.widget.Button
-=====================
+Button - кнопка
+===============
 
-.. py:class:: android.widget.Button
+.. py:class:: Button
 
-    Наследник :ref:`android.view.View`. Стандартная кнопка.
+    Наследник :py:class:`android.widget.TextView`
+
+    .. code-block:: java
+
+        Button btnLogin = (Button)findViewById(R.id.btnLogin);
+
+    .. code-block:: html
+
+        <Button
+            android:id="@+id/btnHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btnHome" />
+
 
     .. py:method:: setText(str)
     .. py:method:: setText(R.string.name)
@@ -16,8 +29,13 @@ android.widget.Button
 
         активность кнопки
 
-    .. py:method:: setOnClickListener(callback)
 
-        устанавливает обработчик нажатия кнопки
+.. code-block:: java
 
-        :param callback: :ref:`android_view_View_OnClickListener`
+    button.setOnClickListener(new View.OnClickListener(){
+
+        @Override
+        public void onClick(View v){
+            ...
+        }
+    });

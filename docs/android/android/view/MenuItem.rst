@@ -1,11 +1,9 @@
-.. _android_view_MenuItem:
+.. py:module:: android.view
 
-android.view.MenuItem
-=====================
+MenuItem - элемент меню
+=======================
 
-.. py:class:: android.view.MenuItem
-
-    объект элемент меню
+.. py:class:: MenuItem()
 
     .. py:method:: getTitle()
 

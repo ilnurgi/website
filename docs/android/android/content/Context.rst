@@ -1,10 +1,9 @@
-.. _android_content_Context:
+.. py:module:: android.content
 
-android.content.Context()
-=========================
+Context
+=======
 
-
-.. py:class:: android.content.Context()
+.. py:class:: Context()
 
 
     .. py:attribute:: LAYOUT_INFLATER_SERVICE

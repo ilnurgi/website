@@ -1,9 +1,9 @@
-.. _android_view_Menu:
+.. py:module:: android.view
 
-android.view.Menu
-=================
+Menu - меню
+===========
 
-.. py:class:: android.view.Menu
+.. py:class:: Menu()
 
     объект меню
 

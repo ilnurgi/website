@@ -1,19 +1,25 @@
-.. _android_view_View:
+.. py:module:: android.view
 
-android.view.View
-=================
+View - базовый компонент интерфейса
+===================================
 
-.. py:class:: android.view.View
 
-    пустая область экрана размером 100 х 100 пикселов
+.. py:class:: View()
+
+    Базовый класс для всех компонентов интерфейса
+
+    Наследник :py:class:`java.lang.Object`
+
 
     .. py:method:: getId()
 
         возвращает id объекта
 
+
     .. py:method:: setBackgroundResource(R.color.name)
 
         устанавливает фоновый цвет
+
 
     .. py:method:: setOnCreateContextMenuListener(obj)
 
@@ -28,6 +34,7 @@ android.view.View
         :param height: int
         :rtype: void
 
+
     .. py:method:: setMeasuredDimension(measuredHeight, measuredWidth);
 
         устанавливает размер области
@@ -35,31 +42,45 @@ android.view.View
         :param measuredHeight: int
         :param measuredWidth: int
 
+    .. py:method:: setOnClickListener(callback)
 
-.. _android_view_View_OnClickListener:
+        Устанавливает обработчик клика, для кликабельных объектов: :py:class:`android.widget.Button`
 
-android.view.View.OnClickListener
----------------------------------
+        * callback - :py:class:`android.view.View.OnClickListener`
 
-.. py:class:: android.view.View.OnClickListener
+        .. code-block:: java
 
-    интерфейс, обработчик нажатий кнопок
+            import android.view.View;
+            import android.view.View.OnClickListener;
 
-    .. py:method:: onClick(view)
+            btnLogin.setOnClickListener(new OnClickListener(){
 
-        обработчик кнопки
+                @Override
+                public void onClick(View v){
+                    ...
+                }
+            })
 
-        :param view: :ref:`android_view_View`
 
-    ::
+    .. py:class:: OnClickListener()
 
-        OnClickListener oclBtnOk = new OnClickListener() {
+        Интерфейс, обработчик нажатий кнопок
 
-            @Override
-            publick void onClick(View v){
-                ...
+        .. py:method:: onClick(view)
+
+            Обработчик кнопки
+
+            * view - :py:class:`android.view.View`
+
+        .. code-block:: java
+
+            OnClickListener oclBtnOk = new OnClickListener() {
+
+                @Override
+                publick void onClick(View v){
+                    ...
+                };
             };
-        };
 
 
 .. _android_view_View_MeasureSpec:

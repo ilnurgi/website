@@ -1,12 +1,12 @@
-.. _android_content_res_Configuration:
+.. py:module:: android.content.res
 
-android.content.res.Configuration
-=================================
+Configuration
+=============
 
 
-.. py:class:: android.content.res.Configuration()
+.. py:class:: Configuration()
 
-    объект, конфигурация приложения
+    Конфигурация приложения
 
 
     
