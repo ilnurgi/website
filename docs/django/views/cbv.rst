@@ -63,7 +63,13 @@ CreateView
 
 .. py:class:: django.views.generic.CreateView()
 
-    Вьюха для создания нового объекта в БД
+    Представление для создания нового элемента модели
+
+    Наследник:
+
+        * :py:class:`django.views.generic.detail.SingleObjectTemplateResponseMixin`
+
+        * :py:class:`django.views.generic.edit.BaseCreateView`
 
     .. code-block:: py
 
@@ -76,6 +82,10 @@ CreateView
 
             def form_valid(self, form):
                 return super().form_valid(form)
+
+    .. py:attribute:: template_name_suffix
+
+        Суффикс для шаблона, по умолчанию `'_form'`
 
 
 DateDetailView
@@ -289,7 +299,23 @@ UpdateView
 
 .. py:class:: django.views.generic.UpdateView()
 
-    Вьюха для обновления объекта в БД
+    Представление для обновления объекта модели
+
+    .. py:attribute:: fields
+
+        Список полей модели, которые будут на форме
+
+    .. py:attribute:: initial
+
+        Словарь начальных данных для формы
+
+    .. py:attribute:: success_url
+
+        Адрес, на который будет пепрезод после успешного обновления
+
+    .. py:attribute:: template_name_suffix
+
+        Суффикс для шаблона, по умолчанию `'_form'`
 
 
 WeekArchiveView
@@ -337,6 +363,20 @@ BaseArchiveIndexView
     .. py:attribute:: context_object_name
 
         Название переменной в контексте, в котором будут содержаться записи
+
+
+BaseCreateView
+++++++++++++++
+
+.. py:class:: django.views.generic.edit.BaseCreateView()
+
+    Базовое представление для создания элемента модели
+
+    Наследник:
+
+        * :py:class:`django.views.generic.edit.ModelFormMixin`
+
+        * :py:class:`django.views.generic.edit.ProcessFormView`
 
 
 BaseDateListView
@@ -561,6 +601,50 @@ DayMixin
         День
 
 
+FormMixin
++++++++++
+
+.. py:class:: django.views.generic.edit.FormMixin()
+
+    Миксин для создания форм
+
+    .. py:attribute:: initial
+
+        Начальные данные формы
+
+    .. py:attribute:: form_class
+
+        Класс формы
+
+    .. py:attribute:: success_url
+
+        Урл, на которой переходим в результате успешного сохранения
+
+    .. py:attribute:: prefix
+
+    .. py:method:: get_form_kwargs()
+
+        Возвращает параметры для формы
+
+
+ModelFormMixin
+++++++++++++++
+
+.. py:class:: django.views.generic.edit.ModelFormMixin()
+
+    Миксин создает форму по модели
+
+    Наследник:
+
+        * :py:class:`django.views.generic.edit.FormMixin`
+
+        * :py:class:`django.views.generic.detail.SingleObjectMixin`
+
+    .. py:attribute:: fields
+
+        Поля модели, которые будут на форме
+
+
 MonthMixin
 ++++++++++
 
@@ -649,6 +733,18 @@ MultipleObjectTemplateResponseMixin
     .. py:attribute:: template_name_suffix
 
         Суффикс для шаблона списка, по умолчанию `'_list'`
+
+
+ProcessFormView
++++++++++++++++
+
+.. py:class:: django.views.generic.edit.ProcessFormView()
+
+    Помещает в контекст форму
+
+    Наследник:
+
+        * :py:class:`django.views.generic.View`
 
 
 SingleObjectMixin

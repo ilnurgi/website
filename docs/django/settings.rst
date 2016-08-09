@@ -166,6 +166,25 @@ LOCALE_PATHS
         os.path.join(BASE_DIR, 'locale'),
     )
 
+MEDIA_ROOT
+----------
+
+Папка для хранения всех медиа файлов, загруженных пользователями
+
+.. code-block:: py
+
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+MEDIA_URL
+---------
+
+Путь до папки с медии, для шаблонов
+
+.. code-block:: py
+
+    MEDIA_URL = '/media/'
+
 
 MIDDLEWARE_CLASSES
 ------------------

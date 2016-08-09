@@ -168,6 +168,28 @@ EmailField
         email = models.EmailField()
 
 
+FileField
+---------
+
+.. py:class:: django.db.models.FileField(**kwargs)
+
+    Поле для хранения файла любого типа
+
+    * upload_to - строка, путь к папке куда грузить файлы
+
+    .. py:attribute:: name
+
+        Путь к файлу, относитльно MEDIA_ROOT
+
+    .. py:attribute:: size
+
+        Размер файла в байтах
+
+    .. py:attribute:: url
+
+        Интернет адрес файла
+
+
 FloatField
 ----------
 
@@ -187,13 +209,79 @@ GenericIPAddressField
 ImageField
 ----------
 
-.. py:class:: django.db.models.ImageField()
+.. py:class:: django.db.models.ImageField(**kwargs)
 
-    Поле для изображений
+    Поле для хранения изображений
+
+    Требует установленной библиоткеи pillow
+
+    * upload_to - строка, путь к папке куда грузить файлы
+
+    * width_field - имя поля модели, где будет храниться ширина изображения
+
+    * height_field - имя поля модели, где будет храниться высота изображения
 
     .. code-block:: py
 
-        image = models.ImageField(uploat_to='images/')
+        image = models.ImageField(upload_to='images/')
+        image = models.ImageField(upload_to='images/%Y/%m/%d')
+
+    .. code-block:: py
+
+        thumbnail_width = models.PositiveSmallIntegerField()
+        thumbnail_height = models.PositiveSmallIntegerField()
+        thumbnail = models.ImageField(
+            upload_to='thumbnails/',
+            width_field='thumbnail_width',
+            height_field='thumbnail_height',
+        )
+
+    .. code-block:: py
+
+        obj = SomeModel.objects.get()
+        # obj.thumbnail.url
+
+    .. py:attribute:: height
+
+        Высота картинки
+
+    .. py:attribute:: name
+
+        Путь к файлу, относитльно MEDIA_ROOT
+
+    .. py:attribute:: size
+
+        Размер файла в байтах
+
+    .. py:attribute:: url
+
+        Интернет адрес файла
+
+    .. py:attribute:: width
+
+        Высота картинки
+
+    .. py:method:: delete(save=True)
+
+        Удаляет выбранный файл.
+
+        Параметр save указывает, сохранять ли модель после удаления файла.
+
+        .. code-block:: py
+
+            class SomeModel(models.Model):
+
+                def save(self, *args, **kwargs):
+                    this_record = SomeModel.objects.get()
+                    if this_record.thumbnail != self.thumbnail:
+                        this_record.thumbnail.delete(save=False)
+                    super().save(*args, **kwargs)
+
+                def delete(self, *args, **kwargs):
+                    self.thumbnail.delete(save=False)
+                    super().delete(*args, **kwargs)
+
+
 
 
 IntegerField
