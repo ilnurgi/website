@@ -1,14 +1,9 @@
 # coding: utf-8
-import os
 
 from django.contrib.auth import logout, authenticate, login
-from django.core.files.storage import FileSystemStorage
-from django.http import HttpResponse
 from django.shortcuts import redirect
-from django.template.loader import render_to_string
 from django.views.generic import View, TemplateView
 
-from weasyprint import HTML
 from application.views.mixins import IsSuperUserMixin, CSRFMixin, ConspectsMixin
 from blog.models import PostTags
 
