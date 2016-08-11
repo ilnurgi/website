@@ -7,7 +7,7 @@ from markdown import markdown
 
 from application.decorators import (
     superuser_required_in_view, superuser_required)
-from application.views import IsSuperUserMixin
+from application.views.mixins import IsSuperUserMixin
 
 from comments.models import Comment
 

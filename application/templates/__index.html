@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>ilnurgi1.ru</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        @media screen and (max-width: 768px){
+            /* screen < 768 */
+
+            ul, p {
+                font-size: 20px;
+            }
+
+            p {
+                padding: 5px 0;
+            }
+
+            .header {
+                text-align: center;
+            }
+
+            .photo {
+                text-align: center;
+                padding-top: 10px;
+            }
+
+            .navigation li {
+                padding-top: 15px;
+            }
+
+            .navigation a {
+                padding: 5px;
+                background-color: #ffdddd;
+            }
+
+            .content {
+                padding: 5px;
+            }
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 992px){
+            /* 768 < screen < 992 */
+
+            .header {
+                text-align: center;
+            }
+
+            .navigation ul {
+                padding-top: 15px;
+            }
+
+            .navigation li {
+                display: inline;
+            }
+
+            .navigation a {
+                padding: 5px;
+                background-color: #ffdddd;
+            }
+
+            /*
+             * CONTENT
+             */
+            .content {
+                padding: 5px;
+            }
+
+            .content:after {
+                content: '';
+                display: block;
+                clear: both;
+            }
+
+            .photo {
+                padding-top: 10px;
+                float: left;
+            }
+
+            .hello {
+                float: left;
+                padding: 50px 20px;
+            }
+
+            .content p {
+                padding: 10px;
+            }
+        }
+
+        @media screen and (min-width: 992px) and (max-width: 1200px){
+            /* 992 < screen < 1200 */
+            body {
+                background-color: green;
+            }
+        }
+
+        @media screen and (min-width: 1200px){
+            /* screen > 1200 */
+
+            /*
+             * PAGE
+             */
+            .page {
+                width: 1000px;
+                margin: 0 auto;
+            }
+            /*
+             * HEADER
+             */
+            .header {
+                position: relative;
+                height: 130px;
+            }
+
+            .logo {
+                position: absolute;
+                padding: 10px;
+                bottom: 0;
+            }
+
+            .logo h1 {
+                font-size: 40px;
+            }
+
+            .logo h2{
+                font-size: 20px;
+                float: right;
+            }
+
+            .navigation {
+                position: absolute;
+                left: 410px;
+                bottom: 0;
+                padding: 10px;
+                font-size: 25px;
+            }
+
+            .navigation li {
+                display: inline;
+            }
+
+            .navigation a {
+                padding: 5px;
+            }
+
+            .navigation a:hover {
+                color: red;
+            }
+
+            /*
+             * CONTENT
+             */
+            .content {
+                position: relative;
+                height: 500px;
+                font-size: 20px;
+            }
+
+            .content p {
+                padding: 10px;
+            }
+
+            .photo {
+                position: absolute;
+                bottom: 0;
+                padding: 10px;
+            }
+
+            .hello {
+                position: absolute;
+                top: 100px;
+                left: 350px;
+            }
+        }
+
+
+
+
+        /*
+         * DEBUG
+         */
+        .debug_border {
+{#            border: 1px solid black;#}
+        }
+
+        .debug_border_red {
+{#            border: 1px solid red;#}
+        }
+
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="header debug_border">
+            <div class="logo debug_border_red">
+                <h1 class="debug_border">Ильнур Гайфутдинов</h1>
+                <h2 class="debug_border">Разработчик</h2>
+            </div>
+            <div class="navigation debug_border_red">
+                <ul class="debug_border">
+                    <li><a href="#">Коментарии</a></li>
+                    <li><a href="#">Файлохранилище</a></li>
+                    <li><a href="#">Админка</a></li>
+                </ul>
+                <ul class="debug_border">
+                    <li><a href="#">Блог</a></li>
+                    <li><a href="#">Конспекты</a></li>
+                    <li><a href="#">Статистика</a></li>
+                    <li><a href="#">Карта</a></li>
+                    <li><a href="#">Войти</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content debug_border_red">
+            <div class="photo debug_border">
+                <img src="../static/avatar.jpg">
+            </div>
+            <div class="hello debug_border">
+                <h1>Привет,</h1>
+                <h2>Будем знакомы:</h2>
+                <p>Меня зовут Ильнур. </p>
+                <p>Мне 29 лет.</p>
+                <p>Я разработчик.</p>
+                <p>Разрабатываю различное програмное обеспечение:</p>
+                    <ul style="margin-left: 40px">
+                        <li>для мобильных устройств</li>
+                        <li>для стационарных устройств</li>
+                        <li>web приложения</li>
+                    </ul>
+            </div>
+        </div>
+        <div class="resume">
+            резюме
+        </div>
+    </div>
+
+</body>
+</html>

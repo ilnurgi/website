@@ -1,14 +1,15 @@
 # coding: utf-8
+
 import os
 
 from django.shortcuts import redirect
-from django.views.generic import TemplateView
 
-from application.views import IsSuperUserMixin, CSRFMixin
+from application.views.mixins import CSRFMixin
+from application.views import BaseHeaderView
 from fileuploader.models import File
 
 
-class HomePage(IsSuperUserMixin, CSRFMixin, TemplateView):
+class HomePage(CSRFMixin, BaseHeaderView):
 
     template_name = 'base_fileuploader.html'
 

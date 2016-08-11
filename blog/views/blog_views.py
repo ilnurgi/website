@@ -7,7 +7,8 @@ from django.views.generic import TemplateView
 
 from markdown import markdown
 
-from application.views import IsSuperUserMixin, CSRFMixin
+from application.views.mixins import CSRFMixin
+from application.views import BaseHeaderView
 from blog.models import Tags, Post, PostComments
 from blog.tasks import send_email_notification
 from comments.models import Comment
@@ -25,7 +26,7 @@ class BaseBlogViewMixin(object):
         return context
 
 
-class HomePage(BaseBlogViewMixin, IsSuperUserMixin, TemplateView):
+class HomePage(BaseBlogViewMixin, BaseHeaderView):
 
     template_name = 'blog_index.html'
 

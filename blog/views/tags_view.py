@@ -1,15 +1,14 @@
 # coding: utf-8
 
 from django.shortcuts import redirect
-from django.views.generic import TemplateView
 
 from application.decorators import (
     superuser_required, superuser_required_in_view)
-from application.views import IsSuperUserMixin
+from application.views import BaseHeaderView
 from blog.models import Tags, PostTags
 
 
-class TagsPage(IsSuperUserMixin, TemplateView):
+class TagsPage(BaseHeaderView):
 
     template_name = 'blog_tags.html'
 

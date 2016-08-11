@@ -7,12 +7,11 @@ import pymongo
 
 from django.conf import settings
 from django.http import JsonResponse
-from django.views.generic import TemplateView
 
-from application.views import IsSuperUserMixin
+from application.views import BaseHeaderView
 
 
-class HomePage(IsSuperUserMixin, TemplateView):
+class HomePage(BaseHeaderView):
 
     template_name = 'base_metrics.html'
 
