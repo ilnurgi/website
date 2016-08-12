@@ -10,8 +10,10 @@ from blog import urls as blog_urls
 from comments import urls as comments_urls
 from fileuploader import urls as fileuploader_urls
 from metrics import urls as metric_urls
+from get_writer import urls as get_writer_urls
 
 urlpatterns = [
+    url(r'^get_writer/', include(get_writer_urls)),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^blog/', include(blog_urls, namespace='blog')),
     url(
