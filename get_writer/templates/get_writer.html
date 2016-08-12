@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block extra_body %}
+    <div class="container">
+        {% for record in records %}
+            <br>{{ record }}
+        {% endfor %}
+    </div>
+{% endblock %}
