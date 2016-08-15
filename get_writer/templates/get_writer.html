@@ -1,9 +1,25 @@
 {% extends 'base.html' %}
 
 {% block extra_body %}
-    <a href="{% url "get_writer:home" %}">ссылка</a>
-    <input type="button" onclick="alert('js work');" value="test js">
     <div class="container">
+
+        <script>
+            function getLatitude(){
+                alert(Android.getLatitude());
+            }
+            function getLongitude(){
+                alert(Android.getDeviceId());
+            }
+            function getDeviceId(){
+                alert(Android.getDeviceId());
+            }
+        </script>
+
+        <a href="{% url "get_writer:home" %}">ссылка</a>
+        <input type="button" onclick="alert('js work');" value="test js">
+        <input type="button" onclick="getLatitude();" value="getLatitude">
+        <input type="button" onclick="getLongitude();" value="getLongitude">
+        <input type="button" onclick="getDeviceId();" value="getDeviceId">
         {% for record in records %}
             <br>{{ record }}
         {% endfor %}
