@@ -24,7 +24,7 @@ def get_writer(request):
         collection.delete_many(
             {
                 'date': {
-                    '$lt': now - datetime.timedelta(days=1),
+                    '$lt': now - datetime.timedelta(hours=1),
                 },
             },
         )
