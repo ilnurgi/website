@@ -13,7 +13,7 @@ from metrics import urls as metric_urls
 from get_writer import urls as get_writer_urls
 
 urlpatterns = [
-    url(r'^get_writer/', include(get_writer_urls)),
+    url(r'^get_writer/', include(get_writer_urls, namespace="get_writer")),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^blog/', include(blog_urls, namespace='blog')),
     url(

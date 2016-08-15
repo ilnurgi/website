@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 
 {% block extra_body %}
+    <a href="{% url "get_writer:home" %}">ссылка</a>
+    <input type="button" onclick="alert('js work');" value="test js">
     <div class="container">
         {% for record in records %}
             <br>{{ record }}
