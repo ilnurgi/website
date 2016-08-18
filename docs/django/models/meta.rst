@@ -12,6 +12,9 @@
             unique_together = ['name', 'date']
             verbose_name = ''
             verbose_name_plural = ''
+            permissions = (
+                ("can_some", "titile"),
+            )
 
 
 db_table
@@ -24,6 +27,16 @@ ordering
 --------
 
 Список полей, сортировка по умолчанию
+
+
+.. _models_meta_permissions:
+
+permissions
+-----------
+
+Список прав, отличных от тех что пердоставляет модуль :ref:`django_contrib_auth`
+
+Право должно начинаться с суффикса `can_`
 
 
 unique_together

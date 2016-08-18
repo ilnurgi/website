@@ -76,4 +76,3 @@
     contrib/index
     cli
     faq
-    django-rest-framework/index

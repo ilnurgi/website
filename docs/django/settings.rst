@@ -138,8 +138,9 @@ LANGUAGE_CODE
 .. code-block:: py
 
     # http://www.i18nguy.com/unicode/language-identifiers.html
-    LANGUAGE_CODE = 'en-us'
-    LANGUAGE_CODE = 'en'
+    # LANGUAGE_CODE = 'en-us'
+    # LANGUAGE_CODE = 'en'
+    LANGUAGE_CODE = 'ru-ru'
 
 
 LANGUAGES
@@ -165,6 +166,55 @@ LOCALE_PATHS
     LOCALE_PATHS = (
         os.path.join(BASE_DIR, 'locale'),
     )
+
+
+.. _settings_login_redirect_url:
+
+LOGIN_REDIRECT_URL
+------------------
+
+Адрес страницы куда будет перенаправлено после авторизации
+
+.. code-block:: py
+
+    # урл
+    LOGIN_URL = "/login/"
+
+    # это не урл, а название урла привязки
+    # LOGIN_URL = "login"
+
+
+.. _settings_login_url:
+
+LOGIN_URL
+---------
+
+Адрес страницы авторизации
+
+.. code-block:: py
+
+    # урл
+    LOGIN_URL = "/login/"
+
+    # это не урл, а название урла привязки
+    # LOGIN_URL = "login"
+
+
+.. _settings_logout_url:
+
+LOGOUT_URL
+----------
+
+Адрес страницы выхода
+
+.. code-block:: py
+
+    # урл
+    LOGIN_URL = "/login/"
+
+    # это не урл, а название урла привязки
+    # LOGIN_URL = "login"
+
 
 MEDIA_ROOT
 ----------

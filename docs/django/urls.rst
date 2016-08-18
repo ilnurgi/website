@@ -8,16 +8,53 @@
     from django.conf import settings
     from django.conf.urls import patterns, include, url, static
     from django.contrib import admin
+    from django.contrib.admin.decorators import (
+        login_required, permission_required)
 
     from application import views
 
     urlpatterns = patterns('',
-        url(r'^admin/', url(admin.site.urls)),
-        url(r'^application/', url("application.urls")),
-        url(r'^application/index', views.index, name="index"),
-        url(r'^good/(?P<good_id>\d+)', views.good, name="good"),
-        url(r'^good/(?P<good_id>\d+)', views.IndexView.as_view(), name="good"),
-        url(r'^good/', include('blog.urls', namespace="blog", app_name="blog"),
+        url(
+            r'^admin/',
+            url(admin.site.urls),
+        ),
+        url(
+            r'^application/',
+            url("application.urls"),
+        ),
+        url(
+            r'^application/index',
+            views.index,
+            name="index",
+        ),
+        url(
+            r'^good/(?P<good_id>\d+)',
+            views.good,
+            name="good",
+        ),
+        url(
+            r'^good/(?P<good_id>\d+)',
+            views.IndexView.as_view(),
+            name="good",
+        ),
+        url(
+            r'^good/(?P<good_id>\d+)',
+            login_required(views.IndexView.as_view()),
+            name="good",
+        ),
+        url(
+            r'^good/(?P<good_id>\d+)',
+            permission_required("good.add_good")(views.IndexView.as_view()),
+            name="good",
+        ),
+        url(
+            r'^good/',
+            include(
+                'blog.urls',
+                namespace="blog",
+                app_name="blog",
+            ),
+        ),
     )
 
     if settings.DEBUG:

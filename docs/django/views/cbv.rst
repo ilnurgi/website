@@ -3,6 +3,7 @@
 
 .. code-block:: py
 
+    from django.contrib.admin.decorators import login_required
     from django.http import HttpResponse
     from django.utils.decorators import method_decorator
     from django.view.generic import View
