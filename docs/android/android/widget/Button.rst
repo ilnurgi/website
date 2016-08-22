@@ -1,23 +1,73 @@
-.. py:module:: android.widget
+android.widget.Button
+=====================
 
-Button - кнопка
-===============
+XML
+---
 
-.. py:class:: Button
+.. code-block:: xml
+
+    <Button
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|left"
+
+        android:text="@string/btn1"
+        android:textSize="8pt"
+        android:id="@+id/btn1" />
+
+    <Button
+
+        android:layout_width="100dp"
+        android:layout_height="200dp"
+
+        android:text="@string/btn2"
+        android:id="@+id/btn2" />
+
+* id - идентификатор элемента
+
+* onClick - название метода активити, который обработает клик по элементу.
+  Метод принимает один аргумент c типом :py:class:`android.view.View`
+  и должен быть public void.
+
+* text - текст
+
+    * обычная строка, текст
+    * ссылка на идентификатор из ресурса строк, :ref:`res_values_string`
+
+* textSize - размер шрифта текст
+
+    * 8pt
+
+
+Button
+------
+
+.. py:class:: android.widget.Button
 
     Наследник :py:class:`android.widget.TextView`
 
     .. code-block:: java
 
-        Button btnLogin = (Button)findViewById(R.id.btnLogin);
+        Button myBtn = (Button)findViewById(R.id.myBtn);
 
-    .. code-block:: html
 
-        <Button
-            android:id="@+id/btnHome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/btnHome" />
+    .. py:method:: getLayoutParams()
+
+        Возвращает параметры кнопки :ref:class:`android.view.ViewGroup.LayoutParams`
+
+        .. code-block:: java
+
+            LayoutParams lparams = (LayoutParams) myBtn.getLayoutParams()
+
+
+    .. py:method:: requestLayout()
+
+        Перерисовывает элемент
+
+        .. code-block:: java
+
+            myBtn.requestLayout()
 
 
     .. py:method:: setText(str)
@@ -25,17 +75,34 @@ Button - кнопка
 
         устанавливает текст для объекта
 
+        .. code-block:: java
+
+            myBtn.setText("Some text");
+            myBtn.setText(R.string.btnText);
+
+
     .. py:method:: setEnabled(bool)
 
         активность кнопки
 
+        .. code-block:: java
 
-.. code-block:: java
+            myBtn.setEnabled(false);
 
-    button.setOnClickListener(new View.OnClickListener(){
 
-        @Override
-        public void onClick(View v){
-            ...
-        }
-    });
+    .. py:method:: setOnClickListener(OnClickListener)
+
+        Устанавливает обработчик клика по элементу
+
+        * OnClickListener - :py:class:`android.view.View.OnClickListener`
+
+        .. code-block:: java
+
+            myBtn.setOnClickListener(new OnClickListener(){
+
+                @Override
+                public void onClick(View v){
+                    ...
+                }
+
+            });

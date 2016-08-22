@@ -1,7 +1,6 @@
-.. _android_graphics_Paint:
-
 android.graphics.Paint
-=========================
+======================
+
 
 .. py:class:: android.graphics.Paint()
 

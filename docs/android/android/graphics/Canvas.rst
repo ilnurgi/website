@@ -1,7 +1,5 @@
-.. _android_graphics_Canvas:
-
-android.graphics.Graphics
-=========================
+android.graphics.Canvas
+=======================
 
 .. py:class:: android.graphics.Canvas()
 

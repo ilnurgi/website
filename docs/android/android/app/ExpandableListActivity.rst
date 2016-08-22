@@ -1,5 +1,3 @@
-.. _android_app_ExpandableListActivity:
-
 android.app.ExpandableListActivity
 ==================================
 

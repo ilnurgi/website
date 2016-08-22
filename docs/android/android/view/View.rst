@@ -1,10 +1,8 @@
-.. py:module:: android.view
-
-View - базовый компонент интерфейса
-===================================
+android.view.View
+=================
 
 
-.. py:class:: View()
+.. py:class:: android.view.View()
 
     Базовый класс для всех компонентов интерфейса
 
@@ -42,35 +40,38 @@ View - базовый компонент интерфейса
         :param measuredHeight: int
         :param measuredWidth: int
 
-    .. py:method:: setOnClickListener(callback)
 
-        Устанавливает обработчик клика, для кликабельных объектов: :py:class:`android.widget.Button`
+    .. py:method:: setOnClickListener(OnClickListener)
 
-        * callback - :py:class:`android.view.View.OnClickListener`
+        Устанавливает обработчик клика по элементу
+
+        * OnClickListener - :py:class:`android.view.View.OnClickListener`
 
         .. code-block:: java
 
-            import android.view.View;
-            import android.view.View.OnClickListener;
-
-            btnLogin.setOnClickListener(new OnClickListener(){
+            someView.setOnClickListener(new OnClickListener(){
 
                 @Override
                 public void onClick(View v){
                     ...
                 }
-            })
+
+            });
 
 
-    .. py:class:: OnClickListener()
+OnClickListener
+---------------
 
-        Интерфейс, обработчик нажатий кнопок
+.. py:class:: android.view.View.OnClickListener()
 
-        .. py:method:: onClick(view)
+    Интерфейс, обработчик нажатий элемента
 
-            Обработчик кнопки
 
-            * view - :py:class:`android.view.View`
+    .. py:method:: onClick(view)
+
+        Обработчик элемента
+
+        * view - :py:class:`android.view.View`
 
         .. code-block:: java
 
@@ -83,16 +84,16 @@ View - базовый компонент интерфейса
             };
 
 
-.. _android_view_View_MeasureSpec:
-
-android.view.View.MeasureSpec
----------------------------------
+MeasureSpec
+-----------
 
 .. py:class:: android.view.View.MeasureSpec
 
 
+    .. py:attribute:: UNSPECIFIED
+
 
     .. py:method:: getMode(?)
-    .. py:method:: getSize(?)
 
-    .. py:attribute:: UNSPECIFIED
+
+    .. py:method:: getSize(?)

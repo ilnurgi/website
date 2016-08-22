@@ -1,7 +1,7 @@
-res
-===
+android.net
+===========
 
 .. toctree::
     :maxdepth: 1
 
-    Configuration
+    Uri

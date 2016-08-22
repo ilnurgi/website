@@ -1,6 +1,5 @@
-.. py:module:: android.os
+android.os.Bundle
+=================
 
-Bundle
-======
 
-.. py:class:: Bundle()
+.. py:class:: android.os.Bundle()

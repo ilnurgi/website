@@ -1,9 +1,9 @@
-.. _android_util_Log:
-
 android.util.Log
 ================
 
-.. py:class:: android.util.Log
+Логгер
+
+.. py:class:: android.util.Log()
 
     логгер
 

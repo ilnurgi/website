@@ -1,5 +1,7 @@
-values - значения
-=================
+values
+======
+
+Константы
 
 color
 -----
@@ -25,6 +27,8 @@ dimen
     </resources>
 
 
+.. _res_values_string:
+
 string
 ------
 
@@ -34,6 +38,19 @@ string
 
     <resources>
         <string name="app_name">MyCalculator</string>
+    </resources>
+
+
+string-array
+------------
+
+.. code-block:: xml
+
+    <resources>
+        <string-array name="names">
+            <item>item 1</item>
+            <item>item 2</item>
+        </string>
     </resources>
 
 
