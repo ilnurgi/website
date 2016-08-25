@@ -6,29 +6,53 @@ from django.conf.urls.static import static
 from django.contrib import admin
 
 from application import views as app_view
+from application.constants import CONSPECTS
 from blog import urls as blog_urls
-from comments import urls as comments_urls
 from fileuploader import urls as fileuploader_urls
 from metrics import urls as metric_urls
-from get_writer import urls as get_writer_urls
+from resume import urls as resume_urls
+
 
 urlpatterns = [
-    url(r'^get_writer/', include(get_writer_urls, namespace="get_writer")),
-    url(r'^admin/', include(admin.site.urls)),
-    url(r'^blog/', include(blog_urls, namespace='blog')),
+    url(
+        r'^admin/',
+        include(admin.site.urls)),
+    url(
+        r'^blog/',
+        include(blog_urls, namespace='blog')),
     url(
         r'^fileuploader/',
         include(fileuploader_urls, namespace='fileuploader')),
-    url(r'^login/', app_view.Login.as_view(), name='login'),
-    url(r'^sitemap/', app_view.SiteMap.as_view(), name='sitemap'),
-    url(r'^logout/', app_view.Logout.as_view(), name='logout'),
-    url(r'^metrics/', include(metric_urls, namespace='metrics')),
-    url(r'^comments/', include(comments_urls, namespace='comments')),
+    url(
+        r'^sitemap/',
+        app_view.SiteMap.as_view(), name='sitemap'),
+    url(
+        r'^metrics/',
+        include(metric_urls, namespace='metrics')),
     url(
         r'^conspects/$',
         app_view.ConspectsPage.as_view(),
         name='conspects_page'),
-    url(r'^$', app_view.HomePage.as_view(), name='home_page'),
+    url(
+        r'^login/',
+        "django.contrib.auth.views.login",
+        {
+            "template_name": "application/login.html",
+            "extra_context": {
+                "conspects": CONSPECTS,
+            }
+        },
+        'login'),
+    url(
+        r'^logout/',
+        "django.contrib.auth.views.logout",
+        {
+            "next_page": "resume:home_page"
+        },
+        'logout'),
+    url(
+        r'^$',
+        include(resume_urls, namespace="resume")),
 ]
 
 if settings.DEBUG:

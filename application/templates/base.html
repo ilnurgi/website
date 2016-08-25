@@ -14,7 +14,7 @@ lg - >= 1200px;
     <head>
         <meta
                 name="google-site-verification"
-                content="84y9A4q0QF0YiwyLi-xefrzNN8d6B5W2E84xYUtoQYc" />
+                content="{{ GOOGLE_SITE_VERIFICATIN }}" />
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -67,10 +67,10 @@ lg - >= 1200px;
                             id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
                             <li
-                                {% if active_page == 'blog' %}
+                                {% if active_page == "blog" %}
                                     class="active"
                                 {% endif %}>
-                                <a href="{% url 'blog:home_page' %}">
+                                <a href="{% url "blog:list" "" %}">
                                     Блог
                                 </a>
                             </li>
@@ -113,15 +113,7 @@ lg - >= 1200px;
                             </li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
-                            {% if is_superuser %}
-                                <li
-                                    {% if active_page == 'comments' %}
-                                        class="active"
-                                    {% endif %}>
-                                    <a href="{% url 'comments:home_page' %}">
-                                        Коментарии
-                                    </a>
-                                </li>
+                            {% if view.request.user.is_superuser %}
                                 <li
                                     {% if active_page == 'fileuploader' %}
                                         class="active"
@@ -136,7 +128,7 @@ lg - >= 1200px;
                                     </a>
                                 </li>
                             {% endif %}
-                            {% if is_superuser %}
+                            {% if view.request.user.is_superuser %}
                                 <li><a href="{% url 'logout' %}">Выйти</a></li>
                             {% else %}
                                 <li><a href="{% url 'login' %}">Войти</a></li>

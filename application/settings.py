@@ -35,8 +35,7 @@ INSTALLED_APPS = (
     'metrics',
     'blog',
     'fileuploader',
-    'comments',
-    'get_writer',
+    "resume",
 
 )
 
@@ -163,3 +162,7 @@ djcelery.setup_loader()
 
 CELERYBEAT_SCHEDULER = "djcelery.schedulers.DatabaseScheduler"
 BROKER_BACKEND = "djkombu.transport.DatabaseTransport"
+
+LOGIN_REDIRECT_URL = "resume:home_page"
+LOGIN_URL = "login"
+LOGOUT_URL = "logout"

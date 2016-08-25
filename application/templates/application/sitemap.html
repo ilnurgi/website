@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block extra_body %}
+    <div class="container">
+        <ul>
+        {% for category in categories %}
+            <li>
+                <a href="{% url 'blog:list' category.name %}">{{ category }}</a>
+                <ul>
+                    {% for post in category.post_set.all %}
+                        <li>
+                            <a href="{% url 'blog:post_detail' post.slug %}">{{ post }}</a>
+                            {% if view.request.user.is_superuser %}
+                                {% if post.published %}
+                                    <span class="label label-success">Опубликован</span>
+                                {% else %}
+                                    <span class="label label-warning">Скрыт</span>
+                                {% endif %}
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
+        </ul>
+
+        <div class="row">
+            {% for conspect_items in conspects %}
+                <div class="col-xs-12 col-sm-4 col-md-3">
+                    <div class="list-group">
+                        {% for conspect in conspect_items %}
+                            <a
+                                    href="{{ conspect.url }}"
+                                    class="list-group-item"
+                            >
+                                {{ conspect.title }}
+                            </a>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
