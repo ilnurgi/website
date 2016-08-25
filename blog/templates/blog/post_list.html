@@ -1,4 +1,4 @@
-{% extends 'base_blog.html' %}
+{% extends 'blog/base.html' %}
 
 {% block extra_blog_head %}
 
@@ -6,22 +6,20 @@
 
 {% block extra_blog_body %}
     <div class="container">
-        {% for post in posts %}
+        {% for post in object_list %}
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3><a href="{% url 'blog:post_page' post_id=post.id%}">{{ post.title }}</a></h3>
+                    <h3><a href="{% url "blog:post_detail" post.slug %}">{{ post.title }}</a></h3>
                 </div>
                 <div class="panel-body ">
                     {{ post.content|safe|truncatewords_html:50 }}
                 </div>
                 <div class="panel-footer text-right">
-                        {% for post_tag in post.posttags_set.all %}
-                            <a href="{% url 'blog:tags_page' tag_id=post_tag.tag.id %}">
-                                {{ post_tag.tag }}
-                            </a>/
-                        {% endfor %}
+                    <a href="{% url "blog:list" post.category %}">
+                        {{ post.category }}
+                    </a>/
                     {{ post.created }} ({{ post.modified }})
-                    {% if is_superuser %}
+                    {% if view.request.user.is_superuser %}
                         {% if post.published %}
                             <span class="label label-success">Опубликован</span>
                         {% else %}
@@ -29,12 +27,12 @@
                         {% endif %}
                         <a type="button"
                            class="btn btn-info"
-                           href="{% url 'blog:posts_edit' post_id=post.id %}">
+                           href="{% url 'blog:post_update' post.slug %}">
                             Редактировать
                         </a>
                         <a type="button"
                            class="btn btn-danger"
-                           href="{% url 'blog:posts_delete' post_id=post.id %}">
+                           href="{% url 'blog:post_delete' post.slug %}">
                             Удалить
                         </a>
                     {% endif %}
@@ -45,14 +43,14 @@
 
         <nav>
             <ul class="pager">
-                <li class="previous {% if not posts.has_previous %}disabled{% endif %}">
-                    <a href="{% if posts.has_previous %}?page={{ posts.previous_page_number }}{% endif %}">
+                <li class="previous {% if not page_obj.has_previous %}disabled{% endif %}">
+                    <a href="{% if page_obj.has_previous %}?page={{ page_obj.previous_page_number }}{% endif %}">
                         <span aria-hidden="true">&larr;</span>
                         Новые
                     </a>
                 </li>
-                <li class="next {% if not posts.has_next %}disabled{% endif %}">
-                    <a href="{% if posts.has_next %}?page={{ posts.next_page_number }}{% endif %}">
+                <li class="next {% if not page_obj.has_next %}disabled{% endif %}">
+                    <a href="{% if page_obj.has_next %}?page={{ page_obj.next_page_number }}{% endif %}">
                         Старые
                         <span aria-hidden="true">&rarr;</span>
                     </a>

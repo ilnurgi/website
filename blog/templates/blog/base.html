@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block extra_head %}
+    {% block extra_blog_head %}{% endblock %}
+{% endblock %}
+
+{% block extra_body %}
+    <div class="container">
+        <ul class="nav nav-pills">
+            {% for category in categories %}
+                <li
+                        role="presentation"
+                        {% if current_category == category %}
+                            class="active"
+                        {% endif %}>
+                    <a href="{% url "blog:list" category.name %}">
+                        <h4>{{ category.name|upper }}</h4>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+        <br>
+        {% if view.request.user.is_superuser %}
+            <a class="btn btn-primary " href="{% url 'blog:post_create' %}" role="button">
+                Добавить
+            </a>
+            <br>
+            <br>
+        {% endif %}
+    </div>
+    {% block extra_blog_body %}{% endblock %}
+{% endblock %}

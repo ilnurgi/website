@@ -2,52 +2,32 @@
 
 from django.conf.urls import url
 
-from blog.views import blog_views, tags_view, posts_view
+from blog import views
 
 urlpatterns = [
 
-    # ==========================================================================
-    # АДМИНКА ТЕГОВ
-    # ==========================================================================
-
-    url(r'tags/delete/(?P<tag_id>\d+)', tags_view.tag_delete, name='tags_delete'),
     url(
-        r'tags/edit/(?P<tag_id>\d+)',
-        tags_view.TagsEditPage.as_view(),
-        name='tags_edit'),
+        r'comment_create/(?P<post_slug>.+)',
+        views.comment_create,
+        name='comment_create'),
     url(
-        r'tags',
-        tags_view.TagsPage.as_view(),
-        name='tags'),
-
-    # ==========================================================================
-    # АДМИНКА ПОСТОВ
-    # ==========================================================================
-
+        r'post/create',
+        views.PostCreateView.as_view(),
+        name='post_create'),
     url(
-        r'posts/edit/(?P<post_id>\d+)',
-        posts_view.EditPostPage.as_view(),
-        name='posts_edit'),
+        r'post/edit/(?P<slug>.+)',
+        views.PostUpdateView.as_view(),
+        name='post_update'),
     url(
-        r'posts/delete/(?P<post_id>\d+)',
-        posts_view.delete_post,
-        name='posts_delete'),
-
-    # ==========================================================================
+        r'post/delete/(?P<slug>.+)',
+        views.PostDeleteView.as_view(),
+        name='post_delete'),
     url(
-        r'comment_add/(?P<post_id>\d+)',
-        blog_views.comment_add,
-        name='comment_add'),
+        r'post/(?P<slug>.+)',
+        views.PostDetailView.as_view(),
+        name='post_detail'),
     url(
-        r'post/(?P<post_id>\d+)',
-        blog_views.PostPage.as_view(),
-        name='post_page'),
-    url(
-        r'tag/(?P<tag_id>\d+)',
-        blog_views.TagPage.as_view(),
-        name='tags_page'),
-    url(
-        r'',
-        blog_views.HomePage.as_view(),
-        name='home_page'),
+        r'(?P<category_name>\w*)$',
+        views.PostListView.as_view(),
+        name='list'),
 ]

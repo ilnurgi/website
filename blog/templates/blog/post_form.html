@@ -1,4 +1,4 @@
-{% extends 'base_blog.html' %}
+{% extends 'blog/base.html' %}
 
 {% block extra_blog_head %}
 
@@ -8,19 +8,24 @@
     <div class="container">
         <form class="form-horizontal" method="post" enctype="multipart/form-data">
             {% csrf_token %}
-            <input type="hidden" name="post_id" value="{{ tag.id }}">
             <div class="form-group">
-                <label for="tag_names" class="col-sm-2 control-label">
-                    Теги, через заптую
+                <label for="category" class="col-sm-2 control-label">
+                    Категория
                 </label>
                 <div class="col-sm-10">
-                    <input
-                            type="text"
+                    <select
                             class="form-control"
-                            id="tag_names"
-                            placeholder="теги"
-                            name="tag_names"
-                            value="{{ post.tag_names }}">
+                            id="category"
+                            name="category">
+                        {% for category in categories %}
+                            <option value="{{ category.id }}"
+                                {% if object.category == category %}
+                                    selected
+                                {% endif %}>
+                                {{ category.name }}
+                            </option>
+                        {% endfor %}
+                    </select>
                 </div>
             </div>
             <div class="form-group">
@@ -31,43 +36,40 @@
                     <input
                             type="text"
                             class="form-control"
-                            id="post_title"
+                            id="title"
                             placeholder="заголовок"
-                            name="post_title"
-                            value="{{ post.title }}">
+                            name="title"
+                            value="{{ object.title }}">
                 </div>
             </div>
             <div class="form-group">
-                <label for="publish" class="col-sm-2 control-label">
+                <label for="published" class="col-sm-2 control-label">
                     Опубликовать
                 </label>
                 <div class="col-sm-1">
                     <input type="checkbox"
-                           name="publish"
-                           id="publish"
+                           name="published"
+                           id="published"
                            class="form-control"
-                            {% if post.published %}checked{% endif %}></div>
+                           {% if object.published %}checked{% endif %}>
+                </div>
             </div>
             <div class="form-group">
-                <label for="post_raw_content" class="col-sm-2 control-label">
+                <label for="raw_content" class="col-sm-2 control-label">
                     Содержание
                 </label>
                 <div class="col-sm-10">
                     <textarea
                             class="form-control"
-                            id="post_raw_content"
-                            name="post_raw_content"
-                            rows="30">{{ post.raw_content }}</textarea>
+                            id="raw_content"
+                            name="raw_content"
+                            rows="30">{{ object.raw_content }}</textarea>
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                     <button type="submit" class="btn btn-default">
-                        {% if tag %}
-                            Изменить
-                        {% else %}
-                            Создать
-                        {% endif %}
+                        Создать
                     </button>
                 </div>
             </div>
