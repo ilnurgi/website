@@ -172,6 +172,9 @@ class Comment(models.Model):
 
     post = models.ForeignKey(Post)
 
+    class Meta:
+        ordering = ['-created']
+
     def __unicode__(self):
         return u'{0}'.format(
             self.user or u'{0} / {1}'.format(self.user_name, self.user_email))
