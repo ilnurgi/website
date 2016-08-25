@@ -7,3 +7,4 @@ psutil
 markdown
 django-celery
 django-kombu
+pytils
