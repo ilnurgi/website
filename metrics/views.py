@@ -7,47 +7,42 @@ import pymongo
 
 from django.conf import settings
 from django.http import JsonResponse
+from django.views.generic import TemplateView
 
-from application.views import BaseHeaderView
+from application.views import ConspectsMixin
 
 
-class HomePage(BaseHeaderView):
+class HomePage(ConspectsMixin, TemplateView):
 
     template_name = 'base_metrics.html'
+    active_page_sub = ''
 
     def get_context_data(self, **kwargs):
         context = super(HomePage, self).get_context_data(**kwargs)
         context['active_page'] = 'metrics'
+        context['active_page_sub'] = self.active_page_sub
         return context
 
 
 class System(HomePage):
 
     template_name = 'metrics_system.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(System, self).get_context_data(**kwargs)
-        context['active_page_sub'] = 'system'
-        return context
+    active_page_sub = "system"
 
 
 class Visiters(HomePage):
 
     template_name = 'metrics_visiters.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(Visiters, self).get_context_data(**kwargs)
-        context['active_page_sub'] = 'visiters'
-        return context
+    active_page_sub = "visiters"
 
 
 class URLS(HomePage):
 
     template_name = 'metrics_urls.html'
+    active_page_sub = "urls"
 
     def get_context_data(self, **kwargs):
         context = super(URLS, self).get_context_data(**kwargs)
-        context['active_page_sub'] = 'urls'
 
         mongo_client = pymongo.MongoClient(
             settings.DATABASE_MONGO['host'],
@@ -72,10 +67,10 @@ class URLS(HomePage):
 class URLSFrom(HomePage):
 
     template_name = 'metrics_urls.html'
+    active_page_sub = "urls_from"
 
     def get_context_data(self, **kwargs):
         context = super(URLSFrom, self).get_context_data(**kwargs)
-        context['active_page_sub'] = 'urls_from'
 
         mongo_client = pymongo.MongoClient(
             settings.DATABASE_MONGO['host'],
@@ -100,10 +95,10 @@ class URLSFrom(HomePage):
 class UserAgents(HomePage):
 
     template_name = 'metrics_urls.html'
+    active_page_sub = "user_agents"
 
     def get_context_data(self, **kwargs):
         context = super(UserAgents, self).get_context_data(**kwargs)
-        context['active_page_sub'] = 'user_agents'
 
         mongo_client = pymongo.MongoClient(
             settings.DATABASE_MONGO['host'],

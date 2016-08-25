@@ -22,7 +22,7 @@
                     {% endif %}>
                 <a href="{% url 'metrics:visiters' %}">Посещаемость</a>
             </li>
-            {% if is_superuser %}
+            {% if view.request.user.is_superuser %}
                 <li
                         role="presentation"
                         {% if active_page_sub == 'urls' %}
