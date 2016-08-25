@@ -3,13 +3,12 @@
 import os
 
 from django.shortcuts import redirect
+from django.views.generic import TemplateView
 
-from application.views.mixins import CSRFMixin
-from application.views import BaseHeaderView
 from fileuploader.models import File
 
 
-class HomePage(CSRFMixin, BaseHeaderView):
+class HomePage(TemplateView):
 
     template_name = 'base_fileuploader.html'
 
