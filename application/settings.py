@@ -166,3 +166,5 @@ BROKER_BACKEND = "djkombu.transport.DatabaseTransport"
 LOGIN_REDIRECT_URL = "resume:home_page"
 LOGIN_URL = "login"
 LOGOUT_URL = "logout"
+
+GOOGLE_SITE_VERIFICATIN = ""
