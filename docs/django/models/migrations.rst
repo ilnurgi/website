@@ -3,10 +3,21 @@
 
 .. code-block:: sh
 
+    // создаем миграцию для приложения
     python manage.py makemigration app_name
+
+    // создаем пустую миграцию, для ручной миграции
+    python manage.py makemigration app_name --empty
+
+    // мигрируем конкретное приложение
     python manage.py migrate app_name
+
+    // выгружаем данные для конкретного приложения
     python manage.py dumpdata app_name --indent=2
+
+    // загружаем данны для конкретного приложения
     python manage.py loaddata data.json
+
 
 .. code-block:: py
 

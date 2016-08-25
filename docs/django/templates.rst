@@ -302,6 +302,7 @@
         Hello {{ name }}!
     {% endblocktrans %}
 
+
 .. code-block:: html
 
     {% get_current_language as LANGUAGE_CODE %}
@@ -323,6 +324,7 @@
             {% endfor %}
         </ul>
     </div>
+
 
 Кеширование
 -----------

@@ -35,7 +35,7 @@ add_message
 
     Добавляет сообщение с указанным уровнем в ответ.
 
-    .. code-block::
+    .. code-block:: py
 
         message.add_message(
             request,

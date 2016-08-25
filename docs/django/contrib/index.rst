@@ -15,9 +15,10 @@
     :maxdepth: 1
 
     _admin
-    _auth/index
+    auth/index
     _contenttypes
     _messages
-    _session
+    _sessions
     _sitemap
     _staticfiles
+    _syndication

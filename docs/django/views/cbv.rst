@@ -179,6 +179,12 @@ ListView
 
         * :py:class:`django.views.generic.list.BaseListView`
 
+    Контекст:
+
+        * object_list - список объектов указанной модели
+
+        * paginator - объект для пагинации
+
     .. code-block:: py
 
         class PostListView(ListView):
@@ -196,6 +202,30 @@ ListView
             def get_queryset(self):
                 qs = super().get_queryset()
                 return qs.filter(...)
+
+    .. py:attribute:: model
+
+        Модель для представления
+
+
+    .. py:attribute:: paginate_by
+
+        Количесвто записей на странице
+
+
+    .. py:attribute:: template_name
+
+        Путь к файлу шаблона, по умолчанию app_name/model_name_list.html
+
+
+    .. py:attribute:: template_name_suffix
+
+        Суффикс для файла шаблона, по умолчанию _list
+
+
+    .. py:method:: get_queryset()
+
+        Возвращает объект запросы БД
 
 
 MonthArchiveView

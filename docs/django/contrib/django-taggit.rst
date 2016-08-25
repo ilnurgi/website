@@ -48,6 +48,7 @@ TaggableManager
 
     Менеджер, реализующий возможность работы с тегами.
 
+
     .. py:method:: add(*tag_names)
 
         Добавляет теги
@@ -56,6 +57,17 @@ TaggableManager
 
             record.tags.add("python")
             record.save()
+
+
+    .. py:method:: all()
+
+        Возвращает все теги
+
+        .. code-block:: py
+
+            post.tags.all()
+            # [<Tag: jazz>, ...]
+
 
     .. py:method:: clear()
 

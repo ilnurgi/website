@@ -148,7 +148,7 @@ LANGUAGES
 
 Список поддерживаемых языков
 
-.. code-block::
+.. code-block:: py
 
     LANGUAGES = (
         ('en', 'English'),
@@ -161,7 +161,7 @@ LOCALE_PATHS
 
 Список директории, где искать переводы
 
-.. code-block::
+.. code-block:: py
 
     LOCALE_PATHS = (
         os.path.join(BASE_DIR, 'locale'),
@@ -263,7 +263,7 @@ USE_I18N
 
 Включить систему локализации
 
-.. code-block::
+.. code-block:: py
 
     USE_I18N = True
 
@@ -272,7 +272,7 @@ USE_L10N
 
 Включить локализацию форматирования: даты, числа
 
-.. code-block::
+.. code-block:: py
 
     USE_L10N = False
 
@@ -282,7 +282,7 @@ USE_TZ
 
 Дата и время с тайм зоной
 
-.. code-block::
+.. code-block:: py
 
     USE_TZ = True
 
@@ -292,6 +292,6 @@ TIME_ZONE
 
 Тайм зона по умолчанию
 
-.. code-block::
+.. code-block:: py
 
     TIME_ZONE = 'Europe/Moscow'

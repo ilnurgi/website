@@ -16,55 +16,6 @@
         fail_silently=False)
 
 
-django-taggit
--------------
-.. code-block:: py
-
-    # settings.py
-
-    INSTALLED_APPS = (
-        ...,
-        'taggit',
-    )
-
-.. code-block:: py
-
-    # models.py
-
-    from taggit.managers import TaggableManager
-
-    class Post(models.Model):
-
-        tags = TaggableManager()
-
-.. py:class:: taggit.managers.TaggableManager()
-
-    .. py:method:: add()
-
-        Добавляет теги
-
-        .. code-block:: py
-
-            post.tags.add('music', 'jazz', 'django')
-
-    .. py:method:: all()
-
-        Возвращает все теги
-
-        .. code-block:: py
-
-            post.tags.all()
-            # [<Tag: jazz>, ...]
-
-    .. py:method:: remove()
-
-        Удаляет тег
-
-        .. code-block:: py
-
-            post.tags.remove('jazz')
-
-
 python-social-auth
 ------------------
 
@@ -113,6 +64,7 @@ python-social-auth
     url(
         'social-auth/',
         include('social.apps.django_app.urls', namespace='social')),
+
 
 .. code-block:: html
 
