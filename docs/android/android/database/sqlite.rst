@@ -138,7 +138,8 @@ android.database.sqlite.SQLiteDatabase
 android.database.sqlite.SQLiteOpenHelper
 ========================================
 
-.. py:class:: android.database.sqlite.SQLiteOpenHelper(Context context, String dbName, null, int dbVersion)
+.. py:class:: android.database.sqlite.SQLiteOpenHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version)
+.. py:class:: android.database.sqlite.SQLiteOpenHelperDBHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version, DatabaseErrorHandler errorHandler)
 
     Вспомогательный класс, для реализации работы с БД.
 
