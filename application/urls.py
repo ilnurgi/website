@@ -4,6 +4,7 @@ from django.conf import settings
 from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.http.response import HttpResponse
 
 from application import views as app_view
 from application.constants import CONSPECTS
@@ -29,6 +30,9 @@ urlpatterns = [
             }
         },
         "sitemap_xml"),
+    url(
+        r'^robots\.txt$',
+        lambda r: HttpResponse("", content_type="text/plain")),
     url(
         r'^admin/',
         include(admin.site.urls)),
