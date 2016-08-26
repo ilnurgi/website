@@ -9,7 +9,7 @@
         {% for post in object_list %}
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3><a href="{% url "blog:post_detail" post.slug %}">{{ post.title }}</a></h3>
+                    <h3><a href="{% url "blog:post_detail" post.category.name post.slug %}">{{ post.title }}</a></h3>
                 </div>
                 <div class="panel-body ">
                     {{ post.content|safe|truncatewords_html:50 }}

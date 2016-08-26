@@ -132,13 +132,14 @@ class PostDeleteView(BlogViewMixin, DeleteView):
 
 def comment_create(request, post_slug):
 
-    if "content_raw" not in request.POST:
-        return redirect(reverse("blog:post_detail", args=[post_slug]))
-
     try:
         post = Post.objects.get(slug=post_slug)
     except Post.DoesNotExist:
         raise Http404()
+
+    if "content_raw" not in request.POST:
+        return redirect(
+            reverse("blog:post_detail", args=[post.category.name, post_slug]))
 
     if not post.published and not request.user.is_superuser:
         raise PermissionDenied()
@@ -149,7 +150,9 @@ def comment_create(request, post_slug):
     else:
         if ('user_name' not in request.POST or
                 'user_email' not in request.POST):
-            return redirect(reverse("blog:post_detail", args=[post_slug]))
+            return redirect(
+                reverse(
+                    "blog:post_detail", args=[post.category.name, post_slug]))
 
         comment.user_name = request.POST['user_name']
         comment.user_email = request.POST['user_email']
@@ -159,5 +162,6 @@ def comment_create(request, post_slug):
     comment.save()
 
     send_email_notification.delay(
-        url=reverse('blog:post_detail', args=[post_slug]))
-    return redirect(reverse("blog:post_detail", args=[post_slug]))
+        url=reverse('blog:post_detail', args=[post.category.name, post_slug]))
+    return redirect(
+        reverse("blog:post_detail", args=[post.category.name, post_slug]))

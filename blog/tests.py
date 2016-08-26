@@ -109,7 +109,8 @@ class SuperUserTestCase(testcases.TestCase):
 
         Comment.objects.create(post=post, published=False)
 
-        response = self.client.get(reverse("blog:post_detail", args=["python"]))
+        response = self.client.get(
+            reverse("blog:post_detail", args=[post.category.name, post.slug]))
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.template_name, ["blog/post_detail.html"])
 
@@ -138,7 +139,8 @@ class SuperUserTestCase(testcases.TestCase):
 
         Comment.objects.create(post=post, published=True)
 
-        response = self.client.get(reverse("blog:post_detail", args=["python"]))
+        response = self.client.get(
+            reverse("blog:post_detail", args=[post.category.name, post.slug]))
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.template_name, ["blog/post_detail.html"])
 
@@ -220,7 +222,8 @@ class SuperUserTestCase(testcases.TestCase):
 
         self.assertEqual(response.status_code, 302)
         self.assertTrue(
-            response.url.endswith(reverse("blog:post_detail", args=["python"])))
+            response.url.endswith(
+                reverse("blog:post_detail", args=[category.name, "python"])))
 
         self.assertEqual(Post.objects.count(), 1)
 
@@ -240,7 +243,8 @@ class SuperUserTestCase(testcases.TestCase):
 
         self.assertEqual(response.status_code, 302)
         self.assertTrue(
-            response.url.endswith(reverse("blog:post_detail", args=["python"])))
+            response.url.endswith(
+                reverse("blog:post_detail", args=[category.name, "python"])))
 
         post = Post.objects.get()
         self.assertEqual(Post.objects.count(), 1)
@@ -262,7 +266,8 @@ class SuperUserTestCase(testcases.TestCase):
 
         self.assertEqual(response.status_code, 302)
         self.assertTrue(
-            response.url.endswith(reverse("blog:post_detail", args=["python"])))
+            response.url.endswith(
+                reverse("blog:post_detail", args=[category.name, "python"])))
 
         post = Post.objects.get()
         self.assertEqual(Post.objects.count(), 1)
@@ -287,7 +292,8 @@ class SuperUserTestCase(testcases.TestCase):
 
         self.assertEqual(response.status_code, 302)
         self.assertTrue(
-            response.url.endswith(reverse("blog:post_detail", args=["python"])))
+            response.url.endswith(
+                reverse("blog:post_detail", args=[category.name, "python"])))
 
         post = Post.objects.get()
         self.assertEqual(Post.objects.count(), 1)
@@ -318,17 +324,20 @@ class SuperUserTestCase(testcases.TestCase):
 
         # создаем запись
         category = Category.objects.create(name="python")
-        Post.objects.create(category=category, title="python")
+        post = Post.objects.create(category=category, title="python")
 
         response = self.client.post(
-            reverse("blog:comment_create", args=["python"]),
+            reverse(
+                "blog:comment_create", args=[post.slug]),
             {
                 "content_raw": "some raw text"
             })
 
         self.assertEqual(response.status_code, 302)
         self.assertTrue(
-            response.url.endswith(reverse("blog:post_detail", args=["python"])))
+            response.url.endswith(
+                reverse(
+                    "blog:post_detail", args=[post.category.name, post.slug])))
 
         comment = Comment.objects.get()
         self.assertEqual(Comment.objects.count(), 1)
@@ -340,10 +349,11 @@ class SuperUserTestCase(testcases.TestCase):
     def test_comment_create_not_content_raw(self):
 
         category = Category.objects.create(name="python")
-        Post.objects.create(category=category, title="python")
+        post = Post.objects.create(category=category, title="python")
 
         response = self.client.post(
-            reverse("blog:comment_create", args=["python"]),
+            reverse(
+                "blog:comment_create", args=[post.slug]),
             {
                 "content_raw123": "some raw text"
             })
@@ -351,7 +361,8 @@ class SuperUserTestCase(testcases.TestCase):
         self.assertEqual(response.status_code, 302)
         self.assertTrue(
             response.url.endswith(
-                reverse("blog:post_detail", args=["python"])))
+                reverse(
+                    "blog:post_detail", args=[post.category.name, post.slug])))
 
     def test_comment_create_post_not_exists(self):
 
@@ -450,7 +461,8 @@ class SimpleUserTestCase(testcases.TestCase):
 
         Comment.objects.create(post=post, published=False)
 
-        response = self.client.get(reverse("blog:post_detail", args=["python"]))
+        response = self.client.get(
+            reverse("blog:post_detail", args=[post.category.name, post.slug]))
         self.assertEqual(response.status_code, 403)
 
     def test_detail2(self):
@@ -461,7 +473,8 @@ class SimpleUserTestCase(testcases.TestCase):
 
         Comment.objects.create(post=post, published=True)
 
-        response = self.client.get(reverse("blog:post_detail", args=["python"]))
+        response = self.client.get(
+            reverse("blog:post_detail", args=[post.category.name, post.slug]))
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.template_name, ["blog/post_detail.html"])
 
@@ -539,7 +552,8 @@ class SimpleUserTestCase(testcases.TestCase):
 
         # создаем запись
         category = Category.objects.create(name="python")
-        Post.objects.create(category=category, title="python", published=True)
+        post = Post.objects.create(
+            category=category, title="python", published=True)
 
         response = self.client.post(
             reverse("blog:comment_create", args=["python"]),
@@ -551,7 +565,9 @@ class SimpleUserTestCase(testcases.TestCase):
 
         self.assertEqual(response.status_code, 302)
         self.assertTrue(
-            response.url.endswith(reverse("blog:post_detail", args=["python"])))
+            response.url.endswith(
+                reverse(
+                    "blog:post_detail", args=[post.category.name, post.slug])))
 
         comment = Comment.objects.get()
         self.assertEqual(Comment.objects.count(), 1)
@@ -580,7 +596,7 @@ class SimpleUserTestCase(testcases.TestCase):
     def test_comment_create_not_content_raw(self):
 
         category = Category.objects.create(name="python")
-        Post.objects.create(category=category, title="python")
+        post = Post.objects.create(category=category, title="python")
 
         response = self.client.post(
             reverse("blog:comment_create", args=["python"]),
@@ -591,7 +607,8 @@ class SimpleUserTestCase(testcases.TestCase):
         self.assertEqual(response.status_code, 302)
         self.assertTrue(
             response.url.endswith(
-                reverse("blog:post_detail", args=["python"])))
+                reverse(
+                    "blog:post_detail", args=[post.category.name, post.slug])))
 
     def test_comment_create_post_not_exists(self):
 

@@ -1,10 +1,12 @@
 # coding: utf-8
 
+import datetime
+
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 from django.test import testcases
 
-from application.constants import CONSPECTS
+from application.constants import CONSPECTS, CONSPECTS_ALL
 from blog.models import Post, Category
 
 
@@ -149,3 +151,71 @@ class ViewsTestCase(testcases.TestCase):
 
             response = self.client.get(url)
             self.assertEqual(response.status_code, 404)
+
+
+class SiteMapXMLTestCase(testcases.TestCase):
+
+    def setUp(self):
+
+        today = datetime.date.today()
+        lastmod = today - datetime.timedelta(weeks=5)
+        self.urls = [
+            {
+                'lastmod': lastmod,
+                'location': u'http://testserver/' + reverse("resume:home_page"),
+            }, {
+                'lastmod': lastmod,
+                'location': u'http://testserver/' + reverse("conspects_page"),
+            }]
+        self.urls.extend(
+            {
+                'lastmod': lastmod,
+                'location': u'http://testserver' + conspect['url'],
+            } for conspect in CONSPECTS_ALL)
+
+    def test_sitemap_xml(self):
+
+        response = self.client.post(reverse("sitemap_xml"))
+        self.assertIn("urlset", response.context_data)
+
+        self.assertEqual(len(response.context_data["urlset"]), len(self.urls))
+        for index, url in enumerate(response.context_data['urlset']):
+            self.assertEqual(
+                url['lastmod'],
+                self.urls[index]['lastmod'],
+                u"{}: {} != {}".format(
+                    index, url['lastmod'], self.urls[index]['lastmod']))
+
+    def test_sitemap_xml_post_not_published(self):
+
+        category = Category.objects.create()
+        Post.objects.create(category=category)
+        self.test_sitemap_xml()
+
+    def test_sitemap_xml_post_published(self):
+
+        category = Category.objects.create(name="python")
+        post = Post.objects.create(category=category, published=True, title="python")
+
+        response = self.client.post(reverse("sitemap_xml"))
+        self.assertIn("urlset", response.context_data)
+
+        self.assertEqual(
+            len(response.context_data["urlset"]),
+            len(self.urls) + 1)
+        self.assertDictContainsSubset(
+            {
+                "lastmod": post.modified,
+                "location": (
+                    u'http://testserver' + reverse(
+                        "blog:post_detail",
+                        args=[post.category.name, post.slug]))
+            },
+            response.context_data['urlset'][0]
+        )
+        for index, url in enumerate(response.context_data['urlset'][1:]):
+            self.assertEqual(
+                url['lastmod'],
+                self.urls[index]['lastmod'],
+                u"{}: {} != {}".format(
+                    index, url['lastmod'], self.urls[index]['lastmod']))

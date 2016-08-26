@@ -34,8 +34,8 @@ class Post(models.Model):
     published = models.BooleanField(default=False)
     category = models.ForeignKey(Category)
 
-    created = models.DateTimeField(u'Post created date', )#auto_now_add=True)
-    modified = models.DateTimeField(u'Post modified date', )#auto_now=True)
+    created = models.DateTimeField(u'Post created date', auto_now_add=True)
+    modified = models.DateTimeField(u'Post modified date', auto_now=True)
 
     slug = models.SlugField(blank=True, unique=True)
 
@@ -49,7 +49,7 @@ class Post(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse("blog:post_detail", args=[self.slug])
+        return reverse("blog:post_detail", args=[self.category.name, self.slug])
 
     def save(self, force_insert=False, force_update=False, using=None,
              update_fields=None):

@@ -81,3 +81,6 @@ CONSPECTS = (
         },
     )
 )
+
+CONSPECTS_ALL = []
+[CONSPECTS_ALL.extend(conspects) for conspects in CONSPECTS]

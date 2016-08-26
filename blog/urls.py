@@ -23,7 +23,7 @@ urlpatterns = [
         views.PostDeleteView.as_view(),
         name='post_delete'),
     url(
-        r'post/(?P<slug>.+)',
+        r'(?P<category_name>\w*)/(?P<slug>.+)',
         views.PostDetailView.as_view(),
         name='post_detail'),
     url(

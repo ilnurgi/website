@@ -7,13 +7,28 @@ from django.contrib import admin
 
 from application import views as app_view
 from application.constants import CONSPECTS
+from application.sitemap import ApplicationSitemap, ConspectsSitemap
+
 from blog import urls as blog_urls
+from blog.sitemaps import BlogSitemap
+
 from fileuploader import urls as fileuploader_urls
 from metrics import urls as metric_urls
 from resume import urls as resume_urls
 
 
 urlpatterns = [
+    url(
+        r'^sitemap\.xml$',
+        "django.contrib.sitemaps.views.sitemap",
+        {
+            "sitemaps": {
+                "main": ApplicationSitemap,
+                "blog": BlogSitemap,
+                "conspects": ConspectsSitemap,
+            }
+        },
+        "sitemap_xml"),
     url(
         r'^admin/',
         include(admin.site.urls)),
