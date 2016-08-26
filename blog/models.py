@@ -39,7 +39,7 @@ class Post(models.Model):
 
     slug = models.SlugField(blank=True, unique=True)
 
-    description = models.CharField(u'Description', max_length=255, null=True)
+    description = models.CharField(u'Description', max_length=255)
 
     re_references = re.compile(ur'\[(.+?)\]\[(.+?)\]')
     re_files = re.compile(ur'(\[FILE=(\d+)\])')
