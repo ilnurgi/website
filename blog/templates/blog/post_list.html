@@ -1,7 +1,21 @@
 {% extends 'blog/base.html' %}
 
 {% block extra_blog_head %}
+{% endblock %}
 
+{% block title %}
+    {% if current_category %}
+        {{ current_category }}.
+    {% endif %}
+    Блог.
+{% endblock %}
+
+{% block description %}
+    {% if current_category %}
+        <meta name="description" content="Посты блога Ильнура Гайфутдинова по теме {{ current_category }}">
+    {% else %}
+        <meta name="description" content="Посты блога Ильнура Гайфутдинова">
+    {% endif %}
 {% endblock %}
 
 {% block extra_blog_body %}

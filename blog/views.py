@@ -82,6 +82,7 @@ class PostCreateView(BlogViewMixin, CreateView):
         "raw_content",
         "category",
         "published",
+        "description",
     ]
 
     def get(self, request, *args, **kwargs):
@@ -102,6 +103,7 @@ class PostUpdateView(BlogViewMixin, UpdateView):
         "raw_content",
         "category",
         "published",
+        "description",
     ]
 
     def get(self, request, *args, **kwargs):

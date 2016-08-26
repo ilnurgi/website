@@ -17,6 +17,9 @@ lg - >= 1200px;
                 content="{{ GOOGLE_SITE_VERIFICATIN }}" />
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% block description %}
+{#            <meta name="description" content="">#}
+        {% endblock %}
 
         <script src="{{ STATIC_URL }}jquery-2.1.4.min.js"></script>
 
@@ -38,6 +41,7 @@ lg - >= 1200px;
         <link
                 rel="stylesheet"
                 href="{{ STATIC_URL }}application.css">
+        <title>{% block title %}{% endblock %}</title>
     </head>
 
     <body>

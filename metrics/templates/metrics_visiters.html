@@ -1,5 +1,13 @@
 {% extends 'base_metrics.html' %}
 
+{% block extra_title %}
+    Посещаемость
+{% endblock %}
+
+{% block description %}
+    <meta name="description" content="Статистика ресурса. Посетители.">
+{% endblock %}
+
 {% block extra_metrics_head %}
     <script>
         function createChartJs(json, canvas_id){

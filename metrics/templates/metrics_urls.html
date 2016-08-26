@@ -1,5 +1,13 @@
 {% extends 'base_metrics.html' %}
 
+{% block extra_title %}
+    Урлы
+{% endblock %}
+
+{% block description %}
+    <meta name="description" content="Статистика ресурса. Урлы">
+{% endblock %}
+
 {% block content %}
     {% for data in urls %}
         <h3>{{ data.date }}</h3>

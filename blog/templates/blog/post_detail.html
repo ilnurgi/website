@@ -1,7 +1,14 @@
 {% extends 'blog/base.html' %}
 
 {% block extra_blog_head %}
+{% endblock %}
 
+{% block title %}
+    {{ object.category }}: {{ object }}
+{% endblock %}
+
+{% block description %}
+    <meta name="description" content="{{ object.description }}">
 {% endblock %}
 
 {% block extra_blog_body %}

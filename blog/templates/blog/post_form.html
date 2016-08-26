@@ -29,7 +29,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="post_title" class="col-sm-2 control-label">
+                <label for="title" class="col-sm-2 control-label">
                     Заголовок
                 </label>
                 <div class="col-sm-10">
@@ -40,6 +40,20 @@
                             placeholder="заголовок"
                             name="title"
                             value="{{ object.title }}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="description" class="col-sm-2 control-label">
+                    Короткое описание
+                </label>
+                <div class="col-sm-10">
+                    <input
+                            type="text"
+                            class="form-control"
+                            id="description"
+                            placeholder="заголовок"
+                            name="description"
+                            value="{{ object.description }}">
                 </div>
             </div>
             <div class="form-group">
