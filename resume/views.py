@@ -9,5 +9,5 @@ class HomePage(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(HomePage, self).get_context_data(**kwargs)
-        context['GOOGLE_SITE_VERIFICATIN'] = settings.GOOGLE_SITE_VERIFICATIN
+        context['GOOGLE_SITE_VERIFICATION'] = settings.GOOGLE_SITE_VERIFICATION
         return context

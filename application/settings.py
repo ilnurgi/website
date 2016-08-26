@@ -120,6 +120,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 settings_json = os.path.join(BASE_DIR, 'settings.yaml')
 
+GOOGLE_SITE_VERIFICATION = ""
+
 if os.path.exists(settings_json):
     globals().update(yaml.load(open(settings_json)))
 
@@ -167,5 +169,3 @@ BROKER_BACKEND = "djkombu.transport.DatabaseTransport"
 LOGIN_REDIRECT_URL = "resume:home_page"
 LOGIN_URL = "login"
 LOGOUT_URL = "logout"
-
-GOOGLE_SITE_VERIFICATIN = ""
