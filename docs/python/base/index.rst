@@ -11,19 +11,18 @@
     opers
     none
     string
+    int
     bool
+    tuple
+    list
+    set
+    frozenset
+    dicts
     bytearray
     bytes
     class
     complex
-    dicts
     elipsis
     errors
     files
-    float
-    frozenset
     functions
-    int
-    list
-    set
-    tuple
