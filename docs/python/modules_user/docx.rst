@@ -1,7 +1,7 @@
 .. py:module:: docx
 
 docx - инструмент для работы с docx форматом
-=============================================
+============================================
 
 
 Document
@@ -151,7 +151,7 @@ Table
 
     .. py:attribute:: columns
 
-        список колонок таблицы :py:ref:`_columns`
+        список колонок таблицы :py:ref:`columns`
 
 
     .. py:attribute:: rows
@@ -263,7 +263,7 @@ _Column
 .. _columns:
 
 Columns
---------
+-------
 
 
 .. py:class:: docx.table._Columns(tbl, parent)

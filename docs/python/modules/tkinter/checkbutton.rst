@@ -1,12 +1,16 @@
-Checkbutton - виджет, галка
-===========================
+.. py:module:: tkinter
+
+Checkbutton
+===========
+
+Виджет, галка
 
 
 .. py:class:: Checkbutton(**kwargs)
 
     Виджет, флажок
 
-    Наследник :ref:class:`Widget`
+    Наследник :py:class:`Widget`
 
     * `command` - обработчик изменения состояния виджета
     * `disabledforeground` - цвет текста, для выключенного виджета

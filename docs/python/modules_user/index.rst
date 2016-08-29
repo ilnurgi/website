@@ -4,14 +4,15 @@
 Содержание:
 
 .. toctree::
-   :maxdepth: 1
+    :maxdepth: 1
 
-   docx
-   pyaudio
-   psutil
-   pymongo/index
-   pyqt/index
-   serial
-   xlrd
-   xlwt
-   xlutils
+    docx
+    pyaudio
+    psutil
+    pygame/index
+    pymongo/index
+    pyqt/index
+    serial
+    xlrd
+    xlwt
+    xlutils

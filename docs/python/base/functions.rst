@@ -486,9 +486,9 @@ f.__name__     Имя функции
     # 2
     # 3
 
-    def deco(С):
+    def deco(C):
         print("Bнyтpи декоратора")
-        return С
+        return C
 
     @deco
     class MyClass:
@@ -576,10 +576,10 @@ f.__name__     Имя функции
     matcher.next()
     # Поиск подстроки python
 
-    matcher.send(“Hello World”)
-    matcher.send(“python is cool”)
+    matcher.send("Hello World")
+    matcher.send("python is cool")
     # python is cool
-    matcher.send(“yow!”)
+    matcher.send("yow!")
 
     # Завершение работы с объектом matcher
     matcher.close()

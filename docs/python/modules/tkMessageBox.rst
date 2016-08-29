@@ -1,16 +1,17 @@
 .. py:module:: tkMessageBox
 
-tkMessageBox - модуль диалоговых окон
-=====================================
+tkMessageBox
+============
+
+Модуль диалоговых окон
 
 
-
-.. py:module:: askokcancel(**kwargs)
+.. py:method:: askokcancel(**kwargs)
 
     Отображает информационное окно с вопросом и с выбором Да/Отмена.
 
 
-.. py:module:: askquestion(**kwargs)
+.. py:method:: askquestion(**kwargs)
 
     Отображает информационное окно с вопросом и с выбором Да/Нет.
 
@@ -28,7 +29,7 @@ tkMessageBox - модуль диалоговых окон
 .. py:method:: askretrycancel(**kwargs)
 
 
-.. py:module:: showerror(**kwargs)
+.. py:method:: showerror(**kwargs)
 
     Отображает информационное окно с ошибкой
 
@@ -40,7 +41,7 @@ tkMessageBox - модуль диалоговых окон
         showerror(u'Error', u'Could not open file')
 
 
-.. py:module:: showinfo(**kwargs)
+.. py:method:: showinfo(**kwargs)
 
     Отображает информационное окно
 

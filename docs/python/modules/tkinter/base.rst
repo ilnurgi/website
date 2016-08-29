@@ -1,3 +1,5 @@
+.. py:module:: tkinter
+
 Базовые объекты
 ===============
 
@@ -57,7 +59,6 @@
 
     :param event: ивент, ('WM_DELETE_WINDOW')
     :param func: обработчик
-
 
 .. py:method:: set()
 

@@ -1,5 +1,7 @@
-pyqt - кросплатформенный фреймворк
-===================================
+pyqt
+====
+
+Кросплатформенный фреймворк
 
 
 .. code-block:: py
@@ -8,11 +10,11 @@ pyqt - кросплатформенный фреймворк
     from PyQt4 import QtGui
     import sys
 
-    арр = QtGui.QApplication(sys.argv)
+    app = QtGui.QApplication(sys.argv)
 
-    window = QtGui.QWidget{)
+    window = QtGui.QWidget()
     window.show()
-    sys.exit(app.exec_()))
+    sys.exit(app.exec_())
 
 
 Содержит следующие модули:

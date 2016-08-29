@@ -312,28 +312,28 @@ timedelta
         # datetime.timedelta(4), datetime.timedelta(14)
 
         2 * d1, 2 * d2
-        # datetime.timede1ta(4), datetime.timede1ta(14)
+        # datetime.timedelta(4), datetime.timedelta(14)
 
-        dЗ = -d1
-        dЗ, abs(d3)
-        # (datetime.timede1ta(-2), datetime.timede1ta(2))
+        d3 = -d1
+        d3, abs(d3)
+        # (datetime.timedelta(-2), datetime.timedelta(2))
 
     .. code-block:: py
 
-        d1 = datetime.timede1ta(days=2)
-        d2 = datetime.timede1ta(days=7)
-        dЗ = datetime.timede1ta(weeks=1)
+        d1 = datetime.timedelta(days=2)
+        d2 = datetime.timedelta(days=7)
+        d3 = datetime.timedelta(weeks=1)
 
-        d1 == d2, d2 == dЗ
+        d1 == d2, d2 == d3
         # (False, True)
 
-        d1 != d2, d2 != dЗ
+        d1 != d2, d2 != d3
         # (True, False)
 
-        d1 < d2, d2 <= dЗ
-        #(True, True)
+        d1 < d2, d2 <= d3
+        # (True, True)
 
-        d1 > d2, d2 >= dЗ
+        d1 > d2, d2 >= d3
         # (False, True)
 
 

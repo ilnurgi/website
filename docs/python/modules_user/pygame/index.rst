@@ -6,6 +6,8 @@ pygame
 .. toctree::
    :maxdepth: 1
 
+   display
+
 
 .. py:class:: Screen((height, width))
 
