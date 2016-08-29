@@ -32,7 +32,9 @@ urlpatterns = [
         "sitemap_xml"),
     url(
         r'^robots\.txt$',
-        lambda r: HttpResponse("", content_type="text/plain")),
+        lambda r: HttpResponse(
+            "User-Agent: *\nDisallow: \nHost: \n",
+            content_type="text/plain")),
     url(
         r'^admin/',
         include(admin.site.urls)),
