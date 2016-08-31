@@ -301,7 +301,7 @@ def data_month(requset):
     })
 
 
-def data_week(requset):
+def data_week(request):
     """
     информация по посещаемости за последнюю неделю
     возвращает жсон,
@@ -312,9 +312,6 @@ def data_week(requset):
         'doc_all_count': список количеств просмотров конспектов по дням
         'blog_all_count': список количеств просмотров блога по дням
     }
-
-    :param requset:
-    :return:
     """
     db = get_db(settings.DATABASE_MONGO['nginx_access_db_name'])
 
@@ -333,7 +330,13 @@ def data_week(requset):
     _blog_all_data = []
     blog_all_data_append = _blog_all_data.append
 
-    date_now = datetime.datetime.now()
+    if "date_now" in request.GET:
+        date_now = datetime.datetime.strptime(
+            request.GET["date_now"],
+            "%Y.%m.%d %H.%M.%S")
+    else:
+        date_now = datetime.datetime.now()
+
     # date_now = datetime.datetime.now() - datetime.timedelta(days=15)
     date_end = datetime.datetime.combine(
         date_now.date() - datetime.timedelta(days=1),
@@ -344,7 +347,7 @@ def data_week(requset):
         datetime.time(0, 0, 0)
     )
 
-    last_date = None
+    last_date = record_date = None
     ip_count = 0
     ip_uniq_count_set = set()
     docs_all_count = 0
@@ -354,9 +357,7 @@ def data_week(requset):
 
         record_date = record['date'].date()
 
-        if not last_date:
-            last_date = record_date
-        elif last_date != record_date:
+        if last_date and last_date != record_date:
             times_append(record_date.strftime('%d.%m.%Y'))
             ip_data_append(ip_count)
             ip_uniq_data_append(len(ip_uniq_count_set))
@@ -368,13 +369,21 @@ def data_week(requset):
             ip_uniq_count_set.clear()
             docs_all_count = 0
             blog_all_count = 0
-        else:
+        elif not any(excl_ua in record['user_agent']
+                     for excl_ua in settings.EXCLUDE_USER_AGENTS):
             ip_count += 1
             ip_uniq_count_set.add(record['ip_address'])
             if record['url'].startswith('/docs/'):
                 docs_all_count += 1
             elif record['url'].startswith('/blog/'):
                 blog_all_count += 1
+
+    if record_date:
+        times_append(record_date.strftime('%d.%m.%Y'))
+        ip_data_append(ip_count)
+        ip_uniq_data_append(len(ip_uniq_count_set))
+        docs_all_data_append(docs_all_count)
+        blog_all_data_append(blog_all_count)
 
     return JsonResponse({
         'labels': times,

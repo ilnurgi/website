@@ -31,17 +31,14 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         logger.debug(u'='*80)
 
-        if 'mongo_db' not in options:
-            mongo_client = MongoClient(
-                settings.DATABASE_MONGO['host'],
-                int(settings.DATABASE_MONGO['port']))
+        mongo_client = MongoClient(
+            settings.DATABASE_MONGO['host'],
+            int(settings.DATABASE_MONGO['port']))
 
-            self.db = mongo_client[
-                options.get(
-                    'mongo_db_name',
-                    settings.DATABASE_MONGO['nginx_access_db_name'])]
-        else:
-            self.db = options['mongo_db']
+        self.db = mongo_client[
+            options.get(
+                'mongo_db_name',
+                settings.DATABASE_MONGO['nginx_access_db_name'])]
 
         self.collection_log = self.db.log
         self.collection_month_report = self.db.month_report
@@ -167,20 +164,32 @@ class Command(BaseCommand):
         }
 
         exclude_urls = {
-            'http://ilnurgi1.ru', 'http://www.ilnurgi1.ru', 'ilnurgi1.ru'}
+            'http://ilnurgi1.ru', 'http://www.ilnurgi1.ru', 'ilnurgi1.ru',
+        }
+
         for log in self.get_logs(date_start, date_end):
+            url_from = log['url_from']
+            user_agent = log['user_agent']
             url = log['url']
+            ip = log['ip_address']
+
+            user_agents[user_agent] = (
+                user_agents.setdefault(user_agent, 0) + 1)
+
+            if any(excl_ua in user_agent
+                   for excl_ua in settings.EXCLUDE_USER_AGENTS):
+                # это поисковый бот, его мы не учитываем
+                # но сохраним юзер агента
+                continue
+
+            # количесвто посещений урла
             urls[url] = urls.setdefault(url, 0) + 1
 
-            url_from = log['url_from']
-
+            # если пришли не с нашей старницы
             if not any(map(url_from.startswith, exclude_urls)):
                 urls_from[url_from] = urls_from.setdefault(url_from, 0) + 1
 
-            user_agent = log['user_agent']
-            user_agents[user_agent] = user_agents.setdefault(user_agent, 0) + 1
-
-            ip = log['ip_address']
+            # количество просмотров с айпи
             ip_count += 1
             if ip not in ip_set:
                 ip_set.add(ip)

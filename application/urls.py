@@ -33,7 +33,7 @@ urlpatterns = [
     url(
         r'^robots\.txt$',
         lambda r: HttpResponse(
-            "User-Agent: *\nDisallow: \nHost: \n",
+            "User-Agent: *\nDisallow: \nHost: ilnurgi1.ru\n",
             content_type="text/plain")),
     url(
         r'^admin/',

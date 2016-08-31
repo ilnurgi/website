@@ -169,3 +169,15 @@ BROKER_BACKEND = "djkombu.transport.DatabaseTransport"
 LOGIN_REDIRECT_URL = "resume:home_page"
 LOGIN_URL = "login"
 LOGOUT_URL = "logout"
+
+EXCLUDE_USER_AGENTS = {
+    'MJ12bot/v1.4.5',
+    "Baiduspider/2.0",
+    "Googlebot/2.1",
+    "YandexBot/3.0",
+    "bingbot/2.0",
+    "AhrefsBot/5.1",
+    "http://riddler.io/about",
+    "SemrushBot/1.1",
+    "archive.org_bot",
+}
