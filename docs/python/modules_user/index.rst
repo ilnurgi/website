@@ -1,12 +1,12 @@
 Сторонние модули
 ================
 
-Содержание:
-
 .. toctree::
     :maxdepth: 1
 
     docx
+    matplotlib/index
+    numpy/index
     pyaudio
     psutil
     pygame/index

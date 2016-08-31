@@ -74,28 +74,38 @@ function - функция
     Выполняет выражение аргумента
 
 
-.. py:method:: filter(func, iter)
-    
-    :param func: функция, обработчик 
-    :param iter: обрабатываемый объект
-    :type iter: iter
-    
-    Возвращает список, состоящий из тех элементов объекта, для которых обработчик является истинной
+.. py:method:: filter(function, iter_object)
+
+    Возвращает список, состоящий из тех элементов объекта,
+    для которых обработчик является истинной
 
     .. versionchanged:: 3.x
 
         возвращает объект генератор
 
-    >>> def func(x):
-            for y in xrange(2, x):
-                if x%y == 0:
-                    return 0
-                else:
-                    return 1
-    >>> filter(func, xrange(2, 40))
-    [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37]
-    >>> filter(None, [1, 0, [], None, 2])
-    [1, 2]
+    .. code-block:: py
+
+        filter(lambda x: x % 10 == 0, xrange(20))
+        # [0, 10]
+
+    .. note::
+
+        Проигрывает в скорости работы генераторам списка
+
+        .. code-block:: py
+
+            import timeit
+
+            setup = "rows = [{'param1': i} for i in xrange(1000*1000)]"
+
+            a = "filter(lambda x: x['param1'] % 100000 == 0, rows)"
+            b = "[x for x in rows if x['param1'] % 100000 == 0]"
+
+            print(timeit.repeat(a, setup=setup, number=3))
+            # [0.3401670455932617, 0.3369150161743164, 0.3323078155517578]
+
+            print(timeit.repeat(b, setup=setup, number=3))
+            # [0.18962311744689941, 0.19053101539611816, 0.1930980682373047]
 
 
 .. py:method:: getattr(obj, attr [, default])
