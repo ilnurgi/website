@@ -347,7 +347,7 @@ def data_week(request):
         datetime.time(0, 0, 0)
     )
 
-    last_date = record_date = None
+    last_date = None
     ip_count = 0
     ip_uniq_count_set = set()
     docs_all_count = 0
@@ -357,8 +357,11 @@ def data_week(request):
 
         record_date = record['date'].date()
 
-        if last_date and last_date != record_date:
-            times_append(record_date.strftime('%d.%m.%Y'))
+        if not last_date:
+            last_date = record_date
+
+        if last_date != record_date:
+            times_append(last_date.strftime('%d.%m.%Y'))
             ip_data_append(ip_count)
             ip_uniq_data_append(len(ip_uniq_count_set))
             docs_all_data_append(docs_all_count)
@@ -369,8 +372,9 @@ def data_week(request):
             ip_uniq_count_set.clear()
             docs_all_count = 0
             blog_all_count = 0
-        elif not any(excl_ua in record['user_agent']
-                     for excl_ua in settings.EXCLUDE_USER_AGENTS):
+
+        if not any(excl_ua in record['user_agent']
+                   for excl_ua in settings.EXCLUDE_USER_AGENTS):
             ip_count += 1
             ip_uniq_count_set.add(record['ip_address'])
             if record['url'].startswith('/docs/'):
@@ -378,8 +382,8 @@ def data_week(request):
             elif record['url'].startswith('/blog/'):
                 blog_all_count += 1
 
-    if record_date:
-        times_append(record_date.strftime('%d.%m.%Y'))
+    if last_date:
+        times_append(last_date.strftime('%d.%m.%Y'))
         ip_data_append(ip_count)
         ip_uniq_data_append(len(ip_uniq_count_set))
         docs_all_data_append(docs_all_count)

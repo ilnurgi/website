@@ -100,6 +100,22 @@ class TestParsingNginxAccess(TestCase):
             '200 9078 '
             '"https://www.google.com.ua/" '
             '"Mozilla/5.0 (Windows NT 6.1; WOW64)"',
+
+            # пользовательский просмотр
+            '82.117.241.3 - - '
+            '[12/Nov/2015:06:30:04 -0500] '
+            '"GET /blog/python/modules_user/pyqt/qtgui/qwidget.html HTTP/1.1" '
+            '200 9078 '
+            '"https://www.google.com.ua/" '
+            '"Mozilla/5.0 (Windows NT 6.1; WOW64)"',
+
+            # пользовательский просмотр
+            '82.117.241.3 - - '
+            '[12/Nov/2015:06:30:04 -0500] '
+            '"GET /docs/python/modules_user/pyqt/qtgui/qwidget.html HTTP/1.1" '
+            '200 9078 '
+            '"https://www.google.com.ua/" '
+            '"Mozilla/5.0 (Windows NT 6.1; WOW64)"',
         ) + tuple(bots_input)
 
         input_file = tempfile.TemporaryFile()
@@ -113,18 +129,28 @@ class TestParsingNginxAccess(TestCase):
             date_today=now
         )
 
+        input_file = tempfile.TemporaryFile()
+        input_file.write('\n'.join(inp))
+        input_file.seek(0)
+
+        call_command(
+            'parse_nginx_access',
+            input_file=input_file,
+            date_today=now + datetime.timedelta(days=1)
+        )
+
         response = self.client.get(
             reverse("metrics:data_week"),
             {
                 "date_now": (
-                    now + datetime.timedelta(days=2)
+                    now + datetime.timedelta(days=3)
                 ).strftime("%Y.%m.%d %H.%M.%S")
             })
         self.assertEqual(response.status_code, 200)
         result = json.loads(response.content)
 
-        self.assertSequenceEqual(result['ip_count_uniq'], [3])
-        self.assertSequenceEqual(result['ip_count'], [4])
-        self.assertSequenceEqual(result['blog_all_count'], [1])
-        self.assertSequenceEqual(result['doc_all_count'], [3])
-        self.assertSequenceEqual(result['labels'], ["11.11.2015"])
+        self.assertSequenceEqual(result['ip_count_uniq'], [3, 1])
+        self.assertSequenceEqual(result['ip_count'], [4, 2])
+        self.assertSequenceEqual(result['blog_all_count'], [1, 1])
+        self.assertSequenceEqual(result['doc_all_count'], [3, 1])
+        self.assertSequenceEqual(result['labels'], ["11.11.2015", "12.11.2015"])
