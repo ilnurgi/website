@@ -6,9 +6,12 @@ matplotlib
 .. toctree::
     :maxdepth: 1
 
-    pyplot
-    figure
     axes
+    figure
+    legend
+    pyplot
+    text
+    ticker
 
 
 rcParams
@@ -32,6 +35,20 @@ rcParams
     * axes.facecolor
 
     * figure.figsize - размеры сохраняемых изображений, по умолчанию [8.0, 6.0]
+
+    * font.family - serif, sans-serif, cursive, fantasy, monospace
+
+    * font.stretch - ultra-condensed, extra-condensed, condensed,
+      semi-condensed, normal, semi-expanded, expanded,
+      extra-expanded, ultra-expanded, wider, narrower
+
+    * font.size
+
+    * font.style - normal, italic, oblique
+
+    * font.variant - normal, small-caps
+
+    * font.weight - normal, bold, bolder, lighter, 100, ..., 900
 
     * interactive - булево, интерактивный режим
 
@@ -92,6 +109,23 @@ use()
         * GTKAgg - GTK UI
 
         * TkAgg - tkinter
+
+        * GTK
+        * GTKCairo
+        * CocoaAgg
+        * FltkAgg
+        * MacOSX
+        * QtAgg
+        * Qt4Agg
+        * WX
+        * WXAgg
+        * Agg
+        * Cairo
+        * GDK
+        * PS
+        * PDF
+        * SVG
+        * Template
 
     .. code-block:: py
 

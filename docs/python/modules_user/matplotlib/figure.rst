@@ -35,6 +35,7 @@ Figure()
 
         fig = matplotlib.pyplot.figure()
 
+
     .. py:method:: add_subplot(numrows, numcols, fignum)
 
         Добавляет объект для рисования графика по укзанным координатам
@@ -46,5 +47,15 @@ Figure()
             ax = fig.add_subplot(111)
             ax1 = fig.add_subplot(1, 1, 1)
             ax2 = fig.add_subplot(1, 1, 1, axisbg='r', projection='polar')
+
+
+    .. py:method:: text()
+
+        Аналог :py:func:`matplotlib.pyplot.figtext`
+
+
+    .. py:method:: suptitle()
+
+        Аналог :py:func:`matplotlib.pyplot.suptitle`
 
 

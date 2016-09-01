@@ -6,9 +6,11 @@ pyplot
 Оснвные методы для построения:
 
     * :py:func:`plot` - графики
+    * :py:func:`semilogy` - график логарифметический
     * :py:func:`hist` - гистограммы
     * :py:func:`errorbar` - графики с ошибками
-    * :py:func:`bar` - диаграммы, + ошибки
+    * :py:func:`bar` - диаграмма вертикальная, + ошибки
+    * :py:func:`barh` - диаграмма горизонтальная, + ошибки
     * :py:func:`pie` - круги, куски пирога
     * :py:func:`scatter` - распределние значений
     * :py:func:`polar` - полярная система координат
@@ -19,25 +21,11 @@ annotate()
 
 .. py:function:: annotate(text, xy, xytext, arrowprops)
 
-    Аннотация указанных точек
-
-    * text - сообщение
-
-    * xy - кортеж, координата точки
-
-    * xytext - кортеж, координата где отображать текст
+    Добавляет аннотацию указанных точек и возвращает :py:class:`matplotlib.text.Text`
 
     * arrowprops - словарь, описание указателя на точку
 
-        * facecolor - цвет курсора
-
-        * shrink - отступ от точки
-
-        * width
-
-        * frac
-
-        * headwidth
+        * alpha
 
         * arrowstyle - стиль стрелки
 
@@ -50,6 +38,8 @@ annotate()
             * simple -> head_length=0.5, head_width=0.5, tail_width=0.2
             * wedge -> tail_width=0.3, shrink_factor=0. 5
 
+        * color
+
         * connectionstyle - стиль соединения с точкой
 
             * arc -> angleA=0, angleB=0, armA=None, armB,=None, rad=0.0
@@ -61,6 +51,29 @@ annotate()
 
             * angle -> angleA=90, angleB=0, rad=0.0
             * angle3 -> angleA=90, angleB=0
+            * bar -> armA=0.0,armB=0.0,fraction=0.3,angle=None
+
+        * facecolor - цвет курсора
+
+        * frac
+
+        * headwidth
+
+        * linestyle
+
+        * linewidth
+
+        * mutation_scale
+
+        * shrink - отступ от точки
+
+        * width
+
+    * text - сообщение
+
+    * xy - кортеж, координата точки
+
+    * xytext - кортеж, координата где отображать текст
 
     .. code-block:: py
 
@@ -102,9 +115,29 @@ axis()
 bar()
 -----
 
-.. py:function:: bar(x, y, width=0.8, color, xerr, yerr, bottom)
+.. py:function:: bar(x, y, **kwargs)
 
-    Диаграммы
+    * align - выравнивание столбцов относительно значения
+
+        * edge
+        * center
+
+    * bottom
+    * color - цвета столбцов
+    * edgecolor - цвета границ столбцов
+    * width - ширина столбцов, по умолчанию 0.8
+    * xerr
+    * yerr
+
+    Диаграмма вертикальная
+
+
+barh()
+------
+
+.. py:function:: barh()
+
+    Диаграмма горизонтальная, аналогичная :py:func:`matplotlib.pyplot.bar`
 
 
 draw()
@@ -134,6 +167,14 @@ errorbar()
 
         errorbar(x, y, yerr=e1, xerr=e2)
         errorbar(x, y, yerr=[e1, e2])
+
+
+figtext()
+---------
+
+.. py:function:: figtext()
+
+     Возвращает :py:class:`matplotlib.text.Text`
 
 
 figure()
@@ -264,9 +305,11 @@ isinteractive()
 legend()
 --------
 
-.. py:function:: legend([legend_names, loc])
+.. py:function:: legend([**kwargs])
 
-    Отображаем легенду
+    Возвразает или отображаем легенду :py:class:`matplotlib.legend.Legend`
+
+    * borderaxespad - величина зазора между осями и легендой
 
     * legend_names - список названии легенд, лучше задавать при построении графика
 
@@ -295,15 +338,27 @@ legend()
         legend(loc='best')
         legend(loc=3)
 
+    * mode
+
+        * expand - растянуть легенду по всей ширине
+
+    * ncol - количество столбцов для легенды
+
 
 pie()
 -----
 
-.. py:function:: pie(x, labels, explode, colors, labels, labeldistance, autopct, pctdistance)
+.. py:function:: pie(x, **kwargs)
 
     Кусок пирога
 
-    * explode -
+    * colors - цвета секторов
+    * explode - список уровней выдвижения секторов
+    * labels - список заголовков секторов
+    * shadow - булево, добавить тень
+    * labeldistance
+    * autopct
+    * pctdistance
 
     .. code-block:: py
 
@@ -378,7 +433,7 @@ plot()
 
     * markeredgewidth - ширина грней маркера
 
-    * markerfacecolor - цвет заливки граней маркера
+    * markerfacecolor - цвет заливки маркера
 
     * markersize - размер маркера
 
@@ -518,6 +573,32 @@ scatter()
         scatter(x, y)
 
 
+semilogy()
+----------
+
+.. py:function:: semilogy()
+
+    Логарифмическая диаграмма
+
+    Аналогично :py:func:`plot`
+
+
+setp()
+------
+
+.. py:function:: setp()
+
+    Устаналивает свойства для объектов
+
+    .. code-block:: py
+
+        # задаем свойства для текстовых элементов
+        setp(text, fontsize=16, color='green')
+
+        # задает свойство для всех текстовых элементов ax элемента
+        setp(ax.get_ticklabels(), fontsize=5.)
+
+
 show()
 ------
 
@@ -530,12 +611,126 @@ show()
         show()
 
 
+suptitle()
+----------
+
+.. py:function:: suptitle()
+
+     Возвращает :py:class:`matplotlib.text.Text`
+
+
 text()
 ------
 
-.. py:function:: text(x, y, text)
+.. py:function:: text(x, y, text, **kwargs)
 
-    Рисует указанный текст на указанной позиции
+    Рисует указанный текст на указанной позиции и
+    возвращает :py:class:`matplotlib.text.Text` (withdash=False) или
+    :py:class:`matplotlib.text.TextWithDash` (withdash=True)
+
+    * alpha - прозрачность
+
+    * background - цвет фона шрифта
+
+        * blue
+        * r
+        * #11aa55
+        * (0.4, 0.5, 0.3)
+        * 0.7
+
+    * bbox - словарь, описание рамки вокруг текста
+
+        * edgecolor - цвет рамки
+        * facecolor - цвет заливки рамки
+        * fill - булево, заливка
+        * linestyle - стиль рамки
+            * solid - обычная рамка
+            * dashed - штрих-пунктир
+            * dashdot - штрихпунктир
+            * dotted - точечный
+        * linewidth - толщина линии рамки
+        * hatch - штриховка внутри рамки
+            * "/"
+            * "\"
+            * "|"
+            * "-"
+            * "+"
+            * "x"
+            * "o"
+            * "O"
+            * "."
+            * "*"
+        * visible - булево, рамка видима
+        * boxstyle - внешний вид рамки
+            * square
+            * sawtooth
+            * roundtooth
+            * rarrow
+            * larrow
+            * round64
+            * round
+
+    * color - цвет шрифта
+
+        * blue
+        * r
+        * #11aa55
+        * (0.4, 0.5, 0.3)
+        * 0.7
+
+    * family - семейство шрифта
+
+        * sans-serif
+        * serif
+        * fantasy
+        * monospace
+        * verdana
+
+    * fontdict - словарь, описывающий шрифт
+
+        * family
+
+    * rotation - поворот текста
+
+        * horizontal
+        * vertical
+        * 45
+
+    * size - размер шрифта
+
+        * xx-small
+        * x-small
+        * small
+        * medium
+        * large
+        * x-large
+        * xx-large
+
+    * style - стиль
+
+        * normal
+        * italic
+        * oblique
+
+    * weight - толщина шрифта
+
+        * ultralight
+        * light
+        * normal
+        * regular
+        * book
+        * medium
+        * roman
+        * semibold
+        * demibold
+        * demi
+        * bold
+        * heavy
+        * bold
+        * black
+        * 200
+
+    * withdash - :py:class:`bool`, текст с линией
 
     .. code-block:: py
 
@@ -562,11 +757,26 @@ title()
 
 .. py:function:: title(label)
 
-    Устанавливает подпись для графика
+    Устанавливает подпись для графика и возвращает :py:class:`matplotlib.text.Text`
 
     .. code-block:: py
 
         title("Plot")
+
+
+xkcd()
+------
+
+.. py:function:: xkcd(scale=1, length=100, randomness=2)
+
+    Включает эффект рисования от руки
+
+    Можно использовать как контекстный процессор
+
+    .. code-block:: py
+
+        with xkcd():
+            pass
 
 
 xlabel()
@@ -574,7 +784,7 @@ xlabel()
 
 .. py:function:: xlabel(label)
 
-    Устанавливает подпись для оси х
+    Устанавливает подпись для оси х и возвращает :py:class:`matplotlib.text.Text`
 
     .. code-block:: py
 
@@ -632,7 +842,7 @@ ylabel()
 
 .. py:function:: ylabel(label)
 
-    Устанавливает подпись для оси y
+    Устанавливает подпись для оси y и возвращает :py:class:`matplotlib.text.Text`
 
     .. code-block:: py
 
