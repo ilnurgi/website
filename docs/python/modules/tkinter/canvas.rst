@@ -1,6 +1,7 @@
-Canvas - виджет-холст для рисования
-===================================
+.. py:module:: tkinter
 
+Canvas
+======
 
 .. py:class:: Canvas(**kwargs)
 
@@ -29,6 +30,38 @@ Canvas - виджет-холст для рисования
     * `xscrollincrement` - величина горизонтальной прокрутки
     * `yscrollcommand` - обработчик вертикальной прокрутки
     * `yscrollincrement` - величина вертикальной прокрутки
+
+    .. code-block:: py
+
+        canvas = Canvas(master)
+
+        # биндим проведение мышкой
+        canvas.bind("<B1-Motion>", lambda event: pass)
+        canvas.bind("<Double-1>", lambda event: pass)
+
+    .. code-block:: py
+
+        canvas = Canvas(
+            master,
+            width=300,
+            height=300,
+            bg="white",
+            relief=SUNKEN,
+        )
+
+    .. code-block:: py
+
+        # холст с прокруткой
+
+        canv = Canvas(master)
+        canv.config(width=300, height=200)
+        canv.config(scrollregion=(0,0,300, 1000))
+        canv.config(highlightthickness=0)
+
+        sbar = Scrollbar(master)
+        sbar.config(command=canv.yview)
+
+        canv.config(yscrollcommand=sbar.set)
 
 
     .. py:method:: addtag(tag, method, *args)
@@ -161,7 +194,7 @@ Canvas - виджет-холст для рисования
 
     .. py:method:: create_image(h, w, **kwargs)
 
-        рисует изображение, и возвращает id
+        Рисует изображение и возвращает его идентификатор
 
         * `activeimage`
         * `anchor` - NW
@@ -169,6 +202,15 @@ Canvas - виджет-холст для рисования
         * `image` - :py:class:`Image`, рисунок
         * `state`
         * `tags`
+
+        .. code-block:: py
+
+            image_id = canvas.create_image(
+                height,
+                width,
+                image=PhotoImage(),
+                anchor=NW,
+            )
 
 
     .. py:method:: create_line(x1, y1, x2, y2, ..., x-n, y-n, **kwargs)
@@ -188,7 +230,7 @@ Canvas - виджет-холст для рисования
         * `disabledfill`
         * `disabledstipple`
         * `disabledwidth`
-        * `fill`
+        * `fill` - цвет линии
         * `joinstyle`
         * `offset`
         * `smooth`
@@ -196,11 +238,19 @@ Canvas - виджет-холст для рисования
         * `state`
         * `stipple`
         * `tags` - задает тег для элемента
-        * `width`
+        * `width` - ширина линии
 
         .. code-block:: py
 
-            item = canvas.create_line(0, 0, 100, 100, tags="uno")
+            line_id = canvas.create_line(
+                x1,
+                y1,
+                x2,
+                y2,
+                tags="uno",
+                fill="green",
+                width=10,
+            )
 
 
     .. py:method:: create_oval(x1, y1, x2, y2, **kwargs)
@@ -229,7 +279,18 @@ Canvas - виджет-холст для рисования
         * `state`
         * `stipple`
         * `tags`
-        * `width` - высота
+        * `width` - ширина границы
+
+        .. code-block:: py
+
+            oval_id = canvas.create_oval(
+                x1,
+                y1,
+                x2,
+                y2,
+                fill="red",
+                width=2,
+            )
 
 
     .. py:method:: create_polygon(x1, y1, x2, y2, ..., x-n, y-n, **kwargs)
@@ -291,7 +352,18 @@ Canvas - виджет-холст для рисования
         * `state`
         * `stipple`
         * `tags`
-        * `width`
+        * `width` - ширина границ
+
+        .. code-block:: py
+
+            rectangle_id = canvas.create_rectangle(
+                x1,
+                y1,
+                x2,
+                y2,
+                width=5,
+                fill="red",
+            )
 
 
     .. py:method:: create_text(x, y, **kwargs)
@@ -313,10 +385,18 @@ Canvas - виджет-холст для рисования
         * `text` - текст
         * `width`
 
+        .. code-block:: py
+
+            text_id = canvas.create_text(
+                x,
+                y,
+                text="Some text",
+            )
+
 
     .. py:method:: create_window(x, y, window)
 
-        Рисует окно, и возвращает id
+        Рисует виджет на холсте и возвращает id
 
         * `anchor`
         * `height`
@@ -324,6 +404,10 @@ Canvas - виджет-холст для рисования
         * `tags`
         * `width`
         * `window`
+
+        .. code-block:: py
+
+            canvas.create_window(x, y, widget)
 
 
     .. py:method:: dchars(item, from, to=None)
@@ -451,6 +535,12 @@ Canvas - виджет-холст для рисования
 
 
     .. py:method:: tag_bind(tagOrId, sequence=None, func=None, add=None)
+
+        Связываем обработчик с событиями элемента
+
+        .. code-block:: py
+
+            canvas.tag_bind(obj_id, "<Double-1>", lambda event: pass)
 
 
     .. py:method:: tag_unbind(tagOrId, sequence, funcid=None)

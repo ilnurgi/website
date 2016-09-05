@@ -8,6 +8,8 @@ Event
 
     .. py:attribute:: char
 
+        Возвращает кей код нажатой кнопки
+
 
     .. py:attribute:: delta
 
@@ -52,7 +54,7 @@ Event
         Виджет, на котором сработало событие.
 
 
-    .. py:attribute: width
+    .. py:attribute:: width
 
 
     .. py:attribute:: x
@@ -63,9 +65,9 @@ Event
     .. py:attribute:: x_root
 
 
-    .. py:method:: y
+    .. py:attribute:::: y
 
         Координата курсора по у
 
 
-    .. py:method:: y_root
+    .. py:attribute:: y_root

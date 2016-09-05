@@ -10,9 +10,11 @@ Button - виджет кнопка
 
     Наследник :py:class:`Widget`
 
+    * background, bg - цвет фона
     * `command` - ссылка на функцию обработчика
     * `compound`
     * `default`
+    * fg - цвет текста
     * `height` - число, высота виджета, количесвто строк - для обычной кнопки, пиксели - для кнопки картинки
     * `image` - кнопка-картинка
     * `overrelief`
@@ -21,11 +23,18 @@ Button - виджет кнопка
 
     .. code-block:: py
 
-        def click():
-            print 'clicked'
+        button = Button(
+            master,
+            text="some text",
+            command=lambda: pass,
+            image=PhotoImage(),
+        )
 
-        button = Button(command=click)
-        button.pack()
+    .. code-block:: py
+
+        button = Button(master)
+        button["text"] = "Some text"
+        button.bind("<Button-1>", lambda event: pass)
 
 
     .. py:method:: flash()

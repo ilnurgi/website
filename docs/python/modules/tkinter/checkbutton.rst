@@ -22,8 +22,17 @@ Checkbutton
     * `selectcolor` - цвет отмеченного виджета
     * `selectimage` - картинка для отмеченного виджета
     * `state` - состояние виджета
+    * `text` - текст
     * `variable` - :py:class:`IntVar`, переменная
     * `width` - ширина виджета
+
+    .. code-block:: py
+
+        check_button = Checkbutton(
+            master,
+            text="Some text",
+            command=lambda: pass
+        )
 
 
     .. py:method:: deselect()

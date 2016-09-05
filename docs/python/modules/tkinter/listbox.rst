@@ -14,10 +14,29 @@ Listbox - виджет, список
     * `selectborderwidth` - строка, ширина границы выбранного элемента
     * `selectforeground` - строка, цвет текста выбранного элемента
     * `selectmode` - константа :ref:`const_listbox_select`, выбор элементов списка
+
+        * SINGLE - один элемент
+        * BROWSE - один элемент с возможностью перетаскивания
+        * MULTIPLE - множественный выбор
+        * EXTENDED - множественный выбор, с возможностью добавления
+
     * `setgrid` -
     * `width` -
     * `xscrollcommand` - виджет горизонтальной прокрутки
     * `yscrollcommand` - виджет вертикальнной прокрутки
+
+    .. code-block:: py
+
+        # со скроллом
+        scrollbar = Scrollbar(master)
+
+        listbox = Listbox(
+            master,
+            xscrollcommand=scrollbar.set,
+            selectmode=EXTENDED,
+        )
+
+        scrollbar.config(command=listbox.xview)
 
 
     .. py:method:: activate(index)
