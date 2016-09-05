@@ -71,9 +71,9 @@ android.content.Intent
         * intent - :py:class:`android.content.Intent`
         * value
             * :py:class:`android.os.Bundle`
-            * :py:class:`android.os.Parcelable`, :py:class:`android.os.Parcelable`[]
+            * :py:class:`android.os.Parcelable`, :py:class:`android.os.Parcelable`\[]
             * :py:class:`java.io.Serializable`
-            * :py:class:`java.lang.CharSequence`, :py:class:`java.lang.CharSequence`[]
+            * :py:class:`java.lang.CharSequence`, :py:class:`java.lang.CharSequence`\[]
             * boolean, boolean[]
             * byte, byte[]
             * char, char[]

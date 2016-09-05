@@ -79,17 +79,12 @@ TextView
         Возвращает текст виджета
 
 
-    .. py:method:: onDraw(canvas)
+    .. py:method:: onDraw(Canvas canvas)
 
-        :param canvas: :ref:`android_graphics_Graphics`
-        :rtype: void
+        * canvas - :py:class:`android.graphics.Canvas`
 
 
-    .. py:method:: onKeyDown(keyCode, keyEvent)
-
-        :param keyCode: int
-        :param keyEvent: :ref:`KeyEvent`
-        :rtype: boolean
+    .. py:method:: onKeyDown(int keyCode, KeyEvent keyEvent)
 
 
     .. py:method:: setGravity(gravity)

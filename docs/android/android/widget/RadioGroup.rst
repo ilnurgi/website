@@ -21,7 +21,7 @@ XML
 RadioGroup
 ----------
 
-.. py:clas:: android.widget.RadioGroup()
+.. py:class: android.widget.RadioGroup()
 
     Наследник :py:class:`android.widget.LinearLayout`
 

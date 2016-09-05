@@ -25,7 +25,7 @@ Spinner
     Сама строка состоит из объекта TextView, показывающего текущий выбор,
     и кнопки, при нажатии которой всплывает диалог выбора.
 
-    Наследник :ref:`android.view.View`.
+    Наследник :py:class:`android.view.View`
 
     .. code-block:: java
 

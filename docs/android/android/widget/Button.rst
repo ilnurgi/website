@@ -54,7 +54,7 @@ Button
 
     .. py:method:: getLayoutParams()
 
-        Возвращает параметры кнопки :ref:class:`android.view.ViewGroup.LayoutParams`
+        Возвращает параметры кнопки :py:class:`android.view.ViewGroup.LayoutParams`
 
         .. code-block:: java
 

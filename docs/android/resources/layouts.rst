@@ -139,7 +139,7 @@ text
 
 Текст
 
-.. code-block::
+.. code-block:: xml
 
     <view
         android:text="@string/some_text" />

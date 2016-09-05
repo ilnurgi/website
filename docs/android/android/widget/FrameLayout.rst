@@ -48,7 +48,7 @@ FrameLayout
 
 .. py:class:: android.widget.FrameLayout
 
-    Наследник :ref:`android.view.ViewGroup`
+    Наследник :py:class:`android.view.ViewGroup`
 
 
 FrameLayout.LayoutParams

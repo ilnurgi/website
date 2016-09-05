@@ -9,5 +9,5 @@ android.view.ListView
     Простейший объект ListView использует TextView для вывода на экран значений toString,
     принадлежащих элементам массива.
 
-    Наследник :ref:`android.view.View`.
+    Наследник :py:class:`android.view.View`.
 

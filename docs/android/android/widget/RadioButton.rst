@@ -1,5 +1,3 @@
-.. _android_widget_RadioButton:
-
 android.widget.RadioButton
 ==========================
 
@@ -38,7 +36,7 @@ RadioButton
 
 .. py:class:: android.widget.RadioButton
 
-    Наследник :ref:`android.view.View`.
+    Наследник :py:class:`android.view.View`
 
 
     .. py:method:: setChecked(bool)

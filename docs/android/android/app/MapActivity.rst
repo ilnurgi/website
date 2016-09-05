@@ -4,4 +4,7 @@ android.app.MapActivity
 
 .. py:class:: android.app.MapActivity()
 
-    Наследник :ref:`android.app.Activity`. Инкапсулирует обработку ресурсов, необходимых для поддержки элемента MapView внутри Активности. 
+    Инкапсулирует обработку ресурсов,
+    необходимых для поддержки элемента MapView внутри Активности.
+
+    Наследник :py:class:`android.app.Activity`.

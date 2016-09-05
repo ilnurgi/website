@@ -1,5 +1,3 @@
-.. _android_widget_CheckBox:
-
 android.widget.CheckBox
 =======================
 
@@ -13,7 +11,7 @@ CheckBox
 
 .. py:class:: android.widget.CheckBox
 
-    Наследник :ref:`android.view.View`.
+    Наследник :py:class:`android.view.View`.
 
     .. code-block:: java
 

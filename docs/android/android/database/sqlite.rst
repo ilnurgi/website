@@ -105,6 +105,33 @@ android.database.sqlite.SQLiteDatabase
                 } while (c.moveToNext());
             }
 
+        .. code-block:: java
+
+            // достаем записи по условию
+            Cursor cursor = db.query(
+                DB_NAME,
+                null,
+                COLUMN_ID + " = ?",
+                new String[] {String.valueOf(cashAccountId)},
+                null,
+                null,
+                null);
+
+            CashAccountModel cashAccount = null;
+
+            if (cursor.moveToFirst()) {
+                do {
+                    if (cashAccount != null){
+                        return null;
+                    }
+                    cashAccount = new CashAccountModel(
+                            cursor.getString(cursor.getColumnIndex(COLUMN_NAME))
+                    );
+
+                } while (cursor.moveToNext());
+            }
+            return cashAccount;
+
 
     .. py:method:: rawQuery(String sqlQuery, String[] selectionArgs)
 
