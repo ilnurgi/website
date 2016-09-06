@@ -21,7 +21,7 @@
     .. code-block:: js
 
         $.ajax({
-            url: 'serverscript.php,
+            url: 'serverscript.php',
             dataType : "html",
             success: function (data, textStatus) {
                 ...

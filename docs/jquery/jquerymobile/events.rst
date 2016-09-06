@@ -17,7 +17,7 @@
 
     .. code-block:: js
         
-        #(document).bind('pageload', function(event, data){
+        $(document).bind('pageload', function(event, data){
             // data.url - URL-адрес, переданный методу loadPage ()
             // data.absUrl - Полный URL-адрес
             // data.options - Параметры Ajax-3anpoca

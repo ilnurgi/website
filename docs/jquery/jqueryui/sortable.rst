@@ -7,8 +7,7 @@ sortable - сортируемый элемент
 
     .. code-block:: js
         
-        $('#sortable').sortable({
-        });
+        $('#sortable').sortable({});
 
 
     * `methodName`

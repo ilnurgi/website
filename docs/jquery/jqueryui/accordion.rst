@@ -1,11 +1,13 @@
-accordion - виджет Accordion
-============================
+accordion
+=========
+
+виджет Accordion
 
 .. js:function:: accordion([methodName, option, value])
 .. js:function:: accordion([methodName, param_obj])
 .. js:function:: accordion([param_obj])
 
-    .. code-block:: js
+    .. code-block:: html
         
         <div id="accordion">
             

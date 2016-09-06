@@ -10,7 +10,7 @@ css стили библиотеки
 * `ui-grid-d` - 5 столбца
 
 
-.. code-block:: js
+.. code-block:: html
     
     <div class="ui-grid-b">
         <div class="ui-block-a">

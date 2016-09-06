@@ -1,5 +1,7 @@
-slider - виджет слайдер
-=======================
+slider
+======
+
+виджет слайдер
 
 .. js:function:: slider([methodName, option, value])
 .. js:function:: slider([methodName, param_obj])
@@ -48,7 +50,7 @@ slider - виджет слайдер
 
             .. code-block:: js
 
-                $('slider').slider('values'', 35, 65);
+                $('slider').slider('values', 35, 65);
 
     * `param_obj` - объект с параметрами
 
@@ -83,7 +85,7 @@ slider - виджет слайдер
 
     .. code-block:: js
         
-        #('#slider').slider({
+        $('#slider').slider({
             values: [25, 65],
             range: true
         });

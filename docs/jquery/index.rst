@@ -21,3 +21,4 @@ jQuery — библиотека JavaScript,
     Deffered
     jqueryui/index
     jquerymobile/index
+    jquery_validation/index
