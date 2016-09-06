@@ -1,7 +1,7 @@
 Списки
 ======
 
-.. code-block:: js
+.. code-block:: html
 
     <ul>
         <li></li>

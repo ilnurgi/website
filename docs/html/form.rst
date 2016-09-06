@@ -78,7 +78,7 @@ button
 
 .. code-block:: html
 
-    <Ьutton type="reset" name="reset">
+    <button type="reset" name="reset">
         <img src = "thumbs-down.gif" alt="thumbs-down icon">
         Попробуйте cнoвa
     </button>

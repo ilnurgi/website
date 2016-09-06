@@ -1,7 +1,9 @@
-meta - мета информация
-===============
+meta
+====
 
-.. code-block:: js
+Мета информация
+
+.. code-block:: html
 
     <head>
         <meta charset="utf-8"/>
@@ -28,6 +30,8 @@ format-detection
         .. code-block:: html
         
             <meta name="format-detection" content="telephone=no"/>
+
+
 name
 ----
 
@@ -45,7 +49,11 @@ name
 
     * viewport - задает логически размеры и масштабирование для окна браузера
 
-        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0"/>
+        .. code-block:: html
+
+            <meta
+                name="viewport"
+                content="user-scalable=no, width=device-width, initial-scale=1.0"/>
 
         * width = число или device-width - ширина области просмотра
 
