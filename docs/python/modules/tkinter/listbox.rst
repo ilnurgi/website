@@ -1,12 +1,17 @@
+.. py:module:: tkinter
+
 Listbox - виджет, список
 ========================
-
 
 .. py:class:: Listbox(**kwargs)
 
     Виджет список
 
-    Наследник :py:class:`Widget`, :py:class:`XView`, :py:class:`YView`
+    Наследник:
+
+        * :py:class:`tkinter.Widget`
+        * :py:class:`tkinter.XView`
+        * :py:class:`tkinter.YView`
 
     * `exportselection` -
     * `listvariable` -
@@ -32,11 +37,11 @@ Listbox - виджет, список
 
         listbox = Listbox(
             master,
-            xscrollcommand=scrollbar.set,
+            yscrollcommand=scrollbar.set,
             selectmode=EXTENDED,
         )
 
-        scrollbar.config(command=listbox.xview)
+        scrollbar.config(command=listbox.yview)
 
 
     .. py:method:: activate(index)

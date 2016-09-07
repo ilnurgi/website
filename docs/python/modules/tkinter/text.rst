@@ -1,12 +1,17 @@
+.. py:module:: tkinter
+
 Text - виджет, поле ввода текста
 ================================
-
 
 .. py:class:: Text(**kwargs)
 
     Виджет, многострочное текстовое поле.
 
-    Наследник :py:class:`Widget`, :py:class:`XView`, :py:class:`YView`
+    Наследник:
+
+        * :py:class:`tkinter.Widget`
+        * :py:class:`tkinter.XView`
+        * :py:class:`tkinter.YView`
 
     * `autoseparators` -
     * `exportselection` -
@@ -31,6 +36,18 @@ Text - виджет, поле ввода текста
     * `yscrollcommand` -
     * `width` -
     * `wrap` - константа :ref:`const_wrap`
+
+    .. code-block:: py
+
+        # со скроллом
+        scrollbar = Scrollbar(master)
+
+        text = Text(
+            master,
+            yscrollcommand=scrollbar.set,
+        )
+
+        scrollbar.config(command=text.yview)
 
 
     .. py:method:: get(index1, index2=None)

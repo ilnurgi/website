@@ -10,7 +10,7 @@ Checkbutton
 
     Виджет, флажок
 
-    Наследник :py:class:`Widget`
+    Наследник :py:class:`tkinter.Widget`
 
     * `command` - обработчик изменения состояния виджета
     * `disabledforeground` - цвет текста, для выключенного виджета
@@ -28,11 +28,14 @@ Checkbutton
 
     .. code-block:: py
 
+        value = Tkinter.BooleanVar()
         check_button = Checkbutton(
             master,
             text="Some text",
-            command=lambda: pass
+            command=lambda: pass,
+            value=value,
         )
+        value.get()
 
 
     .. py:method:: deselect()
