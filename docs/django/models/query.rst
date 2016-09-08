@@ -84,6 +84,24 @@ all
         Good.objects.filter(...).all()
 
 
+annotate
+--------
+
+.. py:method:: annotate()
+
+    .. code-block:: py
+
+        # models.py
+        from django.db import models
+
+        class Post(models.Model):
+            user = models.ForeignKey("auth.User")
+
+        # количесвто постов для пользователей
+        Post.objects.values("user").annotate(Count("id"))
+        # [{'user': 1, 'id__count': 3}, {'user': 2, 'id__count': 1} ...
+
+
 count
 -----
 
