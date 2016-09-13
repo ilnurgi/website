@@ -27,15 +27,6 @@ Object
         // создание дочерних объектов
         var Megaperson = Object.create(person);
 
-    .. code-block:: js
-
-        var object = {
-            name: 'ilnurgi',
-            age: 23
-        }
-        var name = object.name,
-            age = object.age;
-
     .. note:: EcmaScript6
 
         .. code-block:: js
@@ -49,25 +40,13 @@ Object
             let {name: x, age: y} = object;
             let {["na" + "me": x, age: y} = object;
 
-    .. note:: EcmaScript6
-
-        .. code-block:: js
-
             let x = 1, y = 2;
             let object = { x, y };
 
-    .. note:: EcmaScript6
-
-        .. code-block:: js
-
-            let object = { 
+            let object = {
                 myFunction() {...};
             };
             object.myFunction();
-
-    .. note:: EcmaScript6
-
-        .. code-block:: js
 
             let a = {a: 12, __proto__: {b: 13}}
 
@@ -92,7 +71,7 @@ Object
 
     .. py:function:: hasOwnProperty(name)
 
-        Определяет, обладает ли объект свойством. 
+        Возвращает булево, обладает ли объект свойством.
 
         .. code-block:: js
 

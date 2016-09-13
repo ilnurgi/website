@@ -77,31 +77,31 @@ $      конец данных
         Исходный текст регулярки
 
 
-    .. py:function:: exec()
+    .. py:method:: exec([string])
         
-        Поиск совпадений в строке, возвращает массив (функция генератор)
+        Возвращает массив найденных элементов в строке
 
         .. code-block:: js
 
             var a = /\d/g;
             
             a.exec('kj5k3');
-            //['5', index: 2, input:]
-            
-            a.test('123');
-            //true
+            // ['5']
+
+            a.exec('kj5k3');
+            // ['3']
 
 
-    .. py:function:: test(string)
+    .. py:method:: test(string)
         
-        Есть ли совпадение, возвращает true|false
+        Возвращает булево, есть ли совпадение
 
         .. code-block:: js
 
             var a = /\d/;
             
             a.test('qw');
-            //false
+            // false
             
             a.test('123');
-            //true
+            // true

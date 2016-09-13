@@ -106,7 +106,7 @@ Number
         Положительная бесконечность
 
 
-    .. py:function:: isFinite(number)
+    .. py:method:: isFinite(number)
 
         Значение является конечным числом
 
@@ -127,7 +127,7 @@ Number
             // false
 
 
-    .. py:function:: isInteger(number)
+    .. py:method:: isInteger(number)
 
         Переменная - целое число
 
@@ -157,7 +157,7 @@ Number
             }
 
 
-    .. py:function:: isNan(number)
+    .. py:method:: isNan(number)
 
         Переменная Nan
 
@@ -176,7 +176,7 @@ Number
             }
 
 
-    .. py:function:: isSafeInteger(number)
+    .. py:method:: isSafeInteger(number)
 
         .. note:: ECMAScript6
 
@@ -199,9 +199,11 @@ Number
             }
 
 
-    .. py:function:: toExponential([offset])
+    .. py:method:: toExponential([fractionDigits])
 
-        Форматирует число в экспоненциальную форму представления
+        Возвращает строку, число в экспоненциальной форме
+
+        * fractionDigits - количество чисел после запятой (0 - 20)
 
         .. code-block:: js
 
@@ -220,9 +222,9 @@ Number
             // '1.235e+8'
 
 
-    .. py:function:: toFixed([offset])
+    .. py:method:: toFixed([[fractionDigits]])
 
-        Возвращает строку, с определенным количеством знаков после запятой
+        Возвращает строку, с определенным количеством знаков после запятой (0 - 20)
 
         .. code-block:: js
 
@@ -241,7 +243,11 @@ Number
             // '43.813'
 
 
-    .. py:function:: toPrecission()
+    .. py:method:: toPrecission([precission])
+
+        Возвращает строку, число в десятичной форме
+
+        * precission - количество чисел (1 - 21)
 
         .. code-block:: js
 
@@ -253,9 +259,12 @@ Number
             n.toPrecission(4);
             // '1.235e+4'
 
-    .. py:function:: toString()
+
+    .. py:method:: toString([radx=10])
 
         Возвращает строковое представление числа
+
+        * radx - система исчисления (2-36)
 
         .. code-block:: js
 

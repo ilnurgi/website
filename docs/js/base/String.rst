@@ -33,7 +33,7 @@ String - строки
         // NaN
 
 
-    .. py:function:: length
+    .. py:method:: length
 
         .. code-block:: js
 
@@ -41,9 +41,9 @@ String - строки
             // 7        
 
 
-    .. py:function:: charAt(index)
+    .. py:method:: charAt(index)
 
-        Символ из строки по индексу
+        Возвращает символ по индексу
 
         .. code-block:: js
 
@@ -57,9 +57,9 @@ String - строки
             // ''
 
 
-    .. py:function:: charCodeAt(index)
+    .. py:method:: charCodeAt(index)
 
-        Код символа из строки
+        Возвращает число, код символа из строки
 
         .. code-block:: js
 
@@ -67,7 +67,7 @@ String - строки
             // 33
 
 
-    .. py:function:: codePointAt(index)
+    .. py:method:: codePointAt(index)
 
         Возвращает неотрицательное целое число - кодовый пнкт символа.
 
@@ -85,12 +85,17 @@ String - строки
             // 1080
 
 
-    .. py:function:: concat(index)
+    .. py:method:: concat(string..)
 
-        Конкатенация одного или нескольких значений со строкой
+        Возвращает новую строку, соединенную с указанными
+
+        .. code-block:: js
+
+            "C".concat("a", "t");
+            // "Cat"
 
 
-    .. py:function:: endsWith(string, index)
+    .. py:method:: endsWith(string, index)
 
         Проверяет, заканчивается ли строка на указанную
 
@@ -102,9 +107,9 @@ String - строки
             // false
 
 
-    .. py:function:: fromCharCode(code)
+    .. py:method:: fromCharCode(char...)
 
-        Статический метод, возвращает символ по коду
+        Статический метод, возвращает строку из последовательности чисел
 
         .. code-block:: js
 
@@ -115,7 +120,7 @@ String - строки
             // "hello"
 
 
-    .. py:function:: fromCodePoint(number1, ...)
+    .. py:method:: fromCodePoint(number1, ...)
 
         Возвращает строку по кодовым пунктам
 
@@ -127,7 +132,7 @@ String - строки
             // 'abc'
 
 
-    .. py:function:: includes(string, index=0)
+    .. py:method:: includes(string, index=0)
 
         Проверяет наличие подстроки в строке
 
@@ -139,9 +144,11 @@ String - строки
             // true
 
 
-    .. py:function:: indexOf(substr, [start_pos])
+    .. py:method:: indexOf(searchString, [start_pos])
 
-        Возвращает индекс вхождения подстроки в строку.
+        Возвращает число, индекс вхождения подстроки в строку.
+
+        Возвращает -1 если не найдено
 
         .. code-block:: js
 
@@ -149,9 +156,9 @@ String - строки
             // 3
 
 
-    .. py:function:: lastIndexOf(substr, [start_pos])
+    .. py:method:: lastIndexOf(searchString, [start_pos])
 
-        Возвращает индекс вхождения подстроки в строку с конца.
+        Возвращает число, индекс вхождения подстроки в строку с конца
 
         .. code-block:: js
 
@@ -159,17 +166,28 @@ String - строки
             // 3
 
 
-    .. py:function:: localeCompare(str)
+    .. py:method:: localeCompare(str)
 
         Сравнивает строки с учетом порядка следования символов национальных алфавитов
 
-
-    .. py:function:: match(str)
-
-        Поиск совпадений в строке, возвращает массив
+        Возвращает 0 если строки равны
+        Возвращает отрицательное число если аргумент меньше
 
 
-    .. py:function:: normalize()
+    .. py:method:: match(regexp)
+
+        Возвращает массив найденных вхождений по регулярке
+
+        .. code-block:: js
+
+            "kj5k3".match(/\d/);
+            // ["5"]
+
+            "kj5k3".match(/\d/g);
+            // ["5", "3"]
+
+
+    .. py:method:: normalize()
 
         Возвращает нормализованную строку, по умолчанию NFC.
 
@@ -178,7 +196,7 @@ String - строки
         .. note:: EcmaScript6
 
 
-    .. py:function:: repeat(count)
+    .. py:method:: repeat(count)
 
         Возвращает строку, содержащую указанное количество копии
 
@@ -190,32 +208,59 @@ String - строки
             // "aaaaa"
 
 
-    .. py:function:: replace(str1, str2)
+    .. py:method:: replace(searchValue, replaceValue)
 
-        Поиск и замена
+        Возвращает новую строку, заменяя в исходной указанные значения
+
+        .. code-block:: js
+
+            "mother_in_low".replace("_", "-");
+            // "mother-in-low"
+
+            "mother_in_low".replace("_", function(c){});
+
+            "(777)888-2323".replace(/\((\d{3})\)/g, "$1-");
+            // "111-888-2323"
 
 
-    .. py:function:: search(str)
+    .. py:method:: search(regexp)
 
-        Поиск совпадений в строке, возвращает индекс
+        Возвращает число, позицию первого символа соответсвия
+
+        В отличие от :py:meth:`String.indexOf`
+        работает только с регулярными выражениями
 
 
-    .. py:function:: slice(start, [end])
+    .. py:method:: slice(start, [end])
 
-        Срез строки с позиции `start` до позиции `end`, не включая его.
+        Возвращает срез строки
 
         .. code-block:: js
 
             'stringify'.substring(0, 1);
             // 's'
 
+            'stringify'.substring(3);
+            // 'ingify'
 
-    .. py:function:: split(разделитель, лимит)
+            'stringify'.substring(-5);
+            // 'ngify'
 
-        Разбиение строки на массив
+
+    .. py:method:: split(separator, limit)
+
+        Возаращает массив строк, полученная путем разбиения исходной
+
+        .. code-block:: js
+
+            "12345".split("", 3);
+            // ["1", "2", "3"]
+
+            "last, first ,middle".split(/\s*,\s*/);
+            // ["last", "first", "middle"]
 
 
-    .. py:function:: startsWith(string, index=0)
+    .. py:method:: startsWith(string, index=0)
 
         Проверяет, начинается ли строка с указанной строки
 
@@ -227,7 +272,7 @@ String - строки
             // true
 
 
-    .. py:function:: substr(start[, length])
+    .. py:method:: substr(start[, length])
 
         Срез строки с позиции `start`, количество `length` символов
 
@@ -237,11 +282,12 @@ String - строки
             // 'ring'
 
 
-    .. py:function:: substring(start[, end])
+    .. py:method:: substring(start[, end])
 
-        Срез строки с позиции `start` до позиции `end`, не включая его.
+        Возвращает срез строки
 
-        Отрицательные значение приравниваются к нулю.
+        В отличие от :py:meth:`String.slice`
+        отрицательные значение приравниваются к нулю.
 
         .. code-block:: js
 
@@ -252,17 +298,27 @@ String - строки
             // 'ringify'
 
 
-    .. py:function:: toLowerCase()
+    .. py:method:: toLocalLowerCase()
 
-        Преобразует строку в нижний регистр
-
-
-    .. py:function:: toUpperCase()
-
-        Преобразует строку в верхний регистр
+        Возвращает строку, приведенную к нижнему регистру в соответсвйи с локалью
 
 
-    .. py:function:: trim()
+    .. py:method:: toLocalUpperCase()
+
+        Возвращает строку, приведенную к верхнему регистру в соответсвйи с локалью
+
+
+    .. py:method:: toLowerCase()
+
+        Возвращает строку, приведенную к нижнему регистру
+
+
+    .. py:method:: toUpperCase()
+
+        Возвращает строку, приведенную к верхнему регистру
+
+
+    .. py:method:: trim()
 
         Возвращает копию строки, с удаленными пробелами вначале и в конце
 
