@@ -1,9 +1,9 @@
 datepicker - виджет Datepicker
 ==============================
 
-.. js:function:: datepicker([methodName, option, value])
-.. js:function:: datepicker([methodName, param_obj])
-.. js:function:: datepicker([param_obj])
+.. py:function:: datepicker([methodName, option, value])
+.. py:function:: datepicker([methodName, param_obj])
+.. py:function:: datepicker([param_obj])
 
     .. code-block:: js
         

@@ -3,9 +3,9 @@ accordion
 
 виджет Accordion
 
-.. js:function:: accordion([methodName, option, value])
-.. js:function:: accordion([methodName, param_obj])
-.. js:function:: accordion([param_obj])
+.. py:function:: accordion([methodName, option, value])
+.. py:function:: accordion([methodName, param_obj])
+.. py:function:: accordion([param_obj])
 
     .. code-block:: html
         

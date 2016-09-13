@@ -1,9 +1,9 @@
 selectable - выбираемый элемент
 ===============================
 
-.. js:function:: selectable([methodName, option, value])
-.. js:function:: selectable([methodName, param_obj])
-.. js:function:: selectable([param_obj])
+.. py:function:: selectable([methodName, option, value])
+.. py:function:: selectable([methodName, param_obj])
+.. py:function:: selectable([param_obj])
 
     .. code-block:: js
         

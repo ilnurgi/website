@@ -3,9 +3,9 @@ dialog
 
 виджет Dialog
 
-.. js:function:: dialog([methodName, option, value])
-.. js:function:: dialog([methodName, param_obj])
-.. js:function:: dialog([param_obj])
+.. py:function:: dialog([methodName, option, value])
+.. py:function:: dialog([methodName, param_obj])
+.. py:function:: dialog([param_obj])
 
     .. code-block:: html
 

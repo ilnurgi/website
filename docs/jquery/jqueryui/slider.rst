@@ -3,9 +3,9 @@ slider
 
 виджет слайдер
 
-.. js:function:: slider([methodName, option, value])
-.. js:function:: slider([methodName, param_obj])
-.. js:function:: slider([param_obj])
+.. py:function:: slider([methodName, option, value])
+.. py:function:: slider([methodName, param_obj])
+.. py:function:: slider([param_obj])
     
     * `methodName` - название метода
         

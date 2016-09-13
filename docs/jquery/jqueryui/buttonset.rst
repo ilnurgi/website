@@ -2,7 +2,7 @@ buttonset - создает группу кнопок
 =================================
 
 
-.. js:function:: buttonset()
+.. py:function:: buttonset()
     
 
     .. code-block:: js

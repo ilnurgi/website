@@ -3,9 +3,9 @@ tabs
 
 виджет Tabs
 
-.. js:function:: tabs([methodName, option, value])
-.. js:function:: tabs([methodName, param_obj])
-.. js:function:: tabs([param_obj])
+.. py:function:: tabs([methodName, option, value])
+.. py:function:: tabs([methodName, param_obj])
+.. py:function:: tabs([param_obj])
 
     .. code-block:: html
         

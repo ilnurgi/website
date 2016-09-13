@@ -1,9 +1,9 @@
 sortable - сортируемый элемент
 ==============================
 
-.. js:function:: sortable([methodName, option, value])
-.. js:function:: sortable([methodName, param_obj])
-.. js:function:: sortable([param_obj])
+.. py:function:: sortable([methodName, option, value])
+.. py:function:: sortable([methodName, param_obj])
+.. py:function:: sortable([param_obj])
 
     .. code-block:: js
         

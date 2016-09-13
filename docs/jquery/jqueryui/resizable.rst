@@ -2,9 +2,9 @@ resizable - элемент с изменяемым размером
 =========================================
 
 
-.. js:function:: resizable([methodName, option, value])
-.. js:function:: resizable([methodName, param_obj])
-.. js:function:: resizable([param_obj])
+.. py:function:: resizable([methodName, option, value])
+.. py:function:: resizable([methodName, param_obj])
+.. py:function:: resizable([param_obj])
 
     .. code-block:: js
         
