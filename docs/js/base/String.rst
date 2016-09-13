@@ -1,11 +1,11 @@
 String - строки
 ===============
 
-.. js:class:: String()
+.. py:class:: String()
     
     Строки
 
-    Наследник :js:class:`Object`
+    Наследник :py:class:`Object`
 
 
     .. code-block:: js
@@ -33,7 +33,7 @@ String - строки
         // NaN
 
 
-    .. js:function:: length
+    .. py:function:: length
 
         .. code-block:: js
 
@@ -41,7 +41,7 @@ String - строки
             // 7        
 
 
-    .. js:function:: charAt(index)
+    .. py:function:: charAt(index)
 
         Символ из строки по индексу
 
@@ -57,7 +57,7 @@ String - строки
             // ''
 
 
-    .. js:function:: charCodeAt(index)
+    .. py:function:: charCodeAt(index)
 
         Код символа из строки
 
@@ -67,7 +67,7 @@ String - строки
             // 33
 
 
-    .. js:function:: codePointAt(index)
+    .. py:function:: codePointAt(index)
 
         Возвращает неотрицательное целое число - кодовый пнкт символа.
 
@@ -85,12 +85,12 @@ String - строки
             // 1080
 
 
-    .. js:function:: concat(index)
+    .. py:function:: concat(index)
 
         Конкатенация одного или нескольких значений со строкой
 
 
-    .. js:function:: endsWith(string, index)
+    .. py:function:: endsWith(string, index)
 
         Проверяет, заканчивается ли строка на указанную
 
@@ -102,7 +102,7 @@ String - строки
             // false
 
 
-    .. js:function:: fromCharCode(code)
+    .. py:function:: fromCharCode(code)
 
         Статический метод, возвращает символ по коду
 
@@ -115,7 +115,7 @@ String - строки
             // "hello"
 
 
-    .. js:function:: fromCodePoint(number1, ...)
+    .. py:function:: fromCodePoint(number1, ...)
 
         Возвращает строку по кодовым пунктам
 
@@ -127,7 +127,7 @@ String - строки
             // 'abc'
 
 
-    .. js:function:: includes(string, index=0)
+    .. py:function:: includes(string, index=0)
 
         Проверяет наличие подстроки в строке
 
@@ -139,7 +139,7 @@ String - строки
             // true
 
 
-    .. js:function:: indexOf(substr, [start_pos])
+    .. py:function:: indexOf(substr, [start_pos])
 
         Возвращает индекс вхождения подстроки в строку.
 
@@ -149,7 +149,7 @@ String - строки
             // 3
 
 
-    .. js:function:: lastIndexOf(substr, [start_pos])
+    .. py:function:: lastIndexOf(substr, [start_pos])
 
         Возвращает индекс вхождения подстроки в строку с конца.
 
@@ -159,17 +159,17 @@ String - строки
             // 3
 
 
-    .. js:function:: localeCompare(str)
+    .. py:function:: localeCompare(str)
 
         Сравнивает строки с учетом порядка следования символов национальных алфавитов
 
 
-    .. js:function:: match(str)
+    .. py:function:: match(str)
 
         Поиск совпадений в строке, возвращает массив
 
 
-    .. js:function:: normalize()
+    .. py:function:: normalize()
 
         Возвращает нормализованную строку, по умолчанию NFC.
 
@@ -178,7 +178,7 @@ String - строки
         .. note:: EcmaScript6
 
 
-    .. js:function:: repeat(count)
+    .. py:function:: repeat(count)
 
         Возвращает строку, содержащую указанное количество копии
 
@@ -190,17 +190,17 @@ String - строки
             // "aaaaa"
 
 
-    .. js:function:: replace(str1, str2)
+    .. py:function:: replace(str1, str2)
 
         Поиск и замена
 
 
-    .. js:function:: search(str)
+    .. py:function:: search(str)
 
         Поиск совпадений в строке, возвращает индекс
 
 
-    .. js:function:: slice(start, [end])
+    .. py:function:: slice(start, [end])
 
         Срез строки с позиции `start` до позиции `end`, не включая его.
 
@@ -210,12 +210,12 @@ String - строки
             // 's'
 
 
-    .. js:function:: split(разделитель, лимит)
+    .. py:function:: split(разделитель, лимит)
 
         Разбиение строки на массив
 
 
-    .. js:function:: startsWith(string, index=0)
+    .. py:function:: startsWith(string, index=0)
 
         Проверяет, начинается ли строка с указанной строки
 
@@ -227,7 +227,7 @@ String - строки
             // true
 
 
-    .. js:function:: substr(start[, length])
+    .. py:function:: substr(start[, length])
 
         Срез строки с позиции `start`, количество `length` символов
 
@@ -237,7 +237,7 @@ String - строки
             // 'ring'
 
 
-    .. js:function:: substring(start[, end])
+    .. py:function:: substring(start[, end])
 
         Срез строки с позиции `start` до позиции `end`, не включая его.
 
@@ -252,17 +252,17 @@ String - строки
             // 'ringify'
 
 
-    .. js:function:: toLowerCase()
+    .. py:function:: toLowerCase()
 
         Преобразует строку в нижний регистр
 
 
-    .. js:function:: toUpperCase()
+    .. py:function:: toUpperCase()
 
         Преобразует строку в верхний регистр
 
 
-    .. js:function:: trim()
+    .. py:function:: trim()
 
         Возвращает копию строки, с удаленными пробелами вначале и в конце
 

@@ -6,7 +6,7 @@ Map
 
 .. note:: EcmaScript6
 
-.. js:class:: Map()
+.. py:class:: Map()
 
     .. code-block:: js
 
@@ -14,7 +14,7 @@ Map
         let map2 = new Map([[1, 2], [3, 4]]);
 
 
-    .. js:attribute:: size
+    .. py:attribute:: size
 
         Количесвто ключей в коллекции
 
@@ -24,7 +24,7 @@ Map
             // 2
 
 
-    .. js:function:: clear()
+    .. py:function:: clear()
 
         Очищает коллекцию
 
@@ -33,7 +33,7 @@ Map
             map.clear();
 
 
-    .. js:function:: delete(key)
+    .. py:function:: delete(key)
 
         Удаляет пару ключ-значение из коллекции
 
@@ -42,7 +42,7 @@ Map
             map.delete("2");
 
 
-    .. js:function:: get(key)
+    .. py:function:: get(key)
 
         Возвращает значение по ключу
 
@@ -51,7 +51,7 @@ Map
             map.get("2");
 
 
-    .. js:function:: has(key)
+    .. py:function:: has(key)
 
         Проверяет, есть ли ключ в коллекции
 
@@ -61,7 +61,7 @@ Map
             // false
 
 
-    .. js:function:: set(key, value)
+    .. py:function:: set(key, value)
 
         Добавляет ключ и значение
 
@@ -76,7 +76,7 @@ WeakMap
 
 .. note:: EcmaScript6
 
-Аналогичен :js:class:`Map`, но имеет отличия:
+Аналогичен :py:class:`Map`, но имеет отличия:
 
 * ключи могут быть только ссылками на объекты
 
@@ -89,14 +89,14 @@ WeakMap
     * нельзя итерироваться
 
 
-.. js:class:: WeakMap()
+.. py:class:: WeakMap()
 
     .. code-block:: js
 
         let weakmap = WeakMap();
 
 
-    .. js:function:: delete(key)
+    .. py:function:: delete(key)
 
         Удаляет пару ключ-значение из коллекции
 
@@ -105,7 +105,7 @@ WeakMap
             map.delete("2");
 
 
-    .. js:function:: get(key);
+    .. py:function:: get(key);
 
         Возвращает значение по ключю
 
@@ -114,7 +114,7 @@ WeakMap
             map.get("2");
 
 
-    .. js:function:: set(key, value)
+    .. py:function:: set(key, value)
 
         Добавляет ключ и значение
 

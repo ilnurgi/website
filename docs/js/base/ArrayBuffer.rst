@@ -11,11 +11,16 @@ ArrayBuffer - буферный массив
 
 В момент создания буферного массива все его блоки инициализируются нулями.
 
-Для чтения и записи данных в буфер используют :js:class:`DataView`
+Для чтения и записи данных в буфер используют :py:class:`DataView`
 
 
-.. js:class:: ArrayBuffer(size)
+.. py:class:: ArrayBuffer(size)
 
     .. code-block:: js
 
         let buffer = new ArrayBuffer(80);
+
+
+    .. py:attribute:: byteLength
+
+        Длина в байтах последовательности

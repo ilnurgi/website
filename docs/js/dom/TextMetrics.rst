@@ -1,9 +1,9 @@
 TextMetrics - определяет размеры текстовой строки
 =================================================
 
-.. js:class:: TextMetrics()
+.. py:class:: TextMetrics()
 
 
-    .. js:attribute:: width
+    .. py:attribute:: width
         
         Ши­ри­на тек­ста в CSS-пик­се­лах.

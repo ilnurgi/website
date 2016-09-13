@@ -4,27 +4,27 @@ Canvas - канвас
 Канвас (холст) - элемент , с помощью которого производится работа с изображениями.
 
 
-.. js:class:: Canvas()
+.. py:class:: Canvas()
 
     
-    .. js:attribute:: height
+    .. py:attribute:: height
 
         Высота холста
 
 
-    .. js:attribute:: weight
+    .. py:attribute:: weight
 
         Ширина холста
 
 
-    .. js:function:: getContext(str contextid[, args])
+    .. py:function:: getContext(str contextid[, args])
 
         Возвращает контекст канваса
 
-        Если contextid == '2d', вернет :js:class:`CanvasRenderingContext2D`
+        Если contextid == '2d', вернет :py:class:`CanvasRenderingContext2D`
 
 
-    .. js:function:: toDataURL([str type='image/png', [args]])
+    .. py:function:: toDataURL([str type='image/png', [args]])
 
         Возвращает растровое изображение холста в виде URL-адреса `data://`
 

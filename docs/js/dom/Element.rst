@@ -1,87 +1,118 @@
-Element - элемент узла дом дерева
-=================================
+Element
+=======
 
-.. js:class:: Element()
-.. js:class:: HTMLElement()
+Элемент узла дом дерева
 
-    Наследник :js:class:`Node`, :js:class:`EventTarget`
+.. py:class:: Element()
+.. py:class:: HTMLElement()
 
-    `<abbr>`, `<acronym>`, `<address>`, `<b>`, `<bdo>`, `<big>`, `<center>`, `<cite>`, `<code>`, `<dd>`, `<dfn>`, `<dt>`, `<em>`, `<i>`, `<kbd>`, `<noframes>`, `<noscript>`, `<s>`, `<samp>`, `<small>`, `<span>`, `<strike>`, `<strong>`, `<sub>`, `<sup>`, `<tt>`, `<u>`, `<var>`
+    Наследник :py:class:`Node`, :py:class:`EventTarget`
 
-
-    .. js:attribute:: Attributes
-
-        Возвращает :js:class:`NamedNodeMap` список атрибутов элемента
-
-
-    .. js:attribute:: attributes
-
-        Возвращает массив атрибутов :js:class:`Attr` элемента
+    `<abbr>`, `<acronym>`, `<address>`, `<b>`, `<bdo>`, `<big>`, `<center>`,
+    `<cite>`, `<code>`, `<dd>`, `<dfn>`, `<dt>`, `<em>`, `<i>`, `<kbd>`,
+    `<noframes>`, `<noscript>`, `<s>`, `<samp>`, `<small>`, `<span>`,
+    `<strike>`, `<strong>`, `<sub>`, `<sup>`, `<tt>`, `<u>`, `<var>`
 
 
-    .. js:attribute:: childElementCount
+    .. py:attribute:: Attributes
+
+        Возвращает :py:class:`NamedNodeMap` список атрибутов элемента
+
+
+    .. py:attribute:: attributes
+
+        Возвращает массив атрибутов :py:class:`Attr` элемента
+
+
+    .. py:attribute:: childElementCount
         
         Ко­ли­че­ст­во до­чер­них эле­мен­тов (не до­чер­них уз­лов), ко­то­рые име­ет дан­ный эле­мент.
 
 
-    .. js:attribute:: children
+    .. py:attribute:: children
         
         Объ­ект, по­доб­ный мас­си­ву, со­дер­жа­щий до­чер­ние эле­мен­ты (ис­клю­чая до­чер­ние уз­лы, не яв­ляю­щие­ся эле­мен­та­ми Element, та­кие как Text и Comment).
 
 
-    .. js:attribute:: classList
+    .. py:attribute:: classList
 
-        Ссылка на :js:class:`DOMTokenList`, множество лексем в виде строки
+        Ссылка на :py:class:`DOMTokenList`, множество лексем в виде строки
 
 
-    .. js:attribute:: className
+    .. py:attribute:: className
 
         Это свой­ст­во пред­став­ля­ет ат­ри­бут class эле­мен­та.
 
 
-    .. js:attribute:: clientHeight
+    .. py:attribute:: clientHeight
 
         Внутренняя высота элемента
 
 
-    .. js:attribute:: clientLeft
+    .. py:attribute:: clientLeft
 
         Ширина левой границы элемента
 
 
-    .. js:attribute:: clientTop
+    .. py:attribute:: clientTop
 
         Ширина верхней границы элемента
 
 
-    .. js:attribute:: clientWidth
+    .. py:attribute:: clientWidth
 
         Внутреннняя ширина элемента
 
 
-    .. js:attribute:: currentStyle
+    .. py:attribute:: currentStyle
     
-        Это свой­ст­во :js:class:`CSSStyleDeclaration`, реа­ли­зо­ван­ное толь­ко в IE, яв­ля­ет­ся пред­став­ле­ни­ем кас­кад­но­го на­бо­ра всех CSS-свойств, при­ме­няе­мых к эле­мен­ту. В IE вер­сии 8 и ни­же его мож­но ис­поль­зо­вать как за­ме­ну стан­дарт­но­му ме­то­ду Window.getComputedStyle().
+        Это свой­ст­во :py:class:`CSSStyleDeclaration`,
+        реа­ли­зо­ван­ное толь­ко в IE,
+        яв­ля­ет­ся пред­став­ле­ни­ем кас­кад­но­го на­бо­ра всех CSS-свойств,
+        при­ме­няе­мых к эле­мен­ту.
 
-    .. js:attribute:: dataset
+        В IE вер­сии 8 и ни­же его мож­но ис­поль­зо­вать как за­ме­ну стан­дарт­но­му
+         ме­то­ду :py:meth:`Window.getComputedStyle`.
+
+
+    .. py:attribute:: dataset
         
-        С лю­бым HTML-эле­мен­том мож­но свя­зать лю­бые зна­че­ния, при­сваи­вая их ат­ри­бу­там, име­на ко­то­рых на­чи­на­ют­ся с  пре­фик­са «data-». Дан­ное свой­ст­во dataset пред­став­ля­ет мно­же­ст­во ат­ри­бу­тов с дан­ны­ми и уп­ро­ща­ет ра­бо­ту с ни­ми.
+        С лю­бым HTML-эле­мен­том мож­но свя­зать лю­бые зна­че­ния,
+        при­сваи­вая их ат­ри­бу­там, име­на ко­то­рых на­чи­на­ют­ся с  пре­фик­са «data-».
 
-        Зна­че­ние это­го свой­ст­ва ве­дет се­бя как обыч­ный объ­ект. Ка­ж­дое свой­ст­во объ­ек­та со­от­вет­ст­ву­ет од­но­му ат­ри­бу­ту с дан­ны­ми. Ес­ли эле­мент име­ет ат­ри­бут с име­нем data-x, объ­ект dataset по­лу­чит свой­ст­во с име­нем x, и dataset.x бу­дет воз­вра­щать то же зна­че­ние, что и вы­зов getAttribute("data-x").
+        Дан­ное свой­ст­во dataset пред­став­ля­ет мно­же­ст­во ат­ри­бу­тов с дан­ны­ми и
+        уп­ро­ща­ет ра­бо­ту с ни­ми.
 
-        Опе­ра­ции чте­ния и при­сваи­ва­ния зна­че­ний свой­ст­вам объ­ек­та dataset бу­дут чи­тать и  при­сваи­вать зна­че­ния со­от­вет­ст­вую­щим ат­ри­бу­там с  дан­ны­ми это­го эле­мен­та. Опе­ра­тор delete мож­но ис­поль­зо­вать для уда­ле­ния ат­ри­бу­тов с дан­ны­ми, а цикл for/in – для их пе­ре­чис­ле­ния.
+        Зна­че­ние это­го свой­ст­ва ве­дет се­бя как обыч­ный объ­ект.
 
-    .. js:attribute:: firstElementChild
+        Ка­ж­дое свой­ст­во объ­ек­та со­от­вет­ст­ву­ет од­но­му ат­ри­бу­ту с дан­ны­ми.
+
+        Ес­ли эле­мент име­ет ат­ри­бут с име­нем data-x,
+        объ­ект dataset по­лу­чит свой­ст­во с име­нем x, и
+        dataset.x бу­дет воз­вра­щать то же зна­че­ние,
+        что и вы­зов getAttribute("data-x").
+
+        Опе­ра­ции чте­ния и при­сваи­ва­ния зна­че­ний свой­ст­вам объ­ек­та dataset
+        бу­дут чи­тать и при­сваи­вать зна­че­ния со­от­вет­ст­вую­щим ат­ри­бу­там с
+        дан­ны­ми это­го эле­мен­та.
+
+        Опе­ра­тор delete мож­но ис­поль­зо­вать для уда­ле­ния ат­ри­бу­тов с дан­ны­ми,
+        а цикл for/in – для их пе­ре­чис­ле­ния.
+
+
+    .. py:attribute:: firstElementChild
         
-        Это свой­ст­во по­доб­но свой­ст­ву :js:attr:`Node.firstChild`, но оно иг­но­ри­ру­ет уз­лы Text и Comment и воз­вра­ща­ет толь­ко эле­мен­ты ти­па :js:class:`Element`.
+        Это свой­ст­во по­доб­но свой­ст­ву :py:attr:`Node.firstChild`,
+        но оно иг­но­ри­ру­ет уз­лы Text и Comment и воз­вра­ща­ет толь­ко эле­мен­ты ти­па
+        :py:class:`Element`.
 
 
-    .. js:attribute:: id
+    .. py:attribute:: id
 
         Идентификатор элемента
 
 
-    .. js:attribute:: innerHTML
+    .. py:attribute:: innerHTML
 
         Содержимое элемента
 
@@ -90,115 +121,134 @@ Element - элемент узла дом дерева
             Element.innerHTML = '<div>Потомок</div>'
 
 
-    .. js:attribute:: isContentEditable
+    .. py:attribute:: isContentEditable
         
-        Это свой­ст­во име­ет зна­че­ние true, ес­ли эле­мент дос­ту­пен для ре­дак­ти­ро­ва­ния, и false – в про­тив­ном слу­чае. Эле­мент мо­жет быть дос­ту­пен для ре­дак­ти­ро­ва­ния вслед­ст­вие ус­та­нов­ки свой­ст­ва contenteditable в нем или в его ро­ди­те­ле, или вслед­ст­вие ус­та­нов­ки свой­ст­ва designMode вме­щаю­ще­го объ­ек­та Document.
+        Это свой­ст­во име­ет зна­че­ние true,
+        ес­ли эле­мент дос­ту­пен для ре­дак­ти­ро­ва­ния,
+        и false – в про­тив­ном слу­чае.
+
+        Эле­мент мо­жет быть дос­ту­пен для ре­дак­ти­ро­ва­ния
+        вслед­ст­вие ус­та­нов­ки свой­ст­ва contenteditable в нем или в его ро­ди­те­ле,
+        или вслед­ст­вие ус­та­нов­ки свой­ст­ва designMode вме­щаю­ще­го объ­ек­та Document.
 
 
-    .. js:attribute:: lang
+    .. py:attribute:: lang
         
         Зна­че­ние ат­ри­бу­та lang, оп­ре­де­ляю­щее код язы­ка для со­дер­жи­мо­го эле­мен­та.
 
 
-    .. js:attribute:: lastElementChild
+    .. py:attribute:: lastElementChild
 
-        Это свой­ст­во по­доб­но свой­ст­ву :js:attr:`Node.lastChild`, но оно иг­но­ри­ру­ет уз­лы Text и Comment и воз­вра­ща­ет толь­ко эле­мен­ты ти­па :js:class:`Element`.
+        Это свой­ст­во по­доб­но свой­ст­ву :py:attr:`Node.lastChild`,
+        но оно иг­но­ри­ру­ет уз­лы Text и Comment и воз­вра­ща­ет толь­ко эле­мен­ты ти­па
+        :py:class:`Element`.
 
-    .. js:attribute:: localName
+
+    .. py:attribute:: localName
         
-        Ло­каль­ное имя дан­но­го эле­мен­та без пре­фик­са. Зна­че­ние это­го свой­ст­ва от­ли­ча­ет­ ся от зна­че­ния ат­ри­бу­та tagName, ко­то­рое мо­жет вклю­чать пре­фикс про­стран­ст­ва имен, ес­ли та­ко­вой име­ет­ся (и все сим­во­лы ко­то­ро­го для HTML-эле­мен­тов пре­об­ра­зу­ют­ся в верх­ний ре­гистр).
+        Ло­каль­ное имя дан­но­го эле­мен­та без пре­фик­са.
+
+        Зна­че­ние это­го свой­ст­ва от­ли­ча­ет­ ся от зна­че­ния ат­ри­бу­та tagName,
+        ко­то­рое мо­жет вклю­чать пре­фикс про­стран­ст­ва имен,
+        ес­ли та­ко­вой име­ет­ся
+        (и все сим­во­лы ко­то­ро­го для HTML-эле­мен­тов пре­об­ра­зу­ют­ся в
+        верх­ний ре­гистр).
 
 
-    .. js:attribute:: name
+    .. py:attribute:: name
 
         Значение атрибута `name`
 
 
-    .. js:attribute:: readonly string namespaceURI
+    .. py:attribute:: readonly string namespaceURI
         
-        URL-ад­рес, фор­маль­но оп­ре­де­ляю­щий про­стран­ст­во имен дан­но­го эле­мен­та. Мо­жет иметь зна­че­ние null или со­дер­жать стро­ку, та­кую как «http://www.w3.org/1999/xhtml».
+        URL-ад­рес, фор­маль­но оп­ре­де­ляю­щий про­стран­ст­во имен дан­но­го эле­мен­та.
+
+        Мо­жет иметь зна­че­ние null или со­дер­жать стро­ку,
+        та­кую как «http://www.w3.org/1999/xhtml».
 
 
-    .. js:attribute:: nextElementSibling
+    .. py:attribute:: nextElementSibling
         
-        Это свой­ст­во по­доб­но свой­ст­ву :js:attr:`Node.nextSibling`, но оно иг­но­ри­ру­ет уз­лы Text и Comment и воз­вра­ща­ет толь­ко эле­мен­ты ти­па :js:class:`Element`.
+        Это свой­ст­во по­доб­но свой­ст­ву :py:attr:`Node.nextSibling`,
+        но оно иг­но­ри­ру­ет уз­лы Text и Comment и воз­вра­ща­ет толь­ко эле­мен­ты ти­па :py:class:`Element`.
 
 
-    .. js:attribute:: offsetHeight
+    .. py:attribute:: offsetHeight
 
         Высота элемента в скомпонованной странице
 
 
-    .. js:attribute:: offsetLeft
+    .. py:attribute:: offsetLeft
         
         Расстояние от левой границы элемента до левой границы элемента offsetParent
 
         
-    .. js:attribute:: offsetParent
+    .. py:attribute:: offsetParent
         
         Элемент , от которого ведутся расчеты сдвига текущего элемента
 
         
-    .. js:attribute:: offsetTop
+    .. py:attribute:: offsetTop
         
         Расстояние от верхней границы элемента до верхней границы элемента offsetParent
 
         
-    .. js:attribute:: offsetWidth
+    .. py:attribute:: offsetWidth
         
         Ширина элемента в скомпонованной странице
 
-    .. js:attribute:: outerHTML
+    .. py:attribute:: outerHTML
         
         Раз­мет­ка HTML или XML, оп­ре­де­ляю­щая дан­ный эле­мент и его со­дер­жи­мое. Ес­ли при­сво­ить это­му свой­ст­ву стро­ку, она за­ме­нит дан­ный эле­мент (и все его со­дер­жи­мое) ре­зуль­та­том син­так­си­че­ско­го раз­бо­ра но­во­го зна­че­ния как фраг­мен­та HTML- или XML-до­ку­мен­та.
 
 
-    .. js:attribute:: prefix
+    .. py:attribute:: prefix
         
         Пре­фикс про­стран­ст­ва имен для дан­но­го эле­мен­та. Обыч­но это свой­ст­во со­дер­жит зна­че­ние null. Ис­клю­че­ние со­став­ля­ют XML-до­ку­мен­ты, в ко­то­рых ис­поль­зу­ют­ся про­стран­ст­ва имен.
 
 
-    .. js:attribute:: previousElementSibling
+    .. py:attribute:: previousElementSibling
         
-        Это свой­ст­во по­доб­но свой­ст­ву :js:attr:`Node.previousSibling, но оно иг­но­ри­ру­ет уз­лы Text и Comment и воз­вра­ща­ет толь­ко эле­мен­ты ти­па :js:class:`Element`. 
+        Это свой­ст­во по­доб­но свой­ст­ву :py:attr:`Node.previousSibling, но оно иг­но­ри­ру­ет уз­лы Text и Comment и воз­вра­ща­ет толь­ко эле­мен­ты ти­па :py:class:`Element`.
 
 
-    .. js:attribute:: scrollHeight
+    .. py:attribute:: scrollHeight
         
         Видимая высота прокручиваемого элемента
 
         
-    .. js:attribute:: scrollLeft
+    .. py:attribute:: scrollLeft
         
         Возвращает или устанавливает размер прокрутки в окне влево для элемента
 
         
-    .. js:attribute:: scrollTop
+    .. py:attribute:: scrollTop
         
         Возвращает или устанавливает размер прокрутки в окне вниз для элемента
 
         
-    .. js:attribute:: scrollWidth
+    .. py:attribute:: scrollWidth
         
         Видимая ширина прокручиваемого элемента
 
 
-    .. js:attribute:: style
+    .. py:attribute:: style
         
-        :js:class:`CSSStyleDeclaration` CSS-сти­ли для эле­мен­та. 
+        :py:class:`CSSStyleDeclaration` CSS-сти­ли для эле­мен­та.
 
 
-    .. js:attribute:: tagName
+    .. py:attribute:: tagName
 
         Возвращает имя элемента
 
-    .. js:attribute:: title
+    .. py:attribute:: title
         
         Зна­че­ние ат­ри­бу­та title эле­мен­та. Мно­гие бро­узе­ры ото­бра­жа­ют зна­че­ние это­го ат­ри­бу­та в ви­де всплы­ваю­щей под­сказ­ки при на­ве­де­нии ука­за­те­ля мы­ши на эле­мент.
 
 
         
-    .. js:function:: addEventListener()
+    .. py:function:: addEventListener()
 
         Задает обработчик некоторого события для элемента
 
@@ -207,78 +257,80 @@ Element - элемент узла дом дерева
             button.addEventListener('click', function(evt){});
 
 
-    .. js:function:: Blur()
-    .. js:function:: blur()
+    .. py:function:: Blur()
+    .. py:function:: blur()
 
         Переносит фокус с текущего элемента
 
 
-    .. js:function:: click()
+    .. py:function:: click()
 
         Симулирует щелчок по текущему элементу
 
 
-    .. js:function:: dispatchEvent(event)
+    .. py:function:: dispatchEvent(event)
 
         Передает событие, связанное с этим элементом, в DOM
 
 
-    .. js:function:: focus()
+    .. py:function:: focus()
 
         Переносит фокус на текущий элемент
 
 
-    .. js:function:: getAttribute(attrName) 
+    .. py:function:: getAttribute(attrName)
 
         Возвращает значение атрибута
 
 
-    .. js:function:: getAttributeNS(namespace, localName) 
+    .. py:function:: getAttributeNS(namespace, localName)
 
-        Этот ме­тод дей­ст­ву­ет так же, как ме­тод :js:funct:`getAttribute()`, кро­ме то­го, что ат­ри­бут за­ да­ет­ся ком­би­на­ци­ей URI про­стран­ст­ва имен и ло­каль­но­го име­ни, оп­ре­де­лен­но­го в дан­ном про­стран­ст­ве имен.
+        Этот ме­тод дей­ст­ву­ет так же, как ме­тод :py:meth:`getAttribute`,
+        кро­ме то­го, что ат­ри­бут зада­ет­ся ком­би­на­ци­ей URI про­стран­ст­ва имен и
+        ло­каль­но­го име­ни, оп­ре­де­лен­но­го в дан­ном про­стран­ст­ве имен.
 
 
-    .. js:function:: getBoundingClientRect()
+    .. py:function:: getBoundingClientRect()
 
-        Возвращает :js:class:`ClientRect`, опи­сы­ваю­щий пря­мо­уголь­ник, ог­ра­ни­чи­ваю­щий дан­ный эле­мент.
+        Возвращает :py:class:`ClientRect`, опи­сы­ваю­щий пря­мо­уголь­ник, ог­ра­ни­чи­ваю­щий дан­ный эле­мент.
 
         
-    .. js:function:: getClientRects()
+    .. py:function:: getClientRects()
         
-        Воз­вра­ща­ет объ­ект, по­доб­ный мас­си­ву, со­дер­жа­щий объ­ек­ты :js:class:`ClientRects`, ко­то­рые опи­сы­ва­ют один или бо­лее пря­мо­уголь­ни­ков, ог­ра­ни­чи­ваю­щих дан­ный эле­мент.
+        Воз­вра­ща­ет объ­ект, по­доб­ный мас­си­ву, со­дер­жа­щий объ­ек­ты :py:class:`ClientRects`, ко­то­рые опи­сы­ва­ют один или бо­лее пря­мо­уголь­ни­ков, ог­ра­ни­чи­ваю­щих дан­ный эле­мент.
 
 
-    .. js:function:: getElementsByClassName(elementClassName)
+    .. py:function:: getElementsByClassName(elementClassName)
 
-        Возвращает список :js:class:`NodeList` элементов с указанным классом
-
-
-    .. js:function:: getElementsByTagName(tagName)
-
-        Возвращает список :js:class:`NodeList` элементов с указанным тегом
+        Возвращает список :py:class:`NodeList` элементов с указанным классом
 
 
-    .. js:function:: getElementsByTagNameNS(namespace, localName)
+    .. py:function:: getElementsByTagName(tagName)
+
+        Возвращает список :py:class:`NodeList` элементов с указанным тегом
+
+
+    .. py:function:: getElementsByTagNameNS(namespace, localName)
 
         Этот ме­тод дей­ст­ву­ет по­доб­но ме­то­ду :js:func:`getElementsByTagName()`, за ис­клю­че­ни­ем то­го, что имя те­га тре­буе­мых эле­мен­тов ука­зы­ва­ет­ся как ком­би­на­ция URI про­стран­ст­ва имен и ло­каль­но­го име­ни в этом про­стран­ст­ве имен.
 
 
-    .. js:function:: hasAttribute(name) 
+    .. py:function:: hasAttribute(name)
 
         Проверяет, есть ли у элемента атрибут
 
 
-    .. js:function:: hasAttributeNS(namespace, localName) 
+    .. py:function:: hasAttributeNS(namespace, localName)
 
         Этот ме­тод дей­ст­ву­ет так же, как ме­тод :js:func:`hasAttribute()`, за ис­клю­че­ни­ем то­го, что ат­ри­бут за­да­ет­ся ком­би­на­ци­ей URI про­стран­ст­ва имен и ло­каль­но­го име­ни в этом про­стран­ст­ве имен.
 
 
-    .. js:function:: hasAttributes() 
+    .. py:function:: hasAttributes()
 
         Проверяет, есть ли у элемента атрибуты
 
     
-    .. js:function:: insertAdjacentHTML(string position, string text)
+    .. py:function:: insertAdjacentHTML(string position, string text)
         
         Встав­ля­ет раз­мет­ку HTML text в по­зи­цию position от­но­си­тель­но дан­но­го эле­мен­ та. 
 
@@ -290,32 +342,32 @@ Element - элемент узла дом дерева
             * `beforeend` - Встав­ля­ет текст не­по­сред­ст­вен­но пе­ред за­кры­ваю­щим те­гом эле­мен­та
 
 
-    .. js:function:: querySelector(string selectors)
+    .. py:function:: querySelector(string selectors)
         
-        Воз­вра­ща­ет пер­вый вло­жен­ный эле­мент :js:class:`Element`, со­от­вет­ст­вую­щий CSS-се­лек­то­рам selec­tors (это мо­жет быть един­ст­вен­ный CSS-се­лек­тор или груп­па се­лек­то­ров, раз­де­лен­ных за­пя­ты­ми).
+        Воз­вра­ща­ет пер­вый вло­жен­ный эле­мент :py:class:`Element`, со­от­вет­ст­вую­щий CSS-се­лек­то­рам selec­tors (это мо­жет быть един­ст­вен­ный CSS-се­лек­тор или груп­па се­лек­то­ров, раз­де­лен­ных за­пя­ты­ми).
 
 
-    .. js:function:: querySelectorAll(string selectors)
+    .. py:function:: querySelectorAll(string selectors)
 
-        Воз­вра­ща­ет объ­ект :js:class:`NodeList`, со­дер­жа­щий все эле­мен­ты, вло­жен­ные в  дан­ный эле­мент, ко­то­рые со­от­вет­ст­ву­ют се­лек­то­рам selectors (это мо­жет быть един­ст­вен­ный CSS-се­лек­тор или груп­па се­лек­то­ров, раз­де­лен­ных за­пя­ты­ми). 
+        Воз­вра­ща­ет объ­ект :py:class:`NodeList`, со­дер­жа­щий все эле­мен­ты, вло­жен­ные в  дан­ный эле­мент, ко­то­рые со­от­вет­ст­ву­ют се­лек­то­рам selectors (это мо­жет быть един­ст­вен­ный CSS-се­лек­тор или груп­па се­лек­то­ров, раз­де­лен­ных за­пя­ты­ми).
 
 
-    .. js:function:: removeAttribute(attrName) 
+    .. py:function:: removeAttribute(attrName)
 
         Удаляет указанный атрибут
 
 
-    .. js:function:: removeAttributeNS(string namespace, string localName)
+    .. py:function:: removeAttributeNS(string namespace, string localName)
         
         Ме­тод дей­ст­ву­ет так же, как ме­тод :js:func:`removeAttribute()`, за ис­клю­че­ни­ем то­го, что уда­ляе­мый ат­ри­бут за­да­ет­ся URI про­стран­ст­ва имен и ло­каль­но­го име­ни.
 
 
-    .. js:function:: removeAttributeNode() 
+    .. py:function:: removeAttributeNode()
 
         Удаляет указанный атрибутный узел
 
         
-    .. js:function:: removeEventListener()
+    .. py:function:: removeEventListener()
 
         Удаляет обработчик события для данного элемента
 
@@ -324,17 +376,17 @@ Element - элемент узла дом дерева
             button.removeEventListener('click', my_function)
 
 
-    .. js:function:: scrollIntoView([boolean top])
+    .. py:function:: scrollIntoView([boolean top])
     
         Ес­ли HTML-эле­мент в на­стоя­щий мо­мент на­хо­дит­ся за пре­де­ла­ми ок­на, этот ме­тод про­кру­тит до­ку­мент так, что эле­мент ока­жет­ся в пре­де­лах ок­на. Ар­гу­мент top яв­ ля­ет­ся не­обя­за­тель­ным и под­ска­зы­ва­ет ме­то­ду, дол­жен ли эле­мент ока­зать­ся бли­ же к верх­не­му или к ниж­не­му краю ок­на. Ес­ли он ра­вен true или от­сут­ст­ву­ет, бро­узер ста­ра­ет­ся вы­пол­нить про­крут­ку так, что­бы эле­мент ока­зал­ся бли­же к верх­не­му краю ок­на. Ес­ли он ра­вен false, бро­узер ста­ра­ет­ся вы­пол­нить про­крут­ку так, что­бы эле­мент ока­зал­ся бли­же к ниж­не­му краю ок­на. Для эле­мен­тов, при­ни­маю­щих фо­кус вво­да, та­ких как эле­мен­ты Input, ме­тод focus() не­яв­но вы­пол­ня­ет точ­но та­кую же опе­ра­цию про­крут­ки. 
 
 
-    .. js:function:: setAttribute(string qualifiedName, string value)
+    .. py:function:: setAttribute(string qualifiedName, string value)
         
         При­сваи­ва­ет ука­зан­ное зна­че­ние ат­ри­бу­ту с  ука­зан­ным име­нем. Ес­ли ат­ри­бут с та­ким име­нем еще не су­ще­ст­ву­ет, в эле­мент до­бав­ля­ет­ся но­вый ат­ри­бут. В HTML-до­ку­мен­тах пе­ред при­сваи­ва­ни­ем зна­че­ния сим­во­лы в име­ни ат­ри­бу­та пре­об­ра­зу­ют­ся в ниж­ний ре­гистр. Об­ра­ти­те вни­ма­ние: в HTML-до­ку­мен­те Ja­va­Script-свой­ст­ва, со­от­вет­ст­вую­щие всем стан­дарт­ным HTML-ат­ри­бу­там, оп­ре­де­ля­ют­ся объ­ек­та­ми HTMLElement. По­это­му дан­ный ме­тод обыч­но ис­поль­зу­ет­ся лишь для дос­ту­па к не­стан­дарт­ным ат­ри­бу­там.
 
 
-    .. js:function:: setAttributeNS(string namespace, string qualifiedName, string value)
+    .. py:function:: setAttributeNS(string namespace, string qualifiedName, string value)
         
         Этот ме­тод дей­ст­ву­ет так же, как ме­тод :js:func:`setAttribute()`, за ис­клю­че­ни­ем то­го, что имя ат­ри­бу­та ука­зы­ва­ет­ся как ком­би­на­ция URI про­стран­ст­ва имен и ква­ли­фи­ци­ро­ван­но­го име­ни, со­стоя­ще­го из пре­фик­са про­стран­ст­ва имен, двое­то­чия и  ло­каль­но­го име­ни в этом про­стран­ст­ве имен.
 
@@ -344,23 +396,23 @@ HTMLAnchorElement
 
 Элемент `<a>`
 
-Наследник :js:class:`HTMLElement`
+Наследник :py:class:`HTMLElement`
 
-.. js:class:: HTMLAnchorElement
+.. py:class:: HTMLAnchorElement
 
-    .. js:attribute:: href
+    .. py:attribute:: href
 
-    .. js:attribute:: target
+    .. py:attribute:: target
 
-    .. js:attribute:: ping
+    .. py:attribute:: ping
 
-    .. js:attribute:: rel
+    .. py:attribute:: rel
 
-    .. js:attribute:: media
+    .. py:attribute:: media
 
-    .. js:attribute:: hreflang
+    .. py:attribute:: hreflang
 
-    .. js:attribute:: type
+    .. py:attribute:: type
 
 
 HTMLAppletElement
@@ -368,149 +420,149 @@ HTMLAppletElement
 
 Элемент `<applet>`
 
-Наследник :js:class:`HTMLElement`
+Наследник :py:class:`HTMLElement`
 
-.. js:class:: HTMLAppletElement
+.. py:class:: HTMLAppletElement
 
 
 HTMLAreaElement
------------------
+---------------
 
 Элемент `<area>`
 
-Наследник :js:class:`HTMLElement`
+Наследник :py:class:`HTMLElement`
 
-.. js:class:: HTMLAreaElement
+.. py:class:: HTMLAreaElement
 
-    .. js:attribute:: alt
+    .. py:attribute:: alt
 
-    .. js:attribute:: coords
+    .. py:attribute:: coords
 
-    .. js:attribute:: shape
+    .. py:attribute:: shape
 
-    .. js:attribute:: href
+    .. py:attribute:: href
 
-    .. js:attribute:: target
+    .. py:attribute:: target
 
-    .. js:attribute:: ping
+    .. py:attribute:: ping
 
-    .. js:attribute:: rel
+    .. py:attribute:: rel
 
-    .. js:attribute:: media
+    .. py:attribute:: media
 
-    .. js:attribute:: hreflang
+    .. py:attribute:: hreflang
 
-    .. js:attribute:: type
+    .. py:attribute:: type
 
 
 HTMLBaseElement
------------------
+---------------
 
 Элемент `<base>`
 
-Наследник :js:class:`HTMLElement`
+Наследник :py:class:`HTMLElement`
 
-.. js:class:: HTMLBaseElement
+.. py:class:: HTMLBaseElement
 
-    .. js::attribute:: href
+    .. py::attribute:: href
 
-    .. js::attribute:: target
+    .. py::attribute:: target
 
 
 HTMLBaseFontElement
------------------
+-------------------
 
 Элемент `<basefont>`
 
-Наследник :js:class:`HTMLElement`
+Наследник :py:class:`HTMLElement`
 
-.. js:class:: HTMLBaseFontElement
+.. py:class:: HTMLBaseFontElement
 
 
 HTMLBodyElement
------------------
+---------------
 
 Элемент `<blockquote>`
 
-Наследник :js:class:`HTMLElement`
+Наследник :py:class:`HTMLElement`
 
-.. js:class:: HTMLBodyElement
+.. py:class:: HTMLBodyElement
 
-    .. js:attribute:: onafterprint
+    .. py:attribute:: onafterprint
 
-    .. js:attribute:: onbeforeprint
+    .. py:attribute:: onbeforeprint
 
-    .. js:attribute:: onbeforeunload
+    .. py:attribute:: onbeforeunload
 
-    .. js:attribute:: onblur
+    .. py:attribute:: onblur
 
-    .. js:attribute:: onerror
+    .. py:attribute:: onerror
 
-    .. js:attribute:: onfocus
+    .. py:attribute:: onfocus
 
-    .. js:attribute:: onhash­
+    .. py:attribute:: onhash­
 
-    .. js:attribute:: change
+    .. py:attribute:: change
 
-    .. js:attribute:: onload
+    .. py:attribute:: onload
 
-    .. js:attribute:: onmessage
+    .. py:attribute:: onmessage
 
-    .. js:attribute:: onoffline
+    .. py:attribute:: onoffline
 
-    .. js:attribute:: ononline
+    .. py:attribute:: ononline
 
-    .. js:attribute:: onpagehide
+    .. py:attribute:: onpagehide
 
-    .. js:attribute:: onpage­show
+    .. py:attribute:: onpage­show
 
-    .. js:attribute:: onpopstate
+    .. py:attribute:: onpopstate
 
-    .. js:attribute:: onredo
+    .. py:attribute:: onredo
 
-    .. js:attribute:: onresize
+    .. py:attribute:: onresize
 
-    .. js:attribute:: onscroll
+    .. py:attribute:: onscroll
 
-    .. js:attribute:: onstorage
+    .. py:attribute:: onstorage
 
-    .. js:attribute:: onundo
+    .. py:attribute:: onundo
 
-    .. js:attribute:: onunload
+    .. py:attribute:: onunload
 
 
 HTMLButtonElement
--------------
+-----------------
 
 Элемент `<button>`
 
-Наследник :js:class:`HTMLElement`
+Наследник :py:class:`HTMLElement`
 
-.. js:class:: HTMLButtonElement
+.. py:class:: HTMLButtonElement
 
-    .. js:attribute:: autofocus
+    .. py:attribute:: autofocus
 
-    .. js:attribute:: disabled
+    .. py:attribute:: disabled
 
-    .. js:attribute:: form
+    .. py:attribute:: form
 
-    .. js:attribute:: formaction
+    .. py:attribute:: formaction
 
-    .. js:attribute:: formenctype
+    .. py:attribute:: formenctype
 
-    .. js:attribute:: formmethod
+    .. py:attribute:: formmethod
 
-    .. js:attribute:: form­nova­
+    .. py:attribute:: form­nova­
 
-    .. js:attribute:: lidate
+    .. py:attribute:: lidate
 
-    .. js:attribute:: formtarget
+    .. py:attribute:: formtarget
 
-    .. js:attribute:: name
+    .. py:attribute:: name
 
-    .. js:attribute:: type
+    .. py:attribute:: type
 
-    .. js:attribute:: value
+    .. py:attribute:: value
 
 
 HTMLBRElement
@@ -518,150 +570,150 @@ HTMLBRElement
 
 Элемент `<br>`
 
-Наследник :js:class:`HTMLElement`
+Наследник :py:class:`HTMLElement`
 
-.. js:class:: HTMLBRElement
+.. py:class:: HTMLBRElement
 
 
 HTMLDListElement
--------------
+----------------
 
 Элемент `<dl>`
 
-Наследник :js:class:`HTMLElement`
+Наследник :py:class:`HTMLElement`
 
-.. js:class:: HTMLDListElement
+.. py:class:: HTMLDListElement
 
 
 HTMLDirectoryElement
--------------
+--------------------
 
 Элемент `<dir>`
 
-Наследник :js:class:`HTMLElement`
+Наследник :py:class:`HTMLElement`
 
-.. js:class:: HTMLDirectoryElement
+.. py:class:: HTMLDirectoryElement
 
 
 HTMLDivElement
--------------
+--------------
 
 Элемент `<div>`
 
-Наследник :js:class:`HTMLElement`
+Наследник :py:class:`HTMLElement`
 
-.. js:class:: HTMLDivElement
+.. py:class:: HTMLDivElement
 
 
 HTMLFieldSetElement
--------------
+-------------------
 
 Элемент `<fieldset>`
 
-Наследник :js:class:`HTMLElement`
+Наследник :py:class:`HTMLElement`
 
-.. js:class:: HTMLFieldSetElement
+.. py:class:: HTMLFieldSetElement
 
-    .. js:attribute:: disabled
+    .. py:attribute:: disabled
     
-    .. js:attribute:: form
+    .. py:attribute:: form
     
-    .. js:attribute:: name
+    .. py:attribute:: name
 
 
 HTMLFontElement
--------------
+---------------
 
 Элемент `<font>`
 
-Наследник :js:class:`HTMLElement`
+Наследник :py:class:`HTMLElement`
 
-.. js:class:: HTMLFontElement
+.. py:class:: HTMLFontElement
 
 
 HTMLFormElement
--------------
+---------------
 
 Элемент `<from>`
 
-Наследник :js:class:`HTMLElement`
+Наследник :py:class:`HTMLElement`
 
-.. js:class:: HTMLFormElement
+.. py:class:: HTMLFormElement
 
-    .. js:attribute:: accept-charset
+    .. py:attribute:: accept-charset
 
-    .. js:attribute:: action
+    .. py:attribute:: action
 
-    .. js:attribute:: autocomplete
+    .. py:attribute:: autocomplete
     
-    .. js:attribute:: elements
+    .. py:attribute:: elements
     
-    .. js:attribute:: enctype
+    .. py:attribute:: enctype
     
-    .. js:attribute:: method
+    .. py:attribute:: method
     
-    .. js:attribute:: name
+    .. py:attribute:: name
     
-    .. js:attribute:: novalidate
+    .. py:attribute:: novalidate
     
-    .. js:attribute:: target
+    .. py:attribute:: target
 
-    .. js:attribute:: length
+    .. py:attribute:: length
 
-    .. js:function:: submit()
+    .. py:function:: submit()
 
-    .. js:function:: reset()
+    .. py:function:: reset()
 
 HTMLFrameElement
--------------
+----------------
 
 Элемент `<frame>`
 
-Наследник :js:class:`HTMLElement`
+Наследник :py:class:`HTMLElement`
 
-.. js:class:: HTMLFrameElement
+.. py:class:: HTMLFrameElement
 
 
 HTMLFrameSetElement
--------------
+-------------------
 
 Элемент `<frameset>`
 
-Наследник :js:class:`HTMLElement`
+Наследник :py:class:`HTMLElement`
 
-.. js:class:: HTMLFrameSetElement
+.. py:class:: HTMLFrameSetElement
 
 
 HTMLHeadElement
--------------
+---------------
 
 Элемент `<head>`
 
-Наследник :js:class:`HTMLElement`
+Наследник :py:class:`HTMLElement`
 
-.. js:class:: HTMLHeadElement
+.. py:class:: HTMLHeadElement
 
 
 HTMLHeadingElement
--------------
+------------------
 
 Элемент `<h1> ... <h6>`
 
-Наследник :js:class:`HTMLElement`
+Наследник :py:class:`HTMLElement`
 
-.. js:class:: HTMLHeadingElement
+.. py:class:: HTMLHeadingElement
 
 
 HTMLHtmlElement
--------------
+---------------
 
 Элемент `<html>`
 
-Наследник :js:class:`HTMLElement`
+Наследник :py:class:`HTMLElement`
 
-.. js:class:: HTMLHtmlElement
+.. py:class:: HTMLHtmlElement
 
-    .. js:attribute:: manifest
+    .. py:attribute:: manifest
 
 
 HTMLHRElement
@@ -669,195 +721,195 @@ HTMLHRElement
 
 Элемент `<hr>`
 
-Наследник :js:class:`HTMLElement`
+Наследник :py:class:`HTMLElement`
 
-.. js:class:: HTMLHRElement
+.. py:class:: HTMLHRElement
 
 
 HTMLImageElement
--------------
+----------------
 
 Элемент `<image>`
 
-Наследник :js:class:`HTMLElement`
+Наследник :py:class:`HTMLElement`
 
-.. js:class:: HTMLImageElement
+.. py:class:: HTMLImageElement
 
-    .. js:attribute:: alt
+    .. py:attribute:: alt
     
-    .. js:attribute:: src
+    .. py:attribute:: src
     
-    .. js:attribute:: usemap
+    .. py:attribute:: usemap
     
-    .. js:attribute:: ismap
+    .. py:attribute:: ismap
     
-    .. js:attribute:: width
+    .. py:attribute:: width
     
-    .. js:attribute:: height
+    .. py:attribute:: height
 
 
 HTMLInputElement
--------------
+----------------
 
 Элемент `<input>`
 
-Наследник :js:class:`HTMLElement`
+Наследник :py:class:`HTMLElement`
 
-.. js:class:: HTMLInputElement
+.. py:class:: HTMLInputElement
 
-    .. js:attribute:: accept
+    .. py:attribute:: accept
 
-    .. js:attribute:: alt
+    .. py:attribute:: alt
 
-    .. js:attribute:: autocomplete
+    .. py:attribute:: autocomplete
 
-    .. js:attribute:: autofocus
+    .. py:attribute:: autofocus
 
-    .. js:attribute:: checked
+    .. py:attribute:: checked
 
-    .. js:attribute:: defaultChecked
+    .. py:attribute:: defaultChecked
     
-    .. js:attribute:: defaultValue
+    .. py:attribute:: defaultValue
 
-    .. js:attribute:: dirname
+    .. py:attribute:: dirname
 
-    .. js:attribute:: disabled
+    .. py:attribute:: disabled
 
-    .. js:attribute:: form
+    .. py:attribute:: form
 
-    .. js:attribute:: form­
+    .. py:attribute:: form­
 
-    .. js:attribute:: ac­tion
+    .. py:attribute:: ac­tion
 
-    .. js:attribute:: formenctype
+    .. py:attribute:: formenctype
 
-    .. js:attribute:: formmethod
+    .. py:attribute:: formmethod
 
-    .. js:attribute:: formnovalidate
+    .. py:attribute:: formnovalidate
 
-    .. js:attribute:: formtarget
+    .. py:attribute:: formtarget
 
-    .. js:attribute:: height
+    .. py:attribute:: height
 
-    .. js:attribute:: list
+    .. py:attribute:: list
 
-    .. js:attribute:: max
+    .. py:attribute:: max
 
-    .. js:attribute:: maxlength
+    .. py:attribute:: maxlength
 
-    .. js:attribute:: min
+    .. py:attribute:: min
 
-    .. js:attribute:: multiple
+    .. py:attribute:: multiple
 
-    .. js:attribute:: name
+    .. py:attribute:: name
 
-    .. js:attribute:: pattern
+    .. py:attribute:: pattern
 
-    .. js:attribute:: placeholder
+    .. py:attribute:: placeholder
 
-    .. js:attribute:: readonly
+    .. py:attribute:: readonly
 
-    .. js:attribute:: required
+    .. py:attribute:: required
 
-    .. js:attribute:: size
+    .. py:attribute:: size
 
-    .. js:attribute:: src
+    .. py:attribute:: src
 
-    .. js:attribute:: step
+    .. py:attribute:: step
 
-    .. js:attribute:: type
+    .. py:attribute:: type
 
-    .. js:attribute:: value
+    .. py:attribute:: value
 
-    .. js:attribute:: width
+    .. py:attribute:: width
 
-    .. js:function:: blur()
+    .. py:function:: blur()
 
-    .. js:function:: click()
+    .. py:function:: click()
 
-    .. js:function:: focus()
+    .. py:function:: focus()
 
-    .. js:function:: select()
+    .. py:function:: select()
 
 
 HTMLIsIndexElement
--------------
+------------------
 
 Элемент `<isindex>`
 
-Наследник :js:class:`HTMLElement`
+Наследник :py:class:`HTMLElement`
 
-.. js:class:: HTMLIsIndexElement
+.. py:class:: HTMLIsIndexElement
 
 
 HTMLIFrameElement
--------------
+-----------------
 
 Элемент `<iframe>`
 
-Наследник :js:class:`HTMLElement`
+Наследник :py:class:`HTMLElement`
 
-.. js:class:: HTMLIFrameElement
+.. py:class:: HTMLIFrameElement
 
-    .. js:attribute:: src
+    .. py:attribute:: src
     
-    .. js:attribute:: srcdoc
+    .. py:attribute:: srcdoc
     
-    .. js:attribute:: name
+    .. py:attribute:: name
     
-    .. js:attribute:: sandbox
+    .. py:attribute:: sandbox
     
-    .. js:attribute:: seamless
+    .. py:attribute:: seamless
     
-    .. js:attribute:: width
+    .. py:attribute:: width
     
-    .. js:attribute:: height
+    .. py:attribute:: height
 
 
 HTMLLabelElement
--------------
+----------------
 
 Элемент `<label>`
 
-Наследник :js:class:`HTMLElement`
+Наследник :py:class:`HTMLElement`
 
-.. js:class:: HTMLLabelElement
+.. py:class:: HTMLLabelElement
 
-    .. js:attribute:: form
+    .. py:attribute:: form
     
-    .. js:attribute:: for
+    .. py:attribute:: for
 
 
 HTMLLegendElement
--------------
+-----------------
 
 Элемент `<legend>`
 
-Наследник :js:class:`HTMLElement`
+Наследник :py:class:`HTMLElement`
 
-.. js:class:: HTMLLegendElement
+.. py:class:: HTMLLegendElement
 
 
 HTMLLinkElement
--------------
+---------------
 
 Элемент `<li>`
 
-Наследник :js:class:`HTMLElement`
+Наследник :py:class:`HTMLElement`
 
-.. js:class:: HTMLLinkElement
+.. py:class:: HTMLLinkElement
 
-    .. js:attribute:: href
+    .. py:attribute:: href
 
-    .. js:attribute:: rel
+    .. py:attribute:: rel
 
-    .. js:attribute:: media
+    .. py:attribute:: media
 
-    .. js:attribute:: hreflang
+    .. py:attribute:: hreflang
 
-    .. js:attribute:: type
+    .. py:attribute:: type
 
-    .. js:attribute:: sizes
+    .. py:attribute:: sizes
 
 
 HTMLLIElement
@@ -865,487 +917,487 @@ HTMLLIElement
 
 Элемент `<li>`
 
-Наследник :js:class:`HTMLElement`
+Наследник :py:class:`HTMLElement`
 
-.. js:class:: HTMLLIElement
+.. py:class:: HTMLLIElement
 
-    .. js:attribute:: value
+    .. py:attribute:: value
 
 
 HTMLMapElement
--------------
+--------------
 
 Элемент `<map>`
 
-Наследник :js:class:`HTMLElement`
+Наследник :py:class:`HTMLElement`
 
-.. js:class:: HTMLMapElement
+.. py:class:: HTMLMapElement
 
-    .. js:attribute:: map
+    .. py:attribute:: map
 
 
 HTMLMenuElement
--------------
+---------------
 
 Элемент `<menu>`
 
-Наследник :js:class:`HTMLElement`
+Наследник :py:class:`HTMLElement`
 
-.. js:class:: HTMLMenuElement
+.. py:class:: HTMLMenuElement
 
-    .. js:attribute:: type
+    .. py:attribute:: type
 
-    .. js:attribute:: label
+    .. py:attribute:: label
 
 
 HTMLMetaElement
--------------
+---------------
 
 Элемент `<meta>`
 
-Наследник :js:class:`HTMLElement`
+Наследник :py:class:`HTMLElement`
 
-.. js:class:: HTMLMetaElement
+.. py:class:: HTMLMetaElement
 
-    .. js:attribute:: name
+    .. py:attribute:: name
     
-    .. js:attribute:: http-equiv
+    .. py:attribute:: http-equiv
     
-    .. js:attribute:: content
+    .. py:attribute:: content
     
-    .. js:attribute:: charset
+    .. py:attribute:: charset
 
 
 HTMLModElement
--------------
+--------------
 
 Элемент `<del>`, `<ins>`
 
-Наследник :js:class:`HTMLElement`
+Наследник :py:class:`HTMLElement`
 
-.. js:class:: HTMLModElement
+.. py:class:: HTMLModElement
 
-    .. js:attribute:: cite
+    .. py:attribute:: cite
 
-    .. js:attribute:: datetime
+    .. py:attribute:: datetime
 
 
 HTMLObjectElement
--------------
+-----------------
 
 Элемент `<object>`
 
-Наследник :js:class:`HTMLElement`
+Наследник :py:class:`HTMLElement`
 
-.. js:class:: HTMLObjectElement
+.. py:class:: HTMLObjectElement
 
-    .. js:attribute:: data
+    .. py:attribute:: data
     
-    .. js:attribute:: type
+    .. py:attribute:: type
     
-    .. js:attribute:: name
+    .. py:attribute:: name
     
-    .. js:attribute:: usemap
+    .. py:attribute:: usemap
     
-    .. js:attribute:: form
+    .. py:attribute:: form
     
-    .. js:attribute:: width
+    .. py:attribute:: width
     
-    .. js:attribute:: height
+    .. py:attribute:: height
 
 
 HTMLOptGroupElement
--------------
+-------------------
 
 Элемент `<optgroup>`
 
-Наследник :js:class:`HTMLElement`
+Наследник :py:class:`HTMLElement`
 
-.. js:class:: HTMLOptGroupElement
+.. py:class:: HTMLOptGroupElement
 
-    .. js:attribute:: disabled
+    .. py:attribute:: disabled
 
-    .. js:attribute:: label
+    .. py:attribute:: label
 
 
 HTMLOptionElement
--------------
+-----------------
 
 Элемент `<option>`
 
-Наследник :js:class:`HTMLElement`
+Наследник :py:class:`HTMLElement`
 
-.. js:class:: HTMLOptionElement
+.. py:class:: HTMLOptionElement
 
     .. code-block:: js
 
         var o = new Option(text, value, defaultSelected, selected);
 
-    .. js:attribute:: form
+    .. py:attribute:: form
 
-    .. js:attribute:: defaultSelected
+    .. py:attribute:: defaultSelected
 
-    .. js:attribute:: disabled
+    .. py:attribute:: disabled
     
-    .. js:attribute:: index
+    .. py:attribute:: index
 
-    .. js:attribute:: label
+    .. py:attribute:: label
     
-    .. js:attribute:: selected
+    .. py:attribute:: selected
 
-    .. js:attribute:: text
+    .. py:attribute:: text
 
-    .. js:attribute:: value
+    .. py:attribute:: value
 
 
 HTMLOListElement
--------------
+----------------
 
 Элемент `<ol>`
 
-Наследник :js:class:`HTMLElement`
+Наследник :py:class:`HTMLElement`
 
-.. js:class:: HTMLOListElement
+.. py:class:: HTMLOListElement
 
-    .. js:attribute:: reversed
+    .. py:attribute:: reversed
 
-    .. js:attribute:: start
+    .. py:attribute:: start
 
 
 HTMLParagraphElement
--------------
+--------------------
 
 Элемент `<p>`
 
-Наследник :js:class:`HTMLElement`
+Наследник :py:class:`HTMLElement`
 
-.. js:class:: HTMLParagraphElement
+.. py:class:: HTMLParagraphElement
 
-    .. js:attribute:: cite
+    .. py:attribute:: cite
 
 
 HTMLParamElement
--------------
+----------------
 
 Элемент `<param>`
 
-Наследник :js:class:`HTMLElement`
+Наследник :py:class:`HTMLElement`
 
-.. js:class:: HTMLParamElement
+.. py:class:: HTMLParamElement
 
-    .. js:attribute:: name
+    .. py:attribute:: name
     
-    .. js:attribute:: value
+    .. py:attribute:: value
 
 
 HTMLPreElement
--------------
+--------------
 
 Элемент `<pre>`
 
-Наследник :js:class:`HTMLElement`
+Наследник :py:class:`HTMLElement`
 
-.. js:class:: HTMLPreElement
+.. py:class:: HTMLPreElement
 
 
 HTMLQuoteElement
--------------
+----------------
 
 Элемент `<q>`, `<blockquote>`
 
-Наследник :js:class:`HTMLElement`
+Наследник :py:class:`HTMLElement`
 
-.. js:class:: HTMLQuoteElement
+.. py:class:: HTMLQuoteElement
 
-    .. js:attribute:: cite
+    .. py:attribute:: cite
 
 
 HTMLScriptElement
--------------
+-----------------
 
 Элемент `<script>`
 
-Наследник :js:class:`HTMLElement`
+Наследник :py:class:`HTMLElement`
 
-.. js:class:: HTMLScriptElement
+.. py:class:: HTMLScriptElement
 
-    .. js:attribute:: src
+    .. py:attribute:: src
     
-    .. js:attribute:: async
+    .. py:attribute:: async
     
-    .. js:attribute:: defer
+    .. py:attribute:: defer
     
-    .. js:attribute:: type
+    .. py:attribute:: type
     
-    .. js:attribute:: charset
+    .. py:attribute:: charset
 
 
 HTMLSelectElement
--------------
+-----------------
 
 Элемент `<select>`
 
-Наследник :js:class:`HTMLElement`
+Наследник :py:class:`HTMLElement`
 
-.. js:class:: HTMLSelectElement
+.. py:class:: HTMLSelectElement
 
-    .. js:attribute:: autofocus
+    .. py:attribute:: autofocus
 
-    .. js:attribute:: disabled
+    .. py:attribute:: disabled
 
-    .. js:attribute:: form
+    .. py:attribute:: form
 
-    .. js:attribute:: length
+    .. py:attribute:: length
 
-    .. js:attribute:: multiple
+    .. py:attribute:: multiple
 
-    .. js:attribute:: name
+    .. py:attribute:: name
 
-    .. js:attribute:: options
+    .. py:attribute:: options
 
-    .. js:attribute:: required
+    .. py:attribute:: required
 
-    .. js:attribute:: selectedIndex
+    .. py:attribute:: selectedIndex
 
-    .. js:attribute:: size
+    .. py:attribute:: size
 
-    .. js:attribute:: tabIndex
+    .. py:attribute:: tabIndex
 
-    .. js:attribute:: type
+    .. py:attribute:: type
 
-    .. js:attribute:: value
+    .. py:attribute:: value
 
-    .. js:function:: add()
+    .. py:function:: add()
 
-    .. js:function:: blur()
+    .. py:function:: blur()
 
-    .. js:function:: focus()
+    .. py:function:: focus()
 
-    .. js:function:: remove()
+    .. py:function:: remove()
 
 
 HTMLStyleElement
--------------
+----------------
 
 Элемент `<select>`
 
-Наследник :js:class:`HTMLElement`
+Наследник :py:class:`HTMLElement`
 
-.. js:class:: HTMLStyleElement
+.. py:class:: HTMLStyleElement
 
-    .. js:attribute:: media
+    .. py:attribute:: media
     
-    .. js:attribute:: type
+    .. py:attribute:: type
     
-    .. js:attribute:: scoped
+    .. py:attribute:: scoped
 
 
 HTMLTableCaptionElement
--------------
+-----------------------
 
 Элемент `<caption>`
 
-Наследник :js:class:`HTMLElement`
+Наследник :py:class:`HTMLElement`
 
-.. js:class:: HTMLTableCaptionElement
+.. py:class:: HTMLTableCaptionElement
 
 
 HTMLTableCellElement
--------------
+--------------------
 
 Элемент `<td>`, `<th>`
 
-Наследник :js:class:`HTMLElement`
+Наследник :py:class:`HTMLElement`
 
-.. js:class:: HTMLTableCellElement
+.. py:class:: HTMLTableCellElement
 
-    .. js:attribute:: align
+    .. py:attribute:: align
 
-    .. js:attribute:: cellIndex
+    .. py:attribute:: cellIndex
 
-    .. js:attribute:: colspan
+    .. py:attribute:: colspan
     
-    .. js:attribute:: rowspan
+    .. py:attribute:: rowspan
     
-    .. js:attribute:: headers
+    .. py:attribute:: headers
 
-    .. js:attribute:: height
+    .. py:attribute:: height
 
-    .. js:attribute:: innerHTML
+    .. py:attribute:: innerHTML
 
-    .. js:attribute:: textContent
+    .. py:attribute:: textContent
 
-    .. js:attribute:: vAlign
+    .. py:attribute:: vAlign
 
-    .. js:attribute:: width
+    .. py:attribute:: width
 
 
 HTMLTableColElement
--------------
+-------------------
 
 Элемент `<col>`, `<colgroup>`
 
-Наследник :js:class:`HTMLElement`
+Наследник :py:class:`HTMLElement`
 
-.. js:class:: HTMLTableColElement
+.. py:class:: HTMLTableColElement
 
-    .. js:attribute:: span
+    .. py:attribute:: span
 
 
 HTMLTableElement
--------------
+----------------
 
 Элемент `<table>`
 
-Наследник :js:class:`HTMLElement`
+Наследник :py:class:`HTMLElement`
 
-.. js:class:: HTMLTableElement
+.. py:class:: HTMLTableElement
 
-    .. js:attribute:: border
+    .. py:attribute:: border
 
-    .. js:attribute:: caption 
+    .. py:attribute:: caption
 
-    .. js:attribute:: cellPadding
+    .. py:attribute:: cellPadding
 
-    .. js:attribute:: cellSpacing
+    .. py:attribute:: cellSpacing
 
-    .. js:attribute:: rows[] 
+    .. py:attribute:: rows[]
 
-    .. js:attribute:: summary
+    .. py:attribute:: summary
 
-    .. js:attribute:: tBodies[] 
+    .. py:attribute:: tBodies[]
 
-    .. js:attribute:: tFoot 
+    .. py:attribute:: tFoot
 
-    .. js:attribute:: tHead 
+    .. py:attribute:: tHead
 
-    .. js:attribute:: width 
+    .. py:attribute:: width
 
-    .. js:function:: createCaption()
+    .. py:function:: createCaption()
 
-    .. js:function:: createTFoot()
+    .. py:function:: createTFoot()
 
-    .. js:function:: createTHead()
+    .. py:function:: createTHead()
 
-    .. js:function:: deleteCaption()
+    .. py:function:: deleteCaption()
 
-    .. js:function:: deleteTFoot()
+    .. py:function:: deleteTFoot()
 
-    .. js:function:: deleteTHead()
+    .. py:function:: deleteTHead()
 
-    .. js:function:: deleteRow(index)
+    .. py:function:: deleteRow(index)
 
-    .. js:function:: insertRow(index)
+    .. py:function:: insertRow(index)
 
 
 HTMLTableRowElement
--------------
+-------------------
 
 Элемент `<tr>`
 
-Наследник :js:class:`HTMLElement`
+Наследник :py:class:`HTMLElement`
 
-.. js:class:: HTMLTableRowElement
+.. py:class:: HTMLTableRowElement
 
-    .. js:attribute:: bgColor
+    .. py:attribute:: bgColor
 
-    .. js:attribute:: cells
+    .. py:attribute:: cells
 
-    .. js:attribute:: rowIndex
+    .. py:attribute:: rowIndex
 
-    .. js:attribute:: sectionRowIndex
+    .. py:attribute:: sectionRowIndex
 
-    .. js:attribute:: vAlign
+    .. py:attribute:: vAlign
 
-    .. js:function:: deleteCell(index)
+    .. py:function:: deleteCell(index)
 
-    .. js:function:: insertCell(index)
+    .. py:function:: insertCell(index)
     
 
 HTMLTableSectionElement
--------------
+-----------------------
 
 Элемент `<tbody>`, `<tfoot>`, `<thead>`
 
-Наследник :js:class:`HTMLElement`
+Наследник :py:class:`HTMLElement`
 
-.. js:class:: HTMLTableSectionElement
+.. py:class:: HTMLTableSectionElement
 
-    .. js:attribute:: align
+    .. py:attribute:: align
 
-    .. js:attribute:: rows
+    .. py:attribute:: rows
 
-    .. js:attribute:: vAlign
+    .. py:attribute:: vAlign
 
-    .. js:function:: deleteRow(index)
+    .. py:function:: deleteRow(index)
 
-    .. js:function:: insertRow(index)
+    .. py:function:: insertRow(index)
 
 
 HTMLTextAreaElement
--------------
+-------------------
 
 Элемент `<textarea>`
 
-Наследник :js:class:`HTMLElement`
+Наследник :py:class:`HTMLElement`
 
-.. js:class:: HTMLTextAreaElement
+.. py:class:: HTMLTextAreaElement
 
-    .. js:attribute:: autofocus
+    .. py:attribute:: autofocus
     
-    .. js:attribute:: cols
+    .. py:attribute:: cols
     
-    .. js:attribute:: defaultValue
+    .. py:attribute:: defaultValue
 
-    .. js:attribute:: disabled
+    .. py:attribute:: disabled
     
-    .. js:attribute:: form
+    .. py:attribute:: form
     
-    .. js:attribute:: maxlength
+    .. py:attribute:: maxlength
     
-    .. js:attribute:: name
+    .. py:attribute:: name
     
-    .. js:attribute:: placeholder
+    .. py:attribute:: placeholder
     
-    .. js:attribute:: readonly
+    .. py:attribute:: readonly
     
-    .. js:attribute:: requi­r­ed
+    .. py:attribute:: requi­r­ed
     
-    .. js:attribute:: rows
+    .. py:attribute:: rows
     
-    .. js:attribute:: tabIndex
+    .. py:attribute:: tabIndex
 
-    .. js:attribute:: type
+    .. py:attribute:: type
 
-    .. js:attribute:: value
+    .. py:attribute:: value
 
-    .. js:attribute:: wrap
+    .. py:attribute:: wrap
 
-    .. js:function:: blur()
+    .. py:function:: blur()
 
-    .. js:function:: focus()
+    .. py:function:: focus()
 
-    .. js:function:: select()
+    .. py:function:: select()
 
 
 HTMLTitleElement
--------------
+----------------
 
 Элемент `<title>`
 
-Наследник :js:class:`HTMLElement`
+Наследник :py:class:`HTMLElement`
 
-.. js:class:: HTMLTitleElement
+.. py:class:: HTMLTitleElement
 
 
 HTMLUListElement
--------------
+----------------
 
 Элемент `<ul>`
 
-Наследник :js:class:`HTMLElement`
+Наследник :py:class:`HTMLElement`
 
-.. js:class:: HTMLUListElement
+.. py:class:: HTMLUListElement
 
 
 ============ ========

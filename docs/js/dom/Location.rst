@@ -1,7 +1,7 @@
 Location - адрес текущей страницы
 =================================
 
-.. js:class:: Location()
+.. py:class:: Location()
 
     .. code-block:: js
 
@@ -9,12 +9,12 @@ Location - адрес текущей страницы
         // http://ilnurgi.ru/info.aspx?id=10
 
 
-    .. js:attribute:: hash
+    .. py:attribute:: hash
 
         Содержит якорную часть URL-адреса, включая начальный символ решетки (#)
 
 
-    .. js:attribute:: host
+    .. py:attribute:: host
 
         Часть URL-адреса, содержащая имя хоста и порт
 
@@ -24,17 +24,17 @@ Location - адрес текущей страницы
             // ilnurgi.ru
 
 
-    .. js:attribute:: hostname
+    .. py:attribute:: hostname
 
         Часть URL-адреса, содержащая имя хоста
 
 
-    .. js:attribute:: href
+    .. py:attribute:: href
 
         Полный текст URL-адреса докумен­та
 
 
-    .. js:attribute:: pathname
+    .. py:attribute:: pathname
 
         Путь к запращиваемому страницы
 
@@ -44,12 +44,12 @@ Location - адрес текущей страницы
             // /info.aspx
 
 
-    .. js:attribute:: port
+    .. py:attribute:: port
 
         Порт в  URL-ад­ре­се
 
 
-    .. js:attribute:: protocol
+    .. py:attribute:: protocol
 
         Протокол
 
@@ -59,7 +59,7 @@ Location - адрес текущей страницы
             // http
 
 
-    .. js:attribute:: search
+    .. py:attribute:: search
 
         Строка запроса
 
@@ -69,7 +69,7 @@ Location - адрес текущей страницы
             // ?id=10
 
 
-    .. js:function:: assign(url)
+    .. py:method:: assign(url)
 
         Загружает и отображает содержимое адреса `url`,
         как если бы значение `url` было присвоено свойству `href`.
@@ -81,19 +81,19 @@ Location - адрес текущей страницы
             window.location = 'http://www.ilnurgi1.ru'
 
 
-    .. js:function:: reload([forceget])
+    .. py:method:: reload([forceget])
 
         Повторно загружает текущий документ.
 
-        * `forceget` - булево, true - загружать документ всегда из сети,
-        иначе можно использовать кеш
+        * `forceget` - булево, загружать документ всегда из сети,
+          иначе можно использовать кеш
 
         .. code-block:: js
 
             Location.reload();
 
 
-    .. js:function:: replace(url)
+    .. py:method:: replace(url)
 
         Загружает и отображает содержимое адреса `url`,
         замещая текущий документ в истории посещений,
@@ -105,7 +105,7 @@ Location - адрес текущей страницы
             Location.replace('http://www.ilnurgi1.ru');
 
 
-    .. js:function:: toString()
+    .. py:method:: toString()
 
         Возвращает полный URL.
 

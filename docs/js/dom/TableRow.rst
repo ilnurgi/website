@@ -1,31 +1,31 @@
 TableRow - HTML tr
 =======================================================
 
-.. js:class:: TableRow()
+.. py:class:: TableRow()
 
-    Наследник :js:class:`Element`
+    Наследник :py:class:`Element`
 
-    .. js:attribute:: cells
+    .. py:attribute:: cells
         
         Объ­ект, по­доб­ный мас­си­ву, со­дер­жа­щий объ­ек­ты TableCell, пред­став­ляю­щие эле­мен­ты <td> и <th> в дан­ной стро­ке.
 
 
-    .. js:attribute:: rowIndex
+    .. py:attribute:: rowIndex
         
         Ин­декс этой стро­ки в таб­ли­це.
 
 
-    .. js:attribute:: sectionRowIndex
+    .. py:attribute:: sectionRowIndex
         
         По­зи­ция этой стро­ки в  дан­ном раз­де­ле (т. е. внут­ри дан­но­го эле­мен­та <thead>, <tbody> или <tfoot>).
 
 
-    .. js:function:: deleteCell(long index)
+    .. py:function:: deleteCell(long index)
         
         Уда­ля­ет ячей­ку в по­зи­ции index в стро­ке таб­ли­цы.
 
 
-    .. js:function:: insertCell([long index])
+    .. py:function:: insertCell([long index])
         
         Соз­да­ет но­вый эле­мент <td>, встав­ля­ет в стро­ку в ука­зан­ную по­зи­цию и воз­вра­ща­ет его. Но­вая ячей­ка встав­ля­ет­ся не­по­сред­ст­вен­но пе­ред ячей­кой, на­хо­дя­щей­ся в дан­ный мо­мент в по­зи­ции, оп­ре­де­ляе­мой ар­гу­мен­том index. Ес­ли ар­гу­мент index от­сут­ст­ву­ет, ра­вен ко­ли­че­ст­ву яче­ек в  стро­ке или –1, но­вая ячей­ка до­бав­ля­ет­ся в ко­нец стро­ки.
 

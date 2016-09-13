@@ -2,16 +2,16 @@ FieldSet - HTML fieldset
 ========================
 
 
-.. js:class:: FieldSet()
+.. py:class:: FieldSet()
 
-    Наследник :js:class:`FormControl`
+    Наследник :py:class:`FormControl`
 
 
-    .. js:attribute:: disabled
+    .. py:attribute:: disabled
     
         Зна­че­ние true, ес­ли объ­ект FieldSet на­хо­дит­ся в не­ак­тив­ном со­стоя­нии. Де­ак­ти­ва­ция эле­мен­та FieldSet де­ак­ти­ви­ру­ет со­дер­жа­щие­ся в нем эле­мен­ты форм.
 
 
-    .. js:attribute:: elements
+    .. py:attribute:: elements
     
         Объ­ект, по­доб­ный мас­си­ву, со­дер­жа­щий все эле­мен­ты форм, имею­щие­ся внут­ри те­га <fieldset>.

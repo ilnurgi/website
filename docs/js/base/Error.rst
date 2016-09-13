@@ -4,17 +4,17 @@
 Error
 -----
 
-.. js:class:: Error([message])
+.. py:class:: Error([message])
 
-    Наследник :js:class:`Object`
+    Наследник :py:class:`Object`
 
 
-    .. js:attribute:: message
+    .. py:attribute:: message
 
         Сообщение об ошибке
 
 
-    .. js:attribute:: name
+    .. py:attribute:: name
 
         Тип ошибки
 
@@ -23,63 +23,63 @@ EvalError
 ---------
 
 
-.. js:class:: EvalError([message])
+.. py:class:: EvalError([message])
 
     Исключение, генрируемое функцией eval
 
-    Наследник :js:class:`Error`
+    Наследник :py:class:`Error`
 
 
 RangeError
 ----------
 
 
-.. js:class:: RangeError([message])
+.. py:class:: RangeError([message])
 
     Генерируется, когда число выходит из допустимого диапазона
 
-    Наследник :js:class:`Error`
+    Наследник :py:class:`Error`
 
 
 ReferenceError
 --------------
 
 
-.. js:class:: ReferenceError([message])
+.. py:class:: ReferenceError([message])
 
     Генерируется при попытке чтения несуществующей переменной
 
-    Наследник :js:class:`Error`
+    Наследник :py:class:`Error`
 
 
 SyntaxError
 -----------
 
 
-.. js:class:: SyntaxError([message])
+.. py:class:: SyntaxError([message])
 
     Генерируется при синтаксической ошибке
 
-    Наследник :js:class:`Error`
+    Наследник :py:class:`Error`
 
 
 TypeError
 ---------
 
 
-.. js:class:: TypeError([message])
+.. py:class:: TypeError([message])
 
     Генерируется, когда значение имеет неверный тип
 
-    Наследник :js:class:`Error`
+    Наследник :py:class:`Error`
 
 
 URIError
 --------
 
 
-.. js:class:: URIError([message])
+.. py:class:: URIError([message])
 
     Генерируется методами кодирования и декодирования
 
-    Наследник :js:class:`Error`
+    Наследник :py:class:`Error`

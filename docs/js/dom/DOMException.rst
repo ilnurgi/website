@@ -2,12 +2,12 @@ DOMException - исключение, возбуждаемое web api
 ===============================================
 
 
-.. js:class:: DOMException()
+.. py:class:: DOMException()
 
-    Наследник :js:class:`Node`
+    Наследник :py:class:`Node`
 
 
-    .. js:attribute:: code
+    .. py:attribute:: code
     
         Зна­че­ние од­ной из кон­стант, пе­ре­чис­лен­ных вы­ше, оп­ре­де­ляю­щих тип ис­клю­че­ния.
 
@@ -51,6 +51,6 @@ DOMException - исключение, возбуждаемое web api
 
         * `DOMException.DATA_CLONE_ERR` = 25
 
-    .. js:attribute:: name
+    .. py:attribute:: name
     
         Имя ти­па ис­клю­че­ния. Это бу­дет имя од­ной из кон­стант, пе­ре­чис­лен­ных вы­ше, в ви­де стро­ки.

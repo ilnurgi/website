@@ -1,18 +1,18 @@
 NamedNodeMap
 ============
 
-.. js:class:: NamedNodeMap()
+.. py:class:: NamedNodeMap()
 
-    .. js:function:: getNamedItem()
+    .. py:function:: getNamedItem()
 
         Возвращает указанный узел по имени
 
 
-    .. js:function:: item()
+    .. py:function:: item()
 
         Возвращает указанный по номеру узел
 
 
-    .. js:function:: removeNamedItem()
+    .. py:function:: removeNamedItem()
 
         Удаляет указанный узел

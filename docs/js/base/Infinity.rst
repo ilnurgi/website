@@ -2,7 +2,7 @@ Infinity - бесконечность
 ========================
 
 
-.. js:class:: Infinity()
+.. py:class:: Infinity()
 
   .. code-block:: js
 

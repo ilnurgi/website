@@ -3,13 +3,13 @@ Reflect - исследование и обаботка свойств объек
 
 .. note:: EcmaScript6
 
-.. js:class:: Reflect()
+.. py:class:: Reflect()
 
-    .. js:function:: apply(function, this, args)
+    .. py:function:: apply(function, this, args)
 
         Вызов функции с заданным контекстом.
 
-        Аналогичен методу apply :js:class:`Function`
+        Аналогичен методу apply :py:class:`Function`
 
         .. code-block:: js
 
@@ -20,7 +20,7 @@ Reflect - исследование и обаботка свойств объек
             // 140
 
 
-    .. js:function:: construct(constructor, args, prototype)
+    .. py:function:: construct(constructor, args, prototype)
 
         Вызов функции в качестве конструктора
 
@@ -35,11 +35,11 @@ Reflect - исследование и обаботка свойств объек
             var newObj = Reflect.construct(const1, [1, 2], const2);
 
 
-    .. js:function:: defineProperty(object, property, descriptor)
+    .. py:function:: defineProperty(object, property, descriptor)
 
         Опеределяет новое или изменяет существующее свойство объекта. Возвращает логическое значение, была ли операция успешной.
 
-        Аналогичен методу defineProperty :js:class:`Object`, отличается:
+        Аналогичен методу defineProperty :py:class:`Object`, отличается:
 
             * возвращает логическое значение, а не модифицированный объект
 
@@ -76,7 +76,7 @@ Reflect - исследование и обаботка свойств объек
             })
 
 
-    .. js:function:: deleteProperty(object, property)
+    .. py:function:: deleteProperty(object, property)
 
         Удаление свойства объекта.
 
@@ -87,7 +87,7 @@ Reflect - исследование и обаботка свойств объек
             Reflect.deleteProperty(obj, 'name');
 
 
-    .. js:function:: enumerate(object)
+    .. py:function:: enumerate(object)
 
         Возвращает итератор, перечисляемые свойства объекта.
 
@@ -99,56 +99,54 @@ Reflect - исследование и обаботка свойств объек
             iter.next().value;
 
 
-    .. js:function:: get(object, property, this)
+    .. py:function:: get(object, property, this)
 
         Возвращает значение свойства объекта
 
 
-    .. js:function:: getOwnPropertyDescriptor(object, property)
+    .. py:function:: getOwnPropertyDescriptor(object, property)
 
         Возвращает дескриптор свойства объекта
 
-        Аналогичен getOwnPropertyDescriptor :js:class:`Object`
+        Аналогичен getOwnPropertyDescriptor :py:class:`Object`
 
         .. code-block:: js
 
             var descriptor = Reflect.getOwnPropertyDescriptor(obj, 'name');
 
 
-    .. js:function:: getPrototypeOf(object)
+    .. py:function:: getPrototypeOf(object)
 
         Извлекает прототип объекта
 
-        Аналогичен getPrototypeOf :js:class:`Object`
+        Аналогичен getPrototypeOf :py:class:`Object`
 
         .. code-block:: js
 
             var obj2 = Reflect.getPrototypeOf(obj1);
 
 
-    .. js:function:: has(object, property)
+    .. py:function:: has(object, property)
 
         Используется для проверки существования свойства в объекте.
-
-        Аналогичен оператору :ref:`in`
 
         .. code-block:: js
 
             Reflect.has(obj, 'name');
 
 
-    .. js:function:: isExtensible(object)
+    .. py:function:: isExtensible(object)
 
         Проверяет возможность расширения объекта, возможность добавления новых свойств в объект
 
-        Аналогичен isExtensible :js:class:`Object`
+        Аналогичен isExtensible :py:class:`Object`
 
         .. code-block:: js
 
             Reflect.isExtensible(obj);
 
 
-    .. js:function:: ownKeys(object)
+    .. py:function:: ownKeys(object)
 
         Возвращает массив ключей свойств объекта, игнорируя наследуемые свойства.
 
@@ -157,23 +155,23 @@ Reflect - исследование и обаботка свойств объек
             Reflect.ownKeys(obj);
             
 
-    .. js:function:: preventExtensions(object)
+    .. py:function:: preventExtensions(object)
 
         Позволяет отметить объект как нерасширяемый, возвращает логическое значение, успешность операции.
 
-        Аналогичен preventExtensions :js:class:`Object`
+        Аналогичен preventExtensions :py:class:`Object`
 
         .. code-block:: js
 
             Reflect.preventExtensions(obj);
 
 
-    .. js:function:: set(object, property, value, this)
+    .. py:function:: set(object, property, value, this)
 
         Задает значение свойства объекта
 
 
-    .. js:function:: setPrototypeOf(object, prototype)
+    .. py:function:: setPrototypeOf(object, prototype)
 
         Установка значения прототипа
 

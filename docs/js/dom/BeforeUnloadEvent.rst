@@ -1,11 +1,11 @@
 BeforeUnloadEvent - объект Event для событий выгрузки
 =====================================================
 
-.. js:class:: BeforeUnloadEvent()
+.. py:class:: BeforeUnloadEvent()
 
-    Наследник :js:class:`Event`
+    Наследник :py:class:`Event`
 
     
-    .. js:attribute:: returnValue
+    .. py:attribute:: returnValue
 
         Сообщение, отображаемое в диалоге подтверждения перед уходом с текущей страницы

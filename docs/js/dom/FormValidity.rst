@@ -2,49 +2,49 @@ FormValidity - реализует проверку элемента формы
 ================================================
 
 
-.. js:class:: FormValidity()
+.. py:class:: FormValidity()
 
 
-    .. js:attribute:: customError
+    .. py:attribute:: customError
 
         Сце­на­рий вы­звал ме­тод FormControl.setCustomValidity() дан­но­го эле­мен­та.
 
 
-    .. js:attribute:: patternMismatch
+    .. py:attribute:: patternMismatch
 
         Вве­ден­ные дан­ные не со­от­вет­ст­ву­ют ре­гу­ляр­но­му вы­ра­же­нию.
 
 
-    .. js:attribute:: rangeOverflow
+    .. py:attribute:: rangeOverflow
 
         Объ­ем вве­ден­ных дан­ных слиш­ком ве­лик.
 
 
-    .. js:attribute:: rangeUnderflow
+    .. py:attribute:: rangeUnderflow
 
         Объ­ем вве­ден­ных дан­ных слиш­ком мал.
 
 
-    .. js:attribute:: stepMismatch
+    .. py:attribute:: stepMismatch
 
         Вве­ден­ные дан­ные не со­от­вет­ст­ву­ют ука­зан­но­му ша­гу.
 
 
-    .. js:attribute:: tooLong
+    .. py:attribute:: tooLong
 
         Объ­ем вве­ден­ных дан­ных слиш­ком ве­лик.
 
 
-    .. js:attribute:: typeMismatch
+    .. py:attribute:: typeMismatch
 
         Вве­ден­ные дан­ные име­ют не­вер­ный тип.
 
 
-    .. js:attribute:: valid
+    .. py:attribute:: valid
 
         Ес­ли это свой­ст­во име­ет зна­че­ние true, эле­мент фор­мы со­дер­жит кор­рект­ные дан­ные и все дру­гие свой­ст­ва име­ют зна­че­ние false. Ес­ли это свой­ст­во име­ет зна­че­ние false, эле­мент фор­мы со­дер­жит не­до­пус­ти­мые дан­ные и, по край­ней ме­ре, од­но из дру­гих свойств име­ет зна­че­ние true.
 
 
-    .. js:attribute:: valueMissing
+    .. py:attribute:: valueMissing
         
         Эле­мент фор­мы пуст, хо­тя он дол­жен быть за­пол­нен.

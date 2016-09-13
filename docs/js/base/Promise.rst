@@ -3,13 +3,13 @@ Promise - асинхронная операция
 
 .. note:: EcmaScript6
 
-.. js:class:: Promise()
+.. py:class:: Promise()
 
     Асинхронная операция.
 
     Состояния операции:
 
-    * fulfilled - выполнено - вызвана функция `resolve` с аргументом, не являющимся объектом :js:class:`Promise` или без аргументов
+    * fulfilled - выполнено - вызвана функция `resolve` с аргументом, не являющимся объектом :py:class:`Promise` или без аргументов
 
     * rejected - отклонено - вызвана функция `reject` или возникло исключение внутри исполнителя
 
@@ -38,7 +38,7 @@ Promise - асинхронная операция
         );
 
 
-    .. js:function:: all(iterable)
+    .. py:function:: all(iterable)
 
         Возвращает объект Promiseб когда все объекты в итерируемом объекте будут выполнены.
 
@@ -51,7 +51,7 @@ Promise - асинхронная операция
             Promise.all([p1, p2]).then(...);
 
 
-    .. js:function:: catch(onRejected)    
+    .. py:function:: catch(onRejected)
 
         Используется для обработки ошибок и исключений
 
@@ -62,12 +62,12 @@ Promise - асинхронная операция
             });
 
 
-    .. js:function:: race(iterable)
+    .. py:function:: race(iterable)
 
         Возвращает объект Promise сразу, как только один из объектов будет выполнен или отклонен
 
         
-    .. js:function:: reject(value)
+    .. py:function:: reject(value)
 
         Преобразует значение в отклоненный объект Promise.
 
@@ -80,7 +80,7 @@ Promise - асинхронная операция
             // 5
 
 
-    .. js:function:: resolve(value)
+    .. py:function:: resolve(value)
 
         Преобразует значение в возвращаемый объект Promise.
 
@@ -93,7 +93,7 @@ Promise - асинхронная операция
             // 5
 
 
-    .. js:function:: then(onFulfilled, onRejected)
+    .. py:function:: then(onFulfilled, onRejected)
 
         Позволяет выполнить некоторые действия после того, как асинхронная операция будет выполнена или отклонена.
 

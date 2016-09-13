@@ -8,4 +8,4 @@ undefined - неопределнное значение
     // undefined
 
 
-.. js:class:: undefined()
+.. py:class:: undefined()

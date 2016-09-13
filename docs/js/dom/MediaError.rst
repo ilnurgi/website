@@ -1,9 +1,9 @@
 MediaError - ошибка в элементе audio, video
 ===========================================
 
-.. js:class:: MediaError()
+.. py:class:: MediaError()
 
-    .. js:attribute:: code
+    .. py:attribute:: code
         
         Это свой­ст­во опи­сы­ва­ет тип воз­ник­шей ошиб­ки. 
 

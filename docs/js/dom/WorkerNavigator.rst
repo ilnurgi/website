@@ -2,29 +2,29 @@ WorkerNavigator - информация о броузере для фоновог
 ======================================================================
 
 
-.. js:class:: WorkerNavigator()
+.. py:class:: WorkerNavigator()
 
 
-    .. js:attribute:: appName
+    .. py:attribute:: appName
 
         См. опи­са­ние свой­ст­ва appName объ­ек­та Navigator.
 
 
-    .. js:attribute:: appVersion
+    .. py:attribute:: appVersion
 
         См. опи­са­ние свой­ст­ва appVersions объ­ек­та Navigator.
 
 
-    .. js:attribute:: onLine
+    .. py:attribute:: onLine
 
         Име­ет зна­че­ние true, ес­ли бро­узер под­клю­чен к се­ти, и false – в про­тив­ном слу­чае.
 
 
-    .. js:attribute:: platform
+    .. py:attribute:: platform
 
         Стро­ка, иден­ти­фи­ци­рую­щая опе­ра­ци­он­ную сис­те­му и/или ап­па­рат­ную плат­фор­му, на ко­то­рой вы­пол­ня­ет­ся бро­узер.
 
 
-    .. js:attribute:: userAgent
+    .. py:attribute:: userAgent
 
         Зна­че­ние, ис­поль­зуе­мое бро­узе­ром для за­го­лов­ка user-agent в HTTP-за­про­сах.

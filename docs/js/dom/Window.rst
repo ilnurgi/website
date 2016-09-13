@@ -1,11 +1,13 @@
-Window - окно, вкладка или фрейм веб-броузера
-=============================================
+Window
+======
 
-.. js:class:: Window()
+Окно, вкладка или фрейм веб-броузера
+
+.. py:class:: Window()
     
     контейнер выполняющий js код
     
-    Наследник :js:class:`EventTarget`    
+    Наследник :py:class:`EventTarget`
 
     .. code-block:: js
         
@@ -19,144 +21,144 @@ Window - окно, вкладка или фрейм веб-броузера
         }
 
 
-    .. js:attribute:: applicationCache
+    .. py:attribute:: applicationCache
 
-        Ссылка на :js:class:`ApplicationCache`
+        Ссылка на :py:class:`ApplicationCache`
 
         
-    .. js:attribute:: console
+    .. py:attribute:: console
 
-        Ссылка на объект :js:class:`Console`
-
-
-    .. js:attribute:: defaultStatus
+        Ссылка на объект :py:class:`Console`
 
 
-    .. js:attribute:: dialogArguments
+    .. py:attribute:: defaultStatus
+
+
+    .. py:attribute:: dialogArguments
         
         В объ­ек­тах Window, соз­дан­ных ме­то­дом showModalDialog(), это свой­ст­во хра­нит зна­че­ние ар­гу­мен­та arguments, пе­ре­дан­но­го ме­то­ду showModalDialog(). В обыч­ных объ­ек­тах Window это свой­ст­во от­сут­ст­ву­ет. 
 
 
-    .. js:attribute:: document
+    .. py:attribute:: document
 
-        Ссылка на объект :js:class:`Document`
+        Ссылка на объект :py:class:`Document`
 
 
-    .. js:attribute:: event
+    .. py:attribute:: event
         
         Только для IE. Cссы­ла­ет­ся на объ­ект Event, со­дер­жа­щий све­де­ния о са­мом по­след­нем про­изо­шед­шем в ок­не со­бы­тии. В IE вер­сии 8 и ни­же объ­ект со­ бы­тия не все­гда пе­ре­да­ет­ся об­ра­бот­чи­кам со­бы­тий, и по­это­му ино­гда его при­хо­дит­ся из­вле­кать из это­го свой­ст­ва. 
 
 
-    .. js:attribute:: frameElement
+    .. py:attribute:: frameElement
         
         Ес­ли дан­ный объ­ект Window на­хо­дит­ся внут­ри эле­мен­та <iframe>, это свой­ст­во бу­дет ссы­лать­ся на пред­став­ляю­щий его объ­ект IFrame. В  ок­нах верх­не­го уров­ня это свой­ст­во име­ет зна­че­ние null.
 
 
-    .. js:attribute:: frames
+    .. py:attribute:: frames
 
         Массив фреймов страницы
 
 
-    .. js:attribute:: history
+    .. py:attribute:: history
 
-        Ссылка на объект :js:class:`History`
+        Ссылка на объект :py:class:`History`
 
 
-    .. js:attribute:: innerWidth, innerHeight
+    .. py:attribute:: innerWidth, innerHeight
 
         Размеры видимой области окна
 
 
-    .. js:attribute:: length
+    .. py:attribute:: length
         
         Ко­ли­че­ст­во фрей­мов, со­дер­жа­щих­ся в дан­ном ок­не. 
 
 
-    .. js:attribute:: localStorage
+    .. py:attribute:: localStorage
 
-        Ссылка на объект :js:class:`LocalStorage`
-
-
-    .. js:attribute:: location
-
-        Ссылка на объект :js:class:`Location`
+        Ссылка на объект :py:class:`LocalStorage`
 
 
-    .. js:attribute:: name
+    .. py:attribute:: location
+
+        Ссылка на объект :py:class:`Location`
+
+
+    .. py:attribute:: name
         
         Имя ок­на. Имя мо­жет быть за­да­но при соз­да­нии ок­на ме­то­дом open() или в ви­де зна­че­ния ат­ри­бу­та name в те­ге <frame>. Имя ок­на мо­жет ис­поль­зо­вать­ся в ка­че­ст­ве зна­че­ния ат­ри­бу­та target в  те­ге <a> или <form>. При та­ком при­ме­не­нии ат­ри­бут target ука­зы­ва­ет, что до­ку­мент, за­гру­жае­мый по ги­пер­ссыл­ке, или ре­зуль­та­ты от­прав­ки дан­ных фор­мы долж­ны ото­бра­жать­ся в ука­зан­ном ок­не.
 
 
-    .. js:attribute:: navigator
+    .. py:attribute:: navigator
 
-        Ссылка на объект :js:class:`Navigator`
+        Ссылка на объект :py:class:`Navigator`
 
 
-    .. js:attribute:: onafterprint 
+    .. py:attribute:: onafterprint
 
         По­сле вы­во­да со­дер­жи­мо­го ок­на на пе­чать
 
 
-    .. js:attribute:: onbeforeprint 
+    .. py:attribute:: onbeforeprint
 
         Пе­ред вы­во­дом со­дер­жи­мо­го ок­на на пе­чать
 
 
-    .. js:attribute:: onbeforeunload 
+    .. py:attribute:: onbeforeunload
 
         Пе­ред тем как бро­узер по­ки­нет те­ку­щ ую стра­ни­цу. Ес­ли воз­вра­ща­ет стро­ку или при­сваи­ва­ет стро­ку свой­ст­ву returnValue объ­ек­та со­бы­тия, эта стро­ка бу­дет вы­ве­де­на в диа­ло­ге под­твер­жде­ния. См. BeforeUnloadEvent.
     
 
-    .. js:attribute:: onblur 
+    .. py:attribute:: onblur
 
         Ко­гда ок­но те­ря­ет фо­кус вво­да
     
 
-    .. js:attribute:: onerror 
+    .. py:attribute:: onerror
 
         Ко­гда воз­ни­ка­ет ошиб­ка в Ja­va­Script-сце­на­рии.
     
 
-    .. js:attribute:: onfocus 
+    .. py:attribute:: onfocus
 
         Ко­гда ок­но по­лу­ча­ет фо­кус вво­да
     
 
-    .. js:attribute:: onhashchange 
+    .. py:attribute:: onhashchange
 
         Ко­гда иден­ти­фи­ка­тор фраг­мен­та (см. Location.hash) до­ку­мен­та из­ме­ня­ет­ся в ре­зуль­та­те пе­ре­ме­ще­ния по ис­то­рии по­се­ще­ний (см. HashChangeEvent)
     
 
-    .. js:attribute:: onLoad 
+    .. py:attribute:: onLoad
 
         Ко­гда до­ку­мент и все внеш­ние ре­сур­сы бу­дут за­гру­же­ны пол­но­стью
     
 
-    .. js:attribute:: onmessage 
+    .. py:attribute:: onmessage
 
         Ко­гда сце­на­рий в дру­гом ок­не от­пра­вит со­об­ще­ние вы­зо­вом ме­то­да post-Message(). См. MessageEvent.
 
     
-    .. js:attribute:: onoffline 
+    .. py:attribute:: onoffline
 
         Ко­гда бро­узер по­те­ря­ет со­еди­не­ние с Ин­тер­не­том
     
 
-    .. js:attribute:: ononline 
+    .. py:attribute:: ononline
 
         Ко­гда бро­узер вос­ста­но­вит со­еди­не­ние с Ин­тер­не­том
     
 
-    .. js:attribute:: onpagehide 
+    .. py:attribute:: onpagehide
 
         Пе­ред на­ча­лом про­це­ду­ры со­хра­не­ния стра­ни­цы в кэ­ше и за­ме­ще­ния ее дру­гой стра­ни­цей
     
 
-    .. js:attribute:: onpageshow 
+    .. py:attribute:: onpageshow
 
         Ко­гда стра­ни­ца за­гру­жа­ет­ся впер­вые, со­бы­тие «pageshow» воз­бу­ж­да­ет­ся сра­зу по­сле со­бы­тия «load», при этом свой­ст­во persisted объ­ек­та со­бы­тия име­ет зна­че­ние false. Од­на­ко ко­гда ра­нее за­гру­жен­ная стра­ни­ца вос­ста­нав­ли­ва­ет­ся из кэ­ша бро­узе­ра, раз­ме­щен­но­го в па­мя­ти, со­бы­тие «load» не воз­бу­ж­да­ет­ся (по­сколь­ку стра­ни­ца в кэ­ше счи­та­ет­ся уже за­гру­жен­ной), а со­бы­тие «pageshow» воз­бу­ж­да­ет­ся с объ­ек­том со­бы­тия, свой­ст­во persisted ко­то­ро­го име­ет зна­че­ние true. См. PageTransitionEvent.
 
-    .. js:attribute:: onpopstate 
+    .. py:attribute:: onpopstate
 
         Обработчик загрузки новой страницы
         или восстанавливание состояния,
@@ -170,148 +172,148 @@ Window - окно, вкладка или фрейм веб-броузера
             };
 
 
-    .. js:attribute:: onresize 
+    .. py:attribute:: onresize
 
         Ко­гда поль­зо­ва­тель из­ме­ня­ет раз­мер ок­на бро­узе­ра
 
 
-    .. js:attribute:: onscroll 
+    .. py:attribute:: onscroll
 
         Ко­гда поль­зо­ва­тель про­кру­чи­ва­ет ок­но бро­узе­ра
 
 
-    .. js:attribute:: onstorage 
+    .. py:attribute:: onstorage
 
         Ко­гда из­ме­ня­ет­ся со­дер­жи­мое localStorage или sessionStorage. См. StorageEvent.
 
 
-    .. js:attribute:: onunload 
+    .. py:attribute:: onunload
 
         Бро­узер по­ки­нул стра­ни­цу. Об­ра­ти­те вни­ма­ние: ес­ли стра­ни­ца за­ре­ги­ст­ри­ру­ет об­ра­бот­чик со­бы­тия onunload, она не бу­дет со­хра­нять­ся в кэ­ше. Что­бы обес­пе­чить бы­ст­рый воз­врат к стра­ни­це без по­втор­ной ее за­груз­ки, сле­ду­ет ис­поль­зо­вать об­ра­бот­чик onpagehide.
         
 
-    .. js:attribute:: opener
+    .. py:attribute:: opener
         
         Дос­туп­ная для чте­ния и  за­пи­си ссыл­ка на объ­ект Window, в  ко­то­ром со­дер­жит­ся сце­на­рий, вы­звав­ший ме­тод open() для от­кры­тия в бро­узе­ре ок­на верх­не­го уров­ня, или null в ок­нах, соз­дан­ных иным спо­со­бом. Это свой­ст­во дей­ст­ви­тель­но толь­ко для объ­ек­тов Window, пред­став­ляю­щих ок­на верх­не­го уров­ня, но не для объ­ек­тов, пред­став­ляю­щих фрей­мы. Свой­ст­во opener мо­жет ис­поль­зо­вать­ся во вновь соз­дан­ ном ок­не для дос­ту­па к свой­ст­вам и ме­то­дам соз­дав­ше­го его ок­на.
 
 
-    .. js:attribute:: outerHeight
-    .. js:attribute:: outerWidth
+    .. py:attribute:: outerHeight
+    .. py:attribute:: outerWidth
         
         Эти свой­ст­ва оп­ре­де­ля­ют об­щую вы­со­ту и ши­ри­ну ок­на бро­узе­ра в пик­се­лах. Эти раз­ме­ры вклю­ча­ют вы­со­ту и ши­ри­ну стро­ки ме­ню, па­не­лей ин­ст­ру­мен­тов, по­лос про­крут­ки, ра­мок ок­на и то­му по­доб­ное. Эти свой­ст­ва не под­дер­жи­ва­ют­ся в IE вер­сии 8 и ни­же.
 
 
-    .. js:attribute:: pageXOffset
-    .. js:attribute:: pageYOffset
+    .. py:attribute:: pageXOffset
+    .. py:attribute:: pageYOffset
         
         Чис­ло пик­се­лов, на ко­то­рые те­ку­щий до­ку­мент был про­кру­чен впра­во (pageXOffset) и вниз (pageYOffset). Эти свой­ст­ва не под­дер­жи­ва­ют­ся в IE вер­сии 8 и ни­же. По­ря­док ис­поль­зо­ва­ния этих свойств и со­вмес­ти­мый про­грамм­ный код, дей­ст­вую­щий в IE, де­мон­ст­ри­ру­ют­ся в при­ме­ре 15.8.
 
 
-    .. js:attribute:: parent
+    .. py:attribute:: parent
         
         Объ­ект Window, со­дер­жа­щий дан­ное ок­но. Ес­ли дан­ное ок­но яв­ля­ет­ся ок­ном верх­не­го уров­ня, parent ссы­ла­ет­ся на са­мо ок­но. Ес­ли дан­ное ок­но яв­ля­ет­ся фрей­мом, свой­ст­во parent ссы­ла­ет­ся на ок­но или фрейм, в ко­то­ром со­дер­жит­ся дан­ное ок­но.
 
 
-    .. js:attribute:: returnValue
+    .. py:attribute:: returnValue
         
         Это свой­ст­во от­сут­ст­ву­ет в обыч­ных ок­нах, но при­сут­ст­ву­ет в объ­ек­тах Window, соз­дан­ных ме­то­дом showModalDialog(), и по умол­ча­нию со­дер­жит пус­тую стро­ку. Ко­гда ок­но диа­ло­га за­кры­ва­ет­ся (см. опи­са­ние ме­то­да close()), это­му свой­ст­ву при­сваи­ва­ет­ся зна­че­ние, воз­вра­щае­мое ме­то­дом showModalDialog().
 
 
-    .. js:attribute:: screen
+    .. py:attribute:: screen
 
-        Ссылка на объект :js:class:`Screen`
+        Ссылка на объект :py:class:`Screen`
 
 
-    .. js:attribute:: screenLeft, screenTop
+    .. py:attribute:: screenLeft, screenTop
 
         Координаты левого верхнего угла, для IE
 
 
-    .. js:attribute:: screenX, screenY
+    .. py:attribute:: screenX, screenY
 
         Координаты левого верхнего угла, для Firefox
 
 
-    .. js:attribute:: self
+    .. py:attribute:: self
         
         Ссыл­ка на са­мо ок­но. Си­но­ним свой­ст­ва window.
 
 
-    .. js:attribute:: sessionStorage
+    .. py:attribute:: sessionStorage
 
-        Ссылка на объект :js:class:`SessionStorage`
-
-
-    .. js:attribute:: status
+        Ссылка на объект :py:class:`SessionStorage`
 
 
-    .. js:attribute:: top
+    .. py:attribute:: status
+
+
+    .. py:attribute:: top
         
         Ок­но верх­не­го уров­ня, со­дер­жа­щее дан­ное ок­но. Ес­ли дан­ное ок­но яв­ля­ет­ся ок­ном верх­не­го уров­ня, свой­ст­во top со­дер­жит ссыл­ку на са­мо ок­но. Ес­ли дан­ное ок­но пред­став­ля­ет со­бой фрейм, свой­ст­во top ссы­ла­ет­ся на ок­но верх­не­го уров­ня, со­дер­жа­щее дан­ный фрейм. Срав­ни­те со свой­ст­вом parent.
 
 
-    .. js:attribute:: URL
+    .. py:attribute:: URL
         
         На мо­мент на­пи­са­ния этих строк дан­ное свой­ст­во бы­ло ссыл­кой на объ­ект, оп­ре­де­ляю­щий функ­ции, ко­то­рые бы­ли опи­са­ны в спра­воч­ной ста­тье URL. В бу­ду­щем это свой­ст­во мо­жет пре­вра­тить­ся в  кон­ст­рук­тор URL() и  оп­ре­де­лять при­клад­ной ин­тер­фейс для ана­ли­за URL-ад­ре­сов и строк за­про­са в них.
 
 
-    .. js:attribute:: window
+    .. py:attribute:: window
         
         Свой­ст­во window иден­тич­но свой­ст­ву self – оно со­дер­жит ссыл­ку на дан­ное ок­но. По­сколь­ку в  кли­ент­ских сце­на­ри­ях на язы­ке Ja­va­Script объ­ект Window яв­ля­ет­ся гло­баль­ным объ­ек­том, дан­ное свой­ст­во по­зво­ля­ет об­ра­щать­ся к гло­баль­но­му объ­ек­ту как к гло­баль­ной пе­ре­мен­ной window.
 
 
 
-    .. js:function:: alert(String text)
+    .. py:function:: alert(String text)
 
         Вывод информационное окно
 
 
-    .. js:function:: atob(string atob)
+    .. py:function:: atob(string atob)
         
         Эта вспо­мо­га­тель­ная функ­ция при­ни­ма­ет стро­ку в фор­ма­те base64 и де­ко­ди­ру­ет ее в дво­ич­ную стро­ку, где ка­ж­дый сим­вол пред­став­лен един­ст­вен­ным бай­том. Из­вле­кать зна­че­ния бай­тов из по­лу­чен­ной стро­ки мож­но с по­мо­щью ее ме­то­да char­Co­deAt(). См. так­же btoa()
 
 
-    .. js:function:: blur()
+    .. py:function:: blur()
         
         Ме­тод blur() уби­ра­ет фо­кус вво­да из ок­на верх­не­го уров­ня, со­от­вет­ст­вую­ще­го объ­ек­ту Window. Точ­но не оп­ре­де­ле­но, ка­ко­му ок­ну пе­ре­да­ет­ся фо­кус в ре­зуль­та­те вы­зо­ва это­го ме­то­да. В  не­ко­то­рых бро­узе­рах и/или на не­ко­то­рых плат­фор­мах дан­ный ме­тод мо­жет не ока­зы­вать ни­ка­ко­го эф­фек­та.
 
 
-    .. js:function:: btoa(string btoa)
+    .. py:function:: btoa(string btoa)
         
         Эта вспо­мо­га­тель­ная функ­ция при­ни­ма­ет дво­ич­ную стро­ку (в  ко­то­рой ка­ж­дый сим­вол пред­став­лен един­ст­вен­ным бай­том) и воз­вра­ща­ет ее в фор­ма­те base64. Соз­дать дво­ич­ную стро­ку из про­из­воль­ной по­сле­до­ва­тель­но­сти бай­тов мож­но с по­мо­щью ме­то­да String.fromCharCode(). См. так­же atob().
 
 
-    .. js:function:: clearInterval(timer_id), clearTimeout(timer_id)
+    .. py:function:: clearInterval(timer_id), clearTimeout(timer_id)
 
         Выключает таймер
 
 
-    .. js:function:: clearTimeout(long handle)
+    .. py:function:: clearTimeout(long handle)
         
         Ме­тод clearTimeout() от­ме­ня­ет вы­пол­не­ние про­грамм­но­го ко­да, от­ло­жен­ное ме­то­дом setTimeout(). Ар­гу­мент handle – это зна­че­ние, воз­вра­щае­мое вы­зо­вом setTime­out() и иден­ти­фи­ци­рую­щее блок про­грамм­но­го ко­да, от­ло­жен­ное ис­пол­не­ние ко­то­ро­го от­ме­ня­ет­ся.
 
 
-    .. js:attribute:: close()
+    .. py:attribute:: close()
 
         Закрывает окно
 
 
-    .. js:function:: confirm(message)
+    .. py:function:: confirm(message)
 
         Вы­во­дит со­об­ще­ние message в диа­ло­го­вом ок­не, со­дер­жа­щем кноп­ки OK и Cancel (От­ме­на), с по­мо­щью ко­то­рых поль­зо­ва­тель дол­жен от­ве­тить на во­прос. Ес­ли поль­зо­ва­тель щелк­нет на кноп­ке OK, ме­тод confirm() вер­нет true. Ес­ли поль­зо­ва­тель щелк­нет на кноп­ке Cancel, ме­тод confirm() вер­нет false.
 
 
-    .. js:function:: decodeURI(str)
+    .. py:function:: decodeURI(str)
 
         Декодирует символы в URI
 
 
-    .. js:function:: decodeURIComponent(str)
+    .. py:function:: decodeURIComponent(str)
 
         Де­ко­ди­ру­ет управ­ляю­щие по­сле­до­ва­тель­но­сти сим­во­лов в ком­по­нен­те URI
 
 
-    .. js:function:: encodeURI(str)
+    .. py:function:: encodeURI(str)
 
         Вы­пол­ня­ет ко­ди­ро­ва­ние URI с по­мо­щью управ­ляю­щих по­с ле­до­ва­тель­но­стей
 
@@ -323,7 +325,7 @@ Window - окно, вкладка или фрейм веб-броузера
             encodeURI("\u00a9"); 
             // %C2%A9
 
-    .. js:function:: encodeURIComponent(str)
+    .. py:function:: encodeURIComponent(str)
 
         Кодирование данных
 
@@ -333,7 +335,7 @@ Window - окно, вкладка или фрейм веб-броузера
             // hello%20%26%20world
 
 
-    .. js:function:: escape(str)
+    .. py:function:: escape(str)
 
         Кодирует строку
 
@@ -343,11 +345,11 @@ Window - окно, вкладка или фрейм веб-броузера
             // Вер­нет "Hello%20World%21"
 
 
-    .. js:function:: eval(String code)
+    .. py:function:: eval(String code)
 
         Выполняет строку как код
 
-        Возбуждает исключение :js:class:`EvalError`
+        Возбуждает исключение :py:class:`EvalError`
 
         .. code-block:: js
 
@@ -355,12 +357,12 @@ Window - окно, вкладка или фрейм веб-броузера
             // 3
             
 
-    .. js:function:: focus()
+    .. py:function:: focus()
         
         Пе­ре­да­ет фо­кус вво­да ок­ну верх­не­го уров­ня, со­от­вет­ст­вую­ще­му объ­ек­ту Window.
         На боль­шин­ст­ве плат­форм при по­лу­че­нии фо­ку­са ок­но верх­не­го уров­ня пе­ре­ме­ща­ет­ся на вер­ши­ну сте­ка окон.
 
-    .. js:function:: getComputedStyle(Element elt, [string pseudoElt])
+    .. py:function:: getComputedStyle(Element elt, [string pseudoElt])
     
         Эле­мент до­ку­мен­та мо­жет по­лу­чать ин­фор­ма­цию о сти­ле из встро­ен­но­го ат­ри­бу­та style и из про­из­воль­но­го чис­ла кас­кад­ных таб­лиц сти­лей. Пре­ж­де чем эле­мент бу­дет ото­бра­жен в ок­не, ин­фор­ма­ция о сти­лях для это­го эле­мен­та долж­на быть из­вле­че­на из кас­кад­ных таб­лиц сти­лей, а ве­ли­чи­ны, вы­ра­жае­мые в от­но­си­тель­ных еди­ни­цах (та­ких как про­цен­ты или «ems»), долж­ны быть «вы­чис­ле­ны» и пре­об­ра­зо­ва­ны в аб­со­лют­ные зна­че­ния. Эти вы­чис­лен­ные зна­че­ния ино­гда на­зы­ва­ют «ис­поль­зуе­мы­ми» зна­че­ния­ми.
         
@@ -369,12 +371,12 @@ Window - окно, вкладка или фрейм веб-броузера
         Вто­рой ар­гу­мент при вы­зо­ве это­го ме­то­да обыч­но опус­ка­ет­ся или в нем пе­ре­да­ет­ся зна­че­ние null, од­на­ко в нем мож­но так­же пе­ре­дать псев­до­эле­мент CSS «::before» или «::after», что­бы оп­ре­де­лить сти­ли для со­дер­жи­мо­го.
 
 
-    .. js:function:: isFinite(obj)
+    .. py:function:: isFinite(obj)
         
         Определяет, является ли число конечным
             
 
-    .. js:function:: isNan(obj)
+    .. py:function:: isNan(obj)
         
         Возвращает булево, является ли аргумент нечисловым значением
 
@@ -405,7 +407,7 @@ Window - окно, вкладка или фрейм веб-броузера
             // true
 
 
-    .. js:attribute:: open(url, window_title, window_params)
+    .. py:attribute:: open(url, window_title, window_params)
 
         Возвращает ссылку и открывает новое окно в браузере
 
@@ -414,17 +416,17 @@ Window - окно, вкладка или фрейм веб-броузера
             w = open('ilnurgi.html', 'Window Name', "width=400,height=400,status=yes,resizable=no")
 
 
-    .. js:function:: parseFloat(obj)
+    .. py:function:: parseFloat(obj)
 
         Возвращает числовое представление объекта    
 
         .. code-block:: js
 
-            parseFloat(“74.54”);
+            parseFloat("74.54");
             // 74.54
 
 
-    .. js:function:: parseInt(obj[, base=10])
+    .. py:function:: parseInt(obj[, base=10])
 
         Возвращает числовое представление объекта
 
@@ -432,13 +434,13 @@ Window - окно, вкладка или фрейм веб-броузера
 
         .. code-block:: js
 
-            parseInt(“18”);
+            parseInt("18");
             // 18
         
-            parseInt(“19kdjas”);
+            parseInt("19kdjas");
             // 19
         
-            parseInt(“74.54”);
+            parseInt("74.54");
             // 74
 
             parseInt("ff");
@@ -447,26 +449,26 @@ Window - окно, вкладка или фрейм веб-броузера
             parseInt("ff", "16");
             // 255
         
-            parseInt(“0x10”);
+            parseInt("0x10");
             // 16
             
-            parseInt(“0x10”,”10”);
+            parseInt("0x10","10");
             // 0
 
 
-    .. js:function:: postMessage(any message, string targetOrigin, [MessagePort[] ports])
+    .. py:function:: postMessage(any message, string targetOrigin, [MessagePort[] ports])
         
         По­сы­ла­ет дан­но­му ок­ну ко­пию со­об­ще­ния message в  пор­ты ports, но толь­ко ес­ли до­ку­мент, ото­бра­жае­мый в дан­ном ок­не, име­ет про­ис­хо­ж­де­ние targetOrigin.
         
         В  ар­гу­мен­те message мож­но пе­ре­дать лю­бой объ­ект, ко­то­рый мож­но ско­пи­ро­вать с при­ме­не­ни­ем ал­го­рит­ма струк­ту­ри­ро­ван­но­го ко­пи­ро­ва­ния. Ар­гу­мент targetOrigin дол­жен быть аб­со­лют­ным URL-ад­ре­сом, со­дер­жа­щим про­то­кол, имя хос­та и  порт, ко­то­рые оп­ре­де­ля­ют тре­буе­мое про­ис­хо­ж­де­ние. Ес­ли про­ис­хо­ж­де­ние не име­ет зна­че­ния, в  ар­гу­мен­те targetOrigin мож­но пе­ре­дать стро­ку «*», а что­бы ука­зать соб­ст­вен­ное про­ис­хо­ж­де­ние сце­на­рия – стро­ку «/». Вы­зов это­го ме­то­да ге­не­ри­ру­ет со­бы­тие «message» в  ок­не. 
 
 
-    .. js:function:: print()
+    .. py:function:: print()
         
         На вы­зов ме­то­да print() бро­узер реа­ги­ру­ет так же, как ес­ли бы поль­зо­ва­тель вы­брал пункт ме­ню или щелк­нул на кноп­ке Print (Пе­чать). Обыч­но по­сле это­го по­яв­ля­ ет­ся диа­ло­го­вое ок­но, по­зво­ляю­щее от­ме­нить опе­ра­цию пе­ча­ти или вы­пол­нить до­пол­ни­тель­ную на­строй­ку.
 
 
-    .. js:function:: prompt(message, default_value)
+    .. py:function:: prompt(message, default_value)
 
         Выводит сообщение `message` в  диалоговом окне,
         содержащем поле ввода и  кнопки `OK` и  `Cancel`,
@@ -481,39 +483,39 @@ Window - окно, вкладка или фрейм веб-броузера
 
         .. code-block:: js
 
-            var userName = prompt('What is your name?)
+            var userName = prompt("What is your name?")
 
 
-    .. js:function:: scroll(long x, long y)
+    .. py:function:: scroll(long x, long y)
         
         Си­но­ним ме­то­да scrollTo().
 
 
-    .. js:function:: scrollBy(long x, long y)
+    .. py:function:: scrollBy(long x, long y)
         
         Про­кру­чи­ва­ет до­ку­мент, ото­бра­жае­мый в ок­не, на от­но­си­тель­ную ве­ли­чи­ну, за­дан­ную ар­гу­мен­та­ми x и y.
 
 
-    .. js:function:: scrollTo(long x, long y)
+    .. py:function:: scrollTo(long x, long y)
         
         Про­кру­чи­ва­ет до­ку­мент, ото­бра­жае­мый в ок­не, так, что­бы точ­ка с ко­ор­ди­на­та­ми x и y в до­ку­мен­те ока­за­лась в ле­вом верх­нем уг­лу, ес­ли это воз­мож­но.
 
 
-    .. js:function:: setInterval(func, time, args)
+    .. py:function:: setInterval(func, time, args)
 
         Возвращает индентификатор таймера и запускает функцию в цикле с указанной периодичностью, миллисекунды
 
 
-    .. js:function:: setTimeout(func, time, args)
+    .. py:function:: setTimeout(func, time, args)
 
         Возвращает идентификатор таймера и запускает функцию через время, миллисекунды
 
 
-    .. js:function:: showModalDialog(string url, [any arguments])
+    .. py:function:: showModalDialog(string url, [any arguments])
         
         Соз­да­ет но­вый объ­ект Window, со­хра­ня­ет зна­че­ние arguments в свой­ст­ве dialogArguments это­го объ­ек­та, за­гру­жа­ет в ок­но до­ку­мент с ад­ре­сом url и бло­ки­ру­ет вы­пол­не­ние сце­на­рия, по­ка ок­но не бу­дет за­кры­то. По­сле за­кры­тия ок­на ме­тод воз­вра­ща­ет зна­че­ние свой­ст­ва returnValue ок­на. 
 
 
-    .. js:function:: unescape(str)
+    .. py:function:: unescape(str)
 
         Декодирует строку

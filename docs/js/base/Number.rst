@@ -1,6 +1,7 @@
-Number - числа
-==============
+Number
+======
 
+Число
 
 .. code-block:: js
     
@@ -47,65 +48,65 @@ Number - числа
         // восьмиричное
         let b = 0o17;
 
-.. js:class:: Number()
+.. py:class:: Number()
  
     Число, с типом float64
 
-    Наследник :js:class:`Object`
+    Наследник :py:class:`Object`
 
     .. code-block:: js
 
         Number(10);
         // 10
         
-        Number(“42.23”);
+        Number("42.23");
         // 42.23
 
-        Number(“71oshi”);
+        Number("71oshi");
         // Nan
 
 
-    .. js:attribute:: EPSILON
+    .. py:attribute:: EPSILON
 
         Расчетная погрешность при сравнений чисел с плавающей запятой
 
         
-    .. js:attribute:: NaN
+    .. py:attribute:: NaN
 
         Нечисло
 
 
-    .. js:attribute:: NEGATIVE_INFINITY
+    .. py:attribute:: NEGATIVE_INFINITY
 
         Отрицательная бесконечность
 
 
-    .. js:attribute:: MIN_VALUE
+    .. py:attribute:: MIN_VALUE
 
         Наименьшее представимое число
 
 
-    .. js:attribute:: MAX_SAFE_INTEGER
+    .. py:attribute:: MAX_SAFE_INTEGER
 
         .. note:: ECMAScript6
 
 
-    .. js:attribute:: MAX_VALUE
+    .. py:attribute:: MAX_VALUE
 
         Наибольшее представимое число
 
 
-    .. js:attribute:: MIN_SAFE_INTEGER
+    .. py:attribute:: MIN_SAFE_INTEGER
 
         .. note:: ECMAScript6
 
 
-    .. js:attribute:: POSITIVE_INFINITY
+    .. py:attribute:: POSITIVE_INFINITY
 
         Положительная бесконечность
 
 
-    .. js:function:: isFinite(number)
+    .. py:function:: isFinite(number)
 
         Значение является конечным числом
 
@@ -126,7 +127,7 @@ Number - числа
             // false
 
 
-    .. js:function:: isInteger(number)
+    .. py:function:: isInteger(number)
 
         Переменная - целое число
 
@@ -156,7 +157,7 @@ Number - числа
             }
 
 
-    .. js:function:: isNan(number)
+    .. py:function:: isNan(number)
 
         Переменная Nan
 
@@ -175,7 +176,7 @@ Number - числа
             }
 
 
-    .. js:function:: isSafeInteger(number)
+    .. py:function:: isSafeInteger(number)
 
         .. note:: ECMAScript6
 
@@ -198,7 +199,7 @@ Number - числа
             }
 
 
-    .. js:function:: toExponential([offset])
+    .. py:function:: toExponential([offset])
 
         Форматирует число в экспоненциальную форму представления
 
@@ -219,7 +220,7 @@ Number - числа
             // '1.235e+8'
 
 
-    .. js:function:: toFixed([offset])
+    .. py:function:: toFixed([offset])
 
         Возвращает строку, с определенным количеством знаков после запятой
 
@@ -240,7 +241,7 @@ Number - числа
             // '43.813'
 
 
-    .. js:function:: toPrecission()
+    .. py:function:: toPrecission()
 
         .. code-block:: js
 
@@ -252,7 +253,7 @@ Number - числа
             n.toPrecission(4);
             // '1.235e+4'
 
-    .. js:function:: toString()
+    .. py:function:: toString()
 
         Возвращает строковое представление числа
 

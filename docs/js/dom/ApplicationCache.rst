@@ -2,50 +2,50 @@ ApplicationCache - прикладной интерфейс управления 
 ===================================================================
 
 
-.. js:class:: ApplicationCache()
+.. py:class:: ApplicationCache()
 
 
-    .. js:attribute:: oncached
+    .. py:attribute:: oncached
 
         Приложение впервые сохраняется в кеше
 
 
-    .. js:attribute:: onchecking
+    .. py:attribute:: onchecking
 
         Браузер начинает проверку наличия обновленного файла обновления
 
 
-    .. js:attribute:: ondownloading
+    .. py:attribute:: ondownloading
 
         Браузер начинает загрузку ресурсов
 
 
-    .. js:attribute:: onerror
+    .. py:attribute:: onerror
 
         В ходе обновления кеша возникает ошибка
 
 
-    .. js:attribute:: onnoupdate
+    .. py:attribute:: onnoupdate
 
         Браузер определяет, что файл объявления не изменился и приложение в кеше имеет текущую версию
 
 
-    .. js:attribute:: onobsolette
+    .. py:attribute:: onobsolette
 
         Исчезает фалй объявления кешируемого приложения
 
 
-    .. js:attribute:: onprogress
+    .. py:attribute:: onprogress
 
         Идет загрузка и сохранение файлов приложения
 
 
-    .. js:attribute:: onupdateready
+    .. py:attribute:: onupdateready
 
         Браузер грузит и сохранит в кеше новую версию приложения
 
 
-    .. js:attribute:: status
+    .. py:attribute:: status
 
         Состояние кеша текущего документа
 
@@ -57,11 +57,11 @@ ApplicationCache - прикладной интерфейс управления 
         * `ApplicationCache.OBSOLETE` = 5,  Файл объ­яв­ле­ния не най­ден и при­ло­же­ние бу­дет уда­ле­но из кэ­ша.
 
 
-    .. js:function:: swapCache()
+    .. py:function:: swapCache()
 
         Сообщает браузеру, что он может немедленно удалить старые версии и начать использовать новые версии файлов
 
 
-    .. js:function:: update()
+    .. py:function:: update()
 
         Проверить наличие обновлений

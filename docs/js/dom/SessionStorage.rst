@@ -4,10 +4,10 @@ SessionStorage - key-value хранилище
 Данные хранилища перезаписываются после окончания сессии,
 напрмер после закрытия вкладки.
 
-.. js:class:: SessionStorage()
+.. py:class:: SessionStorage()
 
 
-    .. js:function:: getItem(key)
+    .. py:function:: getItem(key)
 
         Возвращает значение по ключу
 
@@ -18,7 +18,7 @@ SessionStorage - key-value хранилище
             sessionStorage['key3'];
 
 
-    .. js:function:: setItem(key, value)
+    .. py:function:: setItem(key, value)
 
         Устанавливает новый ключ и значение в хранилище
 

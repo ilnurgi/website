@@ -2,13 +2,13 @@ URL - методы для работы с URL-адресами, ссылающи
 ====================================================================
 
 
-.. js:class:: URL()
+.. py:class:: URL()
 
-    .. js:function:: createObjectURL(Blob blob)
+    .. py:function:: createObjectURL(Blob blob)
         
         Воз­вра­ща­ет URL-ад­рес, ссы­лаю­щий­ся на дво­ич­ный объ­ект blob. HTTP GET-за­про­сы по это­му URL-ад­ре­су бу­дут воз­вра­щать со­дер­жи­мое blob.
 
 
-    .. js:function:: revokeObjectURL(string url)
+    .. py:function:: revokeObjectURL(string url)
         
         От­зы­ва­ет (де­ла­ет не­дей­ст­ви­тель­ным) ад­рес url так, что он боль­ше не бу­дет свя­зан с ка­ким-ли­бо объ­ек­том Blob и не смо­жет ис­поль­зо­вать­ся для за­груз­ки дан­ных.

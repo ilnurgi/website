@@ -1,18 +1,18 @@
 ArrayBufferView - общие свойства типов, основанных на ArrayBuffer
 =================================================================
 
-.. js:class:: ArrayBufferView()
+.. py:class:: ArrayBufferView()
 
-    .. js:attribute:: buffer 
+    .. py:attribute:: buffer
 
-        Объ­ект :js:class:`ArrayBuffer`, пред­став­ле­ни­ем ко­то­ро­го яв­ля­ет­ся дан­ный объ­ект.
+        Объ­ект :py:class:`ArrayBuffer`, пред­став­ле­ни­ем ко­то­ро­го яв­ля­ет­ся дан­ный объ­ект.
 
 
-    .. js:attribute:: byteLength 
+    .. py:attribute:: byteLength
 
         Дли­на в бай­тах фраг­мен­та бу­фе­ра, дос­туп­но­го по­сред­ст­вом дан­но­го пред­став­ле­ния.
 
 
-    .. js:attribute:: byteOffset 
+    .. py:attribute:: byteOffset
 
         На­чаль­ная по­зи­ция в бай­тах фраг­мен­та бу­фе­ра, дос­туп­но­го по­сред­ст­вом дан­но­го пред­став­ле­ния.

@@ -2,16 +2,16 @@ File - файл в локальной файловой системе
 ========================================
 
 
-.. js:class:: File()
+.. py:class:: File()
 
-    Наследник :js:class:`Blob`
+    Наследник :py:class:`Blob`
 
 
-    .. js:attribute:: lastModifiedDate
+    .. py:attribute:: lastModifiedDate
     
         Да­та по­след­не­го из­ме­не­ния фай­ла или null, ес­ли эта ин­фор­ма­ция не­дос­туп­на.
 
 
-    .. js:attribute:: name
+    .. py:attribute:: name
     
         Имя фай­ла (без пу­ти к не­му).
