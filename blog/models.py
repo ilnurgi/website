@@ -2,6 +2,7 @@
 
 import re
 
+from StringIO import StringIO
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 from django.db import models
@@ -13,6 +14,8 @@ from pygments.lexers import get_lexer_by_name
 from pygments.formatters.html import HtmlFormatter
 
 from pytils.translit import slugify
+
+import lxml.html as html
 
 
 class Category(models.Model):
@@ -56,11 +59,14 @@ class Post(models.Model):
     def save(self, force_insert=False, force_update=False, using=None,
              update_fields=None):
         self.content = (
-            self.add_files(
-                self.add_code_style(
-                    markdown(
-                        self.add_url_references(
-                            self.raw_content)))))
+            self.set_tables_classes(
+                self.add_files(
+                    self.add_code_style(
+                        markdown(
+                            self.add_url_references(
+                                self.raw_content),
+                            extensions=['tables']
+                        )))))
         self.slug = slugify(self.title)
 
         super(Post, self).save(
@@ -140,6 +146,21 @@ class Post(models.Model):
                 result.append(line)
 
         return u'\n'.join(result)
+
+    def set_tables_classes(self, content):
+        """
+        добавляет классы для таблиц
+        :param content:
+        :return:
+        """
+        root = html.parse(StringIO(content))
+        table_wrappers = root.xpath('//div[@class="table_wrapper"]')
+        for table_wrapper in table_wrappers:
+            table = table_wrapper.getnext()
+            if table:
+                table.attrib['class'] = table_wrapper.attrib.get(
+                    'data-table-class', "")
+        return html.tostring(root)
 
     def tag_names(self):
         return u', '.join(
