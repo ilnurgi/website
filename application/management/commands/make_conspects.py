@@ -17,8 +17,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
 
         docs_path = os.path.join(settings.BASE_DIR, 'docs')
-        executes = []
-        results = []
+        message = []
         for doc_name in os.listdir(docs_path):
             doc_path = os.path.join(docs_path, doc_name)
             doc_build_path = os.path.join(docs_path, "_build")
@@ -27,18 +26,20 @@ class Command(BaseCommand):
                 os.removedirs(doc_build_path)
 
             if os.path.isdir(doc_path):
-                executes.append(doc_name)
-                results.append(u'\n\n'.join(subprocess.Popen(
-                    ["make", "html"],
-                    stdout=subprocess.PIPE,
-                    stderr=subprocess.PIPE,
-                    cwd=doc_path).communicate()))
+                message.append(u'='*20)
+                message.append(docs_path)
+                message.append(u'='*20)
+                message.append(
+                    u'\n----------\n'.join(
+                        subprocess.Popen(
+                            ["make", "html"],
+                            stdout=subprocess.PIPE,
+                            stderr=subprocess.PIPE,
+                            cwd=doc_path).communicate()))
 
         send_email_notification.delay(
             title=u'Конспекты собраны',
-            message=u'Конспекты собраны для:\n{0}\n\n{1}'.format(
-                u'\n'.join(executes),
-                u'\n\n\n'.join(results)))
+            message=u'\n'.join(message))
 
 
 
