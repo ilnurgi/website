@@ -18,6 +18,7 @@ class Command(BaseCommand):
 
         docs_path = os.path.join(settings.BASE_DIR, 'docs')
         executes = []
+        results = []
         for doc_name in os.listdir(docs_path):
             doc_path = os.path.join(docs_path, doc_name)
             doc_build_path = os.path.join(docs_path, "_build")
@@ -27,15 +28,17 @@ class Command(BaseCommand):
 
             if os.path.isdir(doc_path):
                 executes.append(doc_name)
-                print subprocess.Popen(
+                results.append(subprocess.Popen(
                     ["make", "html"],
                     stdout=subprocess.PIPE,
                     stderr=subprocess.PIPE,
-                    cwd=doc_path).communicate()
+                    cwd=doc_path).communicate())
 
         send_email_notification.delay(
             title=u'Конспекты собраны',
-            message=u'Конспекты собраны для:\n{}'.format(u'\n'.join(executes)))
+            message=u'Конспекты собраны для:\n{0}\n\n{1}'.format(
+                u'\n'.join(executes),
+                u'\n\n\n'.join(results)))
 
 
 
