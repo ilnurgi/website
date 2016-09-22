@@ -1,4 +1,5 @@
 # coding: utf-8
+import datetime
 from django.core.exceptions import PermissionDenied
 from django.core.urlresolvers import reverse, reverse_lazy
 from django.http import Http404
@@ -164,6 +165,10 @@ def comment_create(request, post_slug):
     comment.save()
 
     send_email_notification.delay(
-        url=reverse('blog:post_detail', args=[post.category.name, post_slug]))
+        title=u'Новый коментарии',
+        message=u'Новый коменатрии \n{0}\n{1}'.format(
+            reverse('blog:post_detail', args=[post.category.name, post_slug]),
+            datetime.datetime.now()))
+
     return redirect(
         reverse("blog:post_detail", args=[post.category.name, post_slug]))

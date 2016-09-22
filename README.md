@@ -71,3 +71,11 @@ cp website/etc/supervisor/conf.d/cpu_average.conf /etc/supervisor/conf.d/cpu_ave
 supervisoctl reread
 supervisoctl update
 ```
+
+### Задачи крона
+
+```
+sudo crontab -e
+0 0 * * * /home/vasyapupkin/virtual_envs/website/bin/python /home/vasyapupkin/website/manage.py parse_nginx_access
+0 10 * * * /home/vasyapupkin/virtual_envs/website/bin/python /home/vasyapupkin/website/manage.py make_conspects
+```
