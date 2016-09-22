@@ -5,13 +5,21 @@ sqlite3
 
 Модуль, позволяющий работать с базой данных SQLite3
 
-Согласно спецификации DB-API 2.0 последовательность работы с базой данных выглядит следующим образом:
+Согласно спецификации DB-API 2.0
+последовательность работы с базой данных выглядит следующим образом:
 
-1. Производится подключение к базе данных с помощью функции :py:meth:`connect`. Функция воз­вращает объект соединения, с помощью которого осуществляется дальнейшая работа с базой данных.
+1. Производится подключение к базе данных с помощью функции :py:meth:`connect`.
+
+    Функция воз­вращает объект соединения,
+    с помощью которого осуществляется дальнейшая работа с базой данных.
 
 2. Создается объект-курсор.
 
-3. Выnолняются SQL-зanpocы и обрабатываются результаты. Перед выnолнением nервого заnроса. который изменяет заnиси (INSERT, REPIACE, UPDATE и DELETE), автоматически за­пускается транзакция.
+3. Выполняются SQL-запросы и обрабатываются результаты.
+
+    Перед выполнением первого запроса,
+    который изменяет записи (INSERT, REPLACE, UPDATE и DELETE),
+    автоматически за­пускается транзакция.
 
 4. Завершается транзакция или отменяются все изменения в рамках транзакции.
 
@@ -20,56 +28,84 @@ sqlite3
 6. Закрывается соединение с базой данных.
 
 
-Атрибуты модуля
----------------
-
+apilevel
+--------
 
 .. py:attribute:: apilevel
 
-    возвращает строку, номер спецификации DB-API
+    Возвращает строку, номер спецификации DB-API
 
-    >>> sqlite3.apilevel
-    '2.0'
+    .. code-block:: py
 
+        sqlite3.apilevel
+        # '2.0'
+
+
+sqlite_version
+--------------
 
 .. py:attribute:: sqlite_version
 
-    возвращает строку, номер версии моудля
+    Возвращает строку, номер версии моудля
 
-    >>> sqlite3.sqlite_version
-    '3.7.4'
+    .. code-block:: py
 
+        sqlite3.sqlite_version
+        # '3.7.4'
+
+
+sqlite_version_info
+-------------------
 
 .. py:attribute:: sqlite_version_info
 
-    возвращает кортеж, номер версии модуля
+    Возвращает кортеж, номер версии модуля
 
-    >>> sqlite3.sqlite_version_info
-    (3, 7, 4)
+    .. code-block:: py
+
+        sqlite3.sqlite_version_info
+        # (3, 7, 4)
 
 
-Методы модуля
--------------
+complete_statement()
+--------------------
 
 .. py:method:: complete_statement(sql)
 
-    проверка завершенности запроса
+    Возвращает булево, завершенности запроса
 
-    >>> sqlite3.complete_statement('SELECT 10 >5;')
-    True
+    .. code-block:: py
 
-    
+        sqlite3.complete_statement('SELECT 10 > 5;')
+        # True
+
+
+connect()
+---------
+
 .. py:method:: connect(database[, timeout=5] [, lsolatlon_level] [, detect_types] [, factory] [, check_same_thread] [, cached_statements])
 
-    возвращает объект :py:class:`Connection` для работы с БД
+    Возвращает :py:class:`Connection` для работы с БД
 
-    :param str database: путь к БД, если БД не существует она автоматический создастся. Также можно указать значение `:memory:`, которая означает что БД создается в памяти.
-    :param int timeout: время ожидания снятия блокировки с открываемой БД, в секундах
+    * database - строка, путь к БД, если БД не существует она автоматический создастся.
 
+        Также можно указать значение `:memory:`,
+        которая означает что БД создается в памяти.
+
+    * timeout - время ожидания снятия блокировки с открываемой БД, в секундах
+
+    .. code-block:: py
+
+        conn = sqlite3.connect("db.db")
+
+
+register_adapter()
+------------------
 
 .. py:method:: register_adapter(<тип данных или класс>, <ссылка на функцию>)
 
-    регистрирует пользовательскую функцию, которая будети вызываться при попытке вставки объекта в запросе.
+    Регистрирует пользовательскую функцию,
+    которая будети вызываться при попытке вставки объекта в запросе.
 
     .. code-block:: py
         
@@ -85,9 +121,13 @@ sqlite3
         cur.execute('INSERT INTO cars VALUES (?)', (car, ))
         
 
-    Вместо регистрации функции преобразования типа можно внутри класса определить метод __conform__(self, <Протокол>), где протокол соответсввует PrepareProtokol.
+    Вместо регистрации функции преобразования типа
+    можно внутри класса определить метод __conform__(self, <Протокол>),
+    где протокол соответсввует PrepareProtokol.
 
-    >>> class Car(object):
+    .. code-block:: py
+
+        class Car(object):
 
             def __init__(self, model, color):
                 self.model, self.color = model, color   
@@ -97,9 +137,12 @@ sqlite3
                     return '{0}|{1}'.format(car.model, car.color)
 
 
+register_converter()
+--------------------
+
 .. py:method:: register_converter(<тип данных>, <ссылка на функцию>)
 
-    регистрирует пользовательскую функцию преобразования типа данных 
+    Регистрирует пользовательскую функцию преобразования типа данных
 
     Чтобы интерпретатор смог определить,
     какую функцию необходимо вызвать для преобразования типа данных,
@@ -108,29 +151,39 @@ sqlite3
 
     Параметр может принимать следующие значения (или их комбинацию через \|):
 
-        * sqlite3.PARSE_COLNAMES - тип данных указывается в запросе в псевдониме поля внутри квадратных скобок 
+        * sqlite3.PARSE_COLNAMES - тип данных указывается в запросе
+          в псевдониме поля внутри квадратных скобок
 
-            >>> 'SELECT model as "c [mycar]" FROM mycars'
+              .. code-block:: sql
 
-        * sqlite3.PARSE_DECLTYPES - тип данных определяется по значению, указанному после названия поля в инструкции CREATE TABLE.
+                SELECT model as "c [mycar]" FROM mycars
 
-            >>> 'CREATE TABLE cars (model mycar)'
+        * sqlite3.PARSE_DECLTYPES - тип данных определяется по значению,
+          указанному после названия поля в инструкции CREATE TABLE.
 
-    >>> class Car(object):
+              .. code-block:: sql
+
+                  CREATE TABLE cars (model mycar)
+
+    .. code-block:: py
+
+        class Car(object):
             def __init__(self, model, color):
                 self.model, self.color = model, color
             def __repr__(self):
                 return '{0} {1}'.format(self.model, self.color)
-    >>> def myconverter(value):
+
+        def myconverter(value):
             value = str(value, 'utf-8')
             model, color = value.split('|')
             return Car(model, color)
-    >>> sqlite3.register_converter('mycar', myconverter)
-    >>> cur.execute('SELECT model as "c [mycar]" FROM cars')
+
+        sqlite3.register_converter('mycar', myconverter)
+        cur.execute('SELECT model as "c [mycar]" FROM cars')
 
 
-Классы модуля
--------------
+Connection()
+------------
 
 .. py:class:: Connection()
 
@@ -140,6 +193,10 @@ sqlite3
     .. py:method:: close()
 
         закрывает соединение с БД
+
+        .. code-block:: py
+
+            conn.close()
 
 
     .. py:method:: commit()
@@ -157,8 +214,9 @@ sqlite3
 
             * `finalize()` - возвращает результат
 
+        .. code-block:: py
 
-        >>> class MyClass:
+            class MyClass:
                 def __init__(self) :
                     self.result = []
                 def step(self, value):
@@ -166,48 +224,71 @@ sqlite3
                 def finalize(self):
                     self.result.sort()
                     return " - ".join(self.result)
-        >>> con.create_aggregate("myfunc", 1, MyClass)
-        >>> cur.execute ( "SELECT myfunc(nаme) FROM table")
+            con.create_aggregate("myfunc", 1, MyClass)
+            cur.execute ( "SELECT myfunc(nаme) FROM table")
 
 
     .. py:method:: create_collation(<название функции сортировки>, <ссылка на функцию сортировки>)
 
-        связывает название функции в SQL-запросе с пользовательской функцией. Функция сортировки принимает две строки и должна возвращать: 1 - если первая больше второй, -1 - если вторая больше первой, 0 - если они равны.
+        связывает название функции в SQL-запросе с пользовательской функцией.
 
-        >>> def myfunc (s1, s2):
-                s1 = s1.1ower()
-                s2 = s2 .1ower ()
+        Функция сортировки принимает две строки и должна возвращать:
+
+            * 1 - если первая больше второй
+            * -1 - если вторая больше первой
+            * 0 - если они равны.
+
+        .. code-block:: py
+
+            def myfunc (s1, s2):
+                s1 = s1.lower()
+                s2 = s2 .lower ()
                 if s1 == s2:
-                    return О    
+                    return 0
                 elif s1 > s2:
                     return 1
                 else:
                     return -1
-        >>> con.create_collatlon("myfunc", myfunc)
-        >>> cur = con.cursor()
-        >>> cur.execute("SELECT * FROM words ORDER ВУ word COLLATE myfunc")
+            con.create_collation("myfunc", myfunc)
+            cur = con.cursor()
+            cur.execute("SELECT * FROM words ORDER ВУ word COLLATE myfunc")
 
 
     .. py:method:: create_function(<название функции>, <количество параметров>, <ссылка на функцию>)
 
-        связывает название функции в SQL-запросе с пользовательской функцией. Функция сортировки принимает две строки и должна возвращать: 1 - если первая больше второй, -1 - если вторая больше первой, 0 - если они равны.
+        связывает название функции в SQL-запросе с пользовательской функцией.
 
-        >>> def myfunc(s):
+        Функция сортировки принимает две строки и должна возвращать:
+
+            * 1 - если первая больше второй
+            * -1 - если вторая больше первой
+            * 0 - если они равны.
+
+        .. code-block:: py
+
+            def myfunc(s):
                 return s .1ower ()
-        >>> con.create_function("mylower", 1, myfunc)
-        >>> cur = con.cursor()
-        >>> cur.execute("SELECT * FROM words WHERE mylower(name) like 'ilnurgi'")
+            con.create_function("mylower", 1, myfunc)
+            cur = con.cursor()
+            cur.execute("SELECT * FROM words WHERE mylower(name) like 'ilnurgi'")
 
 
     .. py:method:: cursor()
 
         возвращает объект :py:class:`Cursor` для выполнения запросов
 
+        .. code-block:: py
+
+            curs = conn.cursor()
+
 
     .. py:method:: rollback()
 
         откатывает изменения в текущей транзакции
 
+
+Cursor()
+--------
 
 .. py:class:: Cursor()
 
@@ -216,73 +297,99 @@ sqlite3
 
     .. py:method:: close()
 
-        закрывает объект курсор
+        закрывает курсор
+
+        .. code-block:: py
+
+            curs.close()
 
 
     .. py:method:: execute(sql [, <значения>])
 
         выполянет один запрос
 
-        :param str sql: строка запроса
-        :rasises: sqlite3.DataBaseError
+        .. code-block:: py
 
-        >>> cur.execute('insert into table (name) values (?)', ('ilnurgi', ))
-        >>> cur.execute('insert into table values (?, ?)', (2, 'ilnurgi'))
-        >>> cur.execute('insert into table values (:id, :name)', {'id': 2, 'name': ilnurgi'})
+            cur.execute(
+                'insert into table (name) values (?)',
+                ('ilnurgi', ))
+            cur.execute(
+                'insert into table values (?, ?)',
+                (2, 'ilnurgi'))
+            cur.execute(
+                'insert into table values (:id, :name)',
+                {'id': 2, 'name': ilnurgi'})
 
 
     .. py:method:: executemany(sql, args)
 
-        выполняет запрос несколько раз
+        выполняет запрос для нескольких значений
 
-        >>> cur.execute('insert into table values (?, ?)', [(1, 'ilnurgi'), (2, 'ilnurgi')])
+        .. code-block:: py
+
+            cur.execute(
+                'insert into table values (?, ?)',
+                [(1, 'ilnurgi'), (2, 'ilnurgi')])
 
 
     .. py:method:: exequtescript(sql)
 
         выполняет несколько запросов за один раз
 
-        :param str sql: строка с несколькими запросами
-        :rasises: sqlite3.DataBaseError
-
 
     .. py:method:: fetchall()
 
         возвращает список кортежей всех записей запроса
+
+        .. code-block:: py
+
+            rows = curs.fetchall()
+            # [(1, ), (2, )]
 
 
     .. py:method:: fetchmany([size=cursor.arraysize])
 
         возвращает список кортежей записей запроса
 
-        >>> cur.fetchmany(3)
-        [(1, 'name1'), (2, 'name2'), (3, 'name3')]
+        .. code-block:: py
+
+            cur.fetchmany(3)
+            # [(1, 'name1'), (2, 'name2'), (3, 'name3')]
 
 
     .. py:method:: fetchone()
 
-        возвращает одну запись из результата запроса в виде кортежа. Если записей больше нет, вернет None.
+        возвращает одну запись из результата запроса в виде кортежа.
+
+        Если записей больше нет, вернет None.
 
 
     .. py:method:: __next__()
 
-        возвращает одну запись из результата запроса в виде кортежа. Если записей больше нет, возбуждает исключение StopIteration.
+        возвращает одну запись из результата запроса в виде кортежа.
 
+        Если записей больше нет, возбуждает исключение StopIteration.
 
 
     .. py:attribute:: description
 
-        возвращает кортеж кортежей с именами полей в результате выполнения инструкции SELECT. 
+        возвращает кортеж кортежей с именами полей
+        в результате выполнения инструкции SELECT.
 
 
     .. py:attribute:: lastrowid
 
-        возвращает индекс последней добавленной записи с помощью инструкции INSERT и метода `exequte()`. Если индекс не определен то вернет None.
+        возвращает индекс последней добавленной записи
+        с помощью инструкции INSERT и метода `exequte()`.
+
+        Если индекс не определен то вернет None.
 
 
     .. py:attribute:: rowcount
 
-        возвращает количество измененных или удаленных записей. Если количество не определено, возвращает -1.
+        возвращает количество измененных или удаленных записей.
+
+        Если количество не определено, возвращает -1.
 
 
 Иерархия ошибок модуля

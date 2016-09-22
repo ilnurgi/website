@@ -7,6 +7,7 @@ matplotlib
     :maxdepth: 1
 
     axes
+    backends/index
     figure
     legend
     pyplot

@@ -9,13 +9,16 @@
     abs
     array
     atexit
+    binascii
     bisect
     calendar
     cmath
     collections
+    configparser
     contextlib
     copy
     datetime
+    dbm
     decimal
     fractions
     functools
@@ -37,6 +40,7 @@
     ospath
     pdb
     pickle
+    pprint
     queue
     random
     re
@@ -45,6 +49,7 @@
     socket
     sqlite3
     string
+    struct
     sys
     tempfile
     time
