@@ -20,7 +20,7 @@ class Command(BaseCommand):
         message = []
         for doc_name in os.listdir(docs_path):
             doc_path = os.path.join(docs_path, doc_name)
-            doc_build_path = os.path.join(docs_path, "_build")
+            doc_build_path = os.path.join(doc_path, "_build")
 
             if os.path.exists(doc_build_path):
                 os.removedirs(doc_build_path)
