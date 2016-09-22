@@ -27,7 +27,7 @@ class Command(BaseCommand):
 
             if os.path.isdir(doc_path):
                 message.append(u'='*20)
-                message.append(docs_path)
+                message.append(doc_path)
                 message.append(u'='*20)
                 message.append(
                     u'\n----------\n'.join(
