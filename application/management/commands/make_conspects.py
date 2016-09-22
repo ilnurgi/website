@@ -28,11 +28,11 @@ class Command(BaseCommand):
 
             if os.path.isdir(doc_path):
                 executes.append(doc_name)
-                results.append(subprocess.Popen(
+                results.append(u'\n\n'.join(subprocess.Popen(
                     ["make", "html"],
                     stdout=subprocess.PIPE,
                     stderr=subprocess.PIPE,
-                    cwd=doc_path).communicate())
+                    cwd=doc_path).communicate()))
 
         send_email_notification.delay(
             title=u'Конспекты собраны',
