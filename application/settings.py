@@ -118,6 +118,8 @@ LOG_PATH = os.path.join(BASE_DIR, 'logs')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+ENVIRON_BIN_PATH = ''
+
 settings_json = os.path.join(BASE_DIR, 'settings.yaml')
 
 GOOGLE_SITE_VERIFICATION = ""

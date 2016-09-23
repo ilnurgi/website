@@ -16,6 +16,9 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
 
+        environ_path = unicode(os.environ["PATH"])
+        os.environ["PATH"] += u":{0}:".format(settings.ENVIRON_BIN_PATH)
+
         docs_path = os.path.join(settings.BASE_DIR, 'docs')
         message = []
         for doc_name in os.listdir(docs_path):
@@ -33,6 +36,7 @@ class Command(BaseCommand):
                     u'\n----------\n'.join(
                         subprocess.Popen(
                             ["make", "html"],
+                            env=os.environ,
                             stdout=subprocess.PIPE,
                             stderr=subprocess.PIPE,
                             cwd=doc_path).communicate()))
@@ -40,6 +44,8 @@ class Command(BaseCommand):
         send_email_notification.delay(
             title=u'Конспекты собраны',
             message=u'\n'.join(message))
+
+        os.environ["PATH"] = environ_path
 
 
 
