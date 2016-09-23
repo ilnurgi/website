@@ -1,6 +1,7 @@
 # coding: utf-8
 
 import os
+import shutil
 import subprocess
 
 from django.conf import settings
@@ -26,7 +27,7 @@ class Command(BaseCommand):
             doc_build_path = os.path.join(doc_path, "_build")
 
             if os.path.exists(doc_build_path):
-                os.removedirs(doc_build_path)
+                shutil.rmtree(doc_build_path)
 
             if os.path.isdir(doc_path):
                 message.append(u'='*20)
