@@ -4,7 +4,10 @@
 .. toctree::
     :maxdepth: 1
 
+    bottle
     docx
+    flask
+    jinja2
     matplotlib/index
     memcache
     numpy/index
@@ -14,6 +17,7 @@
     pymongo/index
     pyqt/index
     redis
+    request
     serial
     sqlalchemy/index
     xlrd

@@ -49,6 +49,18 @@ redis
     conn.delete("fever")
     # True
 
+    # время жизни ключа в секундах
+    conn.expire("key1", 5)
+    # True
+
+    conn.ttl("key1")
+    # 5
+
+    # время истечения ключа
+    conn.expireat("key1", 1233354354)
+
+
+
 .. code-block:: py
 
     conn.set('key3', 0)
@@ -138,3 +150,110 @@ redis
 
     conn.hgetall("key6")
     # {"k1": "n_v1", "k2": "v2"}
+
+
+.. code-block:: py
+
+    conn.sadd("key11", "value1", "value2")
+    # 2
+
+    conn.scard("key11")
+    # 2
+
+    conn.smembers("key11")
+    # {"value1", "value2"}
+
+    conn.srem("key11", "value2")
+    # True
+
+    conn.sadd("key12", "value1", "value3")
+    # 0
+
+    # пересечение
+    conn.sinter("key11", "key12")
+    # {"value1"}
+
+    # сохранение пересечения в переменную
+    conn.sinterstore("key13", "key11", "key12")
+    # 1
+
+    conn.smembers("key13")
+    # {"value1"}
+
+    # объединение
+    conn.sunion("key11", "key12")
+    # {"value1", "value2", "value3"}
+
+    # сохранение объединения в переменную
+    conn.sunionstore("key14", "key11", "key12")
+    # 3
+
+    conn.sdiff("key11", "key12")
+    # {"value3"}
+
+    conn.sdiffstore("key15", "key11", "key12")
+    # 1
+
+
+.. code-block:: py
+
+    # упорядоченные множества
+
+    import time
+    now = time.time()
+
+    conn.zadd("key21", "value1", now)
+    # 1
+
+    conn.zadd("key21", "value2", now+(5*60))
+    # 1
+
+    conn.zadd("key21", "value3", now+(2*60*60))
+    # 1
+
+    conn.zadd("key21", "value4", now+(24*60*60))
+    # 1
+
+    conn.zrank("key21", "value3")
+    # 2
+
+    conn.zrange("key21", 0, -1)
+    # ["value1", "value2", "value3", "value4"]
+
+    conn.zrange("key21", 0, -1, withscores=True)
+    # [("value1", 123456789), ...]
+
+
+.. code-block:: py
+
+    # биты
+
+    conn.setbit("key41", "value1", 1)
+    # 0
+
+    conn.setbit("key41", "value2", 1)
+    # 0
+
+    conn.setbit("key42", "value1", 1)
+    # 0
+
+    conn.setbit("key43", "value1", 1)
+    # 0
+
+    conn.setbit("key43", "value3", 1)
+    # 0
+
+    conn.bitcount("key41")
+    # 2
+
+    conn.getbit("key42", "value3")
+    # 0
+
+    conn.bitop("and", "key44", "key41", "key42")
+    # 542333
+
+    conn.bitop("or", "key45", "key41", "key42")
+    # 542332
+
+    conn.bitcount("key44")
+    # 3

@@ -8,9 +8,12 @@ os.path
 
 .. py:method:: abspath(path)
 
-    :param str path: путь к файлу или папке
-
     возвращает полный путь до папки/файла
+
+    .. code-block:: py
+
+        os.path.abspath("1.txt")
+        # /home/ilnurgi/1.txt
 
 
 .. py:method:: basename(path) 
@@ -113,9 +116,12 @@ os.path
 
 .. py:method:: islink(path)
 
-    :param str path: путь к файлу или каталогу
-
     проверяет, указывает ли путь к символической ссылке
+
+    .. code-block:: py
+
+        os.path.islink("path1/1.txt")
+        # True
 
 
 .. py:method:: normpath(path)
@@ -128,6 +134,18 @@ os.path
     >>> os.path.normpath(p)
     'C:\\book\\folder\\file.txt'
     
+
+.. py:method:: realpath(path)
+
+    Возвращает путь к файлу символьной ссылки
+
+    .. note:: linux
+
+    .. code-block:: py
+
+        os.path.realpath("symlink_path")
+        # "real_path"
+
 
 .. py:method:: split(path)
 

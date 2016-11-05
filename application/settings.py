@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'blog',
     'fileuploader',
     "resume",
+    "cars",
 
 )
 

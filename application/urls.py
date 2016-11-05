@@ -12,7 +12,7 @@ from application.sitemap import ApplicationSitemap, ConspectsSitemap
 
 from blog import urls as blog_urls
 from blog.sitemaps import BlogSitemap
-
+from cars import urls as cars_urls
 from fileuploader import urls as fileuploader_urls
 from metrics import urls as metric_urls
 from resume import urls as resume_urls
@@ -54,6 +54,9 @@ urlpatterns = [
         r'^conspects/$',
         app_view.ConspectsPage.as_view(),
         name='conspects_page'),
+    url(
+        r'^cars/',
+        include(cars_urls, namespace='cars')),
     url(
         r'^login/',
         "django.contrib.auth.views.login",
