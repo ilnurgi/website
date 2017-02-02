@@ -4,26 +4,25 @@
 Содержание:
 
 .. toctree::
-   :maxdepth: 1
+    :maxdepth: 1
 
-   comments
-   modules
-   opers
-   none
-   bool
-   bytearray
-   bytes
-   class
-   complex
-   dicts
-   elipsis
-   errors
-   files
-   float
-   frozenset
-   functions
-   int
-   list
-   set
-   string
-   tuple
+    comments
+    modules
+    opers
+    none
+    string
+    int
+    bool
+    tuple
+    list
+    set
+    frozenset
+    dicts
+    bytearray
+    bytes
+    class
+    complex
+    elipsis
+    errors
+    files
+    functions

@@ -1,0 +1,24 @@
+{% extends 'blog/base.html' %}
+
+{% block extra_blog_head %}
+{% endblock %}
+
+{% block title %}
+    Удаление сообщения
+{% endblock %}
+
+{% block extra_blog_body %}
+    <div class="container">
+        <form action="" method="post" class="form-horizontal">
+            {% csrf_token %}
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-danger">
+                        Удалить пост -> {{ object }}
+                    </button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+{% endblock %}

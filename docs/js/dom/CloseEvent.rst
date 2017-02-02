@@ -1,8 +1,8 @@
 CloseEvent - определяет, был ли закрыт веб-сокет без ошибок
 ===========================================================
 
-.. js:class:: CloseEvent()
+.. py:class:: CloseEvent()
 
-    .. js:attribute:: wasClean
+    .. py:attribute:: wasClean
 
         Чистое закрытие, без ошибок

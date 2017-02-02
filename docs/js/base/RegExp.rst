@@ -39,11 +39,11 @@ $      конец данных
 * m - многострочный поиск
 
 
-.. js:class:: RegExp(template, flags)
+.. py:class:: RegExp(template, flags)
     
     Конструктор регулярных выражений
     
-    Наследник :js:class:`Object`
+    Наследник :py:class:`Object`
 
 
     .. code-block:: js
@@ -52,56 +52,56 @@ $      конец данных
         var re = /\w+c/igm
       
     
-    .. js:attribute:: global
+    .. py:attribute:: global
 
         Глобальный поиск
 
 
-    .. js:attribute:: ignoreCase
+    .. py:attribute:: ignoreCase
 
         Не учитывать регистр
 
 
-    .. js:attribute:: lastIndex
+    .. py:attribute:: lastIndex
 
         Позиция символа при последнем обнаружении соответсвия
 
 
-    .. js:attribute:: multiline
+    .. py:attribute:: multiline
 
         Многострочный поиск
 
 
-    .. js:attribute:: source
+    .. py:attribute:: source
 
         Исходный текст регулярки
 
 
-    .. js:function:: exec()
+    .. py:method:: exec([string])
         
-        Поиск совпадений в строке, возвращает массив (функция генератор)
+        Возвращает массив найденных элементов в строке
 
         .. code-block:: js
 
             var a = /\d/g;
             
             a.exec('kj5k3');
-            //['5', index: 2, input:]
-            
-            a.test('123');
-            //true
+            // ['5']
+
+            a.exec('kj5k3');
+            // ['3']
 
 
-    .. js:function:: test(string)
+    .. py:method:: test(string)
         
-        Есть ли совпадение, возвращает true|false
+        Возвращает булево, есть ли совпадение
 
         .. code-block:: js
 
             var a = /\d/;
             
             a.test('qw');
-            //false
+            // false
             
             a.test('123');
-            //true
+            // true

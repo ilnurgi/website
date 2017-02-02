@@ -1,25 +1,28 @@
-Context - контекст канвас страницы
-==================================
+Context
+=======
+
+Контекст канвас страницы
 
 
-.. js:class:: Context()
+.. py:class:: Context()
 
     
-    .. js:attribute:: canvas
+    .. py:attribute:: canvas
 
-        Ссылка на :js:canvas:`Canvas`
+        Ссылка на :py:class:`Canvas`
 
 
-    .. js:attribute:: fillStyle
+    .. py:attribute:: fillStyle
 
-        Цвет заливки, можно задать через :js:class:`CanvasGradient`, :js:class:`CanvasPattern`
+        Цвет заливки, можно задать через :py:class:`CanvasGradient`,
+        :py:class:`CanvasPattern`
 
         .. code-block:: js
 
             ctx.fillStyle = 'red';
 
 
-    .. js:attribute:: font
+    .. py:attribute:: font
 
         Шрифт для рисования текста
 
@@ -28,12 +31,12 @@ Context - контекст канвас страницы
             ctx.font = '14px Arial';
 
 
-    .. js:attribute:: globalAlpha
+    .. py:attribute:: globalAlpha
 
         Уровень прозрачности, от 0 до 1
 
 
-    .. js:attribute:: globalCompositeOperation
+    .. py:attribute:: globalCompositeOperation
 
         Управляет порядком объединения пикселов
 
@@ -60,7 +63,7 @@ Context - контекст канвас страницы
         * `xor` (R = (1-α d )S + (1-α s )D), Ес­ли ис­ход­ный пик­сел про­зра­чен, ре­зeль­та­том ком­по­зи­ции ста­нет це­ле­вой пик­сел. Ес­ли це­ле­вой пик­сел про­зра­чен, ре­зуль­та­том ста­нет ис­ход­ный пик­сел. Ес­ли оба пик­се­ла, ис­ход­ный и це­ле­вой, яв­ля­ют­ся про­зрач­ны­ми или не­про­зрач­ны­ми, в ре­зуль­та­те по­лу­чит­ся про­зрач­ный пик­сел.
 
 
-    .. js:attribute:: linaCap
+    .. py:attribute:: linaCap
 
         Окончание линии
 
@@ -71,7 +74,7 @@ Context - контекст канвас страницы
         * `square` - Это зна­че­ние ука­зы­ва­ет, что ли­ния долж­на иметь окон­ча­ние в ви­де квад­ра­та. Это зна­че­ние по сво­ему по­ве­де­нию на­по­ми­на­ет зна­че­ние «butt», но при ис­поль­ зо­ва­нии дан­но­го зна­че­ния ли­ния вы­сту­па­ет за ко­неч­ные точ­ки на по­ло­ви­ну сво­ей тол­щи­ны.
 
 
-    .. js:attribute:: lineJoin
+    .. py:attribute:: lineJoin
 
         Тип скругления углов. 
 
@@ -82,7 +85,7 @@ Context - контекст канвас страницы
         * `bevel` - фаска, внеш­ние края ли­ний, об­ра­зую­щих вер­ши­ну, долж­ны со­пря­гать­ся за­кра­шен­ным тре­уголь­ни­ком
 
 
-    .. js:attribute:: lineWidth
+    .. py:attribute:: lineWidth
 
         Толщина линий обводки
 
@@ -91,47 +94,47 @@ Context - контекст канвас страницы
             ctx.lineWidth = 3;
 
 
-    .. js:attribute:: miterLimit
+    .. py:attribute:: miterLimit
 
         Максимальная длина сопряжения для типа скругления углов, mitter
 
 
-    .. js:attribute:: shadowBlur
+    .. py:attribute:: shadowBlur
 
         Степень размытия краев тени
 
 
-    .. js:attribute:: shadowColor
+    .. py:attribute:: shadowColor
 
         Цвет тени
 
 
-    .. js:attribute:: shadowOffsetX, shadowOffsetY
+    .. py:attribute:: shadowOffsetX, shadowOffsetY
 
         Смещение тени
 
 
-    .. js:attribute:: strokeStyle
+    .. py:attribute:: strokeStyle
 
-        Цвет линии, можно задать через :js:class:`CanvasGradient`, :js:class:`CanvasPattern`
+        Цвет линии, можно задать через :py:class:`CanvasGradient`, :py:class:`CanvasPattern`
 
         .. code-block:: js
 
             ctx.strokeStyle = 'red';
 
 
-    .. js:attribute:: textAlign
+    .. py:attribute:: textAlign
 
         Выравнивание текста по горизонтали
 
 
-    .. js:attribute:: textBaseline
+    .. py:attribute:: textBaseline
 
         Положение базовой линии
 
 
 
-    .. js:function:: arc(x, y, radius, startAngle, endAngle[, anticlockwise])
+    .. py:function:: arc(x, y, radius, startAngle, endAngle[, anticlockwise])
 
         Рисование дуг
 
@@ -140,12 +143,12 @@ Context - контекст канвас страницы
             ctx.arc(100, 100, 30, 0, Math.PI * 2);
 
 
-    .. js:function:: arcTo(x1, y1, x2, y2, radius)
+    .. py:function:: arcTo(x1, y1, x2, y2, radius)
 
         Рисование дуг
 
 
-    .. js:function:: beginPath();
+    .. py:function:: beginPath();
 
         Начинаем рисование геометрической фигуры
 
@@ -154,12 +157,12 @@ Context - контекст канвас страницы
             ctx.beginPath();
 
 
-    .. js:function:: bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y)
+    .. py:function:: bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y)
 
         Рисование кривых Безье третьего порядка
 
 
-    .. js:function:: clearRect(x, y, h, w)
+    .. py:function:: clearRect(x, y, h, w)
 
         Очистка указанной области
 
@@ -168,12 +171,12 @@ Context - контекст канвас страницы
             ctx.clearRect(0, 0, 50, 50);
 
 
-    .. js:function:: clip()
+    .. py:function:: clip()
 
         Вы­чис­ля­ет пе­ре­се­че­ние внут­рен­ней об­лас­ти те­ку­ще­го кон­ту­ра с  те­ку­щей об­ла­стью от­сеч­ки и ис­поль­зу­ет эту по­лу­чен­ную об­ласть как но­вую об­ласть от­сеч­ки.
 
 
-    .. js:function:: closePath()
+    .. py:function:: closePath()
 
         Замыкаем линии геометрической фигуры
 
@@ -182,20 +185,20 @@ Context - контекст канвас страницы
             ctx.closePath();
 
 
-    .. js:function:: createImageData(imagedata)
-    .. js:function:: createImageData(w, h)
+    .. py:function:: createImageData(imagedata)
+    .. py:function:: createImageData(w, h)
 
-        Возвращает :js:class:`ImageData`
-
-
-    .. js:function:: createLinearGradient(x0, y0, x1, y1)
-
-        Возвращает :js:class:`CanvasGradient`
+        Возвращает :py:class:`ImageData`
 
 
-    .. js:function:: createPattern(image, reppetition)
+    .. py:function:: createLinearGradient(x0, y0, x1, y1)
 
-        Возвращает :js:class:`CanvasPattern`, шаблон заполнения холста на основе готового изображения
+        Возвращает :py:class:`CanvasGradient`
+
+
+    .. py:function:: createPattern(image, reppetition)
+
+        Возвращает :py:class:`CanvasPattern`, шаблон заполнения холста на основе готового изображения
 
         * `reppetition`
 
@@ -208,23 +211,23 @@ Context - контекст канвас страницы
             * `no-repeat` - Изо­бра­же­ние мо­заи­ки не по­вто­ря­ет­ся, а ис­поль­зу­ет­ся од­но­крат­но.
 
 
-    .. js:function:: createRadialGradient(x0, y0. r0, x1, y1, r1)
+    .. py:function:: createRadialGradient(x0, y0. r0, x1, y1, r1)
 
-        Возвращает :js:class:`CanvasGradient`
+        Возвращает :py:class:`CanvasGradient`
 
 
-    .. js:function:: drawImage(img, x, y[, w, h])
-    .. js:function:: drawImage(img, sx, sy, sw, sh, dx, dy, dw, dh)
+    .. py:function:: drawImage(img, x, y[, w, h])
+    .. py:function:: drawImage(img, sx, sy, sw, sh, dx, dy, dw, dh)
 
         Рисуем на канвасе картинку
 
         
-    .. js:function:: fill()
+    .. py:function:: fill()
 
         Залить замкнутый контур
 
 
-    .. js:function:: fillRect(x, y, h, w)
+    .. py:function:: fillRect(x, y, h, w)
 
         Залить замкнутый контур, прямоугольник
 
@@ -233,7 +236,7 @@ Context - контекст канвас страницы
             ctx.fillRect(0, 0, 100, 100);
 
 
-    .. js:function:: fillText(text, x, y[, maxWidth])
+    .. py:function:: fillText(text, x, y[, maxWidth])
 
         Рисует текст
 
@@ -242,17 +245,17 @@ Context - контекст канвас страницы
             ctx.fillText('Hello', 0, 0);
 
 
-    .. js:function:: getImageData(sx, sy, sw, sh)
+    .. py:function:: getImageData(sx, sy, sw, sh)
 
         Возвращает маcсив пикселов холста
 
 
-    .. js:function:: isPointInPath(x, y)
+    .. py:function:: isPointInPath(x, y)
 
         Проверяет, попадает ли точка в пределы текущего контура
 
 
-    .. js:function:: lineTo(x, y)
+    .. py:function:: lineTo(x, y)
 
         Рисуем линию от текущего положения маркера, до указанной
 
@@ -261,12 +264,12 @@ Context - контекст канвас страницы
             ctx.lineTo(0, 0);
 
 
-    .. js:function:: measureText(text)
+    .. py:function:: measureText(text)
 
-        Вычисляет ширину текста, которую он займет при рисовании с текущим значением свойства и возвращает :js:class:`TextMetrics`
+        Вычисляет ширину текста, которую он займет при рисовании с текущим значением свойства и возвращает :py:class:`TextMetrics`
 
 
-    .. js:function:: moveTo(x, y)
+    .. py:function:: moveTo(x, y)
 
         Перемещаем маркер на указанную позицию
 
@@ -275,17 +278,17 @@ Context - контекст канвас страницы
             ctx.moveTo(0, 0);
 
 
-    .. js:function:: putImageData(imagedata, dx, dy[, sx, sy, sw, sh])
+    .. py:function:: putImageData(imagedata, dx, dy[, sx, sy, sw, sh])
 
         Устанавливает отдельные писксели
 
 
-    .. js:function:: quadraticCurveTo(cpx, cpy, x, y)
+    .. py:function:: quadraticCurveTo(cpx, cpy, x, y)
 
         Рисование кривых Безье 2 порядка
 
 
-    .. js:function:: rect(x, y, w, h)
+    .. py:function:: rect(x, y, w, h)
 
         Рисование прямоугольника
 
@@ -294,32 +297,32 @@ Context - контекст канвас страницы
             ctx.rect(100, 100, 30, 30);
 
 
-    .. js:function:: restore()
+    .. py:function:: restore()
 
         Востоанавливаем предыдущее сохраненное состояние контекста
 
 
-    .. js:function:: rotate(angle)
+    .. py:function:: rotate(angle)
 
         Поворачивает матрицу рисования на указанный угол
 
 
-    .. js:function:: save()
+    .. py:function:: save()
 
         Сохраняем копию текущего состояния
 
 
-    .. js:function:: scale(sx, sy)
+    .. py:function:: scale(sx, sy)
 
         Изменение масштаба матрицы рисования
 
 
-    .. js:function:: setTransform(a, b, c, d, e, f)
+    .. py:function:: setTransform(a, b, c, d, e, f)
 
         Задаем матрицу преобразования
 
 
-    .. js:function:: stroke()
+    .. py:function:: stroke()
 
         Отрисовать все
 
@@ -328,7 +331,7 @@ Context - контекст канвас страницы
             ctx.stroke();
 
 
-    .. js:function:: strokeRect(x, y, w, h)
+    .. py:function:: strokeRect(x, y, w, h)
 
         Отрисовка прямоугоника без заливки
 
@@ -337,14 +340,14 @@ Context - контекст канвас страницы
             ctx.fillRect(0, 0, 100, 100);
 
 
-    .. js:function:: strokeText(text, x, y[, maxWidth])
+    .. py:function:: strokeText(text, x, y[, maxWidth])
 
         Рисует контуры текста
 
 
-    .. js:function:: transform(a, b, c, ,d , e, f)
+    .. py:function:: transform(a, b, c, ,d , e, f)
 
         
-    .. js:function:: translate(x, y)
+    .. py:function:: translate(x, y)
 
         Переносим начало позиции координат на указанную точку

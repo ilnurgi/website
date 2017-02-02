@@ -1,17 +1,29 @@
-.. _android_widget_CheckBox:
-
 android.widget.CheckBox
 =======================
 
+Кнопка, поддерживающая два состояния.
+
+Представлена в виде отмеченного или неотмеченного флажка.
+
+
+CheckBox
+--------
+
 .. py:class:: android.widget.CheckBox
 
-    Наследник :ref:`android.view.View`. Кнопка, поддерживающая два состояния. Представлена в виде отмеченного или неотмеченного флажка.
+    Наследник :py:class:`android.view.View`.
 
+    .. code-block:: java
+
+        CheckBox myChb = (CheckBox) findViewById(R.id.myChb);
 
     .. py:method:: setChecked(bool)
 
-        ставит флажок
+        Установить флажок в указанное состояние
 
+        .. code-block:: java
+
+            myChb.setChecked(true);
 
     .. py:method:: isChecked()
 

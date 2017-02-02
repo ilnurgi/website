@@ -9,6 +9,7 @@
 
        <head>
            <meta charset="utf-8" />
+           <title>Title</title>
        </head>
 
        <body></body>
@@ -19,7 +20,6 @@
     :maxdepth: 1
 
     doc
-    meta    
     mnemonic
     table
     text

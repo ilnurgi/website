@@ -9,6 +9,7 @@ HTML5
     aside
     audio
     canvas
+    datalist
     details
     figure
     footer
@@ -17,7 +18,9 @@ HTML5
     input
     main
     mark
+    meter
     nav
+    progress
     section
     time
     video

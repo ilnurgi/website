@@ -1,14 +1,17 @@
 layout - разметка активити
 ==========================
 
-Ресурс хранится в папке res/layout и
-res/layout_land - для горизонтальной ориентации экрана.
+* res/layout - активити для вертикального экрана
+* res/layout-land - активити для шоризонтального экрана
 
-Разметка может содержать такие группирующие элементы, как:
+Разметка может содержать такие группирующие элементы:
 
+    * :py:class:`android.widget.AbsoluteLayout`
     * :py:class:`android.widget.LinerLayout`
+    * :py:class:`android.widget.RelativeLayout`
+    * :py:class:`android.widget.TableLayout`
 
-А также виджеты
+А также виджеты:
 
     * :py:class:`android.widget.Button`
 
@@ -36,7 +39,6 @@ drawable
         android:drawableRight="@drawable/arrow_right"
         android:drawablePadding="4dp" />
 
-
 fadingEdge
 ----------
 
@@ -48,45 +50,6 @@ gravity
 
     <view
         android:gravity="center" />
-
-
-id
---
-
-Иденификатор
-
-
-layout_align...
----------------
-
-Выравнивание элемента относительно указанного
-
-* layout_alignBottom - снизу
-* layout_alignLeft - слева
-* layout_alignRight - справа
-* layout_alignTop - сверху
-
-
-layout_alignParent...
----------------------
-
-Выравнивание элемента относительно родителя
-
-* layout_alignParentBottom -  снизу
-* layout_alignParentLeft - слева
-* layout_alignParentRight - справа
-* layout_alignParentTop - сверху
-
-
-layout_center...
-----------------
-
-Выравниваение элемента по центру экрана
-
-* layout_centerVertical - вертикально
-* layout_centerHorizontal - горизонтально
-* layout_centerInParent - по центру вертикально и горизонтально относительно родителя
-
 
 layout_gravity
 --------------
@@ -109,8 +72,6 @@ layout_gravity
     <view2
         android:layout_gravity="center_horizontal|center_vertical" />
 
-
-
 layout_height
 -------------
 
@@ -125,54 +86,6 @@ layout_height
     <view
         android:layout_height="match_parent" />
 
-
-layout_margin...
-----------------
-
-Внешние отступы элемента
-
-* layout_marginLeft
-* layout_marginRight
-* layout_marginBottom
-* layout_marginTop
-
-
-layout_to...
-------------
-
-Расположить элемент относительно указанного
-
-* layout_above - сверху
-* layout_below - снизу
-* layout_toLeftOf - слева
-* layout_toRightOf - справа
-
-
-layout_weight
--------------
-
-Ширина элемента
-
-* wrap_content - по содержимому
-* match_parent - по родителю
-* dp, ...
-
-.. code-block:: xml
-
-    <view
-        android:layout_width="match_parent" />
-
-
-layout_x
---------
-
-Абсолютная координата расположения элемента
-
-
-layout_y
---------
-
-Абсолютная координата расположения элемента
 
 
 onClick
@@ -226,7 +139,7 @@ text
 
 Текст
 
-.. code-block::
+.. code-block:: xml
 
     <view
         android:text="@string/some_text" />

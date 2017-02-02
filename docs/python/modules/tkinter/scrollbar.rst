@@ -1,12 +1,16 @@
-Scrollbar - виджет, прокрутка
-=============================
+.. py:module:: tkinter
+
+Scrollbar
+=========
+
+Виджет, прокрутка
 
 
 .. py:class:: Scrollbar(**kwargs)
 
     Виджет, прокрутка
 
-    Наследник :ref:class:`Widget`
+    Наследник :py:class:`tkinter.Widget`
 
     * `elementborderwidth` -
     * `jump` -

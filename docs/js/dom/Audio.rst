@@ -1,7 +1,7 @@
 Audio
 =====
 
-.. js:class:: Audio()
+.. py:class:: Audio()
 
     Представляет html элемент `audio`
 

@@ -4,7 +4,7 @@ Symbol - символ
 .. note:: ECMAScript6
 
 
-.. js:class:: Symbol()
+.. py:class:: Symbol()
 
     .. code-block:: js
 
@@ -21,29 +21,29 @@ Symbol - символ
         }
 
 
-    .. js:attribute:: hasInstance
+    .. py:attribute:: hasInstance
 
-    .. js:attribute:: isContcatSpreadable
+    .. py:attribute:: isContcatSpreadable
 
-    .. js:attribute:: iterator
+    .. py:attribute:: iterator
 
-    .. js:attribute:: match
+    .. py:attribute:: match
 
-    .. js:attribute:: replace
+    .. py:attribute:: replace
 
-    .. js:attribute:: search
+    .. py:attribute:: search
 
-    .. js:attribute:: species
+    .. py:attribute:: species
 
-    .. js:attribute:: split
+    .. py:attribute:: split
 
-    .. js:attribute:: toPrimitive
+    .. py:attribute:: toPrimitive
 
-    .. js:attribute:: toStringTag
+    .. py:attribute:: toStringTag
     
-    .. js:attribute:: unscopables
+    .. py:attribute:: unscopables
 
-    .. js:function:: for(string)
+    .. py:function:: for(string)
 
         Создает символ глобально
 

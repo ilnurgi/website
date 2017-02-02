@@ -1,8 +1,8 @@
-Object - объекты
-================
+Object
+======
 
 
-.. js:class:: Object()
+.. py:class:: Object()
 
     Объект, является прототипом для всех объектов языка
 
@@ -27,15 +27,6 @@ Object - объекты
         // создание дочерних объектов
         var Megaperson = Object.create(person);
 
-    .. code-block:: js
-
-        var object = {
-            name: 'ilnurgi',
-            age: 23
-        }
-        var name = object.name,
-            age = object.age;
-
     .. note:: EcmaScript6
 
         .. code-block:: js
@@ -49,30 +40,18 @@ Object - объекты
             let {name: x, age: y} = object;
             let {["na" + "me": x, age: y} = object;
 
-    .. note:: EcmaScript6
-
-        .. code-block:: js
-
             let x = 1, y = 2;
             let object = { x, y };
 
-    .. note:: EcmaScript6
-
-        .. code-block:: js
-
-            let object = { 
+            let object = {
                 myFunction() {...};
             };
             object.myFunction();
 
-    .. note:: EcmaScript6
-
-        .. code-block:: js
-
             let a = {a: 12, __proto__: {b: 13}}
 
 
-    .. js:attribute:: constructor
+    .. py:attribute:: constructor
 
         Ссылка на конструктор
 
@@ -83,27 +62,36 @@ Object - объекты
             // true
 
 
-    .. js:function:: getOwnPropertySymbols()
+    .. py:function:: getOwnPropertySymbols()
 
         Возвращает массив символьных свойств объекта
 
         .. note:: EcmaScript6
 
 
-    .. js:function:: hasOwnProperty(name)
+    .. py:function:: hasOwnProperty(name)
 
-        Определяет, обладает ли объект свойством. 
+        Возвращает булево, обладает ли объект свойством.
 
-        .. code-block::
+        .. code-block:: js
 
-            var o = new Object();         // Создать объект
-            o.x = 3.14;                   // Определить неунаследованное свойство
-            o.hasOwnProperty("x");        // Вернет true: x – это локальное свойство o
-            o.hasOwnProperty("y");        // Вернет false: o не имеет свойства y
-            o.hasOwnProperty("toString"); // Вернет false: свойство toString унаследовано
+            // Создать объект
+            var o = new Object();
+
+            // Определить неунаследованное свойство
+            o.x = 3.14;
+
+            o.hasOwnProperty("x");
+            // Вернет true: x – это локальное свойство
+
+            o.hasOwnProperty("y");
+            // Вернет false: объект не имеет свойства y
+
+            o.hasOwnProperty("toString");
+            // Вернет false: свойство toString унаследовано
 
 
-    .. js:function:: isPrototypeOf(obj)
+    .. py:function:: isPrototypeOf(obj)
 
         Является ли данный объект прототипом для указанного объекта
 
@@ -133,7 +121,7 @@ Object - объекты
             Object.prototype.isPrototypeOf(Function.prototype);
 
 
-    .. js:function:: propertyIsEnumerable(var)
+    .. py:function:: propertyIsEnumerable(var)
 
         Су­ще­ст­ву­ет ли свой­ст­во с ука­зан­ным име­нем и бу­дет ли оно пе­ре­чис­ле­но цик­лом for/in
 
@@ -147,17 +135,17 @@ Object - объекты
             Object.prototype.propertyIsEnumerable("toString"); // false: не­пе­ре­чис­ли­мое
 
 
-    .. js:function:: toLocaleString()
+    .. py:function:: toLocaleString()
 
         Локализованное строчное представление объекта
 
 
-    .. js:function:: toString()
+    .. py:function:: toString()
 
         Возвращает строковое представление объекта
 
 
-    .. js:function:: valueOf()
+    .. py:function:: valueOf()
 
         Возвращает значение объекта
 
@@ -165,7 +153,7 @@ Object - объекты
 Методы, доступные только в объекте Object
 -----------------------------------------
 
-.. js:function:: assign(targetObj, sourceObj, ...)
+.. py:function:: assign(targetObj, sourceObj, ...)
 
     Копирует значения свойств объектов в целевой.
 
@@ -192,7 +180,7 @@ Object - объекты
         Object.assign(m, x, y, z);
 
 
-.. js:function:: create(prototype[, descriptors]) 
+.. py:function:: create(prototype[, descriptors])
 
     Создает новый объект с указанным прототипом и свойствами.
 
@@ -217,7 +205,7 @@ Object - объекты
         });
 
 
-.. js:function:: defineProperties(obj, descriptors) 
+.. py:function:: defineProperties(obj, descriptors)
 
     Соз­да­ет или на­страи­ва­ет од­но или бо­лее свойств в ука­зан­ном объ­ек­те.
 
@@ -242,7 +230,7 @@ Object - объекты
         });
 
 
-.. js:function:: defineProperty(obj, name, value) 
+.. py:function:: defineProperty(obj, name, value)
 
     Соз­да­ет или на­страи­ва­ет свой­ст­во в ука­зан­ном объ­ек­те.
 
@@ -258,28 +246,28 @@ Object - объекты
         });
 
 
-.. js:function:: freeze(obj) 
+.. py:function:: freeze(obj)
 
     Де­ла­ет ука­зан­ный объ­ект не­из­ме­няе­мым.
 
     .. versionadded:: ECMAScript5
 
 
-.. js:function:: getOwnPropertyDescriptor(obj, name) 
+.. py:function:: getOwnPropertyDescriptor(obj, name)
 
     Воз­вра­ща­ет ат­ри­бу­ты ука­зан­но­го свой­ст­ва в ука­зан­ном объ­ек­те.
 
     .. versionadded:: ECMAScript5
 
 
-.. js:function:: getOwnPropertyNames(obj, name) 
+.. py:function:: getOwnPropertyNames(obj, name)
 
     Воз­вра­ща­ет мас­сив имен всех не­унас­ле­до­ван­ных свойств в  ука­зан­ном объ­ек­те, вклю­чая свой­ст­ва, не ­пе­ре­чис­ляе­мые цик­лом for/in.
 
     .. versionadded:: ECMAScript5
 
     
-.. js:function:: getPrototypeOf(obj) 
+.. py:function:: getPrototypeOf(obj)
 
     Воз­вра­ща­ет про­то­тип ука­зан­но­го объ­ек­та.
 
@@ -293,7 +281,7 @@ Object - объекты
         Object.getPrototypeOf(o) // => p
 
 
-.. js:function:: is(value1, value2)
+.. py:function:: is(value1, value2)
 
     Проверяет равенство двух значений
 
@@ -320,7 +308,7 @@ Object - объекты
         // false
 
 
-.. js:function:: isExtensible(obj) 
+.. py:function:: isExtensible(obj)
 
     Оп­ре­де­ля­ет, мо­гут ли до­бав­лять­ся но­вые свой­ст­ва в ука­зан­ный объ­ект.
 
@@ -334,21 +322,21 @@ Object - объекты
         Object.isExtensible(o)       // => false: те­перь он не­рас­ши­ряе­мый
 
 
-.. js:function:: isFrozen(obj) 
+.. py:function:: isFrozen(obj)
 
     Оп­ре­де­ля­ет, яв­ля­ет­ся ли ука­зан­ный объ­ект фик­си­ро­ван­ным.
 
     .. versionadded:: ECMAScript5
 
 
-.. js:function:: isSealed(obj) 
+.. py:function:: isSealed(obj)
 
     Оп­ре­де­ля­ет, яв­ля­ет­ся ли ука­зан­ный объ­ект не­рас­ши­ряе­мым, а его свой­ст­ва не­дос­туп­ны­ми для на­строй­ки.
 
     .. versionadded:: ECMAScript5
 
 
-.. js:function:: keys(obj) 
+.. py:function:: keys(obj)
 
     Возвращает массив имен неунаследованных перечислимых свойств в указанном объекте.
 
@@ -360,21 +348,21 @@ Object - объекты
         // ["x", "y"]
 
     
-.. js:function:: preventExtensions(obj) 
+.. py:function:: preventExtensions(obj)
 
     Пре­дот­вра­ща­ет воз­мож­ность до­бав­ле­ния но­вых свойств в ука­зан­ный объ­ект.
 
     .. versionadded:: ECMAScript5
 
 
-.. js:function:: seal(obj) 
+.. py:function:: seal(obj)
 
     Пре­дот­вра­ща­ет воз­мож­ность до­бав­ле­ния но­вых и уда­ле­ния су­ще­ст­вую­щих свойств в ука­зан­ном объ­ек­те.
 
     .. versionadded:: ECMAScript5
 
 
-.. js:function:: setPrototypeOf(object, prototype)
+.. py:function:: setPrototypeOf(object, prototype)
 
     Присваивание значений свойству `prototype`
 

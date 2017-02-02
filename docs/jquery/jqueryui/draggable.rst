@@ -2,9 +2,9 @@ draggable - перетаскиваемый объект
 ==================================
 
 
-.. js:function:: draggable([methodName, option, value])
-.. js:function:: draggable([methodName, param_obj])
-.. js:function:: draggable([param_obj])
+.. py:function:: draggable([methodName, option, value])
+.. py:function:: draggable([methodName, param_obj])
+.. py:function:: draggable([param_obj])
 
     .. code-block:: js
         

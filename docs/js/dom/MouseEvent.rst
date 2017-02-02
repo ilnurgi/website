@@ -1,6 +1,6 @@
 MouseEvent
 ==========
 
-.. js:class:: MouseEvent()
+.. py:class:: MouseEvent()
 
-    Наследник :js:class:`Event`
+    Наследник :py:class:`Event`

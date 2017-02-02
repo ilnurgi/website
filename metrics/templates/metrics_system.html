@@ -1,5 +1,13 @@
 {% extends 'base_metrics.html' %}
 
+{% block extra_title %}
+    Система.
+{% endblock %}
+
+{% block description %}
+    <meta name="description" content="Статистика ресурса. Система.">
+{% endblock %}
+
 {% block extra_metrics_head %}
     <script>
         function createChartJs(json, label, canvas_id, legend_id){

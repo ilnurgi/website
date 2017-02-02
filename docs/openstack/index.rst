@@ -8,3 +8,4 @@ Openstack - предоставляет инфрастурктуру для по�
 
     cli/index
     clients/index
+    neutron/index

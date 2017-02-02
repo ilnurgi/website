@@ -1,9 +1,12 @@
-Описание объектов пакета android.content
-========================================
+android.content
+===============
 
 .. toctree::
     :maxdepth: 1
 
-    res/index
+    res
+    ContentValues
     Context
+    DialogInterface
     Intent
+    SharedPreferences

@@ -1,16 +1,16 @@
 BlobBuilder - используется для создания новых Blob
 ==================================================
 
-.. js:class:: BlobBuilder()
+.. py:class:: BlobBuilder()
 
     
-    .. js:function:: append(text, [endings])
-    .. js:function:: append(blob)
-    .. js:function:: append(arraybuffer)
+    .. py:function:: append(text, [endings])
+    .. py:function:: append(blob)
+    .. py:function:: append(arraybuffer)
 
         Добавляет текст, объек или массив в объект
 
 
-    .. js:function:: getBlob([contentype])
+    .. py:function:: getBlob([contentype])
 
         Возвращает объект

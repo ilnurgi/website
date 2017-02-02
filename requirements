@@ -7,3 +7,6 @@ psutil
 markdown
 django-celery
 django-kombu
+pytils
+lxml
+requirements

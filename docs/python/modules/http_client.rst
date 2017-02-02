@@ -6,14 +6,16 @@ http.client
 Модуль позволяет получить информацию из интернета по протоколу HTTP и HTTPS. 
 
 
+HTTPConnection()
+================
 .. py:class:: HTTPConnection(<domen>[, port=80[, <strict>[, <timeout>[, [<source_address>]]]]])
 
     объект соединение
 
-    :param str domen: домен, указывается без протокола
-    :param int port: порт
+    * domen - домен, указывается без протокола
+    * port - порт
 
-    ::
+    .. code-block:: py
 
         from http.client import HTTPConnection
         from urllib.parse import urlencode
@@ -73,9 +75,18 @@ http.client
         :param dict headers: заголовки 
 
 
+HTTPResponse()
+==============
+
 .. py:class:: HTTPResponse()
 
-    объект ответа, результат запроса 
+    Ответ http запроса
+
+    .. code-block:: py
+
+        import urllib
+
+        conn = urllib.request.open(url)
 
 
     .. py:attribute:: msg
@@ -90,7 +101,12 @@ http.client
 
     .. py:attribute:: status
 
-        число, код возврата
+        Число, код возврата запроса
+
+        .. code-block:: py
+
+            conn.status
+            # 200
 
 
     .. py:attribute:: version
@@ -110,12 +126,22 @@ http.client
 
     .. py:method:: getheader(<Заголовок>[, <Значение по умолчанию>=None])
 
-        возвращает значение указанного заголовка
+        Возвращает значение указанного заголовка
+
+        .. code-block:: py
+
+            conn.getheader("Content-Type")
+            # text/plain
 
 
     .. py:method:: getheaders()
 
-        возвращает все заголовки ответа сервера в виде списка кортежей
+        Возвращает все заголовки ответа сервера в виде списка кортежей
+
+        .. code-block:: py
+
+            conn.getheaders()
+            # [("Content-Type", "text/plain"), ...]
 
 
     .. py:method:: geturl()
@@ -128,11 +154,13 @@ http.client
         возвращает доп информацию в виде объекта :py:class:`HTTPMessage`
 
 
-
-
     .. py:method:: read([<количество байтов>])
 
-        возвращает строку, считанные данные
+        Возвращает строку, считанные данные
+
+        .. code-block:: py
+
+            data = conn.read()
 
 
     .. py:method:: readline([<количество байтов>])
@@ -144,6 +172,9 @@ http.client
 
         возвращает список, считанные данные, считывает одну строку при каждом вызове
 
+
+HTTPMessage()
+=============
 
 .. py:class:: HTTPMessage()
 

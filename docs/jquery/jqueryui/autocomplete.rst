@@ -2,9 +2,9 @@ autocomplete - автозаполнение текстовых полей
 =============================================
 
 
-.. js:function:: autocomplete([methodName, option, value])
-.. js:function:: autocomplete([methodName, param_obj])
-.. js:function:: autocomplete([param_obj])
+.. py:function:: autocomplete([methodName, option, value])
+.. py:function:: autocomplete([methodName, param_obj])
+.. py:function:: autocomplete([param_obj])
 
     
     * `methodName` - методы виджета

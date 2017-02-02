@@ -1,8 +1,9 @@
 .. py:module:: psutil
 
-=======================================
-psutil - получение системной информации
-=======================================
+psutil
+======
+
+Получение системной информации
 
 Версия `psutil <http://pythonhosted.org/psutil/>`_ на момент написания была 3.2.2
 
@@ -648,20 +649,20 @@ Process
 
         Return a namedtuple with variable fields depending on the platform representing extended memory information about the process. All numbers are expressed in bytes.
 
-        ======= ======= === ======= =======
-        Linux   OSX     BSD SunOS   Windows
-        ======= ======= === ======= =======
-        rss     rss     rss rss     num_page_faults
-        vms     vms     vms vms     peak_wset
-        shared  pfaults text        wset
-        text    pageins data        peak_paged_pool
-        lib             stack       paged_pool
-        data                        peak_nonpaged_pool
-        dirty                       nonpaged_pool
-                                    pagefile
-                                    peak_pagefile
-                                    private
-        ======= ======= === ======= =======
+        ======= ======= ===== ======= ===================
+        Linux   OSX     BSD   SunOS   Windows
+        ======= ======= ===== ======= ===================
+        rss     rss     rss   rss     num_page_faults
+        vms     vms     vms   vms     peak_wset
+        shared  pfaults text          wset
+        text    pageins data          peak_paged_pool
+        lib             stack         paged_pool
+        data                          peak_nonpaged_pool
+        dirty                         nonpaged_pool
+                                      pagefile
+                                      peak_pagefile
+                                      private
+        ======= ======= ===== ======= ===================
 
         Windows metrics are extracted from PROCESS_MEMORY_COUNTERS_EX structure. Example on Linux:
 

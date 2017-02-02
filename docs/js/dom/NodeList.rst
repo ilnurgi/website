@@ -4,25 +4,25 @@ NodeList - коллекция, содержащая все виды узлов
 Изменяется при каждом изменении дом дерева
 
 
-.. js:class:: NodeList()
+.. py:class:: NodeList()
 
 
-    .. js:attribute:: length
+    .. py:attribute:: length
         
         Количество элементов в коллекции.
 
 
-    .. js:function:: item(unsigned long index)
+    .. py:function:: item(unsigned long index)
         
-        Возвращает элемент коллекции :js:class:`Element`,
+        Возвращает элемент коллекции :py:class:`Element`,
         расположенный в позиции index,
         или null, если индекс index выходит за границы массива.
 
         Этот метод можно не вызывать явно, а указать индекс в квадратных скообках.
 
 
-    .. js:function:: namedItem(string name)
+    .. py:function:: namedItem(string name)
         
-        Возвращает первый элемент :js:class:`Element` из коллекции,
+        Возвращает первый элемент :py:class:`Element` из коллекции,
         имеющий значение `name` в атрибуте id или name,
         либо null, если такой элемент отсутствует

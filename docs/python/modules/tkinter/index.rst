@@ -1,7 +1,9 @@
 .. py:module:: tkinter
 
-tkinter - кроссплатформенная библиотека для построения графического интерфейса
-==============================================================================
+tkinter
+=======
+
+Кроссплатформенная библиотека для построения графического интерфейса
 
 Tkinter (от англ. tk interface) - это графическая библиотека,
 позволяющая создавать программы с оконным интерфейсом.
@@ -34,57 +36,58 @@ Tkinter является событийно-ориентированной би�
 Базовые объекты:
 
 .. toctree::
-   :maxdepth: 1
+    :maxdepth: 1
 
-   TK
-   constants
-   misk
-   basewidget
-   widget
-   xview
-   yview
+    TK
+    constants
+    misk
+    base_widget
+    widget
+    xview
+    yview
+    wm
 
 
 Виджеты:
 
 .. toctree::
-   :maxdepth: 1
+    :maxdepth: 1
 
-   button
-   checkbutton
-   entry
-   frame
-   label
-   listbox
-   message
-   panedwindow
-   radiobutton
-   scale
-   text
-   toplevel
-   scrollbar
+    button
+    checkbutton
+    entry
+    frame
+    label
+    listbox
+    message
+    panedwindow
+    radiobutton
+    scale
+    text
+    toplevel
+    scrollbar
 
-   base
-   vars
-   canvas
+    base
+    vars
+    canvas
 
-   event
-   labelframe
-   menu
-   menubutton
-   optionmenu
-   spinbox
-   colorchooser
-   filedialog
-   messagebox
-   simpledialog
+    event
+    labelframe
+    menu
+    menubutton
+    optionmenu
+    spinbox
+    colorchooser
+    filedialog
+    messagebox
+    simpledialog
 
 
 Работа с изображениями
 
 .. toctree::
-   :maxdepth: 1
+    :maxdepth: 1
 
-   image
-   bitmapimage
-   photoimage
+    image
+    bitmapimage
+    photoimage

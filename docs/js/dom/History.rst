@@ -1,25 +1,25 @@
 History - журнал посещений объекта Window
 =========================================
 
-.. js:class:: History()
+.. py:class:: History()
 
 
-    .. js:attribute:: length
+    .. py:attribute:: length
 
         Количество адресов посещений
 
 
-    .. js:function:: back()
+    .. py:function:: back()
 
         Открыть прошлую страницу
 
 
-    .. js:function:: forward()
+    .. py:function:: forward()
 
         Открыть следующую страницу
 
 
-    .. js:function:: go([delta])
+    .. py:function:: go([delta])
 
         Открыть страницу, смещенную относительно текущей
 
@@ -28,7 +28,7 @@ History - журнал посещений объекта Window
             history.go(-1);
 
 
-    .. js:function:: pushState(any data, string title, [string url])
+    .. py:function:: pushState(any data, string title, [string url])
         
         Добавляет новую запись в журнал посещений для данного окна,
         сохраняя структурированную копию данных `data`,
@@ -63,7 +63,7 @@ History - журнал посещений объекта Window
             history.pushState(null, null, 'ilnurgi.ru');
 
 
-    .. js:function:: replaceState(any data, string title, [string url])
+    .. py:function:: replaceState(any data, string title, [string url])
         
         Этот метод похож на метод :js:func:`pushState`,
         за исключением того,

@@ -1,8 +1,7 @@
-.. py:module:: android.util
+android.util.AttributeSet
+=========================
 
-AttributeSet
-============
 
-.. py:class:: AttributeSet
+.. py:class:: android.util.AttributeSet()
 
     

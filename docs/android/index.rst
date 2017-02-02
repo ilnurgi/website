@@ -10,3 +10,8 @@
     :maxdepth: 2
 
     resources/index
+
+.. toctree::
+    :maxdepth: 2
+
+    subpackages/index

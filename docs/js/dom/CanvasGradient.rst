@@ -1,8 +1,8 @@
 CanvasGradient - цветной градиент для использования в канвасе
 =============================================================
 
-.. js:class:: CanvasGradient()
+.. py:class:: CanvasGradient()
 
-    .. js:function:: addColorStop(double offset, str color)
+    .. py:function:: addColorStop(double offset, str color)
 
         Определяет фиксированные цвета внутри градиента

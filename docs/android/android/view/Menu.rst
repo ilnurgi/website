@@ -1,28 +1,28 @@
-.. py:module:: android.view
+.. _android_view_menu:
 
-Menu - меню
-===========
+android.view.Menu
+=================
 
-.. py:class:: Menu()
+.. py:class:: android.view.Menu()
 
-    объект меню
-
-
-    .. py:method:: add(title)
-    .. py:method:: add(groupId, itemId, order, title)
-
-        добавляет элемент в меню
-
-        :param title: :py:class:`String` - текст, который будет отображен
-        :param groupId: :py:class:`int` - идентификатор группы, частью которой является пункт меню
-        :param itemId: :py:class:`int` - ID пункта меню
-        :param order: :py:class:`int`- для задания последовательности показа пунктов меню
+    Меню
 
 
-    .. py:method:: setGroupVisible(groupId, enable)
+    .. py:method:: add(String title)
+    .. py:method:: add(int groupId, int itemId, int order, String title)
 
-        скрывает отображает элементы в меню
+        Добавляет элемент в меню
+
+        * title - текст, который будет отображен
+        * groupId - идентификатор группы, частью которой является пункт меню
+        * itemId - ID пункта меню
+        * order - для задания последовательности показа пунктов меню
+
+
+    .. py:method:: setGroupVisible(int groupId, bool enable)
+
+        Скрывает отображает элементы в меню
         
-        :param groupId: :py:class:`int` - идентификатор группы
-        :param enable: :py:class:`bool`- видимость элемента
+        * groupId - идентификатор группы
+        * enable - видимость элемента
 

@@ -3,17 +3,20 @@ menu - меню
 
 .. code-block:: xml
 
-    <menu>
+    <menu
+        xmlns:android= "http://schemas.android.com/apk/res/android">
+
         <item
             android:id="@+id/menu_copy"
             android:orderInCategory="1"
-            android:title="copy">
-        </item>
-        <group android:id="@+id/group1">
+            android:title="copy" />
+
+        <group
+            android:id="@+id/group1">
+
             <item
                 android:id="@+id/menu_copy"
                 android:orderInCategory="1"
-                android:title="copy">
-            </item>
+                android:title="copy" />
         </group>
     </menu>

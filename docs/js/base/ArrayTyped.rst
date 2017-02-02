@@ -7,7 +7,7 @@
 DataView
 --------
 
-.. js:class:: DataView(size)
+.. py:class:: ArrayTyped(size)
 
     .. note:: EcmaScript6    
 
@@ -19,9 +19,9 @@ DataView
         view.getInt32(8, false);
         // 22
 
-    .. js:function:: setInt8(offset, value, be)
-    .. js:function:: setInt16(offset, value, be)
-    .. js:function:: setInt32(offset, value, be)
+    .. py:method:: setInt8(offset, value, be)
+    .. py:method:: setInt16(offset, value, be)
+    .. py:method:: setInt32(offset, value, be)
 
         Использует 8/16/32 бит для хранения числа, принимает целое число со знаком
 
@@ -30,34 +30,34 @@ DataView
         * `be` - порядок записи байтов байтов числа, false - старшие байты будут записаны первыми.
 
 
-    .. js:function:: setUint8(offset, value, be)
-    .. js:function:: setUint16(offset, value, be)
-    .. js:function:: setUint32(offset, value, be)
+    .. py:method:: setUint8(offset, value, be)
+    .. py:method:: setUint16(offset, value, be)
+    .. py:method:: setUint32(offset, value, be)
 
         Использует 8/16/32 бит для хранения числа, принимает целое число без знака
 
 
-    .. js:function:: setFloat32(offset, value, be)
-    .. js:function:: setFloat64(offset, value, be)
+    .. py:method:: setFloat32(offset, value, be)
+    .. py:method:: setFloat64(offset, value, be)
 
         Использует 32/64 бит для хранения числа, принимает вещественное число со знаком
 
 
-    .. js:function:: getInt8(offset, be)
-    .. js:function:: getInt16(offset, be)
-    .. js:function:: getInt32(offset, be)
+    .. py:method:: getInt8(offset, be)
+    .. py:method:: getInt16(offset, be)
+    .. py:method:: getInt32(offset, be)
 
         Читает 8/16/32 бит и возвращает целое число со знаком
 
 
-    .. js:function:: getUint8(offset, be)
-    .. js:function:: getUint16(offset, be)
-    .. js:function:: getUint32(offset, be)
+    .. py:method:: getUint8(offset, be)
+    .. py:method:: getUint16(offset, be)
+    .. py:method:: getUint32(offset, be)
 
         Читает 8/16/32 бит и возвращает целое число без знака
 
-    .. js:function:: getFloat32(offset, be)
-    .. js:function:: getFloat64(offset, be)
+    .. py:method:: getFloat32(offset, be)
+    .. py:method:: getFloat64(offset, be)
 
         Читает 32/64 бит и возвращает вещественное число со знаком
 
@@ -67,7 +67,7 @@ Float64Array
 
 Буферный массив 64-битных вещественных чисел
 
-.. js:class:: Float64Array(buffer)
+.. py:class:: Float64Array(buffer)
     
     .. note:: EcmaScript6
 
@@ -93,37 +93,37 @@ Int8Array, Int16Array, Int32Array
 
 Буферный массив для 8/16/32 битных чисел со знаком
 
-.. js:class:: Int8Array(buffer)
+.. py:class:: Int8Array(buffer)
 
     .. note:: EcmaScript6
 
 
-.. js:class:: Int16Array(buffer)
+.. py:class:: Int16Array(buffer)
 
     .. note:: EcmaScript6
 
 
-.. js:class:: Int32Array(buffer)
+.. py:class:: Int32Array(buffer)
 
     .. note:: EcmaScript6
 
 
 Uint8Array, Uint16Array, Uint32Array
----------------------------------
+------------------------------------
 
 Буферный массив для 8/16/32 битных чисел без знака
 
-.. js:class:: Uint8Array(buffer)
+.. py:class:: Uint8Array(buffer)
 
     .. note:: EcmaScript6
 
 
-.. js:class:: Uint16Array(buffer)
+.. py:class:: Uint16Array(buffer)
 
     .. note:: EcmaScript6
 
 
-.. js:class:: Uint32Array(buffer)
+.. py:class:: Uint32Array(buffer)
 
     .. note:: EcmaScript6
 
@@ -133,11 +133,11 @@ Float32Array, Float64Array
 
 Буферный массив для 32/64 битных вещественных чисел со знаком
 
-.. js:class:: Float32Array(buffer)
+.. py:class:: Float32Array(buffer)
 
     .. note:: EcmaScript6
 
 
-.. js:class:: Float64Array(buffer)
+.. py:class:: Float64Array(buffer)
 
     .. note:: EcmaScript6

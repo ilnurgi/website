@@ -1,7 +1,7 @@
 Date - объект дата
 ==================
 
-.. js:class:: Date()
+.. py:class:: Date()
 
     Дата
 
@@ -16,158 +16,158 @@ Date - объект дата
         var g = new Date('03/09/2000');
 
 
-    .. js:function:: getDate(), getUTCDate()
+    .. py:function:: getDate(), getUTCDate()
 
         Возвращает число месяца
 
 
-    .. js:function:: getDay(), getUTCDay()
+    .. py:function:: getDay(), getUTCDay()
 
         Возвращает число, номер дня недели
 
 
-    .. js:function:: getFullYear(), getUTCFullYear()
+    .. py:function:: getFullYear(), getUTCFullYear()
 
         Возвращает текущий год, 2013
 
 
-    .. js:function:: getHours(), getUTCHours()
+    .. py:function:: getHours(), getUTCHours()
 
         Возвращает число, часы
 
 
-    .. js:function:: getMilliseconds(), getUTCMilliseconds()
+    .. py:function:: getMilliseconds(), getUTCMilliseconds()
 
         Возвращает число, миллисекунды
 
 
-    .. js:function:: getMinutes(), getUTCMinutes()
+    .. py:function:: getMinutes(), getUTCMinutes()
 
         Возвращает число, минуты
 
 
-    .. js:function:: getMonth(), getUTCMonth()
+    .. py:function:: getMonth(), getUTCMonth()
 
         Возвращает чилсо месяца
 
 
-    .. js:function:: getSeconds(), getUTCSeconds()
+    .. py:function:: getSeconds(), getUTCSeconds()
 
         Возвращает число, секунды
 
 
-    .. js:function:: getTime()
+    .. py:function:: getTime()
 
         Возвращает число, количество секунд прошедшее с 1970.1.1
 
 
-    .. js:function:: getTimezoneOffset()
+    .. py:function:: getTimezoneOffset()
 
         Возвращает смещение даты в минутах.
 
 
-    .. js:function:: getYear()
+    .. py:function:: getYear()
 
         Возвращает число, количесвто лет прошедшее с 1970.1.1
 
 
-    .. js:function:: now()
+    .. py:function:: now()
 
         Статический метод, который возвращает текущее время в секундах
 
         .. versionadded:: ECMAScript5
 
 
-    .. js:function:: parse()
+    .. py:function:: parse()
 
-        Статический метод, который парсит строку с датой и возвращает объект :js:class:`Date`
+        Статический метод, который парсит строку с датой и возвращает объект :py:class:`Date`
 
 
-    .. js:function:: setDate(date), setUTCDate(date)
+    .. py:function:: setDate(date), setUTCDate(date)
 
         Задаем новое число месяца
 
 
-    .. js:function:: setFullYear(year[, month[, date]]), setUTCFullYear(year[, month[, date]])
+    .. py:function:: setFullYear(year[, month[, date]]), setUTCFullYear(year[, month[, date]])
 
         Задаем новый год
 
 
-    .. js:function:: setHours(hours[, minute[, seconds[, millisec]]]), setUTCHours(hours[, minute[, seconds[, millisec]]])
+    .. py:function:: setHours(hours[, minute[, seconds[, millisec]]]), setUTCHours(hours[, minute[, seconds[, millisec]]])
 
         Задаем новые часы даты
 
 
-    .. js:function:: setMilliseconds(ms), setUTCMilliseconds(ms)
+    .. py:function:: setMilliseconds(ms), setUTCMilliseconds(ms)
 
         Задаем миллисекунды
 
 
-    .. js:function:: setMinutes(minutesp, sec[, millisec]), setUTCMinutes(minutesp, sec[, millisec])
+    .. py:function:: setMinutes(minutesp, sec[, millisec]), setUTCMinutes(minutesp, sec[, millisec])
 
         Задаем новые минуты даты
 
 
-    .. js:function:: setMonth(month[, day]), setUTCMonth(month[, day])
+    .. py:function:: setMonth(month[, day]), setUTCMonth(month[, day])
 
         Задаем новый месяц
 
 
-    .. js:function:: setSeconds(seconds[, millisec]), setUTCSeconds(seconds[, millisec])
+    .. py:function:: setSeconds(seconds[, millisec]), setUTCSeconds(seconds[, millisec])
 
         Задаем новые секунды даты
 
 
-    .. js:function:: setTime(ms)
+    .. py:function:: setTime(ms)
 
         Устанавливаем новую дату, время в секндах с 1.1.1970
 
 
-    .. js:function:: setYear(year)
+    .. py:function:: setYear(year)
 
         Устанавливаем новую год
         
 
-    .. js:function:: toDateString()
+    .. py:function:: toDateString()
 
         Возвращает строковое представление даты
         
 
-    .. js:function:: toISOString()
+    .. py:function:: toISOString()
 
         Возвращает строковое представление даты, в формате ISO8601 (yyyy-mm-ddThh:mm:ss.sssZ)  
 
 
-    .. js:function:: toFSON()
+    .. py:function:: toFSON()
 
         Возвращает JSON представление даты
 
 
-    .. js:function:: toLocaleDateString()
+    .. py:function:: toLocaleDateString()
 
         Возвращает дату с учетом региональных настроек
 
 
-    .. js:function:: toLocaleString()
+    .. py:function:: toLocaleString()
 
         Возвращает строковое представление даты с учетом региональных настроек
 
 
-    .. js:function:: toLocaleTimeString()
+    .. py:function:: toLocaleTimeString()
 
         Возвращает строковое представление времени с учетом региональных настроек
 
 
-    .. js:function:: toTimeString()
+    .. py:function:: toTimeString()
 
         Возвращает строковое представление времени
 
 
-    .. js:function:: toUTCString()
+    .. py:function:: toUTCString()
 
         Возвращает строковое представление универсального времени
 
 
-    .. js:function:: UTC(год, ме­сяц, день, ча­сы, ми­ну­ты, се­кун­ды, мс)
+    .. py:function:: UTC(год, ме­сяц, день, ча­сы, ми­ну­ты, се­кун­ды, мс)
 
         Статический метод, который возвращает представление указанной даты и времени UTC в миллисекундах

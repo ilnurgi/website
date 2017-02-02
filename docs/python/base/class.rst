@@ -1,5 +1,5 @@
-class - классы
-==============
+class
+=====
 
 
 .. code-block:: py
@@ -132,6 +132,10 @@ class - классы
 .. py:method:: __delattr__(self, name)
 
     Удаляет атрибут self.name.
+
+.. py:method:: __dir__(self)
+
+    Возвращает список имен атрибутов
 
 Дескрипторы
 -----------

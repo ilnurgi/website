@@ -174,13 +174,28 @@ transform
 
 Трансформация элемента: масштабирование, вращение, наклон или пермещение.
 
+* perspective
+
 * rotate
-
-* translate
-
-* skew
+* rotateX
+* rotateY
+* rotate3d
 
 * scale
+* scaleX
+* scaleY
+* scaleZ
+* scale3d
+
+* skew
+* skewX
+* skewY
+
+* translate
+* translateX
+* translateY
+* translateZ
+* translate3d
 
 .. code-block:: css
 
@@ -225,7 +240,11 @@ transition
 .. code-block:: css
 
     elem {
-        transition: transition-property transition-duration transition-timing-function transition-delay;
+        transition:
+            transition-property
+            transition-duration
+            transition-timing-function
+            transition-delay;
     }
 
 .. code-block:: css
@@ -236,7 +255,7 @@ transition
 
 
 transition-property
--------------------
++++++++++++++++++++
 
 Определяет конкретные css-свойства
 
@@ -252,7 +271,7 @@ transition-property
 
 
 transition-duration
--------------------
++++++++++++++++++++
 
 Продолжительность анимации перехода
 
@@ -268,7 +287,7 @@ transition-duration
 
 
 transition-timing-function
---------------------------
+++++++++++++++++++++++++++
 
 Скорость анимации перехода
 
@@ -290,7 +309,7 @@ transition-timing-function
 
 
 transition-delay
-----------------
+++++++++++++++++
 
 Время задержки перед началом анимации перехода
 

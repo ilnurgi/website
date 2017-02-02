@@ -22,41 +22,55 @@ AndroidManifest
 
 Тег задает метаданные приложения
 
-    * allowBackup - атрибут
+    * android:allowBackup - атрибут
 
-    * аctivity - тег описывает активность
+    * <аctivity> - тег описывает активность
 
-        * `name` - имя класса Активности.
-        * `label` - заголовок Активности.
-        * `theme` - тема для Активности
-        * `configChanges` - обработка событий при изменений конфигурации
+        * android:name - имя класса Активности.
+        * android:label - заголовок Активности.
+        * android:theme - тема для Активности
+        * android:configChanges - обработка событий при изменений конфигурации
 
-            * `оrientation` — положение экрана изменено с портретного на альбомное (или наоборот);
-            * `keyboardHidden` — клавиатура выдвинута или спрятана;
-            * `fontScale` — пользователь изменил предпочтительный размер шрифта;
-            * `locale` — пользователь выбрал новые языковые настройки;
-            * `keyboard` — изменился тип клавиатуры; например, телефон может иметь 12-клавишную панель,
+            * оrientation — положение экрана изменено с портретного на альбомное (или наоборот);
+            * keyboardHidden — клавиатура выдвинута или спрятана;
+            * fontScale — пользователь изменил предпочтительный размер шрифта;
+            * locale — пользователь выбрал новые языковые настройки;
+            * keyboard — изменился тип клавиатуры; например, телефон может иметь 12-клавишную панель,
               при повороте которой появляется полноценная клавиатура;
-            * `touchscreen` или `navigation` — изменился тип клавиатуры или способ навигации.
+            * touchscreen или navigation — изменился тип клавиатуры или способ навигации.
 
-                Как правило, такие события не встречаются.
+        * <intent-filter> - интенты активности
 
-        * `intent-filter` - Намерения Активности
+            * <action> - навзвание интента
+            
+                * android:name
 
-    * `service` - каждый класс Сервиса должен иметь тег service
+            * <category> - категория интента
 
-        * `intent-filter` - Намерения Сервиса
+                * android:name
 
-    * `provider` - все Провайдеры в приложении.
+                    * android.intent.category.DEFAULT
+                
+            * <data>
 
-    * `receiver` - регистрация Широковещательного приемника, не запуская при этом приложение.
+                * android:scheme
 
-    * `uses-permission` - описывают полномочия, которые, по вашему мнению,
+    * <service> - каждый класс Сервиса должен иметь тег service
+
+        * <intent-filter> - Намерения Сервиса
+
+    * <provider> - все Провайдеры в приложении.
+
+    * <receiver> - регистрация Широковещательного приемника, не запуская при этом приложение.
+
+    * <uses-permission> - описывают полномочия, которые, по вашему мнению,
       нужны приложению для полноценной работы.
 
-    * `permission` - ограничения доступа к компоненту приложения
+        * android.permission.INTERNET - доступ в интернет
 
-    * `instrumentation` - Классы, производные от Instrumentation,
+    * <permission> - ограничения доступа к компоненту приложения
+
+    * <instrumentation> - Классы, производные от Instrumentation,
       предоставляют фреймворк для тестирования программных компонентов во время их выполнения.
 
       Они содержат методы-перехватчики, с помощью которых отслеживаются работа программы
@@ -70,8 +84,7 @@ AndroidManifest
         android:icon="@drawable/icon"
         android:label="string/app_name"
         android:name="MyApplication"
-        android:theme="@style/my_theme"
-        >
+        android:theme="@style/my_theme" >
 
         <activity
             android:name=".MyActivity"
@@ -79,8 +92,20 @@ AndroidManifest
             android:theme="@style/ToDoTheme"
             android:configChanges="orientation|keyboardHidden">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action
+                    android:name="ru.ilnurgi1.intent.action.some_action" />
+                <action
+                    android:name="ru.ilnurgi1.intent.action.some_action2" />
+                <category
+                    android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action
+                    android:name="android.intent.action.VIEW" />
+                <data
+                    android:scheme="http" />
+                <category
+                    android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 

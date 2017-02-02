@@ -4,7 +4,7 @@
 button
 ------
 
-Кнопка, строчный элемент
+Кнопка
 
 * autofocus
 
@@ -78,7 +78,7 @@ button
 
 .. code-block:: html
 
-    <Ьutton type="reset" name="reset">
+    <button type="reset" name="reset">
         <img src = "thumbs-down.gif" alt="thumbs-down icon">
         Попробуйте cнoвa
     </button>
@@ -135,7 +135,7 @@ form
 
 * name - имя формы
 
-* novalidate - форма не была верифицирована при передаче данных
+* novalidate - форма не будет верифицирована при передаче данных
 
     .. note:: HTML5
 
@@ -152,3 +152,15 @@ form
 .. code-block:: html
     
     <form></form>
+
+
+select
+------
+
+Меню для выбора
+
+
+textarea
+--------
+
+Форма ввода текста

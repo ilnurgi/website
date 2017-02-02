@@ -1,7 +1,5 @@
-.. _android_graphics_Canvas:
-
-android.graphics.Graphics
-=========================
+android.graphics.Canvas
+=======================
 
 .. py:class:: android.graphics.Canvas()
 
@@ -10,22 +8,14 @@ android.graphics.Graphics
         устанавливает текущий цвет для рисования
 
 
-    .. py:method:: drawLine(x, y, , , paint)
+    .. py:method:: drawLine(x, y, , , Paint paint)
 
-        :param x: int, 
-        :param x: int, 
-        :param x: int, 
-        :param x: int, 
-        :param paint: :ref:`android.graphics.Paint`
+        * paint - :py:class:`android.graphics.Paint`
 
 
-    .. py:method:: drawCircle(x, y, radius, paint)
+    .. py:method:: drawCircle(int x, int y, radius, Paint paint)
 
-        :param x: int, 
-        :param x: int, 
-        :param x: int, 
-        :param x: int, 
-        :param paint: :ref:`android.graphics.Paint`
+        * paint - :py:class:`android.graphics.Paint`
 
 
     .. py:method:: save()

@@ -1,8 +1,10 @@
-datarole - описание функциональности элемента
-=============================================
+datarole
+========
+
+описание функциональности элемента
 
 
-.. code-block:: js
+.. code-block:: html
     
     <div data-role="page">
         <div data-role="header"></div>
@@ -31,7 +33,7 @@ datarole - описание функциональности элемента
 
     * `data-content-theme` - тема оформления для области содержимого сворачиваемого блока
 
-    .. code-block:: js
+    .. code-block:: html
         
         <div data-role='collapsible'>
             <h1>Заголовок</h1>
@@ -54,7 +56,7 @@ datarole - описание функциональности элемента
 
 * `fieldcontain` - элемент формы и его подпись должны выстраиваться в линию    
     
-    .. code-block:: js
+    .. code-block:: html
         
         <form method='get'>
             <div data-role='fieldcontain'>
@@ -118,7 +120,7 @@ datarole - описание функциональности элемента
 
         * `data-divider-theme` - тема разделителя
         
-        .. code-block:: js
+        .. code-block:: html
             
             <ul 
                 data-role='listview' 
@@ -142,7 +144,7 @@ datarole - описание функциональности элемента
 
         * `ui-li-count` - счетчик
 
-            .. code-block:: js
+            .. code-block:: html
                 
                 <li>
                     <a href='#roses'>
@@ -153,7 +155,7 @@ datarole - описание функциональности элемента
 
         * `ui-li-aside`
 
-            .. code-block:: js
+            .. code-block:: html
                 
                 <a href='#roses'>
                     <h1>Roses<h1>
@@ -163,21 +165,12 @@ datarole - описание функциональности элемента
 
     Двухуровневый список
 
-        .. code-block:: js
+        .. code-block:: html
 
             <a href='#roses'>
                 <h1>Roses</h1>
                 <p>Rose description</p>
             </a>
-                
-                
-
-
-
-
-
-
-
 
 
 * `none` - выключает автоматическое создание виджетов
@@ -194,7 +187,7 @@ datarole - описание функциональности элемента
 
 Две страницы на странице
 
-    .. code-block:: js
+    .. code-block:: html
         
         <div id="page1" data-role="page1">
             <a href="#page2" data-transition="pop">перейти на страницу 2</a>
@@ -207,7 +200,7 @@ datarole - описание функциональности элемента
 
 Select с ползунком
 
-    .. code-block:: js
+    .. code-block:: html
         
         <form>
             <div data-role='fieldcontain'>

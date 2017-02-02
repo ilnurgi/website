@@ -4,9 +4,9 @@ LocalStorage - key-value хранилище
 Данное хранилище работает для домена
 
 
-.. js:class:: LocalStorage()
+.. py:class:: LocalStorage()
 
-    .. js:function:: getItem(key)
+    .. py:function:: getItem(key)
 
         Возвращает значение по ключу
 
@@ -17,7 +17,7 @@ LocalStorage - key-value хранилище
             localStorage['key3'];
 
 
-    .. js:function:: setItem(key, value)
+    .. py:function:: setItem(key, value)
 
         Устанавливает новый ключ и значение в хранилище
 

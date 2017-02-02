@@ -267,7 +267,7 @@ Collection
 
         Принимает те же аргументы что и :py:meth:`find`
 
-        * `max_time_ms` - опционно, a value for max_time_ms may be specified as part of **kwargs
+        * `max_time_ms` - опционно, a value for max_time_ms may be specified as part of \**kwargs
 
         >>> find_one(max_time_ms=100)
         >>> from bson.objectid import ObjectId

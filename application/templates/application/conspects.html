@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Конспекты
+{% endblock %}
+
+{% block description %}
+    <meta name="description" content="Конспекты Ильнура Гайфутдинова по различным технологиям">
+{% endblock %}
+
+{% block extra_body %}
+    <div class="container">
+        <div class="container">
+            <div class="row">
+                {% for conspect_items in conspects %}
+                    <div class="col-xs-12 col-sm-4 col-md-3">
+                        <div class="list-group">
+                            {% for conspect in conspect_items %}
+                                <a
+                                        href="{{ conspect.url }}"
+                                        class="list-group-item"
+                                >
+                                    {{ conspect.title }}
+                                </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

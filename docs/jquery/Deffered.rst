@@ -6,42 +6,42 @@ Deffered
     Отсроченный объект
 
 
-    .. js:function:: always(function)
+    .. py:function:: always(function)
 
         Регистрирует функцию, которая выполнится вне зависимости от состояния объекта
 
 
-    .. js:function:: done(function)
+    .. py:function:: done(function)
 
         Регистрация функция обратного вызова при успешном завершнеии
 
 
-    .. js:function:: fail(function)
+    .. py:function:: fail(function)
 
         Регистрация функции обратного вызова при ошибках
 
 
-    .. js:function:: notify()
+    .. py:function:: notify()
 
         Отправляет сведения в объект о ходе выполнения
 
 
-    .. js:function:: progress(function)
+    .. py:function:: progress(function)
 
         Регистрирует функцию для сведении о ходе работы
 
 
-    .. js:function:: reject()
+    .. py:function:: reject()
 
         Метод переводит объект в состояние - ошибка при выполнении.
 
 
-    .. js:function:: resolve()
+    .. py:function:: resolve()
 
         Метод переводит отсроченный объект в состояние - успешно выполнено (resolved)
 
 
-    .. js:function:: state()
+    .. py:function:: state()
 
         Возвращает состнояние объекта
 
@@ -52,7 +52,7 @@ Deffered
         * `rejected` - отклонен
 
 
-    .. js:function:: then(done_function, fil_function)
+    .. py:function:: then(done_function, fil_function)
 
         Регистрирует функции вызова для ошибок и успещного выполнения
 

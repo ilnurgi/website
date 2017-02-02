@@ -1,4 +1,4 @@
 XMLHttpRequestProgressEvent
 ===========================
 
-.. js:class:: XMLHttpRequestProgressEvent()
+.. py:class:: XMLHttpRequestProgressEvent()

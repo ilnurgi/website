@@ -1,9 +1,7 @@
-.. py:module:: android.support.v7.app
-
-AppCompatActivity
-=================
+android.support.v7.appAppCompatActivity
+=======================================
 
 Обеспечивает поддержку старых версии Android
 
-.. py:class:: AppCompatActivity()
+.. py:class:: android.support.v7.appAppCompatActivity()
 

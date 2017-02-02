@@ -2,9 +2,9 @@ Boolean - логический тип данных
 ===============================
 
 
-.. js:class:: Boolean()
+.. py:class:: Boolean()
 
-    Наследник :js:class:`Object`
+    Наследник :py:class:`Object`
 
 
     .. code-block:: js

@@ -1,7 +1,7 @@
 CustomEvent - конструктор своих событий
 =======================================
 
-.. js:class:: CustomEvent()
+.. py:class:: CustomEvent()
 
     .. code-block:: js
 
@@ -13,7 +13,7 @@ CustomEvent - конструктор своих событий
         window.dispatchEvent(evt);
 
 
-    .. js:function:: initCustomEvent()
+    .. py:function:: initCustomEvent()
 
         .. code-block:: js
 

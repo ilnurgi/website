@@ -1,12 +1,16 @@
-Radiobutton - виджет, флажок
-============================
+.. py:module:: tkinter
+
+Radiobutton
+===========
+
+Виджет, флажок
 
 
 .. py:class:: Radiobutton(**kwargs)
 
     Радиокнопка, виджет
 
-    Наследник :ref:class:`Widget`
+    Наследник :py:class:`tkinter.Widget`
 
     * `command` - обработчик изменения состояния
     * `height` - высота виджета, выраженное в количествах строк

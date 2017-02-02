@@ -2,16 +2,16 @@ HashChangeEvent - объект события, поставляемый по с�
 ====================================================================
 
 
-.. js:class:: HashChangeEvent()
+.. py:class:: HashChangeEvent()
 
-    Наследник :js:class:`Event`
+    Наследник :py:class:`Event`
 
 
-    .. js:attribute:: newURL
+    .. py:attribute:: newURL
         
         Это свой­ст­во хра­нит но­вое зна­че­ние свой­ст­ва location.href. Об­ра­ти­те вни­ма­ние, что это пол­ный URL-ад­рес, а не толь­ко иден­ти­фи­ка­тор фраг­мен­та.
 
 
-    .. js:attribute:: oldURL
+    .. py:attribute:: oldURL
         
         Это свой­ст­во хра­нит преж­нее зна­че­ние свой­ст­ва location.href.

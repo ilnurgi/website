@@ -1,23 +1,23 @@
-bool - логический тип данных
-============================
+bool
+====
 
-.. py:class:: bool
+.. py:class:: bool(obj)
 
-    логический тиn данных. Может содержать значения True или False, которые ведут себя как числа 1 и о соответственно
+    Логический тиn данных.
 
-    >>> type(True), type(False)
-    (<class 'bool'>, <class 'bool'>)
-    >>> int(True), int(False)
-    (1, 0)
+    Может содержать значения True или False,
+    которые ведут себя как числа 1 и 0 соответственно
 
+    .. code-block:: py
 
-Функции для работы с :py:class:`bool`
--------------------------------------
+        bool(0)
+        # False
 
+        bool(1)
+        # True
 
-.. py:function:: bool(obj)
+        bool('')
+        # False
 
-    возвращает :py:class:`bool`, преобразованный объект в логический тип данных
-
-    >>> bool(0), bool(1), bool(''), bool('cnhjrf')
-    False, True, False, True
+        bool('cnhjrf')
+        # True

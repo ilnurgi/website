@@ -1,9 +1,14 @@
-*.pyc
 _build
 .idea/
 db/
 logs/
 static/
 media/
+htmlcov/
+
+*.pyc
+.coverage
+
 !application/static/
+
 settings.yaml

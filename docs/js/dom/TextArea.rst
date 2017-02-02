@@ -1,36 +1,36 @@
 TextArea - многострочная область ввода текста
 =============================================
 
-.. js:class:: TextArea()
+.. py:class:: TextArea()
 
-    Наследник :js:class:`FromControl`
+    Наследник :py:class:`FromControl`
 
 
-.. js:attribute:: defaultValue
+.. py:attribute:: defaultValue
     
     На­чаль­ное тек­сто­вое со­дер­жи­мое эле­мен­та <textarea>. Ко­гда вы­пол­ня­ет­ся сброс фор­мы, со­дер­жи­мое тек­сто­вой об­лас­ти вос­ста­нав­ли­ва­ет­ся в это зна­че­ние. Это свой­ст­во име­ет то же зна­че­ние, что и свой­ст­во textContent, унас­ле­до­ван­ное от Node.
 
 
-.. js:attribute:: selectionEnd
+.. py:attribute:: selectionEnd
     
     Воз­вра­ща­ет или ус­та­нав­ли­ва­ет ин­декс пер­во­го вве­ден­но­го сим­во­ла, сле­дую­ще­го за вы­де­лен­ным тек­стом. См. так­же setSelectionRange().
 
 
-.. js:attribute:: selectionStart
+.. py:attribute:: selectionStart
     
     Воз­вра­ща­ет или ус­та­нав­ли­ва­ет ин­декс пер­во­го вы­де­лен­но­го сим­во­ла в  эле­мен­те <textarea>. См. так­же setSelectionRange().
 
 
-.. js:attribute:: textLength
+.. py:attribute:: textLength
     
     Дли­на свой­ст­ва value в сим­во­лах (см. FormControl).
 
 
-.. js:function:: select()
+.. py:function:: select()
     
     Вы­де­ля­ет весь текст в эле­мен­те <textarea>. Во мно­гих бро­узе­рах это оз­на­ча­ет, что текст бу­дет вы­де­лен цве­том и при вво­де оче­ред­но­го сим­во­ла вы­де­лен­ный текст бу­ дет уда­лен и за­ме­щен вве­ден­ным сим­во­лом.
 
 
-.. js:function:: setSelectionRange(unsigned long start, unsigned long end)
+.. py:function:: setSelectionRange(unsigned long start, unsigned long end)
     
     Вы­де­ля­ет текст в эле­мен­те <textarea>, на­чи­ная с сим­во­ла в по­зи­ции start и за­кан­чи­вая (но не вклю­чая его) сим­во­лом в по­зи­ции end.

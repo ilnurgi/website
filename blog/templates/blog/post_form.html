@@ -1,0 +1,188 @@
+{% extends 'blog/base.html' %}
+
+{% block extra_blog_head %}
+
+{% endblock %}
+
+{% block extra_blog_body %}
+    <div class="container">
+        <form class="form-horizontal" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="category" class="col-sm-2 control-label">
+                    Категория
+                </label>
+                <div class="col-sm-10">
+                    <select
+                            class="form-control"
+                            id="category"
+                            name="category">
+                        {% for category in categories %}
+                            <option value="{{ category.id }}"
+                                {% if object.category == category %}
+                                    selected
+                                {% endif %}>
+                                {{ category.name }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="title" class="col-sm-2 control-label">
+                    Заголовок
+                </label>
+                <div class="col-sm-10">
+                    <input
+                            type="text"
+                            class="form-control"
+                            id="title"
+                            placeholder="заголовок"
+                            name="title"
+                            value="{{ object.title }}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="description" class="col-sm-2 control-label">
+                    Короткое описание
+                </label>
+                <div class="col-sm-10">
+                    <input
+                            type="text"
+                            class="form-control"
+                            id="description"
+                            placeholder="заголовок"
+                            name="description"
+                            value="{{ object.description }}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="published" class="col-sm-2 control-label">
+                    Опубликовать
+                </label>
+                <div class="col-sm-1">
+                    <input type="checkbox"
+                           name="published"
+                           id="published"
+                           class="form-control"
+                           {% if object.published %}checked{% endif %}>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="raw_content" class="col-sm-2 control-label">
+                    Содержание
+                </label>
+                <div class="col-sm-10">
+                    <textarea
+                            class="form-control"
+                            id="raw_content"
+                            name="raw_content"
+                            rows="30">{{ object.raw_content }}</textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default">
+                        Создать
+                    </button>
+                </div>
+            </div>
+        </form>
+        <pre>
+                Блочные элементы
+
+                    <пустая строка>
+                    Текст параграфа. Может быть
+                    разбит на несколько строк.
+                    <пустая строка>
+
+                Переводы строк
+
+                    Текст параграфа.<пробел><пробел>
+                    Этот текст будет с новой строки.
+
+                Заголовки
+
+                    Заголовок первого уровня H1
+                    ===========================
+
+                    Заголовок второго уровня H2
+                    ---------------------------
+
+                    # Заголовок 1 уровня
+                    ###### Заголовок 6 уровня
+
+                Цитаты
+
+                    > Это
+                    > многострочная
+                    > цитата
+
+                    > Это
+                    многострочная
+                    цитата
+
+                Списки
+
+                    *, -, +
+
+                    * 1 элемент
+                    * 2 элемент
+                        1. 1 элемент
+                        2. 2 элемент
+                    параметр
+                    : описание
+
+                Блок кода
+
+                    <пробел><пробел><пробел><пробел>print 'Hello, World!'
+
+                    Используйте функцию `printf()` для вывода.
+
+                Горизонтальная линия
+
+                    * * *
+                    ***
+                    ---
+
+                Ссылки
+
+                    Это простая [ссылка](http://rukeba.com/) в тексте.
+                    Это [ссылка](http://rukeba.com/ "Титул") с аттрибутом title.
+
+                    Это [ссылка][1] в справочном стиле.
+                    ...
+                    ...
+                    [1]: http://rukeba.com/ "Необязательный титул"
+
+                    Что бы урл в тексте стал ссылкой его нужно обрамить в < и >
+                    По урлу &lt;http://rukeba.com/&gt; находится мой сайт.
+
+                Изображения
+
+                    ![alt-текст](http://example.com/image.jpg "Необязательный титул")
+
+                    ![alt-текст][2]
+                    ...
+                    ...
+                    [2]: http://example.com/image.jpg "Необязательный титул"
+
+                Выделение
+
+                    Одинарные генерируют тег &lt;em&gt;
+                    это *выделенный* текст
+                    это _выделенный_ текст
+
+                    Двойные генерируют тег &lt;strong&gt;
+                    это **очень выделенный** текст
+                    это __очень выделенный__ текст
+
+                Таблица
+
+                    | First Header  | Second Header |
+                    | ------------- | ------------- |
+                    | Row1 Cell1    | Row1 Cell2    |
+                    | Row2 Cell1    | Row2 Cell2    |
+        </pre>
+    </div>
+{% endblock %}

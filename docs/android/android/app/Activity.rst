@@ -1,10 +1,8 @@
-.. py:module:: android.app
-
-Activity - активность
-=====================
+android.app.Activity
+====================
 
 
-.. py:class:: Activity
+.. py:class:: android.app.Activity
 
     Активность, экран который отображается пользователю
 
@@ -20,7 +18,7 @@ Activity - активность
 
     .. py:method:: findViewById(id)
 
-        Возвращает объект по иди
+        Возвращает объект по идентификатору
 
         .. code-block:: java
 
@@ -29,12 +27,66 @@ Activity - активность
 
     .. py:method:: getIntent()
 
-        Возвращает интент, :py:class:`android.content.Intent`
+        Возвращает интент, :py:class:`android.content.Intent`, который вызвал это активити
+
+        .. code-block:: java
+
+            Intent intent = getIntent()
+
+
+    .. py:method:: getLayoutInflater()
+
+        Возвращает конструктор вью объектов :py:class:`android.view.LayoutInflater`
+
+        .. code-block:: java
+
+            LayoutInflater layoutInflater = getLayoutInflater();
+
+
+    .. py:method:: getPreferences(int mode)
+
+        Возвращает объект настроек :py:class:`android.content.SharedPreferences` приложения
+
+        Аналогичен :py:meth:`android.app.Activity.getSharedPreferences`,
+        но название файла настроек использует как название активити
+
+        * mode
+
+            * :py:attr:`android.content.Context.MODE_PRIVATE`
+
+        .. code-block:: java
+
+            SharedPreferences sharedPreference = getPreferences(MODE_PRIVATE);
 
 
     .. py:method:: getResources()
 
-        Возвращает :py:class:`android.content.res.Resources`
+        Возвращает объект ресурсов, :py:class:`android.content.res.Resources`
+
+
+    .. py:method:: getSharedPreferences(String name, int mode)
+
+        Возвращает объект настроек :py:class:`android.content.SharedPreferences` приложения
+
+        Аналогичен :py:meth:`android.app.Activity.getPreferences`,
+        но позволяет задать название файла настроек
+
+        * mode
+
+            * :py:attr:`android.content.Context.MODE_PRIVATE`
+
+        .. code-block:: java
+
+            SharedPreferences sharedPreference = getSharedPreferences(
+                "MainSettings", MODE_PRIVATE);
+
+
+    .. py:method:: onActivityResult(int requestCode, int resultCode, Intent data)
+
+
+    .. py:method:: onBackPressed()
+
+        Обработчик нажатия кнопки назад
 
 
     .. py:method:: onConfigurationChanged(config)
@@ -69,13 +121,23 @@ Activity - активность
 
     .. py:method:: onCreateContextMenu(menu, view, menuInfo)
 
-        обработчик контекстного меню, вызывается каждый раз перед показом
+        Обработчик контекстного меню, вызывается каждый раз перед показом
 
         * menu - :py:class:`android.view.ContextMenu`
 
-        * view - :py:class:`android_view_View`
+        * view - :py:class:`android.view.View`
 
         * menuInfo - :py:class:`android.view.ContextMenu.ContextMenuInfo`
+
+
+    .. py:method:: onCreateDialog(int id)
+
+        Создает и возвращает :py:class:`android.app.Dialog`
+
+        Все созданные диалоги сохраняются и не создаются повторно в дальнейшем
+
+        Для изменения диалога необходимо использовать
+        :py:meth:`android.app.Activity.onPrepareDialog`
 
 
     .. py:method:: onCreateOptionsMenu(menu)
@@ -83,6 +145,24 @@ Activity - активность
         Обработчик создания меню, вызывается 1 раз при первом показе меню
 
         * menu - :py:class:`android.view.Menu`
+
+        .. code-block:: java
+
+            public boolean onCreateOptionsMenu(Menu menu) {
+
+                menu.add("Item1");
+
+                return super.onCreateOptionsMenu(menu);
+            }
+
+        .. code-block:: java
+
+            public boolean onCreateOptionsMenu(Menu menu) {
+
+                getMenuInflater().inflate(R.menu.myMenu, menu);
+
+                return super.onCreateOptionsMenu(menu);
+            }
 
 
     .. py:method:: onDestroy()
@@ -103,10 +183,17 @@ Activity - активность
 
         * item - :py:class:`android.view.MenuItem`
 
+        .. code-block:: java
+
+            public boolean onOptionsItemSelected(MenuItem item) {
+
+                return super.onOptionsItemSelected(item);
+            }
+
 
     .. py:method:: onPause()
 
-        Вызывается, перед выходом из "активного" состояния
+        Вызывается, перед тем как будет показано другое активити
 
         .. code-block:: java
 
@@ -115,13 +202,27 @@ Activity - активность
             }
 
 
+    .. py:method:: onPrepareDialog(int dialogId, Dialog dialog)
+
+        Изменяет диалог перед каждым показом
+
+
     .. py:method:: onPrepareOptionsMenu(menu)
 
-        Обработчик создания меню, вызывается каждый раз показе меню.
+        Обработчик создания меню, вызывается каждый раз при показе меню
 
         Можно менять меню при каждом показе
 
         * menu - :py:class:`android.view.Menu`
+
+        .. code-block:: java
+
+            public boolean onPrepareOptionsMenu(Menu menu) {
+
+                menu.setGroupVisible(1, chb.isChecked());
+
+                return super.onPrepareOptionsMenu(menu);
+            }
 
 
     .. py:method:: onRestart()
@@ -210,35 +311,61 @@ Activity - активность
         * view - :py:class:`android.view.View`
 
 
-    .. py:method:: setContentView(view)
+    .. py:method:: setContentView(R.layout.id)
 
         Устанавливает содержимое активити
 
         .. code-block:: java
 
-            @Override
-            public void onCreate(Bundle savedInstanceState) {
-                super.onCreate(savedInstanceState);
-
-                setContentView(R.layout.main);
-            }
+            setContentView(R.layout.main);
 
         .. code-block:: java
 
-            @Override
-            public void onCreate(Bundle savedInstanceState) {
-                super.onCreate(savedInstanceState);
+            setContentView(linearLayout, linearLayoutParams);
 
-                TextView textView = new TextView(this);
-                setContentView(textView);
-            }
+
+    .. py:method:: setResult(resultCode, Intent intent)
+
+        Устанавлиает результат работы активити, для передачи его родительскому активити.
+
+        .. code-block:: java
+
+            Intent intent = new Intent();
+            intent.putExtra(EXTRA_KEY, "some result");
+
+            setResult(RESULT_OK, intent);
+
+
+    .. py:method:: showDialog(int id)
+
+        Создает дилог и показывает его
+
+        Вызывает метод :py:meth:`android.app.Activity.onCreateDialog`
 
 
     .. py:method:: startActivity(Intent intent)
 
         Запускает активность по интенту
 
+        * intent - :py:class:`android.content.Intent`
+
         .. code-block:: java
 
             Intent intent = new Intent(this, SomeClass.class);
             startActivity(intent);
+
+
+    .. py:method:: startActivityForResult(Intent intent, int requestCode)
+
+        Запускает активность по интенту для получения результатов от него.
+
+        Текущий активити становится как бы родителем,
+        и при закрытии запускаемого интента будет вызван метод
+        :py:meth:`android.app.Activity.onActivityResult`
+
+        * intent - :py:class:`android.content.Intent`
+
+        .. code-block:: java
+
+            Intent intent = new Intent(this, SomeClass.class);
+            startActivityForResult(intent, 1);

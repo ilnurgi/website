@@ -48,7 +48,7 @@ mobile - объект, хранящий настройки мобильного 
 
 
 
-    .. js:function:: changePage(target[, params])
+    .. py:function:: changePage(target[, params])
 
         Изменяет текущую страницу
 
@@ -81,7 +81,7 @@ mobile - объект, хранящий настройки мобильного 
             })
 
 
-    .. js:function:: loadPage(url[, params])
+    .. py:function:: loadPage(url[, params])
 
         Возвращает отсроченные объект. Позволяет загружать дистанционные документы, не отображая их пользователю
 

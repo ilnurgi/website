@@ -23,12 +23,14 @@ class TestParsingNginxAccess(TestCase):
             int(settings.DATABASE_MONGO['port']))
 
         self.mongo_db = self.mongo_client[
-            settings.DATABASE_MONGO['nginx_access_db_name'] + '_test']
+            settings.DATABASE_MONGO['nginx_access_db_name']]
         self.collection_log = self.mongo_db.log
         self.collection_month_report = self.mongo_db.month_report
 
     def test_parsing(self):
-
+        """
+        тестируем парсинг простой, все записи должны попасть в коллекцию
+        """
         inp = (
             '82.117.240.50 - - '
             '[11/Nov/2015:06:30:01 -0500] '
@@ -84,15 +86,17 @@ class TestParsingNginxAccess(TestCase):
 
         call_command(
             'parse_nginx_access',
-            mongo_db=self.mongo_db,
             input_file=input_file,
             date_today=datetime.datetime(2015, 11, 12, 0, 0, 0)
         )
 
-        self.assertEqual(self.collection_log.count(), len(inp))
+        # 3 - записей статики
+        self.assertEqual(self.collection_log.count(), len(inp) - 3)
 
     def test_log_today(self):
-
+        """
+        в лог должны попасть только сегоднящние записи
+        """
         inp = (
             '82.117.240.50 - - '
             '[11/Nov/2015:06:30:01 -0500] '
@@ -115,7 +119,6 @@ class TestParsingNginxAccess(TestCase):
 
         call_command(
             'parse_nginx_access',
-            mongo_db=self.mongo_db,
             input_file=input_file,
             date_today=datetime.datetime(2015, 11, 13, 12, 12, 12)
         )
@@ -123,7 +126,9 @@ class TestParsingNginxAccess(TestCase):
         self.assertEqual(self.collection_log.count(), 0)
 
     def test_calculate_month(self):
-
+        """
+        аккумулирование за месяц
+        """
         inp = (
             '82.117.240.50 - - '
             '[11/Nov/2015:06:30:01 -0500] '
@@ -132,11 +137,18 @@ class TestParsingNginxAccess(TestCase):
             '"https://www.google.com.ua/" '
             '"Mozilla/5.0 (Windows NT 6.1; WOW64)"',
 
-            '82.117.240.50 - - '
+            '82.117.240.51 - - '
             '[11/Nov/2015:06:30:01 -0500] '
             '"GET /docs/python/modules_user/pyqt/qtgui/qwidget.html HTTP/1.1" '
             '200 9078 '
             '"https://www.google.com.ua/" '
+            '"Mozilla/5.0 (Windows NT 6.1; WOW64)"',
+
+            '82.117.240.51 - - '
+            '[11/Nov/2015:06:30:01 -0500] '
+            '"GET /docs/python/modules_user/pyqt/qtgui/qwidget.html HTTP/1.1" '
+            '200 9078 '
+            '"http://www.ilnurgi1.ru/docs/python/index.html" '
             '"Mozilla/5.0 (Windows NT 6.1; WOW64)"',
 
             '82.117.240.51 - - '
@@ -153,12 +165,12 @@ class TestParsingNginxAccess(TestCase):
 
         call_command(
             'parse_nginx_access',
-            mongo_db=self.mongo_db,
             input_file=input_file,
             date_today=datetime.datetime(2015, 11, 12, 12, 12, 12)
         )
 
-        self.assertEqual(self.collection_log.count(), len(inp))
+        # 1 - статика
+        self.assertEqual(self.collection_log.count(), len(inp) - 1)
 
         inp = (
             '82.117.240.50 - - '
@@ -183,7 +195,6 @@ class TestParsingNginxAccess(TestCase):
         # загрузили данные, теперь соберем за месяц
         call_command(
             'parse_nginx_access',
-            mongo_db=self.mongo_db,
             input_file=input_file,
             date_today=datetime.datetime(2015, 12, 1, 12, 12, 12)
         )
@@ -193,10 +204,120 @@ class TestParsingNginxAccess(TestCase):
 
         result = self.collection_month_report.find_one()
 
+        # всего 5 просмотров, но 3 статики
         self.assertEqual(result['ip_count'], 3)
+
         self.assertEqual(result['ip_uniq_count'], 2)
 
         urls = json.loads(result['urls'])
+        self.assertEqual(
+            urls['/docs/python/modules_user/pyqt/qtgui/qwidget.html'],
+            3)
+
+        urls_from = json.loads(result['urls_from'])
+
+        self.assertEqual(
+            urls_from['https://www.google.com.ua/'],
+            2)
+        self.assertNotIn(
+            'http://www.ilnurgi1.ru/docs/python/index.html',
+            urls_from,
+        )
+
+        user_agents = json.loads(result['user_agents'])
+        self.assertEqual(
+            user_agents['Mozilla/5.0 (Windows NT 6.1; WOW64)'],
+            3)
+
+    def test_calculate_month_out_bots(self):
+        """
+        аккумулирование за месяц исключая ботов
+        """
+        bots_input = [
+            '82.117.240.51 - - '
+            '[11/Nov/2015:06:30:01 -0500] '
+            '"GET /docs/python/modules_user/pyqt/qtgui/qwqweqew.html HTTP/1.1" '
+            '200 9078 '
+            '"https://www.google.com.ua/" {}'.format(i) for i in (
+
+                '"Mozilla/5.0 (compatible; MJ12bot/v1.4.5; '
+                'http://www.majestic12.co.uk/bot.php?+) "',
+
+                '"Mozilla/5.0 (compatible; Baiduspider/2.0; '
+                '+http://www.baidu.com/search/spider.html) "',
+
+                '"Mozilla/5.0 (compatible; Googlebot/2.1; '
+                '+http://www.google.com/bot.html) "',
+
+                '"Mozilla/5.0 (compatible; YandexBot/3.0; '
+                '+http://yandex.com/bots) "',
+
+                '"Mozilla/5.0 (compatible; bingbot/2.0; '
+                '+http://www.bing.com/bingbot.htm) "',
+
+                '"Riddler (http://riddler.io/about) "',
+
+                '"Mozilla/5.0 (compatible; AhrefsBot/5.1; "'
+                '"+http://ahrefs.com/robot/) "',
+
+                '"Mozilla/5.0 (compatible; SemrushBot/1.1~bl; '
+                '+http://www.semrush.com/bot.html) "',
+
+                '"Mozilla/5.0 (compatible; archive.org_bot '
+                '+http://www.archive.org/details/archive.org_bot)"'
+        )]
+        inp = (
+            # пользовательский просмотр
+            '82.117.240.50 - - '
+            '[11/Nov/2015:06:30:01 -0500] '
+            '"GET /docs/python/modules_user/pyqt/qtgui/qwidget.html HTTP/1.1" '
+            '200 9078 '
+            '"https://www.google.com.ua/" '
+            '"Mozilla/5.0 (Windows NT 6.1; WOW64)"',
+
+            # пользовательский просмотр
+            '82.117.240.51 - - '
+            '[11/Nov/2015:06:30:01 -0500] '
+            '"GET /docs/python/modules_user/pyqt/qtgui/qwidget.html HTTP/1.1" '
+            '200 9078 '
+            '"https://www.google.com.ua/" '
+            '"Mozilla/5.0 (Windows NT 6.1; WOW64)"',
+        ) + tuple(bots_input)
+
+        input_file = tempfile.TemporaryFile()
+        input_file.write('\n'.join(inp))
+        input_file.seek(0)
+
+        call_command(
+            'parse_nginx_access',
+            input_file=input_file,
+            date_today=datetime.datetime(2015, 11, 12, 12, 12, 12)
+        )
+
+        # соберем данные за месяц
+        input_file = tempfile.TemporaryFile()
+        input_file.write('\n'.join(inp))
+        input_file.seek(0)
+
+        call_command(
+            'parse_nginx_access',
+            input_file=input_file,
+            date_today=datetime.datetime(2015, 12, 1, 12, 12, 12)
+        )
+
+        self.assertEqual(self.collection_log.count(), 0)
+        self.assertEqual(self.collection_month_report.count(), 1)
+
+        result = self.collection_month_report.find_one()
+
+        self.assertEqual(result['ip_count'], len(inp) - len(bots_input))
+
+        self.assertEqual(result['ip_uniq_count'], len(inp) - len(bots_input))
+
+        urls = json.loads(result['urls'])
+        self.assertSequenceEqual(
+            urls.keys(),
+            ['/docs/python/modules_user/pyqt/qtgui/qwidget.html'])
         self.assertEqual(
             urls['/docs/python/modules_user/pyqt/qtgui/qwidget.html'],
             2)
@@ -209,4 +330,8 @@ class TestParsingNginxAccess(TestCase):
         user_agents = json.loads(result['user_agents'])
         self.assertEqual(
             user_agents['Mozilla/5.0 (Windows NT 6.1; WOW64)'],
-            3)
+            2)
+        self.assertEqual(len(user_agents.keys()) - 1, len(bots_input))
+        del user_agents['Mozilla/5.0 (Windows NT 6.1; WOW64)']
+        self.assertTrue(all(count == 1 for count in user_agents.itervalues()))
+

@@ -1,8 +1,8 @@
-datarel - 
-=========
+datarel
+=======
 
 
-.. code-block:: js
+.. code-block:: html
     
     <a href='#page2' data-rel='dialog'>Показать диалоговое окно</a>
 

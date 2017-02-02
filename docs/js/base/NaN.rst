@@ -1,7 +1,7 @@
 NaN - нечисло
 =============
 
-.. js:class:: Nan()
+.. py:class:: Nan()
 
     .. code-block:: js
 

@@ -1,0 +1,75 @@
+{% extends 'blog/base.html' %}
+
+{% block extra_blog_head %}
+{% endblock %}
+
+{% block title %}
+    {% if current_category %}
+        {{ current_category }}.
+    {% endif %}
+    Блог.
+{% endblock %}
+
+{% block description %}
+    {% if current_category %}
+        <meta name="description" content="Посты блога Ильнура Гайфутдинова по теме {{ current_category }}">
+    {% else %}
+        <meta name="description" content="Посты блога Ильнура Гайфутдинова">
+    {% endif %}
+{% endblock %}
+
+{% block extra_blog_body %}
+    <div class="container">
+        {% for post in object_list %}
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3><a href="{% url "blog:post_detail" post.category.name post.slug %}">{{ post.title }}</a></h3>
+                </div>
+                <div class="panel-body ">
+                    {{ post.content|safe|truncatewords_html:50 }}
+                </div>
+                <div class="panel-footer text-right">
+                    <a href="{% url "blog:list" post.category %}">
+                        {{ post.category }}
+                    </a>/
+                    {{ post.created }} ({{ post.modified }})
+                    {% if view.request.user.is_superuser %}
+                        {% if post.published %}
+                            <span class="label label-success">Опубликован</span>
+                        {% else %}
+                            <span class="label label-warning">Скрыт</span>
+                        {% endif %}
+                        <a type="button"
+                           class="btn btn-info"
+                           href="{% url 'blog:post_update' post.slug %}">
+                            Редактировать
+                        </a>
+                        <a type="button"
+                           class="btn btn-danger"
+                           href="{% url 'blog:post_delete' post.slug %}">
+                            Удалить
+                        </a>
+                    {% endif %}
+
+                </div>
+            </div>
+        {% endfor %}
+
+        <nav>
+            <ul class="pager">
+                <li class="previous {% if not page_obj.has_previous %}disabled{% endif %}">
+                    <a href="{% if page_obj.has_previous %}?page={{ page_obj.previous_page_number }}{% endif %}">
+                        <span aria-hidden="true">&larr;</span>
+                        Новые
+                    </a>
+                </li>
+                <li class="next {% if not page_obj.has_next %}disabled{% endif %}">
+                    <a href="{% if page_obj.has_next %}?page={{ page_obj.next_page_number }}{% endif %}">
+                        Старые
+                        <span aria-hidden="true">&rarr;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+{% endblock %}

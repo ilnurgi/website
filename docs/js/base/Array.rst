@@ -1,14 +1,14 @@
-Array - массивы
-===============
+Array
+=====
 
 
-.. js:class:: Array()
-.. js:class:: Array(размер)
-.. js:class:: Array(элемент0, элемент1, ...)
+.. py:class:: Array()
+.. py:class:: Array(размер)
+.. py:class:: Array(элемент0, элемент1, ...)
 
     Массив 
 
-    Наследник :js:class:`Object`
+    Наследник :py:class:`Object`
     
     .. code-block:: js
 
@@ -55,7 +55,7 @@ Array - массивы
             ...
         }
 
-    .. node:: EcmsScript6
+    .. note:: EcmsScript6
 
         .. code-block:: js
 
@@ -74,7 +74,7 @@ Array - массивы
             // [4, 5, 6]
 
 
-    .. js:attribute:: length
+    .. py:attribute:: length
 
         Возвращает число, количество элементов в массиве
         
@@ -84,9 +84,12 @@ Array - массивы
             // 2  
 
 
-    .. js:function:: concat(значение, ...)
+    .. py:method:: concat(item...)
 
         Возвращает новый массив, расширенный значениями из аргумента
+
+        Ели аргументом является массив, то добавляются только те элменты
+        которых нет в исходном массиве
 
         .. code-block:: js
 
@@ -99,7 +102,7 @@ Array - массивы
             // [1, 2, 3, 4, 5]
 
 
-    .. js:function:: copyWithin(targetIndex, startIndex, endIndex)
+    .. py:method:: copyWithin(targetIndex, startIndex, endIndex)
 
         Копирует последовательность значений массива в другое место этого массива
 
@@ -128,14 +131,14 @@ Array - массивы
             // 1, 4, 3, 4, 5
 
 
-    .. js:function:: entries()
+    .. py:method:: entries()
 
         Возвращает итерируемый объект, содержащий массив пары ключ/значение, для каждого индекса массива.
 
         .. versionadded:: EcmaScript6
 
 
-    .. js:function:: every(callback[, this])
+    .. py:method:: every(callback[, this])
 
         Возвращает булево, соответсвие всех элементов массива условию обработчика.
 
@@ -154,7 +157,7 @@ Array - массивы
             // false
 
 
-    .. js:function:: fill(value, startIndex, endIndex)
+    .. py:method:: fill(value, startIndex, endIndex)
 
         Заменяет все элементы массива в казанном промежутке указанным значением.
 
@@ -178,7 +181,7 @@ Array - массивы
             // [5, 5, 3, 4]
 
 
-    .. js:function:: filter(callback[, filter])
+    .. py:method:: filter(callback[, filter])
 
         Возвращает массив элементов, удовлетворяющих требованиям обработчика
 
@@ -192,7 +195,7 @@ Array - массивы
             // [2, 3]
 
 
-    .. js:function:: find(testingFunc, this)
+    .. py:method:: find(testingFunc, this)
 
         Возвращает элемент массива, который удовлетворяет условиям функции проверки
 
@@ -208,7 +211,7 @@ Array - массивы
             // 12
 
 
-    .. js:function:: findIndex(testingFunc, this)
+    .. py:method:: findIndex(testingFunc, this)
 
         Возвращает индекс элемента массива удовлетворяющего условию
 
@@ -224,7 +227,7 @@ Array - массивы
             // 1
 
         
-    .. js:function:: forEach(callback[, this])
+    .. py:method:: forEach(callback[, this])
 
         Вызывает функцию-обработчик для каждого элемента массива
 
@@ -237,9 +240,9 @@ Array - массивы
             }); 
 
 
-    .. js:function:: from(iterable, function, this)
+    .. py:method:: from(iterable, function, this)
 
-        .. from:: ECMAScript6
+        .. note:: ECMAScript6
 
         .. code-block:: js
 
@@ -249,9 +252,11 @@ Array - массивы
             // [10, 20, 30]
 
 
-    .. js:function:: join([str splitter=','])
+    .. py:method:: join(separator=',')
 
-        Возвращает строку, полученную преобразованием всех элементов массива в строки и сконкатенированные
+        Возвращает строку,
+        полученную преобразованием всех элементов массива в строки и
+        объединенные через разделитель
 
         .. versionadded:: ECMAScript5
         
@@ -261,7 +266,7 @@ Array - массивы
             // '123'
 
 
-    .. js:function:: indexOf(значение[, int pos=0])
+    .. py:method:: indexOf(значение[, int pos=0])
 
         Возвращает число, позиция элемента в массиве
 
@@ -279,21 +284,21 @@ Array - массивы
             // -1
 
 
-    .. js:function:: keys()
+    .. py:method:: keys()
 
         Возвращает итерируемый объект, содержащий ключи для всех идексов массива.
 
         .. versionadded:: EcmaScript6
 
 
-    .. js:function:: lastIndexOf(значение[, int pos=array.length])
+    .. py:method:: lastIndexOf(значение[, int pos=array.length])
 
         Возвращает число, позиция элемента в массиве в обратном порядке
 
         .. versionadded:: ECMAScript5
 
 
-    .. js:function:: map(callback[, this])
+    .. py:method:: map(callback[, this])
 
         Возвращает массив, вычисленный по функции-обработчику
 
@@ -307,7 +312,7 @@ Array - массивы
             // [1, 4, 9]
 
             
-    .. js:function:: of(values...)
+    .. py:method:: of(values...)
 
         Создает массив из 1 значения
 
@@ -322,7 +327,7 @@ Array - массивы
             // [2]
 
 
-    .. js:function:: pop()
+    .. py:method:: pop()
 
         Возвращает последний элемент и удаляет его из массива
 
@@ -337,9 +342,9 @@ Array - массивы
             // [1,2]
 
             
-    .. js:function:: push(значение1, ...)
+    .. py:method:: push(item...)
 
-        Добавление объекта в массив в конец
+         Добавляет объект в конец массива и возвращает количесвто элементов в массиве
 
         .. code-block:: js
 
@@ -367,7 +372,7 @@ Array - массивы
                 // [1, 2, 3, 4]
 
 
-    .. js:function:: reduce(callback[, int start=0])
+    .. py:method:: reduce(callback[, int start=0])
 
         Вычисляет значение на основе элементов данного массива, свертка массива
 
@@ -381,7 +386,7 @@ Array - массивы
             // 6
 
 
-    .. js:function:: reduceRight(callback[, int start=0])
+    .. py:method:: reduceRight(callback[, int start=0])
 
         Вычисляет значение на основе элементов данного массива,
         спарва налево, свертка массива
@@ -389,9 +394,9 @@ Array - массивы
         .. versionadded:: ECMAScript5
 
 
-    .. js:function:: reverse(func, start)
+    .. py:method:: reverse()
 
-        Разворачивание массива
+        Возвращает развернутый в обратныом порядке массив
 
         .. code-block:: js
 
@@ -400,7 +405,7 @@ Array - массивы
             // [3, 2, 1]
 
 
-    .. js:function:: shift()
+    .. py:method:: shift()
 
         Возвращает первый элемент массива, и удалеят его из массива
 
@@ -413,7 +418,7 @@ Array - массивы
             // [[2, 3], 4]
 
 
-    .. js:function:: slice(start, end)
+    .. py:method:: slice(start, end)
 
         Возвращает фрагмент массива
 
@@ -432,7 +437,7 @@ Array - массивы
             // [3]
 
 
-    .. js:function:: some(callback[, this])
+    .. py:method:: some(callback[, this])
 
         Проверяет, возвращает ли предикат значение true хотя бы для одного элемента массива
 
@@ -456,7 +461,7 @@ Array - массивы
             // => false: все­гда false для []
 
 
-    .. js:function:: sort([sorter_func])
+    .. py:method:: sort([comparator])
 
         Сортирует массив, принимает функцию сравнения,
         которая может вернуть -1, 0, 1
@@ -468,10 +473,13 @@ Array - массивы
             a;
             // [1, 15, 2]
 
+            a.sort(func(a, b){});
 
-    .. js:function:: splice(start, count, value1, value2, ...)
 
-        Возвращает массив. Вставляет, удаляет или заменят элементы массива
+    .. py:method:: splice(start, deleteCount, item...)
+
+        Удаляет указанный срез и возвращает их,
+        вставляя в исходный массив указанные элементы массива
 
         .. code-block:: js
 
@@ -490,9 +498,9 @@ Array - массивы
             // [1, 33, 44]
 
 
-    .. js:function:: unshift(var1, var2 ...)
+    .. py:method:: unshift(item...)
 
-        Добавляет в начало массива элементы
+        Добавляет в начало массива элементы и возвращает длину массива
 
         .. code-block:: js
 
@@ -502,7 +510,7 @@ Array - массивы
             // [1]
 
 
-    .. js:function:: values()
+    .. py:method:: values()
 
         Возвращает итерируемый объект, содержащий значения элементов массива.
 

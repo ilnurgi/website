@@ -1,3 +1,5 @@
+.. py:module:: chartjs
+
 Chart.js - библиотека для построения диаграмм
 =============================================
 
@@ -7,9 +9,9 @@ Chart.js - библиотека для построения диаграмм
 Chart
 -----
 
-.. js:class:: Chart(context)
+.. py:class:: Chart(context)
 
-    .. code-block:: js
+    .. code-block:: html
 
         <script>
             var ctx = document.getElementById("myChart").getContext("2d");
@@ -19,7 +21,7 @@ Chart
         <canvas id="myChart"></canvas>
 
 
-    .. js:attribute:: defaults.global
+    .. py:attribute:: defaults.global
 
         Стандартные настройки для всех видов диаграмм
 
@@ -212,91 +214,41 @@ Chart
             }
 
 
-    .. js:attribute:: defaults.Bar
+    .. py:attribute:: defaults.Bar
 
-        Стандартные настройки для всех диаграмм :ref:`Bar`
-
-
-    .. js:attribute:: defaults.Doughnut
-
-        Стандартные настройки для всех диаграмм :ref:`Doughnut`
+        Стандартные настройки для всех диаграмм :py:class:`Chart.Bar`
 
 
-    .. js:attribute:: defaults.Line
+    .. py:attribute:: defaults.Doughnut
 
-        Стандартные настройки для всех диаграмм :ref:`Line`
-
-
-    .. js:attribute:: defaults.PolarArea
-
-        Стандартные настройки для всех диаграмм :ref:`PolarArea`
+        Стандартные настройки для всех диаграмм :py:class:`Chart.Doughnut`
 
 
-    .. js:attribute:: defaults.Radar
+    .. py:attribute:: defaults.Line
 
-        Стандартные настройки для всех диаграмм :ref:`Radar`
-
-
-    .. js:function:: Bar(data, options)
-
-        Возвращает диаграмму :ref:`Bar`
-
-        * `data` - данные
-        * `options` - доп параметры, можно задать глобально в Chart.defaults.Bar
+        Стандартные настройки для всех диаграмм :py:class:`Chart.Line`
 
 
-    .. js:function:: Doughnut(data, options)
+    .. py:attribute:: defaults.PolarArea
 
-        Возвращает диаграмму :ref:`Doughnut`
-
-        * `data` - данные
-        * `options` - доп параметры, можно задать глобально в Chart.defaults.Doughnut
+        Стандартные настройки для всех диаграмм :py:class:`Chart.PolarArea`
 
 
-    .. js:function:: Line(data, options)
+    .. py:attribute:: defaults.Radar
 
-        Возвращает диаграмму :ref:`Line`
+        Стандартные настройки для всех диаграмм :py:class:`Chart.Radar`
 
-        * `data` - данные
-        * `options` - доп параметры, можно задать глобально в Chart.defaults.Line
-
-
-    .. js:function:: Pie(data, options)
-
-        Возвращает диаграмму :ref:`Pie`
-
-        * `data` - данные
-        * `options` - доп параметры, можно задать глобально в Chart.defaults.Pie
-
-
-    .. js:function:: PolarArea(data, options)
-
-        Возвращает диаграмму :ref:`PolarArea`
-
-        * `data` - данные
-        * `options` - доп параметры, можно задать глобально в Chart.defaults.PolarArea
-
-
-    .. js:function:: Radar(data, options)
-
-        Возвращает диаграмму :ref:`Radar`
-
-        * `data` - данные
-        * `options` - доп параметры, можно задать глобально в Chart.defaults.Radar
-
-
-.. _Bar:
 
 Bar
 ---
 
 .. figure:: images/chartjs/bar.png
 
-.. js:class:: Bar
+.. py:class:: Chart.Bar()
 
-    Диаграмма создается используя :js:func:`Bar`
+    Диаграмма
 
-    .. code-black:: js
+    .. code-block:: js
 
         var data = {
             labels: ["January", "February", "March", "April", "May", "June", "July"],
@@ -359,7 +311,7 @@ Bar
         var myBarChart = new Chart(ctx).Bar(data, options);
 
 
-    .. js:function:: addData(valuesArray, label)
+    .. py:method:: addData(valuesArray, label)
 
         Добавляет данные в диаграмму, данные также отобразятся визуально.
 
@@ -370,7 +322,7 @@ Bar
             // This new data will now animate at the end of the chart.
 
 
-    .. js:function:: getBarsAtEvent(event)
+    .. py:method:: getBarsAtEvent(event)
 
         Возвращает данные по ивенту
 
@@ -382,7 +334,7 @@ Bar
             };
 
 
-    .. js:function:: removeData( )
+    .. py:method:: removeData( )
 
         Удаляет первый элемент во всех графиках
 
@@ -392,7 +344,7 @@ Bar
             // The chart will remove the first point and animate other points into place
 
 
-    .. js:function:: update( )
+    .. py:method:: update( )
 
         Перерисовывает диаграмму
 
@@ -404,18 +356,14 @@ Bar
             // Calling update now animates the position of March from 90 to 50.
 
 
-
-
-.. _Doughnut:
-
 Doughnut
 --------
 
 .. figure:: images/chartjs/doughnut.png
 
-.. js:class:: Doughnut()
+.. py:class:: Chart.Doughnut()
 
-    Диаграмма создается используя :js:func:`Doughnut`
+    Диаграмма
 
     .. code-block:: js
 
@@ -473,7 +421,7 @@ Doughnut
         var myDoughnutChart = new Chart(ctx[0]).Doughnut(data,options);
 
 
-    .. js:function:: addData(segmentData, index)
+    .. py:method:: addData(segmentData, index)
 
         Добавляет данные в диаграмму, данные также отобразятся визуально.
 
@@ -489,7 +437,7 @@ Doughnut
             // The new segment will now animate in.
 
 
-    .. js:function:: removeData(index)
+    .. py:method:: removeData(index)
 
         Удаляет элемент во всех графиках
 
@@ -501,7 +449,7 @@ Doughnut
             // The chart will remove the first point and animate other points into place
 
 
-    .. js:function:: update()
+    .. py:method:: update()
 
         Перерисовывает диаграмму
 
@@ -513,16 +461,14 @@ Doughnut
             // Calling update now animates the position of Green from 50 to 10.
 
 
-.. _Line:
-
 Line
 ----
 
 .. figure:: images/chartjs/line.png
 
-.. js:class:: Line
+.. py:class:: Chart.Line()
 
-    Диаграмма создается используя :js:func:`Line`
+    Диаграмма
 
     .. code-block:: js
 
@@ -604,7 +550,7 @@ Line
         var myLineChart = new Chart(ctx).Line(data, options);
 
 
-    .. js:function:: addData(valuesArray, label)
+    .. py:method:: addData(valuesArray, label)
 
         Добавляет данные в диаграмму, данные также отобразятся визуально.
 
@@ -615,7 +561,7 @@ Line
             // This new data will now animate at the end of the chart.
 
 
-    .. js:function:: getPointsAtEvent(event)
+    .. py:method:: getPointsAtEvent(event)
 
         Возвращает данные по ивенту
 
@@ -627,7 +573,7 @@ Line
             };
 
 
-    .. js:function:: removeData( )
+    .. py:method:: removeData( )
 
         Удаляет первый элемент во всех графиках
 
@@ -637,7 +583,7 @@ Line
             // The chart will remove the first point and animate other points into place
 
 
-    .. js:function:: update( )
+    .. py:method:: update( )
 
         Перерисовывает диаграмму
 
@@ -649,16 +595,14 @@ Line
             // Calling update now animates the position of March from 90 to 50.
 
 
-.. _Pie:
-
 Pie
 ---
 
 .. figure:: images/chartjs/pie.png
 
-.. js:class:: Pie()
+.. py:class:: Chart.Pie()
 
-    Диаграмма создается используя :js:func:`Pie`
+    Диаграмма
 
     .. code-block:: js
 
@@ -716,7 +660,7 @@ Pie
         var myPieChart = new Chart(ctx[0]).Pie(data,options);
 
 
-    .. js:function:: addData(segmentData, index)
+    .. py:method:: addData(segmentData, index)
 
         Добавляет данные в диаграмму, данные также отобразятся визуально.
 
@@ -732,7 +676,7 @@ Pie
             // The new segment will now animate in.
 
 
-    .. js:function:: removeData(index)
+    .. py:method:: removeData(index)
 
         Удаляет элемент во всех графиках
 
@@ -744,7 +688,7 @@ Pie
             // The chart will remove the first point and animate other points into place
 
 
-    .. js:function:: update()
+    .. py:method:: update()
 
         Перерисовывает диаграмму
 
@@ -755,14 +699,12 @@ Pie
             myPieChart.update();
             // Calling update now animates the position of Green from 50 to 10.
 
-.. _PolarArea:
-
 PolarArea
 ---------
 
 .. figure:: images/chartjs/polar_area.png
 
-.. js:class:: PolarArea()
+.. py:class:: Chart.PolarArea()
 
     Диаграмма создается используя :js:func:`PolarArea`
 
@@ -845,7 +787,7 @@ PolarArea
         var myPolarArea = new Chart(ctx).PolarArea(data, options);
 
 
-    .. js:function:: addData(segmentData, index)
+    .. py:method:: addData(segmentData, index)
 
         Добавляет данные в диаграмму, данные также отобразятся визуально.
 
@@ -861,7 +803,7 @@ PolarArea
             // The new segment will now animate in.
 
 
-    .. js:function:: getSegmentsAtEvent(event)
+    .. py:method:: getSegmentsAtEvent(event)
 
         Возвращает данные по ивенту
 
@@ -873,7 +815,7 @@ PolarArea
             };
 
 
-    .. js:function:: removeData(index)
+    .. py:method:: removeData(index)
 
         Удаляет элемент во всех графиках
 
@@ -885,7 +827,7 @@ PolarArea
             // The chart will remove the first point and animate other points into place
 
 
-    .. js:function:: update()
+    .. py:method:: update()
 
         Перерисовывает диаграмму
 
@@ -897,16 +839,14 @@ PolarArea
             // Calling update now animates the position of Green from 50 to 10.
 
 
-.. _Radar:
-
 Radar
 -----
 
 .. figure:: images/chartjs/radar.png
 
-.. js:class:: Radar()
+.. py:class:: Chart.Radar()
 
-    Диаграмма создается используя :js:func:`Radar`
+    Диаграмма
 
     .. code-block:: js
 
@@ -996,7 +936,7 @@ Radar
         var myRadarChart = new Chart(ctx).Radar(data, options);
 
 
-    .. js:function:: addData(valuesArray, label)
+    .. py:method:: addData(valuesArray, label)
 
         Добавляет данные в диаграмму, данные также отобразятся визуально.
 
@@ -1007,7 +947,7 @@ Radar
             // This new data will now animate at the end of the chart.
 
 
-    .. js:function:: getPointsAtEvent(event)
+    .. py:method:: getPointsAtEvent(event)
 
         Возвращает данные по ивенту
 
@@ -1019,7 +959,7 @@ Radar
             };
 
 
-    .. js:function:: removeData( )
+    .. py:method:: removeData( )
 
         Удаляет первый элемент во всех графиках
 
@@ -1029,7 +969,7 @@ Radar
             // The chart will remove the first point and animate other points into place
 
 
-    .. js:function:: update( )
+    .. py:method:: update( )
 
         Перерисовывает диаграмму
 
@@ -1044,17 +984,17 @@ Radar
 Базовые методы прототипов всех диаграмм
 ---------------------------------------
 
-.. js:function:: clear()
+.. py:method:: clear()
 
     Очищает канвас
 
 
-.. js:function:: destroy()
+.. py:method:: destroy()
 
     Удаляет диаграмму
 
 
-.. js:function:: generateLegend()
+.. py:method:: generateLegend()
 
     Возвращает HTML, сгенерированная легенда для диаграммы
 
@@ -1063,17 +1003,17 @@ Radar
         document.getElementById("legendDiv").innerHTML = myLineChart.generateLegend();
 
 
-.. js:function:: resize()
+.. py:method:: resize()
 
     Изменяет размер канваса
 
 
-.. js:function:: stop()
+.. py:method:: stop()
 
     Останавливает анимацию
 
 
-.. js:function:: toBase64Image()
+.. py:method:: toBase64Image()
 
     Возвращает изображение диаграммы, закодированное в base 64
 

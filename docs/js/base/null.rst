@@ -6,4 +6,4 @@ null - ссылка на несуществующий объект
     age = null;
 
 
-.. js:class:: null()
+.. py:class:: null()

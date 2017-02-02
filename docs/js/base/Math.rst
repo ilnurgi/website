@@ -1,55 +1,55 @@
 Math - математические операции
 ==============================
 
-.. js:class:: Math()
+.. py:class:: Math()
 
     
-    .. js:attribute:: E
+    .. py:attribute:: E
 
         Основание натуральных логарифмов
 
 
-    .. js:attribute:: LN10
+    .. py:attribute:: LN10
 
         Натуральный логарифм числа 10
 
 
-    .. js:attribute:: LN2
+    .. py:attribute:: LN2
 
         Натуральный логарифм числа 2
     
 
-    .. js:attribute:: LOG10E
+    .. py:attribute:: LOG10E
 
         Десятичный логарифм числа Е
 
 
-    .. js:attribute:: LOG2E
+    .. py:attribute:: LOG2E
 
         Логарифм числа Е по основанию 2
 
 
-    .. js:attribute:: PI
+    .. py:attribute:: PI
 
         Число пи
 
 
-    .. js:attribute:: SQRT1_2
+    .. py:attribute:: SQRT1_2
 
         Единица, деленная на корень квадратный из 2
 
 
-    .. js:attribute:: SQRT2
+    .. py:attribute:: SQRT2
 
         Квадратный корень из 2
 
 
-    .. js:function:: abs(var)
+    .. py:function:: abs(var)
 
         Возвращает абсолютное значение
 
 
-    .. js:function:: cbrt(value)
+    .. py:function:: cbrt(value)
 
         Корень кубический
 
@@ -59,7 +59,7 @@ Math - математические операции
             // 2
 
 
-    .. js:function:: ceil(var)
+    .. py:function:: ceil(var)
 
         Округление в большую сторону
 
@@ -71,7 +71,7 @@ Math - математические операции
             d = Math.ceil(-1.99); // -1.0
 
 
-    .. js:function:: clz32(number)
+    .. py:function:: clz32(number)
 
         Возвращает число ведущих нулевых бит в 32 битном представлении числа
 
@@ -89,12 +89,12 @@ Math - математические операции
             // 3
 
 
-    .. js:function:: exp(var)
+    .. py:function:: exp(var)
 
         Вычисляет степень числа Е
 
 
-    .. js:function:: expm1(value)
+    .. py:function:: expm1(value)
 
         Обратное от Math.log1p
 
@@ -106,7 +106,7 @@ Math - математические операции
             // 0
 
 
-    .. js:function:: floor(var)
+    .. py:function:: floor(var)
 
         Округление в меньшую сторону
 
@@ -118,7 +118,7 @@ Math - математические операции
             d = Math.ceil(-1.99); // -2.0
 
 
-    .. js:function:: fround(number)
+    .. py:function:: fround(number)
 
         Округляет число до 32 битного значения с плавающей точкой
 
@@ -139,7 +139,7 @@ Math - математические операции
             // 1.5
             
 
-    .. js:function:: imul(int1, int2)
+    .. py:function:: imul(int1, int2)
 
         Возвращает младшие 32 бита результата умножения аргументов
 
@@ -154,12 +154,12 @@ Math - математические операции
             // 2950000000
 
 
-    .. js:function:: log(var)
+    .. py:function:: log(var)
 
         Вычисляет натуральный логарифм
 
 
-    .. js:function:: log2(var)
+    .. py:function:: log2(var)
 
         Вычисляет логарифм по основанию 2
 
@@ -171,7 +171,7 @@ Math - математические операции
             // 4
 
 
-    .. js:function:: log10(var)
+    .. py:function:: log10(var)
 
         Вычисляет логарифм по основанию 10
 
@@ -183,7 +183,7 @@ Math - математические операции
             // 3
 
 
-    .. js:function:: log1p(value)
+    .. py:function:: log1p(value)
 
         Вычисляет логарифм (1 + value)
 
@@ -195,17 +195,17 @@ Math - математические операции
             // 0
 
 
-    .. js:function:: max(var1, var2, ....)
+    .. py:function:: max(var1, var2, ....)
 
         Возвращает максимум из переданных аргументов
 
 
-    .. js:function:: min(var1, var2, ....)
+    .. py:function:: min(var1, var2, ....)
 
         Возвращает минимум из переданных аргументов
 
 
-    .. js:function:: pow(var, pow)
+    .. py:function:: pow(var, pow)
 
         Возведение в степень
 
@@ -215,7 +215,7 @@ Math - математические операции
             //25
 
 
-    .. js:function:: random()
+    .. py:function:: random()
 
         Возвращает случайное число из промежутка от 0 до 1
 
@@ -225,12 +225,12 @@ Math - математические операции
             // 0.33
 
 
-    .. js:function:: round(var)
+    .. py:function:: round(var)
 
         Нормальное округление
 
 
-    .. js:function:: sign(number)
+    .. py:function:: sign(number)
 
         Возвращает знак числа, сообщающий, является ли число отрицательным, положительным или равно нулю.
 
@@ -248,7 +248,7 @@ Math - математические операции
             // 0
 
 
-    .. js:function:: sqrt(int)
+    .. py:function:: sqrt(int)
 
         Возвращает квадратный корень числа
 
@@ -258,7 +258,7 @@ Math - математические операции
             // 9
 
 
-    .. js:function:: trunc(number)
+    .. py:function:: trunc(number)
 
         Возвращает целую часть числа
 
@@ -276,12 +276,12 @@ Math - математические операции
 Тригонометрические функции
 --------------------------
 
-    .. js:function:: acos()
+    .. py:function:: acos()
 
         Вычисляет арккосинус
 
 
-    .. js:function:: acosh()
+    .. py:function:: acosh()
 
         Вычисляет обратный гиперболический косинус
 
@@ -293,12 +293,12 @@ Math - математические операции
             // 0
 
 
-    .. js:function:: asin()
+    .. py:function:: asin()
 
         Вычисляет арксинус
 
 
-    .. js:function:: asinh()
+    .. py:function:: asinh()
 
         Вычисляет обратный гиперболический синус
 
@@ -310,12 +310,12 @@ Math - математические операции
             // 0
 
 
-    .. js:function:: atan()
+    .. py:function:: atan()
 
         Вычисляет арктангенс
 
 
-    .. js:function:: atanh()
+    .. py:function:: atanh()
 
         Вычисляет обратный гиперболический тангенс
 
@@ -327,17 +327,17 @@ Math - математические операции
             // 0
 
 
-    .. js:function:: atan2()
+    .. py:function:: atan2()
 
         Вычисляет угол между осью Х и точкой
 
 
-    .. js:function:: cos()
+    .. py:function:: cos()
 
         Вычисляет косинус
 
 
-    .. js:function:: cosh()
+    .. py:function:: cosh()
 
         Вычисляет гиперболический косинус
 
@@ -349,7 +349,7 @@ Math - математические операции
             // 1
 
 
-    .. js:function:: hypot()
+    .. py:function:: hypot()
 
         Теорема Пифагора
 
@@ -361,12 +361,12 @@ Math - математические операции
             // 3
 
 
-    .. js:function:: sin()
+    .. py:function:: sin()
 
         Вычисляет синус
 
 
-    .. js:function:: sinh()
+    .. py:function:: sinh()
 
         Вычисляет гиперболический синус
 
@@ -378,12 +378,12 @@ Math - математические операции
             // 0
 
 
-    .. js:function:: tan()
+    .. py:function:: tan()
 
         Вычисляет тангенс
 
 
-    .. js:function:: tanh()
+    .. py:function:: tanh()
 
         Вычисляет гиперболический тангенс
 

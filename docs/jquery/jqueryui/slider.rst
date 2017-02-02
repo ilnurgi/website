@@ -1,9 +1,11 @@
-slider - виджет слайдер
-=======================
+slider
+======
 
-.. js:function:: slider([methodName, option, value])
-.. js:function:: slider([methodName, param_obj])
-.. js:function:: slider([param_obj])
+виджет слайдер
+
+.. py:function:: slider([methodName, option, value])
+.. py:function:: slider([methodName, param_obj])
+.. py:function:: slider([param_obj])
     
     * `methodName` - название метода
         
@@ -48,7 +50,7 @@ slider - виджет слайдер
 
             .. code-block:: js
 
-                $('slider').slider('values'', 35, 65);
+                $('slider').slider('values', 35, 65);
 
     * `param_obj` - объект с параметрами
 
@@ -83,7 +85,7 @@ slider - виджет слайдер
 
     .. code-block:: js
         
-        #('#slider').slider({
+        $('#slider').slider({
             values: [25, 65],
             range: true
         });

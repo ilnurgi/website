@@ -6,9 +6,9 @@ DocumentFragment - смежные узлы и их поддеревья
 которые представляют собой контейнеры для других элементов.
 
 
-.. js:class:: DocumentFragment()
+.. py:class:: DocumentFragment()
 
-    Наследник :js:class:`Node`
+    Наследник :py:class:`Node`
 
     .. code-block:: js
 

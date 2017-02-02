@@ -1,15 +1,15 @@
 JSON
 ====
 
-.. js:class:: JSON()
+.. py:class:: JSON()
 
 
-    .. js:function:: parse(text[, reviver])
+    .. py:function:: parse(text[, reviver])
 
         Из строки в JSON
 
 
-    .. js:function:: stringify(obj[, filter[, indent]])
+    .. py:function:: stringify(obj[, filter[, indent]])
 
         Сериализует объект, массив или элементарное значение
 

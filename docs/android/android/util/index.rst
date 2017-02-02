@@ -1,7 +1,9 @@
-Описание объектов пакета android.util
-=====================================
+android.util
+============
 
 .. toctree::
-   :maxdepth: 1
+    :maxdepth: 1
 
-   AttributeSet
+    AttributeSet
+    Log
+    SparseBooleanArray

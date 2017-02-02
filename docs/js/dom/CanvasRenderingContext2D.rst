@@ -2,6 +2,6 @@ CanvasRenderingContext2D - объект, используемый для соз�
 ========================================================================
 
 
-.. js:class:: CanvasRenderingContext2D()
+.. py:class:: CanvasRenderingContext2D()
 
-    Скорее всего наслденик :js:class:`Context`
+    Скорее всего наслденик :py:class:`Context`

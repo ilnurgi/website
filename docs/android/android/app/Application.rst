@@ -1,5 +1,3 @@
-.. _android_app_Application:
-
 android.app.Application
 =======================
 

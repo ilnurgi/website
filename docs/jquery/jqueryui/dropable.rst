@@ -3,9 +3,9 @@ dropable
 
 Создание области падания элементов (например, у вас есть корзина товаров в интернет магазине, куда будут падать элементы, перенесённые в необходимую область мышкой)
 
-.. js:function:: dropable([methodName, option, value])
-.. js:function:: dropable([methodName, param_obj])
-.. js:function:: dropable([param_obj])
+.. py:function:: dropable([methodName, option, value])
+.. py:function:: dropable([methodName, param_obj])
+.. py:function:: dropable([param_obj])
 
     .. code-block:: js
         

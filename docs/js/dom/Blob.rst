@@ -1,19 +1,19 @@
 Blob - блок двоичных данных
 ===========================
 
-.. js:class:: Blob()
+.. py:class:: Blob()
 
     
-    .. js:attribute:: size
+    .. py:attribute:: size
 
         Объем двоичных данных в объекте
 
 
-    .. js:attribute:: type
+    .. py:attribute:: type
 
         MIME-тип данных в объекте
 
 
-    .. js:function:: slice(start, length, [contentType])
+    .. py:function:: slice(start, length, [contentType])
 
         Возвращает новый Blob объект, срез из существующего

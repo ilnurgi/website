@@ -2,9 +2,9 @@ button - Виджет кнопка
 ======================
 
 
-.. js:function:: button([methodName, option, value])
-.. js:function:: button([methodName, param_obj])
-.. js:function:: button([param_obj])
+.. py:function:: button([methodName, option, value])
+.. py:function:: button([methodName, param_obj])
+.. py:function:: button([param_obj])
 
     * `methodName` - название метода
 

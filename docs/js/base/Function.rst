@@ -4,7 +4,7 @@
 Стандартные функции
 -------------------
 
-.. js:function:: isFinite()
+.. py:function:: isFinite()
 
     Возвращает true  только тогда, когда n  — обычное число, а не одно из NaN , Infinity  и ‐Infinit
 
@@ -24,11 +24,11 @@ Function
 --------
 
 
-.. js:class:: Function(args, function_body)
+.. py:class:: Function(args, function_body)
 
     Функция/конструктор функции, которая возвращает функцию
 
-    Наследник :js:class:`Object`
+    Наследник :py:class:`Object`
 
     .. code-block:: js
 
@@ -37,37 +37,37 @@ Function
         // 30
 
 
-    .. js:attribute:: __proto__
+    .. py:attribute:: __proto__
 
         Ссылка экземпляра на прототип
 
 
-    .. js:attribute:: arguments
+    .. py:attribute:: arguments
 
         Массив аргументов, переданных функции
 
 
-    .. js:attribute:: caller
+    .. py:attribute:: caller
 
         Ссылка на функцию, вызвавшую данную функцию
 
 
-    .. js:attribute:: length
+    .. py:attribute:: length
 
         Число именованных аргументов, указанных при объявлении функции
 
 
-    .. js:attribute:: name
+    .. py:attribute:: name
 
         Название функции
 
 
-    .. js:attribute:: prototype
+    .. py:attribute:: prototype
     
         Ссылка функции на прототип
 
 
-    .. js:function:: apply(obj, arguments)
+    .. py:method:: apply(thisArg, arguments)
 
         Вызывает функцию с подменой контекста
 
@@ -76,7 +76,7 @@ Function
             functionName.apply(thisArg, param1, param2)
 
 
-    .. js:function:: bind(obj[, arguments])
+    .. py:method:: bind(obj[, arguments])
 
         Возвращает новую функцию,
         которая вызывает данную,
@@ -91,7 +91,7 @@ Function
             // эквивалентно f.call(o, 1, 2, 3);
 
 
-    .. js:function:: call(obj, argument1, ...)
+    .. py:method:: call(obj, argument1, ...)
 
         Вызывает функцию как метод указанного объекта
 

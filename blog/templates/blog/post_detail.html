@@ -1,0 +1,137 @@
+{% extends 'blog/base.html' %}
+
+{% block extra_blog_head %}
+{% endblock %}
+
+{% block title %}
+    {{ object.category }}: {{ object }}
+{% endblock %}
+
+{% block description %}
+    <meta name="description" content="{{ object.description }}">
+{% endblock %}
+
+{% block extra_blog_body %}
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3>{{ object.title }}</h3>
+            </div>
+            <div class="panel-body ">
+                {{ object.content|safe }}
+            </div>
+            <div class="panel-footer text-right">
+                <a href="{% url 'blog:list' object.category.slug %}">
+                    {{ object.category }}
+                </a>/{{ object.created }} ({{ object.modified }})
+                {% if view.request.user.is_superuser %}
+                    {% if object.published %}
+                        <span class="label label-success">Опубликован</span>
+                    {% else %}
+                        <span class="label label-warning">Скрыт</span>
+                    {% endif %}
+                    <a type="button"
+                       class="btn btn-info"
+                       href="{% url 'blog:post_update' object.slug %}">
+                        Редактировать
+                    </a>
+                    <a type="button"
+                       class="btn btn-danger"
+                       href="{% url 'blog:post_delete' object.slug %}">
+                        Удалить
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+        <form class="form-horizontal"
+              method="post"
+              enctype="multipart/form-data"
+              action="{% url 'blog:comment_create' post.slug %}">
+            {% csrf_token %}
+            {% if not view.request.user.is_authenticated %}
+                <div class="form-group">
+                    <label for="user_name" class="col-sm-2 control-label">
+                        Ваше имя
+                    </label>
+                    <div class="col-sm-10">
+                        <input
+                                type="text"
+                                class="form-control"
+                                id="user_name"
+                                placeholder="имя"
+                                name="user_name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="user_email" class="col-sm-2 control-label">
+                        Ваш email
+                    </label>
+                    <div class="col-sm-10">
+                        <input
+                                type="text"
+                                class="form-control"
+                                id="user_email"
+                                placeholder="email"
+                                name="user_email">
+                    </div>
+                </div>
+            {% endif %}
+            <div class="form-group">
+                <label for="content_raw" class="col-sm-2 control-label">
+                    Коментарии (markdown)
+                </label>
+                <div class="col-sm-10">
+                    <textarea
+                            class="form-control"
+                            id="content_raw"
+                            name="content_raw"
+                            rows="5"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default">
+                        Добавить коментарии
+                    </button>
+                </div>
+            </div>
+        </form>
+
+        {% for comment in object_comments %}
+            <div class="row">
+                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 text-right">
+                    <h3><span class="glyphicon glyphicon glyphicon-pencil" aria-hidden="true"></span></h3>
+                </div>
+                <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11">
+                    <h3>
+                        {% if comment.user %}
+                            {{ comment.user }}
+                        {% else %}
+                            {{ comment.user_name }}
+                        {% endif %}
+                        <small>({{ comment.created }})</small>
+                        {% if view.request.user.is_superuser %}
+                            {% if comment.published %}
+                                <span class="label label-success">Опубликован</span>
+                            {% else %}
+                                <span class="label label-warning">Скрыт</span>
+                            {% endif %}
+                            <a type="button"
+                               class="btn btn-info"
+                               href="/admin/blog/comment/{{ comment.id }}">
+                                Редактировать
+                            </a>
+                            <a type="button"
+                               class="btn btn-danger"
+                               href="/admin/blog/comment/{{ comment.id }}/delete">
+                                Удалить
+                            </a>
+                        {% endif %}
+                    </h3>
+                    {{ comment.content|safe }}
+                    <hr>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

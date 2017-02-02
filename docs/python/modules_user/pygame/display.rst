@@ -8,7 +8,7 @@ display
 
     отображаем окно
 
-    .. code-blog:: py
+    .. code-block:::: py
 
         pygame.display.flip()
 
@@ -17,7 +17,7 @@ display
 
     Возвращает экран указанных размеров
 
-    .. code-blog:: py
+    .. code-block:: py
 
         window = pygame.display.set_mode((400, 400))
 
@@ -26,6 +26,6 @@ display
 
     Устанавливает заголовок окна
 
-    .. code-blog:: py
+    .. code-block:: py
 
         pygame.display.set_caption(u'Hello PyGame')

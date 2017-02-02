@@ -1,6 +1,9 @@
 .. py:module:: tkColorChooser
 
-tkColorChooser - модуль диалоговых окон выбора цвета
+tkColorChooser
+==============
+
+Модуль диалоговых окон выбора цвета
 
 
 .. py:method:: askcolor(**kwargs)

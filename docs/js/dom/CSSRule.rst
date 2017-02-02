@@ -1,34 +1,34 @@
 CSSRule - правило в таблице стилей CSS
 ======================================
 
-.. js:class:: CSSRule()
+.. py:class:: CSSRule()
 
-    .. js:attribute:: cssText
+    .. py:attribute:: cssText
 
         Пол­ный текст дан­но­го CSS-пра­ви­ла.
 
 
-    .. js:attribute:: parentRule
+    .. py:attribute:: parentRule
 
         Пра­ви­ло, ес­ли та­ко­вое име­ет­ся, в ко­то­ром со­дер­жит­ся дан­ное пра­ви­ло.
 
 
-    .. js:attribute:: parentStyleSheet
+    .. py:attribute:: parentStyleSheet
 
         Таб­ли­ца сти­лей, внут­ри ко­то­рой со­дер­жит­ся дан­ное пра­ви­ло.
 
 
-    .. js:attribute:: selectorText
+    .. py:attribute:: selectorText
 
         Ко­гда свой­ст­во type име­ет зна­че­ние STYLE_RULE, это свой­ст­во хра­нит текст се­лек­то­ра, оп­ре­де­ляю­ще­го эле­мен­ты до­ку­мен­та, к ко­то­рым при­ме­ня­ет­ся это пра­ви­ло.
 
 
-    .. js:attribute:: style
+    .. py:attribute:: style
 
         Ко­гда свой­ст­во type име­ет зна­че­ние STYLE_RULE, это свой­ст­во оп­ре­де­ля­ет сти­ли, ко­то­рые долж­ны при­ме­нять­ся к  эле­мен­там, оп­ре­де­ляе­мым свой­ст­вом selectorText. Об­ра­ти­те вни­ма­ние: не­смот­ря на то что свой­ст­во style дос­туп­но толь­ко для чте­ния, свой­ст­ва объ­ек­та CSSStyleDeclaration, на ко­то­рое оно ссы­ла­ет­ся, дос­туп­ны длячте­ния и за­пи­си.
 
 
-    .. js:attribute:: type
+    .. py:attribute:: type
 
         Тип дан­но­го пра­ви­ла
 

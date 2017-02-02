@@ -1,31 +1,31 @@
 Comment - коментарии в доме
 ===========================
 
-.. js:class:: Comment()
+.. py:class:: Comment()
 
-    Наследник :js:class:`Node`
+    Наследник :py:class:`Node`
 
 
-    .. js:attribute:: data
+    .. py:attribute:: data
 
         Текст коментария
 
-    .. js:attribute:: length
+    .. py:attribute:: length
 
         Количесвто символов коментария
 
     
 
-    .. js:function:: appendData(string data)
+    .. py:function:: appendData(string data)
    
 
-    .. js:function:: deleteData(unsigned long offset, unsigned long count)
+    .. py:function:: deleteData(unsigned long offset, unsigned long count)
     
 
-    .. js:function:: insertData(unsigned long offset, string data)
+    .. py:function:: insertData(unsigned long offset, string data)
     
 
-    .. js:function:: replaceData(unsigned long offset, unsigned long count, string data)
+    .. py:function:: replaceData(unsigned long offset, unsigned long count, string data)
     
 
-    .. js:function:: substringData(unsigned long offset, unsigned long count)
+    .. py:function:: substringData(unsigned long offset, unsigned long count)

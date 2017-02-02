@@ -1,21 +1,21 @@
 TableCell - ячейка HTML таблицы
 =======================================================
 
-.. js:class:: TableCell()
+.. py:class:: TableCell()
 
-    Наследник :js:class:`Element`
+    Наследник :py:class:`Element`
 
-    .. js:attribute:: cellIndex
+    .. py:attribute:: cellIndex
         
         По­зи­ция дан­ной ячей­ки внут­ри стро­ки.
 
     
-    .. js:attribute:: colSpan
+    .. py:attribute:: colSpan
         
         Зна­че­ние HTML-ат­ри­бу­та colspan в ви­де чис­ла.
 
     
-    .. js:attribute:: rowSpan
+    .. py:attribute:: rowSpan
         
         Зна­че­ние HTML-ат­ри­бу­та rowspan в ви­де чис­ла.
 

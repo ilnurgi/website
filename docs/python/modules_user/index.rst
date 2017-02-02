@@ -1,17 +1,25 @@
 Сторонние модули
 ================
 
-Содержание:
-
 .. toctree::
-   :maxdepth: 1
+    :maxdepth: 1
 
-   docx
-   pyaudio
-   psutil
-   pymongo/index
-   pyqt/index
-   serial
-   xlrd
-   xlwt
-   xlutils
+    bottle
+    docx
+    flask
+    jinja2
+    matplotlib/index
+    memcache
+    numpy/index
+    pyaudio
+    psutil
+    pygame/index
+    pymongo/index
+    pyqt/index
+    redis
+    request
+    serial
+    sqlalchemy/index
+    xlrd
+    xlwt
+    xlutils

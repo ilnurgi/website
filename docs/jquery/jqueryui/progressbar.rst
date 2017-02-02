@@ -2,9 +2,9 @@ progressbar - виджет прогрессбара
 =================================
 
 
-.. js:function:: progressbar([methodName, option, value])
-.. js:function:: progressbar([methodName, param_obj])
-.. js:function:: progressbar([param_obj])
+.. py:function:: progressbar([methodName, option, value])
+.. py:function:: progressbar([methodName, param_obj])
+.. py:function:: progressbar([param_obj])
 
 
     * `methodName` - название метода
