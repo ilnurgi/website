@@ -1,24 +1,40 @@
-.. _android_widget_TextView:
+.. py:module:: android.widget
 
-android.widget.TextView
-=======================
+TextView - текстовое поле
+=========================
 
-.. py:class:: android.widget.TextView([context[, attrs, [defStyle]]])
+.. py:class:: TextView([context[, attrs, [defStyle]]])
 
-    :param context: :ref:`androif_content_Context`
-    :param attrs: :ref:`androif_util_AtributeSet`
-    :param defStyle: int
+    Поддерживает многострочное отображение,
+    форматирование и автоматический перенос слов и символов.
 
-    Наследник :ref:`android.view.View`. Стандартная метка, предназначенная для вывода текста. Она поддерживает многострочное отображение, форматирование и автоматический перенос слов и символов.
+    Наследник :py:class:`android.view.View`
+
+    * context - :py:class:`android.content.Context`
+
+    * attrs - :py:class:`android.util.AttributeSet`
+
+    * defStyle - int
+
+    .. code-block:: java
+
+        TextView txtPassword = (TextView)findViewById(R.id.txtPassword);
+
 
     .. py:method:: getText()
     
-        возвращает текст виджета
+        Возвращает текст виджета
 
-    .. py:method:: setText(str)
-    .. py:method:: setText(R.string.name)
+    .. py:method:: setText(text)
 
-        устанавливает текст для объекта
+        Устанавливает текст виджета
+
+        .. code-block:: java
+
+            txtResult.setText(txtPassword.getText());
+
+            txtResult2.setText(R.string.name);
+
 
     .. py:method:: setTextSize(size)
 

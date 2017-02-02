@@ -1,12 +1,12 @@
-.. _android_view_ContextMenu:
+.. py:module:: android.view
 
-android.view.ContextMenu
-========================
+ContextMenu
+===========
 
-.. py:class:: android.view.ContextMenu
+.. py:class:: ContextMenu()
 
-    контекстное меню, наследник :ref:`android_view_Menu`
+    Контекстное меню
 
-    .. _android_view_ContextMenu_ContextMenuInfo:
+    Наследник :py:class:`android.view.Menu`
 
-    .. py:class:: android.view.ContextMenu.ContextMenuInfo
+    .. py:class:: ContextMenuInfo()

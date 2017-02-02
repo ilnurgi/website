@@ -1,8 +1,15 @@
-.. _android_widget_LinerLayout:
+.. py:module:: android.widget
 
-android.widget.LinerLayout
-==========================
+LinerLayout
+===========
 
-.. py:class:: android.widget.LinerLayout
+.. py:class:: LinerLayout
 
-    Помещает дочерние Представления в ряд (горизонтальный или вертикальный). Вертикальная разметка представляет собой колонку с элементами, горизонтальная вытягивает их в строку. LinearLayout позволяет задавать «ширину» каждого дочернего Представления, благодаря чему можно контролировать их размеры в пределах доступного пространства.
+    Контейнер, который распологает элементы внутри себя в линию
+
+    Наследник :py:class:`android.view.ViewGroup`
+
+    .. code-block:: xml
+
+        <LinerLayout
+            xmlns:android="http://schemas.android.com/apk/res/android" />

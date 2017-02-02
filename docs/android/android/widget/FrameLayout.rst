@@ -1,8 +1,12 @@
-.. _android_widget_FrameLayout:
+.. py:module:: android.widget
 
-android.widget.FrameLayout
-==========================
+FrameLayout
+===========
 
-.. py:class:: android.widget.FrameLayout
+.. py:class:: FrameLayout
 
-    Наследник :ref:`android.view.View`. Самый простой из менеджеров компоновки, прикрепляет каждое дочернее Представление к верхнему левому углу экрана. Каждый новый элемент накладывается на предыдущий, заслоняя его.
+    Контейнер, прикрепляет каждый элемент к верхнему левому углу экрана.
+
+    Каждый новый элемент накладывается на предыдущий, заслоняя его.
+
+    Наследник :ref:`android.view.ViewGroup`.

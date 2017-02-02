@@ -1,201 +1,244 @@
-.. _android_app_Activity:
+.. py:module:: android.app
 
-android.app.Activity
-====================
+Activity - активность
+=====================
 
 
-.. py:class:: android.app.Activity
+.. py:class:: Activity
 
-    базовый класс для визуальных и интерактивных компонентов приложения.
+    Активность, экран который отображается пользователю
+
+    .. code-block:: java
+
+        import android.app.Activity;
+        import android.os.Bundle;
+
+        public class MyActivity extends Activity {
+            ...
+        }
+
+
+    .. py:method:: findViewById(id)
+
+        Возвращает объект по иди
+
+        .. code-block:: java
+
+            Button btn = (Button)findViewById(R.id.btn);
+
+
+    .. py:method:: getIntent()
+
+        Возвращает интент, :py:class:`android.content.Intent`
+
+
+    .. py:method:: getResources()
+
+        Возвращает :py:class:`android.content.res.Resources`
+
+
+    .. py:method:: onConfigurationChanged(config)
+
+        Обработчик изменения конфигурации
+
+        * config - :py:class:`android.content.res.Configuration`
+
+
+    .. py:method:: onContextItemSelected(item)
+
+        Обработчик выбора элемента в контекстном меню
+
+        * item - :py:class:`android.view.MenuItem`
 
     
     .. py:method:: onCreate(savedInstanceState)
 
-        обработчик создания
+        Обработчик создания активности
 
-        :param savedInstanceState: :ref:`Bundle`
-
-    
-    .. py:method:: onRestoreInstanceState(savedInstanceState)
-
-        Вызывается, когда метод onCreate завершил свою работу, и используется для восстановления состояния пользовательского интерфейса 
-
-        :param savedInstanceState: :ref:`Bundle`
-
-    
-    .. py:method:: onSaveInstanceState(savedInstanceState)
-
-        Вызывается для того, чтобы сохранить пользовательский интерфейс перед выходом из "активного" состояния.
-
-        :param savedInstanceState: :ref:`Bundle`
-
-    
-    .. py:method:: onRestart()
-
-        Вызывается, перед тем, как активность становится "видимой"
-
-    
-    .. py:method:: onStart()
-
-        Вызывается, вначале "видимого" состояния
-
-    
-    .. py:method:: onStop()
-
-        Вызывается перед тем, как Активность перестает быть "видимой"
-
-    
-    .. py:method:: onResume()
-
-        Вызывается, вначале "активного" состояния
-
-    
-    .. py:method:: onPause()
-
-        Вызывается, перед выходом из "активного" состояния
-
-    
-    .. py:method:: onDestroy()
-
-        Вызывается, перед выходом из "полноценного" состояния
+        * savedInstanceState - :py:class:`android.os.Bundle`
 
 
-    .. py:method:: onCreateOptionsMenu(menu)
+        .. code-block:: java
 
-        обработчик создания меню, вызывается 1 раз при первом показе меню
-
-        :param menu: :ref:`android_view_Menu`
-
-
-    .. py:method:: onPrepareOptionsMenu(menu)
-
-        обработчик создания меню, вызывается каждый раз показе меню. Можно менять меню при каждом показе
-
-        :param menu: :ref:`android_view_Menu`
-
-
-    .. py:method:: onOptionsItemSelected(item)
-
-        обработчик выбора элемента в меню
-
-        :param item: :ref:`android_view_MenuItem`
+            @Override
+            public void onCreate(Bundle savedInstanceState) {
+                super.onCreate(savedInstanceState);
+                mCurrentIndex = savedInstanceState.getInt(KEY_INDEX, 0);
+            }
 
 
     .. py:method:: onCreateContextMenu(menu, view, menuInfo)
 
         обработчик контекстного меню, вызывается каждый раз перед показом
 
-        :param menu: :ref:`android_view_ContextMenu`
-        :param view: :ref:`android_view_View`
-        :param menuInfo: :ref:`android_view_ContextMenu_ContextMenuInfo`
+        * menu - :py:class:`android.view.ContextMenu`
+
+        * view - :py:class:`android_view_View`
+
+        * menuInfo - :py:class:`android.view.ContextMenu.ContextMenuInfo`
 
 
-    .. py:method:: onContextItemSelected(item)
+    .. py:method:: onCreateOptionsMenu(menu)
 
-        обработчик выбора элемента в контекстном меню
+        Обработчик создания меню, вызывается 1 раз при первом показе меню
 
-        :param item: :ref:`android_view_MenuItem` 
+        * menu - :py:class:`android.view.Menu`
 
 
-    .. py:method:: onConfigurationChanged(config)
+    .. py:method:: onDestroy()
 
-        обработчик изменения конфигурации
+        Вызывается, перед выходом из "полноценного" состояния
 
-        :param item: :ref:`_android_content_res_Configuration` 
+        .. code-block:: java
+
+            @Override
+            public void onDestroy(){
+                super.onDestroy();
+            }
+
+
+    .. py:method:: onOptionsItemSelected(item)
+
+        Обработчик выбора элемента в меню
+
+        * item - :py:class:`android.view.MenuItem`
+
+
+    .. py:method:: onPause()
+
+        Вызывается, перед выходом из "активного" состояния
+
+        .. code-block:: java
+
+            public void onPause(){
+                super.onPause();
+            }
+
+
+    .. py:method:: onPrepareOptionsMenu(menu)
+
+        Обработчик создания меню, вызывается каждый раз показе меню.
+
+        Можно менять меню при каждом показе
+
+        * menu - :py:class:`android.view.Menu`
+
+
+    .. py:method:: onRestart()
+
+        Вызывается, перед тем, как активность становится "видимой"
+
+        .. code-block:: java
+
+            @Override
+            public void onRestart(){
+                super.onRestart();
+            }
+
+    
+    .. py:method:: onRestoreInstanceState(savedInstanceState)
+
+        Вызывается, когда метод onCreate завершил свою работу,
+        и используется для восстановления состояния пользовательского интерфейса
+
+        * savedInstanceState - :py:class:`android.os.Bundle`
+
+        .. code-block:: java
+
+            @Override
+            public void onRestoreInstanceState(Bundle savedInstanceState) {
+                super.onRestoreInstanceState(savedInstanceState);
+            }
+
+
+    .. py:method:: onResume()
+
+        Вызывается при восстановлении из неактивного состояния
+
+        .. code-block:: java
+
+            @Override
+            public void onResume(){
+                super.onResume();
+            }
+
+    
+    .. py:method:: onSaveInstanceState(savedInstanceState)
+
+        Вызывается для того,
+        чтобы сохранить пользовательский интерфейс перед выходом из "активного" состояния.
+
+        * savedInstanceState - :py:class:`android.os.Bundle`
+
+        .. code-block:: java
+
+            @Override
+            public void onSaveInstanceState(Bundle savedInstanceState) {
+                super.onSaveInstanceState(savedInstanceState);
+                savedInstanceState.putInt(KEY_INDEX, mCurrentIndex);
+            }
+
+    
+    .. py:method:: onStart()
+
+        Вызывается когда активити стала видимой
+
+        .. code-block:: java
+
+            @Override
+            public void onStart(){
+                super.onStart();
+            }
+
+    
+    .. py:method:: onStop()
+
+        Вызывается перед тем, как Активность перестает быть "видимой"
+
+        .. code-block:: java
+
+            @Override
+            public void onStop(){
+                super.onStop();
+            }
 
 
     .. py:method:: registerForContextMenu(view)
 
-        добавляет для вью обработчик контекста
+        Добавляет для вью обработчик контекста
 
-        :param view: :ref:`android_view_View`
-
-
-    .. py:method:: setContentView()
-
-        устанавливает содержимое активити из лэйаута
-
-        >>> setContentView(R.layout.main);
-
-    .. py:method:: findViewById(id)
-
-        возвращает объект по иди
-
-        >>> findViewById(R.id.textView);
+        * view - :py:class:`android.view.View`
 
 
+    .. py:method:: setContentView(view)
+
+        Устанавливает содержимое активити
+
+        .. code-block:: java
+
+            @Override
+            public void onCreate(Bundle savedInstanceState) {
+                super.onCreate(savedInstanceState);
+
+                setContentView(R.layout.main);
+            }
+
+        .. code-block:: java
+
+            @Override
+            public void onCreate(Bundle savedInstanceState) {
+                super.onCreate(savedInstanceState);
+
+                TextView textView = new TextView(this);
+                setContentView(textView);
+            }
 
 
-    .. py:method:: getResources()
+    .. py:method:: startActivity(Intent intent)
 
-        возвращает объект :ref:`android_content_res_Resources`
+        Запускает активность по интенту
 
-    .. py:method:: getMenuInflater().inflate(R.menu.mymenu, menu)
+        .. code-block:: java
 
-        getMenuInflater возвращает объект MenuInflater
-
-
-
-Примеры
--------
-
-::
-    
-    publick class MainActivity extends Activity impements OnClickListener {
-
-        @Override
-        publick void onCreate(Bundle savedInstanceState) {
-            // обработчик создания активити
-            super.onCreate(savedInstanceState);
-            ...
-        };
-
-        @Override
-        publick void onClick(View) {
-            // обработчик клика по вью
-            ...
-        };
-
-        @Override
-        publick boolean onCreateOptionsMenu(Menu menu) {
-            // обработчик создания меню, вызывается 1 раз при первом показе меню
-            ...
-            return super.onCreateOptionsMenu(menu);
-        };
-
-        @Override
-        publick boolean onPrepareOptionsMenu(Menu menu) {
-            // обработчик создания меню, вызывается каждый раз показе меню
-            ...
-            return super.onCreateOptionsMenu(menu);
-        };
-
-        @Override
-        publick boolean onOptionsItemSelected(MenuItem item) {
-            // обработчик выбора элемента в меню
-            ...
-            return super.onOptionsItemSelected(item);
-        };
-
-        @Override
-        publick boolean onOptionsItemSelected(MenuItem item) {
-            // обработчик контекстного меню, вызывается каждый раз перед показом
-            ...
-            return super.onOptionsItemSelected(item);
-        };
-
-        @Override
-        publick boolean onOptionsItemSelected(MenuItem item) {
-            // обработчик выбора элемента в контекстном меню
-            ...
-            return super.onOptionsItemSelected(item);
-        };
-
-        @Override
-        public void onConfigurationChanged(Configuration conf) {
-            super.onConfigurationChanged(conf);
-            // обработчик изменения конфигурации
-            ...
-
-
-    };
+            Intent intent = new Intent(this, SomeClass.class);
+            startActivity(intent);
