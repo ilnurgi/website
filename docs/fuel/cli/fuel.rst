@@ -17,14 +17,17 @@ fuel - консольная утилита управления
     fuel --env 1 node --deploy --node 1,2
 
 
-deploy-changes
---------------
+deploy-changes - деплой изменений окружения
+-------------------------------------------
 
-* --env, --env-id <env>
+* --env, --env-id <env> - окружение
 
 .. code-block:: sh
 
-    fuel --env 1 deploy-changes
+    $ fuel deploy-changes --env 1
+    Deploying changes to environment with id=43
+    Deployment: [===>        ]  42%
+    Node102 provisioning : [>]   0%
 
 
 deployment - работа с деплоем
@@ -54,42 +57,92 @@ deployment - работа с деплоем
 environment, env - работа с окружениями
 --------------------------
 
-* --env, --env-id <env>
+* --env, --env-id <env> - фильтрация конкретного окружения
 * --dir <dir>
 * --name, --env-name <name> - название окружения
 * --mode <mode> - ???
 * --network-mode <mode> - ???
 * --nst, --net-segment-type <gre,vlan,tun>
-* --release, -rel <rel>
-* --attributes
-* --create, -c, --env-create
+* --release, -rel <rel> - название релиза
+* --force, -f - форсировать действие
+
+* --attributes - свойства окружения
+
+    Можно скачать на локальную машину - --deploy, или обновить - --upload
+
+* --deployment-tasks - задачи для деплоя
+
+    Можно скачать на локальную машину - --deploy, или обновить - --upload
+
+* --create, -c, --env-create - создать окружение
+    
+    Обязательные параметры: --name, --release
+
 * --delete
-* --deployment-tasks
-* --download, -d
-* --force, -f
-* --list
-* --set
-* --update, --env-update
-* --upload, -u
+
+* --list - список окружении
+
+* --set - обновляет данные окружения
+
+* --update, --env-update - обновляет данные окружения
+
+* --download, -d - скачать данные окружения в файл
+
+* --upload, -u - обновить данные окружения из файла
 
 .. code-block:: sh
-        
-    fuel env
-    fuel env --name test --rel 1 --mode multinode --network-mode nova --create
-    fuel env --name MyEnv --rel 1 --net-segment-type vlan --create
-    fuel env --name MyEnv --rel 1 --create
-
-    fuel env --env 1 --attributes --download
-    fuel env --env 1 --attributes --upload
-
-    fuel env --env 1 --deployment-tasks --download
-    fuel env --env 1 --deployment-tasks --upload
-
-    fuel env --env 1 --update --release 1
     
-    fuel env --env 1 --name NewEnvName --set
+    # список окружений 
+    $ fuel env
+    id | status      | name | release_id | pending_release_id
+    ---|-------------|------|------------|-------------------
+    7  | operational | 1    | 2          | None   
+
+.. code-block:: sh
     
-    fuel env --env 1 --force --delete
+    # создание окружения
+    $ fuel env --create --name 2 --rel 2
+    Environment '2' with id=40 was created!
+
+.. code-block:: sh
+
+    # скачать свойства окружения
+    $ fuel env --env 1 --attributes --download
+    Attributes of cluster 1 downloaded into ./cluster_1/attributes.yaml.
+
+    # обновить свойства окружения
+    $ fuel env --env 1 --attributes --upload
+    Attributes of cluster 1 uploaded from ./cluster_1/attributes.yaml
+
+.. code-block:: sh
+
+    # скачать задачи для деплоя окружения
+    $ fuel env --env 1 --deployment-tasks --download
+    Deployment tasks for cluster 1 downloaded into ./cluster_1/deployment_tasks.yaml.
+
+    # обновить задачи для деплоя окружения
+    $ fuel env --env 1 --attributes --upload
+    Deployment tasks for cluster 1 uploaded from ./cluster_1/deployment_tasks.yaml.
+
+.. code-block:: sh
+    
+    # обновление параметров окружения
+    $ fuel env --env 1 --release 2 --update
+    Following attributes are changed for the environment: pending_release_id=2
+    Update process for environment has been started. Update task id is 802
+
+    $ fuel env --env 1 --name NewEnvName --set
+    Following attributes are changed for the environment: name=NewEnvName
+
+.. code-block:: sh
+    
+    # удалить окружение
+    $ fuel env --env 1 --delete
+
+.. code-block:: sh
+
+    fuel env --create --name test --rel 1 --mode multinode --network-mode nova
+    fuel env --create --name MyEnv --rel 1 --net-segment-type vlan
     
 
 
@@ -98,7 +151,13 @@ fuel-version - версия
 
 .. code-block:: sh
 
-    fuel fuel-version
+    $ fuel fuel-version
+    api: '1'
+    auth_required: true
+    feature_groups:
+    - mirantis
+    openstack_version: liberty-8.0
+    release: '8.0'
 
 
 graph - работа с графами
@@ -213,7 +272,7 @@ node - работа с нодами
 * --env, --env-id <env> - фильтрация по окружению
 * --hostname <hostname>
 * --name <name>
-* --node <node, ...> - фильтрация по конкретным нодам
+* --node <node, ...> - название ноды
 * --role, -r <role>
 * --skip <task, ...>
 * --start <task> - начальная задача деплоя
@@ -230,11 +289,35 @@ node - работа с нодами
 * --network, --net
 * --provision - подготовить ноду к деплою ???
 * --set, -s - задание свойств ноде
+
+    Необходимые параметры: --node, --role, --env
+
 * --upload, -u
 
 .. code-block:: sh
 
-    fuel node --node-id 1 --name NewName
+    # список всех нод    
+    $ fuel node
+    id  | status   | name             | cluster | ip        | mac               | roles                       | pending_roles | online | group_id
+    ----|----------|------------------|---------|-----------|-------------------|-----------------------------|---------------|--------|---------
+    103 | discover | Untitled (0e:11) | None    | 10.20.0.4 | 08:00:27:61:0e:11 |                             |               | True   | None    
+
+    # список нод, с фильтрацией по окружению
+    $ fuel node --env-id 1
+
+.. code-block:: sh
+    
+    # задать новое имя ноды
+    $ fuel node --node-id 1 --name NewName
+    Name for node with id 1 has been changed to NewName.
+
+.. code-block:: sh
+
+    # назначить ноду в окружение с ролью
+    $ fuel node --node 103 --env 41 --set --role fuel-plugin-django-app_role 
+    Nodes [103] with roles ['fuel-plugin-django-app_role'] were added to environment 41
+
+.. code-block:: sh
 
     fuel node --set --env 1 --node 1 --role controller
     fuel node --set --env 1 --node 2,3,4 --role compute,cinder
@@ -247,12 +330,6 @@ node - работа с нодами
     
     fuel node --node-id 1 --hostname ctrl-01
     
-    # список всех нод    
-    fuel node
-
-    # список нод окружения
-    fuel node --env-id 1
-
     # информация по конкретной ноде
     fuel node --node-id 80:ac
 
@@ -452,6 +529,19 @@ plugins - работа с плагинами
 
     fuel plugins --update plugin-name-2.0-2.0.1-0.noarch.rpm
 
+.. code-block:: sh
+
+    # включить плагин в окружении
+
+    # скачать параметры окружения
+    $ fuel env --env 1 --attributes --download
+
+    # найти плагин в cluster_1/attrbutes
+    # выставит параметр enabled: true
+
+    # обновить параметры окружения
+    $ fuel env --env 1 --attributes --upload
+
 
 provisioning - вычисленные значения оркестрации
 -----------------------------------------------
@@ -487,6 +577,15 @@ release, rel
 * --upload, -u
 
 .. code-block:: sh
+    
+    # список релизов
+    $ fuel release
+    id | name                    | state       | operating_system | version    
+    ---|-------------------------|-------------|------------------|------------
+    2  | Liberty on Ubuntu 14.04 | available   | Ubuntu           | liberty-8.0
+    1  | Liberty on CentOS 6.5   | unavailable | CentOS           | liberty-8.0
+
+.. code-block:: sh
 
     fuel rel --deployment-tasks --download --rel 1
     fuel rel --deployment-tasks --upload--rel 1
@@ -504,14 +603,15 @@ release, rel
     fuel release --rel 1
 
 
-reset
+reset - сброс окружения
 -----
 
-* --env, --env-id <env>
+* --env, --env-id <env> - идентификатор окружения
 
 .. code-block:: sh
 
-    fuel reset --env 1
+    $ fuel reset --env 1
+    Reset task of environment with id=1 started. To check task status run 'fuel task --tid 833'.
 
 
 role - работа с ролями
