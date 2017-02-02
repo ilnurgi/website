@@ -3,17 +3,8 @@
 
 Openstack - предоставляет инфрастурктуру для построения облака.
 
-Состоит из следующих сервисов:
-
 .. toctree::
-   :maxdepth: 2
+    :maxdepth: 1
 
-
-Работа с сервисами осуществляется через клиенты:
-
-.. toctree::
-   :maxdepth: 2
-
-   clients/nova_client
-
-
+    cli/index
+    clients/index
