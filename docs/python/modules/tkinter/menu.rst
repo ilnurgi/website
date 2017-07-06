@@ -8,18 +8,18 @@ Menu - виджет, навигационное меню
 
     Наследник :py:class:`Widget`
 
-    * `activeborderwidth` - число, ширина границ активного элемента
-    * `activeforeground` - строка, цвет активного текста
-    * `postcommand` - обработчик
-    * `selectcolor` - строка, цвет выбранного элемента
-    * `tearoff` -
-    * `tearoffcommand` -
-    * `title` -
-    * `type` -
+    * activeborderwidth - число, ширина границ активного элемента
+    * activeforeground - строка, цвет активного текста
+    * postcommand - обработчик
+    * selectcolor - строка, цвет выбранного элемента
+    * tearoff -
+    * tearoffcommand -
+    * title -
+    * type -
 
     .. code-block:: py
 
-        menu = Menu()
+        menu = Menu(parent)
 
 
     .. py:method:: add(itemType, cnf={}, **kwargs)

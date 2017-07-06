@@ -28,20 +28,30 @@ date
 
         возвращает год
 
+        .. code-block:: py
+
+            date.today().yaer
+            # 2017
+
 
     .. py:attribute:: month
 
         возвращает месяц
+
+        .. code-block:: py
+
+            date.today().month
+            # 5
 
 
     .. py:attribute:: day
 
         возвращает день
 
+        .. code-block:: py
 
-    .. py:staticmethod:: today()
-
-        возвращает текущую дату :py:class:`date`
+            date.today().day
+            # 3
 
 
     .. py:staticmethod:: fromordinal(<Количество дней с 1 года>)
@@ -73,6 +83,26 @@ date
 
             datetime.date.fromtimestamp(1233368623.0)
             # datetime.date(2009, 1, 31)
+
+
+    .. py:staticmethod:: isoformat(date)
+
+        Возвращает строку, дату в исо формате
+
+        .. code-block:: py
+
+            datetime.date.isoformat(datetime.date.today())
+            # '2017-03-05'
+
+
+    .. py:staticmethod:: today()
+
+        Возвращает :py:class:`datetime.date`, текущую дату
+
+            .. code-block:: py
+
+                date.today()
+                # datetime.date(2017, 5, 3)
 
 
     .. py:method:: ctime()
@@ -201,6 +231,10 @@ datetime
     .. py:classmethod:: today()
 
         возвращает текущую дату и время
+
+        .. code-block:: py
+
+            datetime.to
 
 
     .. py:classmethod:: utcfromtimestamp(<Количество секунд>)

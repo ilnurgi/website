@@ -7,7 +7,8 @@ http.client
 
 
 HTTPConnection()
-================
+----------------
+
 .. py:class:: HTTPConnection(<domen>[, port=80[, <strict>[, <timeout>[, [<source_address>]]]]])
 
     объект соединение
@@ -62,7 +63,7 @@ HTTPConnection()
 
     .. py:method:: read([<количество байт>])
 
-        читает ответ севервера, без заголовков
+        Читает ответ севервера, без заголовков
 
 
     .. py:method:: request(method, path[, body=None][, headers])
@@ -76,7 +77,7 @@ HTTPConnection()
 
 
 HTTPResponse()
-==============
+--------------
 
 .. py:class:: HTTPResponse()
 
@@ -174,7 +175,7 @@ HTTPResponse()
 
 
 HTTPMessage()
-=============
+-------------
 
 .. py:class:: HTTPMessage()
 

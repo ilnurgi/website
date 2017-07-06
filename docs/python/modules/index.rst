@@ -17,9 +17,12 @@
     configparser
     contextlib
     copy
+    cProfile
+    csv
     datetime
     dbm
     decimal
+    disutils/index
     fractions
     functools
     gc
@@ -35,6 +38,7 @@
     locale
     marshal
     math
+    multiprocessing
     numbers
     os
     ospath
@@ -44,6 +48,7 @@
     queue
     random
     re
+    setuptools
     shelve
     shutil
     socket
@@ -52,6 +57,7 @@
     struct
     sys
     tempfile
+    textwrap
     time
     timeit
     tkinter/index
@@ -62,7 +68,7 @@
     tkMessageBox
     traceback
     types
-    unittest
+    unittest/index
     urllib_parse
     urllib_request
     warnings

@@ -3,33 +3,33 @@
 Canvas
 ======
 
-.. py:class:: Canvas(**kwargs)
+Виджет, холст
 
-    Виджет, холст
+.. py:class:: Canvas(**kwargs)
 
     Наследник :py:class:`Widget`, :py:class:`XView`, :py:class:`YView`
 
-    * `master` - родительский виджет
-    * `cnf` - словарь
-    * `closeenough` -
-    * `confine` - булево, выключить скрол холста за пределы региона
-    * `height` - высота холста
-    * `insertbackground` -
-    * `insertborderwidth` -
-    * `insertofftime` -
-    * `insertontime` -
-    * `insertwidth` -
-    * `offset` -
-    * `scrollregion` - кортеж (w, n, e, s), что-то там с покруткой
-    * `selectbackground` -
-    * `selectborderwidth` -
-    * `selectforeground` -
-    * `state` -
-    * `width` - ширина холста
-    * `xscrollcommand` - обработчик горизонтальной прокрутки
-    * `xscrollincrement` - величина горизонтальной прокрутки
-    * `yscrollcommand` - обработчик вертикальной прокрутки
-    * `yscrollincrement` - величина вертикальной прокрутки
+    * master - родительский виджет
+    * cnf - словарь
+    * closeenough -
+    * confine - булево, выключить скрол холста за пределы региона
+    * height - :py:class:`int`, высота виджета
+    * insertbackground -
+    * insertborderwidth -
+    * insertofftime -
+    * insertontime -
+    * insertwidth -
+    * offset -
+    * scrollregion - кортеж (w, n, e, s), что-то там с покруткой
+    * selectbackground -
+    * selectborderwidth -
+    * selectforeground -
+    * state -
+    * width - :py:class:`int`, ширина виджета
+    * xscrollcommand - обработчик горизонтальной прокрутки
+    * xscrollincrement - величина горизонтальной прокрутки
+    * yscrollcommand - обработчик вертикальной прокрутки
+    * yscrollincrement - величина вертикальной прокрутки
 
     .. code-block:: py
 

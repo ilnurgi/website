@@ -149,6 +149,11 @@ dict
 
         Возвращает случайную пару (ключ, значение) из словаря, удаляя его из словаря.
 
+        .. code-block:: py
+
+            {'first': 'pervi', 'second': 'vtoroi'}.popitem()
+            # ('first', 'pervi')
+
 
     .. py:method:: setdefault(key[, default=None])    
         
@@ -159,7 +164,9 @@ dict
             d = {1 : 'One', 2 : 'Two', 3 : 'Three'}
             d.setdefault(4, 'Four')
             # 'Four'
-            # d = {1 : 'One', 2 : 'Two', 3 : 'Three', 4: 'Four'}
+
+            d
+            # {1 : 'One', 2 : 'Two', 3 : 'Three', 4: 'Four'}
 
 
     .. py:method:: update(key=value)

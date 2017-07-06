@@ -8,24 +8,26 @@ Radiobutton
 
 .. py:class:: Radiobutton(**kwargs)
 
-    Радиокнопка, виджет
-
     Наследник :py:class:`tkinter.Widget`
 
-    * `command` - обработчик изменения состояния
-    * `height` - высота виджета, выраженное в количествах строк
-    * `image` - картинка виджета
-    * `indicatoron` -
-    * `offvalue` -
-    * `onvalue` -
-    * `selectcolor` - строка, цвет выбранного виджета
-    * `selectimage` - картинка выбранного виджета
-    * `state` -
-    * `underline` -
-    * `value` -
-    * `variable` -
-    * `width` -
+    * command - обработчик изменения состояния
+    * height - высота виджета, выраженное в количествах строк
+    * image - картинка виджета
+    * indicatoron -
+    * offvalue -
+    * onvalue -
+    * selectcolor - строка, цвет выбранного виджета
+    * selectimage - картинка выбранного виджета
+    * state -
+    * text - :py:class:`str`, текст виджета
+    * underline -
+    * value - значение
+    * variable - переменная значения
+    * width -
 
+    .. code-block:: py
+
+        rbutton = RadioButton(parent, text='some text', variable=var, value=1)
 
     .. py:method:: deselect()
 

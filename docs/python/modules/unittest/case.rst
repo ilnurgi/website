@@ -1,7 +1,11 @@
-.. py:module:: unittest
+.. py:module:: case
 
-unittest
-========
+case
+====
+
+
+TestCase
+--------
 
 .. py:class:: TestCase
 
@@ -15,13 +19,23 @@ unittest
 
         Вызывается для выполнения заключительных действий после выполнения всех тестов.
 
-    .. py:method:: py:method:: assert(expr, [msg])
+    .. py:method:: assert(expr, [msg])
 
         проверяет `expr` на `False`
 
     .. py:method:: assertEqual(x, y, [msg])
 
         сравнивает `x`, `y`
+
+
+    .. py:method:: assertIsInstance(x, y[, msg])
+
+        Проверяет, является ли объект экземпляром класса
+
+        .. code-block:: py
+
+            self.assertIsInstance(a, b, 'some msg')
+
 
     .. py:method:: assertNotEqual(x, y, [msg])
 
@@ -54,7 +68,7 @@ unittest
     .. py:method:: failUnlessNotEqual(x, y, [msg])
 
         сравнивает `x`, `y`
-        
+
     .. py:method:: failNotAlmostEqual(x, y, [places, msg])
 
         сравнивает `x`, `y` c точностью до `places`
@@ -74,9 +88,34 @@ unittest
     .. py:attribute:: failureException
 
         хранит последнее исключение теста
-    
 
 
-.. py:method:: main()
+expectedFailure
+---------------
 
-    запускает выполнение тестов
+.. py:method:: expectedFailure()
+
+    Декоратор, ожидает что метод завершится с ошибкой
+
+    .. code-block:: py
+
+        @expectedFailure
+        def test_1(self):
+            """
+            """
+
+skip
+----
+
+.. py:method:: skip()
+
+    Декоратор для пропускания тестов
+
+    .. code-block:: py
+
+        @skip('message')
+        def test_1(self):
+            """
+
+
+            """

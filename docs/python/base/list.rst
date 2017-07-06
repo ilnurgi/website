@@ -20,6 +20,23 @@ list
 
     .. code-block:: py
 
+        x, y = 1, 2
+        x, y = y, x
+
+        values = 1, 2
+        x, y = values
+
+        x, y, *z = 1, 2, 3, 4
+        # z = [3, 4]
+
+        first, *middle, last = 1, 2, 3, 4
+        # middle = [2, 3]
+
+        z, *y, z = 1, 2, 3
+        # y = [2]
+
+    .. code-block:: py
+
         s = []
 
     .. py:method:: append(obj)
@@ -28,8 +45,38 @@ list
 
         .. code-block:: py
 
-            s.append('3')
-            # s = [1, 2, '3']
+            [1, 2].append('3')
+            # [1, 2, '3']
+
+
+    .. py:method:: clear()
+
+        Очищает список от данных
+
+        .. code-block:: py
+
+            s = [1, 2]
+            s.clear()
+            # []
+
+
+    .. py:method:: copy()
+
+        Возвращает копию списка
+
+        .. code-block:: py
+
+            a = [1, 2, 3]
+            b = a.copy()
+            b.append(4)
+
+            b
+            # [1, 2, 3, 4]
+            a
+            # [1, 2, 3]
+
+            # эквивалентно 
+            b = a[:]
 
 
     .. py:method:: count(obj)
@@ -38,7 +85,7 @@ list
         
         .. code-block:: py
 
-            s.count(1)
+            [1].count(1)
             # 1
 
 
@@ -48,8 +95,8 @@ list
 
         .. code-block:: py
 
-            s.extend('qw')
-            # s = [1, 2, 'q', 'w']
+            [1, 2].extend('qw')
+            # [1, 2, 'q', 'w']
 
 
     .. py:method:: index(obj, [start_pos, end_pos])
@@ -58,7 +105,7 @@ list
         
         .. code-block:: py
 
-            s.index(1)
+            [1].index(1)
             # 0
 
 
@@ -68,8 +115,8 @@ list
 
         .. code-block:: py
 
-            s.insert(2, 3)
-            # s = [1, 2, 3]
+            [1, 2].insert(2, 3)
+            # [1, 2, 3]
 
 
     .. py:method:: pop([index])
@@ -78,8 +125,9 @@ list
         
         .. code-block:: py
 
+            s = [1, 2]
             s.pop(1)
-            # 2
+            # 2            
             # s = [1]
 
 
@@ -89,8 +137,8 @@ list
 
         .. code-block:: py
 
-            p.remove(1)
-            # p = [2]
+            [1, 2].remove(1)
+            # [2]
 
 
     .. py:method:: reverse()
@@ -99,8 +147,8 @@ list
 
         .. code-block:: py
 
-            p.reverse()
-            # p = [2, 1]
+            [1, 2].reverse()
+            # [2, 1]
 
 
     .. py:method:: sort([key=None, reverse=False])
@@ -111,9 +159,33 @@ list
 
         .. code-block:: py
 
-            a = [5, 3, 8, 6, 1, 2, 0]
-            a.sort()
-            # a = [0, 1, 2, 3, 5, 6, 8]
+            [5, 3, 8, 6, 1, 2, 0].sort()
+            # [0, 1, 2, 3, 5, 6, 8]
+
+            ['aardvark', 'abalone', 'acme', 'add', 'aerate'].sort(key=len)
+            # ['add', 'acme', 'aerate', 'abalone', 'aardvark']
+
+        .. code-block:: py
+
+            from functools import cmp_to_key
+
+            def event_comparator(event_1, event_2) -> dict:
+                """
+                сравниваем два события
+                сначала по одному полю, а если они равны, то по второму полю
+                """
+                if event_1['importantLevel'] > event_2['importantLevel']:
+                    return 1
+                elif event_1['importantLevel'] < event_2['importantLevel']:
+                    return -1
+                elif event_1['beginDate'] > event_2['beginDate']:
+                    return 1
+                elif event_1['beginDate'] < event_2['beginDate']:
+                    return -1
+                else:
+                    return 0
+
+            events_list.sort(key=cmp_to_key(event_comparator))
 
 
 Генераторы списка

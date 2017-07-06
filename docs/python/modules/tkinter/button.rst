@@ -1,25 +1,27 @@
 .. py:module:: tkinter
 
-Button - виджет кнопка
-======================
+Button
+======
+
+Виджет, кнопка
 
 
 .. py:class:: Button(**kwargs)
 
-    Кнопка, виджет.
+     Наследник :py:class:`Widget`
 
-    Наследник :py:class:`Widget`
-
-    * background, bg - цвет фона
-    * `command` - ссылка на функцию обработчика
-    * `compound`
-    * `default`
-    * fg - цвет текста
-    * `height` - число, высота виджета, количесвто строк - для обычной кнопки, пиксели - для кнопки картинки
-    * `image` - кнопка-картинка
-    * `overrelief`
-    * `state` - константа :ref:`const_state`
-    * `width` - число, ширина виджета, количесвто символов - для обычной кнопки, пиксели - для кнопки картинки
+    * background - :py:class:`str`, цвет фона
+    * bg - :py:class:`str`, цвет фона
+    * command - ссылка на функцию обработчика
+    * compound
+    * default
+    * fg - :py:class:`str`, цвет текста
+    * height - :py:class:`int`, высота виджета, количесвто строк - для обычной кнопки, пиксели - для кнопки картинки
+    * image - кнопка-картинка
+    * overrelief
+    * state - константа :ref:`const_state`
+    * text - :py:class:`str`, текст надписи на кнопке
+    * width - :py:class:`str`, ширина виджета, количесвто символов - для обычной кнопки, пиксели - для кнопки картинки
 
     .. code-block:: py
 
@@ -45,3 +47,16 @@ Button - виджет кнопка
     .. py:method:: invoke()
 
         Возвращает результат работы обработчика кнопки
+
+    .. py:method:: pack(side)
+
+        Распологает виджет на родительском виджете
+
+        * side
+
+            * :py:attr:`tkinter.LEFT`
+            * :py:attr:`tkinter.RIGHT`
+
+        .. code-block:: py
+
+            button.pack(side=LEFT)

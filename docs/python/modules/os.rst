@@ -18,7 +18,24 @@ os
 
     название версии модуля, зависит от операционной системы
 
-    * `nt` - windows xp
+    .. code-block:: py
+
+        os.name    
+        # 'nt' - windows xp
+
+
+.. py:attribute:: environ
+
+    Словарь переменных окружения
+
+    .. code-block:: py
+
+        os.environ
+        """
+        {
+            'HOME': 'c:\\',
+        }
+        """
 
 
 Методы модуля
@@ -70,6 +87,21 @@ os
 .. py:method:: getcwd() 
     
     Возвращает рабочий путь приложения
+
+    .. code-block:: py
+
+        os.getcwd()
+        # 'c:\\'
+
+
+.. py:method:: getenv(env_param_name)
+    
+    Возвращает значение переменной окружения
+
+    .. code-block:: py
+
+        os.getenv('HOME')
+        # 'c:\\'
 
 
 .. py:method:: link(src, dst)

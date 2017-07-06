@@ -6,20 +6,20 @@ display
 
 .. py:function:: flip()
 
-    отображаем окно
+    Отобразить последний отрисованный экран
 
     .. code-block:::: py
 
-        pygame.display.flip()
+        display.flip()
 
 
 .. py:function:: set_mode((higth, width))
 
-    Возвращает экран указанных размеров
+    Возвращает экран/поверхность указанных размеров, :py:class:`pygame.Surface`
 
     .. code-block:: py
 
-        window = pygame.display.set_mode((400, 400))
+        window = display.set_mode((400, 400))
 
 
 .. py:function:: set_caption(caption)
@@ -28,4 +28,4 @@ display
 
     .. code-block:: py
 
-        pygame.display.set_caption(u'Hello PyGame')
+        display.set_caption(u'Hello PyGame')

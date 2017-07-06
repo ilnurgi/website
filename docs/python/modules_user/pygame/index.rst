@@ -1,22 +1,43 @@
+.. py:module:: pygame
+
 pygame
 ======
 
-Содержание:
-
 .. toctree::
-   :maxdepth: 1
+    :maxdepth: 1
 
-   display
+    display
+    event
+    font
+    image
+    mouse
+    rect
+    screen
+    sprite
+    surface
 
 
-.. py:class:: Screen((height, width))
+draw
+----
+
+.. py:function:: draw(screen, color, rect)
 
     .. code-block:: py
 
-        screen = pygame.Screen((400, 400)
+        draw.rect()
 
 
-.. py:function:: event.get()
+init
+----
+
+.. py:function:: init()
+
+    Инициализирует игру и создает объект экрана
+
+    .. code-block:: py
+
+        init()
+
 
 .. code-block:: py
 
@@ -31,6 +52,7 @@ pygame
     screen = pygame.Screen((400, 400)
 
     square = pygame.Surface((40, 40))
+
     square.fill((0, 255, 0))
 
     bitmap = pygame.image.load(filename)
@@ -70,3 +92,12 @@ pygame
             return 1
         else:
             return 0
+
+
+.. code-block:: py
+
+    from pygame import image, Rect
+    maze = image.load(’maze.png’)
+    player = image.load(’player.png’)
+    maze.blit(player, Rect((32, 32, 64, 64)), Rect((0, 0, 32, 32)))
+    image.save(maze, ’merged.png’)

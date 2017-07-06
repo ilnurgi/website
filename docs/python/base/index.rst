@@ -12,6 +12,7 @@
     none
     string
     int
+    float
     bool
     tuple
     list

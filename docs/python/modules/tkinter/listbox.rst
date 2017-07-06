@@ -1,11 +1,11 @@
 .. py:module:: tkinter
 
-Listbox - виджет, список
-========================
+Listbox
+=======
+
+Виджет, список
 
 .. py:class:: Listbox(**kwargs)
-
-    Виджет список
 
     Наследник:
 
@@ -13,22 +13,22 @@ Listbox - виджет, список
         * :py:class:`tkinter.XView`
         * :py:class:`tkinter.YView`
 
-    * `exportselection` -
-    * `listvariable` -
-    * `selectbackground` - строка, цвет фона выбранного элемента
-    * `selectborderwidth` - строка, ширина границы выбранного элемента
-    * `selectforeground` - строка, цвет текста выбранного элемента
-    * `selectmode` - константа :ref:`const_listbox_select`, выбор элементов списка
+    * exportselection -
+    * listvariable -
+    * selectbackground - строка, цвет фона выбранного элемента
+    * selectborderwidth - строка, ширина границы выбранного элемента
+    * selectforeground - строка, цвет текста выбранного элемента
+    * selectmode - константа :ref:`const_listbox_select`, выбор элементов списка
 
         * SINGLE - один элемент
         * BROWSE - один элемент с возможностью перетаскивания
         * MULTIPLE - множественный выбор
         * EXTENDED - множественный выбор, с возможностью добавления
 
-    * `setgrid` -
-    * `width` -
-    * `xscrollcommand` - виджет горизонтальной прокрутки
-    * `yscrollcommand` - виджет вертикальнной прокрутки
+    * setgrid -
+    * width -
+    * xscrollcommand - виджет горизонтальной прокрутки
+    * yscrollcommand - виджет вертикальнной прокрутки
 
     .. code-block:: py
 
@@ -77,6 +77,10 @@ Listbox - виджет, список
     .. py:method:: insert(pos, *elements)
 
         Добавляет в виджет элементы
+
+        .. code-block:: py
+
+            listbox.insert(tkinter.END, 'item')
 
 
     .. py:method:: nearest(y)

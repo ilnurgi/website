@@ -5,15 +5,24 @@ function - функция
 -------------------
 
 
+any()
+-----
+
 .. py:function:: any(iter)
 
     Возвращает True если хотя бы один из объектов интерируемого объекта True.
 
 
+all()
+-----
+
 .. py:function:: all(iter)
 
     Возвращает True если все элементы интерируемого объекта True.
 
+
+compile()
+---------
 
 .. py:function:: compile(string, filename, kind [, flags=0 [, dont_inherit]])
 
@@ -36,10 +45,18 @@ function - функция
       перечисленные в аргументе flags, – особенности,
       действующие в текущей версии, игнорируются.
 
+
+delattr()
+---------
+
 .. py:function:: delattr(obj, attr)
 
     удаляет атрибут из объекта
     
+
+dir()
+-----
+
 .. py:function:: dir([obj])
 
     Возвращает список, содержащий глобальные свойства и методы,
@@ -54,6 +71,9 @@ function - функция
         dir(os)
         # [...'read', 'remove', 'removedirs', ...]
 
+
+enumerate()
+-----------
 
 .. py:function:: enumerate(iter[, initial_value)
 
@@ -82,6 +102,9 @@ function - функция
         # (1, 2)
     
 
+eval()
+------
+
 .. py:function:: eval(x, [globals, locals])
     
     Преобразует строковый объект, в объект питона, а также выполняет выражение аргумента
@@ -91,10 +114,17 @@ function - функция
         eval('[1, 2, 3, 4]')
         # [1, 2, 3, 4]
 
+
+exec()
+------
+
 .. py:function:: exec(x, [globals, locals])
 
     Выполняет выражение аргумента
 
+
+filter()
+--------
 
 .. py:function:: filter(function, iter_object)
 
@@ -130,9 +160,16 @@ function - функция
             # [0.18962311744689941, 0.19053101539611816, 0.1930980682373047]
 
 
+getattr()
+---------
+
 .. py:function:: getattr(obj, attr [, default])
     
     Возвращает значение атрибута объекта
+
+
+globals()
+---------
 
 .. py:function:: globals()
 
@@ -142,6 +179,10 @@ function - функция
     При вызове из функции или метода возвращает глобальное пространство имен для модуля,
     в котором была определена эта функция или метод.
 
+
+hasattr()
+---------
+
 .. py:function:: hasattr(object, name)
 
     Возвращает True, аргумент name является именем атрибута объекта object.
@@ -149,6 +190,10 @@ function - функция
     В противном случае возвращается значение False.
 
     Аргумент name должен быть строкой.
+
+
+hash()
+------
 
 .. py:function:: hash(object)
 
@@ -164,6 +209,9 @@ function - функция
     чтобы обеспечить поддержку этой операции.
 
 
+help()
+------
+
 .. py:function:: help([object])
 
     Обращается к справочной системе во время интерактивных сеансов.
@@ -178,29 +226,34 @@ function - функция
     предоставления интерактивной справки с дополнительной информацией.
 
 
+id()
+----
+
 .. py:function:: id(obj)
     
     Возврващает число, уникальный идентификатор объекта
 
 
+input()
+-------
+
 .. py:function:: input([message])
     
-    :param str message: строка, которая выведется в stdout
-
-    Возврващает число, полученное со stdin.
+    Возврващает :py:class:`str`, строка введенное в stdin.
     
-    .. versionchanged:: 3.x
+    .. warning::
         
-        с 3 версии возвращает строку
+        Во второй ветке возвращает число
 
     .. code-block:: py
 
-        x = input(u'Введите число\n')
+        input(u'Введите число\n')
         # Введите число
         # 1
-        x
-        # 1
 
+
+isinstance()
+------------
 
 .. py:function:: isinstance(obj, type)
     
@@ -210,13 +263,22 @@ function - функция
 
         isinstance(1, int)
         # True
+
         isinstance(1, str)
         # False
+
+
+issubclass()
+------------
 
 .. py:function:: issubclass(obj, type)
     
     Возвращает True | False, если объект является подклассом типа.
-    
+
+
+iter()
+------
+
 .. py:function:: iter(object [, sentinel])
 
     Возвращает итератор, воспроизводящий элементы объекта object.
@@ -239,15 +301,21 @@ function - функция
     будет возбуждено исключение TypeError.
 
 
+len()
+-----
+
 .. py:function:: len(object)
     
-    Возвращает число, длину оъекта
+    Возвращает :py:class:`int`, количесвто элементов в оъекте
 
     .. code-block:: py
 
         len('ilnurgi')
         # 7
 
+
+locals()
+--------
 
 .. py:function:: locals()
     
@@ -259,10 +327,14 @@ function - функция
         # {'__builtins__': , '__package__': None, 'i': 'ilnur', ... }
 
 
+map()
+-----
+
 .. py:function:: map(func, iter1 [ , iter2, ...])
     
-    :param func: функция, обработчик 
-    :param iter: итерируемый объект
+    * func - функция, обработчик 
+
+    * iter - итерируемый объект
     
     применяет функцию к каждому элементу последовательности и
     возвращает список результатов.
@@ -285,6 +357,9 @@ function - функция
         # [u'q', u'w']
 
 
+max()
+-----
+
 .. py:function:: max(iter)
     
     Возвращает максимальный элемент итерирумого объекта
@@ -295,6 +370,9 @@ function - функция
         # 6
 
 
+min()
+-----
+
 .. py:function:: min(iter)
     
     Возвращает минимальный элемент итерируемого бъекта
@@ -304,6 +382,9 @@ function - функция
         min('ilnurgi')
         # 'i'
 
+
+next()
+------
 
 .. py:function:: next(s [, default])
 
@@ -316,30 +397,30 @@ function - функция
     В противном случае возвращается значение по умолчанию.
 
 
-.. py:function:: print(args [, sep=' ', end='\n', file=sys.stdout])
-    
-    :param args: объекты для вывода
-    :param str sep: разделитель объектов
-    :param str end: окончание строки вывода
-    :param file file: объект, куда выводятся данные
+print()
+-------
+
+.. py:function:: print(*args, sep=' ', end='\n', file=sys.stdout)
 
     Вывод последовательности значений в файловый объект
-
-    .. versionchanged:: 3.Х
-
-        начиная с 3 версии питона, print стала функцией
 
     .. code-block:: py
 
         print ('1', '2')
 
 
+property()
+----------
+
 .. py:function:: property([fget [,fset [,fdel [,doc]]]])
 
-    :param func fget: функция, возвращающая значение атрибута
-    :param func fset: устанавливает новое значение атрибута
-    :param func fdel: удаляет атрибут
-    :param str doc: документация
+    * fget - функция, возвращающая значение атрибута
+
+    * fset - устанавливает новое значение атрибута
+
+    * fdel - удаляет атрибут
+
+    * doc - документация
     
     Создает атрибут-свойство класса
 
@@ -363,11 +444,16 @@ function - функция
                 del self.var
 
 
-.. py:function:: range([A=0, ] B[,C=1]])
+range()
+-------
+
+.. py:function:: range([start=0, ] end [, step=1]])
     
-    :param А: начало
-    :param В: конечная позиция
-    :param С: шаг 
+    * start - начало
+
+    * end - конечная позиция
+
+    * step - шаг 
     
     Возвращает сгенерированный список.
 
@@ -380,33 +466,20 @@ function - функция
         a = range(3)
         # range(0, 3)
 
-        a[0], a[1], a[2]
-        # 0, 1, 2
-
-        a[0:2]
-        # range(0, 2)
-
-        1 in a
-        #True
-
-        # возвращает индекс искомого объекта, возбуждает исключение ValueError
-        a.index(1)
-        # 0
-
-        # возвращает количесвто элементов
-        a.count(1)
-        # 1
-    
-        range(3)
-        # [0, 1, 2]
-
         range(1, 5, 2)
-        # [1, 3]
+        # range(1, 5, 2)
 
+
+raw_input()
+-----------
 
 .. py:function:: raw_input([comment])
     
     Возврващает строку, полученную со stdin.
+
+    .. warnning:: 
+
+        Только для второй ветки
 
     .. code-block:: py
 
@@ -418,11 +491,16 @@ function - функция
         # 'ilnurgi.ru'
 
 
+reduce()
+--------
+
 .. py:function:: reduce(function, items [, initial])
 
     * function - функция обработчик, принимает два параметра:
       накопленное и текущее значение
+    
     * items - итерируемый объект
+    
     * initial - начальное значение
     
     Применяет функцию к парам элементов в итерируемом объекте и
@@ -430,6 +508,9 @@ function - функция
 
     Функция должна принимать два аргумента, накопленное и текущее значение.
 
+
+repr()
+------
 
 .. py:function:: repr(x)
     
@@ -441,24 +522,34 @@ function - функция
         # '[1, 2, 3, 4]'
 
 
+reversed()
+----------
+
 .. py:function:: reversed()
 
     Создает итератор для обхода последовательности s в обратном порядке.
 
-.. py:function:: setattr(object, name, value)
+
+setattr()
+---------
+
+.. py:function:: setattr(object, name: str, value)
 
     Создает в объекте object атрибут name и записывает в него значение value.
-
-    Аргумент name должен быть строкой.
 
     Выполняет ту же операцию, что и инструкция object.name = value.
 
 
+sorted()
+---------
+
 .. py:function:: sorted(list [, key, reverse])
 
-    :param list: итерируемый объект 
-    :param key: параметр для сортировки 
-    :param reverse: True | False обратный порядок 
+    * list - итерируемый объект 
+
+    * key - параметр для сортировки 
+
+    * reverse - True | False обратный порядок 
 
     Возвращает список, отсортированный
 
@@ -467,6 +558,10 @@ function - функция
         sorted(['567', '34566','1'], key=len)
         # ['1', '567', '34566']
 
+
+staticmethod()
+--------------
+
 .. py:function:: staticmethod(func)
 
     Создает статический метод класса.
@@ -474,10 +569,14 @@ function - функция
     Эта функция неявно вызывается декоратором @staticmethod.
 
 
+sum()
+-----
+
 .. py:function:: sum(iter [, initial=0])
 
-    :parma iter: последовательность
-    :param initial: начальное значение
+    * iter - последовательность
+
+    * initial - начальное значение
 
     Возвращает число, сумму элементов последовательности
 
@@ -486,6 +585,9 @@ function - функция
         sum((10, 20, 30, 40)), sum((10, 20, 30, 40), 2)
         # 100, 102
 
+
+super()
+-------
 
 .. py:function:: super(type [, object])
 
@@ -496,8 +598,13 @@ function - функция
     .. code-block:: py
     
         class B(A):
+
             def foo(self):
                 super(B,self).foo()
+
+
+type()
+-----
 
 .. py:function:: type(a)
 
@@ -507,6 +614,10 @@ function - функция
 
         type(5)
         # 'int'
+
+
+type()
+------
 
 .. py:function:: type(name, bases, dict)
 
@@ -518,13 +629,23 @@ function - функция
 
     Чаще всего эта функция используется при работе с метаклассами.
 
-.. py:function:: xrange(A [,B,[C]])
+
+xrange()
+--------
+
+.. py:function:: xrange([start, ] end [, step])
     
-    :param А: количество элементов или начальная позиция 
-    :param В: конечная позиция 
-    :param С: шаг 
+    * start - начало
+
+    * end - конечная позиция
+
+    * step - шаг 
 
     Возвращает объект генератор.
+
+    .. warnning::
+
+        Только для второй ветки
 
     .. code-block:: py
 
@@ -535,10 +656,16 @@ function - функция
         # 1
 
 
+unicode()
+---------
+
 .. py:function:: unicode(object)
 
     возвращает юникод строку, преобразованный из аргумента
 
+
+vars()
+------
 
 .. py:function:: vars([obj])
 
@@ -550,6 +677,9 @@ function - функция
       то возвращается словарь сс глобальными идентификаторами
     * при указании объекта, возвращается инденификаторы объекта (obj.__dict__)
 
+
+zip()
+-----
 
 .. py:function:: zip(<Последовательность1>, <Последовательность2>, ...)
 
@@ -630,6 +760,7 @@ lambda функции
         print(kwargs)
 
 Атрибуты функции
+----------------
 
 ============== ========
 атрибут        описание
@@ -780,7 +911,9 @@ f.__name__     Имя функции
 Аннтоации в функциях:
 ---------------------
 
-.. versionadded:: 3.x
+.. warning:: 
+    
+    Добавлено в 3 ветке
 
 .. code-block:: py
 

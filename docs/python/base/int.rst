@@ -298,44 +298,20 @@ unichr
         x = 100   # 01100100
         ~x        # 10011011
 
-float
------
 
+Реализация на С
+---
 
-.. py:class:: float(obj)
+.. code-block:: c
 
-    Вещественное число.
+    struct _longobject {
+        long ob_refcnt;
+        PyTypeObject *ob_type;
+        size_t ob_size;
+        long ob_digit[1];
+    };
 
-    Для точных расчетов необходимо использователь модуль :py:mod:`decimal`
-    или модуль :py:mod:`fractions` для рациональных чисел.
-
-    .. code-block:: py
-
-        10.
-        # 10.
-
-        11E20
-        # 11E20
-
-        2.5e-12
-        # 2.5e-12
-
-        0.3 - 0.1 - 0.1 - 0.1
-        # -2.7755575615628914е-17
-
-    .. code-block:: py
-
-        float(7)
-        # 7.0
-
-        float("7.1")
-        # 7.1
-
-        float("Infinity")
-        # inf
-
-        float("-inf")
-        # -inf
-
-        float("Infinity") + float ("-inf")
-        # nan
+* ob_refcnt - счетчик ссылок на объект
+* ob_type - тип объекта
+* ob_size - размер данных
+* ob_digit - значение пременной

@@ -1,32 +1,38 @@
-Entry - виджет, поле ввода одно-строчного текста
-================================================
+.. py:module:: tkinter
+
+Entry
+=====
+
+Виджет, поле ввода одно-строчного текста
 
 
 .. py:class:: Entry(**kwargs)
 
-    Поле ввода, виджет
-
     Наследник :py:class:`Widget`, :py:class:`XView`
 
-    * `bd` - ширина границы
-    * `exportselection` -
-    * `insertbackground` -
-    * `insertborderwidth` -
-    * `insertofftime` -
-    * `insertontime` -
-    * `insertwidth` -
-    * `invalidcommand` -
-    * `invcmd` -
-    * `selectbackground` - строка, цвет фона выделенного текста
-    * `selectborderwidth` - строка, ширина границы выделенного текста
-    * `selectforeground` - строка, цвет выделенного текста
-    * `show` - строка, которая заменяет вводимые символы, например для пароля
-    * `state` -
-    * `validate` -
-    * `validatecommand` -
-    * `vcmd` -
-    * `width` - ширина элемента в знакоместах
-    * `xscrollcommand` -
+    * bd - ширина границы
+    * exportselection -
+    * insertbackground -
+    * insertborderwidth -
+    * insertofftime -
+    * insertontime -
+    * insertwidth -
+    * invalidcommand -
+    * invcmd -
+    * selectbackground - строка, цвет фона выделенного текста
+    * selectborderwidth - строка, ширина границы выделенного текста
+    * selectforeground - строка, цвет выделенного текста
+    * show - строка, которая заменяет вводимые символы, например для пароля
+    * state -
+    * validate -
+    * validatecommand -
+    * vcmd -
+    * width - ширина элемента в знакоместах
+    * xscrollcommand -
+
+    .. code-block:: py
+
+        entry = Entry(parent)
 
 
     .. py:method:: get()

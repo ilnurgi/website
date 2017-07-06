@@ -1,13 +1,19 @@
 .. py:module:: tkinter
 
-Frame - виджет, область для группировки
-=======================================
+Frame
+=====
+
+Виджет, область для группировки
 
 
 .. py:class:: Frame(**kwargs)
 
-    Виджет, для группировки других виджетов
-
     Наследник :py:class:`Widget`
 
-    * `height` - высота фрейма в пикселях
+    * bg - :py:class:`str`, цвет фона
+    * height - :py:class:`int`, высота виджета в пикселях
+    * width - :py:class:`int`, высота виджета в пикселях
+
+    .. code-block:: py
+
+        frame = Frame(parent)

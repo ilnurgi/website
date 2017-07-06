@@ -16,6 +16,16 @@ pyplot
     * :py:func:`polar` - полярная система координат
 
 
+cm
+--
+
+.. py:class:: cm
+
+    Набор цветовых карт
+
+    .. py:attribute:: Blues
+
+
 annotate()
 ----------
 
@@ -95,10 +105,10 @@ arrow()
     Рисует стрелку на графике
 
 
-axis()
+axes()
 ------
 
-.. py:function:: axis([new_axis])
+.. py:function:: axes([new_axes])
 
     Устанавливает или возвращает предельные координаты по осям: [xmin, xmax, ymin, ymax]
 
@@ -106,10 +116,16 @@ axis()
 
     .. code-block:: py
 
-        axis()
+        axes()
         (1.0, 4.0, 0.0. 12.0)
 
-        axis([0, 5, -1, 13])
+        axes([0, 5, -1, 13])
+
+    .. code-block:: py
+
+        # удаление осей
+        plt.axes().get_xaxis().set_visible(False)
+        plt.axes().get_yaxis().set_visible(False)
 
 
 bar()
@@ -180,14 +196,18 @@ figtext()
 figure()
 --------
 
-.. py:function:: figure(figsize)
+.. py:function:: figure(dpi, figsize)
 
-    Возвращает :py:class:`matplotlib.figure.Figure`
+    Возвращает :py:class:`matplotlib.figure.Figure` и назначает размер области просмотра
+
+    * figsize - кортеж с размерами окна диаграммы в дюймах, по умобчанию 80 пискелей на дюйм
 
 
     .. code-block:: py
 
         fig = figure(figsize=(3, 3))
+
+        fig = figure(dpi=128, figsize=(3, 3))
 
 
 grid()
@@ -544,23 +564,24 @@ rgrid()
 savefig()
 ---------
 
-.. py:function:: savefig(file_path[, dpi])
+.. py:function:: savefig(file_path, dpi, bbox_inches)
 
     Сохраняет график в файл или любой другой записываемый объект,
     с параметрами по умолчанию
 
     * dpi - количество точек на дюйм
+    * bbox_inches - отсечь пропуски
 
     .. code-block:: py
 
-        savefig("some_plot.png")
+        savefig("some_plot.png", bbox_inches='tight')
         savefig(open("some_plot.png", 'w'))
 
 
 scatter()
 ---------
 
-.. py:function:: scatter(x, y, s, c, marker)
+.. py:function:: scatter(x, y, s, c, marker, edgecolor, cmap)
 
     Распределение значений
 
@@ -570,7 +591,10 @@ scatter()
 
     .. code-block:: py
 
-        scatter(x, y)
+        scatter(1, 1, edgecolor='none', c='red', s=40)
+        scatter(1, 1, edgecolor='none', c=(0, 0, 0.8), s=40)
+
+        scatter([1, 2, 3, 4, 5], [1, 4, 9, 16, 25], cmap=plt.cm.Blues)
 
 
 semilogy()
@@ -737,6 +761,18 @@ text()
         text(0.1, -0.04, "text")
 
 
+tick_params()
+-------------
+
+.. py:function:: tick_params(axis, which, labelsize)
+
+    Оформление делений на осях
+
+    .. code-block:: py
+
+        tick_params(axis='both', which='major', labelsize=14)
+
+
 thetagrid()
 -----------
 
@@ -755,13 +791,13 @@ thetagrid()
 title()
 -------
 
-.. py:function:: title(label)
+.. py:function:: title(label, fontsize)
 
     Устанавливает подпись для графика и возвращает :py:class:`matplotlib.text.Text`
 
     .. code-block:: py
 
-        title("Plot")
+        title("Plot", fontsize=24)
 
 
 xkcd()
@@ -782,13 +818,13 @@ xkcd()
 xlabel()
 --------
 
-.. py:function:: xlabel(label)
+.. py:function:: xlabel(label, fontsize)
 
     Устанавливает подпись для оси х и возвращает :py:class:`matplotlib.text.Text`
 
     .. code-block:: py
 
-        xlabel("X axis")
+        xlabel("X axis", fontsize=24)
 
 
 xlim()
@@ -840,13 +876,13 @@ yticks()
 ylabel()
 --------
 
-.. py:function:: ylabel(label)
+.. py:function:: ylabel(label, fontsize)
 
     Устанавливает подпись для оси y и возвращает :py:class:`matplotlib.text.Text`
 
     .. code-block:: py
 
-        ylabel("Y axis")
+        ylabel("Y axis", fontsize=24)
 
 
 ylim()
