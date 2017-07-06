@@ -48,6 +48,11 @@ Math - математические операции
 
         Возвращает абсолютное значение
 
+        .. code-block:: js
+
+            Math.abs(-100);
+            // 100
+
 
     .. py:function:: cbrt(value)
 
@@ -65,10 +70,17 @@ Math - математические операции
 
         .. code-block:: js
 
-            a = Math.ceil(1.99);  // 2.0
-            b = Math.ceil(1.01);  // 2.0
-            c = Math.ceil(1.0);   // 1.0
-            d = Math.ceil(-1.99); // -1.0
+            Math.ceil(1.99);
+            // 2.0
+
+            Math.ceil(1.01);
+            // 2.0
+
+            Math.ceil(1.0);
+            // 1.0
+
+            Math.ceil(-1.99);
+            // -1.0
 
 
     .. py:function:: clz32(number)
@@ -112,10 +124,17 @@ Math - математические операции
 
         .. code-block:: js
 
-            a = Math.ceil(1.99);  // 1.0
-            b = Math.ceil(1.01);  // 1.0
-            c = Math.ceil(1.0);   // 1.0
-            d = Math.ceil(-1.99); // -2.0
+            Math.ceil(1.99);
+            // 1.0
+
+            Math.ceil(1.01);
+            // 1.0
+
+            Math.ceil(1.0);
+            // 1.0
+
+            Math.ceil(-1.99);
+            // -2.0
 
 
     .. py:function:: fround(number)
@@ -199,10 +218,20 @@ Math - математические операции
 
         Возвращает максимум из переданных аргументов
 
+        .. code-block:: js
+
+            Math.max(5000, 200, 60);
+            // 5000
+
 
     .. py:function:: min(var1, var2, ....)
 
         Возвращает минимум из переданных аргументов
+
+        .. code-block:: js
+
+            Math.min(5000, 200, 60);
+            // 60
 
 
     .. py:function:: pow(var, pow)

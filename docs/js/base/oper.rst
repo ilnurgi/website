@@ -261,6 +261,12 @@ delete
     // [4]
 
 
+function
+--------
+
+Смотри :ref:`function`
+
+
 in
 --
 

@@ -98,8 +98,11 @@ Array
             a.concat([4, 5], 'end'); 
             // [1, 2, 3, 4, 5, 'end']  
 
-            a.concat([4, 5])
+            a.concat([4, 5]);
             // [1, 2, 3, 4, 5]
+
+            a.concat([4, 5], [6, 7]);
+            // [1, 2, 3, 4, 5, 6, 7]
 
 
     .. py:method:: copyWithin(targetIndex, startIndex, endIndex)
@@ -338,6 +341,7 @@ Array
             var c = [1,2,3];
             c.pop();
             // 3
+
             c;
             // [1,2]
 
@@ -348,10 +352,14 @@ Array
 
         .. code-block:: js
 
-            var c = [1,2,3];
+            var c = [1, 2, 3];
             c.push(4);
             c;
-            // [1,2,3,4]
+            // [1, 2, 3, 4]
+
+            c.push(5, 6, 7);
+            c;
+            // [1, 2, 3, 4, 5, 6, 7]
 
         .. code-block:: js
 
@@ -414,6 +422,7 @@ Array
             var a = [1, [2, 3], 4];
             var b = a.shift();
             // 1
+
             a;
             // [[2, 3], 4]
 
@@ -508,6 +517,10 @@ Array
             a.unshift(1);
             a;
             // [1]
+
+            a.unshift(-1, 0);
+            a;
+            // [-1, 0, 1]
 
 
     .. py:method:: values()

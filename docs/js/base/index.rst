@@ -4,7 +4,6 @@
 .. toctree::
     :maxdepth: 1
 
-    Object
     Number
     Infinity
     NaN
@@ -16,7 +15,6 @@
     modules
     oper
     class
-    Array
     ArrayBuffer
     ArrayTyped
     Set
