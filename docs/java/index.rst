@@ -99,3 +99,73 @@
     Integer.valueOf(str)
 
     "".substring()
+
+
+
+описание флагов жавы
+-XX:-OmitStackTraceInFastThrow - выключает оптимизацию вывода стрек стрейса
+
+-XX:+PrintConcurentLocks - выводит информацию о том какой поток находится в блоке синхронайз
+
+/*
+получение названия файла и номера строчки текущегй работы
+дорогая операция
+*/
+public static String getLocation(){
+    StackTraceElement s = new Exception().getStackTrace()[2];
+
+    // Thread.current().getStackTrace(); аналог
+
+    return s.getFileName() + ':' + s.getLineNumber();
+}
+
+
+
+подключение модуля для статитсики запросов
+
+.. code-block:: ini
+    
+    # postgresql.conf
+    shared_preload_libraries = 'pg_stat_statements'
+
+    # сколько запросов держать в памяти
+    pg_stat_staetements.max = 10000
+
+    # какие запросы обрабатывать
+    pg_stat_staetements.track = all
+
+.. code-block:: sql
+    
+    -- регистраци
+    create extension if not exists pg_stat_staetements;
+
+    -- сброс статистики
+    select pg_stat_staetements_reset();
+    ....
+    select * from pg_stat_staetements;
+
+
+
+протоколирования запросов
+
+.. code-block:: ini
+    
+    # включение
+    log_duration = on
+    # время в мс, больше которой запросы логируются
+    log_min_duration_statement = 50
+
+    # логгирование в csv файл, пригодный для анализа утилитой pgbadger
+    # sudo apt-get install libtext-csv-xs-perl pgbadger
+    # pgbadger /var/log/*.csv
+    log_lock_waits = on
+    log_filename = 'postgresql-%Y-%m-%d_%H%M%S'
+    log_directory = '/var/log/postgresql'
+    log_destination = 'csvlog'
+    logging_collector = on
+
+.. code-block:: sql
+
+    -- включение логирования для конкретного запроса
+    set log_min_duration_statement = 50;
+    select * from table;
