@@ -5,6 +5,8 @@
     :maxdepth: 1
 
     Number
+    array
+    object
     Infinity
     NaN
     String

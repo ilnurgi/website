@@ -395,6 +395,17 @@ Document(HTMLDocument) - корневой элемент дерева
         Воз­вра­ща­ет со­стоя­ние ука­зан­ной ко­ман­ды в ви­де стро­ки. 
 
 
+    .. py:method:: querySelector(selector)
+
+        Выборка элементов из дом дерева по селектору
+
+        Возвращает :py:class:`HTMLElement` или :py:class:`Element`
+
+        .. code-block:: js
+
+            document.querySelector('.some_class')
+
+
     .. py:method:: write(text[, text1 [...]])
 
         Записываем строку в документ

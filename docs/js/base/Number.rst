@@ -1,7 +1,5 @@
-Number
-======
-
-Число
+Числа (Number)
+==============
 
 .. code-block:: js
     
@@ -47,6 +45,9 @@ Number
 
         // восьмиричное
         let b = 0o17;
+
+Number
+------
 
 .. py:class:: Number()
  

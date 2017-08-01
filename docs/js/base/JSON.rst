@@ -8,6 +8,15 @@ JSON
 
         Из строки в JSON
 
+        .. code-block:: js
+
+            JSON.parse('{"name": "ilnur"}');
+            /*
+            {
+                "name": "ilnur"
+            }
+            */
+
 
     .. py:function:: stringify(obj[, filter[, indent]])
 
@@ -15,17 +24,26 @@ JSON
 
         .. code-block:: js
 
+            data = {
+                'name': 'ilnur',
+                age: 25
+            }
+
             // Простая сериализация
-            var text = JSON.stringify(data);
+            JSON.stringify(data);
+            // "{"name":"ilnur","age":25}"
             
             // Указать точно, какие поля подлежат сериализации
-            var text = JSON.stringify(address, ["city","state","country"]);
+            JSON.stringify(address, ["name"]);
+            // {"name":"ilnur"}
 
             // Указать функцию замены, чтобы можно было сериализовать объекты RegExp
-            var text = JSON.stringify(patterns, function(key, value) {
+            JSON.stringify(patterns, function(key, value) {
                 if (value.constructor === RegExp) return value.toString();
                 return value;
             });
             
             // Того же эффекта можно добиться иначе:
-            RegExp.prototype.toJSON = function() { return this.toString(); }
+            RegExp.prototype.toJSON = function() {
+                return this.toString();
+            }
