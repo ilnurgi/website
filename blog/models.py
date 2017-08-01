@@ -1,8 +1,8 @@
 # coding: utf-8
 
 import re
-from StringIO import StringIO
 
+from io import StringIO
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 from django.db import models
@@ -44,8 +44,8 @@ class Post(models.Model):
 
     description = models.CharField(u'Description', max_length=255)
 
-    re_references = re.compile(ur'\[(.+?)\]\[(.+?)\]')
-    re_files = re.compile(ur'(\[FILE=(\d+)\])')
+    re_references = re.compile(u'\[(.+?)\]\[(.+?)\]')
+    re_files = re.compile(u'(\[FILE=(\d+)\])')
 
     class Meta:
         ordering = ['-created']
@@ -163,8 +163,8 @@ class Post(models.Model):
         return html.tostring(root)
 
     def tag_names(self):
-        return u', '.join(
-            unicode(pt.tag) for pt in self.posttags_set.order_by('tag__name'))
+        return ', '.join(
+            pt.tag for pt in self.posttags_set.order_by('tag__name'))
 
 
 class DocsReferenc(models.Model):
@@ -218,7 +218,7 @@ class File(models.Model):
     created = models.DateTimeField(auto_now=True)
 
     def __unicode__(self):
-        return unicode(self.file)
+        return self.file
 
     def save(self, force_insert=False, force_update=False, using=None,
              update_fields=None):

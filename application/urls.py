@@ -4,6 +4,8 @@ from django.conf import settings
 from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.contrib.auth.views import login, logout
+from django.contrib.sitemaps.views import sitemap
 from django.http.response import HttpResponse
 
 from application import views as app_view
@@ -21,7 +23,7 @@ from resume import urls as resume_urls
 urlpatterns = [
     url(
         r'^sitemap\.xml$',
-        "django.contrib.sitemaps.views.sitemap",
+        sitemap,
         {
             "sitemaps": {
                 "main": ApplicationSitemap,
@@ -59,7 +61,7 @@ urlpatterns = [
         include(cars_urls, namespace='cars')),
     url(
         r'^login/',
-        "django.contrib.auth.views.login",
+        login,
         {
             "template_name": "application/login.html",
             "extra_context": {
@@ -69,7 +71,7 @@ urlpatterns = [
         'login'),
     url(
         r'^logout/',
-        "django.contrib.auth.views.logout",
+        logout,
         {
             "next_page": "resume:home_page"
         },

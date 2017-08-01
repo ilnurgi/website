@@ -93,7 +93,6 @@ class PostCreateView(BlogViewMixin, CreateView):
         return super(PostCreateView, self).get(request, *args, **kwargs)
 
     def post(self, request, *args, **kwargs):
-        print 'post'
         if not self.request.user.is_superuser:
             raise PermissionDenied()
         return super(PostCreateView, self).post(request, *args, **kwargs)
