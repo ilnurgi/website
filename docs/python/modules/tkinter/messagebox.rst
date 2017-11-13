@@ -7,8 +7,8 @@ messagebox
 
     Отображает информационное окно
 
-.. py:method:: showwarning(title, message)
-
+.. py:method:: showwarning(title, message
+)
     Отображает окно с уведомлением
 
 .. py:method:: showerror(title, message)

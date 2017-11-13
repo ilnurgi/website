@@ -150,9 +150,37 @@ QWidget - базовый виджет для всех интерфейсных �
         Возвращает :py:class:`QtCore.QSize`, базовые размеры компонента
 
 
+    .. py:method:: center()
+
+        Центрирует виджет относительно родителя
+
+        .. code-block:: py
+
+            widget.center()
+
+
     .. py:method:: close()
 
         Закрывает окно
+
+        .. code-block:: py
+
+            widget.close()
+
+
+    .. py:method:: closeEvent()
+
+        Обработчик закрытия окна виджета
+
+
+    .. py:method:: connect(widget, signal, callback)
+
+        Связывает слот виджета с обработчиком
+
+        .. code-block:: py
+
+            widget.connect(btn, QtCore.SIGNAL('clicked()'), some_function)
+            widget.connect(btn, QtCore.SIGNAL('clicked()'), QtCore.SLOT('close()'))
 
 
     .. py:method:: frameGeometry()
@@ -168,6 +196,10 @@ QWidget - базовый виджет для всех интерфейсных �
     .. py:method:: geometry()
 
         Возвращает :py:class:`QtCore.QRect`, содержащий координаты относительно родительского объекта
+
+        .. code-block:: py
+
+            rect = widget.geometry()
 
 
     .. py:method:: height()
@@ -270,13 +302,26 @@ QWidget - базовый виджет для всех интерфейсных �
     .. py:method:: resize(h, w)
     .. py:method:: resize(qsize)
 
-        :param int h: высота
-        :param int w: ширина
-        :param QtCore.QSize qsize: объект, размер
+        * h - высота
+        * w - ширина
+        * qsize - :py:class:`QtCore.QSize`, размер
         
         Задает минимальные размеры виджета
 
-    
+        .. code-block:: py
+
+            widget.resize(300, 400)
+
+
+    .. py:method:: screenGeometry()
+
+        Возвращает размеры окна
+
+        .. code-block:: py
+
+            screen = widget.screenGeometry()
+
+
     .. py:method:: setAutoFillBackgroud(bool)
 
         Включает автоматическию прорисовку фона. Компоненты-потомки имеют прозрачный фон и не перерисовываются автоматический
@@ -318,13 +363,17 @@ QWidget - базовый виджет для всех интерфейсных �
     .. py:method:: setGeometry(x, y, h, w)
     .. py:method:: setGeometry(qrect)
 
-        :param int x: координата х
-        :param int y: координата у
-        :param int h: координата h
-        :param int w: координата w
-        :param QtCore.QRect qrect: объект, прямоуголная область
+        * x - :py:class:`int`, координата х
+        * y - :py:class:`int`, координата у
+        * h - :py:class:`int`, координата h
+        * w - :py:class:`int`, координата w
+        * qrect - :py:class:`QtCore.QRect`, прямоуголная область
 
         Задает расположение окна и его размер. Метод не учитывает высоту заголовка и ширину границ.
+
+        .. code-block:: py
+
+            widget.setGeometry(600, 400, 100, 200)
 
 
     .. py:method:: setFixedHeight(h)
@@ -353,9 +402,15 @@ QWidget - базовый виджет для всех интерфейсных �
 
     .. py:method:: setLayout(layout)
 
-        :param layout: лейаут (:py:class:`QtGui.QVBoxLayout`)
+        * layout - :py:class:`QtGui.QVBoxLayout`, контейнер для виджетов
 
-        Задает лейаут для виджета
+        Задает контейнер для виджета
+
+        .. code-block:: py
+
+            layout = QVBoxLayout()
+
+            widget.setLayout(layout)
 
 
     .. py:method:: setMaximumHeight(h)
@@ -449,17 +504,29 @@ QWidget - базовый виджет для всех интерфейсных �
 
     .. py:method:: setWindowIcon(qicon)
 
-        отображает иконку в заголовке окна
+        Отображает иконку в заголовке окна
+
+        .. code-block:: py
+
+            widget.setWindowIcon(QtGui.QIcon('some.png'))
 
 
     .. py:method:: setWindowTitle(text)
 
         Задает текст, который будет выводиться в заголовке окна
 
+        .. code-block:: py
+
+            widget.setWindowTitle('Window title')
+
 
     .. py:method:: show()
 
         Отображает виджет
+
+        .. code-block:: py
+
+            widget.show()
 
 
     .. py:method:: sizeHont()

@@ -6,7 +6,7 @@ QApplication - приложение, с которого начинается п
 
 .. py:class:: QApplication(*args)
 
-    ::
+    .. code-block:: py
 
         import sys
 
@@ -20,16 +20,23 @@ QApplication - приложение, с которого начинается п
         sys.exit(application.exec_())
 
 
-    .. py:method:: argv()
+    .. py:staticmethod:: clipboard()
 
-        возвращает список переданных аргументов
+        .. code-block:: py
+
+            clipboard = QApplication.clipboard()
+
+
+    .. py:staticmethod:: desktop()
+
+        Возвращает объект :py:class:`QtGui.QDesktopWidget`, компонент рабочего стола.
 
 
     .. py:staticmethod:: focusWidget()
 
         Возвращает ссылку на компонент, находящийся в фокусе ввода.
 
-        
-    .. py:staticmethod:: desktop()
 
-        Возвращает объект :py:class:`QtGui.QDesktopWidget`, компонент рабочего стола.
+    .. py:method:: argv()
+
+        возвращает список переданных аргументов

@@ -5,7 +5,9 @@ QPushButton - виджет кнопка
 
 .. py:class:: QPushButton(text)
 
-    :param text: текст надписи кнопки
+    Виджет, кнопка
+
+    * text - текст надписи кнопки
 
     .. code-block:: py
 

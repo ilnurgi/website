@@ -162,6 +162,8 @@
 
 .. py:attribute:: SOLID
 
+    C контуром
+
 
 .. _const_state:
 

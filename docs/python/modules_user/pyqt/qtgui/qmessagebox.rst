@@ -9,4 +9,11 @@ QMessageBox
 
     .. py:staticmethod:: question(parent, title, message, *args)
 
-        создает окно с запросом, и вовзращает результат
+        Создает окно с запросом, и вовзращает результат
+
+        .. code-block:: py
+
+            reply = QMessageBox.question(parent_widget, 'Title', 'message', QMessageBox.Yes, QMessageBox.No)
+
+            print(reply == QMessageBox.Yes)
+            print(reply == QMessageBox.No)

@@ -9,14 +9,10 @@ Tk - базовый класс приложения
 
     .. code-block:: py
 
-        from Tkinter import Tk, Menu
+        from Tkinter import Tk
 
         # создаем наше приложение
         window = Tk()
-
-        # создаем и добавляем меню, верхняя панель в приложение
-        menu = Menu()
-        window.config(menu=menu)
 
         # запускаем цикл обработки событий
         window.mainloop()
@@ -25,6 +21,25 @@ Tk - базовый класс приложения
     .. py:attribute:: menu
 
         Меню окна, объект Menu
+
+
+    .. py:method:: bind(event_name, callback)
+
+        Вешаем обработчик на событие
+
+        * event_name - название события
+
+            * "<Configure>" - изменение конфигурации окна
+
+        .. code-block:: py
+
+            def configure(event):
+                """
+                event.width
+                event.height
+                """
+
+            window.bind('<Configure>', configure)
 
 
     .. py:method:: destroy()
@@ -68,6 +83,15 @@ Tk - базовый класс приложения
             # только переместить окно
             window.geometry("+40+80")
 
+            # растянуть окно на весь экран
+            window.geometry(
+                '{width}x{height}+0+0'.format(
+                    window.winfo_screenwidth(),
+                    window.winfo_screenheight(),
+                )
+            )
+
+
     .. py:method:: iconbitmap(path)
 
         Устанавливает иконку окна
@@ -84,3 +108,78 @@ Tk - базовый класс приложения
         .. code-block:: py
 
             window.mainloop()
+
+
+    .. py:method:: maxsize()
+
+        Возвращает кортеж, максимальная ширина и высота экрана
+
+        .. code-block:: py
+
+            window.maxsize()
+            (1920, 1080)
+
+
+    .. py:method:: minsize([w, h])
+
+        Возвращает или устанавливает минимальный размер окна
+
+        .. code-block:: py
+
+            window.minsize()
+            # (100, 100)
+
+            window.minsize(200, 200)
+
+
+    .. py:method:: winfo_height()
+
+        Возвращает число, текущую ширину окна
+
+        .. code-block:: py
+
+            window.winfo_height()
+            # 1
+
+
+    .. py:method:: winfo_width()
+
+        Возвращает число, текущую ширину окна
+
+        .. code-block:: py
+
+            window.winfo_width()
+            # 1
+
+
+    .. py:method:: winfo_screenheight()
+
+        Возвращает число, высоту экрана
+
+        .. code-block:: py
+
+            window.winfo_screenheight()
+            # 1080
+
+
+    .. py:method:: winfo_screenwidth()
+
+        Возвращает число, ширина экрана 
+
+        .. code-block:: py
+
+            window.winfo_screenwidth()
+            # 1920
+
+
+    .. py:method:: wm_state(state)
+
+        Задает состояние для окна
+
+        * zoomed - растянуть на весь экран
+
+        .. code-block:: py
+
+            window.wm_state('zoomed')
+
+

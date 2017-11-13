@@ -46,9 +46,14 @@ os.path
 
 .. py:method:: expanduser(username) 
     
-    :param str username: имя пользователя
+    * username - :py:class:`str`, имя пользователя
     
-    возвращает путь к пользовательской папке
+    Возвращает путь к пользовательской папке
+
+    .. code-block:: py
+
+        expanduser('~')
+        # 'c:\\users\\ilnurgi\\'
 
 
 .. py:method:: getatime(path) 

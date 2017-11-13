@@ -21,6 +21,7 @@ QtGui - модуль классов, реализующих компоненты
    qdesktopwidget
    qdialog
    qframe
+   qgridlayout
    qimagereader
    qlabel
    qmainwindow
@@ -30,6 +31,7 @@ QtGui - модуль классов, реализующих компоненты
    qpixmap
    qpushbutton
    qshortcut
+   qsplashscreen
    qtooltip
    qvboxlayout
    qwidget

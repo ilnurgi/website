@@ -49,9 +49,32 @@ Listbox
         Активирует элемент по указанному индексу
 
 
+    .. py:method:: bind(event_name, callback)
+
+        Создает обработчик события для виджета
+
+        * event_name - :py:class:`str`, название события
+
+            * <Double-Button-1> - двойной клик на элементе
+
+            * <<ListboxSelect>> - клик на элементе
+
+        * callback - функция обработчик
+
+        .. code-block:: py
+
+            listbox.bind('<Double-Button-1>', lambda event: pass)
+            listbox.bind('<<ListboxSelect>>', lambda event: pass)
+
+
     .. py:method:: curselection()
 
         Возвращает кортеж, выбранных значений
+
+        .. code-block:: py
+
+            listbox.curselection()
+            # (14,)
 
 
     .. py:method:: delete(first, last=None)
@@ -81,7 +104,18 @@ Listbox
         .. code-block:: py
 
             listbox.insert(tkinter.END, 'item')
+            listbox.insert(tkinter.END, *list_items)
 
+
+    .. py:method:: itemconfig(index, **kwargs)
+
+        Конфигурирует строки в списке
+
+        .. code-block:: py
+
+            listbox.itemconfig(0, {'bg': 'red'})
+            listbox.itemconfig(0, bg='red')
+            
 
     .. py:method:: nearest(y)
 
