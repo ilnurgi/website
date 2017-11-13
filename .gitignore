@@ -5,6 +5,7 @@ logs/
 static/
 media/
 htmlcov/
+env/
 
 *.pyc
 .coverage
