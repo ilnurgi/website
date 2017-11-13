@@ -1,30 +1,69 @@
 sass
 ====
 
-.. code-block:: shell
+.. code-block:: sh
 
-    sudo apt-get install ruby
-    sudo gem install sass
-    mkdir project
-    cd project
-    touch style.css
-    touch.scss
-    sass --watch style.css:style.css
+    npm install gulp-sass
+
 
 .. code-block:: sass
+
+    // блоки выделяются отсутпами, а не фигурными скобками
 
     $color-green: #6cca4f;
     $padding: 20px;
     $width: 80%;
 
+    // миксин
+    =reset(){
+        //
+    }
+
+    // вызов миксина
+    +reset()
+    .wrapper
+        +wrapper()
+    .parent
+        .child
+            +row-flex()
+            +lg-block
+                background-color: red;
+
+
+
+
+
+scss
+====
+
+.. code-block:: css
+
+    // переменные
+    $key: "some-key";
+    $val: 12px;
+    $color-green: #6cca4f;
+    $padding: 20px;
+    $width: 80%;
+
+    // миксин
+    @mixin reset(){
+        //
+    }
     @mixin box-sizing{
         box-sizing: border-box;
     }
-
     @mixin border-radius($radius) {
         border-radius: $radius;
     }
 
+    // вызов миксина
+    @include wrapper;
+    @include reset();
+    @include debug(@key, @value);
+    @include some-block{
+        padding: 3px;
+        margin-left: #{calc(#{$value} + #{value})};
+    };
     .block {
         padding: $padding;
         border: 1px solid $color-green;
