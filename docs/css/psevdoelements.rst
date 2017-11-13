@@ -4,19 +4,42 @@
 after
 -----
 
-Элемент после
+Добавляет элемент после указанного элемента
 
 .. code-block:: css
 
-    a::after {}
+    a::after {
+        content: ""
+    }
 
 
 before
 ------
 
-Элемент до
+Добавляет элемент до указанного элемента
 
 .. code-block:: css
 
-    a::before {}
+    a::before {
+        content: ""
+    }
 
+
+first-letter
+------------
+
+Задает стиль для первого символа в тексте элемента
+
+.. code-block:: css
+
+    p::first-letter {}
+
+
+first-line
+----------
+
+Задает стиль для первой строки текста элемента
+
+.. code-block:: css
+
+    p::first-line {}

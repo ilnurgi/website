@@ -1,6 +1,13 @@
 Конспекты по css
 ================
 
+
+.. code-block:: html
+
+    <link rel='stylesheet' href='main.css'>
+
+
+
 .. toctree::
     :maxdepth: 2
 

@@ -9,7 +9,11 @@ background
 .. code-block:: css
 
     body {
-        background: #333 url (images/logo.gif) no-repeat fixed left top;;
+        background: #333 url(images/logo.gif) no-repeat fixed left top;
+    }
+
+    body {
+        background: url(images/logo.gif) no-repeat center cover;
     }
     
 background-attachment
@@ -17,9 +21,9 @@ background-attachment
 
 Определяет, как ведет себя фон при прокрутке страницы
 
-* scroll
+* scroll - прокручивается вместе с элементом
 
-* fixed
+* fixed - не прокручивается совсем
 
 .. code-block:: css
 
@@ -125,13 +129,13 @@ background-repeat
 
 Повторение фонового изображения
 
-* repeat - по умолчанию
+* repeat - повторяется по горизонтали и по вертикали
 
-* repeat-x
+* repeat-x - повторить по горизонтали
 
-* repeat-y
+* repeat-y - повторить по вертикали
 
-* no-repeat
+* no-repeat - не повторять
 
 .. code-block:: css
 

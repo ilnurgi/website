@@ -1,7 +1,6 @@
 Псевдоклассы
 ============
 
-
 active
 ------
 
@@ -101,7 +100,7 @@ hover
 
 .. code-block:: css
 
-    .nav:hover {}
+    input:hover {}
 
 
 in-range
@@ -160,8 +159,24 @@ lang
     p:lang(en)
 
 
+link
+----
+
+Не посещенная ссылка
+
+.. code-block:: css
+
+    a:link {}
+
+
 not
 ---
+
+Отрицание
+
+.. code-block:: css
+
+    input[type="checkbox"]:not(:checked)
 
 .. code-block:: css
 
@@ -173,9 +188,20 @@ nth-child
 
 Поиск заданного дочернего элемента в прямом направлении
 
+* even - все четные элементы
+
+* odd - все нечетные элементы
+
+* число - порядковый номер элемента, от 1
+
+* выражение - вида an + b
+
 .. code-block:: css
 
     p:nth-child(2n+1){}
+    p:nth-child(odd){}
+    p:nth-child(even){}
+    p:nth-child(2){}
 
 
 nth-last-child
@@ -204,16 +230,6 @@ nth-of-type
     p:nth-of-type(2n+1) {}
     p:nth-of-type(even) {}
     p:nth-of-type(odd) {}
-
-
-not
----
-
-Отрицание
-
-.. code-block:: css
-
-    input[type="checkbox"]:not(:checked)
 
 
 only-child
@@ -276,4 +292,14 @@ valid
 .. code-block:: css
 
     input:valid {}
+
+
+visited
+-------
+
+Посещенная ссылка
+
+.. code-block:: css
+
+    a:visited {}
 

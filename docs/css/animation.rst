@@ -1,5 +1,5 @@
 Анимации, преобразования и переходы
------------------------------------
+===================================
 
 animation
 ---------
@@ -166,6 +166,45 @@ keyframes
         to {
             background-color: whote;
         }
+    }
+
+.. code-block:: css
+
+    // плавно опускает элемент
+    @keyframes bounce {
+        0% {
+            transform: translateY(-2000px);
+        }
+        70% {
+            transform: translateY(30px);
+        }
+        90% {
+            transform: translateY(-10px);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+    .some-class {
+        animation: bounce 0.6s;
+    }
+
+.. code-block:: css
+
+    // встряска формы
+    @keyframes shake {
+        0%, 100% {
+            transform: translateX(0);
+        }
+        10%, 30%, 50%, 70%, 90% {
+            transform: translateX(-10px);
+        }
+        20%, 40%, 60%, 80% {
+            transform: translateX(10px);
+        }
+    }
+    .some-class {
+        animation: shake 0.6s;
     }
 
 
