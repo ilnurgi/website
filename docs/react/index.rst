@@ -1,3 +1,25 @@
+React
+=====
+
+JavaScript библиотека для создания веб страниц
+
+.. code-block:: sh
+
+    npm install react
+
+.. code-block:: html
+
+    <script src="/js/react.js">
+    <script src="/js/react-dom.js">
+
+
+.. toctree::
+    :maxdepth: 2
+
+    react/index
+    reactdom/index
+
+
 .. code-block:: html
 
     <!DOCTYPE html>
@@ -112,40 +134,6 @@
     React.render(
         <Hello name="ilnurgi/>,
         document.getElementById("container"));
-
-
-
-npm init => package.json
-npm install -S react
-npm install -D browserify
-npm install -D reactify
-npm install -D watchify
-
--S - зависимости
--D - зависимости билда
-
-.. code-block:: json
-
-    {
-        ...
-        "browserify": {
-            "transform": [
-                "reactify"
-            ]
-        },
-        # симлинк 
-        "scripts": {
-            "build": "broserify js/app.js -o js/build.js",
-            "watch": "wathcify js/app.js -o js/build.js -v"
-        }
-    }
-
-broserify js/app.js -o js/build.js
-
-билд файл подключаем в html
-
-npm run build
-npm run watch
 
 
 Application.react.js
