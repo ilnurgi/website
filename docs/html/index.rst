@@ -1,6 +1,34 @@
 Конспекты по HTML
 =================
 
+HTML - декларативный язык программирования.
+Используемый для разметки web-страниц - html-документов.
+Web-страница отобржается в браузере (chrome, firefox, opera).
+
+HTML документ состоит из тегов.
+Тег - элемент разметки, который может иметь атрибуты.
+Внутри тега может находиться обычный текст или другие теги.
+
+.. code-block:: html
+
+    <div></div>
+
+    <!-- тег с атрибутом -->
+    <тег атрибут=значение>
+        <!--тут содержимое элемента-->
+
+        <!--простой тег без атрибута-->
+        <тег2>
+            обычный текст
+        </тег>
+
+        <!--обычный текст-->
+        другой текст
+
+        <!--закрывающий тег, т.е. конец элемента-->
+    </тег>
+
+
 .. code-block:: html
    
     <!DOCTYPE>
@@ -15,7 +43,42 @@
        <body></body>
 
     </html>
-    
+
+Элементы, описывающие документ
+------------------------------
+
+.. toctree::
+    :maxdepth: 1
+
+    html
+    head
+    link
+    body
+    doctype
+
+
+Элементы, описывающие секции/блоки, списки
+------------------------------------------
+
+.. toctree::
+    :maxdepth: 1
+
+    blockquote
+    div
+    img
+    section
+    ul
+
+Элементы описывающие текст
+--------------------------
+
+.. toctree::
+    :maxdepth: 1
+
+    a
+    text
+
+
 .. toctree::
     :maxdepth: 1
 
@@ -33,57 +96,6 @@
     html5/index
 
 
-a
--
-
-Якорь, гипертекстовая ссылка, строчный элемент
-
-* download = "имя файла"
-
-    Ссылка для загружаемого ресурса
-
-    .. note:: HTML5.1
-
-* href = "URI"
-
-    Адрес ресурса
-
-* hreflang = "код языка"
-
-    Язык целевого документа
-
-* media = "all | aural | braille | handheld | print | projection | screen | tty | tv"
-
-    .. note:: HTML5
-    
-    .. note:: HTML5.1 удален
-
-    Носитель целевого документа
-
-* rel = "alternate | author | bookmark | help | license | next | nofollow | noreferrer | prefetch | prev | search | tag"
-
-    Связь между исодным и связанными документами
-
-* target = "текст"
-
-    Имя окна или области iframe, где будет отображаться документ
-
-* type = "MIME"
-
-    Тип контента для связанного контента
-
-.. code-block:: html
-
-    <a href="http:/ilnurgi.ru" id="my_anchor"></a>
-    <a href="http:/ilnurgi.ru/post.html#news"></a>
-    <a href="mailto:ilnurgi87@gmail.com"></a>
-    <a href="tel:+1234567890"></a>
-
-.. code-block:: html
-
-    <a id="anchor_bottom"></a>
-    <a href="#anchor_bottom"></a>
-
 
 code
 ----
@@ -91,16 +103,7 @@ code
 Фрагмент кода
 
 
-div
----
 
-Блочный элемент, секция
-
-.. code-block:: html
-
-    <div id="summary">
-        ....
-    </div>
 
 
 em
@@ -171,37 +174,3 @@ iframe
 .. code-block:: html
 
     <iframe src="ads.html" width="320" height="240"></iframe>
-
-
-img
----
-
-Изображение
-
-* alt - альтернативный текст
-
-* crossorigin - anonymous | use-credentials
-
-* height - высота элемента
-
-* ismap
-
-* src
-
-* usemap
-
-* width - ширина элемента
-
-.. code-block:: html
-
-    <img src='' alt='' title='' width='' height=''>
-
-
-span
-----
-
-Строчный элемент, используется для верстки
-
-.. code-block:: html
-
-    <span></span>
