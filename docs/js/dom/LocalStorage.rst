@@ -6,6 +6,16 @@ LocalStorage - key-value хранилище
 
 .. py:class:: LocalStorage()
 
+
+    .. py:function:: clear()
+
+        Очищает хранилище
+
+        .. code-block:: js
+
+            localStorage.clear();
+
+
     .. py:function:: getItem(key)
 
         Возвращает значение по ключу
@@ -15,6 +25,15 @@ LocalStorage - key-value хранилище
             localStorage.getItem("key");
             localStorage.key2;
             localStorage['key3'];
+
+
+    .. py:function:: removeItem()
+
+        Удаляет запись из хранилища
+
+        .. code-block:: js
+
+            localStorage.removeItem("key");
 
 
     .. py:function:: setItem(key, value)

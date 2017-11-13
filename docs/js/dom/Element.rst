@@ -36,7 +36,14 @@ Element
 
     .. py:attribute:: classList
 
-        Ссылка на :py:class:`DOMTokenList`, множество лексем в виде строки
+        Ссылка на :py:class:`DOMTokenList`, объект для работы с классами объекта
+
+        .. code-block:: js
+
+            element.classList.add("show");
+            element.classList.remove("show");
+            element.classList.toggle("show");
+            element.classList.contains("show");
 
 
     .. py:attribute:: className
@@ -277,6 +284,11 @@ Element
 
         Переносит фокус на текущий элемент
 
+        .. code-block:: js
+
+            login = document.querySelector("[name=login]");
+            login.focus();
+
 
     .. py:function:: getAttribute(attrName)
 
@@ -343,13 +355,32 @@ Element
 
 
     .. py:function:: querySelector(string selectors)
-        
-        Воз­вра­ща­ет пер­вый вло­жен­ный эле­мент :py:class:`Element`, со­от­вет­ст­вую­щий CSS-се­лек­то­рам selec­tors (это мо­жет быть един­ст­вен­ный CSS-се­лек­тор или груп­па се­лек­то­ров, раз­де­лен­ных за­пя­ты­ми).
+
+        Метод поиска элементов.
+
+        Возвращает элемент DOM дерева :py:class:`Element`,
+        соответствующий CSS-селекторам selectors
+        (это может быть единственный CSS-селектор или
+        группа селекторов, разделенных запятыми).
+
+        .. code-block:: js
+
+            document.querySelector(".user-block")
 
 
     .. py:function:: querySelectorAll(string selectors)
 
-        Воз­вра­ща­ет объ­ект :py:class:`NodeList`, со­дер­жа­щий все эле­мен­ты, вло­жен­ные в  дан­ный эле­мент, ко­то­рые со­от­вет­ст­ву­ют се­лек­то­рам selectors (это мо­жет быть един­ст­вен­ный CSS-се­лек­тор или груп­па се­лек­то­ров, раз­де­лен­ных за­пя­ты­ми).
+        Метод поиска элементов.
+
+        Возвращает объект :py:class:`NodeList`,
+        содержащий все элементы, вложенные в  данный элемент,
+        которые соответствуют селекторам selectors
+        (это может быть единственный CSS-селектор
+        или группа селекторов, разделенных запятыми).
+
+        .. code-block:: js
+
+            document.querySelectorAll("nav li")
 
 
     .. py:function:: removeAttribute(attrName)
