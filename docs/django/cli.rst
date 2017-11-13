@@ -1,31 +1,82 @@
 Консольные команды
 ==================
 
-.. code-block:: sh
 
-    # создание проекта
-    django-admin startproject mysite
+compilemessages
+---------------
 
-.. code-block:: sh
-
-    # создание приложения
-    django-admin startapp blog
+Скомпилировать файлы локализации
 
 .. code-block:: sh
 
-    # миграция БД
-    python manage.py migrate
+    python manage.py compilemessages
+
+
+createsuperuser
+---------------
+
+Создать суперпользователя
 
 .. code-block:: sh
 
-    # создание миграции БД
+    python manage.py createsuperuser
+
+
+makemessages
+------------
+
+Создать файлы локализации
+
+.. code-block:: sh
+
+    python manage.py makemessages
+
+
+makemigrations
+--------------
+
+Создать файлы миграции
+
+* name - название миграции
+
+.. code-block:: sh
+
     python manage.py makemigrations app_name
 
     python manage.py makemigrations shop --name "add_translation_model"
 
+
+migrate
+-------
+
+Миграция базы данных
+
 .. code-block:: sh
 
-    # просмотр sql миграции БД
+    python manage.py migrate
+
+
+runserver
+---------
+
+Запуск сервера разработки
+
+* settings - моудль файла настроек
+
+.. code-block:: sh
+
+    python manage.py runserver
+
+    python manage.py runserver --settings mysite.settings
+
+
+sqlmigration
+------------
+
+Выводит sql запросы миграции
+
+.. code-block:: sh
+
     python manage.py sqlmigration app_name 0001
     """
     BEGIN;
@@ -44,22 +95,22 @@
     COMMIT;
     """
 
-.. code-block:: sh
 
-    # запуск сервера для разработки
-    python manage.py runserver
+startapp
+--------
 
-    python manage.py runserver --settings mysite.settings
-
-.. code-block:: sh
-
-    # создание суперпользователя
-    python manage.py createsuperuser
+Создать приложение в проекте
 
 .. code-block:: sh
 
-    # создать файлы локализации
-    python manage.py makemessages
+    django-admin startapp blog
 
-    # скомпилировать файлы локализации
-    python manage.py compilemessages
+
+startproject
+------------
+
+Создать проект
+
+.. code-block:: sh
+
+    django-admin startproject mysite

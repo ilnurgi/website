@@ -3,10 +3,24 @@
 
 .. code-block:: py
 
+    # admin.py
+
     from django.contrib import admin
 
-    # регистрация модели в админке
-    admin.site.register(Good, GoodAdmin)
+    from some_app.models import SomeModel, SomeModel2
+
+
+    class SomeModelAdmin(admin.ModelAdmin):
+        """"""
+
+
+    # простая регистрация модели
+    admin.site.register(SomeModel2)
+
+    # регистрация модели в админке, с настройкой админки
+    admin.site.register(SomeModel, SomeModelAdmin)
+
+
 
 .. code-block:: py
 
@@ -25,6 +39,40 @@
     admin.site.register(User, UserAdmin)
 
     admin.site.site_header = "Admin panel Header"
+
+
+.. code-block:: py
+
+    # urls.py
+
+    from django.conf.urls import patterns, include, url
+
+    from django.contrib import admin
+
+    urlpatterns += patterns(
+        url(r'^admin/', include(admin.site.urls))
+    )
+
+
+AdminSite
+---------
+
+Объет, который конфигурирует админку сайта
+
+.. py:class:: AdminSite()
+
+    .. py:attribute:: site_header
+
+        Заголовок админки
+
+        .. code-block:: py
+
+            # admin.py
+
+            from django.contrib import admin
+
+            admin.AdminSite.site_header = 'Заголовок админки'
+
 
 ModelAdmin
 ----------
@@ -112,6 +160,12 @@ ModelAdmin
 
         Список полей, которые отображаются на странице списка объектов
 
+        .. code-block::py
+
+            list_display = [
+                some_model_field,
+            ]
+
     .. py:attribute:: list_display_links
 
         Список полей, по которым можно перейти на страницы редактирования
@@ -168,6 +222,12 @@ ModelAdmin
 
         Список полей, по которым можно произвести поиск объектов на странице ссписка объектов
 
+        .. code-block:: py
+
+            search_fields = [
+                some_model_field,
+            ]
+
 
 StackedInLine
 -------------
@@ -222,6 +282,8 @@ TabularInline
 
 Вложенный набор форм, организованный в виде таблицы.
 
+Используется для добавления возможности добавлять связанные объекты одной модели в другую.
+
 .. py:class:: django.contrib.admin.TabularInline()
 
     .. code-block:: py
@@ -268,10 +330,3 @@ TabularInline
     .. py:attribute:: readonly_fields
 
     .. py:attribute:: verbose_name
-
-        Надпись для формы
-
-    .. py:attribute:: verbose_name_plural
-
-        Надпись для всего набора форм
-

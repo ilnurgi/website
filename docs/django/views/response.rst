@@ -18,6 +18,19 @@ Http404
             ...
 
 
+HttpResponse
+------------
+
+.. py:class:: django.http.HttpResponse()
+
+    Ответ сервера
+
+    .. code-block:: py
+
+        def index(request):
+            return HttpResponse('Hello world')
+
+
 render
 ------
 

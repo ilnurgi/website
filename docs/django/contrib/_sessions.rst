@@ -8,6 +8,16 @@
 
 .. code-block:: py
 
+    # settings.py
+
+    INSTALLED_APPS += [
+        'django.contrib.sessions.middleware.SessionMiddleware'
+    ]
+
+
+.. code-block:: py
+
     def some_view(request):
 
         session = request.session
+
