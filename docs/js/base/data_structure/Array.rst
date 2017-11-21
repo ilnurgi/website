@@ -245,6 +245,9 @@ Array
 
     .. py:method:: from(iterable, function, this)
 
+        Позволяет получить массив из какого то объекта,
+        например из живого массива элементов дом дерева.
+
         .. note:: ECMAScript6
 
         .. code-block:: js
@@ -253,6 +256,10 @@ Array
                 return this.number * item;
             }, {number: 10});
             // [10, 20, 30]
+
+            const liveArraySections = document.getElementsByTagName('section');
+            // liveArraySections.forEach не будет работать, т.к. живая коллекция
+            Array.from(liveArraySections).forEach(callback);
 
 
     .. py:method:: join(separator=',')

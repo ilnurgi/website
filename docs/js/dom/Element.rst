@@ -255,9 +255,11 @@ Element
 
 
         
-    .. py:function:: addEventListener()
+    .. py:function:: addEventListener(event, handler, phase)
 
         Задает обработчик некоторого события для элемента
+
+        * phase - булево, перехват события по дороге вниз
 
         .. code-block:: js
 
