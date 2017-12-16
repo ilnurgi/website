@@ -4,9 +4,13 @@
 Error
 -----
 
-.. py:class:: Error([message])
+.. py:class:: Error([message[, fileName[, lineNumber]]])
 
     Наследник :py:class:`Object`
+
+    * message - сообщение
+    * fileName - название файла, где произошла ошибка
+    * lineNumber - номер строки с ошибкой
 
 
     .. py:attribute:: message

@@ -169,6 +169,18 @@
 
 .. code-block:: js
 
+    try {
+        throw new Error('ошибка');
+    } catch (e) {
+        if (e instanceof EvalError) {
+            // ...
+        }
+        console.log(e.name);
+        console.log(e.message);
+    }
+
+.. code-block:: js
+
     if (typeof a !== 'number' || typeof b !== 'number') {
         throw {
             name: 'TypeError',
@@ -184,7 +196,7 @@
 
     try {
         // код который вызывает исключение
-    } catche (e) {
+    } catch (e) {
         // перехват исключений
     } finally {
         // данный блок выполнится в любом случае
